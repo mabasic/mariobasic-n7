@@ -25,14 +25,20 @@ $secondary-color: #0b5ed8;
     /* The third layer shadow */ 0 -20px 1px -9px rgba(0, 0, 0, 0.15);
 
   /* Padding for demo purposes */
-  padding: 30px;
+  padding: 30px; 
 }
 
 .white .container {
   padding-top: 50px;
   padding-bottom: 60px;
   background-color: #ffffff;
-  margin-top: 30px;
+  margin-top: 0px;
+}
+
+@media (min-width: 576px) {
+  .white .container {
+    margin-top: 30px;
+  }
 }
 
 .black .container {

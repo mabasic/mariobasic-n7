@@ -7,16 +7,16 @@
 (defn white [request white-section]
   [:section @{:class "white"}
    [:div @{:class "container paper"}
-    [:div @{:class "row justify-content-center px-5"}
+    [:div @{:class "row justify-content-center px-0 px-sm-3 px-md-5"}
      [:div @{:class "col"}
       (navbar/render (get (get request :uri) :path))]]
-    [:div @{:class "row justify-content-center px-5"}
+    [:div @{:class "row justify-content-center px-0 px-sm-3 px-md-5"}
      [:div @{:class "col"} white-section]]]])
 
 (defn black [black-section]
   [:section @{:class "black"}
    [:div @{:class "container"}
-    [:div @{:class "row justify-content-center px-5"}
+    [:div @{:class "row justify-content-center px-0 px-sm-3 px-md-5"}
      [:div @{:class "col"} black-section]]]])
 
 (def scripts
