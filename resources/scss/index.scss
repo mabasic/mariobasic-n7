@@ -88,7 +88,13 @@ $secondary-color: #0b5ed8;
 }
 
 footer.black .container {
-  margin-bottom: 30px;
+  margin-bottom: 0px;
+}
+
+@media (min-width: 576px) {
+  footer.black .container {
+    margin-bottom: 30px;
+  }
 }
 
 p.indent {
