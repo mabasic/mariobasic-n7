@@ -28,6 +28,6 @@
   "scripts": {
     "dev": "webpack --mode=development --progress",
     "watch": "webpack --mode=development --watch --progress",
-    "prod": "webpack --mode=production --progress"
+    "prod": "webpack --mode=production --progress --no-devtool"
   }
 }
