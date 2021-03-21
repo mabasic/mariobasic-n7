@@ -22,7 +22,6 @@ In the future I plan on adding missing tests and replacing Javascript with somet
 ## TODO
 
 - [ ] Write tests for stuff.
-- [ ] Implement try/catch logic when sending emails and using database?
 
 The code in `src/helpers.phel` should be somewhere else. Maybe in Phel (extract-data-from-request) or converted to a public function in mabasic/phel-json library (encode-value).
 
