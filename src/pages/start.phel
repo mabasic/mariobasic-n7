@@ -60,7 +60,7 @@
             # Send email
             (mail/send @{:to "mario@laravelista.hr"
                          :subject "Inquiry Received"
-                         :message (received/render)
+                         :message (received/render data)
                          :reply-to (:email_address data)})
 
             # Store in database
