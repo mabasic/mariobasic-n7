@@ -24,33 +24,30 @@
              :white white
              :black black})})
 
-# (def store-rules
-#   @{"first_name" [:required @{:rule :string :max 255}]
-#     "last_name" [:required @{:rule :string :max 255}]
-#     "company_name" [:nullable @{:rule :string :max 255}]
-#     "vat_number" [:nullable @{:rule :string :max 255}]
-#     "address" [:required @{:rule :string :max 255}]
-#     "city" [:required @{:rule :string :max 255}]
-#     "zip_code" [:required @{:rule :string :max 255}]
-#     "country" [:required @{:rule :string :max 255}]
-#     "email_address" [:required @{:rule :string :max 255}]
-#     "phone" [:required @{:rule :string :max 255}]
-#     "topic" [:required @{:rule :string :max 255}]
-#     "budget" [:required @{:rule :string :max 255}]
-#     "subject" [:required @{:rule :string :max 255}]
-#     "q1" [:nullable :string]
-#     "q2" [:nullable :string]
-#     "q3" [:nullable :string]
-#     "q4" [:nullable :string]
-#     "q5" [:nullable :string]
-#     "q6" [:nullable :string]
-#     "q7" [:nullable :string]
-#     "q8" [:nullable :string]
-#     "q9" [:nullable :string]
-#     "gdpr_consent" [:required :accepted]})
-
 (def store-rules
-  @{"email_address" [:required @{:rule :string :max 255}]})
+  @{"first_name" [:required @{:rule :string :max 255}]
+    "last_name" [:required @{:rule :string :max 255}]
+    "company_name" [:nullable @{:rule :string :max 255}]
+    "vat_number" [:nullable @{:rule :string :max 255}]
+    "address" [:required @{:rule :string :max 255}]
+    "city" [:required @{:rule :string :max 255}]
+    "zip_code" [:required @{:rule :string :max 255}]
+    "country" [:required @{:rule :string :max 255}]
+    "email_address" [:required @{:rule :string :max 255}]
+    "phone" [:required @{:rule :string :max 255}]
+    "topic" [:required @{:rule :string :max 255}]
+    "budget" [:required @{:rule :string :max 255}]
+    "subject" [:required @{:rule :string :max 255}]
+    "q1" [:nullable :string]
+    "q2" [:nullable :string]
+    "q3" [:nullable :string]
+    "q4" [:nullable :string]
+    "q5" [:nullable :string]
+    "q6" [:nullable :string]
+    "q7" [:nullable :string]
+    "q8" [:nullable :string]
+    "q9" [:nullable :string]
+    "gdpr_consent" [:required :accepted]})
 
 (defn store [request]
   (let [@{:result validated :errors errors}
