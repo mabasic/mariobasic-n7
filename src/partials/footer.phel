@@ -3,7 +3,7 @@
 (defn render []
   [:footer @{:class "black"}
    [:div @{:class "container"}
-    [:div @{:class "row justify-content-center px-5"}
+    [:div @{:class "row justify-content-center px-0 px-sm-3 px-md-5"}
      [:div @{:class "col"}
       [:hr]
       [:p @{:class "text-muted d-flex justify-content-between flex-md-row flex-column"}
