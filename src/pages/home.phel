@@ -1,0 +1,181 @@
+(ns app\pages\home
+  (:require app\layouts\main))
+
+(def white
+  [:div
+   [:h1 @{:class "display-1 pt-5 mt-5"} "Mario Bašić."]
+   [:p @{:class "lead pb-3"} "[ Full Stack Developer ] MSc, Information Technology Management"]
+   [:p "Full stack PHP/JavaScript developer from Croatia, specialized in building web & mobile applications. Author of the book: “A Collection of Laravel Tutorials”, creator of open-source projects, and a father."]
+   [:p @{:class "mb-5"}
+    [:a @{:class "btn btn-dark btn-lg mb-2 me-3" :href "/start"} "Let's work together 🚀"]]
+   [:div @{:class "row mt-5 pt-5"}
+    [:div @{:class "col-lg-4"} [:b @{:class "pe-3"} "Address"] "Murter, Croatia"]
+    [:div @{:class "col-lg-4"} [:b @{:class "pe-3"} "Email"] "mario@laravelista.hr"]
+    [:div @{:class "col-lg-4"} [:b @{:class "pe-3"} "Phone"] "00385 22 435450"]]])
+
+(defn column [& body]
+  [:div @{:class "col-lg-4"} body])
+
+(defn group [title & units]
+  [:div @{:class "black-group"}
+   [:h5 @{:class "black-group-title"} title]
+   units])
+
+(defn unit
+  [&
+   [@{:title title
+      :subtitle subtitle
+      :intro intro
+      :body body}]]
+  [:div @{:class "unit pb-4"}
+   (if-not (nil? title)
+     [:div @{:class "unit-title"}
+      title
+      (if-not (nil? subtitle) [:br])
+      (if-not (nil? subtitle) [:span @{:class "unit-subtitle"} " " subtitle])])
+   (if-not (nil? intro) [:div @{:class "unit-intro"} intro])
+   (if-not (nil? body) [:div @{:class "unit-body"} body])])
+
+(def left-column
+  (column
+   (group
+    "Expertise"
+    (unit
+     @{:title "Laravel"
+       :subtitle "The best batteries-included PHP framework"
+       :intro "Still running my first Laravel 3 application in production environment."})
+    (unit
+     @{:title "PHP"
+       :subtitle "It gets the job done"
+       :intro "My main programming language."})
+    (unit
+     @{:title "JavaScript"
+       :subtitle "It is like wine"
+       :intro "The language gets better with years."})
+    (unit
+     @{:title "React.js"
+       :subtitle "Simple top-down logic to follow"
+       :intro "My preferred JavaScript UI library."})
+    (unit
+     @{:title "React-native"
+       :subtitle "Native mobile app development"
+       :intro "Web developers building native mobile apps with web technologies."})
+    (unit
+     @{:title "Vue.js"
+       :subtitle "Alternative to React.js"
+       :intro "If you know React.js you know Vue.js."})
+    (unit
+     @{:title "Go"
+       :subtitle "Small, simple, easy, powerful"
+       :intro "I like this language a lot, but have not used it very much."})
+    (unit
+     @{:title "Elixir"
+       :subtitle "Dynamic, functional language for building scalable and maintainable applications"
+       :intro "Still reading the documentation and learning."})
+    (unit
+     @{:title "Phel"
+       :subtitle "Lisp inspired functional programming language that compiles to PHP"
+       :intro "This website is built with Phel."})
+    (unit
+     @{:title "ReScript"
+       :subtitle "The JavaScript-like language you've been waiting for"
+       :intro "Still reading the documentation and learning."}))
+   (group
+    "Portfolio"
+    (unit @{:body
+            [:span
+             "To view all my projects go to: "
+             [:a @{:href "https://mariobasic.com/portfolio" :class "link-light"} "https://mariobasic.com/portfolio"]]}))
+   (group
+    "Download"
+    (unit @{:body
+            [:a @{:class "btn btn-primary" :href "/resume.pdf" :target "_blank"} "Curriculum Vitae " [:i @{:class "fa fa-fw fa-download"}]]}))))
+
+(def middle-column
+  (column
+   (group
+    "Devops"
+    (unit @{:title "Server administrator" :subtitle "Linux, Ubuntu, Fedora, Alpine, Debian, Arch..." :intro "Can install, configure and maintain software on servers running popular linux distributions."})
+    (unit @{:title "Docker" :subtitle "For local development or production" :intro "Can use Docker to containerize applications for local development or production use."})
+    (unit @{:title "Vagrant" :subtitle "Virtual machines everywhere" :intro "Can use Vagrant to recreate production servers for testing purposes or setup a local development environment."})
+    (unit @{:title "Ansible" :subtitle "Server/desktop provisioning" :intro "Can use Ansible to provision single or multiple servers and deploy applications."}))
+   (group
+    "Graphics"
+    (unit
+     @{:title "Image editing"
+       :subtitle "Adobe Photoshop, GIMP, Krita, Affinity Photo"
+       :body "Editing and retouching images, creating full-blown multi-layered compositions or making beautiful raster paintings."})
+    (unit
+     @{:title "Vector design"
+       :subtitle "Adobe Illustrator, Inkscape, Affinity Designer"
+       :body "Creating concept art, print projects, logos, icons, UI designs, mock-ups and more."})
+    (unit
+     @{:title "Publication software"
+       :subtitle "Adobe InDesign, Affinity Publisher"
+       :body "From books, magazines and marketing materials, to social media templates, website mock-ups and other projects."}))
+   (group
+    "Highlights"
+    (unit
+     @{:title "Best student in class"
+       :intro "2008"
+       :subtitle "University of Applied Sciences VERN’"})
+    (unit
+     @{:title [:a @{:href "http://laraveldaily.com/mario-basic-laravelista-project-emerged-love-writing-helping-people" :class "link-light" :rel "noopener nofollow" :target "_blank"} "Interview for Laravel Daily"]
+       :intro "04/12/2016"
+       :subtitle "Laravelista emerged from my love of writing and helping other people."})
+    (unit
+     @{:title [:a @{:href "https://archiveprogram.github.com/" :class "link-light" :rel "noopener nofollow" :target "_blank"} "Arctic Code Vault Contributor"]
+       :intro "02/02/2020"
+       :subtitle "Contributed code to several repositories in the 2020 GitHub Archive Program."}))))
+
+(def right-column
+  (column
+   (group
+    "Experience"
+    (unit
+     @{:title "Go Visit Ltd."
+       :subtitle "2017 to present"
+       :intro "Co-Owner"
+       :body "Created a destination management software which runs a tourist portal for the island of Murter."})
+    (unit
+     @{:title "Laravelista"
+       :subtitle "2016 to present"
+       :intro "Owner & Lead developer"
+       :body "Specialized in building web applications using the Laravel framework and mobile applications with React-native & React.js."})
+    (unit
+     @{:title "Freelance"
+       :subtitle "2011 to 2016"
+       :intro "Full stack developer"
+       :body "Created content management systems for real estates agencies and apartment owners."}))
+   (group
+    "Education"
+    (unit
+     @{:title "University of Applied Sciences VERN'"
+       :intro "2011 to 2017"
+       :subtitle "MSc in Information Technology Management"})
+    (unit
+     @{:title "University of Applied Sciences VERN'"
+       :intro "2008 to 2011"
+       :subtitle "Bachelor of Business Informatics"})
+    (unit
+     @{:title "Economics School Šibenik"
+       :intro "2004 to 2008"
+       :subtitle "Sales Specialist"}))
+   (group
+    "Languages"
+    (unit @{:title "Croatian" :subtitle "Native"})
+    (unit @{:title "English" :subtitle "Fluent"})
+    (unit @{:title "Italian" :subtitle "Basic"}))))
+
+(def black
+  [:div @{:class "row"}
+   left-column middle-column right-column])
+
+(defn render [request]
+  @{:status 200
+    :body (main/render
+           request
+           @{:title "Mario Bašić | Full Stack Developer"
+             :meta-description "Full Stack Developer. Specialized in building Web &amp; Mobile Applications."
+             :white white
+             :black black})})

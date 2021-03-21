@@ -1,0 +1,23 @@
+(ns app\logger
+  (:require app\config\app))
+
+(def log-file (str __DIR__ "/../logs/phel.log"))
+
+(def level-info "INFO")
+(def level-debug "DEBUG")
+
+(defn log [data & [@{:level level}]]
+  (let [level (or level level-info)]
+    (php/file_put_contents
+     log-file
+     (str
+      "[" (php/date "Y-m-d H:i:s") "] " (app/environment) "." level ": "
+      data
+      php/PHP_EOL)
+     php/FILE_APPEND)))
+
+(defn debug [data]
+  (log data @{:level level-debug}))
+
+(defn info [data]
+  (log data @{:level level-info}))

@@ -1,0 +1,100 @@
+(ns app\projects\year-2015
+  (:require app\projects\project :refer [project]))
+
+(def index
+  @[(project
+     "Apartments \"Kornat\""
+     "https://apartmani-kornat.com"
+     "Apartment booking website made with Laravel."
+     ["laravel"]
+     "website")
+    (project
+     "Apartments \"Slanica\""
+     "https://murter-apartments.com"
+     "Apartment booking website made with Laravel."
+     ["laravel"]
+     "website")
+    (project
+     "Villa \"Moj San\""
+     "http://apartmani-zablace.com"
+     "Apartment booking website made with OctoberCMS."
+     ["octobercms"]
+     "website")
+    (project
+     "G.I.M. Gase"
+     "https://gimgase.hr"
+     "Personal website/portfolio for house construction made with Grav CMS."
+     ["laravel" "react.js"]
+     "business-application")
+    (project
+     "wakatime/chrome-wakatime"
+     "https://github.com/wakatime/chrome-wakatime"
+     "Chrome extension for automatic time tracking and metrics generated from your browsing activity. Wrote initial version then handed the code over to the wakatime organization."
+     ["react.js" "chrome-extension" "open-source"]
+     "github-repository")
+    (project
+     "mabasic/kalista"
+     "https://github.com/mabasic/kalista"
+     "Movies and TV shows file organizer helper."
+     ["php" "cli" "open-source"]
+     "github-repository")
+    (project
+     "mabasic/crozilla-integration"
+     "https://github.com/mabasic/crozilla-integration"
+     "Generates XML response for crozilla real estate sync integration."
+     ["php-library" "open-source"]
+     "github-repository")
+    (project
+     "laravelista/Illaoi"
+     "https://github.com/laravelista/Illaoi"
+     "Generates slugs for Laravel"
+     ["laravel-package" "open-source"]
+     "github-repository")
+    (project
+     "laravelista/Syndra"
+     "https://github.com/laravelista/Syndra"
+     "Syndra is a Laravel package. It provides predefined JSON responses to use in API development."
+     ["laravel-package" "open-source"]
+     "github-repository")
+    (project
+     "laravelista/treeline-lumen"
+     "https://github.com/laravelista/treeline-lumen"
+     "Project Hub for all of your projects."
+     ["lumen-project" "open-source"]
+     "github-repository")
+    (project
+     "laravelista/Lissandra"
+     "https://github.com/laravelista/Lissandra"
+     "API for Laracasts Feed built with Lumen."
+     ["lumen-project" "open-source"]
+     "github-repository")
+    (project
+     "laravelista/Bard"
+     "https://github.com/laravelista/Bard"
+     "Developer friendly Bard that writes sitemap poetry in xml."
+     ["php-library" "open-source"]
+     "github-repository")
+    (project
+     "laravelista/Ekko"
+     "https://github.com/laravelista/Ekko"
+     "Framework agnostic PHP package for marking navigation items active."
+     ["php-library" "laravel-support" "open-source"]
+     "github-repository")
+    (project
+     "laravelista/lumen-vendor-publish"
+     "https://github.com/laravelista/lumen-vendor-publish"
+     "Vendor publish command for Lumen framework."
+     ["lumen-package" "open-source"]
+     "github-repository")
+    (project
+     "bugsnag/bugsnag-laravel"
+     "https://github.com/bugsnag/bugsnag-laravel/pull/79"
+     "Update README.md #79."
+     ["pull-request" "open-source"]
+     "pull-request")
+    (project
+     "tiipiik/OctoberCMS-RoomBooking"
+     "https://github.com/tiipiik/OctoberCMS-RoomBooking/pull/7"
+     "Room full description can now be translated #7."
+     ["pull-request" "open-source"]
+     "pull-request")])

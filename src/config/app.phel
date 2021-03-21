@@ -1,0 +1,11 @@
+(ns app\config\app)
+
+# Application Environment
+(defn environment []
+  (let [env (php/aget php/$_ENV "APP_ENV")]
+    (if (or (= env "") (nil? env)) "local" env)))
+
+# Application URL
+(defn url []
+  (let [url (php/aget php/$_ENV "APP_URL")]
+    (if (or (= url "") (nil? url)) "http://localhost" url)))

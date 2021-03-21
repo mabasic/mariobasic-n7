@@ -1,0 +1,27 @@
+(ns app\mailers\ses
+  (:require app\config\services)
+  (:require app\config\mail)
+  (:use Aws\Ses\SesClient))
+
+(defn client []
+  (php/new SesClient
+           (php-associative-array
+            "version" "latest"
+            "region" (services/ses-region)
+            "credentials" (php-associative-array
+                           "secret" (services/ses-secret)
+                           "key" (services/ses-key)))))
+
+(defn send [@{:to to :subject subject :message message :reply-to reply-to}]
+  (php/-> (client) (sendEmail
+                    (php-associative-array
+                     "Destination" (php-associative-array
+                                    "ToAddresses" (php/array to))
+                     "Message" (php-associative-array
+                                "Body" (php-associative-array
+                                        "Html" (php-associative-array
+                                                "Data" message))
+                                "Subject" (php-associative-array
+                                           "Data" subject))
+                     "ReplyToAddresses" (php/array reply-to)
+                     "Source" (mail/from-address)))))

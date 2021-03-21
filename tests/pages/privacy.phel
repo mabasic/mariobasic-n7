@@ -1,0 +1,9 @@
+(ns app\tests\pages\privacy
+  (:require phel\test :refer [deftest is])
+  (:require app\pages\privacy))
+
+(def rendered (privacy/render @{:uri @{:host "/"}}))
+
+(deftest test-render
+  (is (= 200 (get rendered :status)))
+  (is (string? (get rendered :body))))

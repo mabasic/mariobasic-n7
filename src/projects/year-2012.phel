@@ -1,0 +1,16 @@
+(ns app\projects\year-2012
+  (:require app\projects\project :refer [project]))
+
+(def index
+  @[(project
+     "Villa \"Renata\""
+     "https://firstclassmurter.com"
+     "Apartment renting website made with Joomla."
+     ["joomla"]
+     "website")
+    (project
+     "mabasic/flasknotes"
+     "https://github.com/mabasic/flasknotes"
+     "Technology showcase for flask, sqlalchemy, backbone, jade templates, bootstrap and sqlite."
+     ["python" "flask" "backbone.js" "sqlalchemy" "open-source"]
+     "github-repository")])

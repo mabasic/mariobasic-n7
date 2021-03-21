@@ -1,0 +1,11 @@
+(ns app\config\services)
+
+(defn ses-key []
+  (php/aget php/$_ENV "AWS_ACCESS_KEY_ID"))
+
+(defn ses-secret []
+  (php/aget php/$_ENV "AWS_SECRET_ACCESS_KEY"))
+
+(defn ses-region []
+  (let [region (php/aget php/$_ENV "AWS_DEFAULT_REGION")]
+    (if (or (= region "") (nil? region)) "us-east-1" region)))

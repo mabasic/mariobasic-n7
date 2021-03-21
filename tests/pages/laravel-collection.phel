@@ -1,0 +1,9 @@
+(ns app\tests\pages\laravel-collection
+  (:require phel\test :refer [deftest is])
+  (:require app\pages\laravel-collection))
+
+(def rendered (laravel-collection/render @{:uri @{:host "/"}}))
+
+(deftest test-render
+  (is (= 200 (get rendered :status)))
+  (is (string? (get rendered :body))))

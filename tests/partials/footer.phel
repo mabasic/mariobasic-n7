@@ -1,0 +1,8 @@
+(ns app\tests\partials\footer
+  (:require phel\test :refer [deftest is])
+  (:require app\partials\footer))
+
+(def rendered (footer/render))
+
+(deftest test-render
+  (is (tuple? rendered)))

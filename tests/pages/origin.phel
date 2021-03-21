@@ -1,0 +1,9 @@
+(ns app\tests\pages\origin
+  (:require phel\test :refer [deftest is])
+  (:require app\pages\origin))
+
+(def rendered (origin/render @{:uri @{:host "/"}}))
+
+(deftest test-render
+  (is (= 200 (get rendered :status)))
+  (is (string? (get rendered :body))))

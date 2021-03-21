@@ -1,0 +1,16 @@
+(ns app\config\mail)
+
+# Default Mailer
+(defn default []
+  (let [mailer (php/aget php/$_ENV "MAIL_MAILER")]
+    (if (or (= mailer "") (nil? mailer)) "log" mailer)))
+
+# Global "From" Address
+(defn from-address []
+  (let [address (php/aget php/$_ENV "MAIL_FROM_ADDRESS")]
+    (if (or (= address "") (nil? address)) "hello@example.com" address)))
+
+# Global "From" Name
+(defn from-name []
+  (let [name (php/aget php/$_ENV "MAIL_FROM_NAME")]
+    (if (or (= name "") (nil? name)) "Example" name)))

@@ -1,0 +1,52 @@
+(ns app\projects\year-2018
+  (:require app\projects\project :refer [project]))
+
+(def index
+  @[(project
+     "Go Visit"
+     "https://govisit.hr"
+     "Company website for a software company made with Laravel."
+     ["laravel"]
+     "website")
+    (project
+     "Shipyard \"Ćiro\""
+     "https://brodogradiliste-ciro.hr"
+     "Company website for shipyard Ćiro made with Grav CMS."
+     ["grav-cms"]
+     "website")
+    (project
+     "Damex"
+     "https://damex.hr"
+     "Simple company website for a bookkeeping business made with HTML, CSS and PHP."
+     ["html" "css" "php"]
+     "website")
+    (project
+     "Dragan Bašić"
+     "https://draganbasic.com"
+     "Personal website/portfolio for house construction made with Grav CMS."
+     ["grav-cms"]
+     "website")
+    (project
+     "laravelista/picasso"
+     "https://github.com/laravelista/picasso"
+     "Laravel Image Management and Optimization Package."
+     ["laravel-package" "open-source"]
+     "github-repository")
+    (project
+     "laravelista/loki"
+     "https://github.com/laravelista/loki"
+     "Laravel localization done right."
+     ["laravel-package" "open-source"]
+     "github-repository")
+    (project
+     "tiipiik/OctoberCMS-RoomBooking"
+     "https://github.com/tiipiik/OctoberCMS-RoomBooking/pulls?q=is%3Apr+author%3Amabasic"
+     "Fixed wrong bookedDates #17. Fixed getBookedDates Carbon error #16. Workaround for amount and total_nights #19."
+     ["pull-request" "open-source"]
+     "pull-request")
+    (project
+     "laravel/docs"
+     "https://github.com/laravel/docs/pull/4868"
+     "Updated Codeship instructions #4868."
+     ["pull-request" "open-source"]
+     "pull-request")])

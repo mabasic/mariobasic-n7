@@ -1,0 +1,18 @@
+(ns app\mailers\log
+  (:require app\config\mail)
+  (:require app\logger))
+
+(defn get-headers [subject from to reply-to]
+  (str
+   "Date: " (php/date "Y-m-d H:i:s") php/PHP_EOL
+   "Subject: " subject php/PHP_EOL
+   "From: <" from ">" php/PHP_EOL
+   (if-not (nil? reply-to) (str "Reply-To: <" reply-to ">" php/PHP_EOL))
+   "To: <" to ">" php/PHP_EOL))
+
+(defn send [@{:to to :subject subject :message message :reply-to reply-to}]
+  (logger/debug
+   (str
+    (get-headers subject (mail/from-address) to reply-to)
+    php/PHP_EOL
+    message)))

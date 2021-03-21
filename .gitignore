@@ -1,0 +1,7 @@
+/vendor/
+composer.lock
+.phel-repl-history
+node_modules
+public/*.map
+.env
+.env.production

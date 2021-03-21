@@ -1,0 +1,34 @@
+(ns app\projects\year-2020
+  (:require app\projects\project :refer [project]))
+
+(def index
+  @[(project
+     "Stay in Adriatic"
+     "https://stayinadriatic.com"
+     "Accommodation booking website made with Laravel."
+     ["laravel"]
+     "website")
+    (project
+     "Futurista"
+     "https://futurista.hr"
+     "Company website/blog made with Laravel. Design adapted from a Ghost blog template. Uses self made sponsorware blog laravel package."
+     ["laravel" "ghost-template" "algo"]
+     "website")
+    (project
+     "mabasic/basic-theme-vscode"
+     "https://github.com/mabasic/basic-theme-vscode"
+     "Minimalist monochrome themes for Visual Studio Code."
+     ["vscode-theme" "open-source"]
+     "github-repository")
+    (project
+     "mabasic/phel-lumen-demo"
+     "https://github.com/mabasic/phel-lumen-demo"
+     "Demonstrates how to get Lumen working with Phel."
+     ["phel" "lumen" "demo" "open-source"]
+     "github-repository")
+    (project
+     "phel-lang/phel-lang"
+     "https://github.com/phel-lang/phel-lang/pulls?q=is%3Apr+author%3Amabasic"
+     "Multiple PRs: #136, #135, #92, #70, #46, #39"
+     ["pull-request" "open-source"]
+     "pull-request")])

@@ -1,0 +1,97 @@
+(ns app\validator
+  (:require mabasic\json\json)
+  (:require app\helpers))
+
+# It replaces underscore and dash with a blank space.
+# Example: (prettify-field "first_name") outputs "first name".
+(defn prettify-field [field]
+  (php/str_replace (php/array "_" "-") " " field))
+
+# It returns true if the `field` key is present in request :parsed-body,
+# value of the `field` is not nil or an empty string "", otherwise false.
+(defn rule-required [request field]
+  (let [data (helpers/extract-data-from-request request)
+        error-message (str "The " (prettify-field field) " is required.")]
+    (if
+      (find
+       (fn [key] (= key (keyword field)))
+       (keys data))
+      (let [field-value ((keyword field) data)]
+        (if
+          (or
+           (nil? field-value)
+           (= field-value ""))
+          error-message
+          true))
+      error-message)))
+
+(defn rule-string [request field  & [field-rule]]
+  (let [data (helpers/extract-data-from-request request)
+        field-value ((keyword field) data)
+        field-rule (or field-rule @{:rule :string})]
+    (if (string? field-value)
+      (let [rule-validation-results
+            (filter
+             (fn [result] (not (or (nil? result) (true? result))))
+             (for [[rule-key rule-value] :pairs (unset field-rule :rule)]
+               (case rule-key
+                 :max (if (<= (php/strlen field-value) rule-value)
+                        true
+                        (str "The " (prettify-field field) " may not be greater than " rule-value " characters.")))))]
+        (first rule-validation-results))
+      (str "The " (prettify-field field) " must be a string."))))
+
+(defn rule-accepted [request field]
+  (let [data (helpers/extract-data-from-request request)
+        field-value ((keyword field) data)]
+    (if
+      (or
+       (= field-value "yes")
+       (= field-value "on")
+       (= field-value 1)
+       (= field-value true))
+      true
+      (str "The " (prettify-field field) " must be accepted."))))
+
+# It returns true if the field is null, otherwise it returns nil.
+(defn rule-nullable [request field]
+  (let [data (helpers/extract-data-from-request request)
+        field-value ((keyword field) data)]
+    (if (nil? field-value) true)))
+
+# It returns :result true if validation has passed. 
+# In this case :errors should be an empty table.
+(defn validate [request rules]
+  (let [errors @{}]
+    (foreach [field field-rules rules]
+      (let [# It returns a boolean depending if the field-rules contain :nullable value.
+            field-has-nullable-rule (not (nil? (find (fn [x] (= x :nullable)) field-rules)))
+            # It returns a boolean depending if the field-value is null
+            field-value-is-null (if field-has-nullable-rule (rule-nullable request field) false)
+            field-validation-results
+            # If field-rules contain :nullable and field-value is null, it returns an empty array,
+            # otherwise it returns an array with validation error messages if any.
+            (if (and field-has-nullable-rule field-value-is-null) @[]
+                (filter
+                  # It filters results which are nil or true. It keeps only validation messages.
+                 (fn [result] (not (or (nil? result) (true? result))))
+                 (for [field-rule :in field-rules]
+                   (cond
+                     (= field-rule :required) (rule-required request field)
+                     (= field-rule :string) (rule-string request field)
+                     (= field-rule :accepted) (rule-accepted request field)
+                     (table? field-rule)
+                     (case (:rule field-rule)
+                        # Handles additional string rule options like: max, min, etc ...
+                       :string (rule-string request field field-rule))))))]
+        (if (> (count field-validation-results) 0)
+          (put errors field field-validation-results))))
+    @{:result (= (count errors) 0)
+      :errors errors}))
+
+(defn validation-failed-response [errors]
+  @{:status 422
+    :headers @{"Content-Type" "application/json"}
+    :body (json/encode
+           @{:message "The given data was invalid."
+             :errors errors})})

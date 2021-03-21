@@ -1,0 +1,5 @@
+(ns app\csrf)
+
+# Taken from: https://www.eschrade.com/page/generating-secure-cross-site-request-forgery-tokens-csrf/
+(defn generate-token []
+  (php/base64_encode (php/openssl_random_pseudo_bytes 32)))

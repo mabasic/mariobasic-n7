@@ -1,0 +1,31 @@
+(ns app\middleware\verify-csrf-token
+  (:require mabasic\json\json))
+
+(defn is-reading [request]
+  (let [request-method (get request :method)
+        result (find
+                (fn [method]
+                  (= request-method method))
+                ["HEAD" "GET" "OPTIONS"])]
+    (not (nil? result))))
+
+(defn get-token-from-request [request]
+  (let [token (get (get request :parsed-body) "_token")]
+    (if (nil? token)
+      (get (get request :headers) :x-csrf-token)
+      token)))
+
+(defn tokens-match [request]
+  (= (php/aget php/$_SESSION "_token") (get-token-from-request request)))
+
+(defn handle [request]
+  (if
+    (or
+     (is-reading request)
+     (tokens-match request))
+    request
+    @{:status 419
+      :headers @{"Content-Type" "application/json"}
+      # To redirect to a different path use status 302 and headers bellow.
+      # :headers @{"Location" (:path (:uri request))}
+      :body (json/encode @{:message "CSRF token mismatch."})}))

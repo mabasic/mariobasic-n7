@@ -1,0 +1,30 @@
+(ns app\helpers
+  (:require mabasic\json\json))
+
+# It returns data from :parsed-body if any, otherwise it looks for data
+# in php://input, else it returns and empty table.
+(defn extract-data-from-request [request]
+  (or
+   (:parsed-body request)
+   (or
+    (json/decode (php/file_get_contents "php://input"))
+    @{})))
+
+# Taken from mabasic/json library.
+(defn- valid-key? [v]
+  (or (int? v) (float? v) (symbol? v) (keyword? v) (string? v)))
+
+# Taken from mabasic/json library because it is private.
+(defn encode-value [x]
+  (cond
+    (php/is_iterable x)
+    (let [arr (php/array)]
+      (foreach [k v x]
+        (when-not (valid-key? k)
+          (throw (php/new \Exception "Key can only be an integer, float, symbol, keyword or a string.")))
+        (php/aset arr (encode-value k) (encode-value v)))
+      arr)
+    (symbol? x) (str (php/-> x (getName)))
+    (keyword? x) (str (php/-> x (getName)))
+    (float? x) (str x)
+    true x))

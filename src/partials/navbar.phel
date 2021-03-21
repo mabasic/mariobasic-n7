@@ -1,0 +1,53 @@
+(ns app\partials\navbar)
+
+(defn- is-active-class [active-item path]
+  (cond
+    (string? path) (if (= active-item path) " active" "")
+    (tuple? path) (if (find (fn [x] (= active-item x)) path) " active" "")))
+
+(defn render [active-item]
+  [:nav @{:class "navbar navbar-expand-lg navbar-light"}
+   [:div @{:class "container-fluid px-0"}
+    [:a @{:class "navbar-brand" :href "/"}
+     [:img @{:src "/logo.svg" :alt "Mario Bašić logo"}]]
+    [:button @{:class "navbar-toggler"
+               :type "button"
+               :data-bs-toggle "collapse"
+               :data-bs-target "#navbarTogglerDemo03"
+               :aria-controls "navbarTogglerDemo03"
+               :aria-expanded "false"
+               :aria-label "Toggle navigation"}
+     [:span @{:class "navbar-toggler-icon"}]]
+    [:div @{:class "collapse navbar-collapse justify-content-end" :id "navbarTogglerDemo03"}
+     [:ul @{:class "navbar-nav mb-2 mb-lg-0"}
+      [:li @{:class "nav-item"}
+       [:a @{:class (str "nav-link" (is-active-class active-item "/")) :href "/"} "Home"]
+       [:li @{:class "nav-item"}
+        [:a @{:class (str "nav-link" (is-active-class active-item "/origin")) :href "/origin"} "The Origin Story"]]
+       [:li @{:class "nav-item"}
+        [:a @{:class (str "nav-link" (is-active-class active-item "/portfolio")) :href "/portfolio"} "Portfolio"]]
+       [:li @{:class "nav-item dropdown"}
+        [:a @{:class (str "nav-link dropdown-toggle" (is-active-class active-item ["/a-collection-of-laravel-tutorials"]))
+              :href "#"
+              :id "BooksMenuLink"
+              :role "button"
+              :data-bs-toggle "dropdown"
+              :aria-expanded "false"} "Books"]
+        [:ul @{:class "dropdown-menu" :aria-labelledby "BooksMenuLink"}
+         [:li
+          [:a
+           @{:class (str "dropdown-item" (is-active-class active-item "/a-collection-of-laravel-tutorials"))
+             :href "/a-collection-of-laravel-tutorials"} "A Collection of Laravel Tutorials"]]]]
+       [:li @{:class "nav-item dropdown"}
+        [:a @{:class (str "nav-link dropdown-toggle" (is-active-class active-item ["/code-of-conduct" "/contributing" "/backers"]))
+              :href "#"
+              :id "OpenSourceMenuLink"
+              :role "button"
+              :data-bs-toggle "dropdown"
+              :aria-expanded "false"} "Open Source"]
+        [:ul @{:class "dropdown-menu" :aria-labelledby "OpenSourceMenuLink"}
+         [:li [:a @{:class (str "dropdown-item" (is-active-class active-item "/code-of-conduct")) :href "/code-of-conduct"} "Code of Conduct"]]
+         [:li [:a @{:class (str "dropdown-item" (is-active-class active-item "/contributing")) :href "/contributing"} "Contributing"]]
+         [:li [:a @{:class (str "dropdown-item" (is-active-class active-item "/backers")) :href "/backers"} "Backers"]]]]
+       [:li @{:class "nav-item"}
+        [:a @{:class (str "nav-link" (is-active-class active-item "/start")) :href "/start"} "Start 🚀"]]]]]]])

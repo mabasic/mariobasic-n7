@@ -1,0 +1,197 @@
+$dropdown-link-active-bg: #2e2f2f;
+$form-select-indicator-color: #ffffff;
+@import '~bootstrap/scss/bootstrap';
+
+$fa-font-path: '~@fortawesome/fontawesome-free/webfonts';
+@import '~@fortawesome/fontawesome-free/scss/fontawesome';
+@import '~@fortawesome/fontawesome-free/scss/solid';
+@import '~@fortawesome/fontawesome-free/scss/brands';
+
+$primary-color: #0d6efd;
+$secondary-color: #0b5ed8;
+
+::selection {
+  background-color: #ffea00;
+  color: #323336;
+}
+
+.paper {
+  background: #fff;
+  box-shadow:
+    /* The top layer shadow */ 0 -1px 1px rgba(0, 0, 0, 0.15),
+    /* The second layer */ 0 -10px 0 -5px #eee,
+    /* The second layer shadow */ 0 -10px 1px -4px rgba(0, 0, 0, 0.15),
+    /* The third layer */ 0 -20px 0 -10px #eee,
+    /* The third layer shadow */ 0 -20px 1px -9px rgba(0, 0, 0, 0.15);
+
+  /* Padding for demo purposes */
+  padding: 30px;
+}
+
+.white .container {
+  padding-top: 50px;
+  padding-bottom: 60px;
+  background-color: #ffffff;
+  margin-top: 30px;
+}
+
+.black .container {
+  padding-top: 80px;
+  padding-bottom: 60px;
+  background-color: #2e2f2f;
+  color: #ffffff;
+  padding-left: 30px;
+  padding-right: 30px;
+
+  .start-success-icon {
+    font-size: 175px;
+  }
+
+  .summary-item {
+    border-bottom: 1px solid #616161;
+
+    span.summary-item-value {
+      word-break: break-all;
+    }
+  }
+
+  // This code bellow makes for look "good" on a dark background.
+  form .form-control,
+  form .form-floating > .form-control,
+  form .form-floating > .form-select,
+  form .form-select {
+    background-color: #2e2f2f;
+    color: inherit;
+    // border: none;
+    // border-bottom: 1px solid #ced4da;
+    border-color: #616161;
+    // border-radius: 0px;
+
+    &:focus {
+      // background-color: inherit;
+      // border-bottom: 1px dashed #ced4da;
+      color: inherit;
+      // box-shadow: none;
+    }
+
+    // Only used in .form-select case.
+    & > option {
+      color: #ffffff;
+    }
+  }
+}
+
+footer.black .container {
+  margin-bottom: 30px;
+}
+
+p.indent {
+  text-indent: 5rem;
+}
+
+body {
+  background-color: #e6e6e6;
+}
+
+.black-group {
+  padding-bottom: 50px;
+
+  .black-group-title {
+    padding-bottom: 20px;
+  }
+}
+
+.number-unit {
+  .number-unit-left {
+    width: 100%;
+    max-width: 70px;
+    min-width: 70px;
+  }
+
+  .number-unit-title {
+    color: rgba(255, 255, 255, 0.85);
+  }
+
+  .number-unit-body {
+    color: rgba(255, 255, 255, 0.7);
+  }
+}
+
+.icon-unit {
+  .icon-unit-left {
+    width: 100%;
+    max-width: 50px;
+    min-width: 50px;
+  }
+
+  .icon-unit-title {
+    color: rgba(255, 255, 255, 0.85);
+  }
+
+  .icon-unit-body {
+    color: rgba(255, 255, 255, 0.7);
+  }
+}
+
+.centered-icon-unit {
+  .centered-icon-unit-title {
+    color: rgba(255, 255, 255, 0.85);
+  }
+
+  .centered-icon-unit-body {
+    color: rgba(255, 255, 255, 0.7);
+  }
+}
+
+.animation-container {
+  position: relative;
+  max-width: 320px;
+  margin: 0 auto;
+
+  .animation-link {
+    &:hover .animation-cta {
+      margin-left: 40px;
+    }
+
+    &:hover .animation-block {
+      background: $secondary-color;
+      transition: background 0.27s cubic-bezier(0.3, 0.1, 0.58, 1);
+    }
+
+    .animation-cta {
+      transition: margin 700ms;
+      position: absolute;
+      top: 40px;
+      left: 0;
+    }
+
+    .animation-block {
+      margin-left: 60px;
+      height: 200px;
+      width: 200px;
+      background: $primary-color;
+      transition: background 0.27s cubic-bezier(0.3, 0.1, 0.58, 1);
+    }
+  }
+}
+
+.unit {
+  .unit-title {
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.85);
+  }
+
+  .unit-title > .unit-subtitle {
+    font-weight: normal;
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  .unit-intro {
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  .unit-body {
+    color: rgba(255, 255, 255, 0.4);
+  }
+}

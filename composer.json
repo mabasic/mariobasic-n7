@@ -1,0 +1,38 @@
+{
+  "name": "mabasic/mariobasic-n7",
+  "description": "My personal website built with Phel.",
+  "authors": [
+    {
+      "name": "Mario Bašić",
+      "email": "mario@laravelista.hr"
+    }
+  ],
+  "minimum-stability": "dev",
+  "require": {
+    "php": "^7.4|^8.0",
+    "aws/aws-sdk-php": "^3.175",
+    "mabasic/phel-json": "^0.1.0",
+    "phel-lang/phel-lang": "^0.2",
+    "rakibtg/sleekdb": "^2.8",
+    "vlucas/phpdotenv": "^5.3"
+  },
+  "config": {
+    "optimize-autoloader": true,
+    "preferred-install": "dist",
+    "sort-packages": true
+  },
+  "prefer-stable": true,
+  "extra": {
+    "phel": {
+      "loader": {
+        "app\\": "src/"
+      },
+      "loader-dev": {
+        "app\\tests\\": "tests/"
+      },
+      "tests": [
+        "tests/"
+      ]
+    }
+  }
+}

@@ -1,0 +1,80 @@
+(ns app\boot
+  (:require phel\http)
+  (:require app\pages\home)
+  (:require app\pages\code-of-conduct)
+  (:require app\pages\contributing)
+  (:require app\pages\backers)
+  (:require app\pages\privacy)
+  (:require app\pages\origin)
+  (:require app\pages\laravel-collection)
+  (:require app\pages\portfolio)
+  (:require app\pages\start)
+  (:require app\csrf)
+  (:require app\middleware\verify-csrf-token)
+  (:use Dotenv\Dotenv))
+
+(def dotenv (php/:: Dotenv (createImmutable (str __DIR__ "/../"))))
+
+(php/-> dotenv (load))
+(php/-> dotenv (required (php/array "APP_ENV" "APP_URL")))
+
+(php/session_name "mariobasic_session")
+(php/session_start)
+
+(if (nil? (php/aget php/$_SESSION "_token"))
+  (php/aset php/$_SESSION "_token" (csrf/generate-token)))
+
+(defstruct route [method url page])
+
+(def routes
+  [(route "GET" "/" home/render)
+   (route "GET" "/code-of-conduct" code-of-conduct/render)
+   (route "GET" "/contributing" contributing/render)
+   (route "GET" "/backers" backers/render)
+   (route "GET" "/privacy" privacy/render)
+   (route "GET" "/origin" origin/render)
+   (route "GET" "/portfolio" portfolio/render)
+   (route "GET" "/a-collection-of-laravel-tutorials" laravel-collection/render)
+   (route "GET" "/start" start/render)
+   (route "POST" "/start" start/store)])
+
+(def global-middleware [verify-csrf-token/handle])
+
+(def request (http/request-from-globals))
+
+(defn route-match [request routes]
+  (let
+    [route
+     (find
+      (fn [route]
+        (and
+         (=
+          (get route :url)
+          (get (get request :uri) :path))
+         (=
+          (get route :method)
+          (get request :method))))
+      routes)]
+    (cond
+      (nil? route)
+      @{:status 404
+        :body "Page not found"}
+      true
+      ((get route :page) request))))
+
+(defn run-global-middleware [request global-middleware]
+  (if (= (count global-middleware) 0)
+    request
+    (let [response ((first global-middleware) request)]
+      (if (= response request)
+        (recur request (rest global-middleware))
+        response))))
+
+(defn emit-response [response]
+  (let [rsp (http/create-response-from-table response)]
+    (http/emit-response rsp)))
+
+(let [response (run-global-middleware request global-middleware)]
+  (if (= response request)
+    (emit-response (route-match request routes))
+    (emit-response response)))

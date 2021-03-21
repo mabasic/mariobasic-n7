@@ -1,0 +1,54 @@
+(ns app\pages\origin
+  (:require app\layouts\main))
+
+(def white
+  [:div
+   [:h1 @{:class "display-1 pt-5 mt-5"} "The Origin Story"]
+   [:p [:a @{:href "/" :class "text-dark"} "home"] "/ origin"]])
+
+(def animation [:div @{:class "animation-container"}
+                [:a @{:href "/start" :class "animation-link link-light"}
+                 [:div @{:class "animation-cta display-5"} "Let's work" [:br] [:u "together"] " 🚀"]
+                 [:div @{:class "animation-block"}]]])
+
+(defn number-unit [number title body]
+  [:div @{:class "number-unit d-flex"}
+   [:div @{:class "number-unit-left me-0 me-sm-3 me-md-4 me-lg-5"} [:span @{:class "display-1"} number]]
+   [:div @{:class "number-unit-right"}
+    [:h3 @{:class "number-unit-title mt-3"} title]
+    [:p @{:class "number-unit-body"} body]]])
+
+(def black
+  [:div
+   [:div @{:class "row pb-5"}
+    [:div @{:class "col-lg-6"}
+     [:p [:b "Laravelista was the name of the blog on which I wrote tutorials related to the Laravel framework, web application development, testing and other things related to Laravel."]]
+     [:p @{:class "indent"} "After a year the blog had on a monthly basis over a thousand unique visitors and that figure has only increased from month to month. After seeing that there is a growing market for Laravel tutorials, I decided to start writing tutorials that were accurate and clearly written for a monthly or annual subscription. Along with them came the source code, and I also offered support via comments on tutorials."]
+     [:p @{:class "indent"} "I've made a new web application just for writing tutorials, posting tutorials, and managing subscriptions and comments. In order to be able to charge people subscription over the web site I have opened a personal company."]
+     [:p @{:class "indent"} "I called my company Laravelista by the name of the blog. During the first year I wrote a couple of interesting tutorials, one of them was on the topic of JWT Authentication and the Lumen framework. Since I was one of the first, if not the first one who managed to implement Lumen with JWT authentication and write a tutorial about it, a lot of people contacted me about it. This resulted in my second release of this tutorial after a few months with an even simpler implementation method."]
+     [:p @{:class "indent"} "In the same period I made a couple of open-source packages for Laravel that were positively received by the Laravel community."]]
+    [:div @{:class "col-lg-6"}
+     [:p @{:class "indent"} "I wrote a Codeship article in which I showed how to make a Laravel application, write tests for it, set up a continuous integration with the Codeship service and make an automatic deployment on the Heroku application hosting platform. Because of these tutorials and open-source packages I have begun to receive offers from other developers to implement some of my packages in their application or to come to work for them as a freelancer on the development of new functionalities. Initially, I refused such jobs because I was involved in writing tutorials, maintaining and upgrading my own web application for tutorials and subscriptions. After I came to the situation that I was tired of writing tutorials and it was not bringing me the pleasure I had at first, I turned to new challenges."]
+     [:p [:b "To complete this chapter in my life, I wrote the book \"A Collection of Laravel Tutorials\", which I independently published on the Leanpub Service."]]
+     [:p @{:class "indent"} "In it I have listed, processed and categorized all of my tutorials from the moment of starting my company up to the moment of shutting down my web application for selling tutorials. The book can be purchased via the Leanpub service along with an additional small book containing all of the articles I have posted since the beginning of the Laravelista blog."]
+     [:p @{:class "text-end"} [:i "I'm always looking for new challenges and interesting projects."]]
+     [:p @{:class "text-end"} [:b "Mario Bašić"]]]]
+   [:div @{:class "row mt-5 pt-5"}
+    [:div @{:class "col-lg-6"}
+     (number-unit "01" "Project planning" "Defining a project proposal, software requirements specification,  and project quote.")]
+    [:div @{:class "col-lg-6"}
+     (number-unit "02" "Development phase" "Building software features according to the software requirements specification.")]]
+   [:div @{:class "row mt-lg-5"}
+    [:div @{:class "col-lg-6"}
+     (number-unit "03" "Software delivery" "Delivering the final product with complete documentation and source code.")]
+    [:div @{:class "col-lg-6"}
+     animation]]])
+
+(defn render [request]
+  @{:status 200
+    :body (main/render
+           request
+           @{:title "The Origin Story | Mario Bašić"
+             :meta-description "Read the origin story of Laravelista and how it all started."
+             :white white
+             :black black})})

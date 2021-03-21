@@ -1,0 +1,56 @@
+(ns app\partials\footer)
+
+(defn render []
+  [:footer @{:class "black"}
+   [:div @{:class "container"}
+    [:div @{:class "row justify-content-center px-5"}
+     [:div @{:class "col"}
+      [:hr]
+      [:p @{:class "text-muted d-flex justify-content-between flex-md-row flex-column"}
+       [:small
+        "©️ Mario Bašić 2014-" (php/date "Y") ".  All rights reserved. Made with " [:a @{:href "https://phel-lang.org/" :rel "noopener nofollow" :target "_blank" :class "link-light"} "Phel-lang"] "." [:br]
+        [:a @{:href "/privacy" :class "link-light"} "Privacy Notice"]
+        [:a @{:href "https://github.com/mabasic/mariobasic-n7" :rel "noopener nofollow" :target "_blank" :class "link-light ms-2"} "Source Code"]]
+       [:span
+        [:a
+         @{:class "btn btn-link link-light"
+           :href "https://linkedin.com/in/mabasic"
+           :title "LinkedIn"
+           :rel "noopener nofollow"
+           :target "_blank"}
+         [:i @{:class "fab fa-fw fa-linkedin-in"}]]
+        [:a
+         @{:class "btn btn-link link-light"
+           :href "https://www.patreon.com/laravelista"
+           :title "Patreon"
+           :rel "noopener nofollow"
+           :target "_blank"}
+         [:i @{:class "fab fa-fw fa-patreon"}]]
+        [:a
+         @{:class "btn btn-link link-light"
+           :href "https://www.paypal.me/laravelista"
+           :title "PayPal"
+           :rel "noopener nofollow"
+           :target "_blank"}
+         [:i @{:class "fab fa-fw fa-paypal"}]]
+        [:a
+         @{:class "btn btn-link link-light"
+           :href "https://m.do.co/c/1bae3920f1e0"
+           :title "DigitalOcean"
+           :rel "noopener nofollow"
+           :target "_blank"}
+         [:i @{:class "fab fa-fw fa-digital-ocean"}]]
+        [:a
+         @{:class "btn btn-link link-light"
+           :href "https://github.com/mabasic"
+           :title "GitHub (mabasic)"
+           :rel "noopener nofollow"
+           :target "_blank"}
+         [:i @{:class "fab fa-fw fa-github"}]]
+        [:a
+         @{:class "btn btn-link link-light"
+           :href "https://github.com/laravelista"
+           :title "GitHub (laravelista)"
+           :rel "noopener nofollow"
+           :target "_blank"}
+         [:i @{:class "fab fa-fw fa-github-alt"}]]]]]]]])

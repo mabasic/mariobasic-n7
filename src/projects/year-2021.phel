@@ -1,0 +1,34 @@
+(ns app\projects\year-2021
+  (:require app\projects\project :refer [project]))
+
+(def index
+  @[(project
+     "Mario Bašić (this website)"
+     "https://mariobasic.com"
+     "My personal/business portfolio/resume website made with Phel, React.js and Rescript."
+     ["phel" "react.js" "rescript"]
+     "website")
+    (project
+     "mabasic/phel-json"
+     "https://github.com/mabasic/phel-json"
+     "Library for converting Phel datastructures to and from JSON."
+     ["phel-library" "open-source"]
+     "github-repository")
+    (project
+     "mabasic/phel-cli"
+     "https://github.com/mabasic/phel-cli"
+     "Getting started CLI template for Phel lang."
+     ["phel-template" "open-source"]
+     "github-repository")
+    (project
+     "mabasic/phel-web"
+     "https://github.com/mabasic/phel-web"
+     "Getting started Web template for Phel lang."
+     ["phel-template" "open-source"]
+     "github-repository")
+    (project
+     "phel-lang/phel-lang"
+     "https://github.com/phel-lang/phel-lang/pulls?q=is%3Apr+author%3Amabasic"
+     "Fixes typo #164. Fixes partition function #246."
+     ["pull-request" "open-source"]
+     "pull-request")])
