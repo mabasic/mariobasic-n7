@@ -11,6 +11,8 @@
    (if-not (nil? (php/aget php/$_SESSION "_token"))
      [:meta @{:name "csrf-token" :content (php/aget php/$_SESSION "_token")}])
    [:link @{:href "/main.css" :rel "stylesheet"}]
+   [:link @{:href "/3eb06c702e27fb110194.woff2" :rel "preload" :as "font" :type "font/woff2" :crossorigin true}]
+   [:link @{:href "/6e63bd22128f27b83f22.woff2" :rel "preload" :as "font" :type "font/woff2" :crossorigin true}]
    [:link @{:href "/favicon.ico" :rel "icon"}]
    [:link @{:href "/favicon.png" :rel "shortcut icon"}]
    [:link @{:href "/apple-touch-icon.png" :rel "apple-touch-icon"}]

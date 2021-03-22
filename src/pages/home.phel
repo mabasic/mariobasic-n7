@@ -18,7 +18,7 @@
 
 (defn group [title & units]
   [:div @{:class "black-group"}
-   [:h5 @{:class "black-group-title"} title]
+   [:h2 @{:class "black-group-title"} title]
    units])
 
 (defn unit
