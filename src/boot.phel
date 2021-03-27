@@ -9,6 +9,7 @@
   (:require app\pages\laravel-collection)
   (:require app\pages\portfolio)
   (:require app\pages\start)
+  (:require app\pages\page-not-found)
   (:require app\csrf)
   (:require app\middleware\verify-csrf-token)
   (:use Dotenv\Dotenv))
@@ -57,8 +58,7 @@
       routes)]
     (cond
       (nil? route)
-      @{:status 404
-        :body "Page not found"}
+      (page-not-found/render request)
       true
       ((get route :page) request))))
 
