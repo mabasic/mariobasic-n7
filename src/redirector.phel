@@ -1,0 +1,15 @@
+(ns app\redirector
+  (:require app\config\app)
+  (:require mabasic\json\json))
+
+(defn moved-permanently [to]
+  @{:status 301
+    :headers @{"Content-Type" "application/json"}
+    :headers @{"Location" (str (app/url) to)}
+    :body (json/encode @{:message "Resource requested has been definitively moved to the URL given by the Location header."})})
+
+(defn found [to]
+  @{:status 302
+    :headers @{"Content-Type" "application/json"}
+    :headers @{"Location" (str (app/url) to)}
+    :body (json/encode @{:message "Resource requested has been temporarily moved to the URL given by the Location header."})})

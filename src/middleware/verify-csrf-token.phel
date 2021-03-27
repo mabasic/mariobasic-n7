@@ -26,6 +26,4 @@
     request
     @{:status 419
       :headers @{"Content-Type" "application/json"}
-      # To redirect to a different path use status 302 and headers bellow.
-      # :headers @{"Location" (:path (:uri request))}
       :body (json/encode @{:message "CSRF token mismatch."})}))

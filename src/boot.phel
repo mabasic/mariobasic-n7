@@ -11,6 +11,7 @@
   (:require app\pages\start)
   (:require app\pages\page-not-found)
   (:require app\csrf)
+  (:require app\redirector)
   (:require app\middleware\verify-csrf-token)
   (:use Dotenv\Dotenv))
 
@@ -27,6 +28,8 @@
 
 (defstruct route [method url page])
 
+(defstruct redirect [from to handler])
+
 (def routes
   [(route "GET" "/" home/render)
    (route "GET" "/code-of-conduct" code-of-conduct/render)
@@ -39,28 +42,49 @@
    (route "GET" "/start" start/render)
    (route "POST" "/start" start/store)])
 
+(def redirects
+  [(redirect "/about" "/origin" redirector/moved-permanently)
+  (redirect "/the-book" "/a-collection-of-laravel-tutorials" redirector/moved-permanently)
+  (redirect "/blog" "/a-collection-of-laravel-tutorials" redirector/moved-permanently)
+  (redirect "/signup" "/a-collection-of-laravel-tutorials" redirector/moved-permanently)
+  (redirect "/login" "/a-collection-of-laravel-tutorials" redirector/moved-permanently)
+  (redirect "/json-web-token-authentication-for-lumen" "/a-collection-of-laravel-tutorials" redirector/moved-permanently)
+  (redirect "/laravel-fractal" "/a-collection-of-laravel-tutorials" redirector/moved-permanently)
+  (redirect "/satis-composer-repository-for-your-private-packages" "/a-collection-of-laravel-tutorials" redirector/moved-permanently)
+  (redirect "/using-beanstalkd-with-laravel" "/a-collection-of-laravel-tutorials" redirector/moved-permanently)
+  (redirect "/deploy-your-app-to-digitialocean-from-codeship-using-envoy" "/a-collection-of-laravel-tutorials" redirector/moved-permanently)
+  (redirect "/build-an-api-with-lumen-and-fractal" "/a-collection-of-laravel-tutorials" redirector/moved-permanently)])
+
 (def global-middleware [verify-csrf-token/handle])
 
 (def request (http/request-from-globals))
 
 (defn route-match [request routes]
   (let
-    [route
-     (find
-      (fn [route]
-        (and
-         (=
-          (get route :url)
-          (get (get request :uri) :path))
-         (=
-          (get route :method)
-          (get request :method))))
-      routes)]
+    [route (find
+            (fn [route]
+              (and
+               (=
+                (get route :url)
+                (get (get request :uri) :path))
+               (=
+                (get route :method)
+                (get request :method))))
+            routes)
+     redirect (find
+               (fn [redirect]
+                 (and
+                  (=
+                   (get redirect :from)
+                   (get (get request :uri) :path))
+                  (=
+                   "GET"
+                   (get request :method))))
+               redirects)]
     (cond
-      (nil? route)
-      (page-not-found/render request)
-      true
-      ((get route :page) request))))
+      (and (nil? route) (nil? redirect)) (page-not-found/render request)
+      (not (nil? redirect)) ((:handler redirect) (:to redirect))
+      true ((get route :page) request))))
 
 (defn run-global-middleware [request global-middleware]
   (if (= (count global-middleware) 0)
