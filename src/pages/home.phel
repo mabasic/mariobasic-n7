@@ -2,12 +2,13 @@
   (:require app\layouts\main))
 
 (def white
-  [:div
+  [:div @{:id "root"}
    [:h1 @{:class "display-1 pt-5 mt-5"} "Mario Bašić."]
    [:p @{:class "lead pb-3"} "[ Full Stack Developer ] MSc, Information Technology Management"]
    [:p "Full stack PHP/JavaScript developer from Croatia, specialized in building web & mobile applications. Author of the book: “A Collection of Laravel Tutorials”, creator of open-source projects, and a father."]
    [:p @{:class "mb-5"}
-    [:a @{:class "btn btn-dark btn-lg mb-2 me-3" :href "/start"} "Let's work together 🚀"]]
+    [:a @{:class "btn btn-dark btn-lg mb-2 me-3" :href "/start"} "Let's work together 🚀"]
+    [:button @{:class "my-button"} "Click me"]]
    [:div @{:class "row mt-5 pt-5"}
     [:div @{:class "col-lg-4"} [:b @{:class "pe-3"} "Address"] "Murter, Croatia"]
     [:div @{:class "col-lg-4"} [:b @{:class "pe-3"} "Email"] "mario@laravelista.hr"]

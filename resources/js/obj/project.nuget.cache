@@ -1,0 +1,21 @@
+{
+  "version": 2,
+  "dgSpecHash": "WBRu4nDOe9pCfFD770PQuGj6HKdBXEUp4s4tl7StDFCPiZf6vZgJhLdg4LTfjuAgZGZ+bMirKyG4vGIZc/eZug==",
+  "success": true,
+  "projectFilePath": "/home/mabasic/code/src/github.com/mabasic/mariobasic-n7/resources/js/App.fsproj",
+  "expectedPackageFiles": [
+    "/home/mabasic/.nuget/packages/fable.ast/3.0.0/fable.ast.3.0.0.nupkg.sha512",
+    "/home/mabasic/.nuget/packages/fable.browser.blob/1.1.0/fable.browser.blob.1.1.0.nupkg.sha512",
+    "/home/mabasic/.nuget/packages/fable.browser.dom/2.2.0/fable.browser.dom.2.2.0.nupkg.sha512",
+    "/home/mabasic/.nuget/packages/fable.browser.event/1.2.1/fable.browser.event.1.2.1.nupkg.sha512",
+    "/home/mabasic/.nuget/packages/fable.browser.webstorage/1.0.0/fable.browser.webstorage.1.0.0.nupkg.sha512",
+    "/home/mabasic/.nuget/packages/fable.core/3.2.3/fable.core.3.2.3.nupkg.sha512",
+    "/home/mabasic/.nuget/packages/fable.react/7.0.1/fable.react.7.0.1.nupkg.sha512",
+    "/home/mabasic/.nuget/packages/feliz/1.40.0/feliz.1.40.0.nupkg.sha512",
+    "/home/mabasic/.nuget/packages/feliz.compilerplugins/1.5.0/feliz.compilerplugins.1.5.0.nupkg.sha512",
+    "/home/mabasic/.nuget/packages/fsharp.core/5.0.0/fsharp.core.5.0.0.nupkg.sha512",
+    "/home/mabasic/.nuget/packages/microsoft.netcore.platforms/1.1.0/microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "/home/mabasic/.nuget/packages/netstandard.library/2.0.3/netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

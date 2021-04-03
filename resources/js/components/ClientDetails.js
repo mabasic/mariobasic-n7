@@ -1,7 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import FormInput from './FormInput.js'
-import FormSelect from './FormSelect.js'
+// import FormInput from './FormInput.js'
+import { FormInput } from './FormInput.fs.js'
+// import FormSelect from './FormSelect.js'
+import { FormSelect } from './FormSelect.fs.js'
 import countries from '../constants/countries.js'
 
 class ClientDetails extends React.Component {
