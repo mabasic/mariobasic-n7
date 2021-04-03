@@ -23,3 +23,5 @@ ReactDOM.render(GetStarted, document.getElementById "get-started")
 // Types
 
 type Field = { error: string; value: string }
+
+type SelectOption = { value: string; text: string }

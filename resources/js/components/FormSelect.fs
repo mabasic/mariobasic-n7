@@ -1,8 +1,7 @@
 module FormSelect
 
 open Feliz
-
-type SelectOption = {value: string; text: string}
+open App
 
 let selectPlaceholder = Html.option [
     prop.value ""
@@ -14,7 +13,7 @@ let selectPlaceholder = Html.option [
 let FormSelect(name: string,
                placeholder: string, 
                options: SelectOption array, 
-               field: App.Field, 
+               field: Field, 
                onChange: Browser.Types.Event -> unit) : ReactElement =
     Html.div [
         prop.className "mb-3"
@@ -25,18 +24,22 @@ let FormSelect(name: string,
             ] 
             Html.select [
                 prop.className 
-                    (if String.length field.error > 0 then "form-control is-invalid" else "form-control") 
+                    (if String.length field.error > 0 
+                     then "form-control is-invalid" 
+                     else "form-control") 
                 prop.name name
                 prop.id name
                 prop.value field.value
                 prop.onChange onChange
                 prop.ariaLabel placeholder
-                prop.children (Array.append [|selectPlaceholder|] (Array.map (fun x -> 
-                    Html.option [
-                        prop.value x.value
-                        prop.key x.value
-                        prop.text x.text
-                    ]) options))
+                prop.children (Array.append 
+                    [|selectPlaceholder|] 
+                    (Array.map (fun x -> 
+                        Html.option [
+                            prop.value x.value
+                            prop.key x.value
+                            prop.text x.text
+                        ]) options))
             ]
             if String.length field.error > 0 then Html.label [
                 prop.className "invalid-feedback"

@@ -14160,170 +14160,153 @@ function Field$reflection() {
 
 /***/ }),
 
-/***/ "./resources/js/components/ClientDetails.js":
-/*!**************************************************!*\
-  !*** ./resources/js/components/ClientDetails.js ***!
-  \**************************************************/
+/***/ "./resources/js/components/ClientDetails.fs.js":
+/*!*****************************************************!*\
+  !*** ./resources/js/components/ClientDetails.fs.js ***!
+  \*****************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   "ClientDetails": () => (/* binding */ ClientDetails)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _FormInput_fs_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./FormInput.fs.js */ "./resources/js/components/FormInput.fs.js");
-/* harmony import */ var _FormSelect_fs_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./FormSelect.fs.js */ "./resources/js/components/FormSelect.fs.js");
-/* harmony import */ var _constants_countries_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../constants/countries.js */ "./resources/js/constants/countries.js");
-
- // import FormInput from './FormInput.js'
-
- // import FormSelect from './FormSelect.js'
+/* harmony import */ var _fable_Feliz_1_40_0_Interop_fs_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../.fable/Feliz.1.40.0/Interop.fs.js */ "./resources/js/.fable/Feliz.1.40.0/Interop.fs.js");
+/* harmony import */ var _fable_fable_library_3_1_1_List_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../.fable/fable-library.3.1.1/List.js */ "./resources/js/.fable/fable-library.3.1.1/List.js");
+/* harmony import */ var _FormInput_fs_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./FormInput.fs.js */ "./resources/js/components/FormInput.fs.js");
+/* harmony import */ var _FormSelect_fs_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./FormSelect.fs.js */ "./resources/js/components/FormSelect.fs.js");
+/* harmony import */ var _constants_countries_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../constants/countries.js */ "./resources/js/constants/countries.js");
 
 
 
 
-class ClientDetails extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
-  render() {
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h2", {
-      className: "mt-0 mb-3"
-    }, "Tell Me About Yourself"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-      className: "border-cont"
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-      className: "row pt-2"
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-      className: "col-md-12 mb-3"
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "Fields marked with ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("b", null, "*"), " are required.")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-      className: "col-md-6"
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_FormInput_fs_js__WEBPACK_IMPORTED_MODULE_2__.FormInput, {
-      type: "text",
-      name: "first_name",
-      placeholder: "First Name*",
-      onChange: this.props.onInputChange,
-      field: this.props.firstName
-    })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-      className: "col-md-6"
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_FormInput_fs_js__WEBPACK_IMPORTED_MODULE_2__.FormInput, {
-      type: "text",
-      name: "last_name",
-      placeholder: "Last Name*",
-      onChange: this.props.onInputChange,
-      field: this.props.lastName
-    })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-      className: "col-md-12"
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_FormInput_fs_js__WEBPACK_IMPORTED_MODULE_2__.FormInput, {
-      type: "text",
-      name: "company_name",
-      placeholder: "Company Name",
-      onChange: this.props.onInputChange,
-      field: this.props.companyName
-    })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-      className: "col-md-12"
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_FormInput_fs_js__WEBPACK_IMPORTED_MODULE_2__.FormInput, {
-      type: "text",
-      name: "vat_number",
-      placeholder: "VAT Number",
-      onChange: this.props.onInputChange,
-      field: this.props.vatNumber
-    })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-      className: "col-md-12"
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_FormInput_fs_js__WEBPACK_IMPORTED_MODULE_2__.FormInput, {
-      type: "text",
-      name: "address",
-      placeholder: "Address*",
-      onChange: this.props.onInputChange,
-      field: this.props.address
-    })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-      className: "col-md-6"
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_FormInput_fs_js__WEBPACK_IMPORTED_MODULE_2__.FormInput, {
-      type: "text",
-      name: "city",
-      placeholder: "City / Town*",
-      onChange: this.props.onInputChange,
-      field: this.props.city
-    })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-      className: "col-md-6"
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_FormInput_fs_js__WEBPACK_IMPORTED_MODULE_2__.FormInput, {
-      type: "text",
-      name: "zip_code",
-      placeholder: "Zip Code*",
-      onChange: this.props.onInputChange,
-      field: this.props.zipCode
-    })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-      className: "col-md-12"
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_FormSelect_fs_js__WEBPACK_IMPORTED_MODULE_3__.FormSelect, {
-      name: "country",
-      placeholder: "Select a country*",
-      onChange: this.props.onInputChange,
-      field: this.props.country,
-      options: _constants_countries_js__WEBPACK_IMPORTED_MODULE_4__.default
-    })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-      className: "col-md-6"
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_FormInput_fs_js__WEBPACK_IMPORTED_MODULE_2__.FormInput, {
-      type: "email",
-      name: "email_address",
-      placeholder: "Email Address*",
-      onChange: this.props.onInputChange,
-      field: this.props.emailAddress
-    })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-      className: "col-md-6"
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_FormInput_fs_js__WEBPACK_IMPORTED_MODULE_2__.FormInput, {
-      type: "tel",
-      name: "phone",
-      placeholder: "Phone*",
-      onChange: this.props.onInputChange,
-      field: this.props.phone
-    })))));
-  }
 
+
+function ClientDetails(clientDetailsInputProps) {
+  let children;
+  const phone = clientDetailsInputProps.phone;
+  const emailAddress = clientDetailsInputProps.emailAddress;
+  const country = clientDetailsInputProps.country;
+  const zipCode = clientDetailsInputProps.zipCode;
+  const city = clientDetailsInputProps.city;
+  const address = clientDetailsInputProps.address;
+  const vatNumber = clientDetailsInputProps.vatNumber;
+  const companyName = clientDetailsInputProps.companyName;
+  const lastName = clientDetailsInputProps.lastName;
+  const firstName = clientDetailsInputProps.firstName;
+  const onInputChange = clientDetailsInputProps.onInputChange;
+  const children_2 = (0,_fable_fable_library_3_1_1_List_js__WEBPACK_IMPORTED_MODULE_2__.ofArray)([/*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
+    className: "mt-0 mb-3",
+    children: "Tell Me About Yourself"
+  }), /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "border-cont",
+    children: _fable_Feliz_1_40_0_Interop_fs_js__WEBPACK_IMPORTED_MODULE_1__.Interop_reactApi.Children.toArray([/*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+      className: "row pt-2",
+      children: _fable_Feliz_1_40_0_Interop_fs_js__WEBPACK_IMPORTED_MODULE_1__.Interop_reactApi.Children.toArray([/*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+        className: "col-md-12 mb-3",
+        children: _fable_Feliz_1_40_0_Interop_fs_js__WEBPACK_IMPORTED_MODULE_1__.Interop_reactApi.Children.toArray([(children = (0,_fable_fable_library_3_1_1_List_js__WEBPACK_IMPORTED_MODULE_2__.ofArray)(["Fields marked with ", /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("b", {
+          children: ["*"]
+        }), " are required."]), /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
+          children: _fable_Feliz_1_40_0_Interop_fs_js__WEBPACK_IMPORTED_MODULE_1__.Interop_reactApi.Children.toArray(Array.from(children))
+        }))])
+      }), /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+        className: "col-md-6",
+        children: _fable_Feliz_1_40_0_Interop_fs_js__WEBPACK_IMPORTED_MODULE_1__.Interop_reactApi.Children.toArray([/*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_FormInput_fs_js__WEBPACK_IMPORTED_MODULE_3__.FormInput, {
+          name: "first_name",
+          placeholder: "First Name*",
+          inputType: "text",
+          field: firstName,
+          onChange: onInputChange
+        })])
+      }), /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+        className: "col-md-6",
+        children: _fable_Feliz_1_40_0_Interop_fs_js__WEBPACK_IMPORTED_MODULE_1__.Interop_reactApi.Children.toArray([/*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_FormInput_fs_js__WEBPACK_IMPORTED_MODULE_3__.FormInput, {
+          name: "last_name",
+          placeholder: "Last Name*",
+          inputType: "text",
+          field: lastName,
+          onChange: onInputChange
+        })])
+      }), /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+        className: "col-md-12",
+        children: _fable_Feliz_1_40_0_Interop_fs_js__WEBPACK_IMPORTED_MODULE_1__.Interop_reactApi.Children.toArray([/*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_FormInput_fs_js__WEBPACK_IMPORTED_MODULE_3__.FormInput, {
+          name: "company_name",
+          placeholder: "Company Name",
+          inputType: "text",
+          field: companyName,
+          onChange: onInputChange
+        })])
+      }), /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+        className: "col-md-12",
+        children: _fable_Feliz_1_40_0_Interop_fs_js__WEBPACK_IMPORTED_MODULE_1__.Interop_reactApi.Children.toArray([/*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_FormInput_fs_js__WEBPACK_IMPORTED_MODULE_3__.FormInput, {
+          name: "vat_number",
+          placeholder: "VAT Number",
+          inputType: "text",
+          field: vatNumber,
+          onChange: onInputChange
+        })])
+      }), /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+        className: "col-md-12",
+        children: _fable_Feliz_1_40_0_Interop_fs_js__WEBPACK_IMPORTED_MODULE_1__.Interop_reactApi.Children.toArray([/*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_FormInput_fs_js__WEBPACK_IMPORTED_MODULE_3__.FormInput, {
+          name: "address",
+          placeholder: "Address*",
+          inputType: "text",
+          field: address,
+          onChange: onInputChange
+        })])
+      }), /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+        className: "col-md-6",
+        children: _fable_Feliz_1_40_0_Interop_fs_js__WEBPACK_IMPORTED_MODULE_1__.Interop_reactApi.Children.toArray([/*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_FormInput_fs_js__WEBPACK_IMPORTED_MODULE_3__.FormInput, {
+          name: "city",
+          placeholder: "City / Town*",
+          inputType: "text",
+          field: city,
+          onChange: onInputChange
+        })])
+      }), /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+        className: "col-md-6",
+        children: _fable_Feliz_1_40_0_Interop_fs_js__WEBPACK_IMPORTED_MODULE_1__.Interop_reactApi.Children.toArray([/*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_FormInput_fs_js__WEBPACK_IMPORTED_MODULE_3__.FormInput, {
+          name: "zip_code",
+          placeholder: "Zip Code*",
+          inputType: "text",
+          field: zipCode,
+          onChange: onInputChange
+        })])
+      }), /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+        className: "col-md-12",
+        children: _fable_Feliz_1_40_0_Interop_fs_js__WEBPACK_IMPORTED_MODULE_1__.Interop_reactApi.Children.toArray([/*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_FormSelect_fs_js__WEBPACK_IMPORTED_MODULE_4__.FormSelect, {
+          name: "country",
+          placeholder: "Select a country*",
+          options: _constants_countries_js__WEBPACK_IMPORTED_MODULE_5__.default,
+          field: country,
+          onChange: onInputChange
+        })])
+      }), /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+        className: "col-md-6",
+        children: _fable_Feliz_1_40_0_Interop_fs_js__WEBPACK_IMPORTED_MODULE_1__.Interop_reactApi.Children.toArray([/*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_FormInput_fs_js__WEBPACK_IMPORTED_MODULE_3__.FormInput, {
+          name: "email_address",
+          placeholder: "Email Address*",
+          inputType: "email",
+          field: emailAddress,
+          onChange: onInputChange
+        })])
+      }), /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+        className: "col-md-6",
+        children: _fable_Feliz_1_40_0_Interop_fs_js__WEBPACK_IMPORTED_MODULE_1__.Interop_reactApi.Children.toArray([/*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_FormInput_fs_js__WEBPACK_IMPORTED_MODULE_3__.FormInput, {
+          name: "phone",
+          placeholder: "Phone*",
+          inputType: "tel",
+          field: phone,
+          onChange: onInputChange
+        })])
+      })])
+    })])
+  })]);
+  return /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    children: _fable_Feliz_1_40_0_Interop_fs_js__WEBPACK_IMPORTED_MODULE_1__.Interop_reactApi.Children.toArray(Array.from(children_2))
+  });
 }
-
-ClientDetails.propTypes = {
-  firstName: prop_types__WEBPACK_IMPORTED_MODULE_1___default().shape({
-    value: (prop_types__WEBPACK_IMPORTED_MODULE_1___default().string),
-    error: (prop_types__WEBPACK_IMPORTED_MODULE_1___default().string)
-  }),
-  lastName: prop_types__WEBPACK_IMPORTED_MODULE_1___default().shape({
-    value: (prop_types__WEBPACK_IMPORTED_MODULE_1___default().string),
-    error: (prop_types__WEBPACK_IMPORTED_MODULE_1___default().string)
-  }),
-  companyName: prop_types__WEBPACK_IMPORTED_MODULE_1___default().shape({
-    value: (prop_types__WEBPACK_IMPORTED_MODULE_1___default().string),
-    error: (prop_types__WEBPACK_IMPORTED_MODULE_1___default().string)
-  }),
-  vatNumber: prop_types__WEBPACK_IMPORTED_MODULE_1___default().shape({
-    value: (prop_types__WEBPACK_IMPORTED_MODULE_1___default().string),
-    error: (prop_types__WEBPACK_IMPORTED_MODULE_1___default().string)
-  }),
-  address: prop_types__WEBPACK_IMPORTED_MODULE_1___default().shape({
-    value: (prop_types__WEBPACK_IMPORTED_MODULE_1___default().string),
-    error: (prop_types__WEBPACK_IMPORTED_MODULE_1___default().string)
-  }),
-  city: prop_types__WEBPACK_IMPORTED_MODULE_1___default().shape({
-    value: (prop_types__WEBPACK_IMPORTED_MODULE_1___default().string),
-    error: (prop_types__WEBPACK_IMPORTED_MODULE_1___default().string)
-  }),
-  zipCode: prop_types__WEBPACK_IMPORTED_MODULE_1___default().shape({
-    value: (prop_types__WEBPACK_IMPORTED_MODULE_1___default().string),
-    error: (prop_types__WEBPACK_IMPORTED_MODULE_1___default().string)
-  }),
-  country: prop_types__WEBPACK_IMPORTED_MODULE_1___default().shape({
-    value: (prop_types__WEBPACK_IMPORTED_MODULE_1___default().string),
-    error: (prop_types__WEBPACK_IMPORTED_MODULE_1___default().string)
-  }),
-  emailAddress: prop_types__WEBPACK_IMPORTED_MODULE_1___default().shape({
-    value: (prop_types__WEBPACK_IMPORTED_MODULE_1___default().string),
-    error: (prop_types__WEBPACK_IMPORTED_MODULE_1___default().string)
-  }),
-  phone: prop_types__WEBPACK_IMPORTED_MODULE_1___default().shape({
-    value: (prop_types__WEBPACK_IMPORTED_MODULE_1___default().string),
-    error: (prop_types__WEBPACK_IMPORTED_MODULE_1___default().string)
-  }),
-  onInputChange: (prop_types__WEBPACK_IMPORTED_MODULE_1___default().func)
-};
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ClientDetails);
 
 /***/ }),
 
@@ -14513,9 +14496,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (/* binding */ GetStarted)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var _ClientDetails_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ClientDetails.js */ "./resources/js/components/ClientDetails.js");
+/* harmony import */ var _ClientDetails_fs_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ClientDetails.fs.js */ "./resources/js/components/ClientDetails.fs.js");
 /* harmony import */ var _ProjectDetails_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ProjectDetails.js */ "./resources/js/components/ProjectDetails.js");
 /* harmony import */ var _Summary_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Summary.js */ "./resources/js/components/Summary.js");
+ // import ClientDetails from './ClientDetails.js'
 
 
 
@@ -14733,7 +14717,7 @@ class GetStarted extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
       className: "row"
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
       className: "col-lg-7"
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_ClientDetails_js__WEBPACK_IMPORTED_MODULE_1__.default, {
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_ClientDetails_fs_js__WEBPACK_IMPORTED_MODULE_1__.ClientDetails, {
       onInputChange: this.handleInputChange,
       firstName: this.state.form_fields.first_name,
       lastName: this.state.form_fields.last_name,

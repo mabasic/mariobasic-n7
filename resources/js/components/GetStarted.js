@@ -1,5 +1,6 @@
 import React from 'react'
-import ClientDetails from './ClientDetails.js'
+// import ClientDetails from './ClientDetails.js'
+import { ClientDetails } from './ClientDetails.fs.js'
 import ProjectDetails from './ProjectDetails.js'
 import Summary from './Summary.js'
 
