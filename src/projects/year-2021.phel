@@ -31,4 +31,10 @@
      "https://github.com/phel-lang/phel-lang/pulls?q=is%3Apr+author%3Amabasic"
      "Fixes typo #164. Fixes partition function #246."
      ["pull-request" "open-source"]
+     "pull-request")
+    (project
+     "mrlesmithjr/ansible-netplan"
+     "https://github.com/mrlesmithjr/ansible-netplan/pull/26"
+     "Better comments/instructions #26."
+     ["pull-request" "open-source"]
      "pull-request")])

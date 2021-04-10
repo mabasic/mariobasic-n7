@@ -5,3 +5,4 @@ node_modules
 public/*.map
 .env
 .env.production
+.ionide/
