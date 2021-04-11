@@ -64,7 +64,7 @@ let private addZipCode (zipCode: Field) (country: Field) (input: string) =
 
 let private getFullAddress (address: Field) (city: Field) (zipCode: Field) (country: Field) =
     let output = 
-        "" 
+        System.String.Empty 
         |> addAddress address city zipCode country 
         |> addCity city zipCode country 
         |> addZipCode zipCode country 
