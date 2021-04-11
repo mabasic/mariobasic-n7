@@ -7,3 +7,5 @@ public/*.map
 .env.production
 .fake
 .ionide
+resources/js/bin
+resources/js/obj
