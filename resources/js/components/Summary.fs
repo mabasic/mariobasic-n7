@@ -5,9 +5,7 @@ open Feliz
 open App
 
 let private getFullName (firstName: Field) (lastName: Field) =
-    if 
-        String.length firstName.value > 0 || 
-        String.length lastName.value > 0 
+    if String.length firstName.value > 0 || String.length lastName.value > 0 
     then
         Html.p [
             prop.className "d-flex justify-content-between summary-item"
@@ -23,73 +21,48 @@ let private getFullName (firstName: Field) (lastName: Field) =
                 ]
             ]
         ]
-    else
-        Html.none
+    else Html.none
 
 let private getField (field: Field) (text: string) =
     match field.value with
-        | "" -> Html.none
-        | _ -> 
-            Html.p [
-                prop.className "d-flex justify-content-between summary-item"
-                prop.children [
-                    Html.span text
-                    Html.span [
-                        prop.className "summary-item-value"
-                        prop.children [
-                            Html.text field.value
-                        ]
+    | "" -> Html.none
+    | _ -> 
+        Html.p [
+            prop.className "d-flex justify-content-between summary-item"
+            prop.children [
+                Html.span text
+                Html.span [
+                    prop.className "summary-item-value"
+                    prop.children [
+                        Html.text field.value
                     ]
                 ]
             ]
+        ]
 
 let private addCountry (country: Field) (input: string) =  
-    if String.length country.value > 0 then 
-        input + country.value
-    else 
-        input
+    if String.length country.value > 0 then input + country.value 
+    else input
 
-let private addAddress (address: Field)
-                       (city: Field) 
-                       (zipCode: Field)
-                       (country: Field)
-                       (input: string) =  
+let private addAddress (address: Field) (city: Field) (zipCode: Field) (country: Field) (input: string) =  
     if String.length address.value > 0 && 
         (String.length city.value > 0 || 
-            String.length zipCode.value > 0 || 
-            String.length country.value > 0) then 
-        input + address.value + ", "
-    elif String.length address.value > 0 then 
-        input + address.value 
-    else 
-        input
+         String.length zipCode.value > 0 || String.length country.value > 0) then input + address.value + ", "
+    elif String.length address.value > 0 then input + address.value 
+    else input
 
-let private addCity (city: Field) 
-                    (zipCode: Field)
-                    (country: Field)
-                    (input: string) =  
+let private addCity (city: Field) (zipCode: Field) (country: Field) (input: string) =  
     if String.length city.value > 0 && 
-        (String.length zipCode.value > 0 || String.length country.value > 0) then 
-        input + city.value + " "
-    elif String.length city.value > 0 then 
-        input + city.value
-    else 
-        input
+        (String.length zipCode.value > 0 || String.length country.value > 0) then input + city.value + " "
+    elif String.length city.value > 0 then input + city.value
+    else input
 
-let private addZipCode (zipCode: Field)
-                       (country: Field)
-                       (input: string) =
-    if String.length zipCode.value > 0 && String.length country.value > 0 then 
-        input + zipCode.value + ", "
-    elif String.length zipCode.value > 0 then
-        input + zipCode.value
-    else
-        input
+let private addZipCode (zipCode: Field) (country: Field) (input: string) =
+    if String.length zipCode.value > 0 && String.length country.value > 0 then input + zipCode.value + ", "
+    elif String.length zipCode.value > 0 then input + zipCode.value
+    else input
 
-let private getFullAddress (address: Field)
-                           (city: Field)
-                           (zipCode: Field)
-                           (country: Field) =
+let private getFullAddress (address: Field) (city: Field) (zipCode: Field) (country: Field) =
     let output = 
         "" 
         |> addAddress address city zipCode country 
@@ -98,18 +71,19 @@ let private getFullAddress (address: Field)
         |> addCountry country
 
     match String.length output > 0 with
-    | true -> Html.p [
-                prop.className "d-flex justify-content-between summary-item"
-                prop.children [
-                    Html.span "Address"
-                    Html.span [
-                        prop.className "summary-item-value"
-                        prop.children [
-                            Html.text output
-                        ]
+    | true -> 
+        Html.p [
+            prop.className "d-flex justify-content-between summary-item"
+            prop.children [
+                Html.span "Address"
+                Html.span [
+                    prop.className "summary-item-value"
+                    prop.children [
+                        Html.text output
                     ]
                 ]
             ]
+        ]
     | false -> Html.none
 
 [<ReactComponent>]
