@@ -90,18 +90,12 @@ let private getFullAddress (address: Field)
                            (city: Field)
                            (zipCode: Field)
                            (country: Field) =
-
-    let addressTransform = addAddress address city zipCode country
-    let cityTransform = addCity city zipCode country
-    let zipCodeTransform = addZipCode zipCode country
-    let countryTransform = addCountry country
-
     let output = 
         "" 
-        |> addressTransform 
-        |> cityTransform 
-        |> zipCodeTransform 
-        |> countryTransform
+        |> addAddress address city zipCode country 
+        |> addCity city zipCode country 
+        |> addZipCode zipCode country 
+        |> addCountry country
 
     match String.length output > 0 with
     | true -> Html.p [

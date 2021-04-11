@@ -82,11 +82,7 @@ function addZipCode(zipCode, country, input) {
 }
 
 function getFullAddress(address, city, zipCode, country) {
-    const addressTransform = (input) => addAddress(address, city, zipCode, country, input);
-    const cityTransform = (input_1) => addCity(city, zipCode, country, input_1);
-    const zipCodeTransform = (input_2) => addZipCode(zipCode, country, input_2);
-    const countryTransform = (input_3) => addCountry(country, input_3);
-    const output = countryTransform(zipCodeTransform(cityTransform(addressTransform(""))));
+    const output = addCountry(country, addZipCode(zipCode, country, addCity(city, zipCode, country, addAddress(address, city, zipCode, country, ""))));
     if (output.length > 0) {
         return createElement("p", {
             className: "d-flex justify-content-between summary-item",
