@@ -16812,7 +16812,7 @@ readers do not read off random characters that represent icons */
   font-weight: 900;
   font-display: block;
   src: url(6606667d9800a27eb8b5.eot);
-  src: url(6606667d9800a27eb8b5.eot?#iefix) format("embedded-opentype"), url(3eb06c702e27fb110194.woff2) format("woff2"), url(f4f93856730733912b1e.woff) format("woff"), url(915a0b79c22a1c1f64da.ttf) format("truetype"), url(0454203f26b33fc02e2b.svg#fontawesome) format("svg");
+  src: url(6606667d9800a27eb8b5.eot??#iefix) format("embedded-opentype"), url(3eb06c702e27fb110194.woff2) format("woff2"), url(f4f93856730733912b1e.woff) format("woff"), url(915a0b79c22a1c1f64da.ttf) format("truetype"), url(0454203f26b33fc02e2b.svg#fontawesome) format("svg");
 }
 .fa,
 .fas {
@@ -16830,7 +16830,7 @@ readers do not read off random characters that represent icons */
   font-weight: 400;
   font-display: block;
   src: url(98f20b9ec79b2fee02a3.eot);
-  src: url(98f20b9ec79b2fee02a3.eot?#iefix) format("embedded-opentype"), url(6e63bd22128f27b83f22.woff2) format("woff2"), url(5f63cb7f47b6ea89773b.woff) format("woff"), url(330e879afe4a0abb35f2.ttf) format("truetype"), url(991c1c761fc31f9c3252.svg#fontawesome) format("svg");
+  src: url(98f20b9ec79b2fee02a3.eot??#iefix) format("embedded-opentype"), url(6e63bd22128f27b83f22.woff2) format("woff2"), url(5f63cb7f47b6ea89773b.woff) format("woff"), url(330e879afe4a0abb35f2.ttf) format("truetype"), url(991c1c761fc31f9c3252.svg#fontawesome) format("svg");
 }
 .fab {
   font-family: "Font Awesome 5 Brands";
