@@ -8,6 +8,7 @@
     <Compile Include="components/FormInput.fs" />
     <Compile Include="components/FormSelect.fs" />
     <Compile Include="components/ClientDetails.fs" />
+    <Compile Include="components/Summary.fs" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Fable.Browser.Dom" Version="2.2.0" />

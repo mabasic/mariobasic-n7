@@ -14130,7 +14130,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "GetStarted": () => (/* binding */ GetStarted),
 /* harmony export */   "Field": () => (/* binding */ Field),
-/* harmony export */   "Field$reflection": () => (/* binding */ Field$reflection)
+/* harmony export */   "Field$reflection": () => (/* binding */ Field$reflection),
+/* harmony export */   "BooleanField": () => (/* binding */ BooleanField),
+/* harmony export */   "BooleanField$reflection": () => (/* binding */ BooleanField$reflection),
+/* harmony export */   "SelectOption": () => (/* binding */ SelectOption),
+/* harmony export */   "SelectOption$reflection": () => (/* binding */ SelectOption$reflection)
 /* harmony export */ });
 /* harmony import */ var _fable_Feliz_1_40_0_ReactDOM_fs_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./.fable/Feliz.1.40.0/ReactDOM.fs.js */ "./resources/js/.fable/Feliz.1.40.0/ReactDOM.fs.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
@@ -14156,6 +14160,28 @@ class Field extends _fable_fable_library_3_1_1_Types_js__WEBPACK_IMPORTED_MODULE
 }
 function Field$reflection() {
   return (0,_fable_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_4__.record_type)("App.Field", [], Field, () => [["error", _fable_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_4__.string_type], ["value", _fable_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_4__.string_type]]);
+}
+class BooleanField extends _fable_fable_library_3_1_1_Types_js__WEBPACK_IMPORTED_MODULE_3__.Record {
+  constructor(error, value) {
+    super();
+    this.error = error;
+    this.value = value;
+  }
+
+}
+function BooleanField$reflection() {
+  return (0,_fable_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_4__.record_type)("App.BooleanField", [], BooleanField, () => [["error", _fable_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_4__.string_type], ["value", _fable_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_4__.bool_type]]);
+}
+class SelectOption extends _fable_fable_library_3_1_1_Types_js__WEBPACK_IMPORTED_MODULE_3__.Record {
+  constructor(value, text) {
+    super();
+    this.value = value;
+    this.text = text;
+  }
+
+}
+function SelectOption$reflection() {
+  return (0,_fable_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_4__.record_type)("App.SelectOption", [], SelectOption, () => [["value", _fable_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_4__.string_type], ["text", _fable_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_4__.string_type]]);
 }
 
 /***/ }),
@@ -14366,37 +14392,20 @@ function FormInput(formInputInputProps) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "SelectOption": () => (/* binding */ SelectOption),
-/* harmony export */   "SelectOption$reflection": () => (/* binding */ SelectOption$reflection),
 /* harmony export */   "selectPlaceholder": () => (/* binding */ selectPlaceholder),
 /* harmony export */   "FormSelect": () => (/* binding */ FormSelect)
 /* harmony export */ });
-/* harmony import */ var _fable_fable_library_3_1_1_Types_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../.fable/fable-library.3.1.1/Types.js */ "./resources/js/.fable/fable-library.3.1.1/Types.js");
-/* harmony import */ var _fable_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../.fable/fable-library.3.1.1/Reflection.js */ "./resources/js/.fable/fable-library.3.1.1/Reflection.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var _fable_Feliz_1_40_0_Interop_fs_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../.fable/Feliz.1.40.0/Interop.fs.js */ "./resources/js/.fable/Feliz.1.40.0/Interop.fs.js");
-/* harmony import */ var _fable_fable_library_3_1_1_List_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../.fable/fable-library.3.1.1/List.js */ "./resources/js/.fable/fable-library.3.1.1/List.js");
-/* harmony import */ var _fable_fable_library_3_1_1_Seq_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../.fable/fable-library.3.1.1/Seq.js */ "./resources/js/.fable/fable-library.3.1.1/Seq.js");
-/* harmony import */ var _fable_fable_library_3_1_1_Array_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../.fable/fable-library.3.1.1/Array.js */ "./resources/js/.fable/fable-library.3.1.1/Array.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _fable_Feliz_1_40_0_Interop_fs_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../.fable/Feliz.1.40.0/Interop.fs.js */ "./resources/js/.fable/Feliz.1.40.0/Interop.fs.js");
+/* harmony import */ var _fable_fable_library_3_1_1_List_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../.fable/fable-library.3.1.1/List.js */ "./resources/js/.fable/fable-library.3.1.1/List.js");
+/* harmony import */ var _fable_fable_library_3_1_1_Seq_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../.fable/fable-library.3.1.1/Seq.js */ "./resources/js/.fable/fable-library.3.1.1/Seq.js");
+/* harmony import */ var _fable_fable_library_3_1_1_Array_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../.fable/fable-library.3.1.1/Array.js */ "./resources/js/.fable/fable-library.3.1.1/Array.js");
 
 
 
 
 
-
-
-class SelectOption extends _fable_fable_library_3_1_1_Types_js__WEBPACK_IMPORTED_MODULE_0__.Record {
-  constructor(value, text) {
-    super();
-    this.value = value;
-    this.text = text;
-  }
-
-}
-function SelectOption$reflection() {
-  return (0,_fable_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.record_type)("FormSelect.SelectOption", [], SelectOption, () => [["value", _fable_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.string_type], ["text", _fable_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.string_type]]);
-}
-const selectPlaceholder = /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_2__.createElement)("option", {
+const selectPlaceholder = /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("option", {
   value: "",
   key: "",
   children: "Open this select menu"
@@ -14407,28 +14416,28 @@ function FormSelect(formSelectInputProps) {
   const options = formSelectInputProps.options;
   const placeholder = formSelectInputProps.placeholder;
   const name = formSelectInputProps.name;
-  return /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_2__.createElement)("div", {
+  return /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "mb-3",
-    children: _fable_Feliz_1_40_0_Interop_fs_js__WEBPACK_IMPORTED_MODULE_3__.Interop_reactApi.Children.toArray(Array.from((0,_fable_fable_library_3_1_1_List_js__WEBPACK_IMPORTED_MODULE_4__.ofSeq)((0,_fable_fable_library_3_1_1_Seq_js__WEBPACK_IMPORTED_MODULE_5__.delay)(() => (0,_fable_fable_library_3_1_1_Seq_js__WEBPACK_IMPORTED_MODULE_5__.append)((0,_fable_fable_library_3_1_1_Seq_js__WEBPACK_IMPORTED_MODULE_5__.singleton)( /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_2__.createElement)("label", {
+    children: _fable_Feliz_1_40_0_Interop_fs_js__WEBPACK_IMPORTED_MODULE_1__.Interop_reactApi.Children.toArray(Array.from((0,_fable_fable_library_3_1_1_List_js__WEBPACK_IMPORTED_MODULE_2__.ofSeq)((0,_fable_fable_library_3_1_1_Seq_js__WEBPACK_IMPORTED_MODULE_3__.delay)(() => (0,_fable_fable_library_3_1_1_Seq_js__WEBPACK_IMPORTED_MODULE_3__.append)((0,_fable_fable_library_3_1_1_Seq_js__WEBPACK_IMPORTED_MODULE_3__.singleton)( /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", {
       htmlFor: name,
       children: placeholder
-    })), (0,_fable_fable_library_3_1_1_Seq_js__WEBPACK_IMPORTED_MODULE_5__.delay)(() => (0,_fable_fable_library_3_1_1_Seq_js__WEBPACK_IMPORTED_MODULE_5__.append)((0,_fable_fable_library_3_1_1_Seq_js__WEBPACK_IMPORTED_MODULE_5__.singleton)( /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_2__.createElement)("select", {
+    })), (0,_fable_fable_library_3_1_1_Seq_js__WEBPACK_IMPORTED_MODULE_3__.delay)(() => (0,_fable_fable_library_3_1_1_Seq_js__WEBPACK_IMPORTED_MODULE_3__.append)((0,_fable_fable_library_3_1_1_Seq_js__WEBPACK_IMPORTED_MODULE_3__.singleton)( /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("select", {
       className: field.error.length > 0 ? "form-control is-invalid" : "form-control",
       name: name,
       id: name,
       value: field.value,
       onChange: onChange,
       ["aria-label"]: placeholder,
-      children: _fable_Feliz_1_40_0_Interop_fs_js__WEBPACK_IMPORTED_MODULE_3__.Interop_reactApi.Children.toArray(Array.from((0,_fable_fable_library_3_1_1_Array_js__WEBPACK_IMPORTED_MODULE_6__.append)([selectPlaceholder], (0,_fable_fable_library_3_1_1_Array_js__WEBPACK_IMPORTED_MODULE_6__.map)(x => /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_2__.createElement)("option", {
+      children: _fable_Feliz_1_40_0_Interop_fs_js__WEBPACK_IMPORTED_MODULE_1__.Interop_reactApi.Children.toArray(Array.from((0,_fable_fable_library_3_1_1_Array_js__WEBPACK_IMPORTED_MODULE_4__.append)([selectPlaceholder], (0,_fable_fable_library_3_1_1_Array_js__WEBPACK_IMPORTED_MODULE_4__.map)(x => /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("option", {
         value: x.value,
         key: x.value,
         children: x.text
       }), options))))
-    })), (0,_fable_fable_library_3_1_1_Seq_js__WEBPACK_IMPORTED_MODULE_5__.delay)(() => field.error.length > 0 ? (0,_fable_fable_library_3_1_1_Seq_js__WEBPACK_IMPORTED_MODULE_5__.singleton)( /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_2__.createElement)("label", {
+    })), (0,_fable_fable_library_3_1_1_Seq_js__WEBPACK_IMPORTED_MODULE_3__.delay)(() => field.error.length > 0 ? (0,_fable_fable_library_3_1_1_Seq_js__WEBPACK_IMPORTED_MODULE_3__.singleton)( /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", {
       className: "invalid-feedback",
       htmlFor: name,
       children: field.error
-    })) : (0,_fable_fable_library_3_1_1_Seq_js__WEBPACK_IMPORTED_MODULE_5__.empty)()))))))))
+    })) : (0,_fable_fable_library_3_1_1_Seq_js__WEBPACK_IMPORTED_MODULE_3__.empty)()))))))))
   });
 }
 
@@ -14498,10 +14507,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var _ClientDetails_fs_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ClientDetails.fs.js */ "./resources/js/components/ClientDetails.fs.js");
 /* harmony import */ var _ProjectDetails_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ProjectDetails.js */ "./resources/js/components/ProjectDetails.js");
-/* harmony import */ var _Summary_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Summary.js */ "./resources/js/components/Summary.js");
+/* harmony import */ var _Summary_fs_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Summary.fs.js */ "./resources/js/components/Summary.fs.js");
  // import ClientDetails from './ClientDetails.js'
 
 
+ // import Summary from './Summary.js'
 
 
 class GetStarted extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
@@ -14745,7 +14755,7 @@ class GetStarted extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
       q9: this.state.form_fields.q9
     })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
       className: "col-lg-5 mt-5 mt-sm-0"
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Summary_js__WEBPACK_IMPORTED_MODULE_3__.default, {
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Summary_fs_js__WEBPACK_IMPORTED_MODULE_3__.Summary, {
       onInputChange: this.handleInputChange,
       firstName: this.state.form_fields.first_name,
       lastName: this.state.form_fields.last_name,
@@ -14760,15 +14770,6 @@ class GetStarted extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
       topic: this.state.form_fields.topic,
       budget: this.state.form_fields.budget,
       subject: this.state.form_fields.subject,
-      q1: this.state.form_fields.q1,
-      q2: this.state.form_fields.q2,
-      q3: this.state.form_fields.q3,
-      q4: this.state.form_fields.q4,
-      q5: this.state.form_fields.q5,
-      q6: this.state.form_fields.q6,
-      q7: this.state.form_fields.q7,
-      q8: this.state.form_fields.q8,
-      q9: this.state.form_fields.q9,
       gdprConsent: this.state.form_fields.gdpr_consent
     })))));
   }
@@ -14969,165 +14970,180 @@ ProjectDetails.propTypes = {
 
 /***/ }),
 
-/***/ "./resources/js/components/Summary.js":
-/*!********************************************!*\
-  !*** ./resources/js/components/Summary.js ***!
-  \********************************************/
+/***/ "./resources/js/components/Summary.fs.js":
+/*!***********************************************!*\
+  !*** ./resources/js/components/Summary.fs.js ***!
+  \***********************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   "Summary": () => (/* binding */ Summary)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _fable_Feliz_1_40_0_Interop_fs_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../.fable/Feliz.1.40.0/Interop.fs.js */ "./resources/js/.fable/Feliz.1.40.0/Interop.fs.js");
+/* harmony import */ var _fable_fable_library_3_1_1_List_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../.fable/fable-library.3.1.1/List.js */ "./resources/js/.fable/fable-library.3.1.1/List.js");
 
 
 
-class Summary extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
-  getFullName() {
-    if (this.props.firstName.value || this.props.lastName.value) {
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", {
-        className: "d-flex justify-content-between summary-item"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, "Full name"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", {
-        className: "summary-item-value"
-      }, this.props.firstName.value, " ", this.props.lastName.value));
-    }
+
+function getFullName(firstName, lastName) {
+  if (firstName.value.length > 0 ? true : lastName.value.length > 0) {
+    return /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
+      className: "d-flex justify-content-between summary-item",
+      children: _fable_Feliz_1_40_0_Interop_fs_js__WEBPACK_IMPORTED_MODULE_1__.Interop_reactApi.Children.toArray([/*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+        children: ["Full name"]
+      }), /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+        className: "summary-item-value",
+        children: _fable_Feliz_1_40_0_Interop_fs_js__WEBPACK_IMPORTED_MODULE_1__.Interop_reactApi.Children.toArray([firstName.value, " ", lastName.value])
+      })])
+    });
+  } else {
+    return null;
   }
-
-  getField(field, text) {
-    if (this.props[field].value) {
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", {
-        className: "d-flex justify-content-between summary-item"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, text), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", {
-        className: "summary-item-value"
-      }, this.props[field].value));
-    }
-  }
-
-  getFullAddress() {
-    let output = '';
-
-    if (this.props.address.value && (this.props.city.value || this.props.zipCode.value || this.props.country.value)) {
-      output += `${this.props.address.value}, `;
-    } else if (this.props.address.value) {
-      output += this.props.address.value;
-    }
-
-    if (this.props.city.value && (this.props.zipCode.value || this.props.country.value)) {
-      output += `${this.props.city.value} `;
-    } else if (this.props.city.value) {
-      output += this.props.city.value;
-    }
-
-    if (this.props.zipCode.value && this.props.country.value) {
-      output += `${this.props.zipCode.value}, `;
-    } else if (this.props.zipCode.value) {
-      output += this.props.zipCode.value;
-    }
-
-    if (this.props.country.value) {
-      output += this.props.country.value;
-    }
-
-    if (this.props.address.value || this.props.city.value || this.props.zipCode.value || this.props.country.value) {
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", {
-        className: "d-flex justify-content-between summary-item"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, "Address"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", {
-        className: "summary-item-value"
-      }, output));
-    }
-  }
-
-  render() {
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-      className: "pb-2"
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h2", {
-      className: "mt-0 mb-2"
-    }, "Summary"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-      className: ""
-    }, this.getFullName(), this.getField('companyName', 'Company'), this.getField('vatNumber', 'VAT number'), this.getFullAddress(), this.getField('emailAddress', 'Email address'), this.getField('phone', 'Phone'), this.getField('topic', 'Topic'), this.getField('budget', 'Budget'), this.getField('subject', 'Subject')), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-      className: ""
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-      className: "mb-3 mt-5"
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-      className: "form-check form-switch"
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
-      className: "form-check-input",
-      name: "gdpr_consent",
-      type: "checkbox",
-      value: this.props.gdprConsent.value,
-      id: "gdpr_consent",
-      onChange: this.props.onInputChange
-    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", {
-      className: "form-check-label",
-      htmlFor: "gdpr_consent"
-    }, "I have read the", ' ', /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", {
-      className: "link-light",
-      href: "/privacy"
-    }, "Privacy Notice"), ' ', "and I give my permission to be contacted with regard to this form."))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-      className: "text-end text-lg-center mb-2"
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
-      type: "submit",
-      className: "btn btn-primary",
-      disabled: !this.props.gdprConsent.value
-    }, "Launch ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("i", {
-      className: "fa fa-fw fa-rocket"
-    })))));
-  }
-
 }
 
-Summary.propTypes = {
-  firstName: prop_types__WEBPACK_IMPORTED_MODULE_1___default().shape({
-    value: (prop_types__WEBPACK_IMPORTED_MODULE_1___default().string),
-    error: (prop_types__WEBPACK_IMPORTED_MODULE_1___default().string)
-  }),
-  lastName: prop_types__WEBPACK_IMPORTED_MODULE_1___default().shape({
-    value: (prop_types__WEBPACK_IMPORTED_MODULE_1___default().string),
-    error: (prop_types__WEBPACK_IMPORTED_MODULE_1___default().string)
-  }),
-  companyName: prop_types__WEBPACK_IMPORTED_MODULE_1___default().shape({
-    value: (prop_types__WEBPACK_IMPORTED_MODULE_1___default().string),
-    error: (prop_types__WEBPACK_IMPORTED_MODULE_1___default().string)
-  }),
-  vatNumber: prop_types__WEBPACK_IMPORTED_MODULE_1___default().shape({
-    value: (prop_types__WEBPACK_IMPORTED_MODULE_1___default().string),
-    error: (prop_types__WEBPACK_IMPORTED_MODULE_1___default().string)
-  }),
-  address: prop_types__WEBPACK_IMPORTED_MODULE_1___default().shape({
-    value: (prop_types__WEBPACK_IMPORTED_MODULE_1___default().string),
-    error: (prop_types__WEBPACK_IMPORTED_MODULE_1___default().string)
-  }),
-  city: prop_types__WEBPACK_IMPORTED_MODULE_1___default().shape({
-    value: (prop_types__WEBPACK_IMPORTED_MODULE_1___default().string),
-    error: (prop_types__WEBPACK_IMPORTED_MODULE_1___default().string)
-  }),
-  zipCode: prop_types__WEBPACK_IMPORTED_MODULE_1___default().shape({
-    value: (prop_types__WEBPACK_IMPORTED_MODULE_1___default().string),
-    error: (prop_types__WEBPACK_IMPORTED_MODULE_1___default().string)
-  }),
-  country: prop_types__WEBPACK_IMPORTED_MODULE_1___default().shape({
-    value: (prop_types__WEBPACK_IMPORTED_MODULE_1___default().string),
-    error: (prop_types__WEBPACK_IMPORTED_MODULE_1___default().string)
-  }),
-  emailAddress: prop_types__WEBPACK_IMPORTED_MODULE_1___default().shape({
-    value: (prop_types__WEBPACK_IMPORTED_MODULE_1___default().string),
-    error: (prop_types__WEBPACK_IMPORTED_MODULE_1___default().string)
-  }),
-  phone: prop_types__WEBPACK_IMPORTED_MODULE_1___default().shape({
-    value: (prop_types__WEBPACK_IMPORTED_MODULE_1___default().string),
-    error: (prop_types__WEBPACK_IMPORTED_MODULE_1___default().string)
-  }),
-  gdprConsent: prop_types__WEBPACK_IMPORTED_MODULE_1___default().shape({
-    value: (prop_types__WEBPACK_IMPORTED_MODULE_1___default().boolean),
-    error: (prop_types__WEBPACK_IMPORTED_MODULE_1___default().string)
-  }),
-  onInputChange: (prop_types__WEBPACK_IMPORTED_MODULE_1___default().func)
-};
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Summary);
+function getField(field, text) {
+  if (field.value === "") {
+    return null;
+  } else {
+    return /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
+      className: "d-flex justify-content-between summary-item",
+      children: _fable_Feliz_1_40_0_Interop_fs_js__WEBPACK_IMPORTED_MODULE_1__.Interop_reactApi.Children.toArray([/*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+        children: [text]
+      }), /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+        className: "summary-item-value",
+        children: _fable_Feliz_1_40_0_Interop_fs_js__WEBPACK_IMPORTED_MODULE_1__.Interop_reactApi.Children.toArray([field.value])
+      })])
+    });
+  }
+}
+
+function addCountry(country, input) {
+  if (country.value.length > 0) {
+    return input + country.value;
+  } else {
+    return input;
+  }
+}
+
+function addAddress(address, city, zipCode, country, input) {
+  if (address.value.length > 0 ? (city.value.length > 0 ? true : zipCode.value.length > 0) ? true : country.value.length > 0 : false) {
+    return input + address.value + ", ";
+  } else if (address.value.length > 0) {
+    return input + address.value;
+  } else {
+    return input;
+  }
+}
+
+function addCity(city, zipCode, country, input) {
+  if (city.value.length > 0 ? zipCode.value.length > 0 ? true : country.value.length > 0 : false) {
+    return input + city.value + " ";
+  } else if (city.value.length > 0) {
+    return input + city.value;
+  } else {
+    return input;
+  }
+}
+
+function addZipCode(zipCode, country, input) {
+  if (zipCode.value.length > 0 ? country.value.length > 0 : false) {
+    return input + zipCode.value + ", ";
+  } else if (zipCode.value.length > 0) {
+    return input + zipCode.value;
+  } else {
+    return input;
+  }
+}
+
+function getFullAddress(address, city, zipCode, country) {
+  const addressTransform = input => addAddress(address, city, zipCode, country, input);
+
+  const cityTransform = input_1 => addCity(city, zipCode, country, input_1);
+
+  const zipCodeTransform = input_2 => addZipCode(zipCode, country, input_2);
+
+  const countryTransform = input_3 => addCountry(country, input_3);
+
+  const output = countryTransform(zipCodeTransform(cityTransform(addressTransform(""))));
+
+  if (output.length > 0) {
+    return /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
+      className: "d-flex justify-content-between summary-item",
+      children: _fable_Feliz_1_40_0_Interop_fs_js__WEBPACK_IMPORTED_MODULE_1__.Interop_reactApi.Children.toArray([/*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+        children: ["Address"]
+      }), /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+        className: "summary-item-value",
+        children: _fable_Feliz_1_40_0_Interop_fs_js__WEBPACK_IMPORTED_MODULE_1__.Interop_reactApi.Children.toArray([output])
+      })])
+    });
+  } else {
+    return null;
+  }
+}
+
+function Summary(summaryInputProps) {
+  let children, children_2;
+  const phone = summaryInputProps.phone;
+  const gdprConsent = summaryInputProps.gdprConsent;
+  const subject = summaryInputProps.subject;
+  const budget = summaryInputProps.budget;
+  const topic = summaryInputProps.topic;
+  const emailAddress = summaryInputProps.emailAddress;
+  const country = summaryInputProps.country;
+  const zipCode = summaryInputProps.zipCode;
+  const city = summaryInputProps.city;
+  const address = summaryInputProps.address;
+  const vatNumber = summaryInputProps.vatNumber;
+  const companyName = summaryInputProps.companyName;
+  const lastName = summaryInputProps.lastName;
+  const firstName = summaryInputProps.firstName;
+  const onInputChange = summaryInputProps.onInputChange;
+  return /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "pb-2",
+    children: _fable_Feliz_1_40_0_Interop_fs_js__WEBPACK_IMPORTED_MODULE_1__.Interop_reactApi.Children.toArray([/*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
+      className: "mt-0 mb-2",
+      children: _fable_Feliz_1_40_0_Interop_fs_js__WEBPACK_IMPORTED_MODULE_1__.Interop_reactApi.Children.toArray(["Summary"])
+    }), (children = (0,_fable_fable_library_3_1_1_List_js__WEBPACK_IMPORTED_MODULE_2__.ofArray)([getFullName(firstName, lastName), getField(companyName, "Company"), getField(vatNumber, "VAT number"), getFullAddress(address, city, zipCode, country), getField(emailAddress, "Email address"), getField(phone, "Phone"), getField(topic, "Topic"), getField(budget, "Budget"), getField(subject, "Subject")]), /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+      children: _fable_Feliz_1_40_0_Interop_fs_js__WEBPACK_IMPORTED_MODULE_1__.Interop_reactApi.Children.toArray(Array.from(children))
+    })), (children_2 = (0,_fable_fable_library_3_1_1_List_js__WEBPACK_IMPORTED_MODULE_2__.ofArray)([/*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+      className: "mb-3 mt-5",
+      children: _fable_Feliz_1_40_0_Interop_fs_js__WEBPACK_IMPORTED_MODULE_1__.Interop_reactApi.Children.toArray([/*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+        className: "form-check form-switch",
+        children: _fable_Feliz_1_40_0_Interop_fs_js__WEBPACK_IMPORTED_MODULE_1__.Interop_reactApi.Children.toArray([/*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("input", {
+          className: "form-check-input",
+          name: "gdpr_consent",
+          type: "checkbox",
+          value: gdprConsent.value,
+          id: "gdpr_consent",
+          onChange: onInputChange
+        }), /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", {
+          className: "form-check-label",
+          htmlFor: "gdpr_consent",
+          children: _fable_Feliz_1_40_0_Interop_fs_js__WEBPACK_IMPORTED_MODULE_1__.Interop_reactApi.Children.toArray(["I have read the ", /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
+            className: "link-light",
+            href: "/privacy",
+            children: "Privacy Notice"
+          }), " and I give my permission to be contacted with regard to this form."])
+        })])
+      })])
+    }), /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+      className: "text-end text-lg-center mb-2",
+      children: _fable_Feliz_1_40_0_Interop_fs_js__WEBPACK_IMPORTED_MODULE_1__.Interop_reactApi.Children.toArray([/*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("button", {
+        type: "submit",
+        className: "btn btn-primary",
+        disabled: !gdprConsent.value,
+        children: _fable_Feliz_1_40_0_Interop_fs_js__WEBPACK_IMPORTED_MODULE_1__.Interop_reactApi.Children.toArray(["Launch ", /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("i", {
+          className: "fa fa-fw fa-rocket"
+        })])
+      })])
+    })]), /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+      children: _fable_Feliz_1_40_0_Interop_fs_js__WEBPACK_IMPORTED_MODULE_1__.Interop_reactApi.Children.toArray(Array.from(children_2))
+    }))])
+  });
+}
 
 /***/ }),
 

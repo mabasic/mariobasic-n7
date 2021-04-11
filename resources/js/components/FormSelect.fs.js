@@ -1,22 +1,8 @@
-import { Record } from "../.fable/fable-library.3.1.1/Types.js";
-import { record_type, string_type } from "../.fable/fable-library.3.1.1/Reflection.js";
 import { createElement } from "react";
 import { Interop_reactApi } from "../.fable/Feliz.1.40.0/Interop.fs.js";
 import { ofSeq } from "../.fable/fable-library.3.1.1/List.js";
 import { empty, singleton, append, delay } from "../.fable/fable-library.3.1.1/Seq.js";
 import { map, append as append_1 } from "../.fable/fable-library.3.1.1/Array.js";
-
-export class SelectOption extends Record {
-    constructor(value, text) {
-        super();
-        this.value = value;
-        this.text = text;
-    }
-}
-
-export function SelectOption$reflection() {
-    return record_type("FormSelect.SelectOption", [], SelectOption, () => [["value", string_type], ["text", string_type]]);
-}
 
 export const selectPlaceholder = createElement("option", {
     value: "",

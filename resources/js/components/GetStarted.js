@@ -2,7 +2,8 @@ import React from 'react'
 // import ClientDetails from './ClientDetails.js'
 import { ClientDetails } from './ClientDetails.fs.js'
 import ProjectDetails from './ProjectDetails.js'
-import Summary from './Summary.js'
+// import Summary from './Summary.js'
+import { Summary } from './Summary.fs.js'
 
 export default class GetStarted extends React.Component {
   constructor(props) {
@@ -276,15 +277,6 @@ export default class GetStarted extends React.Component {
                   topic={this.state.form_fields.topic}
                   budget={this.state.form_fields.budget}
                   subject={this.state.form_fields.subject}
-                  q1={this.state.form_fields.q1}
-                  q2={this.state.form_fields.q2}
-                  q3={this.state.form_fields.q3}
-                  q4={this.state.form_fields.q4}
-                  q5={this.state.form_fields.q5}
-                  q6={this.state.form_fields.q6}
-                  q7={this.state.form_fields.q7}
-                  q8={this.state.form_fields.q8}
-                  q9={this.state.form_fields.q9}
                   gdprConsent={this.state.form_fields.gdpr_consent}
                 />
               </div>
