@@ -2,6 +2,8 @@
 
 **My personal website built with Phel.**
 
+"n" in "n7" stands for the **number** of times that I have created a new personal website for myself. Meaning that this is the seventh time as I recall.
+
 ## Summary
 
 My initial idea was to use Phel on the backend and Rescript on the frontend. I tried to build the backend to match the previous website (n6) which was built with Laravel. Routing, global middleware, validation, logging, mail, CSRF protection, configs, partials and layouts are all inspired by Laravel. **It took me around 14 days to complete this website (3-6.3.2021 to 20-21.3.2021).** Since I spent a whole bunch of time implementing backend features, when I came to the point of dealing with Javascript I decided to stick to the already existing javascript code from the previous website, but with improvements to the tooling (prettier, eslint, webpack, babel, prop-types) and data handling. I still want to switch from Javascript to something else, but that will probably have to be in the future. Recently, I have started learning about F# and Fable/Feliz and that got me questioning using Rescript on the frontend. Also there are other options like Elm or Dart. Can't really decide.
