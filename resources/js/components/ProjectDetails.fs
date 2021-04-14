@@ -6,7 +6,7 @@ open Feliz
 open FormInput
 open FormSelect
 open FormTextarea
-open App
+open Start
 
 [<ImportDefault("../constants/budgets.js")>]
 let budgets: SelectOption array = jsNative

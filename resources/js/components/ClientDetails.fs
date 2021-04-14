@@ -5,7 +5,7 @@ open Feliz
 
 open FormInput
 open FormSelect
-open App
+open Start
 
 [<ImportDefault("../constants/countries.js")>]
 let countries: SelectOption array = jsNative

@@ -1,12 +1,13 @@
 module FormInput
 
 open Feliz
+open Start
 
 [<ReactComponent>]
 let FormInput(name: string,
               placeholder: string, 
               inputType: string, 
-              field: App.Field, 
+              field: Field, 
               onChange: Browser.Types.Event -> unit) : ReactElement =
     Html.div [
         prop.className "mb-3"

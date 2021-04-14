@@ -2,7 +2,7 @@ module Summary
 
 open Feliz
 
-open App
+open Start
 
 let private getFullName (firstName: Field) (lastName: Field) =
     if String.length firstName.value > 0 || String.length lastName.value > 0 

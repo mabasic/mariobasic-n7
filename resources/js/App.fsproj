@@ -3,7 +3,8 @@
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="App.fs" />
+    <Compile Include="Main.fs" />
+    <Compile Include="Start.fs" />
     <Compile Include="components/FormTextarea.fs" />
     <Compile Include="components/FormInput.fs" />
     <Compile Include="components/FormSelect.fs" />

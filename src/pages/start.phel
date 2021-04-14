@@ -22,7 +22,8 @@
            @{:title "Let's work together 🚀 | Mario Bašić"
              :meta-description "I am always looking for new challenges and interesting projects."
              :white white
-             :black black})})
+             :black black}
+           @[[:script @{:src "/start.js"}]])})
 
 (def store-rules
   @{"first_name" [:required @{:rule :string :max 255}]

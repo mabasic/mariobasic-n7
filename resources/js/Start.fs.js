@@ -19,7 +19,7 @@ export class Field extends Record {
 }
 
 export function Field$reflection() {
-    return record_type("App.Field", [], Field, () => [["error", string_type], ["value", string_type]]);
+    return record_type("Start.Field", [], Field, () => [["error", string_type], ["value", string_type]]);
 }
 
 export class BooleanField extends Record {
@@ -31,7 +31,7 @@ export class BooleanField extends Record {
 }
 
 export function BooleanField$reflection() {
-    return record_type("App.BooleanField", [], BooleanField, () => [["error", string_type], ["value", bool_type]]);
+    return record_type("Start.BooleanField", [], BooleanField, () => [["error", string_type], ["value", bool_type]]);
 }
 
 export class SelectOption extends Record {
@@ -43,6 +43,6 @@ export class SelectOption extends Record {
 }
 
 export function SelectOption$reflection() {
-    return record_type("App.SelectOption", [], SelectOption, () => [["value", string_type], ["text", string_type]]);
+    return record_type("Start.SelectOption", [], SelectOption, () => [["value", string_type], ["text", string_type]]);
 }
 

@@ -19,19 +19,23 @@
     [:div @{:class "row justify-content-center px-0 px-sm-3 px-md-5"}
      [:div @{:class "col"} black-section]]]])
 
-(def scripts
-  [:script @{:src "/main.js"}])
+(defn scripts [& [additional-scripts]]
+  @[[:script @{:src "/main.js"}]
+    additional-scripts])
 
-(defn body [request white-section black-section]
+(defn body [request white-section black-section & [additional-scripts]]
   [:body
    (white request white-section)
    (black black-section)
    (footer/render)
-   scripts])
+   (scripts additional-scripts)])
 
-(defn render [request sections]
+(defn render [request sections & [additional-scripts]]
   (html
    (doctype :html5)
    [:html @{:lang "en"}
     (head/render (get sections :title) (get sections :meta-description))
-    (body request (get sections :white) (get sections :black))]))
+    (body request
+          (:white sections)
+          (:black sections)
+          additional-scripts)]))

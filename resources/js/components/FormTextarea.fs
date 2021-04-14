@@ -1,12 +1,13 @@
 module FormTextarea
 
 open Feliz
+open Start
 
 [<ReactComponent>]
 let FormTextarea(name: string, 
                  placeholder: string, 
                  height: int option, 
-                 field: App.Field, 
+                 field: Field, 
                  onChange: Browser.Types.Event -> unit) : ReactElement =
     Html.div [
         prop.className "mb-3"
