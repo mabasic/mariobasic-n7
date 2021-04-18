@@ -28,11 +28,11 @@ export default Object.freeze([
     text: 'Desktop development',
   },
   {
-    value: 'devops>',
+    value: 'devops',
     text: 'DevOps',
   },
   {
-    value: 'other>',
+    value: 'other',
     text: 'Other',
   },
 ])

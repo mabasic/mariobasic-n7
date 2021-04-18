@@ -4,6 +4,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Main.fs" />
+    <Compile Include="constants/Topics.fs" />
+    <Compile Include="constants/Budgets.fs" />
+    <Compile Include="constants/Countries.fs" />
     <Compile Include="components/FormTextarea.fs" />
     <Compile Include="components/FormInput.fs" />
     <Compile Include="components/FormSelect.fs" />

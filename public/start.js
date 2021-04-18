@@ -14575,7 +14575,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _fable_fable_library_3_1_1_List_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../.fable/fable-library.3.1.1/List.js */ "./resources/js/.fable/fable-library.3.1.1/List.js");
 /* harmony import */ var _FormInput_fs_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./FormInput.fs.js */ "./resources/js/components/FormInput.fs.js");
 /* harmony import */ var _FormSelect_fs_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./FormSelect.fs.js */ "./resources/js/components/FormSelect.fs.js");
-/* harmony import */ var _constants_countries_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../constants/countries.js */ "./resources/js/constants/countries.js");
+/* harmony import */ var _constants_Countries_fs_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../constants/Countries.fs.js */ "./resources/js/constants/Countries.fs.js");
 
 
 
@@ -14677,7 +14677,7 @@ function ClientDetails(clientDetailsInputProps) {
         children: _fable_Feliz_1_40_0_Interop_fs_js__WEBPACK_IMPORTED_MODULE_1__.Interop_reactApi.Children.toArray([/*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_FormSelect_fs_js__WEBPACK_IMPORTED_MODULE_4__.FormSelect, {
           name: "country",
           placeholder: "Select a country*",
-          options: _constants_countries_js__WEBPACK_IMPORTED_MODULE_5__.default,
+          options: _constants_Countries_fs_js__WEBPACK_IMPORTED_MODULE_5__.Countries,
           field: country,
           onChange: onInputChange
         })])
@@ -15210,8 +15210,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _fable_Feliz_1_40_0_Interop_fs_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../.fable/Feliz.1.40.0/Interop.fs.js */ "./resources/js/.fable/Feliz.1.40.0/Interop.fs.js");
 /* harmony import */ var _fable_fable_library_3_1_1_List_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../.fable/fable-library.3.1.1/List.js */ "./resources/js/.fable/fable-library.3.1.1/List.js");
 /* harmony import */ var _FormSelect_fs_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./FormSelect.fs.js */ "./resources/js/components/FormSelect.fs.js");
-/* harmony import */ var _constants_topics_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../constants/topics.js */ "./resources/js/constants/topics.js");
-/* harmony import */ var _constants_budgets_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../constants/budgets.js */ "./resources/js/constants/budgets.js");
+/* harmony import */ var _constants_Topics_fs_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../constants/Topics.fs.js */ "./resources/js/constants/Topics.fs.js");
+/* harmony import */ var _constants_Budgets_fs_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../constants/Budgets.fs.js */ "./resources/js/constants/Budgets.fs.js");
 /* harmony import */ var _FormInput_fs_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./FormInput.fs.js */ "./resources/js/components/FormInput.fs.js");
 /* harmony import */ var _FormTextarea_fs_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./FormTextarea.fs.js */ "./resources/js/components/FormTextarea.fs.js");
 
@@ -15256,7 +15256,7 @@ function ProjectDetails(projectDetailsInputProps) {
         children: _fable_Feliz_1_40_0_Interop_fs_js__WEBPACK_IMPORTED_MODULE_1__.Interop_reactApi.Children.toArray([/*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_FormSelect_fs_js__WEBPACK_IMPORTED_MODULE_3__.FormSelect, {
           name: "topic",
           placeholder: "Select a topic*",
-          options: _constants_topics_js__WEBPACK_IMPORTED_MODULE_4__.default,
+          options: _constants_Topics_fs_js__WEBPACK_IMPORTED_MODULE_4__.Topics,
           field: topic,
           onChange: onInputChange
         })])
@@ -15265,7 +15265,7 @@ function ProjectDetails(projectDetailsInputProps) {
         children: _fable_Feliz_1_40_0_Interop_fs_js__WEBPACK_IMPORTED_MODULE_1__.Interop_reactApi.Children.toArray([/*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_FormSelect_fs_js__WEBPACK_IMPORTED_MODULE_3__.FormSelect, {
           name: "budget",
           placeholder: "Select a budget*",
-          options: _constants_budgets_js__WEBPACK_IMPORTED_MODULE_5__.default,
+          options: _constants_Budgets_fs_js__WEBPACK_IMPORTED_MODULE_5__.Budgets,
           field: budget,
           onChange: onInputChange
         })])
@@ -15545,813 +15545,54 @@ function Summary(summaryInputProps) {
 
 /***/ }),
 
-/***/ "./resources/js/constants/budgets.js":
-/*!*******************************************!*\
-  !*** ./resources/js/constants/budgets.js ***!
-  \*******************************************/
+/***/ "./resources/js/constants/Budgets.fs.js":
+/*!**********************************************!*\
+  !*** ./resources/js/constants/Budgets.fs.js ***!
+  \**********************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   "Budgets": () => (/* binding */ Budgets)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Object.freeze([{
-  value: '<1000$',
-  text: 'Less than 1000$'
-}, {
-  value: '1000$-10000$',
-  text: '1000$-10000$'
-}, {
-  value: '10000$+',
-  text: '10000$+'
-}]));
+/* harmony import */ var _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../Main.fs.js */ "./resources/js/Main.fs.js");
+
+const Budgets = [new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("\u003c1000$", "Less than 1000$"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("1000$-10000$", "1000$-10000$"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("10000$+", "10000$+")];
 
 /***/ }),
 
-/***/ "./resources/js/constants/countries.js":
+/***/ "./resources/js/constants/Countries.fs.js":
+/*!************************************************!*\
+  !*** ./resources/js/constants/Countries.fs.js ***!
+  \************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Countries": () => (/* binding */ Countries)
+/* harmony export */ });
+/* harmony import */ var _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../Main.fs.js */ "./resources/js/Main.fs.js");
+
+const Countries = [new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("AF", "Afghanistan"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("AL", "Albania"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("DZ", "Algeria"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("AD", "Andorra"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("AO", "Angola"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("AI", "Anguilla"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("AQ", "Antarctica"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("AG", "Antigua and Barbuda"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("AR", "Argentina"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("AM", "Armenia"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("AW", "Aruba"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("AU", "Australia"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("AT", "Austria"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("AZ", "Azerbaijan"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("BS", "Bahamas"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("BH", "Bahrain"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("BD", "Bangladesh"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("BB", "Barbados"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("BY", "Belarus"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("PW", "Belau"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("BE", "Belgium"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("BZ", "Belize"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("BJ", "Benin"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("BM", "Bermuda"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("BT", "Bhutan"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("BO", "Bolivia"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("BQ", "Bonaire, Saint Eustatius and Saba"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("BA", "Bosnia and Herzegovina"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("BW", "Botswana"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("BV", "Bouvet Island"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("BR", "Brazil"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("IO", "British Indian Ocean Territory"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("VG", "British Virgin Islands"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("BN", "Brunei"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("BG", "Bulgaria"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("BF", "Burkina Faso"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("BI", "Burundi"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("KH", "Cambodia"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("CM", "Cameroon"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("CA", "Canada"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("CV", "Cape Verde"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("KY", "Cayman Islands"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("CF", "Central African Republic"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("TD", "Chad"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("CL", "Chile"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("CN", "China"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("CX", "Christmas Island"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("CC", "Cocos (Keeling) Islands"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("CO", "Colombia"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("KM", "Comoros"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("CG", "Congo (Brazzaville)"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("CD", "Congo (Kinshasa)"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("CK", "Cook Islands"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("CR", "Costa Rica"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("HR", "Croatia"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("CU", "Cuba"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("CW", "CuraÇao"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("CY", "Cyprus"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("CZ", "Czech Republic"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("DK", "Denmark"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("DJ", "Djibouti"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("DM", "Dominica"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("DO", "Dominican Republic"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("EC", "Ecuador"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("EG", "Egypt"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("SV", "El Salvador"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("GQ", "Equatorial Guinea"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("ER", "Eritrea"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("EE", "Estonia"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("ET", "Ethiopia"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("FK", "Falkland Islands"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("FO", "Faroe Islands"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("FJ", "Fiji"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("FI", "Finland"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("FR", "France"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("GF", "French Guiana"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("PF", "French Polynesia"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("TF", "French Southern Territories"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("GA", "Gabon"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("GM", "Gambia"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("GE", "Georgia"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("DE", "Germany"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("GH", "Ghana"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("GI", "Gibraltar"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("GR", "Greece"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("GL", "Greenland"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("GD", "Grenada"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("GP", "Guadeloupe"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("GT", "Guatemala"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("GG", "Guernsey"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("GN", "Guinea"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("GW", "Guinea-Bissau"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("GY", "Guyana"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("HT", "Haiti"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("HM", "Heard Island and McDonald Islands"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("HN", "Honduras"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("HK", "Hong Kong"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("HU", "Hungary"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("IS", "Iceland"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("IN", "India"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("ID", "Indonesia"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("IR", "Iran"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("IQ", "Iraq"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("IM", "Isle of Man"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("IL", "Israel"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("IT", "Italy"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("CI", "Ivory Coast"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("JM", "Jamaica"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("JP", "Japan"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("JE", "Jersey"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("JO", "Jordan"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("KZ", "Kazakhstan"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("KE", "Kenya"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("KI", "Kiribati"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("KW", "Kuwait"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("KG", "Kyrgyzstan"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("LA", "Laos"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("LV", "Latvia"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("LB", "Lebanon"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("LS", "Lesotho"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("LR", "Liberia"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("LY", "Libya"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("LI", "Liechtenstein"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("LT", "Lithuania"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("LU", "Luxembourg"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("MO", "Macao S.A.R., China"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("MK", "Macedonia"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("MG", "Madagascar"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("MW", "Malawi"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("MY", "Malaysia"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("MV", "Maldives"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("ML", "Mali"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("MT", "Malta"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("MH", "Marshall Islands"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("MQ", "Martinique"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("MR", "Mauritania"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("MU", "Mauritius"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("YT", "Mayotte"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("MX", "Mexico"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("FM", "Micronesia"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("MD", "Moldova"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("MC", "Monaco"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("MN", "Mongolia"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("ME", "Montenegro"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("MS", "Montserrat"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("MA", "Morocco"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("MZ", "Mozambique"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("MM", "Myanmar"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("NA", "Namibia"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("NR", "Nauru"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("NP", "Nepal"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("NL", "Netherlands"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("AN", "Netherlands Antilles"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("NC", "New Caledonia"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("NZ", "New Zealand"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("NI", "Nicaragua"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("NE", "Niger"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("NG", "Nigeria"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("NU", "Niue"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("NF", "Norfolk Island"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("KP", "North Korea"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("NO", "Norway"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("OM", "Oman"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("PK", "Pakistan"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("PS", "Palestinian Territory"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("PA", "Panama"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("PG", "Papua New Guinea"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("PY", "Paraguay"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("PE", "Peru"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("PH", "Philippines"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("PN", "Pitcairn"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("PL", "Poland"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("PT", "Portugal"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("QA", "Qatar"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("IE", "Republic of Ireland"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("RE", "Reunion"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("RO", "Romania"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("RU", "Russia"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("RW", "Rwanda"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("ST", "São Tomé and Príncipe"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("BL", "Saint Barthélemy"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("SH", "Saint Helena"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("KN", "Saint Kitts and Nevis"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("LC", "Saint Lucia"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("SX", "Saint Martin (Dutch part)"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("MF", "Saint Martin (French part)"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("PM", "Saint Pierre and Miquelon"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("VC", "Saint Vincent and the Grenadines"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("SM", "San Marino"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("SA", "Saudi Arabia"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("SN", "Senegal"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("RS", "Serbia"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("SC", "Seychelles"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("SL", "Sierra Leone"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("SG", "Singapore"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("SK", "Slovakia"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("SI", "Slovenia"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("SB", "Solomon Islands"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("SO", "Somalia"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("ZA", "South Africa"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("GS", "South Georgia/Sandwich Islands"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("KR", "South Korea"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("SS", "South Sudan"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("ES", "Spain"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("LK", "Sri Lanka"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("SD", "Sudan"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("SR", "Suriname"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("SJ", "Svalbard and Jan Mayen"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("SZ", "Swaziland"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("SE", "Sweden"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("CH", "Switzerland"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("SY", "Syria"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("TW", "Taiwan"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("TJ", "Tajikistan"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("TZ", "Tanzania"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("TH", "Thailand"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("TL", "Timor-Leste"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("TG", "Togo"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("TK", "Tokelau"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("TO", "Tonga"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("TT", "Trinidad and Tobago"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("TN", "Tunisia"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("TR", "Turkey"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("TM", "Turkmenistan"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("TC", "Turks and Caicos Islands"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("TV", "Tuvalu"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("UG", "Uganda"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("UA", "Ukraine"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("AE", "United Arab Emirates"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("GB", "United Kingdom (UK)"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("US", "United States (US)"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("UY", "Uruguay"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("UZ", "Uzbekistan"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("VU", "Vanuatu"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("VA", "Vatican"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("VE", "Venezuela"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("VN", "Vietnam"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("WF", "Wallis and Futuna"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("EH", "Western Sahara"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("WS", "Western Samoa"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("YE", "Yemen"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("ZM", "Zambia"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("ZW", "Zimbabwe")];
+
+/***/ }),
+
+/***/ "./resources/js/constants/Topics.fs.js":
 /*!*********************************************!*\
-  !*** ./resources/js/constants/countries.js ***!
+  !*** ./resources/js/constants/Topics.fs.js ***!
   \*********************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   "Topics": () => (/* binding */ Topics)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Object.freeze([{
-  value: 'AF',
-  text: 'Afghanistan'
-}, {
-  value: 'AL',
-  text: 'Albania'
-}, {
-  value: 'DZ',
-  text: 'Algeria'
-}, {
-  value: 'AD',
-  text: 'Andorra'
-}, {
-  value: 'AO',
-  text: 'Angola'
-}, {
-  value: 'AI',
-  text: 'Anguilla'
-}, {
-  value: 'AQ',
-  text: 'Antarctica'
-}, {
-  value: 'AG',
-  text: 'Antigua and Barbuda'
-}, {
-  value: 'AR',
-  text: 'Argentina'
-}, {
-  value: 'AM',
-  text: 'Armenia'
-}, {
-  value: 'AW',
-  text: 'Aruba'
-}, {
-  value: 'AU',
-  text: 'Australia'
-}, {
-  value: 'AT',
-  text: 'Austria'
-}, {
-  value: 'AZ',
-  text: 'Azerbaijan'
-}, {
-  value: 'BS',
-  text: 'Bahamas'
-}, {
-  value: 'BH',
-  text: 'Bahrain'
-}, {
-  value: 'BD',
-  text: 'Bangladesh'
-}, {
-  value: 'BB',
-  text: 'Barbados'
-}, {
-  value: 'BY',
-  text: 'Belarus'
-}, {
-  value: 'PW',
-  text: 'Belau'
-}, {
-  value: 'BE',
-  text: 'Belgium'
-}, {
-  value: 'BZ',
-  text: 'Belize'
-}, {
-  value: 'BJ',
-  text: 'Benin'
-}, {
-  value: 'BM',
-  text: 'Bermuda'
-}, {
-  value: 'BT',
-  text: 'Bhutan'
-}, {
-  value: 'BO',
-  text: 'Bolivia'
-}, {
-  value: 'BQ',
-  text: 'Bonaire, Saint Eustatius and Saba'
-}, {
-  value: 'BA',
-  text: 'Bosnia and Herzegovina'
-}, {
-  value: 'BW',
-  text: 'Botswana'
-}, {
-  value: 'BV',
-  text: 'Bouvet Island'
-}, {
-  value: 'BR',
-  text: 'Brazil'
-}, {
-  value: 'IO',
-  text: 'British Indian Ocean Territory'
-}, {
-  value: 'VG',
-  text: 'British Virgin Islands'
-}, {
-  value: 'BN',
-  text: 'Brunei'
-}, {
-  value: 'BG',
-  text: 'Bulgaria'
-}, {
-  value: 'BF',
-  text: 'Burkina Faso'
-}, {
-  value: 'BI',
-  text: 'Burundi'
-}, {
-  value: 'KH',
-  text: 'Cambodia'
-}, {
-  value: 'CM',
-  text: 'Cameroon'
-}, {
-  value: 'CA',
-  text: 'Canada'
-}, {
-  value: 'CV',
-  text: 'Cape Verde'
-}, {
-  value: 'KY',
-  text: 'Cayman Islands'
-}, {
-  value: 'CF',
-  text: 'Central African Republic'
-}, {
-  value: 'TD',
-  text: 'Chad'
-}, {
-  value: 'CL',
-  text: 'Chile'
-}, {
-  value: 'CN',
-  text: 'China'
-}, {
-  value: 'CX',
-  text: 'Christmas Island'
-}, {
-  value: 'CC',
-  text: 'Cocos (Keeling) Islands'
-}, {
-  value: 'CO',
-  text: 'Colombia'
-}, {
-  value: 'KM',
-  text: 'Comoros'
-}, {
-  value: 'CG',
-  text: 'Congo (Brazzaville)'
-}, {
-  value: 'CD',
-  text: 'Congo (Kinshasa)'
-}, {
-  value: 'CK',
-  text: 'Cook Islands'
-}, {
-  value: 'CR',
-  text: 'Costa Rica'
-}, {
-  value: 'HR',
-  text: 'Croatia'
-}, {
-  value: 'CU',
-  text: 'Cuba'
-}, {
-  value: 'CW',
-  text: 'CuraÇao'
-}, {
-  value: 'CY',
-  text: 'Cyprus'
-}, {
-  value: 'CZ',
-  text: 'Czech Republic'
-}, {
-  value: 'DK',
-  text: 'Denmark'
-}, {
-  value: 'DJ',
-  text: 'Djibouti'
-}, {
-  value: 'DM',
-  text: 'Dominica'
-}, {
-  value: 'DO',
-  text: 'Dominican Republic'
-}, {
-  value: 'EC',
-  text: 'Ecuador'
-}, {
-  value: 'EG',
-  text: 'Egypt'
-}, {
-  value: 'SV',
-  text: 'El Salvador'
-}, {
-  value: 'GQ',
-  text: 'Equatorial Guinea'
-}, {
-  value: 'ER',
-  text: 'Eritrea'
-}, {
-  value: 'EE',
-  text: 'Estonia'
-}, {
-  value: 'ET',
-  text: 'Ethiopia'
-}, {
-  value: 'FK',
-  text: 'Falkland Islands'
-}, {
-  value: 'FO',
-  text: 'Faroe Islands'
-}, {
-  value: 'FJ',
-  text: 'Fiji'
-}, {
-  value: 'FI',
-  text: 'Finland'
-}, {
-  value: 'FR',
-  text: 'France'
-}, {
-  value: 'GF',
-  text: 'French Guiana'
-}, {
-  value: 'PF',
-  text: 'French Polynesia'
-}, {
-  value: 'TF',
-  text: 'French Southern Territories'
-}, {
-  value: 'GA',
-  text: 'Gabon'
-}, {
-  value: 'GM',
-  text: 'Gambia'
-}, {
-  value: 'GE',
-  text: 'Georgia'
-}, {
-  value: 'DE',
-  text: 'Germany'
-}, {
-  value: 'GH',
-  text: 'Ghana'
-}, {
-  value: 'GI',
-  text: 'Gibraltar'
-}, {
-  value: 'GR',
-  text: 'Greece'
-}, {
-  value: 'GL',
-  text: 'Greenland'
-}, {
-  value: 'GD',
-  text: 'Grenada'
-}, {
-  value: 'GP',
-  text: 'Guadeloupe'
-}, {
-  value: 'GT',
-  text: 'Guatemala'
-}, {
-  value: 'GG',
-  text: 'Guernsey'
-}, {
-  value: 'GN',
-  text: 'Guinea'
-}, {
-  value: 'GW',
-  text: 'Guinea-Bissau'
-}, {
-  value: 'GY',
-  text: 'Guyana'
-}, {
-  value: 'HT',
-  text: 'Haiti'
-}, {
-  value: 'HM',
-  text: 'Heard Island and McDonald Islands'
-}, {
-  value: 'HN',
-  text: 'Honduras'
-}, {
-  value: 'HK',
-  text: 'Hong Kong'
-}, {
-  value: 'HU',
-  text: 'Hungary'
-}, {
-  value: 'IS',
-  text: 'Iceland'
-}, {
-  value: 'IN',
-  text: 'India'
-}, {
-  value: 'ID',
-  text: 'Indonesia'
-}, {
-  value: 'IR',
-  text: 'Iran'
-}, {
-  value: 'IQ',
-  text: 'Iraq'
-}, {
-  value: 'IM',
-  text: 'Isle of Man'
-}, {
-  value: 'IL',
-  text: 'Israel'
-}, {
-  value: 'IT',
-  text: 'Italy'
-}, {
-  value: 'CI',
-  text: 'Ivory Coast'
-}, {
-  value: 'JM',
-  text: 'Jamaica'
-}, {
-  value: 'JP',
-  text: 'Japan'
-}, {
-  value: 'JE',
-  text: 'Jersey'
-}, {
-  value: 'JO',
-  text: 'Jordan'
-}, {
-  value: 'KZ',
-  text: 'Kazakhstan'
-}, {
-  value: 'KE',
-  text: 'Kenya'
-}, {
-  value: 'KI',
-  text: 'Kiribati'
-}, {
-  value: 'KW',
-  text: 'Kuwait'
-}, {
-  value: 'KG',
-  text: 'Kyrgyzstan'
-}, {
-  value: 'LA',
-  text: 'Laos'
-}, {
-  value: 'LV',
-  text: 'Latvia'
-}, {
-  value: 'LB',
-  text: 'Lebanon'
-}, {
-  value: 'LS',
-  text: 'Lesotho'
-}, {
-  value: 'LR',
-  text: 'Liberia'
-}, {
-  value: 'LY',
-  text: 'Libya'
-}, {
-  value: 'LI',
-  text: 'Liechtenstein'
-}, {
-  value: 'LT',
-  text: 'Lithuania'
-}, {
-  value: 'LU',
-  text: 'Luxembourg'
-}, {
-  value: 'MO',
-  text: 'Macao S.A.R., China'
-}, {
-  value: 'MK',
-  text: 'Macedonia'
-}, {
-  value: 'MG',
-  text: 'Madagascar'
-}, {
-  value: 'MW',
-  text: 'Malawi'
-}, {
-  value: 'MY',
-  text: 'Malaysia'
-}, {
-  value: 'MV',
-  text: 'Maldives'
-}, {
-  value: 'ML',
-  text: 'Mali'
-}, {
-  value: 'MT',
-  text: 'Malta'
-}, {
-  value: 'MH',
-  text: 'Marshall Islands'
-}, {
-  value: 'MQ',
-  text: 'Martinique'
-}, {
-  value: 'MR',
-  text: 'Mauritania'
-}, {
-  value: 'MU',
-  text: 'Mauritius'
-}, {
-  value: 'YT',
-  text: 'Mayotte'
-}, {
-  value: 'MX',
-  text: 'Mexico'
-}, {
-  value: 'FM',
-  text: 'Micronesia'
-}, {
-  value: 'MD',
-  text: 'Moldova'
-}, {
-  value: 'MC',
-  text: 'Monaco'
-}, {
-  value: 'MN',
-  text: 'Mongolia'
-}, {
-  value: 'ME',
-  text: 'Montenegro'
-}, {
-  value: 'MS',
-  text: 'Montserrat'
-}, {
-  value: 'MA',
-  text: 'Morocco'
-}, {
-  value: 'MZ',
-  text: 'Mozambique'
-}, {
-  value: 'MM',
-  text: 'Myanmar'
-}, {
-  value: 'NA',
-  text: 'Namibia'
-}, {
-  value: 'NR',
-  text: 'Nauru'
-}, {
-  value: 'NP',
-  text: 'Nepal'
-}, {
-  value: 'NL',
-  text: 'Netherlands'
-}, {
-  value: 'AN',
-  text: 'Netherlands Antilles'
-}, {
-  value: 'NC',
-  text: 'New Caledonia'
-}, {
-  value: 'NZ',
-  text: 'New Zealand'
-}, {
-  value: 'NI',
-  text: 'Nicaragua'
-}, {
-  value: 'NE',
-  text: 'Niger'
-}, {
-  value: 'NG',
-  text: 'Nigeria'
-}, {
-  value: 'NU',
-  text: 'Niue'
-}, {
-  value: 'NF',
-  text: 'Norfolk Island'
-}, {
-  value: 'KP',
-  text: 'North Korea'
-}, {
-  value: 'NO',
-  text: 'Norway'
-}, {
-  value: 'OM',
-  text: 'Oman'
-}, {
-  value: 'PK',
-  text: 'Pakistan'
-}, {
-  value: 'PS',
-  text: 'Palestinian Territory'
-}, {
-  value: 'PA',
-  text: 'Panama'
-}, {
-  value: 'PG',
-  text: 'Papua New Guinea'
-}, {
-  value: 'PY',
-  text: 'Paraguay'
-}, {
-  value: 'PE',
-  text: 'Peru'
-}, {
-  value: 'PH',
-  text: 'Philippines'
-}, {
-  value: 'PN',
-  text: 'Pitcairn'
-}, {
-  value: 'PL',
-  text: 'Poland'
-}, {
-  value: 'PT',
-  text: 'Portugal'
-}, {
-  value: 'QA',
-  text: 'Qatar'
-}, {
-  value: 'IE',
-  text: 'Republic of Ireland'
-}, {
-  value: 'RE',
-  text: 'Reunion'
-}, {
-  value: 'RO',
-  text: 'Romania'
-}, {
-  value: 'RU',
-  text: 'Russia'
-}, {
-  value: 'RW',
-  text: 'Rwanda'
-}, {
-  value: 'ST',
-  text: 'São Tomé and Príncipe'
-}, {
-  value: 'BL',
-  text: 'Saint Barthélemy'
-}, {
-  value: 'SH',
-  text: 'Saint Helena'
-}, {
-  value: 'KN',
-  text: 'Saint Kitts and Nevis'
-}, {
-  value: 'LC',
-  text: 'Saint Lucia'
-}, {
-  value: 'SX',
-  text: 'Saint Martin (Dutch part)'
-}, {
-  value: 'MF',
-  text: 'Saint Martin (French part)'
-}, {
-  value: 'PM',
-  text: 'Saint Pierre and Miquelon'
-}, {
-  value: 'VC',
-  text: 'Saint Vincent and the Grenadines'
-}, {
-  value: 'SM',
-  text: 'San Marino'
-}, {
-  value: 'SA',
-  text: 'Saudi Arabia'
-}, {
-  value: 'SN',
-  text: 'Senegal'
-}, {
-  value: 'RS',
-  text: 'Serbia'
-}, {
-  value: 'SC',
-  text: 'Seychelles'
-}, {
-  value: 'SL',
-  text: 'Sierra Leone'
-}, {
-  value: 'SG',
-  text: 'Singapore'
-}, {
-  value: 'SK',
-  text: 'Slovakia'
-}, {
-  value: 'SI',
-  text: 'Slovenia'
-}, {
-  value: 'SB',
-  text: 'Solomon Islands'
-}, {
-  value: 'SO',
-  text: 'Somalia'
-}, {
-  value: 'ZA',
-  text: 'South Africa'
-}, {
-  value: 'GS',
-  text: 'South Georgia/Sandwich Islands'
-}, {
-  value: 'KR',
-  text: 'South Korea'
-}, {
-  value: 'SS',
-  text: 'South Sudan'
-}, {
-  value: 'ES',
-  text: 'Spain'
-}, {
-  value: 'LK',
-  text: 'Sri Lanka'
-}, {
-  value: 'SD',
-  text: 'Sudan'
-}, {
-  value: 'SR',
-  text: 'Suriname'
-}, {
-  value: 'SJ',
-  text: 'Svalbard and Jan Mayen'
-}, {
-  value: 'SZ',
-  text: 'Swaziland'
-}, {
-  value: 'SE',
-  text: 'Sweden'
-}, {
-  value: 'CH',
-  text: 'Switzerland'
-}, {
-  value: 'SY',
-  text: 'Syria'
-}, {
-  value: 'TW',
-  text: 'Taiwan'
-}, {
-  value: 'TJ',
-  text: 'Tajikistan'
-}, {
-  value: 'TZ',
-  text: 'Tanzania'
-}, {
-  value: 'TH',
-  text: 'Thailand'
-}, {
-  value: 'TL',
-  text: 'Timor-Leste'
-}, {
-  value: 'TG',
-  text: 'Togo'
-}, {
-  value: 'TK',
-  text: 'Tokelau'
-}, {
-  value: 'TO',
-  text: 'Tonga'
-}, {
-  value: 'TT',
-  text: 'Trinidad and Tobago'
-}, {
-  value: 'TN',
-  text: 'Tunisia'
-}, {
-  value: 'TR',
-  text: 'Turkey'
-}, {
-  value: 'TM',
-  text: 'Turkmenistan'
-}, {
-  value: 'TC',
-  text: 'Turks and Caicos Islands'
-}, {
-  value: 'TV',
-  text: 'Tuvalu'
-}, {
-  value: 'UG',
-  text: 'Uganda'
-}, {
-  value: 'UA',
-  text: 'Ukraine'
-}, {
-  value: 'AE',
-  text: 'United Arab Emirates'
-}, {
-  value: 'GB',
-  text: 'United Kingdom (UK)'
-}, {
-  value: 'US',
-  text: 'United States (US)'
-}, {
-  value: 'UY',
-  text: 'Uruguay'
-}, {
-  value: 'UZ',
-  text: 'Uzbekistan'
-}, {
-  value: 'VU',
-  text: 'Vanuatu'
-}, {
-  value: 'VA',
-  text: 'Vatican'
-}, {
-  value: 'VE',
-  text: 'Venezuela'
-}, {
-  value: 'VN',
-  text: 'Vietnam'
-}, {
-  value: 'WF',
-  text: 'Wallis and Futuna'
-}, {
-  value: 'EH',
-  text: 'Western Sahara'
-}, {
-  value: 'WS',
-  text: 'Western Samoa'
-}, {
-  value: 'YE',
-  text: 'Yemen'
-}, {
-  value: 'ZM',
-  text: 'Zambia'
-}, {
-  value: 'ZW',
-  text: 'Zimbabwe'
-}]));
+/* harmony import */ var _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../Main.fs.js */ "./resources/js/Main.fs.js");
 
-/***/ }),
-
-/***/ "./resources/js/constants/topics.js":
-/*!******************************************!*\
-  !*** ./resources/js/constants/topics.js ***!
-  \******************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Object.freeze([{
-  value: 'web-development',
-  text: 'Web development'
-}, {
-  value: 'web-design',
-  text: 'Web design'
-}, {
-  value: 'landing-page',
-  text: 'Landing page'
-}, {
-  value: 'corporate-website',
-  text: 'Corporate website'
-}, {
-  value: 'ecommerce-development',
-  text: 'eCommerce development'
-}, {
-  value: 'mobile-development',
-  text: 'Mobile development'
-}, {
-  value: 'desktop-development',
-  text: 'Desktop development'
-}, {
-  value: 'devops>',
-  text: 'DevOps'
-}, {
-  value: 'other>',
-  text: 'Other'
-}]));
+const Topics = [new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("corporate-website", "Corporate website"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("desktop-development", "Desktop development"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("devops", "DevOps"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("ecommerce-development", "eCommerce development"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("landing-page", "Landing page"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("mobile-development", "Mobile development"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("other", "Other"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("web-development", "Web development"), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_0__.SelectOption("web-design", "Web design")];
 
 /***/ }),
 

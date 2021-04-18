@@ -1,14 +1,12 @@
 module ClientDetails
 
-open Fable.Core
 open Feliz
 
 open FormInput
 open FormSelect
 open Main
 
-[<ImportDefault("../constants/countries.js")>]
-let countries: SelectOption array = jsNative
+open Constants.Countries
 
 [<ReactComponent>]
 let ClientDetails(onInputChange: Browser.Types.Event -> unit,
@@ -118,7 +116,7 @@ let ClientDetails(onInputChange: Browser.Types.Event -> unit,
                             prop.children [
                                 FormSelect("country", 
                                           "Select a country*", 
-                                          countries, 
+                                          Countries, 
                                           country, 
                                           onInputChange)
                             ]

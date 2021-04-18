@@ -1,6 +1,5 @@
 module ProjectDetails
 
-open Fable.Core
 open Feliz
 
 open FormInput
@@ -8,11 +7,8 @@ open FormSelect
 open FormTextarea
 open Main
 
-[<ImportDefault("../constants/budgets.js")>]
-let budgets: SelectOption array = jsNative
-
-[<ImportDefault("../constants/topics.js")>]
-let topics: SelectOption array = jsNative
+open Constants.Budgets
+open Constants.Topics
 
 [<ReactComponent>]
 let ProjectDetails(onInputChange: Browser.Types.Event -> unit,
@@ -54,7 +50,7 @@ let ProjectDetails(onInputChange: Browser.Types.Event -> unit,
                             prop.children [
                                 FormSelect("topic", 
                                            "Select a topic*",
-                                           topics,
+                                           Topics,
                                            topic,
                                            onInputChange)
                             ]
@@ -64,7 +60,7 @@ let ProjectDetails(onInputChange: Browser.Types.Event -> unit,
                             prop.children [
                                 FormSelect("budget", 
                                            "Select a budget*",
-                                           budgets,
+                                           Budgets,
                                            budget,
                                            onInputChange)
                             ]

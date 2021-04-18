@@ -3,7 +3,7 @@ import { Interop_reactApi } from "../.fable/Feliz.1.40.0/Interop.fs.js";
 import { ofArray } from "../.fable/fable-library.3.1.1/List.js";
 import { FormInput } from "./FormInput.fs.js";
 import { FormSelect } from "./FormSelect.fs.js";
-import countries from "../constants/countries.js";
+import { Countries } from "../constants/Countries.fs.js";
 
 export function ClientDetails(clientDetailsInputProps) {
     let children;
@@ -100,7 +100,7 @@ export function ClientDetails(clientDetailsInputProps) {
                 children: Interop_reactApi.Children.toArray([createElement(FormSelect, {
                     name: "country",
                     placeholder: "Select a country*",
-                    options: countries,
+                    options: Countries,
                     field: country,
                     onChange: onInputChange,
                 })]),

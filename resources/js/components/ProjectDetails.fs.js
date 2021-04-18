@@ -2,8 +2,8 @@ import { createElement } from "react";
 import { Interop_reactApi } from "../.fable/Feliz.1.40.0/Interop.fs.js";
 import { ofArray } from "../.fable/fable-library.3.1.1/List.js";
 import { FormSelect } from "./FormSelect.fs.js";
-import topics from "../constants/topics.js";
-import budgets from "../constants/budgets.js";
+import { Topics } from "../constants/Topics.fs.js";
+import { Budgets } from "../constants/Budgets.fs.js";
 import { FormInput } from "./FormInput.fs.js";
 import { FormTextarea } from "./FormTextarea.fs.js";
 
@@ -41,7 +41,7 @@ export function ProjectDetails(projectDetailsInputProps) {
                 children: Interop_reactApi.Children.toArray([createElement(FormSelect, {
                     name: "topic",
                     placeholder: "Select a topic*",
-                    options: topics,
+                    options: Topics,
                     field: topic,
                     onChange: onInputChange,
                 })]),
@@ -50,7 +50,7 @@ export function ProjectDetails(projectDetailsInputProps) {
                 children: Interop_reactApi.Children.toArray([createElement(FormSelect, {
                     name: "budget",
                     placeholder: "Select a budget*",
-                    options: budgets,
+                    options: Budgets,
                     field: budget,
                     onChange: onInputChange,
                 })]),
