@@ -101,11 +101,11 @@ function getFullAddress(address, city, zipCode, country) {
 
 export function Summary(summaryInputProps) {
     let children, children_2;
-    const phone = summaryInputProps.phone;
     const gdprConsent = summaryInputProps.gdprConsent;
     const subject = summaryInputProps.subject;
     const budget = summaryInputProps.budget;
     const topic = summaryInputProps.topic;
+    const phone = summaryInputProps.phone;
     const emailAddress = summaryInputProps.emailAddress;
     const country = summaryInputProps.country;
     const zipCode = summaryInputProps.zipCode;

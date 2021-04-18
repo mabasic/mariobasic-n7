@@ -4,13 +4,14 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Main.fs" />
-    <Compile Include="Start.fs" />
     <Compile Include="components/FormTextarea.fs" />
     <Compile Include="components/FormInput.fs" />
     <Compile Include="components/FormSelect.fs" />
     <Compile Include="components/ClientDetails.fs" />
     <Compile Include="components/Summary.fs" />
     <Compile Include="components/ProjectDetails.fs" />
+    <Compile Include="components/GetStarted.fs" />
+    <Compile Include="Start.fs" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Fable.Browser.Dom" Version="2.2.0" />

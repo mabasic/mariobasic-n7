@@ -3105,6 +3105,1516 @@ function within(min, value, max) {
 
 /***/ }),
 
+/***/ "./resources/js/.fable/fable-library.3.1.1/Reflection.js":
+/*!***************************************************************!*\
+  !*** ./resources/js/.fable/fable-library.3.1.1/Reflection.js ***!
+  \***************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "CaseInfo": () => (/* binding */ CaseInfo),
+/* harmony export */   "TypeInfo": () => (/* binding */ TypeInfo),
+/* harmony export */   "getGenerics": () => (/* binding */ getGenerics),
+/* harmony export */   "getHashCode": () => (/* binding */ getHashCode),
+/* harmony export */   "equals": () => (/* binding */ equals),
+/* harmony export */   "class_type": () => (/* binding */ class_type),
+/* harmony export */   "record_type": () => (/* binding */ record_type),
+/* harmony export */   "anonRecord_type": () => (/* binding */ anonRecord_type),
+/* harmony export */   "union_type": () => (/* binding */ union_type),
+/* harmony export */   "tuple_type": () => (/* binding */ tuple_type),
+/* harmony export */   "delegate_type": () => (/* binding */ delegate_type),
+/* harmony export */   "lambda_type": () => (/* binding */ lambda_type),
+/* harmony export */   "option_type": () => (/* binding */ option_type),
+/* harmony export */   "list_type": () => (/* binding */ list_type),
+/* harmony export */   "array_type": () => (/* binding */ array_type),
+/* harmony export */   "enum_type": () => (/* binding */ enum_type),
+/* harmony export */   "obj_type": () => (/* binding */ obj_type),
+/* harmony export */   "unit_type": () => (/* binding */ unit_type),
+/* harmony export */   "char_type": () => (/* binding */ char_type),
+/* harmony export */   "string_type": () => (/* binding */ string_type),
+/* harmony export */   "bool_type": () => (/* binding */ bool_type),
+/* harmony export */   "int8_type": () => (/* binding */ int8_type),
+/* harmony export */   "uint8_type": () => (/* binding */ uint8_type),
+/* harmony export */   "int16_type": () => (/* binding */ int16_type),
+/* harmony export */   "uint16_type": () => (/* binding */ uint16_type),
+/* harmony export */   "int32_type": () => (/* binding */ int32_type),
+/* harmony export */   "uint32_type": () => (/* binding */ uint32_type),
+/* harmony export */   "float32_type": () => (/* binding */ float32_type),
+/* harmony export */   "float64_type": () => (/* binding */ float64_type),
+/* harmony export */   "decimal_type": () => (/* binding */ decimal_type),
+/* harmony export */   "name": () => (/* binding */ name),
+/* harmony export */   "fullName": () => (/* binding */ fullName),
+/* harmony export */   "namespace": () => (/* binding */ namespace),
+/* harmony export */   "isArray": () => (/* binding */ isArray),
+/* harmony export */   "getElementType": () => (/* binding */ getElementType),
+/* harmony export */   "isGenericType": () => (/* binding */ isGenericType),
+/* harmony export */   "isEnum": () => (/* binding */ isEnum),
+/* harmony export */   "isSubclassOf": () => (/* binding */ isSubclassOf),
+/* harmony export */   "getGenericTypeDefinition": () => (/* binding */ getGenericTypeDefinition),
+/* harmony export */   "getEnumUnderlyingType": () => (/* binding */ getEnumUnderlyingType),
+/* harmony export */   "getEnumValues": () => (/* binding */ getEnumValues),
+/* harmony export */   "getEnumNames": () => (/* binding */ getEnumNames),
+/* harmony export */   "parseEnum": () => (/* binding */ parseEnum),
+/* harmony export */   "tryParseEnum": () => (/* binding */ tryParseEnum),
+/* harmony export */   "getEnumName": () => (/* binding */ getEnumName),
+/* harmony export */   "isEnumDefined": () => (/* binding */ isEnumDefined),
+/* harmony export */   "getUnionCases": () => (/* binding */ getUnionCases),
+/* harmony export */   "getRecordElements": () => (/* binding */ getRecordElements),
+/* harmony export */   "getTupleElements": () => (/* binding */ getTupleElements),
+/* harmony export */   "getFunctionElements": () => (/* binding */ getFunctionElements),
+/* harmony export */   "isUnion": () => (/* binding */ isUnion),
+/* harmony export */   "isRecord": () => (/* binding */ isRecord),
+/* harmony export */   "isTuple": () => (/* binding */ isTuple),
+/* harmony export */   "isFunction": () => (/* binding */ isFunction),
+/* harmony export */   "getUnionFields": () => (/* binding */ getUnionFields),
+/* harmony export */   "getUnionCaseFields": () => (/* binding */ getUnionCaseFields),
+/* harmony export */   "getRecordFields": () => (/* binding */ getRecordFields),
+/* harmony export */   "getRecordField": () => (/* binding */ getRecordField),
+/* harmony export */   "getTupleFields": () => (/* binding */ getTupleFields),
+/* harmony export */   "getTupleField": () => (/* binding */ getTupleField),
+/* harmony export */   "makeUnion": () => (/* binding */ makeUnion),
+/* harmony export */   "makeRecord": () => (/* binding */ makeRecord),
+/* harmony export */   "makeTuple": () => (/* binding */ makeTuple),
+/* harmony export */   "makeGenericType": () => (/* binding */ makeGenericType),
+/* harmony export */   "createInstance": () => (/* binding */ createInstance),
+/* harmony export */   "getValue": () => (/* binding */ getValue),
+/* harmony export */   "getCaseTag": () => (/* binding */ getCaseTag),
+/* harmony export */   "getCaseName": () => (/* binding */ getCaseName),
+/* harmony export */   "getCaseFields": () => (/* binding */ getCaseFields)
+/* harmony export */ });
+/* harmony import */ var _Types_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Types.js */ "./resources/js/.fable/fable-library.3.1.1/Types.js");
+/* harmony import */ var _Util_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Util.js */ "./resources/js/.fable/fable-library.3.1.1/Util.js");
+
+
+class CaseInfo {
+  constructor(declaringType, tag, name, fields) {
+    this.declaringType = declaringType;
+    this.tag = tag;
+    this.name = name;
+    this.fields = fields;
+  }
+
+}
+class TypeInfo {
+  constructor(fullname, generics, construct, parent, fields, cases, enumCases) {
+    this.fullname = fullname;
+    this.generics = generics;
+    this.construct = construct;
+    this.parent = parent;
+    this.fields = fields;
+    this.cases = cases;
+    this.enumCases = enumCases;
+  }
+
+  toString() {
+    return fullName(this);
+  }
+
+  GetHashCode() {
+    return getHashCode(this);
+  }
+
+  Equals(other) {
+    return equals(this, other);
+  }
+
+}
+function getGenerics(t) {
+  return t.generics != null ? t.generics : [];
+}
+function getHashCode(t) {
+  const fullnameHash = (0,_Util_js__WEBPACK_IMPORTED_MODULE_1__.stringHash)(t.fullname);
+  const genHashes = getGenerics(t).map(getHashCode);
+  return (0,_Util_js__WEBPACK_IMPORTED_MODULE_1__.combineHashCodes)([fullnameHash, ...genHashes]);
+}
+function equals(t1, t2) {
+  if (t1.fullname === "") {
+    // Anonymous records
+    return t2.fullname === "" && (0,_Util_js__WEBPACK_IMPORTED_MODULE_1__.equalArraysWith)(getRecordElements(t1), getRecordElements(t2), ([k1, v1], [k2, v2]) => k1 === k2 && equals(v1, v2));
+  } else {
+    return t1.fullname === t2.fullname && (0,_Util_js__WEBPACK_IMPORTED_MODULE_1__.equalArraysWith)(getGenerics(t1), getGenerics(t2), equals);
+  }
+}
+function class_type(fullname, generics, construct, parent) {
+  return new TypeInfo(fullname, generics, construct, parent);
+}
+function record_type(fullname, generics, construct, fields) {
+  return new TypeInfo(fullname, generics, construct, undefined, fields);
+}
+function anonRecord_type(...fields) {
+  return new TypeInfo("", undefined, undefined, undefined, () => fields);
+}
+function union_type(fullname, generics, construct, cases) {
+  const t = new TypeInfo(fullname, generics, construct, undefined, undefined, () => {
+    const caseNames = construct.prototype.cases();
+    return cases().map((fields, i) => new CaseInfo(t, i, caseNames[i], fields));
+  });
+  return t;
+}
+function tuple_type(...generics) {
+  return new TypeInfo("System.Tuple`" + generics.length, generics);
+}
+function delegate_type(...generics) {
+  return new TypeInfo("System.Func`" + generics.length, generics);
+}
+function lambda_type(argType, returnType) {
+  return new TypeInfo("Microsoft.FSharp.Core.FSharpFunc`2", [argType, returnType]);
+}
+function option_type(generic) {
+  return new TypeInfo("Microsoft.FSharp.Core.FSharpOption`1", [generic]);
+}
+function list_type(generic) {
+  return new TypeInfo("Microsoft.FSharp.Collections.FSharpList`1", [generic]);
+}
+function array_type(generic) {
+  return new TypeInfo(generic.fullname + "[]", [generic]);
+}
+function enum_type(fullname, underlyingType, enumCases) {
+  return new TypeInfo(fullname, [underlyingType], undefined, undefined, undefined, undefined, enumCases);
+}
+const obj_type = new TypeInfo("System.Object");
+const unit_type = new TypeInfo("Microsoft.FSharp.Core.Unit");
+const char_type = new TypeInfo("System.Char");
+const string_type = new TypeInfo("System.String");
+const bool_type = new TypeInfo("System.Boolean");
+const int8_type = new TypeInfo("System.SByte");
+const uint8_type = new TypeInfo("System.Byte");
+const int16_type = new TypeInfo("System.Int16");
+const uint16_type = new TypeInfo("System.UInt16");
+const int32_type = new TypeInfo("System.Int32");
+const uint32_type = new TypeInfo("System.UInt32");
+const float32_type = new TypeInfo("System.Single");
+const float64_type = new TypeInfo("System.Double");
+const decimal_type = new TypeInfo("System.Decimal");
+function name(info) {
+  if (Array.isArray(info)) {
+    return info[0];
+  } else if (info instanceof CaseInfo) {
+    return info.name;
+  } else {
+    const i = info.fullname.lastIndexOf(".");
+    return i === -1 ? info.fullname : info.fullname.substr(i + 1);
+  }
+}
+function fullName(t) {
+  const gen = t.generics != null && !isArray(t) ? t.generics : [];
+
+  if (gen.length > 0) {
+    return t.fullname + "[" + gen.map(x => fullName(x)).join(",") + "]";
+  } else {
+    return t.fullname;
+  }
+}
+function namespace(t) {
+  const i = t.fullname.lastIndexOf(".");
+  return i === -1 ? "" : t.fullname.substr(0, i);
+}
+function isArray(t) {
+  return t.fullname.endsWith("[]");
+}
+function getElementType(t) {
+  var _a;
+
+  return isArray(t) ? (_a = t.generics) === null || _a === void 0 ? void 0 : _a[0] : undefined;
+}
+function isGenericType(t) {
+  return t.generics != null && t.generics.length > 0;
+}
+function isEnum(t) {
+  return t.enumCases != null && t.enumCases.length > 0;
+}
+function isSubclassOf(t1, t2) {
+  var _a, _b;
+
+  return (_b = (_a = t1.parent) === null || _a === void 0 ? void 0 : _a.Equals(t2)) !== null && _b !== void 0 ? _b : false;
+}
+/**
+ * This doesn't replace types for fields (records) or cases (unions)
+ * but it should be enough for type comparison purposes
+ */
+
+function getGenericTypeDefinition(t) {
+  return t.generics == null ? t : new TypeInfo(t.fullname, t.generics.map(() => obj_type));
+}
+function getEnumUnderlyingType(t) {
+  var _a;
+
+  return (_a = t.generics) === null || _a === void 0 ? void 0 : _a[0];
+}
+function getEnumValues(t) {
+  if (isEnum(t) && t.enumCases != null) {
+    return t.enumCases.map(kv => kv[1]);
+  } else {
+    throw new Error(`${t.fullname} is not an enum type`);
+  }
+}
+function getEnumNames(t) {
+  if (isEnum(t) && t.enumCases != null) {
+    return t.enumCases.map(kv => kv[0]);
+  } else {
+    throw new Error(`${t.fullname} is not an enum type`);
+  }
+}
+
+function getEnumCase(t, v) {
+  if (t.enumCases != null) {
+    if (typeof v === "string") {
+      for (const kv of t.enumCases) {
+        if (kv[0] === v) {
+          return kv;
+        }
+      }
+
+      throw new Error(`'${v}' was not found in ${t.fullname}`);
+    } else {
+      for (const kv of t.enumCases) {
+        if (kv[1] === v) {
+          return kv;
+        }
+      } // .NET returns the number even if it doesn't match any of the cases
+
+
+      return ["", v];
+    }
+  } else {
+    throw new Error(`${t.fullname} is not an enum type`);
+  }
+}
+
+function parseEnum(t, str) {
+  // TODO: better int parsing here, parseInt ceils floats: "4.8" -> 4
+  const value = parseInt(str, 10);
+  return getEnumCase(t, isNaN(value) ? str : value)[1];
+}
+function tryParseEnum(t, str, defValue) {
+  try {
+    defValue.contents = parseEnum(t, str);
+    return true;
+  } catch (_a) {
+    return false;
+  }
+}
+function getEnumName(t, v) {
+  return getEnumCase(t, v)[0];
+}
+function isEnumDefined(t, v) {
+  try {
+    const kv = getEnumCase(t, v);
+    return kv[0] != null && kv[0] !== "";
+  } catch (_a) {// supress error
+  }
+
+  return false;
+} // FSharpType
+
+function getUnionCases(t) {
+  if (t.cases != null) {
+    return t.cases();
+  } else {
+    throw new Error(`${t.fullname} is not an F# union type`);
+  }
+}
+function getRecordElements(t) {
+  if (t.fields != null) {
+    return t.fields();
+  } else {
+    throw new Error(`${t.fullname} is not an F# record type`);
+  }
+}
+function getTupleElements(t) {
+  if (isTuple(t) && t.generics != null) {
+    return t.generics;
+  } else {
+    throw new Error(`${t.fullname} is not a tuple type`);
+  }
+}
+function getFunctionElements(t) {
+  if (isFunction(t) && t.generics != null) {
+    const gen = t.generics;
+    return [gen[0], gen[1]];
+  } else {
+    throw new Error(`${t.fullname} is not an F# function type`);
+  }
+}
+function isUnion(t) {
+  return t instanceof TypeInfo ? t.cases != null : t instanceof _Types_js__WEBPACK_IMPORTED_MODULE_0__.Union;
+}
+function isRecord(t) {
+  return t instanceof TypeInfo ? t.fields != null : t instanceof _Types_js__WEBPACK_IMPORTED_MODULE_0__.Record;
+}
+function isTuple(t) {
+  return t.fullname.startsWith("System.Tuple") && !isArray(t);
+} // In .NET this is false for delegates
+
+function isFunction(t) {
+  return t.fullname === "Microsoft.FSharp.Core.FSharpFunc`2";
+} // FSharpValue
+
+function getUnionFields(v, t) {
+  const cases = getUnionCases(t);
+  const case_ = cases[v.tag];
+
+  if (case_ == null) {
+    throw new Error(`Cannot find case ${v.name} in union type`);
+  }
+
+  return [case_, v.fields];
+}
+function getUnionCaseFields(uci) {
+  return uci.fields == null ? [] : uci.fields;
+} // This is used as replacement of `FSharpValue.GetRecordFields`
+// For `FSharpTypes.GetRecordFields` see `getRecordElements`
+// Object.keys returns keys in the order they were added to the object
+
+function getRecordFields(v) {
+  return Object.keys(v).map(k => v[k]);
+}
+function getRecordField(v, field) {
+  return v[field[0]];
+}
+function getTupleFields(v) {
+  return v;
+}
+function getTupleField(v, i) {
+  return v[i];
+}
+function makeUnion(uci, values) {
+  const expectedLength = (uci.fields || []).length;
+
+  if (values.length !== expectedLength) {
+    throw new Error(`Expected an array of length ${expectedLength} but got ${values.length}`);
+  }
+
+  return uci.declaringType.construct != null ? new uci.declaringType.construct(uci.tag, ...values) : {};
+}
+function makeRecord(t, values) {
+  const fields = getRecordElements(t);
+
+  if (fields.length !== values.length) {
+    throw new Error(`Expected an array of length ${fields.length} but got ${values.length}`);
+  }
+
+  return t.construct != null ? new t.construct(...values) : fields.reduce((obj, [key, _t], i) => {
+    obj[key] = values[i];
+    return obj;
+  }, {});
+}
+function makeTuple(values, _t) {
+  return values;
+}
+function makeGenericType(t, generics) {
+  return new TypeInfo(t.fullname, generics, t.construct, t.parent, t.fields, t.cases);
+}
+function createInstance(t, consArgs) {
+  // TODO: Check if consArgs length is same as t.construct?
+  // (Arg types can still be different)
+  if (typeof t.construct === "function") {
+    return new t.construct(...(consArgs !== null && consArgs !== void 0 ? consArgs : []));
+  } else {
+    throw new Error(`Cannot access constructor of ${t.fullname}`);
+  }
+}
+function getValue(propertyInfo, v) {
+  return v[propertyInfo[0]];
+} // Fable.Core.Reflection
+
+function assertUnion(x) {
+  if (!(x instanceof _Types_js__WEBPACK_IMPORTED_MODULE_0__.Union)) {
+    throw new Error(`Value is not an F# union type`);
+  }
+}
+
+function getCaseTag(x) {
+  assertUnion(x);
+  return x.tag;
+}
+function getCaseName(x) {
+  assertUnion(x);
+  return x.cases()[x.tag];
+}
+function getCaseFields(x) {
+  assertUnion(x);
+  return x.fields;
+}
+
+/***/ }),
+
+/***/ "./resources/js/.fable/fable-library.3.1.1/Types.js":
+/*!**********************************************************!*\
+  !*** ./resources/js/.fable/fable-library.3.1.1/Types.js ***!
+  \**********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "seqToString": () => (/* binding */ seqToString),
+/* harmony export */   "toString": () => (/* binding */ toString),
+/* harmony export */   "List": () => (/* binding */ List),
+/* harmony export */   "Union": () => (/* binding */ Union),
+/* harmony export */   "Record": () => (/* binding */ Record),
+/* harmony export */   "FSharpRef": () => (/* binding */ FSharpRef),
+/* harmony export */   "Exception": () => (/* binding */ Exception),
+/* harmony export */   "isException": () => (/* binding */ isException),
+/* harmony export */   "FSharpException": () => (/* binding */ FSharpException),
+/* harmony export */   "MatchFailureException": () => (/* binding */ MatchFailureException),
+/* harmony export */   "Attribute": () => (/* binding */ Attribute)
+/* harmony export */ });
+/* harmony import */ var _Util_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Util.js */ "./resources/js/.fable/fable-library.3.1.1/Util.js");
+
+function seqToString(self) {
+  let count = 0;
+  let str = "[";
+
+  for (const x of self) {
+    if (count === 0) {
+      str += toString(x);
+    } else if (count === 100) {
+      str += "; ...";
+      break;
+    } else {
+      str += "; " + toString(x);
+    }
+
+    count++;
+  }
+
+  return str + "]";
+}
+function toString(x, callStack = 0) {
+  if (x != null && typeof x === "object") {
+    if (typeof x.toString === "function") {
+      return x.toString();
+    } else if (Symbol.iterator in x) {
+      return seqToString(x);
+    } else {
+      // TODO: Date?
+      const cons = Object.getPrototypeOf(x).constructor;
+      return cons === Object && callStack < 10 // Same format as recordToString
+      ? "{ " + Object.entries(x).map(([k, v]) => k + " = " + toString(v, callStack + 1)).join("\n  ") + " }" : cons.name;
+    }
+  }
+
+  return String(x);
+}
+
+function compareList(self, other) {
+  if (self === other) {
+    return 0;
+  } else {
+    if (other == null) {
+      return -1;
+    }
+
+    while (self.tail != null) {
+      if (other.tail == null) {
+        return 1;
+      }
+
+      const res = (0,_Util_js__WEBPACK_IMPORTED_MODULE_0__.compare)(self.head, other.head);
+
+      if (res !== 0) {
+        return res;
+      }
+
+      self = self.tail;
+      other = other.tail;
+    }
+
+    return other.tail == null ? 0 : -1;
+  }
+}
+
+class List {
+  constructor(head, tail) {
+    this.head = head;
+    this.tail = tail;
+  }
+
+  [Symbol.iterator]() {
+    let cur = this;
+    return {
+      next: () => {
+        const value = cur === null || cur === void 0 ? void 0 : cur.head;
+        const done = (cur === null || cur === void 0 ? void 0 : cur.tail) == null;
+        cur = cur === null || cur === void 0 ? void 0 : cur.tail;
+        return {
+          done,
+          value
+        };
+      }
+    };
+  }
+
+  toJSON() {
+    return Array.from(this);
+  }
+
+  toString() {
+    return seqToString(this);
+  }
+
+  GetHashCode() {
+    return (0,_Util_js__WEBPACK_IMPORTED_MODULE_0__.combineHashCodes)(Array.from(this).map(_Util_js__WEBPACK_IMPORTED_MODULE_0__.structuralHash));
+  }
+
+  Equals(other) {
+    return compareList(this, other) === 0;
+  }
+
+  CompareTo(other) {
+    return compareList(this, other);
+  }
+
+}
+class Union {
+  get name() {
+    return this.cases()[this.tag];
+  }
+
+  toJSON() {
+    return this.fields.length === 0 ? this.name : [this.name].concat(this.fields);
+  }
+
+  toString() {
+    if (this.fields.length === 0) {
+      return this.name;
+    } else {
+      let fields = "";
+      let withParens = true;
+
+      if (this.fields.length === 1) {
+        const field = toString(this.fields[0]);
+        withParens = field.indexOf(" ") >= 0;
+        fields = field;
+      } else {
+        fields = this.fields.map(x => toString(x)).join(", ");
+      }
+
+      return this.name + (withParens ? " (" : " ") + fields + (withParens ? ")" : "");
+    }
+  }
+
+  GetHashCode() {
+    const hashes = this.fields.map(x => (0,_Util_js__WEBPACK_IMPORTED_MODULE_0__.structuralHash)(x));
+    hashes.splice(0, 0, (0,_Util_js__WEBPACK_IMPORTED_MODULE_0__.numberHash)(this.tag));
+    return (0,_Util_js__WEBPACK_IMPORTED_MODULE_0__.combineHashCodes)(hashes);
+  }
+
+  Equals(other) {
+    if (this === other) {
+      return true;
+    } else if (!(0,_Util_js__WEBPACK_IMPORTED_MODULE_0__.sameConstructor)(this, other)) {
+      return false;
+    } else if (this.tag === other.tag) {
+      return (0,_Util_js__WEBPACK_IMPORTED_MODULE_0__.equalArrays)(this.fields, other.fields);
+    } else {
+      return false;
+    }
+  }
+
+  CompareTo(other) {
+    if (this === other) {
+      return 0;
+    } else if (!(0,_Util_js__WEBPACK_IMPORTED_MODULE_0__.sameConstructor)(this, other)) {
+      return -1;
+    } else if (this.tag === other.tag) {
+      return (0,_Util_js__WEBPACK_IMPORTED_MODULE_0__.compareArrays)(this.fields, other.fields);
+    } else {
+      return this.tag < other.tag ? -1 : 1;
+    }
+  }
+
+}
+
+function recordToJSON(self) {
+  const o = {};
+  const keys = Object.keys(self);
+
+  for (let i = 0; i < keys.length; i++) {
+    o[keys[i]] = self[keys[i]];
+  }
+
+  return o;
+}
+
+function recordToString(self) {
+  return "{ " + Object.entries(self).map(([k, v]) => k + " = " + toString(v)).join("\n  ") + " }";
+}
+
+function recordGetHashCode(self) {
+  const hashes = Object.values(self).map(v => (0,_Util_js__WEBPACK_IMPORTED_MODULE_0__.structuralHash)(v));
+  return (0,_Util_js__WEBPACK_IMPORTED_MODULE_0__.combineHashCodes)(hashes);
+}
+
+function recordEquals(self, other) {
+  if (self === other) {
+    return true;
+  } else if (!(0,_Util_js__WEBPACK_IMPORTED_MODULE_0__.sameConstructor)(self, other)) {
+    return false;
+  } else {
+    const thisNames = Object.keys(self);
+
+    for (let i = 0; i < thisNames.length; i++) {
+      if (!(0,_Util_js__WEBPACK_IMPORTED_MODULE_0__.equals)(self[thisNames[i]], other[thisNames[i]])) {
+        return false;
+      }
+    }
+
+    return true;
+  }
+}
+
+function recordCompareTo(self, other) {
+  if (self === other) {
+    return 0;
+  } else if (!(0,_Util_js__WEBPACK_IMPORTED_MODULE_0__.sameConstructor)(self, other)) {
+    return -1;
+  } else {
+    const thisNames = Object.keys(self);
+
+    for (let i = 0; i < thisNames.length; i++) {
+      const result = (0,_Util_js__WEBPACK_IMPORTED_MODULE_0__.compare)(self[thisNames[i]], other[thisNames[i]]);
+
+      if (result !== 0) {
+        return result;
+      }
+    }
+
+    return 0;
+  }
+}
+
+class Record {
+  toJSON() {
+    return recordToJSON(this);
+  }
+
+  toString() {
+    return recordToString(this);
+  }
+
+  GetHashCode() {
+    return recordGetHashCode(this);
+  }
+
+  Equals(other) {
+    return recordEquals(this, other);
+  }
+
+  CompareTo(other) {
+    return recordCompareTo(this, other);
+  }
+
+}
+class FSharpRef {
+  constructor(contentsOrGetter, setter) {
+    if (typeof setter === "function") {
+      this.getter = contentsOrGetter;
+      this.setter = setter;
+    } else {
+      this.getter = () => contentsOrGetter;
+
+      this.setter = v => {
+        contentsOrGetter = v;
+      };
+    }
+  }
+
+  get contents() {
+    return this.getter();
+  }
+
+  set contents(v) {
+    this.setter(v);
+  }
+
+} // EXCEPTIONS
+// Exception is intentionally not derived from Error, for performance reasons (see #2160)
+
+class Exception {
+  constructor(message) {
+    this.message = message;
+  }
+
+}
+function isException(x) {
+  return x instanceof Exception || x instanceof Error;
+}
+class FSharpException extends Exception {
+  toJSON() {
+    return recordToJSON(this);
+  }
+
+  toString() {
+    return recordToString(this);
+  }
+
+  GetHashCode() {
+    return recordGetHashCode(this);
+  }
+
+  Equals(other) {
+    return recordEquals(this, other);
+  }
+
+  CompareTo(other) {
+    return recordCompareTo(this, other);
+  }
+
+}
+class MatchFailureException extends FSharpException {
+  constructor(arg1, arg2, arg3) {
+    super();
+    this.arg1 = arg1;
+    this.arg2 = arg2 | 0;
+    this.arg3 = arg3 | 0;
+    this.message = "The match cases were incomplete";
+  }
+
+}
+class Attribute {}
+
+/***/ }),
+
+/***/ "./resources/js/.fable/fable-library.3.1.1/Util.js":
+/*!*********************************************************!*\
+  !*** ./resources/js/.fable/fable-library.3.1.1/Util.js ***!
+  \*********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "isIterable": () => (/* binding */ isIterable),
+/* harmony export */   "isArrayLike": () => (/* binding */ isArrayLike),
+/* harmony export */   "isDisposable": () => (/* binding */ isDisposable),
+/* harmony export */   "sameConstructor": () => (/* binding */ sameConstructor),
+/* harmony export */   "Comparer": () => (/* binding */ Comparer),
+/* harmony export */   "comparerFromEqualityComparer": () => (/* binding */ comparerFromEqualityComparer),
+/* harmony export */   "assertEqual": () => (/* binding */ assertEqual),
+/* harmony export */   "assertNotEqual": () => (/* binding */ assertNotEqual),
+/* harmony export */   "Lazy": () => (/* binding */ Lazy),
+/* harmony export */   "lazyFromValue": () => (/* binding */ lazyFromValue),
+/* harmony export */   "padWithZeros": () => (/* binding */ padWithZeros),
+/* harmony export */   "padLeftAndRightWithZeros": () => (/* binding */ padLeftAndRightWithZeros),
+/* harmony export */   "dateOffset": () => (/* binding */ dateOffset),
+/* harmony export */   "int16ToString": () => (/* binding */ int16ToString),
+/* harmony export */   "int32ToString": () => (/* binding */ int32ToString),
+/* harmony export */   "ObjectRef": () => (/* binding */ ObjectRef),
+/* harmony export */   "stringHash": () => (/* binding */ stringHash),
+/* harmony export */   "numberHash": () => (/* binding */ numberHash),
+/* harmony export */   "combineHashCodes": () => (/* binding */ combineHashCodes),
+/* harmony export */   "physicalHash": () => (/* binding */ physicalHash),
+/* harmony export */   "identityHash": () => (/* binding */ identityHash),
+/* harmony export */   "dateHash": () => (/* binding */ dateHash),
+/* harmony export */   "arrayHash": () => (/* binding */ arrayHash),
+/* harmony export */   "structuralHash": () => (/* binding */ structuralHash),
+/* harmony export */   "fastStructuralHash": () => (/* binding */ fastStructuralHash),
+/* harmony export */   "safeHash": () => (/* binding */ safeHash),
+/* harmony export */   "equalArraysWith": () => (/* binding */ equalArraysWith),
+/* harmony export */   "equalArrays": () => (/* binding */ equalArrays),
+/* harmony export */   "equals": () => (/* binding */ equals),
+/* harmony export */   "compareDates": () => (/* binding */ compareDates),
+/* harmony export */   "comparePrimitives": () => (/* binding */ comparePrimitives),
+/* harmony export */   "compareArraysWith": () => (/* binding */ compareArraysWith),
+/* harmony export */   "compareArrays": () => (/* binding */ compareArrays),
+/* harmony export */   "compare": () => (/* binding */ compare),
+/* harmony export */   "min": () => (/* binding */ min),
+/* harmony export */   "max": () => (/* binding */ max),
+/* harmony export */   "clamp": () => (/* binding */ clamp),
+/* harmony export */   "createAtom": () => (/* binding */ createAtom),
+/* harmony export */   "createObj": () => (/* binding */ createObj),
+/* harmony export */   "jsOptions": () => (/* binding */ jsOptions),
+/* harmony export */   "round": () => (/* binding */ round),
+/* harmony export */   "sign": () => (/* binding */ sign),
+/* harmony export */   "randomNext": () => (/* binding */ randomNext),
+/* harmony export */   "randomBytes": () => (/* binding */ randomBytes),
+/* harmony export */   "unescapeDataString": () => (/* binding */ unescapeDataString),
+/* harmony export */   "escapeDataString": () => (/* binding */ escapeDataString),
+/* harmony export */   "escapeUriString": () => (/* binding */ escapeUriString),
+/* harmony export */   "count": () => (/* binding */ count),
+/* harmony export */   "clear": () => (/* binding */ clear),
+/* harmony export */   "uncurry": () => (/* binding */ uncurry),
+/* harmony export */   "curry": () => (/* binding */ curry),
+/* harmony export */   "partialApply": () => (/* binding */ partialApply),
+/* harmony export */   "mapCurriedArgs": () => (/* binding */ mapCurriedArgs)
+/* harmony export */ });
+// tslint:disable:ban-types
+function isIterable(x) {
+  return x != null && typeof x === "object" && Symbol.iterator in x;
+}
+function isArrayLike(x) {
+  return Array.isArray(x) || ArrayBuffer.isView(x);
+}
+
+function isComparer(x) {
+  return typeof x.Compare === "function";
+}
+
+function isComparable(x) {
+  return typeof x.CompareTo === "function";
+}
+
+function isEquatable(x) {
+  return typeof x.Equals === "function";
+}
+
+function isHashable(x) {
+  return typeof x.GetHashCode === "function";
+}
+
+function isDisposable(x) {
+  return x != null && typeof x.Dispose === "function";
+}
+function sameConstructor(x, y) {
+  return Object.getPrototypeOf(x).constructor === Object.getPrototypeOf(y).constructor;
+}
+class Comparer {
+  constructor(f) {
+    this.Compare = f || compare;
+  }
+
+}
+function comparerFromEqualityComparer(comparer) {
+  // Sometimes IEqualityComparer also implements IComparer
+  if (isComparer(comparer)) {
+    return new Comparer(comparer.Compare);
+  } else {
+    return new Comparer((x, y) => {
+      const xhash = comparer.GetHashCode(x);
+      const yhash = comparer.GetHashCode(y);
+
+      if (xhash === yhash) {
+        return comparer.Equals(x, y) ? 0 : -1;
+      } else {
+        return xhash < yhash ? -1 : 1;
+      }
+    });
+  }
+}
+function assertEqual(actual, expected, msg) {
+  if (!equals(actual, expected)) {
+    throw Object.assign(new Error(msg || `Expected: ${expected} - Actual: ${actual}`), {
+      actual,
+      expected
+    });
+  }
+}
+function assertNotEqual(actual, expected, msg) {
+  if (equals(actual, expected)) {
+    throw Object.assign(new Error(msg || `Expected: ${expected} - Actual: ${actual}`), {
+      actual,
+      expected
+    });
+  }
+}
+class Lazy {
+  constructor(factory) {
+    this.factory = factory;
+    this.isValueCreated = false;
+  }
+
+  get Value() {
+    if (!this.isValueCreated) {
+      this.createdValue = this.factory();
+      this.isValueCreated = true;
+    }
+
+    return this.createdValue;
+  }
+
+  get IsValueCreated() {
+    return this.isValueCreated;
+  }
+
+}
+function lazyFromValue(v) {
+  return new Lazy(() => v);
+}
+function padWithZeros(i, length) {
+  let str = i.toString(10);
+
+  while (str.length < length) {
+    str = "0" + str;
+  }
+
+  return str;
+}
+function padLeftAndRightWithZeros(i, lengthLeft, lengthRight) {
+  let str = i.toString(10);
+
+  while (str.length < lengthLeft) {
+    str = "0" + str;
+  }
+
+  while (str.length < lengthRight) {
+    str = str + "0";
+  }
+
+  return str;
+}
+function dateOffset(date) {
+  const date1 = date;
+  return typeof date1.offset === "number" ? date1.offset : date.kind === 1
+  /* UTC */
+  ? 0 : date.getTimezoneOffset() * -60000;
+}
+function int16ToString(i, radix) {
+  i = i < 0 && radix != null && radix !== 10 ? 0xFFFF + i + 1 : i;
+  return i.toString(radix);
+}
+function int32ToString(i, radix) {
+  i = i < 0 && radix != null && radix !== 10 ? 0xFFFFFFFF + i + 1 : i;
+  return i.toString(radix);
+}
+class ObjectRef {
+  static id(o) {
+    if (!ObjectRef.idMap.has(o)) {
+      ObjectRef.idMap.set(o, ++ObjectRef.count);
+    }
+
+    return ObjectRef.idMap.get(o);
+  }
+
+}
+ObjectRef.idMap = new WeakMap();
+ObjectRef.count = 0;
+function stringHash(s) {
+  let i = 0;
+  let h = 5381;
+  const len = s.length;
+
+  while (i < len) {
+    h = h * 33 ^ s.charCodeAt(i++);
+  }
+
+  return h;
+}
+function numberHash(x) {
+  return x * 2654435761 | 0;
+} // From https://stackoverflow.com/a/37449594
+
+function combineHashCodes(hashes) {
+  if (hashes.length === 0) {
+    return 0;
+  }
+
+  return hashes.reduce((h1, h2) => {
+    return (h1 << 5) + h1 ^ h2;
+  });
+}
+function physicalHash(x) {
+  if (x == null) {
+    return 0;
+  }
+
+  switch (typeof x) {
+    case "boolean":
+      return x ? 1 : 0;
+
+    case "number":
+      return numberHash(x);
+
+    case "string":
+      return stringHash(x);
+
+    default:
+      return numberHash(ObjectRef.id(x));
+  }
+}
+function identityHash(x) {
+  if (x == null) {
+    return 0;
+  } else if (isHashable(x)) {
+    return x.GetHashCode();
+  } else {
+    return physicalHash(x);
+  }
+}
+function dateHash(x) {
+  return x.getTime();
+}
+function arrayHash(x) {
+  const len = x.length;
+  const hashes = new Array(len);
+
+  for (let i = 0; i < len; i++) {
+    hashes[i] = structuralHash(x[i]);
+  }
+
+  return combineHashCodes(hashes);
+}
+function structuralHash(x) {
+  if (x == null) {
+    return 0;
+  }
+
+  switch (typeof x) {
+    case "boolean":
+      return x ? 1 : 0;
+
+    case "number":
+      return numberHash(x);
+
+    case "string":
+      return stringHash(x);
+
+    default:
+      {
+        if (isHashable(x)) {
+          return x.GetHashCode();
+        } else if (isArrayLike(x)) {
+          return arrayHash(x);
+        } else if (x instanceof Date) {
+          return dateHash(x);
+        } else if (Object.getPrototypeOf(x).constructor === Object) {
+          // TODO: check call-stack to prevent cyclic objects?
+          const hashes = Object.values(x).map(v => structuralHash(v));
+          return combineHashCodes(hashes);
+        } else {
+          // Classes don't implement GetHashCode by default, but must use identity hashing
+          return numberHash(ObjectRef.id(x)); // return stringHash(String(x));
+        }
+      }
+  }
+} // Intended for custom numeric types, like long or decimal
+
+function fastStructuralHash(x) {
+  return stringHash(String(x));
+} // Intended for declared types that may or may not implement GetHashCode
+
+function safeHash(x) {
+  return x == null ? 0 : isHashable(x) ? x.GetHashCode() : numberHash(ObjectRef.id(x));
+}
+function equalArraysWith(x, y, eq) {
+  if (x == null) {
+    return y == null;
+  }
+
+  if (y == null) {
+    return false;
+  }
+
+  if (x.length !== y.length) {
+    return false;
+  }
+
+  for (let i = 0; i < x.length; i++) {
+    if (!eq(x[i], y[i])) {
+      return false;
+    }
+  }
+
+  return true;
+}
+function equalArrays(x, y) {
+  return equalArraysWith(x, y, equals);
+}
+
+function equalObjects(x, y) {
+  const xKeys = Object.keys(x);
+  const yKeys = Object.keys(y);
+
+  if (xKeys.length !== yKeys.length) {
+    return false;
+  }
+
+  xKeys.sort();
+  yKeys.sort();
+
+  for (let i = 0; i < xKeys.length; i++) {
+    if (xKeys[i] !== yKeys[i] || !equals(x[xKeys[i]], y[yKeys[i]])) {
+      return false;
+    }
+  }
+
+  return true;
+}
+
+function equals(x, y) {
+  if (x === y) {
+    return true;
+  } else if (x == null) {
+    return y == null;
+  } else if (y == null) {
+    return false;
+  } else if (typeof x !== "object") {
+    return false;
+  } else if (isEquatable(x)) {
+    return x.Equals(y);
+  } else if (isArrayLike(x)) {
+    return isArrayLike(y) && equalArrays(x, y);
+  } else if (x instanceof Date) {
+    return y instanceof Date && compareDates(x, y) === 0;
+  } else {
+    return Object.getPrototypeOf(x).constructor === Object && equalObjects(x, y);
+  }
+}
+function compareDates(x, y) {
+  let xtime;
+  let ytime; // DateTimeOffset and DateTime deals with equality differently.
+
+  if ("offset" in x && "offset" in y) {
+    xtime = x.getTime();
+    ytime = y.getTime();
+  } else {
+    xtime = x.getTime() + dateOffset(x);
+    ytime = y.getTime() + dateOffset(y);
+  }
+
+  return xtime === ytime ? 0 : xtime < ytime ? -1 : 1;
+}
+function comparePrimitives(x, y) {
+  return x === y ? 0 : x < y ? -1 : 1;
+}
+function compareArraysWith(x, y, comp) {
+  if (x == null) {
+    return y == null ? 0 : 1;
+  }
+
+  if (y == null) {
+    return -1;
+  }
+
+  if (x.length !== y.length) {
+    return x.length < y.length ? -1 : 1;
+  }
+
+  for (let i = 0, j = 0; i < x.length; i++) {
+    j = comp(x[i], y[i]);
+
+    if (j !== 0) {
+      return j;
+    }
+  }
+
+  return 0;
+}
+function compareArrays(x, y) {
+  return compareArraysWith(x, y, compare);
+}
+
+function compareObjects(x, y) {
+  const xKeys = Object.keys(x);
+  const yKeys = Object.keys(y);
+
+  if (xKeys.length !== yKeys.length) {
+    return xKeys.length < yKeys.length ? -1 : 1;
+  }
+
+  xKeys.sort();
+  yKeys.sort();
+
+  for (let i = 0, j = 0; i < xKeys.length; i++) {
+    const key = xKeys[i];
+
+    if (key !== yKeys[i]) {
+      return key < yKeys[i] ? -1 : 1;
+    } else {
+      j = compare(x[key], y[key]);
+
+      if (j !== 0) {
+        return j;
+      }
+    }
+  }
+
+  return 0;
+}
+
+function compare(x, y) {
+  if (x === y) {
+    return 0;
+  } else if (x == null) {
+    return y == null ? 0 : -1;
+  } else if (y == null) {
+    return 1;
+  } else if (typeof x !== "object") {
+    return x < y ? -1 : 1;
+  } else if (isComparable(x)) {
+    return x.CompareTo(y);
+  } else if (isArrayLike(x)) {
+    return isArrayLike(y) ? compareArrays(x, y) : -1;
+  } else if (x instanceof Date) {
+    return y instanceof Date ? compareDates(x, y) : -1;
+  } else {
+    return Object.getPrototypeOf(x).constructor === Object ? compareObjects(x, y) : -1;
+  }
+}
+function min(comparer, x, y) {
+  return comparer(x, y) < 0 ? x : y;
+}
+function max(comparer, x, y) {
+  return comparer(x, y) > 0 ? x : y;
+}
+function clamp(comparer, value, min, max) {
+  return comparer(value, min) < 0 ? min : comparer(value, max) > 0 ? max : value;
+}
+function createAtom(value) {
+  let atom = value;
+  return (value, isSetter) => {
+    if (!isSetter) {
+      return atom;
+    } else {
+      atom = value;
+      return void 0;
+    }
+  };
+}
+function createObj(fields) {
+  const obj = {};
+
+  for (const kv of fields) {
+    obj[kv[0]] = kv[1];
+  }
+
+  return obj;
+}
+function jsOptions(mutator) {
+  const opts = {};
+  mutator(opts);
+  return opts;
+}
+function round(value, digits = 0) {
+  const m = Math.pow(10, digits);
+  const n = +(digits ? value * m : value).toFixed(8);
+  const i = Math.floor(n);
+  const f = n - i;
+  const e = 1e-8;
+  const r = f > 0.5 - e && f < 0.5 + e ? i % 2 === 0 ? i : i + 1 : Math.round(n);
+  return digits ? r / m : r;
+}
+function sign(x) {
+  return x > 0 ? 1 : x < 0 ? -1 : 0;
+}
+function randomNext(min, max) {
+  return Math.floor(Math.random() * (max - min)) + min;
+}
+function randomBytes(buffer) {
+  if (buffer == null) {
+    throw new Error("Buffer cannot be null");
+  }
+
+  for (let i = 0; i < buffer.length; i += 6) {
+    // Pick random 48-bit number. Fill buffer in 2 24-bit chunks to avoid bitwise truncation.
+    let r = Math.floor(Math.random() * 281474976710656); // Low 24 bits = chunk 1.
+
+    const rhi = Math.floor(r / 16777216); // High 24 bits shifted via division = chunk 2.
+
+    for (let j = 0; j < 6 && i + j < buffer.length; j++) {
+      if (j === 3) {
+        r = rhi;
+      }
+
+      buffer[i + j] = r & 255;
+      r >>>= 8;
+    }
+  }
+}
+function unescapeDataString(s) {
+  // https://stackoverflow.com/a/4458580/524236
+  return decodeURIComponent(s.replace(/\+/g, "%20"));
+}
+function escapeDataString(s) {
+  return encodeURIComponent(s).replace(/!/g, "%21").replace(/'/g, "%27").replace(/\(/g, "%28").replace(/\)/g, "%29").replace(/\*/g, "%2A");
+}
+function escapeUriString(s) {
+  return encodeURI(s);
+} // ICollection.Clear and Count members can be called on Arrays
+// or Dictionaries so we need a runtime check (see #1120)
+
+function count(col) {
+  if (isArrayLike(col)) {
+    return col.length;
+  } else {
+    let count = 0;
+
+    for (const _ of col) {
+      count++;
+    }
+
+    return count;
+  }
+}
+function clear(col) {
+  if (isArrayLike(col)) {
+    col.splice(0);
+  } else {
+    col.clear();
+  }
+}
+const CURRIED_KEY = "__CURRIED__";
+function uncurry(arity, f) {
+  // f may be a function option with None value
+  if (f == null) {
+    return undefined;
+  } // The function is already uncurried
+
+
+  if (f.length > 1) {
+    // if (CURRIED_KEY in f) { // This doesn't always work
+    return f;
+  }
+
+  let uncurriedFn;
+
+  switch (arity) {
+    case 2:
+      uncurriedFn = (a1, a2) => f(a1)(a2);
+
+      break;
+
+    case 3:
+      uncurriedFn = (a1, a2, a3) => f(a1)(a2)(a3);
+
+      break;
+
+    case 4:
+      uncurriedFn = (a1, a2, a3, a4) => f(a1)(a2)(a3)(a4);
+
+      break;
+
+    case 5:
+      uncurriedFn = (a1, a2, a3, a4, a5) => f(a1)(a2)(a3)(a4)(a5);
+
+      break;
+
+    case 6:
+      uncurriedFn = (a1, a2, a3, a4, a5, a6) => f(a1)(a2)(a3)(a4)(a5)(a6);
+
+      break;
+
+    case 7:
+      uncurriedFn = (a1, a2, a3, a4, a5, a6, a7) => f(a1)(a2)(a3)(a4)(a5)(a6)(a7);
+
+      break;
+
+    case 8:
+      uncurriedFn = (a1, a2, a3, a4, a5, a6, a7, a8) => f(a1)(a2)(a3)(a4)(a5)(a6)(a7)(a8);
+
+      break;
+
+    default:
+      throw new Error("Uncurrying to more than 8-arity is not supported: " + arity);
+  }
+
+  uncurriedFn[CURRIED_KEY] = f;
+  return uncurriedFn;
+}
+function curry(arity, f) {
+  if (f == null) {
+    return undefined;
+  }
+
+  if (CURRIED_KEY in f) {
+    return f[CURRIED_KEY];
+  }
+
+  switch (arity) {
+    case 2:
+      return a1 => a2 => f(a1, a2);
+
+    case 3:
+      return a1 => a2 => a3 => f(a1, a2, a3);
+
+    case 4:
+      return a1 => a2 => a3 => a4 => f(a1, a2, a3, a4);
+
+    case 5:
+      return a1 => a2 => a3 => a4 => a5 => f(a1, a2, a3, a4, a5);
+
+    case 6:
+      return a1 => a2 => a3 => a4 => a5 => a6 => f(a1, a2, a3, a4, a5, a6);
+
+    case 7:
+      return a1 => a2 => a3 => a4 => a5 => a6 => a7 => f(a1, a2, a3, a4, a5, a6, a7);
+
+    case 8:
+      return a1 => a2 => a3 => a4 => a5 => a6 => a7 => a8 => f(a1, a2, a3, a4, a5, a6, a7, a8);
+
+    default:
+      throw new Error("Currying to more than 8-arity is not supported: " + arity);
+  }
+}
+function partialApply(arity, f, args) {
+  if (f == null) {
+    return undefined;
+  } else if (CURRIED_KEY in f) {
+    f = f[CURRIED_KEY];
+
+    for (let i = 0; i < args.length; i++) {
+      f = f(args[i]);
+    }
+
+    return f;
+  } else {
+    switch (arity) {
+      case 1:
+        // Wrap arguments to make sure .concat doesn't destruct arrays. Example
+        // [1,2].concat([3,4],5)   --> [1,2,3,4,5]    // fails
+        // [1,2].concat([[3,4],5]) --> [1,2,[3,4],5]  // ok
+        return a1 => f.apply(undefined, args.concat([a1]));
+
+      case 2:
+        return a1 => a2 => f.apply(undefined, args.concat([a1, a2]));
+
+      case 3:
+        return a1 => a2 => a3 => f.apply(undefined, args.concat([a1, a2, a3]));
+
+      case 4:
+        return a1 => a2 => a3 => a4 => f.apply(undefined, args.concat([a1, a2, a3, a4]));
+
+      case 5:
+        return a1 => a2 => a3 => a4 => a5 => f.apply(undefined, args.concat([a1, a2, a3, a4, a5]));
+
+      case 6:
+        return a1 => a2 => a3 => a4 => a5 => a6 => f.apply(undefined, args.concat([a1, a2, a3, a4, a5, a6]));
+
+      case 7:
+        return a1 => a2 => a3 => a4 => a5 => a6 => a7 => f.apply(undefined, args.concat([a1, a2, a3, a4, a5, a6, a7]));
+
+      case 8:
+        return a1 => a2 => a3 => a4 => a5 => a6 => a7 => a8 => f.apply(undefined, args.concat([a1, a2, a3, a4, a5, a6, a7, a8]));
+
+      default:
+        throw new Error("Partially applying to more than 8-arity is not supported: " + arity);
+    }
+  }
+}
+function mapCurriedArgs(fn, mappings) {
+  function mapArg(fn, arg, mappings, idx) {
+    const mapping = mappings[idx];
+
+    if (mapping !== 0) {
+      const expectedArity = mapping[0];
+      const actualArity = mapping[1];
+
+      if (expectedArity > 1) {
+        arg = curry(expectedArity, arg);
+      }
+
+      if (actualArity > 1) {
+        arg = uncurry(actualArity, arg);
+      }
+    }
+
+    const res = fn(arg);
+
+    if (idx + 1 === mappings.length) {
+      return res;
+    } else {
+      return arg => mapArg(res, arg, mappings, idx + 1);
+    }
+  }
+
+  return arg => mapArg(fn, arg, mappings, 0);
+}
+
+/***/ }),
+
 /***/ "./node_modules/bootstrap/js/dist/base-component.js":
 /*!**********************************************************!*\
   !*** ./node_modules/bootstrap/js/dist/base-component.js ***!
@@ -5258,14 +6768,59 @@ var __webpack_exports__ = {};
   !*** ./resources/js/Main.fs.js ***!
   \*********************************/
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var bootstrap_js_dist_dropdown_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! bootstrap/js/dist/dropdown.js */ "./node_modules/bootstrap/js/dist/dropdown.js");
-/* harmony import */ var bootstrap_js_dist_dropdown_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(bootstrap_js_dist_dropdown_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var bootstrap_js_dist_collapse_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! bootstrap/js/dist/collapse.js */ "./node_modules/bootstrap/js/dist/collapse.js");
-/* harmony import */ var bootstrap_js_dist_collapse_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(bootstrap_js_dist_collapse_js__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _scss_index_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../scss/index.scss */ "./resources/scss/index.scss");
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Field": () => (/* binding */ Field),
+/* harmony export */   "Field$reflection": () => (/* binding */ Field$reflection),
+/* harmony export */   "BooleanField": () => (/* binding */ BooleanField),
+/* harmony export */   "BooleanField$reflection": () => (/* binding */ BooleanField$reflection),
+/* harmony export */   "SelectOption": () => (/* binding */ SelectOption),
+/* harmony export */   "SelectOption$reflection": () => (/* binding */ SelectOption$reflection)
+/* harmony export */ });
+/* harmony import */ var _fable_fable_library_3_1_1_Types_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./.fable/fable-library.3.1.1/Types.js */ "./resources/js/.fable/fable-library.3.1.1/Types.js");
+/* harmony import */ var _fable_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./.fable/fable-library.3.1.1/Reflection.js */ "./resources/js/.fable/fable-library.3.1.1/Reflection.js");
+/* harmony import */ var bootstrap_js_dist_dropdown_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! bootstrap/js/dist/dropdown.js */ "./node_modules/bootstrap/js/dist/dropdown.js");
+/* harmony import */ var bootstrap_js_dist_dropdown_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(bootstrap_js_dist_dropdown_js__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var bootstrap_js_dist_collapse_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! bootstrap/js/dist/collapse.js */ "./node_modules/bootstrap/js/dist/collapse.js");
+/* harmony import */ var bootstrap_js_dist_collapse_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(bootstrap_js_dist_collapse_js__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _scss_index_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../scss/index.scss */ "./resources/scss/index.scss");
 
 
 
+
+
+class Field extends _fable_fable_library_3_1_1_Types_js__WEBPACK_IMPORTED_MODULE_0__.Record {
+  constructor(error, value) {
+    super();
+    this.error = error;
+    this.value = value;
+  }
+
+}
+function Field$reflection() {
+  return (0,_fable_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.record_type)("Main.Field", [], Field, () => [["error", _fable_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.string_type], ["value", _fable_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.string_type]]);
+}
+class BooleanField extends _fable_fable_library_3_1_1_Types_js__WEBPACK_IMPORTED_MODULE_0__.Record {
+  constructor(error, value) {
+    super();
+    this.error = error;
+    this.value = value;
+  }
+
+}
+function BooleanField$reflection() {
+  return (0,_fable_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.record_type)("Main.BooleanField", [], BooleanField, () => [["error", _fable_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.string_type], ["value", _fable_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.bool_type]]);
+}
+class SelectOption extends _fable_fable_library_3_1_1_Types_js__WEBPACK_IMPORTED_MODULE_0__.Record {
+  constructor(value, text) {
+    super();
+    this.value = value;
+    this.text = text;
+  }
+
+}
+function SelectOption$reflection() {
+  return (0,_fable_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.record_type)("Main.SelectOption", [], SelectOption, () => [["value", _fable_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.string_type], ["text", _fable_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.string_type]]);
+}
 })();
 
 /******/ })()

@@ -1,7 +1,7 @@
 module FormInput
 
 open Feliz
-open Start
+open Main
 
 [<ReactComponent>]
 let FormInput(name: string,

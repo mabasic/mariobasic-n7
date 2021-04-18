@@ -2,7 +2,7 @@ module Summary
 
 open Feliz
 
-open Start
+open Main
 
 let private getFullName (firstName: Field) (lastName: Field) =
     if String.length firstName.value > 0 || String.length lastName.value > 0 
@@ -97,11 +97,11 @@ let Summary(onInputChange: Browser.Types.Event -> unit,
             zipCode: Field,
             country: Field,
             emailAddress: Field,
+            phone: Field,
             topic: Field,
             budget: Field,
             subject: Field,
-            gdprConsent: BooleanField,
-            phone: Field) : ReactElement =
+            gdprConsent: BooleanField) : ReactElement =
     Html.div [
         prop.className "pb-2"
         prop.children [

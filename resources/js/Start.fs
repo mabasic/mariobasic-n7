@@ -4,11 +4,12 @@ module Start
 
 open Feliz
 open Browser.Dom
+open GetStarted
 
-[<ReactComponent(import="default", from="./components/GetStarted.js")>]
-let GetStarted () = React.imported()
+// [<ReactComponent(import="default", from="./components/GetStarted.js")>]
+// let GetStarted () = React.imported()
 
-ReactDOM.render(GetStarted, document.getElementById "get-started")
+ReactDOM.render(GetStarted(), document.getElementById "get-started")
 
 // Fable-react
 
@@ -19,10 +20,3 @@ ReactDOM.render(GetStarted, document.getElementById "get-started")
 //     ofImport "default" "./components/GetStarted.js" () []
 
 // ReactDom.render(get_started (), document.getElementById "get-started")
-
-// Types
-
-type Field = { error: string; value: string }
-type BooleanField = { error: string; value: bool }
-
-type SelectOption = { value: string; text: string }
