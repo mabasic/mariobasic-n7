@@ -53,4 +53,11 @@
            :title "GitHub (laravelista)"
            :rel "noopener nofollow"
            :target "_blank"}
-         [:i @{:class "fab fa-fw fa-github-alt"}]]]]]]]])
+         [:i @{:class "fab fa-fw fa-github-alt"}]]
+        [:a
+         @{:class "btn btn-link link-light"
+           :href "https://twitter.com/BasicMario"
+           :title "Twitter"
+           :rel "noopener nofollow"
+           :target "_blank"}
+         [:i @{:class "fab fa-fw fa-twitter"}]]]]]]]])
