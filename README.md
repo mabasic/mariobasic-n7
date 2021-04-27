@@ -4,7 +4,7 @@
 
 ## Summary
 
-My initial idea was to use Phel on the backend and Rescript on the frontend. I tried to build the backend to match the previous website (n6) which was built with Laravel. Routing, global middleware, validation, logging, mail, CSRF protection, configs, partials and layouts are all inspired by Laravel. **It took me around 14 days to complete this website (3-6.3.2021 to 20-21.3.2021).** Since I spent a whole bunch of time implementing backend features, when I came to the point of dealing with Javascript I decided to stick to the already existing javascript code from the previous website, but with improvements to the tooling (prettier, eslint, webpack, babel, prop-types) and data handling. I still want to switch from Javascript to something else, but that will probably have to be in the future. Recently, I have started learning about F# and Fable/Feliz and that got me questioning using Rescript on the frontend. Also there are other options like Elm or Dart. Can't really decide.
+My initial idea was to use Phel on the backend and Rescript on the frontend. I tried to build the backend to match the previous website (n6) which was built with Laravel. Routing, global middleware, validation, logging, mail, CSRF protection, configs, partials and layouts are all inspired by Laravel. **It took me around 14 days to complete this website (3-6.3.2021 to 20-21.3.2021).** Since I spent a whole bunch of time implementing backend features, when I came to the point of dealing with Javascript I decided to stick to the already existing javascript code from the previous website, but with improvements to the tooling (prettier, eslint, webpack, babel, prop-types) and data handling. I still want to switch from Javascript to something else, but that will probably have to be in the future. Recently, I have started learning about F# and Fable/Feliz and that got me questioning using Rescript on the frontend. Also there are other options like Elm or Dart. ~~Can't really decide.~~ _Decided to go with F#/Fable. See update bellow for more details._
 
 ## Phel-lang "review"
 
@@ -17,6 +17,18 @@ This repository contains the source code for my personal website. The source cod
 ## Future improvements
 
 In the future I plan on adding missing tests and replacing Javascript with something else. Initially, I have started with simple tests for pages and partials, but then I got busy with implementing features and finishing the website, so the tests fell behind.
+
+**Update 27.04.2021 F#/Fable**
+
+I've rewritten Javascript with F#/Fable. After reading about F# and F#/Fable, comparing it with Rescript and Elm, and trying to find a project to experiment with it I have decided to use Fable and write Javascript with F#. My goal was to go all in and not write a single line of javascript. **It is all F# now 100%.** The code that I wrote follows the same structure as the JS code as much as possible. This was my plan so that it is easier for me to view differences. Parts of code could have been written better if I did not follow the code structure from JS as much.
+
+Since I was/am new to the language I had to figure out a lot of stuff including the tooling, the ecosystem, the syntax, the libraries. The documentation for Fable could be better. There are so many options for everything. I had to find a React library, a JSON library and figure out how to do HTTP requests. There were times where I almost gave up on the F#/Fable rewrite.
+
+For archive purposes I've kept the original JS files in the source code so that I can compare the syntax and code in the future.
+
+## F# "review"
+
+Originally I have wanted my first F# project to be a backend project, like a simple API or something, but since I wanted to replace Javascript with something I gave F# a chance. I do not regret it. The language is very beautiful. It's syntax is similar to LISP at times. It's immutable but can be mutable, it's functional but can be object oriented, it's strongly typed but most of the times it feels like a dynamic language because of type inference, it's what almost every new language these days wants to be, but is actually around 10 years old. A gem. Writing F# is fun and different than writing JS. Most of the time I was in my code editor, "adjusting" types and making the compiler happy. I would open the browser just to verify that it works after evertyhing compiles. When in case of JS I would write a line of code and then refresh the page in the browser to make sure that it runs or that I gave the correct parameter to a function etc. Maybe this is why Typescript is so loved these days.
 
 
 ## TODO
@@ -35,16 +47,16 @@ The code in `src/helpers.phel` should be somewhere else. Maybe in Phel (extract-
 ```bash
 cp .env.example .env
 composer install
+npm install
+npm run fable-start
+npm run watch
 php -S localhost:8000 -t public/
 ```
 
-## Development
+## Javascript builds
 
-```
-npm run dev
-npm run prod
-npm run watch
-```
+- `npm run dev` - for generating a development build once.
+- `npm run prod` - for generating a production build once.
 
 ## Formatting and linting
 
@@ -54,3 +66,9 @@ vendor/bin/phel fmt tests/
 npx prettier --write .
 npx eslint resources
 ```
+
+## F# 
+
+- `.config/dotnet-tools.json` - Holds tools (fable) which are then available by using `dotnet fable watch resources/js`
+- `Nuget.config` - No clue what this does. This is the comment that came with it: "This clears Nuget configuration in the machine to avoid conflicts".
+- `resources/js/App.fsproj` - Holds the reference to all dotnet packages used and F# files that are included/compiled in the solution.

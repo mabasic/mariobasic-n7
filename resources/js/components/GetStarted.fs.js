@@ -1,17 +1,17 @@
 import { Record } from "../.fable/fable-library.3.1.1/Types.js";
-import { record_type, option_type, array_type, string_type } from "../.fable/fable-library.3.1.1/Reflection.js";
+import { anonRecord_type, bool_type, record_type, option_type, array_type, string_type } from "../.fable/fable-library.3.1.1/Reflection.js";
 import { BooleanField, Field, BooleanField$reflection, Field$reflection } from "../Main.fs.js";
 import { useFeliz_React__React_useState_Static_1505 } from "../.fable/Feliz.1.40.0/React.fs.js";
 import { equals } from "../.fable/fable-library.3.1.1/Util.js";
+import { createTypeInfo } from "../.fable/Fable.SimpleJson.3.19.0/TypeInfo.Converter.fs.js";
+import { Convert_fromJson, Convert_serialize } from "../.fable/Fable.SimpleJson.3.19.0/Json.Converter.fs.js";
 import { startImmediate } from "../.fable/fable-library.3.1.1/Async.js";
 import { singleton } from "../.fable/fable-library.3.1.1/AsyncBuilder.js";
-import { Headers_create, Headers_contentType, Http_header, Http_request, Http_method, Http_content, Http_send } from "../.fable/Fable.SimpleHttp.3.0.0/Http.fs.js";
-import { HttpMethod, BodyContent } from "../.fable/Fable.SimpleHttp.3.0.0/Types.fs.js";
+import { Headers_create, Headers_contentType, Http_header, Http_content, Http_request, Http_method, Http_send } from "../.fable/Fable.SimpleHttp.3.0.0/Http.fs.js";
+import { BodyContent, HttpMethod } from "../.fable/Fable.SimpleHttp.3.0.0/Types.fs.js";
 import { some } from "../.fable/fable-library.3.1.1/Option.js";
 import { FSharpResult$2 } from "../.fable/fable-library.3.1.1/Choice.js";
 import { SimpleJson_tryParse } from "../.fable/Fable.SimpleJson.3.19.0/SimpleJson.fs.js";
-import { createTypeInfo } from "../.fable/Fable.SimpleJson.3.19.0/TypeInfo.Converter.fs.js";
-import { Convert_fromJson } from "../.fable/Fable.SimpleJson.3.19.0/Json.Converter.fs.js";
 import { ofSeq } from "../.fable/fable-library.3.1.1/List.js";
 import { singleton as singleton_1, delay } from "../.fable/fable-library.3.1.1/Seq.js";
 import { createElement } from "react";
@@ -226,6 +226,35 @@ export function GetStarted() {
     const updateFormFieldWithErrors = (errors) => {
         setFormFields(new FormFields(new Field(getValueOrReturnEmptyString(errors.first_name), formFields.first_name.value), new Field(getValueOrReturnEmptyString(errors.last_name), formFields.last_name.value), new Field(getValueOrReturnEmptyString(errors.company_name), formFields.company_name.value), new Field(getValueOrReturnEmptyString(errors.vat_number), formFields.vat_number.value), new Field(getValueOrReturnEmptyString(errors.address), formFields.address.value), new Field(getValueOrReturnEmptyString(errors.city), formFields.city.value), new Field(getValueOrReturnEmptyString(errors.zip_code), formFields.zip_code.value), new Field(getValueOrReturnEmptyString(errors.country), formFields.country.value), new Field(getValueOrReturnEmptyString(errors.email_address), formFields.email_address.value), new Field(getValueOrReturnEmptyString(errors.phone), formFields.phone.value), new Field(getValueOrReturnEmptyString(errors.topic), formFields.topic.value), new Field(getValueOrReturnEmptyString(errors.budget), formFields.budget.value), new Field(getValueOrReturnEmptyString(errors.subject), formFields.subject.value), new Field(getValueOrReturnEmptyString(errors.q1), formFields.q1.value), new Field(getValueOrReturnEmptyString(errors.q2), formFields.q2.value), new Field(getValueOrReturnEmptyString(errors.q3), formFields.q3.value), new Field(getValueOrReturnEmptyString(errors.q4), formFields.q4.value), new Field(getValueOrReturnEmptyString(errors.q5), formFields.q5.value), new Field(getValueOrReturnEmptyString(errors.q6), formFields.q6.value), new Field(getValueOrReturnEmptyString(errors.q7), formFields.q7.value), new Field(getValueOrReturnEmptyString(errors.q8), formFields.q8.value), new Field(getValueOrReturnEmptyString(errors.q9), formFields.q9.value), new BooleanField(getValueOrReturnEmptyString(errors.gdpr_consent), formFields.gdpr_consent.value)));
     };
+    const formFieldsToJsonString = () => {
+        const value_46 = {
+            address: formFields.address.value,
+            budget: formFields.budget.value,
+            city: formFields.city.value,
+            company_name: formFields.company_name.value,
+            country: formFields.country.value,
+            email_address: formFields.email_address.value,
+            first_name: formFields.first_name.value,
+            gdpr_consent: formFields.gdpr_consent.value,
+            last_name: formFields.last_name.value,
+            phone: formFields.phone.value,
+            q1: formFields.q1.value,
+            q2: formFields.q2.value,
+            q3: formFields.q3.value,
+            q4: formFields.q4.value,
+            q5: formFields.q5.value,
+            q6: formFields.q6.value,
+            q7: formFields.q7.value,
+            q8: formFields.q8.value,
+            q9: formFields.q9.value,
+            subject: formFields.subject.value,
+            topic: formFields.topic.value,
+            vat_number: formFields.vat_number.value,
+            zip_code: formFields.zip_code.value,
+        };
+        const typeInfo = createTypeInfo(anonRecord_type(["address", string_type], ["budget", string_type], ["city", string_type], ["company_name", string_type], ["country", string_type], ["email_address", string_type], ["first_name", string_type], ["gdpr_consent", bool_type], ["last_name", string_type], ["phone", string_type], ["q1", string_type], ["q2", string_type], ["q3", string_type], ["q4", string_type], ["q5", string_type], ["q6", string_type], ["q7", string_type], ["q8", string_type], ["q9", string_type], ["subject", string_type], ["topic", string_type], ["vat_number", string_type], ["zip_code", string_type]));
+        return Convert_serialize(value_46, typeInfo);
+    };
     const handleSubmit = (event_1) => {
         event_1.preventDefault();
         if (formFields.gdpr_consent.value === false) {
@@ -233,9 +262,9 @@ export function GetStarted() {
         clearErrors();
         const xCsrfToken = (document.getElementsByName("csrf-token")[0]).getAttribute("content");
         startImmediate(singleton.Delay(() => {
-            let req_3, req_2;
-            return singleton.Bind(Http_send((req_3 = (req_2 = Http_content(new BodyContent(1, "{ \"first_name\": \"test\" }"), Http_method(new HttpMethod(1), Http_request("/start"))), Http_header(Headers_contentType("application/json"), req_2)), Http_header(Headers_create("X-CSRF-TOKEN", xCsrfToken), req_3))), (_arg1) => {
-                let matchValue_2, inputJson, typeInfo;
+            let req_3, req_2, req_1;
+            return singleton.Bind(Http_send((req_3 = (req_2 = (req_1 = Http_method(new HttpMethod(1), Http_request("/start")), Http_content(new BodyContent(1, formFieldsToJsonString()), req_1)), Http_header(Headers_contentType("application/json"), req_2)), Http_header(Headers_create("X-CSRF-TOKEN", xCsrfToken), req_3))), (_arg1) => {
+                let matchValue_2, inputJson, typeInfo_1;
                 const response = _arg1;
                 const matchValue_1 = response.statusCode | 0;
                 switch (matchValue_1) {
@@ -251,7 +280,7 @@ export function GetStarted() {
                     case 422: {
                         let result;
                         try {
-                            result = (new FSharpResult$2(0, (matchValue_2 = SimpleJson_tryParse(response.responseText), (matchValue_2 != null) ? (inputJson = matchValue_2, (typeInfo = createTypeInfo(ValidationErrorResponse$reflection()), Convert_fromJson(inputJson, typeInfo))) : (() => {
+                            result = (new FSharpResult$2(0, (matchValue_2 = SimpleJson_tryParse(response.responseText), (matchValue_2 != null) ? (inputJson = matchValue_2, (typeInfo_1 = createTypeInfo(ValidationErrorResponse$reflection()), Convert_fromJson(inputJson, typeInfo_1))) : (() => {
                                 throw (new Error("Couldn\u0027t parse the input JSON string because it seems to be invalid"));
                             })())));
                         }

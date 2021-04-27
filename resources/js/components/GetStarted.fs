@@ -188,6 +188,32 @@ let GetStarted() : ReactElement =
                 q9 = { formFields.q9 with error = getValueOrReturnEmptyString errors.q9 }
                 gdpr_consent = { formFields.gdpr_consent with error = getValueOrReturnEmptyString errors.gdpr_consent } }
 
+    let formFieldsToJsonString () =
+        Json.serialize 
+            {| first_name = formFields.first_name.value 
+               last_name = formFields.last_name.value
+               company_name = formFields.company_name.value
+               vat_number = formFields.vat_number.value
+               address = formFields.address.value
+               city = formFields.city.value
+               zip_code = formFields.zip_code.value
+               country = formFields.country.value
+               email_address = formFields.email_address.value
+               phone = formFields.phone.value
+               topic = formFields.topic.value
+               budget = formFields.budget.value
+               subject = formFields.subject.value
+               q1 = formFields.q1.value
+               q2 = formFields.q2.value
+               q3 = formFields.q3.value
+               q4 = formFields.q4.value
+               q5 = formFields.q5.value
+               q6 = formFields.q6.value
+               q7 = formFields.q7.value
+               q8 = formFields.q8.value
+               q9 = formFields.q9.value
+               gdpr_consent = formFields.gdpr_consent.value |}
+
     let handleSubmit (event: Browser.Types.Event) =
         event.preventDefault()
 
@@ -201,7 +227,7 @@ let GetStarted() : ReactElement =
             let! response =
                 Http.request "/start"
                 |> Http.method POST
-                |> Http.content (BodyContent.Text """{ "first_name": "test" }""")
+                |> Http.content (BodyContent.Text (formFieldsToJsonString()))
                 |> Http.header (Headers.contentType "application/json")
                 |> Http.header (Headers.create "X-CSRF-TOKEN" xCsrfToken)
                 |> Http.send
