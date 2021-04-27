@@ -1,16 +1,69 @@
 import { Record } from "../.fable/fable-library.3.1.1/Types.js";
+import { record_type, option_type, array_type, string_type } from "../.fable/fable-library.3.1.1/Reflection.js";
 import { BooleanField, Field, BooleanField$reflection, Field$reflection } from "../Main.fs.js";
-import { record_type } from "../.fable/fable-library.3.1.1/Reflection.js";
 import { useFeliz_React__React_useState_Static_1505 } from "../.fable/Feliz.1.40.0/React.fs.js";
 import { equals } from "../.fable/fable-library.3.1.1/Util.js";
+import { startImmediate } from "../.fable/fable-library.3.1.1/Async.js";
+import { singleton } from "../.fable/fable-library.3.1.1/AsyncBuilder.js";
+import { Headers_create, Headers_contentType, Http_header, Http_request, Http_method, Http_content, Http_send } from "../.fable/Fable.SimpleHttp.3.0.0/Http.fs.js";
+import { HttpMethod, BodyContent } from "../.fable/Fable.SimpleHttp.3.0.0/Types.fs.js";
 import { some } from "../.fable/fable-library.3.1.1/Option.js";
+import { FSharpResult$2 } from "../.fable/fable-library.3.1.1/Choice.js";
+import { SimpleJson_tryParse } from "../.fable/Fable.SimpleJson.3.19.0/SimpleJson.fs.js";
+import { createTypeInfo } from "../.fable/Fable.SimpleJson.3.19.0/TypeInfo.Converter.fs.js";
+import { Convert_fromJson } from "../.fable/Fable.SimpleJson.3.19.0/Json.Converter.fs.js";
 import { ofSeq } from "../.fable/fable-library.3.1.1/List.js";
-import { singleton, delay } from "../.fable/fable-library.3.1.1/Seq.js";
+import { singleton as singleton_1, delay } from "../.fable/fable-library.3.1.1/Seq.js";
 import { createElement } from "react";
 import { Interop_reactApi } from "../.fable/Feliz.1.40.0/Interop.fs.js";
 import { ClientDetails } from "./ClientDetails.fs.js";
 import { ProjectDetails } from "./ProjectDetails.fs.js";
 import { Summary } from "./Summary.fs.js";
+
+export class ErrorFields extends Record {
+    constructor(first_name, last_name, company_name, vat_number, address, city, zip_code, country, email_address, phone, topic, budget, subject, q1, q2, q3, q4, q5, q6, q7, q8, q9, gdpr_consent) {
+        super();
+        this.first_name = first_name;
+        this.last_name = last_name;
+        this.company_name = company_name;
+        this.vat_number = vat_number;
+        this.address = address;
+        this.city = city;
+        this.zip_code = zip_code;
+        this.country = country;
+        this.email_address = email_address;
+        this.phone = phone;
+        this.topic = topic;
+        this.budget = budget;
+        this.subject = subject;
+        this.q1 = q1;
+        this.q2 = q2;
+        this.q3 = q3;
+        this.q4 = q4;
+        this.q5 = q5;
+        this.q6 = q6;
+        this.q7 = q7;
+        this.q8 = q8;
+        this.q9 = q9;
+        this.gdpr_consent = gdpr_consent;
+    }
+}
+
+export function ErrorFields$reflection() {
+    return record_type("GetStarted.ErrorFields", [], ErrorFields, () => [["first_name", option_type(array_type(string_type))], ["last_name", option_type(array_type(string_type))], ["company_name", option_type(array_type(string_type))], ["vat_number", option_type(array_type(string_type))], ["address", option_type(array_type(string_type))], ["city", option_type(array_type(string_type))], ["zip_code", option_type(array_type(string_type))], ["country", option_type(array_type(string_type))], ["email_address", option_type(array_type(string_type))], ["phone", option_type(array_type(string_type))], ["topic", option_type(array_type(string_type))], ["budget", option_type(array_type(string_type))], ["subject", option_type(array_type(string_type))], ["q1", option_type(array_type(string_type))], ["q2", option_type(array_type(string_type))], ["q3", option_type(array_type(string_type))], ["q4", option_type(array_type(string_type))], ["q5", option_type(array_type(string_type))], ["q6", option_type(array_type(string_type))], ["q7", option_type(array_type(string_type))], ["q8", option_type(array_type(string_type))], ["q9", option_type(array_type(string_type))], ["gdpr_consent", option_type(array_type(string_type))]]);
+}
+
+export class ValidationErrorResponse extends Record {
+    constructor(errors, message) {
+        super();
+        this.errors = errors;
+        this.message = message;
+    }
+}
+
+export function ValidationErrorResponse$reflection() {
+    return record_type("GetStarted.ValidationErrorResponse", [], ValidationErrorResponse, () => [["errors", ErrorFields$reflection()], ["message", string_type]]);
+}
 
 export class FormFields extends Record {
     constructor(first_name, last_name, company_name, vat_number, address, city, zip_code, country, email_address, phone, topic, budget, subject, q1, q2, q3, q4, q5, q6, q7, q8, q9, gdpr_consent) {
@@ -43,6 +96,16 @@ export class FormFields extends Record {
 
 export function FormFields$reflection() {
     return record_type("GetStarted.FormFields", [], FormFields, () => [["first_name", Field$reflection()], ["last_name", Field$reflection()], ["company_name", Field$reflection()], ["vat_number", Field$reflection()], ["address", Field$reflection()], ["city", Field$reflection()], ["zip_code", Field$reflection()], ["country", Field$reflection()], ["email_address", Field$reflection()], ["phone", Field$reflection()], ["topic", Field$reflection()], ["budget", Field$reflection()], ["subject", Field$reflection()], ["q1", Field$reflection()], ["q2", Field$reflection()], ["q3", Field$reflection()], ["q4", Field$reflection()], ["q5", Field$reflection()], ["q6", Field$reflection()], ["q7", Field$reflection()], ["q8", Field$reflection()], ["q9", Field$reflection()], ["gdpr_consent", BooleanField$reflection()]]);
+}
+
+export function getValueOrReturnEmptyString(errorField) {
+    if (errorField == null) {
+        return "";
+    }
+    else {
+        const value = errorField;
+        return value[0];
+    }
 }
 
 export function GetStarted() {
@@ -160,14 +223,62 @@ export function GetStarted() {
     const clearErrors = () => {
         setFormFields(new FormFields(new Field("", formFields.first_name.value), new Field("", formFields.last_name.value), new Field("", formFields.company_name.value), new Field("", formFields.vat_number.value), new Field("", formFields.address.value), new Field("", formFields.city.value), new Field("", formFields.zip_code.value), new Field("", formFields.country.value), new Field("", formFields.email_address.value), new Field("", formFields.phone.value), new Field("", formFields.topic.value), new Field("", formFields.budget.value), new Field("", formFields.subject.value), new Field("", formFields.q1.value), new Field("", formFields.q2.value), new Field("", formFields.q3.value), new Field("", formFields.q4.value), new Field("", formFields.q5.value), new Field("", formFields.q6.value), new Field("", formFields.q7.value), new Field("", formFields.q8.value), new Field("", formFields.q9.value), new BooleanField("", formFields.gdpr_consent.value)));
     };
+    const updateFormFieldWithErrors = (errors) => {
+        setFormFields(new FormFields(new Field(getValueOrReturnEmptyString(errors.first_name), formFields.first_name.value), new Field(getValueOrReturnEmptyString(errors.last_name), formFields.last_name.value), new Field(getValueOrReturnEmptyString(errors.company_name), formFields.company_name.value), new Field(getValueOrReturnEmptyString(errors.vat_number), formFields.vat_number.value), new Field(getValueOrReturnEmptyString(errors.address), formFields.address.value), new Field(getValueOrReturnEmptyString(errors.city), formFields.city.value), new Field(getValueOrReturnEmptyString(errors.zip_code), formFields.zip_code.value), new Field(getValueOrReturnEmptyString(errors.country), formFields.country.value), new Field(getValueOrReturnEmptyString(errors.email_address), formFields.email_address.value), new Field(getValueOrReturnEmptyString(errors.phone), formFields.phone.value), new Field(getValueOrReturnEmptyString(errors.topic), formFields.topic.value), new Field(getValueOrReturnEmptyString(errors.budget), formFields.budget.value), new Field(getValueOrReturnEmptyString(errors.subject), formFields.subject.value), new Field(getValueOrReturnEmptyString(errors.q1), formFields.q1.value), new Field(getValueOrReturnEmptyString(errors.q2), formFields.q2.value), new Field(getValueOrReturnEmptyString(errors.q3), formFields.q3.value), new Field(getValueOrReturnEmptyString(errors.q4), formFields.q4.value), new Field(getValueOrReturnEmptyString(errors.q5), formFields.q5.value), new Field(getValueOrReturnEmptyString(errors.q6), formFields.q6.value), new Field(getValueOrReturnEmptyString(errors.q7), formFields.q7.value), new Field(getValueOrReturnEmptyString(errors.q8), formFields.q8.value), new Field(getValueOrReturnEmptyString(errors.q9), formFields.q9.value), new BooleanField(getValueOrReturnEmptyString(errors.gdpr_consent), formFields.gdpr_consent.value)));
+    };
     const handleSubmit = (event_1) => {
         event_1.preventDefault();
-        if (formFields.gdpr_consent.value) {
-            clearErrors();
-            console.log(some("form submitted"));
+        if (formFields.gdpr_consent.value === false) {
         }
+        clearErrors();
+        const xCsrfToken = (document.getElementsByName("csrf-token")[0]).getAttribute("content");
+        startImmediate(singleton.Delay(() => {
+            let req_3, req_2;
+            return singleton.Bind(Http_send((req_3 = (req_2 = Http_content(new BodyContent(1, "{ \"first_name\": \"test\" }"), Http_method(new HttpMethod(1), Http_request("/start"))), Http_header(Headers_contentType("application/json"), req_2)), Http_header(Headers_create("X-CSRF-TOKEN", xCsrfToken), req_3))), (_arg1) => {
+                let matchValue_2, inputJson, typeInfo;
+                const response = _arg1;
+                const matchValue_1 = response.statusCode | 0;
+                switch (matchValue_1) {
+                    case 200: {
+                        setSent(true);
+                        return singleton.Zero();
+                    }
+                    case 419: {
+                        window.alert(some("Session expired. The page is going to refresh. Try again."));
+                        window.location.reload();
+                        return singleton.Zero();
+                    }
+                    case 422: {
+                        let result;
+                        try {
+                            result = (new FSharpResult$2(0, (matchValue_2 = SimpleJson_tryParse(response.responseText), (matchValue_2 != null) ? (inputJson = matchValue_2, (typeInfo = createTypeInfo(ValidationErrorResponse$reflection()), Convert_fromJson(inputJson, typeInfo))) : (() => {
+                                throw (new Error("Couldn\u0027t parse the input JSON string because it seems to be invalid"));
+                            })())));
+                        }
+                        catch (ex) {
+                            result = (new FSharpResult$2(1, ex.message));
+                        }
+                        if (result.tag === 0) {
+                            const data = result.fields[0];
+                            updateFormFieldWithErrors(data.errors);
+                            return singleton.Zero();
+                        }
+                        else {
+                            const errorMsg = result.fields[0];
+                            console.log(some(errorMsg));
+                            return singleton.Zero();
+                        }
+                    }
+                    default: {
+                        window.alert(some("An unexpected error has occured! Send me an email to report this. Thank you."));
+                        window.location.reload();
+                        return singleton.Zero();
+                    }
+                }
+            });
+        }));
     };
-    const children = ofSeq(delay(() => ((sent === true) ? singleton(createElement("div", {
+    const children = ofSeq(delay(() => ((sent === true) ? singleton_1(createElement("div", {
         className: "row mb-4",
         children: Interop_reactApi.Children.toArray([createElement("div", {
             className: "col-lg-4 text-center mb-5",
@@ -187,7 +298,7 @@ export function GetStarted() {
                 children: ["I have received your project details and I will contact you as soon as possible."],
             })]),
         })]),
-    })) : singleton(createElement("form", {
+    })) : singleton_1(createElement("form", {
         onSubmit: handleSubmit,
         children: Interop_reactApi.Children.toArray([createElement("div", {
             className: "row",

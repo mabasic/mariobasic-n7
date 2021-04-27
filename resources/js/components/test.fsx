@@ -1,11 +1,15 @@
-type SelectOption = {value: string; text: string}
+type ErrorField = string array
 
-let options = [
-    {value = "one"; text = "one"};
-    {value = "two"; text = "two"};
-]
+type ErrorFields = {
+    first_name: ErrorField option
+}
 
-List.map (fun x -> [
-                    x.value;
-                    x.text;
-                ]) options
+// let test: ErrorField = [| "ajme" |]
+
+let errorFields = {
+    first_name = Some([| "ajme2" |])
+}
+
+match errorFields.first_name with
+| Some(first_name) -> first_name.[0]
+| None -> "none"

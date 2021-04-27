@@ -2,11 +2,45 @@ module GetStarted
 
 open Feliz
 open Fable.Core.JsInterop
+open Fable.SimpleHttp
+open Fable.SimpleJson
+open Browser.Dom
 
 open Main
 open ClientDetails
 open ProjectDetails
 open Summary
+
+type ErrorField = string array
+
+type ErrorFields = 
+    { first_name: ErrorField option
+      last_name: ErrorField option
+      company_name: ErrorField option
+      vat_number: ErrorField option
+      address: ErrorField option
+      city: ErrorField option
+      zip_code: ErrorField option
+      country: ErrorField option
+      email_address: ErrorField option
+      phone: ErrorField option
+      topic: ErrorField option
+      budget: ErrorField option
+      subject: ErrorField option
+      q1: ErrorField option
+      q2: ErrorField option
+      q3: ErrorField option
+      q4: ErrorField option
+      q5: ErrorField option
+      q6: ErrorField option
+      q7: ErrorField option
+      q8: ErrorField option
+      q9: ErrorField option
+      gdpr_consent: ErrorField option }
+
+type ValidationErrorResponse =
+    { errors: ErrorFields 
+      message: string }
 
 type FormFields = 
     { first_name: Field;
@@ -32,6 +66,11 @@ type FormFields =
       q8: Field;
       q9: Field;
       gdpr_consent: BooleanField; }
+
+let getValueOrReturnEmptyString errorField =
+    match errorField with
+    | Some(value) -> Array.get value 0
+    | None -> ""
 
 [<ReactComponent>]
 let GetStarted() : ReactElement =
@@ -122,15 +161,72 @@ let GetStarted() : ReactElement =
                 q9 = { formFields.q9 with error = "" }
                 gdpr_consent = { formFields.gdpr_consent with error = "" } }
 
+    let updateFormFieldWithErrors (errors: ErrorFields) =
+        setFormFields 
+            { formFields with 
+                first_name = { formFields.first_name with error = getValueOrReturnEmptyString errors.first_name }
+                last_name = { formFields.last_name with error = getValueOrReturnEmptyString errors.last_name }
+                company_name = { formFields.company_name with error = getValueOrReturnEmptyString errors.company_name }
+                vat_number = { formFields.vat_number with error = getValueOrReturnEmptyString errors.vat_number }
+                address = { formFields.address with error = getValueOrReturnEmptyString errors.address }
+                city = { formFields.city with error = getValueOrReturnEmptyString errors.city }
+                zip_code = { formFields.zip_code with error = getValueOrReturnEmptyString errors.zip_code }
+                country = { formFields.country with error = getValueOrReturnEmptyString errors.country }
+                email_address = { formFields.email_address with error = getValueOrReturnEmptyString errors.email_address }
+                phone = { formFields.phone with error = getValueOrReturnEmptyString errors.phone }
+                topic = { formFields.topic with error = getValueOrReturnEmptyString errors.topic }
+                budget = { formFields.budget with error = getValueOrReturnEmptyString errors.budget }
+                subject = { formFields.subject with error = getValueOrReturnEmptyString errors.subject }
+                q1 = { formFields.q1 with error = getValueOrReturnEmptyString errors.q1 }
+                q2 = { formFields.q2 with error = getValueOrReturnEmptyString errors.q2 }
+                q3 = { formFields.q3 with error = getValueOrReturnEmptyString errors.q3 }
+                q4 = { formFields.q4 with error = getValueOrReturnEmptyString errors.q4 }
+                q5 = { formFields.q5 with error = getValueOrReturnEmptyString errors.q5 }
+                q6 = { formFields.q6 with error = getValueOrReturnEmptyString errors.q6 }
+                q7 = { formFields.q7 with error = getValueOrReturnEmptyString errors.q7 }
+                q8 = { formFields.q8 with error = getValueOrReturnEmptyString errors.q8 }
+                q9 = { formFields.q9 with error = getValueOrReturnEmptyString errors.q9 }
+                gdpr_consent = { formFields.gdpr_consent with error = getValueOrReturnEmptyString errors.gdpr_consent } }
+
     let handleSubmit (event: Browser.Types.Event) =
         event.preventDefault()
 
-        match formFields.gdpr_consent.value with
-        | false -> ()
-        | true -> 
-            clearErrors()
-            Browser.Dom.console.log("form submitted")
-            ()
+        if formFields.gdpr_consent.value = false then ()
+        
+        clearErrors()
+
+        let xCsrfToken = (document.getElementsByName "csrf-token").[0].getAttribute "content"
+
+        async {
+            let! response =
+                Http.request "/start"
+                |> Http.method POST
+                |> Http.content (BodyContent.Text """{ "first_name": "test" }""")
+                |> Http.header (Headers.contentType "application/json")
+                |> Http.header (Headers.create "X-CSRF-TOKEN" xCsrfToken)
+                |> Http.send
+
+            match response.statusCode with
+            | 200 -> setSent true
+            | 422 -> 
+                let result = response.responseText |> Json.tryParseAs<ValidationErrorResponse>
+
+                match result with
+                | Error errorMsg -> console.log errorMsg
+                | Ok data -> updateFormFieldWithErrors data.errors
+
+            | 419 -> 
+                window.alert 
+                    "Session expired. The page is going to refresh. Try again."
+
+                window.location.reload()
+            | _ -> 
+                window.alert 
+                    "An unexpected error has occured! Send me an email to report this. Thank you."
+
+                window.location.reload()
+        }
+        |> Async.StartImmediate
 
     Html.div [
         if sent = true then 

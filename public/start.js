@@ -3105,6 +3105,5534 @@ function within(min, value, max) {
 
 /***/ }),
 
+/***/ "./resources/js/.fable/Fable.Parsimmon.4.0.0/Parsimmon.fs.js":
+/*!*******************************************************************!*\
+  !*** ./resources/js/.fable/Fable.Parsimmon.4.0.0/Parsimmon.fs.js ***!
+  \*******************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "TokenPosition": () => (/* binding */ TokenPosition),
+/* harmony export */   "TokenPosition$reflection": () => (/* binding */ TokenPosition$reflection),
+/* harmony export */   "NodeResult$1": () => (/* binding */ NodeResult$1),
+/* harmony export */   "NodeResult$1$reflection": () => (/* binding */ NodeResult$1$reflection),
+/* harmony export */   "Parsimmon_parseRaw": () => (/* binding */ Parsimmon_parseRaw),
+/* harmony export */   "Parsimmon_parse": () => (/* binding */ Parsimmon_parse),
+/* harmony export */   "Parsimmon_index": () => (/* binding */ Parsimmon_index),
+/* harmony export */   "Parsimmon_orTry": () => (/* binding */ Parsimmon_orTry),
+/* harmony export */   "Parsimmon_times": () => (/* binding */ Parsimmon_times),
+/* harmony export */   "Parsimmon_atLeast": () => (/* binding */ Parsimmon_atLeast),
+/* harmony export */   "Parsimmon_atMost": () => (/* binding */ Parsimmon_atMost),
+/* harmony export */   "Parsimmon_skip": () => (/* binding */ Parsimmon_skip),
+/* harmony export */   "Parsimmon_many": () => (/* binding */ Parsimmon_many),
+/* harmony export */   "Parsimmon_ofLazy": () => (/* binding */ Parsimmon_ofLazy),
+/* harmony export */   "Parsimmon_seperateByAtLeastOne": () => (/* binding */ Parsimmon_seperateByAtLeastOne),
+/* harmony export */   "Parsimmon_chain": () => (/* binding */ Parsimmon_chain),
+/* harmony export */   "Parsimmon_bind": () => (/* binding */ Parsimmon_bind),
+/* harmony export */   "Parsimmon_letter": () => (/* binding */ Parsimmon_letter),
+/* harmony export */   "Parsimmon_timesBetween": () => (/* binding */ Parsimmon_timesBetween),
+/* harmony export */   "Parsimmon_letters": () => (/* binding */ Parsimmon_letters),
+/* harmony export */   "Parsimmon_endOfFile": () => (/* binding */ Parsimmon_endOfFile),
+/* harmony export */   "Parsimmon_notFollowedBy": () => (/* binding */ Parsimmon_notFollowedBy),
+/* harmony export */   "Parsimmon_succeed": () => (/* binding */ Parsimmon_succeed),
+/* harmony export */   "Parsimmon_lookahead": () => (/* binding */ Parsimmon_lookahead),
+/* harmony export */   "Parsimmon_digit": () => (/* binding */ Parsimmon_digit),
+/* harmony export */   "Parsimmon_digits": () => (/* binding */ Parsimmon_digits),
+/* harmony export */   "Parsimmon_fallback": () => (/* binding */ Parsimmon_fallback),
+/* harmony export */   "Parsimmon_seperateBy": () => (/* binding */ Parsimmon_seperateBy),
+/* harmony export */   "Parsimmon_between": () => (/* binding */ Parsimmon_between),
+/* harmony export */   "Parsimmon_map": () => (/* binding */ Parsimmon_map),
+/* harmony export */   "Parsimmon_tie": () => (/* binding */ Parsimmon_tie),
+/* harmony export */   "Parsimmon_any": () => (/* binding */ Parsimmon_any),
+/* harmony export */   "Parsimmon_choose": () => (/* binding */ Parsimmon_choose),
+/* harmony export */   "Parsimmon_all": () => (/* binding */ Parsimmon_all),
+/* harmony export */   "Parsimmon_fail": () => (/* binding */ Parsimmon_fail),
+/* harmony export */   "Parsimmon_satisfy": () => (/* binding */ Parsimmon_satisfy),
+/* harmony export */   "Parsimmon_takeWhile": () => (/* binding */ Parsimmon_takeWhile),
+/* harmony export */   "Parsimmon_str": () => (/* binding */ Parsimmon_str),
+/* harmony export */   "Parsimmon_oneOf": () => (/* binding */ Parsimmon_oneOf),
+/* harmony export */   "Parsimmon_whitespace": () => (/* binding */ Parsimmon_whitespace),
+/* harmony export */   "Parsimmon_optionalWhitespace": () => (/* binding */ Parsimmon_optionalWhitespace),
+/* harmony export */   "Parsimmon_atLeastOneOrMany": () => (/* binding */ Parsimmon_atLeastOneOrMany),
+/* harmony export */   "Parsimmon_stringReturn": () => (/* binding */ Parsimmon_stringReturn),
+/* harmony export */   "Parsimmon_noneOf": () => (/* binding */ Parsimmon_noneOf),
+/* harmony export */   "Parsimmon_seq2": () => (/* binding */ Parsimmon_seq2),
+/* harmony export */   "Parsimmon_trim": () => (/* binding */ Parsimmon_trim),
+/* harmony export */   "Parsimmon_concat": () => (/* binding */ Parsimmon_concat),
+/* harmony export */   "Parsimmon_seq3": () => (/* binding */ Parsimmon_seq3),
+/* harmony export */   "Parsimmon_seq4": () => (/* binding */ Parsimmon_seq4),
+/* harmony export */   "Parsimmon_seq5": () => (/* binding */ Parsimmon_seq5),
+/* harmony export */   "Parsimmon_node": () => (/* binding */ Parsimmon_node)
+/* harmony export */ });
+/* harmony import */ var _fable_library_3_1_1_Types_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../fable-library.3.1.1/Types.js */ "./resources/js/.fable/fable-library.3.1.1/Types.js");
+/* harmony import */ var _fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../fable-library.3.1.1/Reflection.js */ "./resources/js/.fable/fable-library.3.1.1/Reflection.js");
+/* harmony import */ var _fable_library_3_1_1_Option_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../fable-library.3.1.1/Option.js */ "./resources/js/.fable/fable-library.3.1.1/Option.js");
+/* harmony import */ var _Parsimmon_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Parsimmon.js */ "./resources/js/.fable/Fable.Parsimmon.4.0.0/Parsimmon.js");
+/* harmony import */ var _fable_library_3_1_1_String_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../fable-library.3.1.1/String.js */ "./resources/js/.fable/fable-library.3.1.1/String.js");
+/* harmony import */ var _fable_library_3_1_1_List_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../fable-library.3.1.1/List.js */ "./resources/js/.fable/fable-library.3.1.1/List.js");
+
+
+
+
+
+
+class TokenPosition extends _fable_library_3_1_1_Types_js__WEBPACK_IMPORTED_MODULE_0__.Record {
+  constructor(offset, line, column) {
+    super();
+    this.offset = offset | 0;
+    this.line = line | 0;
+    this.column = column | 0;
+  }
+
+}
+function TokenPosition$reflection() {
+  return (0,_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.record_type)("Fable.Parsimmon.TokenPosition", [], TokenPosition, () => [["offset", _fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.int32_type], ["line", _fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.int32_type], ["column", _fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.int32_type]]);
+}
+class NodeResult$1 extends _fable_library_3_1_1_Types_js__WEBPACK_IMPORTED_MODULE_0__.Record {
+  constructor(name, value, start, end) {
+    super();
+    this.name = name;
+    this.value = value;
+    this.start = start;
+    this.end = end;
+  }
+
+}
+function NodeResult$1$reflection(gen0) {
+  return (0,_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.record_type)("Fable.Parsimmon.NodeResult`1", [gen0], NodeResult$1, () => [["name", _fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.string_type], ["value", gen0], ["start", TokenPosition$reflection()], ["end", TokenPosition$reflection()]]);
+}
+function Parsimmon_parseRaw(input, parser) {
+  return parser.parse(input);
+}
+function Parsimmon_parse(input, parser) {
+  const result = parser.parse(input);
+
+  if (result.status) {
+    return (0,_fable_library_3_1_1_Option_js__WEBPACK_IMPORTED_MODULE_2__.some)(result.value);
+  } else {
+    return void 0;
+  }
+}
+const Parsimmon_index = _Parsimmon_js__WEBPACK_IMPORTED_MODULE_3__.index;
+function Parsimmon_orTry(otherParser, parser) {
+  return parser.or(otherParser);
+}
+function Parsimmon_times(n, parser) {
+  return parser.times(n);
+}
+function Parsimmon_atLeast(n, parser) {
+  return parser.atLeast(n);
+}
+function Parsimmon_atMost(n, parser) {
+  return parser.atMost(n);
+}
+function Parsimmon_skip(skipped, keep) {
+  return keep.skip(skipped);
+}
+function Parsimmon_many(parser) {
+  return parser.many();
+}
+const Parsimmon_ofLazy = _Parsimmon_js__WEBPACK_IMPORTED_MODULE_3__.lazy;
+function Parsimmon_seperateByAtLeastOne(seperator, parser) {
+  return parser.sepBy1(seperator);
+}
+function Parsimmon_chain(after, before) {
+  return before.then(after);
+}
+function Parsimmon_bind(f, p) {
+  return p.chain(f);
+}
+const Parsimmon_letter = _Parsimmon_js__WEBPACK_IMPORTED_MODULE_3__.letter;
+function Parsimmon_timesBetween(min, max, parser) {
+  return parser.times(min, max);
+}
+const Parsimmon_letters = _Parsimmon_js__WEBPACK_IMPORTED_MODULE_3__.letters;
+const Parsimmon_endOfFile = _Parsimmon_js__WEBPACK_IMPORTED_MODULE_3__.eof;
+function Parsimmon_notFollowedBy(p, before) {
+  return before.notFollowedBy(p);
+}
+const Parsimmon_succeed = _Parsimmon_js__WEBPACK_IMPORTED_MODULE_3__.succeed;
+const Parsimmon_lookahead = _Parsimmon_js__WEBPACK_IMPORTED_MODULE_3__.lookahead;
+const Parsimmon_digit = _Parsimmon_js__WEBPACK_IMPORTED_MODULE_3__.digit;
+const Parsimmon_digits = Parsimmon_many(Parsimmon_digit);
+function Parsimmon_fallback(value, parser) {
+  return parser.fallback(value);
+}
+function Parsimmon_seperateBy(content, others) {
+  return others.sepBy(content);
+}
+function Parsimmon_between(left, right, middle) {
+  return Parsimmon_skip(right, Parsimmon_chain(middle, left));
+}
+function Parsimmon_map(f, parser) {
+  return parser.map(f);
+}
+function Parsimmon_tie(parser) {
+  return Parsimmon_map(strings => (0,_fable_library_3_1_1_String_js__WEBPACK_IMPORTED_MODULE_4__.join)("", strings), parser);
+}
+const Parsimmon_any = _Parsimmon_js__WEBPACK_IMPORTED_MODULE_3__.any;
+function Parsimmon_choose(ps) {
+  return (0,_fable_library_3_1_1_List_js__WEBPACK_IMPORTED_MODULE_5__.reduce)((acc, parser) => acc.or(parser), ps);
+}
+const Parsimmon_all = _Parsimmon_js__WEBPACK_IMPORTED_MODULE_3__.all;
+const Parsimmon_fail = _Parsimmon_js__WEBPACK_IMPORTED_MODULE_3__.fail;
+const Parsimmon_satisfy = _Parsimmon_js__WEBPACK_IMPORTED_MODULE_3__.test;
+const Parsimmon_takeWhile = _Parsimmon_js__WEBPACK_IMPORTED_MODULE_3__.takeWhile;
+const Parsimmon_str = _Parsimmon_js__WEBPACK_IMPORTED_MODULE_3__.string;
+const Parsimmon_oneOf = _Parsimmon_js__WEBPACK_IMPORTED_MODULE_3__.oneOf;
+const Parsimmon_whitespace = _Parsimmon_js__WEBPACK_IMPORTED_MODULE_3__.whitespace;
+const Parsimmon_optionalWhitespace = _Parsimmon_js__WEBPACK_IMPORTED_MODULE_3__.optWhitespace;
+function Parsimmon_atLeastOneOrMany(parser) {
+  return Parsimmon_atLeast(1, parser);
+}
+function Parsimmon_stringReturn(input, value) {
+  return Parsimmon_map(_arg1 => value, Parsimmon_str(input));
+}
+const Parsimmon_noneOf = _Parsimmon_js__WEBPACK_IMPORTED_MODULE_3__.noneOf;
+const Parsimmon_seq2 = _Parsimmon_js__WEBPACK_IMPORTED_MODULE_3__.seq;
+function Parsimmon_trim(trimmed, p) {
+  return p.trim(trimmed);
+}
+function Parsimmon_concat(parser) {
+  return parser.map(strings => (0,_fable_library_3_1_1_String_js__WEBPACK_IMPORTED_MODULE_4__.join)("", strings));
+}
+const Parsimmon_seq3 = _Parsimmon_js__WEBPACK_IMPORTED_MODULE_3__.seq;
+const Parsimmon_seq4 = _Parsimmon_js__WEBPACK_IMPORTED_MODULE_3__.seq;
+const Parsimmon_seq5 = _Parsimmon_js__WEBPACK_IMPORTED_MODULE_3__.seq;
+function Parsimmon_node(description, p) {
+  return p.node(description);
+}
+
+/***/ }),
+
+/***/ "./resources/js/.fable/Fable.Parsimmon.4.0.0/Parsimmon.js":
+/*!****************************************************************!*\
+  !*** ./resources/js/.fable/Fable.Parsimmon.4.0.0/Parsimmon.js ***!
+  \****************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Parsimmon": () => (/* binding */ Parsimmon),
+/* harmony export */   "times": () => (/* binding */ times),
+/* harmony export */   "forEach": () => (/* binding */ forEach),
+/* harmony export */   "reduce": () => (/* binding */ reduce),
+/* harmony export */   "map": () => (/* binding */ map),
+/* harmony export */   "lshiftBuffer": () => (/* binding */ lshiftBuffer),
+/* harmony export */   "sum": () => (/* binding */ sum),
+/* harmony export */   "find": () => (/* binding */ find),
+/* harmony export */   "makeSuccess": () => (/* binding */ makeSuccess),
+/* harmony export */   "makeFailure": () => (/* binding */ makeFailure),
+/* harmony export */   "repeat": () => (/* binding */ repeat),
+/* harmony export */   "formatExpected": () => (/* binding */ formatExpected),
+/* harmony export */   "leftPad": () => (/* binding */ leftPad),
+/* harmony export */   "rangeFromIndexAndOffsets": () => (/* binding */ rangeFromIndexAndOffsets),
+/* harmony export */   "byteRangeToRange": () => (/* binding */ byteRangeToRange),
+/* harmony export */   "formatGot": () => (/* binding */ formatGot),
+/* harmony export */   "formatError": () => (/* binding */ formatError),
+/* harmony export */   "flags": () => (/* binding */ flags),
+/* harmony export */   "anchoredRegexp": () => (/* binding */ anchoredRegexp),
+/* harmony export */   "seq": () => (/* binding */ seq),
+/* harmony export */   "seqObj": () => (/* binding */ seqObj),
+/* harmony export */   "seqMap": () => (/* binding */ seqMap),
+/* harmony export */   "createLanguage": () => (/* binding */ createLanguage),
+/* harmony export */   "alt": () => (/* binding */ alt),
+/* harmony export */   "sepBy": () => (/* binding */ sepBy),
+/* harmony export */   "sepBy1": () => (/* binding */ sepBy1),
+/* harmony export */   "string": () => (/* binding */ string),
+/* harmony export */   "byte": () => (/* binding */ byte),
+/* harmony export */   "regexp": () => (/* binding */ regexp),
+/* harmony export */   "succeed": () => (/* binding */ succeed),
+/* harmony export */   "fail": () => (/* binding */ fail),
+/* harmony export */   "lookahead": () => (/* binding */ lookahead),
+/* harmony export */   "notFollowedBy": () => (/* binding */ notFollowedBy),
+/* harmony export */   "test": () => (/* binding */ test),
+/* harmony export */   "oneOf": () => (/* binding */ oneOf),
+/* harmony export */   "noneOf": () => (/* binding */ noneOf),
+/* harmony export */   "custom": () => (/* binding */ custom),
+/* harmony export */   "range": () => (/* binding */ range),
+/* harmony export */   "takeWhile": () => (/* binding */ takeWhile),
+/* harmony export */   "lazy": () => (/* binding */ lazy),
+/* harmony export */   "index": () => (/* binding */ index),
+/* harmony export */   "any": () => (/* binding */ any),
+/* harmony export */   "all": () => (/* binding */ all),
+/* harmony export */   "eof": () => (/* binding */ eof),
+/* harmony export */   "digit": () => (/* binding */ digit),
+/* harmony export */   "digits": () => (/* binding */ digits),
+/* harmony export */   "letter": () => (/* binding */ letter),
+/* harmony export */   "letters": () => (/* binding */ letters),
+/* harmony export */   "optWhitespace": () => (/* binding */ optWhitespace),
+/* harmony export */   "whitespace": () => (/* binding */ whitespace),
+/* harmony export */   "cr": () => (/* binding */ cr),
+/* harmony export */   "lf": () => (/* binding */ lf),
+/* harmony export */   "crlf": () => (/* binding */ crlf),
+/* harmony export */   "newline": () => (/* binding */ newline),
+/* harmony export */   "end": () => (/* binding */ end)
+/* harmony export */ });
+
+
+function Parsimmon(action) {
+  if (!(this instanceof Parsimmon)) {
+    return new Parsimmon(action);
+  }
+
+  this._ = action;
+}
+var _ = Parsimmon.prototype;
+function times(n, f) {
+  var i = 0;
+
+  for (i; i < n; i++) {
+    f(i);
+  }
+}
+function forEach(f, arr) {
+  times(arr.length, function (i) {
+    f(arr[i], i, arr);
+  });
+}
+function reduce(f, seed, arr) {
+  forEach(function (elem, i, arr) {
+    seed = f(seed, elem, i, arr);
+  }, arr);
+  return seed;
+}
+function map(f, arr) {
+  return reduce(function (acc, elem, i, a) {
+    return acc.concat([f(elem, i, a)]);
+  }, [], arr);
+}
+function lshiftBuffer(input) {
+  var asTwoBytes = reduce(function (a, v, i, b) {
+    return a.concat(i === b.length - 1 ? Buffer.from([v, 0]).readUInt16BE(0) : b.readUInt16BE(i));
+  }, [], input);
+  return Buffer.from(map(function (x) {
+    return (x << 1 & 0xffff) >> 8;
+  }, asTwoBytes));
+}
+
+function consumeBitsFromBuffer(n, input) {
+  var state = {
+    v: 0,
+    buf: input
+  };
+  times(n, function () {
+    state = {
+      v: state.v << 1 | bitPeekBuffer(state.buf),
+      buf: lshiftBuffer(state.buf)
+    };
+  });
+  return state;
+}
+
+function bitPeekBuffer(input) {
+  return input[0] >> 7;
+}
+
+function sum(numArr) {
+  return reduce(function (x, y) {
+    return x + y;
+  }, 0, numArr);
+}
+function find(pred, arr) {
+  return reduce(function (found, elem) {
+    return found || (pred(elem) ? elem : found);
+  }, null, arr);
+}
+
+function bufferExists() {
+  return typeof Buffer !== "undefined";
+}
+
+function ensureBuffer() {
+  if (!bufferExists()) {
+    throw new Error("Buffer global does not exist; please consider using https://github.com/feross/buffer if you are running Parsimmon in a browser.");
+  }
+}
+
+function bitSeq(alignments) {
+  ensureBuffer();
+  var totalBits = sum(alignments);
+
+  if (totalBits % 8 !== 0) {
+    throw new Error("The bits [" + alignments.join(", ") + "] add up to " + totalBits + " which is not an even number of bytes; the total should be divisible by 8");
+  }
+
+  var bytes = totalBits / 8;
+  var tooBigRange = find(function (x) {
+    return x > 48;
+  }, alignments);
+
+  if (tooBigRange) {
+    throw new Error(tooBigRange + " bit range requested exceeds 48 bit (6 byte) Number max.");
+  }
+
+  return new Parsimmon(function (input, i) {
+    var newPos = bytes + i;
+
+    if (newPos > input.length) {
+      return makeFailure(i, bytes.toString() + " bytes");
+    }
+
+    return makeSuccess(newPos, reduce(function (acc, bits) {
+      var state = consumeBitsFromBuffer(bits, acc.buf);
+      return {
+        coll: acc.coll.concat(state.v),
+        buf: state.buf
+      };
+    }, {
+      coll: [],
+      buf: input.slice(i, newPos)
+    }, alignments).coll);
+  });
+}
+
+function bitSeqObj(namedAlignments) {
+  ensureBuffer();
+  var seenKeys = {};
+  var totalKeys = 0;
+  var fullAlignments = map(function (item) {
+    if (isArray(item)) {
+      var pair = item;
+
+      if (pair.length !== 2) {
+        throw new Error("[" + pair.join(", ") + "] should be length 2, got length " + pair.length);
+      }
+
+      assertString(pair[0]);
+      assertNumber(pair[1]);
+
+      if (Object.prototype.hasOwnProperty.call(seenKeys, pair[0])) {
+        throw new Error("duplicate key in bitSeqObj: " + pair[0]);
+      }
+
+      seenKeys[pair[0]] = true;
+      totalKeys++;
+      return pair;
+    } else {
+      assertNumber(item);
+      return [null, item];
+    }
+  }, namedAlignments);
+
+  if (totalKeys < 1) {
+    throw new Error("bitSeqObj expects at least one named pair, got [" + namedAlignments.join(", ") + "]");
+  }
+
+  var namesOnly = map(function (pair) {
+    return pair[0];
+  }, fullAlignments);
+  var alignmentsOnly = map(function (pair) {
+    return pair[1];
+  }, fullAlignments);
+  return bitSeq(alignmentsOnly).map(function (parsed) {
+    var namedParsed = map(function (name, i) {
+      return [name, parsed[i]];
+    }, namesOnly);
+    return reduce(function (obj, kv) {
+      if (kv[0] !== null) {
+        obj[kv[0]] = kv[1];
+      }
+
+      return obj;
+    }, {}, namedParsed);
+  });
+}
+
+function parseBufferFor(other, length) {
+  ensureBuffer();
+  return new Parsimmon(function (input, i) {
+    if (i + length > input.length) {
+      return makeFailure(i, length + " bytes for " + other);
+    }
+
+    return makeSuccess(i + length, input.slice(i, i + length));
+  });
+}
+
+function parseBuffer(length) {
+  return parseBufferFor("buffer", length).map(function (unsafe) {
+    return Buffer.from(unsafe);
+  });
+}
+
+function encodedString(encoding, length) {
+  return parseBufferFor("string", length).map(function (buff) {
+    return buff.toString(encoding);
+  });
+}
+
+function isInteger(value) {
+  return typeof value === "number" && Math.floor(value) === value;
+}
+
+function assertValidIntegerByteLengthFor(who, length) {
+  if (!isInteger(length) || length < 0 || length > 6) {
+    throw new Error(who + " requires integer length in range [0, 6].");
+  }
+}
+
+function uintBE(length) {
+  assertValidIntegerByteLengthFor("uintBE", length);
+  return parseBufferFor("uintBE(" + length + ")", length).map(function (buff) {
+    return buff.readUIntBE(0, length);
+  });
+}
+
+function uintLE(length) {
+  assertValidIntegerByteLengthFor("uintLE", length);
+  return parseBufferFor("uintLE(" + length + ")", length).map(function (buff) {
+    return buff.readUIntLE(0, length);
+  });
+}
+
+function intBE(length) {
+  assertValidIntegerByteLengthFor("intBE", length);
+  return parseBufferFor("intBE(" + length + ")", length).map(function (buff) {
+    return buff.readIntBE(0, length);
+  });
+}
+
+function intLE(length) {
+  assertValidIntegerByteLengthFor("intLE", length);
+  return parseBufferFor("intLE(" + length + ")", length).map(function (buff) {
+    return buff.readIntLE(0, length);
+  });
+}
+
+function floatBE() {
+  return parseBufferFor("floatBE", 4).map(function (buff) {
+    return buff.readFloatBE(0);
+  });
+}
+
+function floatLE() {
+  return parseBufferFor("floatLE", 4).map(function (buff) {
+    return buff.readFloatLE(0);
+  });
+}
+
+function doubleBE() {
+  return parseBufferFor("doubleBE", 8).map(function (buff) {
+    return buff.readDoubleBE(0);
+  });
+}
+
+function doubleLE() {
+  return parseBufferFor("doubleLE", 8).map(function (buff) {
+    return buff.readDoubleLE(0);
+  });
+}
+
+function toArray(arrLike) {
+  return Array.prototype.slice.call(arrLike);
+} // -*- Helpers -*-
+
+
+function isParser(obj) {
+  return obj instanceof Parsimmon;
+}
+
+function isArray(x) {
+  return {}.toString.call(x) === "[object Array]";
+}
+
+function isBuffer(x) {
+  /* global Buffer */
+  return bufferExists() && Buffer.isBuffer(x);
+}
+
+function makeSuccess(index, value) {
+  return {
+    status: true,
+    index: index,
+    value: value,
+    furthest: -1,
+    expected: []
+  };
+}
+function makeFailure(index, expected) {
+  if (!isArray(expected)) {
+    expected = [expected];
+  }
+
+  return {
+    status: false,
+    index: -1,
+    value: null,
+    furthest: index,
+    expected: expected
+  };
+}
+
+function mergeReplies(result, last) {
+  if (!last) {
+    return result;
+  }
+
+  if (result.furthest > last.furthest) {
+    return result;
+  }
+
+  var expected = result.furthest === last.furthest ? union(result.expected, last.expected) : last.expected;
+  return {
+    status: result.status,
+    index: result.index,
+    value: result.value,
+    furthest: last.furthest,
+    expected: expected
+  };
+}
+
+function makeLineColumnIndex(input, i) {
+  if (isBuffer(input)) {
+    return {
+      offset: i,
+      line: -1,
+      column: -1
+    };
+  }
+
+  var lines = input.slice(0, i).split("\n"); // Note that unlike the character offset, the line and column offsets are
+  // 1-based.
+
+  var lineWeAreUpTo = lines.length;
+  var columnWeAreUpTo = lines[lines.length - 1].length + 1;
+  return {
+    offset: i,
+    line: lineWeAreUpTo,
+    column: columnWeAreUpTo
+  };
+} // Returns the sorted set union of two arrays of strings
+
+
+function union(xs, ys) {
+  var obj = {};
+
+  for (var i = 0; i < xs.length; i++) {
+    obj[xs[i]] = true;
+  }
+
+  for (var j = 0; j < ys.length; j++) {
+    obj[ys[j]] = true;
+  }
+
+  var keys = [];
+
+  for (var k in obj) {
+    if ({}.hasOwnProperty.call(obj, k)) {
+      keys.push(k);
+    }
+  }
+
+  keys.sort();
+  return keys;
+}
+
+function assertParser(p) {
+  if (!isParser(p)) {
+    throw new Error("not a parser: " + p);
+  }
+}
+
+function get(input, i) {
+  if (typeof input === "string") {
+    return input.charAt(i);
+  }
+
+  return input[i];
+} // TODO[ES5]: Switch to Array.isArray eventually.
+
+
+function assertArray(x) {
+  if (!isArray(x)) {
+    throw new Error("not an array: " + x);
+  }
+}
+
+function assertNumber(x) {
+  if (typeof x !== "number") {
+    throw new Error("not a number: " + x);
+  }
+}
+
+function assertRegexp(x) {
+  if (!(x instanceof RegExp)) {
+    throw new Error("not a regexp: " + x);
+  }
+
+  var f = flags(x);
+
+  for (var i = 0; i < f.length; i++) {
+    var c = f.charAt(i); // Only allow regexp flags [imu] for now, since [g] and [y] specifically
+    // mess up Parsimmon. If more non-stateful regexp flags are added in the
+    // future, this will need to be revisited.
+
+    if (c !== "i" && c !== "m" && c !== "u") {
+      throw new Error('unsupported regexp flag "' + c + '": ' + x);
+    }
+  }
+}
+
+function assertFunction(x) {
+  if (typeof x !== "function") {
+    throw new Error("not a function: " + x);
+  }
+}
+
+function assertString(x) {
+  if (typeof x !== "string") {
+    throw new Error("not a string: " + x);
+  }
+} // -*- Error Formatting -*-
+
+
+var linesBeforeStringError = 2;
+var linesAfterStringError = 3;
+var bytesPerLine = 8;
+var bytesBefore = bytesPerLine * 5;
+var bytesAfter = bytesPerLine * 4;
+var defaultLinePrefix = "  ";
+function repeat(string, amount) {
+  return new Array(amount + 1).join(string);
+}
+function formatExpected(expected) {
+  if (expected.length === 1) {
+    return "Expected:\n\n" + expected[0];
+  }
+
+  return "Expected one of the following: \n\n" + expected.join(", ");
+}
+function leftPad(str, pad, char) {
+  var add = pad - str.length;
+
+  if (add <= 0) {
+    return str;
+  }
+
+  return repeat(char, add) + str;
+}
+
+function toChunks(arr, chunkSize) {
+  var length = arr.length;
+  var chunks = [];
+  var chunkIndex = 0;
+
+  if (length <= chunkSize) {
+    return [arr.slice()];
+  }
+
+  for (var i = 0; i < length; i++) {
+    if (!chunks[chunkIndex]) {
+      chunks.push([]);
+    }
+
+    chunks[chunkIndex].push(arr[i]);
+
+    if ((i + 1) % chunkSize === 0) {
+      chunkIndex++;
+    }
+  }
+
+  return chunks;
+} // Get a range of indexes including `i`-th element and `before` and `after` amount of elements from `arr`.
+
+
+function rangeFromIndexAndOffsets(i, before, after, length) {
+  return {
+    // Guard against the negative upper bound for lines included in the output.
+    from: i - before > 0 ? i - before : 0,
+    to: i + after > length ? length : i + after
+  };
+}
+function byteRangeToRange(byteRange) {
+  // Exception for inputs smaller than `bytesPerLine`
+  if (byteRange.from === 0 && byteRange.to === 1) {
+    return {
+      from: byteRange.from,
+      to: byteRange.to
+    };
+  }
+
+  return {
+    from: byteRange.from / bytesPerLine,
+    // Round `to`, so we don't get float if the amount of bytes is not divisible by `bytesPerLine`
+    to: Math.floor(byteRange.to / bytesPerLine)
+  };
+}
+function formatGot(input, error) {
+  var index = error.index;
+  var i = index.offset;
+  var verticalMarkerLength = 1;
+  var column;
+  var lineWithErrorIndex;
+  var lines;
+  var lineRange;
+  var lastLineNumberLabelLength;
+
+  if (i === input.length) {
+    return "Got the end of the input";
+  }
+
+  if (isBuffer(input)) {
+    var byteLineWithErrorIndex = i - i % bytesPerLine;
+    var columnByteIndex = i - byteLineWithErrorIndex;
+    var byteRange = rangeFromIndexAndOffsets(byteLineWithErrorIndex, bytesBefore, bytesAfter + bytesPerLine, input.length);
+    var bytes = input.slice(byteRange.from, byteRange.to);
+    var bytesInChunks = toChunks(bytes.toJSON().data, bytesPerLine);
+    var byteLines = map(function (byteRow) {
+      return map(function (byteValue) {
+        // Prefix byte values with a `0` if they are shorter than 2 characters.
+        return leftPad(byteValue.toString(16), 2, "0");
+      }, byteRow);
+    }, bytesInChunks);
+    lineRange = byteRangeToRange(byteRange);
+    lineWithErrorIndex = byteLineWithErrorIndex / bytesPerLine;
+    column = columnByteIndex * 3; // Account for an extra space.
+
+    if (columnByteIndex >= 4) {
+      column += 1;
+    }
+
+    verticalMarkerLength = 2;
+    lines = map(function (byteLine) {
+      return byteLine.length <= 4 ? byteLine.join(" ") : byteLine.slice(0, 4).join(" ") + "  " + byteLine.slice(4).join(" ");
+    }, byteLines);
+    lastLineNumberLabelLength = ((lineRange.to > 0 ? lineRange.to - 1 : lineRange.to) * 8).toString(16).length;
+
+    if (lastLineNumberLabelLength < 2) {
+      lastLineNumberLabelLength = 2;
+    }
+  } else {
+    var inputLines = input.split(/\r\n|[\n\r\u2028\u2029]/);
+    column = index.column - 1;
+    lineWithErrorIndex = index.line - 1;
+    lineRange = rangeFromIndexAndOffsets(lineWithErrorIndex, linesBeforeStringError, linesAfterStringError, inputLines.length);
+    lines = inputLines.slice(lineRange.from, lineRange.to);
+    lastLineNumberLabelLength = lineRange.to.toString().length;
+  }
+
+  var lineWithErrorCurrentIndex = lineWithErrorIndex - lineRange.from;
+
+  if (isBuffer(input)) {
+    lastLineNumberLabelLength = ((lineRange.to > 0 ? lineRange.to - 1 : lineRange.to) * 8).toString(16).length;
+
+    if (lastLineNumberLabelLength < 2) {
+      lastLineNumberLabelLength = 2;
+    }
+  }
+
+  var linesWithLineNumbers = reduce(function (acc, lineSource, index) {
+    var isLineWithError = index === lineWithErrorCurrentIndex;
+    var prefix = isLineWithError ? "> " : defaultLinePrefix;
+    var lineNumberLabel;
+
+    if (isBuffer(input)) {
+      lineNumberLabel = leftPad(((lineRange.from + index) * 8).toString(16), lastLineNumberLabelLength, "0");
+    } else {
+      lineNumberLabel = leftPad((lineRange.from + index + 1).toString(), lastLineNumberLabelLength, " ");
+    }
+
+    return [].concat(acc, [prefix + lineNumberLabel + " | " + lineSource], isLineWithError ? [defaultLinePrefix + repeat(" ", lastLineNumberLabelLength) + " | " + leftPad("", column, " ") + repeat("^", verticalMarkerLength)] : []);
+  }, [], lines);
+  return linesWithLineNumbers.join("\n");
+}
+function formatError(input, error) {
+  return ["\n", "-- PARSING FAILED " + repeat("-", 50), "\n\n", formatGot(input, error), "\n\n", formatExpected(error.expected), "\n"].join("");
+}
+function flags(re) {
+  var s = "" + re;
+  return s.slice(s.lastIndexOf("/") + 1);
+}
+function anchoredRegexp(re) {
+  return RegExp("^(?:" + re.source + ")", flags(re));
+} // -*- Combinators -*-
+
+function seq() {
+  var parsers = [].slice.call(arguments);
+  var numParsers = parsers.length;
+
+  for (var j = 0; j < numParsers; j += 1) {
+    assertParser(parsers[j]);
+  }
+
+  return Parsimmon(function (input, i) {
+    var result;
+    var accum = new Array(numParsers);
+
+    for (var j = 0; j < numParsers; j += 1) {
+      result = mergeReplies(parsers[j]._(input, i), result);
+
+      if (!result.status) {
+        return result;
+      }
+
+      accum[j] = result.value;
+      i = result.index;
+    }
+
+    return mergeReplies(makeSuccess(i, accum), result);
+  });
+}
+function seqObj() {
+  var seenKeys = {};
+  var totalKeys = 0;
+  var parsers = toArray(arguments);
+  var numParsers = parsers.length;
+
+  for (var j = 0; j < numParsers; j += 1) {
+    var p = parsers[j];
+
+    if (isParser(p)) {
+      continue;
+    }
+
+    if (isArray(p)) {
+      var isWellFormed = p.length === 2 && typeof p[0] === "string" && isParser(p[1]);
+
+      if (isWellFormed) {
+        var key = p[0];
+
+        if (Object.prototype.hasOwnProperty.call(seenKeys, key)) {
+          throw new Error("seqObj: duplicate key " + key);
+        }
+
+        seenKeys[key] = true;
+        totalKeys++;
+        continue;
+      }
+    }
+
+    throw new Error("seqObj arguments must be parsers or [string, parser] array pairs.");
+  }
+
+  if (totalKeys === 0) {
+    throw new Error("seqObj expects at least one named parser, found zero");
+  }
+
+  return Parsimmon(function (input, i) {
+    var result;
+    var accum = {};
+
+    for (var j = 0; j < numParsers; j += 1) {
+      var name;
+      var parser;
+
+      if (isArray(parsers[j])) {
+        name = parsers[j][0];
+        parser = parsers[j][1];
+      } else {
+        name = null;
+        parser = parsers[j];
+      }
+
+      result = mergeReplies(parser._(input, i), result);
+
+      if (!result.status) {
+        return result;
+      }
+
+      if (name) {
+        accum[name] = result.value;
+      }
+
+      i = result.index;
+    }
+
+    return mergeReplies(makeSuccess(i, accum), result);
+  });
+}
+function seqMap() {
+  var args = [].slice.call(arguments);
+
+  if (args.length === 0) {
+    throw new Error("seqMap needs at least one argument");
+  }
+
+  var mapper = args.pop();
+  assertFunction(mapper);
+  return seq.apply(null, args).map(function (results) {
+    return mapper.apply(null, results);
+  });
+} // TODO[ES5]: Revisit this with Object.keys and .bind.
+
+function createLanguage(parsers) {
+  var language = {};
+
+  for (var key in parsers) {
+    if ({}.hasOwnProperty.call(parsers, key)) {
+      (function (key) {
+        var func = function () {
+          return parsers[key](language);
+        };
+
+        language[key] = lazy(func);
+      })(key);
+    }
+  }
+
+  return language;
+}
+function alt() {
+  var parsers = [].slice.call(arguments);
+  var numParsers = parsers.length;
+
+  if (numParsers === 0) {
+    return fail("zero alternates");
+  }
+
+  for (var j = 0; j < numParsers; j += 1) {
+    assertParser(parsers[j]);
+  }
+
+  return Parsimmon(function (input, i) {
+    var result;
+
+    for (var j = 0; j < parsers.length; j += 1) {
+      result = mergeReplies(parsers[j]._(input, i), result);
+
+      if (result.status) {
+        return result;
+      }
+    }
+
+    return result;
+  });
+}
+function sepBy(parser, separator) {
+  // Argument asserted by sepBy1
+  return sepBy1(parser, separator).or(succeed([]));
+}
+function sepBy1(parser, separator) {
+  assertParser(parser);
+  assertParser(separator);
+  var pairs = separator.then(parser).many();
+  return seqMap(parser, pairs, function (r, rs) {
+    return [r].concat(rs);
+  });
+} // -*- Core Parsing Methods -*-
+
+_.parse = function (input) {
+  if (typeof input !== "string" && !isBuffer(input)) {
+    throw new Error(".parse must be called with a string or Buffer as its argument");
+  }
+
+  var result = this.skip(eof)._(input, 0);
+
+  if (result.status) {
+    return {
+      status: true,
+      value: result.value
+    };
+  }
+
+  return {
+    status: false,
+    index: makeLineColumnIndex(input, result.furthest),
+    expected: result.expected
+  };
+}; // -*- Other Methods -*-
+
+
+_.tryParse = function (str) {
+  var result = this.parse(str);
+
+  if (result.status) {
+    return result.value;
+  } else {
+    var msg = formatError(str, result);
+    var err = new Error(msg);
+    err.type = "ParsimmonError";
+    err.result = result;
+    throw err;
+  }
+};
+
+_.or = function (alternative) {
+  return alt(this, alternative);
+};
+
+_.trim = function (parser) {
+  return this.wrap(parser, parser);
+};
+
+_.wrap = function (leftParser, rightParser) {
+  return seqMap(leftParser, this, rightParser, function (left, middle) {
+    return middle;
+  });
+};
+
+_.thru = function (wrapper) {
+  return wrapper(this);
+};
+
+_.then = function (next) {
+  assertParser(next);
+  return seq(this, next).map(function (results) {
+    return results[1];
+  });
+};
+
+_.many = function () {
+  var self = this;
+  return Parsimmon(function (input, i) {
+    var accum = [];
+    var result = undefined;
+
+    for (;;) {
+      result = mergeReplies(self._(input, i), result);
+
+      if (result.status) {
+        if (i === result.index) {
+          throw new Error("infinite loop detected in .many() parser --- calling .many() on " + "a parser which can accept zero characters is usually the cause");
+        }
+
+        i = result.index;
+        accum.push(result.value);
+      } else {
+        return mergeReplies(makeSuccess(i, accum), result);
+      }
+    }
+  });
+};
+
+_.tieWith = function (separator) {
+  assertString(separator);
+  return this.map(function (args) {
+    assertArray(args);
+
+    if (args.length) {
+      assertString(args[0]);
+      var s = args[0];
+
+      for (var i = 1; i < args.length; i++) {
+        assertString(args[i]);
+        s += separator + args[i];
+      }
+
+      return s;
+    } else {
+      return "";
+    }
+  });
+};
+
+_.tie = function () {
+  return this.tieWith("");
+};
+
+_.times = function (min, max) {
+  var self = this;
+
+  if (arguments.length < 2) {
+    max = min;
+  }
+
+  assertNumber(min);
+  assertNumber(max);
+  return Parsimmon(function (input, i) {
+    var accum = [];
+    var result = undefined;
+    var prevResult = undefined;
+
+    for (var times = 0; times < min; times += 1) {
+      result = self._(input, i);
+      prevResult = mergeReplies(result, prevResult);
+
+      if (result.status) {
+        i = result.index;
+        accum.push(result.value);
+      } else {
+        return prevResult;
+      }
+    }
+
+    for (; times < max; times += 1) {
+      result = self._(input, i);
+      prevResult = mergeReplies(result, prevResult);
+
+      if (result.status) {
+        i = result.index;
+        accum.push(result.value);
+      } else {
+        break;
+      }
+    }
+
+    return mergeReplies(makeSuccess(i, accum), prevResult);
+  });
+};
+
+_.result = function (res) {
+  return this.map(function () {
+    return res;
+  });
+};
+
+_.atMost = function (n) {
+  return this.times(0, n);
+};
+
+_.atLeast = function (n) {
+  return seqMap(this.times(n), this.many(), function (init, rest) {
+    return init.concat(rest);
+  });
+};
+
+_.map = function (fn) {
+  assertFunction(fn);
+  var self = this;
+  return Parsimmon(function (input, i) {
+    var result = self._(input, i);
+
+    if (!result.status) {
+      return result;
+    }
+
+    return mergeReplies(makeSuccess(result.index, fn(result.value)), result);
+  });
+};
+
+_.contramap = function (fn) {
+  assertFunction(fn);
+  var self = this;
+  return Parsimmon(function (input, i) {
+    var result = self.parse(fn(input.slice(i)));
+
+    if (!result.status) {
+      return result;
+    }
+
+    return makeSuccess(i + input.length, result.value);
+  });
+};
+
+_.promap = function (f, g) {
+  assertFunction(f);
+  assertFunction(g);
+  return this.contramap(f).map(g);
+};
+
+_.skip = function (next) {
+  return seq(this, next).map(function (results) {
+    return results[0];
+  });
+};
+
+_.mark = function () {
+  return seqMap(index, this, index, function (start, value, end) {
+    return {
+      start: start,
+      value: value,
+      end: end
+    };
+  });
+};
+
+_.node = function (name) {
+  return seqMap(index, this, index, function (start, value, end) {
+    return {
+      name: name,
+      value: value,
+      start: start,
+      end: end
+    };
+  });
+};
+
+_.sepBy = function (separator) {
+  return sepBy(this, separator);
+};
+
+_.sepBy1 = function (separator) {
+  return sepBy1(this, separator);
+};
+
+_.lookahead = function (x) {
+  return this.skip(lookahead(x));
+};
+
+_.notFollowedBy = function (x) {
+  return this.skip(notFollowedBy(x));
+};
+
+_.desc = function (expected) {
+  if (!isArray(expected)) {
+    expected = [expected];
+  }
+
+  var self = this;
+  return Parsimmon(function (input, i) {
+    var reply = self._(input, i);
+
+    if (!reply.status) {
+      reply.expected = expected;
+    }
+
+    return reply;
+  });
+};
+
+_.fallback = function (result) {
+  return this.or(succeed(result));
+};
+
+_.ap = function (other) {
+  return seqMap(other, this, function (f, x) {
+    return f(x);
+  });
+};
+
+_.chain = function (f) {
+  var self = this;
+  return Parsimmon(function (input, i) {
+    var result = self._(input, i);
+
+    if (!result.status) {
+      return result;
+    }
+
+    var nextParser = f(result.value);
+    return mergeReplies(nextParser._(input, result.index), result);
+  });
+}; // -*- Constructors -*-
+
+
+function string(str) {
+  assertString(str);
+  var expected = "'" + str + "'";
+  return Parsimmon(function (input, i) {
+    var j = i + str.length;
+    var head = input.slice(i, j);
+
+    if (head === str) {
+      return makeSuccess(j, head);
+    } else {
+      return makeFailure(i, expected);
+    }
+  });
+}
+function byte(b) {
+  ensureBuffer();
+  assertNumber(b);
+
+  if (b > 0xff) {
+    throw new Error("Value specified to byte constructor (" + b + "=0x" + b.toString(16) + ") is larger in value than a single byte.");
+  }
+
+  var expected = (b > 0xf ? "0x" : "0x0") + b.toString(16);
+  return Parsimmon(function (input, i) {
+    var head = get(input, i);
+
+    if (head === b) {
+      return makeSuccess(i + 1, head);
+    } else {
+      return makeFailure(i, expected);
+    }
+  });
+}
+function regexp(re, group) {
+  assertRegexp(re);
+
+  if (arguments.length >= 2) {
+    assertNumber(group);
+  } else {
+    group = 0;
+  }
+
+  var anchored = anchoredRegexp(re);
+  var expected = "" + re;
+  return Parsimmon(function (input, i) {
+    var match = anchored.exec(input.slice(i));
+
+    if (match) {
+      if (0 <= group && group <= match.length) {
+        var fullMatch = match[0];
+        var groupMatch = match[group];
+        return makeSuccess(i + fullMatch.length, groupMatch);
+      }
+
+      var message = "valid match group (0 to " + match.length + ") in " + expected;
+      return makeFailure(i, message);
+    }
+
+    return makeFailure(i, expected);
+  });
+}
+function succeed(value) {
+  return Parsimmon(function (input, i) {
+    return makeSuccess(i, value);
+  });
+}
+function fail(expected) {
+  return Parsimmon(function (input, i) {
+    return makeFailure(i, expected);
+  });
+}
+function lookahead(x) {
+  if (isParser(x)) {
+    return Parsimmon(function (input, i) {
+      var result = x._(input, i);
+
+      result.index = i;
+      result.value = "";
+      return result;
+    });
+  } else if (typeof x === "string") {
+    return lookahead(string(x));
+  } else if (x instanceof RegExp) {
+    return lookahead(regexp(x));
+  }
+
+  throw new Error("not a string, regexp, or parser: " + x);
+}
+function notFollowedBy(parser) {
+  assertParser(parser);
+  return Parsimmon(function (input, i) {
+    var result = parser._(input, i);
+
+    var text = input.slice(i, result.index);
+    return result.status ? makeFailure(i, 'not "' + text + '"') : makeSuccess(i, null);
+  });
+}
+function test(predicate) {
+  assertFunction(predicate);
+  return Parsimmon(function (input, i) {
+    var char = get(input, i);
+
+    if (i < input.length && predicate(char)) {
+      return makeSuccess(i + 1, char);
+    } else {
+      return makeFailure(i, "a character/byte matching " + predicate);
+    }
+  });
+}
+function oneOf(str) {
+  var expected = str.split("");
+
+  for (var idx = 0; idx < expected.length; idx++) {
+    expected[idx] = "'" + expected[idx] + "'";
+  }
+
+  return test(function (ch) {
+    return str.indexOf(ch) >= 0;
+  }).desc(expected);
+}
+function noneOf(str) {
+  return test(function (ch) {
+    return str.indexOf(ch) < 0;
+  }).desc("none of '" + str + "'");
+}
+function custom(parsingFunction) {
+  return Parsimmon(parsingFunction(makeSuccess, makeFailure));
+} // TODO[ES5]: Improve error message using JSON.stringify eventually.
+
+function range(begin, end) {
+  return test(function (ch) {
+    return begin <= ch && ch <= end;
+  }).desc(begin + "-" + end);
+}
+function takeWhile(predicate) {
+  assertFunction(predicate);
+  return Parsimmon(function (input, i) {
+    var j = i;
+
+    while (j < input.length && predicate(get(input, j))) {
+      j++;
+    }
+
+    return makeSuccess(j, input.slice(i, j));
+  });
+}
+function lazy(desc, f) {
+  if (arguments.length < 2) {
+    f = desc;
+    desc = undefined;
+  }
+
+  var parser = Parsimmon(function (input, i) {
+    parser._ = f()._;
+    return parser._(input, i);
+  });
+
+  if (desc) {
+    return parser.desc(desc);
+  } else {
+    return parser;
+  }
+} // -*- Fantasy Land Extras -*-
+
+function empty() {
+  return fail("fantasy-land/empty");
+}
+
+_.concat = _.or;
+_.empty = empty;
+_.of = succeed;
+_["fantasy-land/ap"] = _.ap;
+_["fantasy-land/chain"] = _.chain;
+_["fantasy-land/concat"] = _.concat;
+_["fantasy-land/empty"] = _.empty;
+_["fantasy-land/of"] = _.of;
+_["fantasy-land/map"] = _.map; // -*- Base Parsers -*-
+
+const index = Parsimmon(function (input, i) {
+  return makeSuccess(i, makeLineColumnIndex(input, i));
+});
+const any = Parsimmon(function (input, i) {
+  if (i >= input.length) {
+    return makeFailure(i, "any character/byte");
+  }
+
+  return makeSuccess(i + 1, get(input, i));
+});
+const all = Parsimmon(function (input, i) {
+  return makeSuccess(input.length, input.slice(i));
+});
+const eof = Parsimmon(function (input, i) {
+  if (i < input.length) {
+    return makeFailure(i, "EOF");
+  }
+
+  return makeSuccess(i, null);
+});
+const digit = regexp(/[0-9]/).desc("a digit");
+const digits = regexp(/[0-9]*/).desc("optional digits");
+const letter = regexp(/[a-z]/i).desc("a letter");
+const letters = regexp(/[a-z]*/i).desc("optional letters");
+const optWhitespace = regexp(/\s*/).desc("optional whitespace");
+const whitespace = regexp(/\s+/).desc("whitespace");
+const cr = string("\r");
+const lf = string("\n");
+const crlf = string("\r\n");
+const newline = alt(crlf, lf, cr).desc("newline");
+const end = alt(newline, eof);
+
+/***/ }),
+
+/***/ "./resources/js/.fable/Fable.SimpleHttp.3.0.0/Http.fs.js":
+/*!***************************************************************!*\
+  !*** ./resources/js/.fable/Fable.SimpleHttp.3.0.0/Http.fs.js ***!
+  \***************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "FileReader_readBlobAsText": () => (/* binding */ FileReader_readBlobAsText),
+/* harmony export */   "FileReader_readFileAsText": () => (/* binding */ FileReader_readFileAsText),
+/* harmony export */   "FormData_append": () => (/* binding */ FormData_append),
+/* harmony export */   "FormData_appendFile": () => (/* binding */ FormData_appendFile),
+/* harmony export */   "FormData_appendNamedFile": () => (/* binding */ FormData_appendNamedFile),
+/* harmony export */   "FormData_appendBlob": () => (/* binding */ FormData_appendBlob),
+/* harmony export */   "FormData_appendNamedBlob": () => (/* binding */ FormData_appendNamedBlob),
+/* harmony export */   "Headers_contentType": () => (/* binding */ Headers_contentType),
+/* harmony export */   "Headers_accept": () => (/* binding */ Headers_accept),
+/* harmony export */   "Headers_acceptCharset": () => (/* binding */ Headers_acceptCharset),
+/* harmony export */   "Headers_acceptEncoding": () => (/* binding */ Headers_acceptEncoding),
+/* harmony export */   "Headers_acceptLanguage": () => (/* binding */ Headers_acceptLanguage),
+/* harmony export */   "Headers_acceptDateTime": () => (/* binding */ Headers_acceptDateTime),
+/* harmony export */   "Headers_authorization": () => (/* binding */ Headers_authorization),
+/* harmony export */   "Headers_cacheControl": () => (/* binding */ Headers_cacheControl),
+/* harmony export */   "Headers_connection": () => (/* binding */ Headers_connection),
+/* harmony export */   "Headers_cookie": () => (/* binding */ Headers_cookie),
+/* harmony export */   "Headers_contentMD5": () => (/* binding */ Headers_contentMD5),
+/* harmony export */   "Headers_date": () => (/* binding */ Headers_date),
+/* harmony export */   "Headers_expect": () => (/* binding */ Headers_expect),
+/* harmony export */   "Headers_ifMatch": () => (/* binding */ Headers_ifMatch),
+/* harmony export */   "Headers_ifModifiedSince": () => (/* binding */ Headers_ifModifiedSince),
+/* harmony export */   "Headers_ifNoneMatch": () => (/* binding */ Headers_ifNoneMatch),
+/* harmony export */   "Headers_ifRange": () => (/* binding */ Headers_ifRange),
+/* harmony export */   "Headers_IfUnmodifiedSince": () => (/* binding */ Headers_IfUnmodifiedSince),
+/* harmony export */   "Headers_maxForwards": () => (/* binding */ Headers_maxForwards),
+/* harmony export */   "Headers_origin": () => (/* binding */ Headers_origin),
+/* harmony export */   "Headers_pragma": () => (/* binding */ Headers_pragma),
+/* harmony export */   "Headers_proxyAuthorization": () => (/* binding */ Headers_proxyAuthorization),
+/* harmony export */   "Headers_range": () => (/* binding */ Headers_range),
+/* harmony export */   "Headers_referer": () => (/* binding */ Headers_referer),
+/* harmony export */   "Headers_userAgent": () => (/* binding */ Headers_userAgent),
+/* harmony export */   "Headers_create": () => (/* binding */ Headers_create),
+/* harmony export */   "Http_request": () => (/* binding */ Http_request),
+/* harmony export */   "Http_method": () => (/* binding */ Http_method),
+/* harmony export */   "Http_header": () => (/* binding */ Http_header),
+/* harmony export */   "Http_headers": () => (/* binding */ Http_headers),
+/* harmony export */   "Http_withCredentials": () => (/* binding */ Http_withCredentials),
+/* harmony export */   "Http_overrideMimeType": () => (/* binding */ Http_overrideMimeType),
+/* harmony export */   "Http_overrideResponseType": () => (/* binding */ Http_overrideResponseType),
+/* harmony export */   "Http_content": () => (/* binding */ Http_content),
+/* harmony export */   "Http_send": () => (/* binding */ Http_send),
+/* harmony export */   "Http_get": () => (/* binding */ Http_get),
+/* harmony export */   "Http_put": () => (/* binding */ Http_put),
+/* harmony export */   "Http_delete": () => (/* binding */ Http_delete),
+/* harmony export */   "Http_patch": () => (/* binding */ Http_patch),
+/* harmony export */   "Http_post": () => (/* binding */ Http_post)
+/* harmony export */ });
+/* harmony import */ var _fable_library_3_1_1_Async_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../fable-library.3.1.1/Async.js */ "./resources/js/.fable/fable-library.3.1.1/Async.js");
+/* harmony import */ var _Types_fs_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Types.fs.js */ "./resources/js/.fable/Fable.SimpleHttp.3.0.0/Types.fs.js");
+/* harmony import */ var _fable_library_3_1_1_List_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../fable-library.3.1.1/List.js */ "./resources/js/.fable/fable-library.3.1.1/List.js");
+/* harmony import */ var _fable_library_3_1_1_Map_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../fable-library.3.1.1/Map.js */ "./resources/js/.fable/fable-library.3.1.1/Map.js");
+/* harmony import */ var _fable_library_3_1_1_String_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../fable-library.3.1.1/String.js */ "./resources/js/.fable/fable-library.3.1.1/String.js");
+/* harmony import */ var _fable_library_3_1_1_Array_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../fable-library.3.1.1/Array.js */ "./resources/js/.fable/fable-library.3.1.1/Array.js");
+/* harmony import */ var _fable_library_3_1_1_Seq_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../fable-library.3.1.1/Seq.js */ "./resources/js/.fable/fable-library.3.1.1/Seq.js");
+/* harmony import */ var _fable_library_3_1_1_Option_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../fable-library.3.1.1/Option.js */ "./resources/js/.fable/fable-library.3.1.1/Option.js");
+/* harmony import */ var _fable_library_3_1_1_AsyncBuilder_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../fable-library.3.1.1/AsyncBuilder.js */ "./resources/js/.fable/fable-library.3.1.1/AsyncBuilder.js");
+
+
+
+
+
+
+
+
+
+function FileReader_readBlobAsText(blob) {
+  return (0,_fable_library_3_1_1_Async_js__WEBPACK_IMPORTED_MODULE_0__.fromContinuations)(tupledArg => {
+    const resolve = tupledArg[0];
+    const reader = new FileReader();
+
+    reader.onload = _arg1 => {
+      if (reader.readyState === 2) {
+        resolve(reader.result);
+      }
+    };
+
+    reader.readAsText(blob);
+  });
+}
+function FileReader_readFileAsText(file) {
+  return (0,_fable_library_3_1_1_Async_js__WEBPACK_IMPORTED_MODULE_0__.fromContinuations)(tupledArg => {
+    const resolve = tupledArg[0];
+    const reader = new FileReader();
+
+    reader.onload = _arg1 => {
+      if (reader.readyState === 2) {
+        resolve(reader.result);
+      }
+    };
+
+    reader.readAsText(file);
+  });
+}
+function FormData_append(key, value, form) {
+  form.append(key, value);
+  return form;
+}
+function FormData_appendFile(key, file, form) {
+  form.append(key, file);
+  return form;
+}
+function FormData_appendNamedFile(key, fileName, file, form) {
+  form.append(key, file, fileName);
+  return form;
+}
+function FormData_appendBlob(key, blob, form) {
+  form.append(key, blob);
+  return form;
+}
+function FormData_appendNamedBlob(key, fileName, blob, form) {
+  form.append(key, blob, fileName);
+  return form;
+}
+function Headers_contentType(value) {
+  return new _Types_fs_js__WEBPACK_IMPORTED_MODULE_1__.Header(0, "Content-Type", value);
+}
+function Headers_accept(value) {
+  return new _Types_fs_js__WEBPACK_IMPORTED_MODULE_1__.Header(0, "Accept", value);
+}
+function Headers_acceptCharset(value) {
+  return new _Types_fs_js__WEBPACK_IMPORTED_MODULE_1__.Header(0, "Accept-Charset", value);
+}
+function Headers_acceptEncoding(value) {
+  return new _Types_fs_js__WEBPACK_IMPORTED_MODULE_1__.Header(0, "Accept-Encoding", value);
+}
+function Headers_acceptLanguage(value) {
+  return new _Types_fs_js__WEBPACK_IMPORTED_MODULE_1__.Header(0, "Accept-Language", value);
+}
+function Headers_acceptDateTime(value) {
+  return new _Types_fs_js__WEBPACK_IMPORTED_MODULE_1__.Header(0, "Accept-Datetime", value);
+}
+function Headers_authorization(value) {
+  return new _Types_fs_js__WEBPACK_IMPORTED_MODULE_1__.Header(0, "Authorization", value);
+}
+function Headers_cacheControl(value) {
+  return new _Types_fs_js__WEBPACK_IMPORTED_MODULE_1__.Header(0, "Cache-Control", value);
+}
+function Headers_connection(value) {
+  return new _Types_fs_js__WEBPACK_IMPORTED_MODULE_1__.Header(0, "Connection", value);
+}
+function Headers_cookie(value) {
+  return new _Types_fs_js__WEBPACK_IMPORTED_MODULE_1__.Header(0, "Cookie", value);
+}
+function Headers_contentMD5(value) {
+  return new _Types_fs_js__WEBPACK_IMPORTED_MODULE_1__.Header(0, "Content-MD5", value);
+}
+function Headers_date(value) {
+  return new _Types_fs_js__WEBPACK_IMPORTED_MODULE_1__.Header(0, "Date", value);
+}
+function Headers_expect(value) {
+  return new _Types_fs_js__WEBPACK_IMPORTED_MODULE_1__.Header(0, "Expect", value);
+}
+function Headers_ifMatch(value) {
+  return new _Types_fs_js__WEBPACK_IMPORTED_MODULE_1__.Header(0, "If-Match", value);
+}
+function Headers_ifModifiedSince(value) {
+  return new _Types_fs_js__WEBPACK_IMPORTED_MODULE_1__.Header(0, "If-Modified-Since", value);
+}
+function Headers_ifNoneMatch(value) {
+  return new _Types_fs_js__WEBPACK_IMPORTED_MODULE_1__.Header(0, "If-None-Match", value);
+}
+function Headers_ifRange(value) {
+  return new _Types_fs_js__WEBPACK_IMPORTED_MODULE_1__.Header(0, "If-Range", value);
+}
+function Headers_IfUnmodifiedSince(value) {
+  return new _Types_fs_js__WEBPACK_IMPORTED_MODULE_1__.Header(0, "If-Unmodified-Since", value);
+}
+function Headers_maxForwards(value) {
+  return new _Types_fs_js__WEBPACK_IMPORTED_MODULE_1__.Header(0, "Max-Forwards", value);
+}
+function Headers_origin(value) {
+  return new _Types_fs_js__WEBPACK_IMPORTED_MODULE_1__.Header(0, "Origin", value);
+}
+function Headers_pragma(value) {
+  return new _Types_fs_js__WEBPACK_IMPORTED_MODULE_1__.Header(0, "Pragma", value);
+}
+function Headers_proxyAuthorization(value) {
+  return new _Types_fs_js__WEBPACK_IMPORTED_MODULE_1__.Header(0, "Proxy-Authorization", value);
+}
+function Headers_range(value) {
+  return new _Types_fs_js__WEBPACK_IMPORTED_MODULE_1__.Header(0, "Range", value);
+}
+function Headers_referer(value) {
+  return new _Types_fs_js__WEBPACK_IMPORTED_MODULE_1__.Header(0, "Referer", value);
+}
+function Headers_userAgent(value) {
+  return new _Types_fs_js__WEBPACK_IMPORTED_MODULE_1__.Header(0, "User-Agent", value);
+}
+function Headers_create(key, value) {
+  return new _Types_fs_js__WEBPACK_IMPORTED_MODULE_1__.Header(0, key, value);
+}
+const Http_defaultRequest = new _Types_fs_js__WEBPACK_IMPORTED_MODULE_1__.HttpRequest("", new _Types_fs_js__WEBPACK_IMPORTED_MODULE_1__.HttpMethod(0), (0,_fable_library_3_1_1_List_js__WEBPACK_IMPORTED_MODULE_2__.empty)(), false, void 0, void 0, new _Types_fs_js__WEBPACK_IMPORTED_MODULE_1__.BodyContent(0));
+const Http_emptyResponse = new _Types_fs_js__WEBPACK_IMPORTED_MODULE_1__.HttpResponse(0, "", "", (0,_fable_library_3_1_1_Map_js__WEBPACK_IMPORTED_MODULE_3__.empty)(), new _Types_fs_js__WEBPACK_IMPORTED_MODULE_1__.ResponseContent(0, ""));
+
+function Http_splitAt(delimiter, input) {
+  if ((0,_fable_library_3_1_1_String_js__WEBPACK_IMPORTED_MODULE_4__.isNullOrEmpty)(input)) {
+    return [input];
+  } else {
+    return (0,_fable_library_3_1_1_String_js__WEBPACK_IMPORTED_MODULE_4__.split)(input, [delimiter], null, 0);
+  }
+}
+
+function Http_serializeMethod(_arg1) {
+  switch (_arg1.tag) {
+    case 1:
+      {
+        return "POST";
+      }
+
+    case 3:
+      {
+        return "PATCH";
+      }
+
+    case 2:
+      {
+        return "PUT";
+      }
+
+    case 4:
+      {
+        return "DELETE";
+      }
+
+    case 6:
+      {
+        return "OPTIONS";
+      }
+
+    case 5:
+      {
+        return "HEAD";
+      }
+
+    default:
+      {
+        return "GET";
+      }
+  }
+}
+
+function Http_request(url) {
+  return new _Types_fs_js__WEBPACK_IMPORTED_MODULE_1__.HttpRequest(url, Http_defaultRequest.method, Http_defaultRequest.headers, Http_defaultRequest.withCredentials, Http_defaultRequest.overridenMimeType, Http_defaultRequest.overridenResponseType, Http_defaultRequest.content);
+}
+function Http_method(httpVerb, req) {
+  return new _Types_fs_js__WEBPACK_IMPORTED_MODULE_1__.HttpRequest(req.url, httpVerb, req.headers, req.withCredentials, req.overridenMimeType, req.overridenResponseType, req.content);
+}
+function Http_header(singleHeader, req) {
+  return new _Types_fs_js__WEBPACK_IMPORTED_MODULE_1__.HttpRequest(req.url, req.method, (0,_fable_library_3_1_1_List_js__WEBPACK_IMPORTED_MODULE_2__.append)(req.headers, (0,_fable_library_3_1_1_List_js__WEBPACK_IMPORTED_MODULE_2__.singleton)(singleHeader)), req.withCredentials, req.overridenMimeType, req.overridenResponseType, req.content);
+}
+function Http_headers(values, req) {
+  return new _Types_fs_js__WEBPACK_IMPORTED_MODULE_1__.HttpRequest(req.url, req.method, (0,_fable_library_3_1_1_List_js__WEBPACK_IMPORTED_MODULE_2__.append)(req.headers, values), req.withCredentials, req.overridenMimeType, req.overridenResponseType, req.content);
+}
+function Http_withCredentials(enabled, req) {
+  return new _Types_fs_js__WEBPACK_IMPORTED_MODULE_1__.HttpRequest(req.url, req.method, req.headers, enabled, req.overridenMimeType, req.overridenResponseType, req.content);
+}
+function Http_overrideMimeType(value, req) {
+  return new _Types_fs_js__WEBPACK_IMPORTED_MODULE_1__.HttpRequest(req.url, req.method, req.headers, req.withCredentials, value, req.overridenResponseType, req.content);
+}
+function Http_overrideResponseType(value, req) {
+  return new _Types_fs_js__WEBPACK_IMPORTED_MODULE_1__.HttpRequest(req.url, req.method, req.headers, req.withCredentials, req.overridenMimeType, value, req.content);
+}
+function Http_content(bodyContent, req) {
+  return new _Types_fs_js__WEBPACK_IMPORTED_MODULE_1__.HttpRequest(req.url, req.method, req.headers, req.withCredentials, req.overridenMimeType, req.overridenResponseType, bodyContent);
+}
+function Http_send(req) {
+  return (0,_fable_library_3_1_1_Async_js__WEBPACK_IMPORTED_MODULE_0__.fromContinuations)(tupledArg => {
+    const resolve = tupledArg[0];
+    const reject = tupledArg[1];
+    const xhr = new XMLHttpRequest();
+    xhr.open(Http_serializeMethod(req.method), req.url);
+
+    xhr.onreadystatechange = () => {
+      let responseText, matchValue_1, statusCode, responseType, content, matchValue_2;
+
+      if (xhr.readyState === 4) {
+        resolve((responseText = (matchValue_1 = xhr.responseType, matchValue_1 === "" ? xhr.responseText : matchValue_1 === "text" ? xhr.responseText : ""), (statusCode = xhr.status | 0, (responseType = xhr.responseType, (content = (matchValue_2 = xhr.responseType, matchValue_2 === "" ? new _Types_fs_js__WEBPACK_IMPORTED_MODULE_1__.ResponseContent(0, xhr.responseText) : matchValue_2 === "text" ? new _Types_fs_js__WEBPACK_IMPORTED_MODULE_1__.ResponseContent(0, xhr.responseText) : matchValue_2 === "arraybuffer" ? new _Types_fs_js__WEBPACK_IMPORTED_MODULE_1__.ResponseContent(2, xhr.response) : matchValue_2 === "blob" ? new _Types_fs_js__WEBPACK_IMPORTED_MODULE_1__.ResponseContent(1, xhr.response) : new _Types_fs_js__WEBPACK_IMPORTED_MODULE_1__.ResponseContent(3, xhr.response)), new _Types_fs_js__WEBPACK_IMPORTED_MODULE_1__.HttpResponse(statusCode, responseText, responseType, (0,_fable_library_3_1_1_Map_js__WEBPACK_IMPORTED_MODULE_3__.ofArray)((0,_fable_library_3_1_1_Array_js__WEBPACK_IMPORTED_MODULE_5__.choose)(headerLine => {
+          const parts = Http_splitAt(":", headerLine);
+          const matchValue_3 = (0,_fable_library_3_1_1_List_js__WEBPACK_IMPORTED_MODULE_2__.ofArray)(parts);
+
+          if (matchValue_3.tail != null) {
+            const rest = matchValue_3.tail;
+            const key = matchValue_3.head;
+            return [key.toLocaleLowerCase(), (0,_fable_library_3_1_1_String_js__WEBPACK_IMPORTED_MODULE_4__.join)(":", rest).trim()];
+          } else {
+            const otherwise = matchValue_3;
+            return void 0;
+          }
+        }, Http_splitAt("\r\n", xhr.getAllResponseHeaders()))), content))))));
+      }
+    };
+
+    const enumerator = (0,_fable_library_3_1_1_Seq_js__WEBPACK_IMPORTED_MODULE_6__.getEnumerator)(req.headers);
+
+    try {
+      while (enumerator["System.Collections.IEnumerator.MoveNext"]()) {
+        const forLoopVar = enumerator["System.Collections.Generic.IEnumerator`1.get_Current"]();
+        const value = forLoopVar.fields[1];
+        const key_1 = forLoopVar.fields[0];
+        xhr.setRequestHeader(key_1, value);
+      }
+    } finally {
+      enumerator.Dispose();
+    }
+
+    xhr.withCredentials = req.withCredentials;
+    const matchValue_4 = req.overridenMimeType;
+
+    if (matchValue_4 == null) {} else {
+      const mimeType = matchValue_4;
+      xhr.overrideMimeType(mimeType);
+    }
+
+    const matchValue_5 = req.overridenResponseType;
+
+    if (matchValue_5 == null) {} else if (matchValue_5.tag === 1) {
+      xhr.responseType = "blob";
+    } else if (matchValue_5.tag === 2) {
+      xhr.responseType = "arraybuffer";
+    } else {
+      xhr.responseType = "text";
+    }
+
+    const matchValue_6 = [req.method, req.content];
+
+    if (matchValue_6[0].tag === 0) {
+      xhr.send((0,_fable_library_3_1_1_Option_js__WEBPACK_IMPORTED_MODULE_7__.some)(void 0));
+    } else if (matchValue_6[1].tag === 1) {
+      const value_1 = matchValue_6[1].fields[0];
+      xhr.send((0,_fable_library_3_1_1_Option_js__WEBPACK_IMPORTED_MODULE_7__.some)(value_1));
+    } else if (matchValue_6[1].tag === 3) {
+      const formData = matchValue_6[1].fields[0];
+      xhr.send((0,_fable_library_3_1_1_Option_js__WEBPACK_IMPORTED_MODULE_7__.some)(formData));
+    } else if (matchValue_6[1].tag === 2) {
+      const blob = matchValue_6[1].fields[0];
+      xhr.send((0,_fable_library_3_1_1_Option_js__WEBPACK_IMPORTED_MODULE_7__.some)(blob));
+    } else {
+      xhr.send((0,_fable_library_3_1_1_Option_js__WEBPACK_IMPORTED_MODULE_7__.some)(void 0));
+    }
+  });
+}
+function Http_get(url) {
+  return _fable_library_3_1_1_AsyncBuilder_js__WEBPACK_IMPORTED_MODULE_8__.singleton.Delay(() => _fable_library_3_1_1_AsyncBuilder_js__WEBPACK_IMPORTED_MODULE_8__.singleton.Bind(Http_send(Http_method(new _Types_fs_js__WEBPACK_IMPORTED_MODULE_1__.HttpMethod(0), Http_request(url))), _arg1 => {
+    const response = _arg1;
+    return _fable_library_3_1_1_AsyncBuilder_js__WEBPACK_IMPORTED_MODULE_8__.singleton.Return([response.statusCode, response.responseText]);
+  }));
+}
+function Http_put(url, data) {
+  return _fable_library_3_1_1_AsyncBuilder_js__WEBPACK_IMPORTED_MODULE_8__.singleton.Delay(() => _fable_library_3_1_1_AsyncBuilder_js__WEBPACK_IMPORTED_MODULE_8__.singleton.Bind(Http_send(Http_content(new _Types_fs_js__WEBPACK_IMPORTED_MODULE_1__.BodyContent(1, data), Http_method(new _Types_fs_js__WEBPACK_IMPORTED_MODULE_1__.HttpMethod(2), Http_request(url)))), _arg1 => {
+    const response = _arg1;
+    return _fable_library_3_1_1_AsyncBuilder_js__WEBPACK_IMPORTED_MODULE_8__.singleton.Return([response.statusCode, response.responseText]);
+  }));
+}
+function Http_delete(url) {
+  return _fable_library_3_1_1_AsyncBuilder_js__WEBPACK_IMPORTED_MODULE_8__.singleton.Delay(() => _fable_library_3_1_1_AsyncBuilder_js__WEBPACK_IMPORTED_MODULE_8__.singleton.Bind(Http_send(Http_method(new _Types_fs_js__WEBPACK_IMPORTED_MODULE_1__.HttpMethod(4), Http_request(url))), _arg1 => {
+    const response = _arg1;
+    return _fable_library_3_1_1_AsyncBuilder_js__WEBPACK_IMPORTED_MODULE_8__.singleton.Return([response.statusCode, response.responseText]);
+  }));
+}
+function Http_patch(url, data) {
+  return _fable_library_3_1_1_AsyncBuilder_js__WEBPACK_IMPORTED_MODULE_8__.singleton.Delay(() => _fable_library_3_1_1_AsyncBuilder_js__WEBPACK_IMPORTED_MODULE_8__.singleton.Bind(Http_send(Http_content(new _Types_fs_js__WEBPACK_IMPORTED_MODULE_1__.BodyContent(1, data), Http_method(new _Types_fs_js__WEBPACK_IMPORTED_MODULE_1__.HttpMethod(3), Http_request(url)))), _arg1 => {
+    const response = _arg1;
+    return _fable_library_3_1_1_AsyncBuilder_js__WEBPACK_IMPORTED_MODULE_8__.singleton.Return([response.statusCode, response.responseText]);
+  }));
+}
+function Http_post(url, data) {
+  return _fable_library_3_1_1_AsyncBuilder_js__WEBPACK_IMPORTED_MODULE_8__.singleton.Delay(() => _fable_library_3_1_1_AsyncBuilder_js__WEBPACK_IMPORTED_MODULE_8__.singleton.Bind(Http_send(Http_content(new _Types_fs_js__WEBPACK_IMPORTED_MODULE_1__.BodyContent(1, data), Http_method(new _Types_fs_js__WEBPACK_IMPORTED_MODULE_1__.HttpMethod(1), Http_request(url)))), _arg1 => {
+    const response = _arg1;
+    return _fable_library_3_1_1_AsyncBuilder_js__WEBPACK_IMPORTED_MODULE_8__.singleton.Return([response.statusCode, response.responseText]);
+  }));
+}
+
+/***/ }),
+
+/***/ "./resources/js/.fable/Fable.SimpleHttp.3.0.0/Types.fs.js":
+/*!****************************************************************!*\
+  !*** ./resources/js/.fable/Fable.SimpleHttp.3.0.0/Types.fs.js ***!
+  \****************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "HttpMethod": () => (/* binding */ HttpMethod),
+/* harmony export */   "HttpMethod$reflection": () => (/* binding */ HttpMethod$reflection),
+/* harmony export */   "Header": () => (/* binding */ Header),
+/* harmony export */   "Header$reflection": () => (/* binding */ Header$reflection),
+/* harmony export */   "BodyContent": () => (/* binding */ BodyContent),
+/* harmony export */   "BodyContent$reflection": () => (/* binding */ BodyContent$reflection),
+/* harmony export */   "ResponseTypes": () => (/* binding */ ResponseTypes),
+/* harmony export */   "ResponseTypes$reflection": () => (/* binding */ ResponseTypes$reflection),
+/* harmony export */   "HttpRequest": () => (/* binding */ HttpRequest),
+/* harmony export */   "HttpRequest$reflection": () => (/* binding */ HttpRequest$reflection),
+/* harmony export */   "ResponseContent": () => (/* binding */ ResponseContent),
+/* harmony export */   "ResponseContent$reflection": () => (/* binding */ ResponseContent$reflection),
+/* harmony export */   "HttpResponse": () => (/* binding */ HttpResponse),
+/* harmony export */   "HttpResponse$reflection": () => (/* binding */ HttpResponse$reflection)
+/* harmony export */ });
+/* harmony import */ var _fable_library_3_1_1_Types_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../fable-library.3.1.1/Types.js */ "./resources/js/.fable/fable-library.3.1.1/Types.js");
+/* harmony import */ var _fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../fable-library.3.1.1/Reflection.js */ "./resources/js/.fable/fable-library.3.1.1/Reflection.js");
+
+
+class HttpMethod extends _fable_library_3_1_1_Types_js__WEBPACK_IMPORTED_MODULE_0__.Union {
+  constructor(tag, ...fields) {
+    super();
+    this.tag = tag | 0;
+    this.fields = fields;
+  }
+
+  cases() {
+    return ["GET", "POST", "PUT", "PATCH", "DELETE", "HEAD", "OPTIONS"];
+  }
+
+}
+function HttpMethod$reflection() {
+  return (0,_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.union_type)("Fable.SimpleHttp.HttpMethod", [], HttpMethod, () => [[], [], [], [], [], [], []]);
+}
+class Header extends _fable_library_3_1_1_Types_js__WEBPACK_IMPORTED_MODULE_0__.Union {
+  constructor(tag, ...fields) {
+    super();
+    this.tag = tag | 0;
+    this.fields = fields;
+  }
+
+  cases() {
+    return ["Header"];
+  }
+
+}
+function Header$reflection() {
+  return (0,_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.union_type)("Fable.SimpleHttp.Header", [], Header, () => [[["Item1", _fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.string_type], ["Item2", _fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.string_type]]]);
+}
+class BodyContent extends _fable_library_3_1_1_Types_js__WEBPACK_IMPORTED_MODULE_0__.Union {
+  constructor(tag, ...fields) {
+    super();
+    this.tag = tag | 0;
+    this.fields = fields;
+  }
+
+  cases() {
+    return ["Empty", "Text", "Binary", "Form"];
+  }
+
+}
+function BodyContent$reflection() {
+  return (0,_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.union_type)("Fable.SimpleHttp.BodyContent", [], BodyContent, () => [[], [["Item", _fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.string_type]], [["Item", (0,_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.class_type)("Browser.Types.Blob")]], [["Item", (0,_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.class_type)("Browser.Types.FormData")]]]);
+}
+class ResponseTypes extends _fable_library_3_1_1_Types_js__WEBPACK_IMPORTED_MODULE_0__.Union {
+  constructor(tag, ...fields) {
+    super();
+    this.tag = tag | 0;
+    this.fields = fields;
+  }
+
+  cases() {
+    return ["Text", "Blob", "ArrayBuffer"];
+  }
+
+}
+function ResponseTypes$reflection() {
+  return (0,_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.union_type)("Fable.SimpleHttp.ResponseTypes", [], ResponseTypes, () => [[], [], []]);
+}
+class HttpRequest extends _fable_library_3_1_1_Types_js__WEBPACK_IMPORTED_MODULE_0__.Record {
+  constructor(url, method, headers, withCredentials, overridenMimeType, overridenResponseType, content) {
+    super();
+    this.url = url;
+    this.method = method;
+    this.headers = headers;
+    this.withCredentials = withCredentials;
+    this.overridenMimeType = overridenMimeType;
+    this.overridenResponseType = overridenResponseType;
+    this.content = content;
+  }
+
+}
+function HttpRequest$reflection() {
+  return (0,_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.record_type)("Fable.SimpleHttp.HttpRequest", [], HttpRequest, () => [["url", _fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.string_type], ["method", HttpMethod$reflection()], ["headers", (0,_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.list_type)(Header$reflection())], ["withCredentials", _fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.bool_type], ["overridenMimeType", (0,_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.option_type)(_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.string_type)], ["overridenResponseType", (0,_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.option_type)(ResponseTypes$reflection())], ["content", BodyContent$reflection()]]);
+}
+class ResponseContent extends _fable_library_3_1_1_Types_js__WEBPACK_IMPORTED_MODULE_0__.Union {
+  constructor(tag, ...fields) {
+    super();
+    this.tag = tag | 0;
+    this.fields = fields;
+  }
+
+  cases() {
+    return ["Text", "Blob", "ArrayBuffer", "Unknown"];
+  }
+
+}
+function ResponseContent$reflection() {
+  return (0,_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.union_type)("Fable.SimpleHttp.ResponseContent", [], ResponseContent, () => [[["Item", _fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.string_type]], [["Item", (0,_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.class_type)("Browser.Types.Blob")]], [["Item", (0,_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.class_type)("Fable.Core.JS.ArrayBuffer")]], [["Item", _fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.obj_type]]]);
+}
+class HttpResponse extends _fable_library_3_1_1_Types_js__WEBPACK_IMPORTED_MODULE_0__.Record {
+  constructor(statusCode, responseText, responseType, responseHeaders, content) {
+    super();
+    this.statusCode = statusCode | 0;
+    this.responseText = responseText;
+    this.responseType = responseType;
+    this.responseHeaders = responseHeaders;
+    this.content = content;
+  }
+
+}
+function HttpResponse$reflection() {
+  return (0,_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.record_type)("Fable.SimpleHttp.HttpResponse", [], HttpResponse, () => [["statusCode", _fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.int32_type], ["responseText", _fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.string_type], ["responseType", _fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.string_type], ["responseHeaders", (0,_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.class_type)("Microsoft.FSharp.Collections.FSharpMap`2", [_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.string_type, _fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.string_type])], ["content", ResponseContent$reflection()]]);
+}
+
+/***/ }),
+
+/***/ "./resources/js/.fable/Fable.SimpleJson.3.19.0/Json.Converter.fs.js":
+/*!**************************************************************************!*\
+  !*** ./resources/js/.fable/Fable.SimpleJson.3.19.0/Json.Converter.fs.js ***!
+  \**************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Convert_insideBrowser": () => (/* binding */ Convert_insideBrowser),
+/* harmony export */   "Convert_usingFable3": () => (/* binding */ Convert_usingFable3),
+/* harmony export */   "Convert_isUsingFable3": () => (/* binding */ Convert_isUsingFable3),
+/* harmony export */   "Convert_InternalMap": () => (/* binding */ Convert_InternalMap),
+/* harmony export */   "Convert_InternalMap$reflection": () => (/* binding */ Convert_InternalMap$reflection),
+/* harmony export */   "Convert_flattenMap": () => (/* binding */ Convert_flattenMap),
+/* harmony export */   "Convert_$007CKeyValue$007C_$007C": () => (/* binding */ Convert_$007CKeyValue$007C_$007C),
+/* harmony export */   "Convert_$007CNonArray$007C_$007C": () => (/* binding */ Convert_$007CNonArray$007C_$007C),
+/* harmony export */   "Convert_$007CMapEmpty$007C_$007C": () => (/* binding */ Convert_$007CMapEmpty$007C_$007C),
+/* harmony export */   "Convert_$007CMapKey$007C_$007C": () => (/* binding */ Convert_$007CMapKey$007C_$007C),
+/* harmony export */   "Convert_$007CMapOne$007C_$007C": () => (/* binding */ Convert_$007CMapOne$007C_$007C),
+/* harmony export */   "Convert_$007CMapNode$007C_$007C": () => (/* binding */ Convert_$007CMapNode$007C_$007C),
+/* harmony export */   "Convert_generateMap": () => (/* binding */ Convert_generateMap),
+/* harmony export */   "Convert_flatteFable3Map": () => (/* binding */ Convert_flatteFable3Map),
+/* harmony export */   "Convert_flattenFable3Lists": () => (/* binding */ Convert_flattenFable3Lists),
+/* harmony export */   "Convert_arrayLike": () => (/* binding */ Convert_arrayLike),
+/* harmony export */   "Convert_isRecord": () => (/* binding */ Convert_isRecord),
+/* harmony export */   "Convert_unionOfRecords": () => (/* binding */ Convert_unionOfRecords),
+/* harmony export */   "Convert_optional": () => (/* binding */ Convert_optional),
+/* harmony export */   "Convert_isQuoted": () => (/* binding */ Convert_isQuoted),
+/* harmony export */   "Convert_betweenQuotes": () => (/* binding */ Convert_betweenQuotes),
+/* harmony export */   "Convert_removeQuotes": () => (/* binding */ Convert_removeQuotes),
+/* harmony export */   "Convert_fromJsonAs": () => (/* binding */ Convert_fromJsonAs),
+/* harmony export */   "Convert_fromJson": () => (/* binding */ Convert_fromJson),
+/* harmony export */   "Convert_quoteText": () => (/* binding */ Convert_quoteText),
+/* harmony export */   "Convert_serialize": () => (/* binding */ Convert_serialize),
+/* harmony export */   "Fable_SimpleJson_Json__Json_stringify_Static_4E60E31B": () => (/* binding */ Fable_SimpleJson_Json__Json_stringify_Static_4E60E31B)
+/* harmony export */ });
+/* harmony import */ var _fable_library_3_1_1_Types_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../fable-library.3.1.1/Types.js */ "./resources/js/.fable/fable-library.3.1.1/Types.js");
+/* harmony import */ var _fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../fable-library.3.1.1/Reflection.js */ "./resources/js/.fable/fable-library.3.1.1/Reflection.js");
+/* harmony import */ var _Json_fs_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Json.fs.js */ "./resources/js/.fable/Fable.SimpleJson.3.19.0/Json.fs.js");
+/* harmony import */ var _fable_library_3_1_1_List_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../fable-library.3.1.1/List.js */ "./resources/js/.fable/fable-library.3.1.1/List.js");
+/* harmony import */ var _fable_library_3_1_1_Seq_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../fable-library.3.1.1/Seq.js */ "./resources/js/.fable/fable-library.3.1.1/Seq.js");
+/* harmony import */ var _fable_library_3_1_1_Option_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../fable-library.3.1.1/Option.js */ "./resources/js/.fable/fable-library.3.1.1/Option.js");
+/* harmony import */ var _fable_library_3_1_1_Map_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../fable-library.3.1.1/Map.js */ "./resources/js/.fable/fable-library.3.1.1/Map.js");
+/* harmony import */ var _fable_library_3_1_1_String_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../fable-library.3.1.1/String.js */ "./resources/js/.fable/fable-library.3.1.1/String.js");
+/* harmony import */ var _fable_library_3_1_1_Double_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../fable-library.3.1.1/Double.js */ "./resources/js/.fable/fable-library.3.1.1/Double.js");
+/* harmony import */ var _fable_library_3_1_1_Int32_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../fable-library.3.1.1/Int32.js */ "./resources/js/.fable/fable-library.3.1.1/Int32.js");
+/* harmony import */ var _fable_library_3_1_1_Decimal_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../fable-library.3.1.1/Decimal.js */ "./resources/js/.fable/fable-library.3.1.1/Decimal.js");
+/* harmony import */ var _fable_library_3_1_1_Long_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../fable-library.3.1.1/Long.js */ "./resources/js/.fable/fable-library.3.1.1/Long.js");
+/* harmony import */ var _SimpleJson_fs_js__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./SimpleJson.fs.js */ "./resources/js/.fable/Fable.SimpleJson.3.19.0/SimpleJson.fs.js");
+/* harmony import */ var _fable_library_3_1_1_BigInt_js__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../fable-library.3.1.1/BigInt.js */ "./resources/js/.fable/fable-library.3.1.1/BigInt.js");
+/* harmony import */ var _fable_library_3_1_1_Date_js__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../fable-library.3.1.1/Date.js */ "./resources/js/.fable/fable-library.3.1.1/Date.js");
+/* harmony import */ var _fable_library_3_1_1_DateOffset_js__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../fable-library.3.1.1/DateOffset.js */ "./resources/js/.fable/fable-library.3.1.1/DateOffset.js");
+/* harmony import */ var _fable_library_3_1_1_Array_js__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../fable-library.3.1.1/Array.js */ "./resources/js/.fable/fable-library.3.1.1/Array.js");
+/* harmony import */ var _fable_library_3_1_1_Util_js__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../fable-library.3.1.1/Util.js */ "./resources/js/.fable/fable-library.3.1.1/Util.js");
+/* harmony import */ var _fable_library_3_1_1_Guid_js__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ../fable-library.3.1.1/Guid.js */ "./resources/js/.fable/fable-library.3.1.1/Guid.js");
+/* harmony import */ var _fable_library_3_1_1_BitConverter_js__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ../fable-library.3.1.1/BitConverter.js */ "./resources/js/.fable/fable-library.3.1.1/BitConverter.js");
+/* harmony import */ var _fable_library_3_1_1_Set_js__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ../fable-library.3.1.1/Set.js */ "./resources/js/.fable/fable-library.3.1.1/Set.js");
+/* harmony import */ var _TypeInfo_fs_js__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./TypeInfo.fs.js */ "./resources/js/.fable/Fable.SimpleJson.3.19.0/TypeInfo.fs.js");
+/* harmony import */ var _fable_library_3_1_1_MutableMap_js__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ../fable-library.3.1.1/MutableMap.js */ "./resources/js/.fable/fable-library.3.1.1/MutableMap.js");
+/* harmony import */ var _fable_library_3_1_1_MapUtil_js__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ../fable-library.3.1.1/MapUtil.js */ "./resources/js/.fable/fable-library.3.1.1/MapUtil.js");
+/* harmony import */ var _fable_library_3_1_1_MutableSet_js__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ../fable-library.3.1.1/MutableSet.js */ "./resources/js/.fable/fable-library.3.1.1/MutableSet.js");
+/* harmony import */ var _TypeInfo_Converter_fs_js__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./TypeInfo.Converter.fs.js */ "./resources/js/.fable/Fable.SimpleJson.3.19.0/TypeInfo.Converter.fs.js");
+/* harmony import */ var _quote_js__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./quote.js */ "./resources/js/.fable/Fable.SimpleJson.3.19.0/quote.js");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const Convert_insideBrowser = new Function("try {return this===window;}catch(e){ return false;}")();
+
+function Convert_isDefined(value) {
+  return !(value === undefined);
+}
+
+function Convert_usingFable3() {
+  return true;
+}
+const Convert_isUsingFable3 = Convert_usingFable3();
+class Convert_InternalMap extends _fable_library_3_1_1_Types_js__WEBPACK_IMPORTED_MODULE_0__.Union {
+  constructor(tag, ...fields) {
+    super();
+    this.tag = tag | 0;
+    this.fields = fields;
+  }
+
+  cases() {
+    return ["MapEmpty", "MapOne", "MapNode"];
+  }
+
+}
+function Convert_InternalMap$reflection() {
+  return (0,_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.union_type)("Fable.SimpleJson.Convert.InternalMap", [], Convert_InternalMap, () => [[], [["Item1", _fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.string_type], ["Item2", (0,_Json_fs_js__WEBPACK_IMPORTED_MODULE_2__.Json$reflection)()]], [["Item1", _fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.string_type], ["Item2", (0,_Json_fs_js__WEBPACK_IMPORTED_MODULE_2__.Json$reflection)()], ["Item3", Convert_InternalMap$reflection()], ["Item4", Convert_InternalMap$reflection()]]]);
+}
+function Convert_flattenMap(_arg1) {
+  switch (_arg1.tag) {
+    case 1:
+      {
+        const value = _arg1.fields[1];
+        const key = _arg1.fields[0];
+        return (0,_fable_library_3_1_1_List_js__WEBPACK_IMPORTED_MODULE_3__.singleton)([key, value]);
+      }
+
+    case 2:
+      {
+        const value_1 = _arg1.fields[1];
+        const right = _arg1.fields[3];
+        const left = _arg1.fields[2];
+        const key_1 = _arg1.fields[0];
+        return (0,_fable_library_3_1_1_List_js__WEBPACK_IMPORTED_MODULE_3__.ofSeq)((0,_fable_library_3_1_1_Seq_js__WEBPACK_IMPORTED_MODULE_4__.delay)(() => (0,_fable_library_3_1_1_Seq_js__WEBPACK_IMPORTED_MODULE_4__.append)(Convert_flattenMap(left), (0,_fable_library_3_1_1_Seq_js__WEBPACK_IMPORTED_MODULE_4__.delay)(() => (0,_fable_library_3_1_1_Seq_js__WEBPACK_IMPORTED_MODULE_4__.append)(Convert_flattenMap(right), (0,_fable_library_3_1_1_Seq_js__WEBPACK_IMPORTED_MODULE_4__.delay)(() => (0,_fable_library_3_1_1_Seq_js__WEBPACK_IMPORTED_MODULE_4__.singleton)([key_1, value_1])))))));
+      }
+
+    default:
+      {
+        return (0,_fable_library_3_1_1_List_js__WEBPACK_IMPORTED_MODULE_3__.empty)();
+      }
+  }
+}
+function Convert_$007CKeyValue$007C_$007C(key, map) {
+  return (0,_fable_library_3_1_1_Option_js__WEBPACK_IMPORTED_MODULE_5__.map)(value => [key, value, (0,_fable_library_3_1_1_Map_js__WEBPACK_IMPORTED_MODULE_6__.remove)(key, map)], (0,_fable_library_3_1_1_Map_js__WEBPACK_IMPORTED_MODULE_6__.tryFind)(key, map));
+}
+function Convert_$007CNonArray$007C_$007C(_arg1) {
+  if (_arg1.tag === 4) {
+    return void 0;
+  } else {
+    const json = _arg1;
+    return json;
+  }
+}
+function Convert_$007CMapEmpty$007C_$007C(json) {
+  let pattern_matching_result;
+
+  if (json.tag === 1) {
+    if (json.fields[0] === "MapEmpty") {
+      pattern_matching_result = 0;
+    } else {
+      pattern_matching_result = 1;
+    }
+  } else {
+    pattern_matching_result = 1;
+  }
+
+  switch (pattern_matching_result) {
+    case 0:
+      {
+        return json;
+      }
+
+    case 1:
+      {
+        return void 0;
+      }
+  }
+}
+function Convert_$007CMapKey$007C_$007C(_arg1) {
+  switch (_arg1.tag) {
+    case 0:
+      {
+        const number = _arg1.fields[0];
+        return number.toString();
+      }
+
+    case 1:
+      {
+        const key = _arg1.fields[0];
+        return key;
+      }
+
+    default:
+      {
+        return void 0;
+      }
+  }
+}
+function Convert_$007CMapOne$007C_$007C(_arg1) {
+  let pattern_matching_result, key, value;
+
+  if (_arg1.tag === 4) {
+    if (_arg1.fields[0].tail != null) {
+      if (_arg1.fields[0].head.tag === 1) {
+        if (_arg1.fields[0].head.fields[0] === "MapOne") {
+          if (_arg1.fields[0].tail.tail != null) {
+            const activePatternResult1834 = Convert_$007CMapKey$007C_$007C(_arg1.fields[0].tail.head);
+
+            if (activePatternResult1834 != null) {
+              if (_arg1.fields[0].tail.tail.tail != null) {
+                if (_arg1.fields[0].tail.tail.tail.tail == null) {
+                  pattern_matching_result = 0;
+                  key = activePatternResult1834;
+                  value = _arg1.fields[0].tail.tail.head;
+                } else {
+                  pattern_matching_result = 1;
+                }
+              } else {
+                pattern_matching_result = 1;
+              }
+            } else {
+              pattern_matching_result = 1;
+            }
+          } else {
+            pattern_matching_result = 1;
+          }
+        } else {
+          pattern_matching_result = 1;
+        }
+      } else {
+        pattern_matching_result = 1;
+      }
+    } else {
+      pattern_matching_result = 1;
+    }
+  } else {
+    pattern_matching_result = 1;
+  }
+
+  switch (pattern_matching_result) {
+    case 0:
+      {
+        return [key, value];
+      }
+
+    case 1:
+      {
+        return void 0;
+      }
+  }
+}
+function Convert_$007CMapNode$007C_$007C(_arg1) {
+  let pattern_matching_result, key, left, right, value;
+
+  if (_arg1.tag === 4) {
+    if (_arg1.fields[0].tail != null) {
+      if (_arg1.fields[0].head.tag === 1) {
+        if (_arg1.fields[0].head.fields[0] === "MapNode") {
+          if (_arg1.fields[0].tail.tail != null) {
+            const activePatternResult1836 = Convert_$007CMapKey$007C_$007C(_arg1.fields[0].tail.head);
+
+            if (activePatternResult1836 != null) {
+              if (_arg1.fields[0].tail.tail.tail != null) {
+                if (_arg1.fields[0].tail.tail.tail.tail != null) {
+                  if (_arg1.fields[0].tail.tail.tail.tail.tail != null) {
+                    if (_arg1.fields[0].tail.tail.tail.tail.tail.tail != null) {
+                      if (_arg1.fields[0].tail.tail.tail.tail.tail.head.tag === 0) {
+                        if (_arg1.fields[0].tail.tail.tail.tail.tail.tail.tail == null) {
+                          pattern_matching_result = 0;
+                          key = activePatternResult1836;
+                          left = _arg1.fields[0].tail.tail.tail.head;
+                          right = _arg1.fields[0].tail.tail.tail.tail.head;
+                          value = _arg1.fields[0].tail.tail.head;
+                        } else {
+                          pattern_matching_result = 1;
+                        }
+                      } else {
+                        pattern_matching_result = 1;
+                      }
+                    } else {
+                      pattern_matching_result = 1;
+                    }
+                  } else {
+                    pattern_matching_result = 1;
+                  }
+                } else {
+                  pattern_matching_result = 1;
+                }
+              } else {
+                pattern_matching_result = 1;
+              }
+            } else {
+              pattern_matching_result = 1;
+            }
+          } else {
+            pattern_matching_result = 1;
+          }
+        } else {
+          pattern_matching_result = 1;
+        }
+      } else {
+        pattern_matching_result = 1;
+      }
+    } else {
+      pattern_matching_result = 1;
+    }
+  } else {
+    pattern_matching_result = 1;
+  }
+
+  switch (pattern_matching_result) {
+    case 0:
+      {
+        return [key, value, left, right];
+      }
+
+    case 1:
+      {
+        return void 0;
+      }
+  }
+}
+function Convert_generateMap(json) {
+  if (Convert_$007CMapEmpty$007C_$007C(json) != null) {
+    return new Convert_InternalMap(0);
+  } else {
+    const activePatternResult1839 = Convert_$007CMapOne$007C_$007C(json);
+
+    if (activePatternResult1839 != null) {
+      const key = activePatternResult1839[0];
+      const value = activePatternResult1839[1];
+      return new Convert_InternalMap(1, key, value);
+    } else {
+      const activePatternResult1838 = Convert_$007CMapNode$007C_$007C(json);
+
+      if (activePatternResult1838 != null) {
+        const key_1 = activePatternResult1838[0];
+        const left = activePatternResult1838[2];
+        const right = activePatternResult1838[3];
+        const value_1 = activePatternResult1838[1];
+        const matchValue = [Convert_generateMap(left), Convert_generateMap(right)];
+        let pattern_matching_result, leftMap, rightMap;
+
+        if (matchValue[0] != null) {
+          if (matchValue[1] != null) {
+            pattern_matching_result = 0;
+            leftMap = matchValue[0];
+            rightMap = matchValue[1];
+          } else {
+            pattern_matching_result = 1;
+          }
+        } else {
+          pattern_matching_result = 1;
+        }
+
+        switch (pattern_matching_result) {
+          case 0:
+            {
+              return new Convert_InternalMap(2, key_1, value_1, leftMap, rightMap);
+            }
+
+          case 1:
+            {
+              return void 0;
+            }
+        }
+      } else {
+        return void 0;
+      }
+    }
+  }
+}
+function Convert_flatteFable3Map(tree) {
+  return (0,_fable_library_3_1_1_List_js__WEBPACK_IMPORTED_MODULE_3__.ofSeq)((0,_fable_library_3_1_1_Seq_js__WEBPACK_IMPORTED_MODULE_4__.delay)(() => {
+    let matchValue, key, value;
+    return (0,_fable_library_3_1_1_Seq_js__WEBPACK_IMPORTED_MODULE_4__.append)((matchValue = [(0,_fable_library_3_1_1_Map_js__WEBPACK_IMPORTED_MODULE_6__.tryFind)("k", tree), (0,_fable_library_3_1_1_Map_js__WEBPACK_IMPORTED_MODULE_6__.tryFind)("v", tree)], matchValue[0] != null ? matchValue[0].tag === 1 ? matchValue[1] != null ? (key = matchValue[0].fields[0], (value = matchValue[1], (0,_fable_library_3_1_1_Seq_js__WEBPACK_IMPORTED_MODULE_4__.singleton)([key, value]))) : (void 0, (0,_fable_library_3_1_1_Seq_js__WEBPACK_IMPORTED_MODULE_4__.empty)()) : (void 0, (0,_fable_library_3_1_1_Seq_js__WEBPACK_IMPORTED_MODULE_4__.empty)()) : (void 0, (0,_fable_library_3_1_1_Seq_js__WEBPACK_IMPORTED_MODULE_4__.empty)())), (0,_fable_library_3_1_1_Seq_js__WEBPACK_IMPORTED_MODULE_4__.delay)(() => {
+      let matchValue_1, left;
+      return (0,_fable_library_3_1_1_Seq_js__WEBPACK_IMPORTED_MODULE_4__.append)((matchValue_1 = (0,_fable_library_3_1_1_Map_js__WEBPACK_IMPORTED_MODULE_6__.tryFind)("left", tree), matchValue_1 != null ? matchValue_1.tag === 5 ? (left = matchValue_1.fields[0], Convert_flatteFable3Map(left)) : (void 0, (0,_fable_library_3_1_1_Seq_js__WEBPACK_IMPORTED_MODULE_4__.empty)()) : (void 0, (0,_fable_library_3_1_1_Seq_js__WEBPACK_IMPORTED_MODULE_4__.empty)())), (0,_fable_library_3_1_1_Seq_js__WEBPACK_IMPORTED_MODULE_4__.delay)(() => {
+        const matchValue_2 = (0,_fable_library_3_1_1_Map_js__WEBPACK_IMPORTED_MODULE_6__.tryFind)("right", tree);
+        let pattern_matching_result, right;
+
+        if (matchValue_2 != null) {
+          if (matchValue_2.tag === 5) {
+            pattern_matching_result = 0;
+            right = matchValue_2.fields[0];
+          } else {
+            pattern_matching_result = 1;
+          }
+        } else {
+          pattern_matching_result = 1;
+        }
+
+        switch (pattern_matching_result) {
+          case 0:
+            {
+              return Convert_flatteFable3Map(right);
+            }
+
+          case 1:
+            {
+              return (0,_fable_library_3_1_1_Seq_js__WEBPACK_IMPORTED_MODULE_4__.empty)();
+            }
+        }
+      }));
+    }));
+  }));
+}
+function Convert_flattenFable3Lists(linkedList) {
+  return (0,_fable_library_3_1_1_List_js__WEBPACK_IMPORTED_MODULE_3__.ofSeq)((0,_fable_library_3_1_1_Seq_js__WEBPACK_IMPORTED_MODULE_4__.delay)(() => {
+    let matchValue, value;
+    return (0,_fable_library_3_1_1_Seq_js__WEBPACK_IMPORTED_MODULE_4__.append)((matchValue = (0,_fable_library_3_1_1_Map_js__WEBPACK_IMPORTED_MODULE_6__.tryFind)("head", linkedList), matchValue == null ? (void 0, (0,_fable_library_3_1_1_Seq_js__WEBPACK_IMPORTED_MODULE_4__.empty)()) : (value = matchValue, (0,_fable_library_3_1_1_Seq_js__WEBPACK_IMPORTED_MODULE_4__.singleton)(value))), (0,_fable_library_3_1_1_Seq_js__WEBPACK_IMPORTED_MODULE_4__.delay)(() => {
+      const matchValue_1 = (0,_fable_library_3_1_1_Map_js__WEBPACK_IMPORTED_MODULE_6__.tryFind)("tail", linkedList);
+      let pattern_matching_result, tail;
+
+      if (matchValue_1 != null) {
+        if (matchValue_1.tag === 5) {
+          pattern_matching_result = 0;
+          tail = matchValue_1.fields[0];
+        } else {
+          pattern_matching_result = 1;
+        }
+      } else {
+        pattern_matching_result = 1;
+      }
+
+      switch (pattern_matching_result) {
+        case 0:
+          {
+            return Convert_flattenFable3Lists(tail);
+          }
+
+        case 1:
+          {
+            return (0,_fable_library_3_1_1_Seq_js__WEBPACK_IMPORTED_MODULE_4__.empty)();
+          }
+      }
+    }));
+  }));
+}
+function Convert_arrayLike(_arg1) {
+  switch (_arg1.tag) {
+    case 25:
+      {
+        return true;
+      }
+
+    case 23:
+      {
+        return true;
+      }
+
+    case 26:
+      {
+        return true;
+      }
+
+    case 27:
+      {
+        return true;
+      }
+
+    case 24:
+      {
+        return true;
+      }
+
+    case 30:
+      {
+        return true;
+      }
+
+    case 31:
+      {
+        return true;
+      }
+
+    default:
+      {
+        return false;
+      }
+  }
+}
+function Convert_isRecord(_arg1) {
+  if (_arg1.tag === 34) {
+    const recordType = _arg1.fields[0];
+    return true;
+  } else {
+    return false;
+  }
+}
+function Convert_unionOfRecords(_arg1) {
+  if (_arg1.tag === 35) {
+    const getCases = _arg1.fields[0];
+    const patternInput = getCases();
+    const unionType = patternInput[1];
+    const unionCases = patternInput[0];
+    return (0,_fable_library_3_1_1_Seq_js__WEBPACK_IMPORTED_MODULE_4__.forAll)(case$ => {
+      if (case$.CaseTypes.length === 1) {
+        return Convert_isRecord(case$.CaseTypes[0]);
+      } else {
+        return false;
+      }
+    }, unionCases);
+  } else {
+    return false;
+  }
+}
+function Convert_optional(_arg1) {
+  if (_arg1.tag === 22) {
+    return true;
+  } else {
+    return false;
+  }
+}
+function Convert_isQuoted(input) {
+  if (input.indexOf("\"") === 0) {
+    return (0,_fable_library_3_1_1_String_js__WEBPACK_IMPORTED_MODULE_7__.endsWith)(input, "\"");
+  } else {
+    return false;
+  }
+}
+function Convert_betweenQuotes(input) {
+  return "\"" + input + "\"";
+}
+function Convert_removeQuotes(input) {
+  return (0,_fable_library_3_1_1_String_js__WEBPACK_IMPORTED_MODULE_7__.substring)(input, 1, input.length - 2);
+}
+function Convert_fromJsonAs(input_mut, typeInfo_mut) {
+  let foundCase, foundCase_2, testExpr, otherwise, otherwise_2, tree_2, comparer_2, tree, comparer, getTypes_1, caseName_3, optionalTypeDelayed, jsonValue, optionalTypeDelayed_1, jsonValue_1, optionalTypeDelayed_2, jsonValue_2, optionalTypeDelayed_3, jsonValue_3, optionalTypeDelayed_4, jsonValue_4, value_3, value;
+
+  Convert_fromJsonAs: while (true) {
+    const input = input_mut,
+          typeInfo = typeInfo_mut;
+    const matchValue = [input, typeInfo];
+    let pattern_matching_result, value_1;
+
+    if (matchValue[0].tag === 0) {
+      if (matchValue[1].tag === 8) {
+        pattern_matching_result = 0;
+        value_1 = matchValue[0].fields[0];
+      } else {
+        pattern_matching_result = 2;
+      }
+    } else if (matchValue[0].tag === 1) {
+      if (matchValue[1].tag === 8) {
+        if (value = matchValue[0].fields[0], value.toLocaleLowerCase() === "nan") {
+          pattern_matching_result = 1;
+        } else {
+          pattern_matching_result = 2;
+        }
+      } else {
+        pattern_matching_result = 2;
+      }
+    } else {
+      pattern_matching_result = 2;
+    }
+
+    switch (pattern_matching_result) {
+      case 0:
+        {
+          return value_1;
+        }
+
+      case 1:
+        {
+          return NaN;
+        }
+
+      case 2:
+        {
+          let pattern_matching_result_1, value_4, value_5;
+
+          if (matchValue[0].tag === 1) {
+            if (matchValue[1].tag === 8) {
+              pattern_matching_result_1 = 0;
+              value_4 = matchValue[0].fields[0];
+            } else if (matchValue[1].tag === 7) {
+              if (value_3 = matchValue[0].fields[0], value_3.toLocaleLowerCase() === "nan") {
+                pattern_matching_result_1 = 2;
+              } else {
+                pattern_matching_result_1 = 3;
+              }
+            } else {
+              pattern_matching_result_1 = 3;
+            }
+          } else if (matchValue[0].tag === 0) {
+            if (matchValue[1].tag === 7) {
+              pattern_matching_result_1 = 1;
+              value_5 = matchValue[0].fields[0];
+            } else {
+              pattern_matching_result_1 = 3;
+            }
+          } else {
+            pattern_matching_result_1 = 3;
+          }
+
+          switch (pattern_matching_result_1) {
+            case 0:
+              {
+                return (0,_fable_library_3_1_1_Double_js__WEBPACK_IMPORTED_MODULE_8__.parse)(value_4);
+              }
+
+            case 1:
+              {
+                return value_5;
+              }
+
+            case 2:
+              {
+                return NaN;
+              }
+
+            case 3:
+              {
+                let pattern_matching_result_2, value_7, value_8, value_9, value_10, value_11, value_12, value_13, value_14, value_15, value_16, value_17, value_18, value_19, value_20, value_21, value_22, value_23, getlElemType, value_24, getElemType, value_25, getElemType_1, value_26, genericJson, value_27, value_28, value_29, value_30, value_31, value_32, value_33, value_34, getTypes, values, jsonValue_5, optionalTypeDelayed_5;
+
+                if (matchValue[0].tag === 1) {
+                  if (matchValue[1].tag === 7) {
+                    pattern_matching_result_2 = 0;
+                    value_7 = matchValue[0].fields[0];
+                  } else if (matchValue[1].tag === 5) {
+                    pattern_matching_result_2 = 3;
+                    value_10 = matchValue[0].fields[0];
+                  } else if (matchValue[1].tag === 1) {
+                    pattern_matching_result_2 = 4;
+                    value_11 = matchValue[0].fields[0];
+                  } else if (matchValue[1].tag === 9) {
+                    pattern_matching_result_2 = 6;
+                    value_13 = matchValue[0].fields[0];
+                  } else if (matchValue[1].tag === 10) {
+                    pattern_matching_result_2 = 8;
+                    value_15 = matchValue[0].fields[0];
+                  } else if (matchValue[1].tag === 2) {
+                    pattern_matching_result_2 = 11;
+                    value_18 = matchValue[0].fields[0];
+                  } else if (matchValue[1].tag === 3) {
+                    pattern_matching_result_2 = 13;
+                    value_20 = matchValue[0].fields[0];
+                  } else if (matchValue[1].tag === 4) {
+                    pattern_matching_result_2 = 15;
+                    value_22 = matchValue[0].fields[0];
+                  } else if (matchValue[1].tag === 33) {
+                    pattern_matching_result_2 = 17;
+                    getlElemType = matchValue[1].fields[0];
+                    value_24 = matchValue[0].fields[0];
+                  } else if (matchValue[1].tag === 25) {
+                    pattern_matching_result_2 = 19;
+                    getElemType_1 = matchValue[1].fields[0];
+                    value_26 = matchValue[0].fields[0];
+                  } else if (matchValue[1].tag === 18) {
+                    pattern_matching_result_2 = 22;
+                    genericJson = matchValue[0];
+                  } else if (matchValue[1].tag === 11) {
+                    pattern_matching_result_2 = 23;
+                    value_27 = matchValue[0].fields[0];
+                  } else if (matchValue[1].tag === 12) {
+                    pattern_matching_result_2 = 24;
+                    value_28 = matchValue[0].fields[0];
+                  } else if (matchValue[1].tag === 15) {
+                    pattern_matching_result_2 = 26;
+                    value_30 = matchValue[0].fields[0];
+                  } else if (matchValue[1].tag === 13) {
+                    pattern_matching_result_2 = 28;
+                    value_32 = matchValue[0].fields[0];
+                  } else if (matchValue[1].tag === 14) {
+                    pattern_matching_result_2 = 29;
+                    value_33 = matchValue[0].fields[0];
+                  } else if (matchValue[1].tag === 22) {
+                    if (optionalTypeDelayed = matchValue[1].fields[0], (jsonValue = matchValue[0], !(0,_fable_library_3_1_1_Util_js__WEBPACK_IMPORTED_MODULE_17__.equals)(jsonValue, new _Json_fs_js__WEBPACK_IMPORTED_MODULE_2__.Json(3)))) {
+                      pattern_matching_result_2 = 33;
+                      jsonValue_5 = matchValue[0];
+                      optionalTypeDelayed_5 = matchValue[1].fields[0];
+                    } else {
+                      pattern_matching_result_2 = 34;
+                    }
+                  } else {
+                    pattern_matching_result_2 = 34;
+                  }
+                } else if (matchValue[0].tag === 0) {
+                  if (matchValue[1].tag === 5) {
+                    pattern_matching_result_2 = 1;
+                    value_8 = matchValue[0].fields[0];
+                  } else if (matchValue[1].tag === 1) {
+                    pattern_matching_result_2 = 5;
+                    value_12 = matchValue[0].fields[0];
+                  } else if (matchValue[1].tag === 9) {
+                    pattern_matching_result_2 = 7;
+                    value_14 = matchValue[0].fields[0];
+                  } else if (matchValue[1].tag === 10) {
+                    pattern_matching_result_2 = 9;
+                    value_16 = matchValue[0].fields[0];
+                  } else if (matchValue[1].tag === 2) {
+                    pattern_matching_result_2 = 10;
+                    value_17 = matchValue[0].fields[0];
+                  } else if (matchValue[1].tag === 3) {
+                    pattern_matching_result_2 = 12;
+                    value_19 = matchValue[0].fields[0];
+                  } else if (matchValue[1].tag === 4) {
+                    pattern_matching_result_2 = 14;
+                    value_21 = matchValue[0].fields[0];
+                  } else if (matchValue[1].tag === 16) {
+                    pattern_matching_result_2 = 16;
+                    value_23 = matchValue[0].fields[0];
+                  } else if (matchValue[1].tag === 33) {
+                    pattern_matching_result_2 = 18;
+                    getElemType = matchValue[1].fields[0];
+                    value_25 = matchValue[0].fields[0];
+                  } else if (matchValue[1].tag === 18) {
+                    pattern_matching_result_2 = 22;
+                    genericJson = matchValue[0];
+                  } else if (matchValue[1].tag === 12) {
+                    pattern_matching_result_2 = 25;
+                    value_29 = matchValue[0].fields[0];
+                  } else if (matchValue[1].tag === 15) {
+                    pattern_matching_result_2 = 27;
+                    value_31 = matchValue[0].fields[0];
+                  } else if (matchValue[1].tag === 14) {
+                    pattern_matching_result_2 = 30;
+                    value_34 = matchValue[0].fields[0];
+                  } else if (matchValue[1].tag === 22) {
+                    if (optionalTypeDelayed_1 = matchValue[1].fields[0], (jsonValue_1 = matchValue[0], !(0,_fable_library_3_1_1_Util_js__WEBPACK_IMPORTED_MODULE_17__.equals)(jsonValue_1, new _Json_fs_js__WEBPACK_IMPORTED_MODULE_2__.Json(3)))) {
+                      pattern_matching_result_2 = 33;
+                      jsonValue_5 = matchValue[0];
+                      optionalTypeDelayed_5 = matchValue[1].fields[0];
+                    } else {
+                      pattern_matching_result_2 = 34;
+                    }
+                  } else {
+                    pattern_matching_result_2 = 34;
+                  }
+                } else if (matchValue[0].tag === 2) {
+                  if (matchValue[1].tag === 6) {
+                    pattern_matching_result_2 = 2;
+                    value_9 = matchValue[0].fields[0];
+                  } else if (matchValue[1].tag === 18) {
+                    pattern_matching_result_2 = 22;
+                    genericJson = matchValue[0];
+                  } else if (matchValue[1].tag === 22) {
+                    if (optionalTypeDelayed_2 = matchValue[1].fields[0], (jsonValue_2 = matchValue[0], !(0,_fable_library_3_1_1_Util_js__WEBPACK_IMPORTED_MODULE_17__.equals)(jsonValue_2, new _Json_fs_js__WEBPACK_IMPORTED_MODULE_2__.Json(3)))) {
+                      pattern_matching_result_2 = 33;
+                      jsonValue_5 = matchValue[0];
+                      optionalTypeDelayed_5 = matchValue[1].fields[0];
+                    } else {
+                      pattern_matching_result_2 = 34;
+                    }
+                  } else {
+                    pattern_matching_result_2 = 34;
+                  }
+                } else if (matchValue[0].tag === 3) {
+                  if (matchValue[1].tag === 1) {
+                    pattern_matching_result_2 = 20;
+                  } else if (matchValue[1].tag === 0) {
+                    pattern_matching_result_2 = 21;
+                  } else if (matchValue[1].tag === 18) {
+                    pattern_matching_result_2 = 22;
+                    genericJson = matchValue[0];
+                  } else if (matchValue[1].tag === 22) {
+                    pattern_matching_result_2 = 32;
+                  } else {
+                    pattern_matching_result_2 = 34;
+                  }
+                } else if (matchValue[0].tag === 5) {
+                  if (matchValue[1].tag === 18) {
+                    pattern_matching_result_2 = 22;
+                    genericJson = matchValue[0];
+                  } else if (matchValue[1].tag === 35) {
+                    pattern_matching_result_2 = 31;
+                    getTypes = matchValue[1].fields[0];
+                    values = matchValue[0].fields[0];
+                  } else if (matchValue[1].tag === 22) {
+                    if (optionalTypeDelayed_3 = matchValue[1].fields[0], (jsonValue_3 = matchValue[0], !(0,_fable_library_3_1_1_Util_js__WEBPACK_IMPORTED_MODULE_17__.equals)(jsonValue_3, new _Json_fs_js__WEBPACK_IMPORTED_MODULE_2__.Json(3)))) {
+                      pattern_matching_result_2 = 33;
+                      jsonValue_5 = matchValue[0];
+                      optionalTypeDelayed_5 = matchValue[1].fields[0];
+                    } else {
+                      pattern_matching_result_2 = 34;
+                    }
+                  } else {
+                    pattern_matching_result_2 = 34;
+                  }
+                } else if (matchValue[1].tag === 18) {
+                  pattern_matching_result_2 = 22;
+                  genericJson = matchValue[0];
+                } else if (matchValue[1].tag === 22) {
+                  if (optionalTypeDelayed_4 = matchValue[1].fields[0], (jsonValue_4 = matchValue[0], !(0,_fable_library_3_1_1_Util_js__WEBPACK_IMPORTED_MODULE_17__.equals)(jsonValue_4, new _Json_fs_js__WEBPACK_IMPORTED_MODULE_2__.Json(3)))) {
+                    pattern_matching_result_2 = 33;
+                    jsonValue_5 = matchValue[0];
+                    optionalTypeDelayed_5 = matchValue[1].fields[0];
+                  } else {
+                    pattern_matching_result_2 = 34;
+                  }
+                } else {
+                  pattern_matching_result_2 = 34;
+                }
+
+                switch (pattern_matching_result_2) {
+                  case 0:
+                    {
+                      return (0,_fable_library_3_1_1_Double_js__WEBPACK_IMPORTED_MODULE_8__.parse)(value_7);
+                    }
+
+                  case 1:
+                    {
+                      return Math.floor(value_8);
+                    }
+
+                  case 2:
+                    {
+                      return value_9;
+                    }
+
+                  case 3:
+                    {
+                      return (0,_fable_library_3_1_1_Int32_js__WEBPACK_IMPORTED_MODULE_9__.parse)(value_10, 511, false, 32);
+                    }
+
+                  case 4:
+                    {
+                      return value_11;
+                    }
+
+                  case 5:
+                    {
+                      return value_12.toString();
+                    }
+
+                  case 6:
+                    {
+                      return new _fable_library_3_1_1_Decimal_js__WEBPACK_IMPORTED_MODULE_10__.default(value_13);
+                    }
+
+                  case 7:
+                    {
+                      return new _fable_library_3_1_1_Decimal_js__WEBPACK_IMPORTED_MODULE_10__.default(value_14);
+                    }
+
+                  case 8:
+                    {
+                      return (0,_fable_library_3_1_1_Int32_js__WEBPACK_IMPORTED_MODULE_9__.parse)(value_15, 511, false, 16);
+                    }
+
+                  case 9:
+                    {
+                      return (value_16 + 0x8000 & 0xFFFF) - 0x8000;
+                    }
+
+                  case 10:
+                    {
+                      return value_17 & 0xFFFF;
+                    }
+
+                  case 11:
+                    {
+                      return (0,_fable_library_3_1_1_Int32_js__WEBPACK_IMPORTED_MODULE_9__.parse)(value_18, 511, true, 16);
+                    }
+
+                  case 12:
+                    {
+                      return value_19 >>> 0;
+                    }
+
+                  case 13:
+                    {
+                      return (0,_fable_library_3_1_1_Int32_js__WEBPACK_IMPORTED_MODULE_9__.parse)(value_20, 511, true, 32);
+                    }
+
+                  case 14:
+                    {
+                      return (0,_fable_library_3_1_1_Long_js__WEBPACK_IMPORTED_MODULE_11__.fromNumber)(value_21, true);
+                    }
+
+                  case 15:
+                    {
+                      return (0,_fable_library_3_1_1_Long_js__WEBPACK_IMPORTED_MODULE_11__.parse)(value_22, 511, true, 64);
+                    }
+
+                  case 16:
+                    {
+                      return Math.floor(value_23);
+                    }
+
+                  case 17:
+                    {
+                      const patternInput = getlElemType();
+                      const underlyingType = patternInput[0];
+                      const originalType = patternInput[1];
+
+                      switch (underlyingType.tag) {
+                        case 5:
+                          {
+                            let matchValue_1;
+                            let outArg = 0;
+                            matchValue_1 = [(0,_fable_library_3_1_1_Int32_js__WEBPACK_IMPORTED_MODULE_9__.tryParse)(value_24, 511, false, 32, new _fable_library_3_1_1_Types_js__WEBPACK_IMPORTED_MODULE_0__.FSharpRef(() => outArg, v => {
+                              outArg = v;
+                            })), outArg];
+
+                            if (matchValue_1[0]) {
+                              const parsedNumber = matchValue_1[1] | 0;
+                              return parsedNumber;
+                            } else {
+                              const arg20 = (0,_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.name)(originalType);
+                              return (0,_fable_library_3_1_1_String_js__WEBPACK_IMPORTED_MODULE_7__.toFail)((0,_fable_library_3_1_1_String_js__WEBPACK_IMPORTED_MODULE_7__.printf)("The value \u0027%s\u0027 is not valid for enum of type \u0027%s\u0027"))(value_24)(arg20);
+                            }
+                          }
+
+                        case 11:
+                          {
+                            let matchValue_2;
+                            let outArg_1 = (0,_fable_library_3_1_1_Long_js__WEBPACK_IMPORTED_MODULE_11__.fromInt)(0);
+                            matchValue_2 = [(0,_fable_library_3_1_1_Long_js__WEBPACK_IMPORTED_MODULE_11__.tryParse)(value_24, 511, false, 64, new _fable_library_3_1_1_Types_js__WEBPACK_IMPORTED_MODULE_0__.FSharpRef(() => outArg_1, v_1 => {
+                              outArg_1 = v_1;
+                            })), outArg_1];
+
+                            if (matchValue_2[0]) {
+                              const parsedNumber_1 = matchValue_2[1];
+                              return parsedNumber_1;
+                            } else {
+                              const arg20_1 = (0,_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.name)(originalType);
+                              return (0,_fable_library_3_1_1_String_js__WEBPACK_IMPORTED_MODULE_7__.toFail)((0,_fable_library_3_1_1_String_js__WEBPACK_IMPORTED_MODULE_7__.printf)("The value \u0027%s\u0027 is not valid for enum of type \u0027%s\u0027"))(value_24)(arg20_1);
+                            }
+                          }
+
+                        default:
+                          {
+                            const other = underlyingType;
+                            const arg20_2 = (0,_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.name)(originalType);
+                            return (0,_fable_library_3_1_1_String_js__WEBPACK_IMPORTED_MODULE_7__.toFail)((0,_fable_library_3_1_1_String_js__WEBPACK_IMPORTED_MODULE_7__.printf)("The value \u0027%s\u0027 cannot be converted to enum of type \u0027%s\u0027"))(value_24)(arg20_2);
+                          }
+                      }
+                    }
+
+                  case 18:
+                    {
+                      const originalType_1 = getElemType()[1];
+                      return value_25;
+                    }
+
+                  case 19:
+                    {
+                      const elemType = getElemType_1();
+
+                      if (elemType.tag === 12) {
+                        if (typeof WorkerGlobalScope !== 'undefined' && self instanceof WorkerGlobalScope ? true : Convert_insideBrowser) {
+                          return (0,_fable_library_3_1_1_String_js__WEBPACK_IMPORTED_MODULE_7__.fromBase64String)(value_26);
+                        } else {
+                          return Array.prototype.slice.call(Buffer.from(value_26, 'base64'));
+                        }
+                      } else {
+                        const otherType = elemType;
+                        return (0,_fable_library_3_1_1_String_js__WEBPACK_IMPORTED_MODULE_7__.toFail)((0,_fable_library_3_1_1_String_js__WEBPACK_IMPORTED_MODULE_7__.printf)("Cannot convert arbitrary string \u0027%s\u0027 to %A"))(value_26)(otherType);
+                      }
+                    }
+
+                  case 20:
+                    {
+                      return null;
+                    }
+
+                  case 21:
+                    {
+                      return void 0;
+                    }
+
+                  case 22:
+                    {
+                      return (0,_SimpleJson_fs_js__WEBPACK_IMPORTED_MODULE_12__.SimpleJson_toPlainObject)(genericJson);
+                    }
+
+                  case 23:
+                    {
+                      return (0,_fable_library_3_1_1_Long_js__WEBPACK_IMPORTED_MODULE_11__.parse)(value_27, 511, false, 64);
+                    }
+
+                  case 24:
+                    {
+                      return (0,_fable_library_3_1_1_Int32_js__WEBPACK_IMPORTED_MODULE_9__.parse)(value_28, 511, true, 8);
+                    }
+
+                  case 25:
+                    {
+                      return value_29 & 0xFF;
+                    }
+
+                  case 26:
+                    {
+                      return (0,_fable_library_3_1_1_BigInt_js__WEBPACK_IMPORTED_MODULE_13__.parse)(value_30);
+                    }
+
+                  case 27:
+                    {
+                      return (0,_fable_library_3_1_1_BigInt_js__WEBPACK_IMPORTED_MODULE_13__.fromInt32)(Math.floor(value_31));
+                    }
+
+                  case 28:
+                    {
+                      return (0,_fable_library_3_1_1_Date_js__WEBPACK_IMPORTED_MODULE_14__.parse)(value_32);
+                    }
+
+                  case 29:
+                    {
+                      return (0,_fable_library_3_1_1_DateOffset_js__WEBPACK_IMPORTED_MODULE_15__.parse)(value_33);
+                    }
+
+                  case 30:
+                    {
+                      const seconds = (0,_fable_library_3_1_1_Long_js__WEBPACK_IMPORTED_MODULE_11__.fromNumber)(Math.floor(value_34), false);
+                      return (0,_fable_library_3_1_1_DateOffset_js__WEBPACK_IMPORTED_MODULE_15__.default)((0,_fable_library_3_1_1_Long_js__WEBPACK_IMPORTED_MODULE_11__.toNumber)(seconds) * 1000, 0);
+                    }
+
+                  case 31:
+                    {
+                      const patternInput_2 = getTypes();
+                      const unionType = patternInput_2[1];
+                      const cases = patternInput_2[0];
+                      const matchValue_3 = (0,_fable_library_3_1_1_Map_js__WEBPACK_IMPORTED_MODULE_6__.toList)(values);
+                      let pattern_matching_result_3, caseName, values_1, caseName_1, json;
+
+                      if (matchValue_3.tail != null) {
+                        if (matchValue_3.head[1].tag === 4) {
+                          if (matchValue_3.tail.tail == null) {
+                            pattern_matching_result_3 = 0;
+                            caseName = matchValue_3.head[0];
+                            values_1 = matchValue_3.head[1].fields[0];
+                          } else {
+                            pattern_matching_result_3 = 2;
+                          }
+                        } else {
+                          const activePatternResult1868 = Convert_$007CNonArray$007C_$007C(matchValue_3.head[1]);
+
+                          if (activePatternResult1868 != null) {
+                            if (matchValue_3.tail.tail == null) {
+                              pattern_matching_result_3 = 1;
+                              caseName_1 = matchValue_3.head[0];
+                              json = activePatternResult1868;
+                            } else {
+                              pattern_matching_result_3 = 2;
+                            }
+                          } else {
+                            pattern_matching_result_3 = 2;
+                          }
+                        }
+                      } else {
+                        pattern_matching_result_3 = 2;
+                      }
+
+                      switch (pattern_matching_result_3) {
+                        case 0:
+                          {
+                            const _arg1 = (0,_fable_library_3_1_1_Array_js__WEBPACK_IMPORTED_MODULE_16__.tryFind)(case$ => case$.CaseName === caseName, cases);
+
+                            if (_arg1 != null) {
+                              if (foundCase = _arg1, foundCase.CaseTypes.length === 1 ? Convert_arrayLike(foundCase.CaseTypes[0]) : false) {
+                                const foundCase_1 = _arg1;
+                                const deserialized = Convert_fromJsonAs(new _Json_fs_js__WEBPACK_IMPORTED_MODULE_2__.Json(4, values_1), foundCase_1.CaseTypes[0]);
+                                return (0,_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.makeUnion)(foundCase_1.Info, [deserialized]);
+                              } else {
+                                let pattern_matching_result_4, foundCase_3;
+
+                                if (_arg1 != null) {
+                                  if (foundCase_2 = _arg1, foundCase_2.CaseTypes.length === 1 ? Convert_optional(foundCase_2.CaseTypes[0]) : false) {
+                                    pattern_matching_result_4 = 0;
+                                    foundCase_3 = _arg1;
+                                  } else {
+                                    pattern_matching_result_4 = 1;
+                                  }
+                                } else {
+                                  pattern_matching_result_4 = 1;
+                                }
+
+                                switch (pattern_matching_result_4) {
+                                  case 0:
+                                    {
+                                      const parsedOptional = Convert_fromJsonAs(new _Json_fs_js__WEBPACK_IMPORTED_MODULE_2__.Json(4, values_1), foundCase_3.CaseTypes[0]);
+                                      return (0,_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.makeUnion)(foundCase_3.Info, [parsedOptional]);
+                                    }
+
+                                  case 1:
+                                    {
+                                      if (_arg1 != null) {
+                                        const foundCase_4 = _arg1;
+
+                                        if ((foundCase_4.CaseTypes.length === 1 ? !Convert_arrayLike(foundCase_4.CaseTypes[0]) : false) ? foundCase_4.CaseTypes.length !== (0,_fable_library_3_1_1_List_js__WEBPACK_IMPORTED_MODULE_3__.length)(values_1) : false) {
+                                          const arg30_1 = (0,_fable_library_3_1_1_List_js__WEBPACK_IMPORTED_MODULE_3__.length)(values_1) | 0;
+                                          const arg20_5 = foundCase_4.CaseTypes.length | 0;
+                                          (0,_fable_library_3_1_1_String_js__WEBPACK_IMPORTED_MODULE_7__.toFail)((0,_fable_library_3_1_1_String_js__WEBPACK_IMPORTED_MODULE_7__.printf)("Expected case \u0027%s\u0027 to have %d argument types but the JSON data only contained %d values"))(foundCase_4.CaseName)(arg20_5)(arg30_1);
+                                        }
+
+                                        const parsedValues = (0,_fable_library_3_1_1_Array_js__WEBPACK_IMPORTED_MODULE_16__.map)(tupledArg => {
+                                          const valueType = tupledArg[0];
+                                          const value_37 = tupledArg[1];
+                                          return Convert_fromJsonAs(value_37, valueType);
+                                        }, (0,_fable_library_3_1_1_Array_js__WEBPACK_IMPORTED_MODULE_16__.zip)(foundCase_4.CaseTypes, Array.from(values_1)));
+                                        return (0,_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.makeUnion)(foundCase_4.Info, parsedValues);
+                                      } else {
+                                        throw new Error("The match cases were incomplete");
+                                      }
+                                    }
+                                }
+                              }
+                            } else {
+                              const caseNames = (0,_fable_library_3_1_1_Array_js__WEBPACK_IMPORTED_MODULE_16__.map)(case$_1 => (0,_fable_library_3_1_1_String_js__WEBPACK_IMPORTED_MODULE_7__.toText)((0,_fable_library_3_1_1_String_js__WEBPACK_IMPORTED_MODULE_7__.printf)(" \u0027%s\u0027 "))(case$_1.CaseName), cases);
+                              const expectedCases = (0,_fable_library_3_1_1_String_js__WEBPACK_IMPORTED_MODULE_7__.join)(", ", caseNames);
+                              const arg20_4 = (0,_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.name)(unionType);
+                              return (0,_fable_library_3_1_1_String_js__WEBPACK_IMPORTED_MODULE_7__.toFail)((0,_fable_library_3_1_1_String_js__WEBPACK_IMPORTED_MODULE_7__.printf)("Case %s was not valid for type \u0027%s\u0027, expected one of the cases [%s]"))(caseName)(arg20_4)(expectedCases);
+                            }
+                          }
+
+                        case 1:
+                          {
+                            const _arg2 = (0,_fable_library_3_1_1_Array_js__WEBPACK_IMPORTED_MODULE_16__.tryFind)(case$_2 => case$_2.CaseName === caseName_1, cases);
+
+                            let pattern_matching_result_5, caseInfo, caseName_2, caseType;
+
+                            if (_arg2 != null) {
+                              if (testExpr = _arg2.CaseTypes, !(0,_fable_library_3_1_1_Array_js__WEBPACK_IMPORTED_MODULE_16__.equalsWith)(_fable_library_3_1_1_Util_js__WEBPACK_IMPORTED_MODULE_17__.compare, testExpr, null) ? testExpr.length === 1 : false) {
+                                pattern_matching_result_5 = 0;
+                                caseInfo = _arg2.Info;
+                                caseName_2 = _arg2.CaseName;
+                                caseType = _arg2.CaseTypes[0];
+                              } else {
+                                pattern_matching_result_5 = 1;
+                              }
+                            } else {
+                              pattern_matching_result_5 = 1;
+                            }
+
+                            switch (pattern_matching_result_5) {
+                              case 0:
+                                {
+                                  return (0,_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.makeUnion)(caseInfo, [(input_1 => typeInfo_1 => Convert_fromJsonAs(input_1, typeInfo_1))(json)(caseType)]);
+                                }
+
+                              case 1:
+                                {
+                                  const caseNames_1 = (0,_fable_library_3_1_1_Array_js__WEBPACK_IMPORTED_MODULE_16__.map)(case$_3 => (0,_fable_library_3_1_1_String_js__WEBPACK_IMPORTED_MODULE_7__.toText)((0,_fable_library_3_1_1_String_js__WEBPACK_IMPORTED_MODULE_7__.printf)(" \u0027%s\u0027 "))(case$_3.CaseName), cases);
+                                  const expectedCases_1 = (0,_fable_library_3_1_1_String_js__WEBPACK_IMPORTED_MODULE_7__.join)(", ", caseNames_1);
+                                  const arg20_7 = (0,_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.name)(unionType);
+                                  return (0,_fable_library_3_1_1_String_js__WEBPACK_IMPORTED_MODULE_7__.toFail)((0,_fable_library_3_1_1_String_js__WEBPACK_IMPORTED_MODULE_7__.printf)("Case %s was not valid for type \u0027%s\u0027, expected one of the cases [%s]"))(caseName_1)(arg20_7)(expectedCases_1);
+                                }
+                            }
+                          }
+
+                        case 2:
+                          {
+                            if (otherwise = matchValue_3, ((0,_fable_library_3_1_1_Map_js__WEBPACK_IMPORTED_MODULE_6__.containsKey)("tag", values) ? (0,_fable_library_3_1_1_Map_js__WEBPACK_IMPORTED_MODULE_6__.containsKey)("fields", values) : false) ? (0,_fable_library_3_1_1_Map_js__WEBPACK_IMPORTED_MODULE_6__.count)(values) === 2 : false) {
+                              const otherwise_1 = matchValue_3;
+                              const matchValue_4 = [(0,_fable_library_3_1_1_Map_js__WEBPACK_IMPORTED_MODULE_6__.tryFind)("tag", values), (0,_fable_library_3_1_1_Map_js__WEBPACK_IMPORTED_MODULE_6__.tryFind)("fields", values)];
+                              let pattern_matching_result_6, caseIndex, fieldValues;
+
+                              if (matchValue_4[0] != null) {
+                                if (matchValue_4[0].tag === 0) {
+                                  if (matchValue_4[1] != null) {
+                                    if (matchValue_4[1].tag === 4) {
+                                      pattern_matching_result_6 = 0;
+                                      caseIndex = matchValue_4[0].fields[0];
+                                      fieldValues = matchValue_4[1].fields[0];
+                                    } else {
+                                      pattern_matching_result_6 = 1;
+                                    }
+                                  } else {
+                                    pattern_matching_result_6 = 1;
+                                  }
+                                } else {
+                                  pattern_matching_result_6 = 1;
+                                }
+                              } else {
+                                pattern_matching_result_6 = 1;
+                              }
+
+                              switch (pattern_matching_result_6) {
+                                case 0:
+                                  {
+                                    const foundCase_5 = cases[~~caseIndex];
+                                    const values_2 = (0,_fable_library_3_1_1_Array_js__WEBPACK_IMPORTED_MODULE_16__.mapIndexed)((index, value_40) => Convert_fromJsonAs(value_40, foundCase_5.CaseTypes[index]), Array.from(fieldValues));
+                                    return (0,_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.makeUnion)(foundCase_5.Info, values_2);
+                                  }
+
+                                case 1:
+                                  {
+                                    const arg20_8 = (0,_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.fullName)(unionType);
+                                    const arg10_10 = (0,_SimpleJson_fs_js__WEBPACK_IMPORTED_MODULE_12__.SimpleJson_toString)(new _Json_fs_js__WEBPACK_IMPORTED_MODULE_2__.Json(5, values));
+                                    return (0,_fable_library_3_1_1_String_js__WEBPACK_IMPORTED_MODULE_7__.toFail)((0,_fable_library_3_1_1_String_js__WEBPACK_IMPORTED_MODULE_7__.printf)("Could not deserialize JSON(%s) into type %s"))(arg10_10)(arg20_8);
+                                  }
+                              }
+                            } else if (otherwise_2 = matchValue_3, Convert_unionOfRecords(typeInfo)) {
+                              const otherwise_3 = matchValue_3;
+                              const discriminators = (0,_fable_library_3_1_1_List_js__WEBPACK_IMPORTED_MODULE_3__.ofArray)(["__typename", "$typename", "$type"]);
+                              const foundDiscriminatorKey = (0,_fable_library_3_1_1_List_js__WEBPACK_IMPORTED_MODULE_3__.tryFind)(keyword => (0,_fable_library_3_1_1_Map_js__WEBPACK_IMPORTED_MODULE_6__.containsKey)(keyword, values), discriminators);
+
+                              if (foundDiscriminatorKey != null) {
+                                const discriminatorKey = foundDiscriminatorKey;
+                                const discriminatorValueJson = (0,_fable_library_3_1_1_Map_js__WEBPACK_IMPORTED_MODULE_6__.find)(discriminatorKey, values);
+
+                                if (discriminatorValueJson.tag === 1) {
+                                  const discriminatorValue = discriminatorValueJson.fields[0];
+                                  const foundUnionCase = (0,_fable_library_3_1_1_Seq_js__WEBPACK_IMPORTED_MODULE_4__.tryFind)(case$_4 => case$_4.CaseName.toUpperCase() === discriminatorValue.toUpperCase(), cases);
+
+                                  if (foundUnionCase != null) {
+                                    const case$_5 = foundUnionCase;
+                                    const record = Convert_fromJsonAs(new _Json_fs_js__WEBPACK_IMPORTED_MODULE_2__.Json(5, values), case$_5.CaseTypes[0]);
+                                    return (0,_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.makeUnion)(case$_5.Info, [record]);
+                                  } else {
+                                    const arg10_12 = (0,_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.name)(unionType);
+                                    return (0,_fable_library_3_1_1_String_js__WEBPACK_IMPORTED_MODULE_7__.toFail)((0,_fable_library_3_1_1_String_js__WEBPACK_IMPORTED_MODULE_7__.printf)("Union of records of type \u0027%s\u0027 does not have a matching case \u0027%s\u0027"))(arg10_12)(discriminatorValue);
+                                  }
+                                } else {
+                                  const otherwise_4 = discriminatorValueJson;
+                                  const arg10_13 = (0,_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.name)(unionType);
+                                  return (0,_fable_library_3_1_1_String_js__WEBPACK_IMPORTED_MODULE_7__.toFail)((0,_fable_library_3_1_1_String_js__WEBPACK_IMPORTED_MODULE_7__.printf)("Union of records of type \u0027%s\u0027 cannot be deserialized with the value of the discriminator key is not a string to match against a specific union case"))(arg10_13);
+                                }
+                              } else {
+                                const arg10_11 = (0,_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.name)(unionType);
+                                return (0,_fable_library_3_1_1_String_js__WEBPACK_IMPORTED_MODULE_7__.toFail)((0,_fable_library_3_1_1_String_js__WEBPACK_IMPORTED_MODULE_7__.printf)("Could not serialize the JSON object into the union of records of type %s because the JSON did not contain a known discriminator. Expected \u0027__typename\u0027, \u0027$typeName\u0027 or \u0027$type\u0027"))(arg10_11);
+                              }
+                            } else {
+                              const otherwise_5 = matchValue_3;
+                              const unexpectedJson = JSON.stringify(otherwise_5);
+                              const expectedType = JSON.stringify(cases);
+                              return (0,_fable_library_3_1_1_String_js__WEBPACK_IMPORTED_MODULE_7__.toFail)((0,_fable_library_3_1_1_String_js__WEBPACK_IMPORTED_MODULE_7__.printf)("Expected JSON:\n%s\nto match the type\n%s"))(unexpectedJson)(expectedType);
+                            }
+                          }
+                      }
+                    }
+
+                  case 32:
+                    {
+                      return void 0;
+                    }
+
+                  case 33:
+                    {
+                      const optionalType = optionalTypeDelayed_5();
+                      const parsedOptional_1 = Convert_fromJsonAs(jsonValue_5, optionalType);
+                      return (0,_fable_library_3_1_1_Option_js__WEBPACK_IMPORTED_MODULE_5__.some)(parsedOptional_1);
+                    }
+
+                  case 34:
+                    {
+                      let pattern_matching_result_7, value_41, value_42, dict, caseName_4, getTypes_2;
+
+                      if (matchValue[0].tag === 1) {
+                        if (matchValue[1].tag === 17) {
+                          pattern_matching_result_7 = 0;
+                          value_41 = matchValue[0].fields[0];
+                        } else if (matchValue[1].tag === 35) {
+                          if (getTypes_1 = matchValue[1].fields[0], (caseName_3 = matchValue[0].fields[0], Convert_isQuoted(caseName_3))) {
+                            pattern_matching_result_7 = 3;
+                            caseName_4 = matchValue[0].fields[0];
+                            getTypes_2 = matchValue[1].fields[0];
+                          } else {
+                            pattern_matching_result_7 = 4;
+                          }
+                        } else {
+                          pattern_matching_result_7 = 4;
+                        }
+                      } else if (matchValue[0].tag === 0) {
+                        if (matchValue[1].tag === 11) {
+                          pattern_matching_result_7 = 1;
+                          value_42 = matchValue[0].fields[0];
+                        } else {
+                          pattern_matching_result_7 = 4;
+                        }
+                      } else if (matchValue[0].tag === 5) {
+                        if (matchValue[1].tag === 11) {
+                          pattern_matching_result_7 = 2;
+                          dict = matchValue[0].fields[0];
+                        } else {
+                          pattern_matching_result_7 = 4;
+                        }
+                      } else {
+                        pattern_matching_result_7 = 4;
+                      }
+
+                      switch (pattern_matching_result_7) {
+                        case 0:
+                          {
+                            return (0,_fable_library_3_1_1_Guid_js__WEBPACK_IMPORTED_MODULE_18__.parse)(value_41);
+                          }
+
+                        case 1:
+                          {
+                            return (value_43 => (0,_fable_library_3_1_1_Long_js__WEBPACK_IMPORTED_MODULE_11__.fromInteger)(value_43, false, 2))(~~value_42);
+                          }
+
+                        case 2:
+                          {
+                            const get$ = key => (0,_fable_library_3_1_1_Map_js__WEBPACK_IMPORTED_MODULE_6__.tryFind)(key, dict);
+
+                            const _arg3 = (0,_fable_library_3_1_1_List_js__WEBPACK_IMPORTED_MODULE_3__.choose)(x_1 => x_1, (0,_fable_library_3_1_1_List_js__WEBPACK_IMPORTED_MODULE_3__.ofArray)([get$("low"), get$("high"), get$("unsigned")]));
+
+                            let pattern_matching_result_8, high, low;
+
+                            if (_arg3.tail != null) {
+                              if (_arg3.head.tag === 0) {
+                                if (_arg3.tail.tail != null) {
+                                  if (_arg3.tail.head.tag === 0) {
+                                    if (_arg3.tail.tail.tail != null) {
+                                      if (_arg3.tail.tail.head.tag === 2) {
+                                        if (_arg3.tail.tail.tail.tail == null) {
+                                          pattern_matching_result_8 = 0;
+                                          high = _arg3.tail.head.fields[0];
+                                          low = _arg3.head.fields[0];
+                                        } else {
+                                          pattern_matching_result_8 = 1;
+                                        }
+                                      } else {
+                                        pattern_matching_result_8 = 1;
+                                      }
+                                    } else {
+                                      pattern_matching_result_8 = 1;
+                                    }
+                                  } else {
+                                    pattern_matching_result_8 = 1;
+                                  }
+                                } else {
+                                  pattern_matching_result_8 = 1;
+                                }
+                              } else {
+                                pattern_matching_result_8 = 1;
+                              }
+                            } else {
+                              pattern_matching_result_8 = 1;
+                            }
+
+                            switch (pattern_matching_result_8) {
+                              case 0:
+                                {
+                                  const lowBytes = (0,_fable_library_3_1_1_BitConverter_js__WEBPACK_IMPORTED_MODULE_19__.getBytesInt32)(~~low);
+                                  const highBytes = (0,_fable_library_3_1_1_BitConverter_js__WEBPACK_IMPORTED_MODULE_19__.getBytesInt32)(~~high);
+                                  const combinedBytes = (0,_fable_library_3_1_1_Array_js__WEBPACK_IMPORTED_MODULE_16__.concat)([lowBytes, highBytes], Uint8Array);
+                                  return (0,_fable_library_3_1_1_BitConverter_js__WEBPACK_IMPORTED_MODULE_19__.toInt64)(combinedBytes, 0);
+                                }
+
+                              case 1:
+                                {
+                                  return (0,_fable_library_3_1_1_String_js__WEBPACK_IMPORTED_MODULE_7__.toFail)((0,_fable_library_3_1_1_String_js__WEBPACK_IMPORTED_MODULE_7__.printf)("Unable to construct int64 from object literal { low: int, high: int, unsigned: bool }"));
+                                }
+                            }
+                          }
+
+                        case 3:
+                          {
+                            const patternInput_3 = getTypes_2();
+                            const unionType_1 = patternInput_3[1];
+                            const caseTypes = patternInput_3[0];
+
+                            const _arg4 = (0,_fable_library_3_1_1_Array_js__WEBPACK_IMPORTED_MODULE_16__.tryFind)(case$_6 => case$_6.CaseName === Convert_removeQuotes(caseName_4), caseTypes);
+
+                            if (_arg4 == null) {
+                              const caseNames_2 = (0,_fable_library_3_1_1_Array_js__WEBPACK_IMPORTED_MODULE_16__.map)(case$_7 => (0,_fable_library_3_1_1_String_js__WEBPACK_IMPORTED_MODULE_7__.toText)((0,_fable_library_3_1_1_String_js__WEBPACK_IMPORTED_MODULE_7__.printf)(" \u0027%s\u0027 "))(case$_7.CaseName), caseTypes);
+                              const expectedCases_2 = (0,_fable_library_3_1_1_String_js__WEBPACK_IMPORTED_MODULE_7__.join)(", ", caseNames_2);
+                              const arg20_11 = (0,_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.name)(unionType_1);
+                              return (0,_fable_library_3_1_1_String_js__WEBPACK_IMPORTED_MODULE_7__.toFail)((0,_fable_library_3_1_1_String_js__WEBPACK_IMPORTED_MODULE_7__.printf)("Case %s was not valid for type \u0027%s\u0027, expected one of the cases [%s]"))(caseName_4)(arg20_11)(expectedCases_2);
+                            } else {
+                              const caseInfo_1 = _arg4.Info;
+                              return (0,_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.makeUnion)(caseInfo_1, []);
+                            }
+                          }
+
+                        case 4:
+                          {
+                            let pattern_matching_result_9, caseName_5, getTypes_3, getFields, serializedRecord, caseValue, getTypes_4, elementTypeDelayed, values_4, elementTypeDelayed_1, values_5, elementTypeDelayed_2, linkedList, elementTypeDelayed_3, values_6, elementTypeDelayed_4, values_7, array_9, tupleTypesDelayed, dict_1, getTypes_5, getTypes_6, tuples, getTypes_7, tuples_1, dict_2, getTypes_8, getType, items, getTypes_9, map, getType_1;
+
+                            if (matchValue[0].tag === 1) {
+                              if (matchValue[1].tag === 35) {
+                                pattern_matching_result_9 = 0;
+                                caseName_5 = matchValue[0].fields[0];
+                                getTypes_3 = matchValue[1].fields[0];
+                              } else if (matchValue[1].tag === 34) {
+                                pattern_matching_result_9 = 1;
+                                getFields = matchValue[1].fields[0];
+                                serializedRecord = matchValue[0].fields[0];
+                              } else if (matchValue[1].tag === 19) {
+                                pattern_matching_result_9 = 15;
+                                getType_1 = matchValue[1].fields[0];
+                              } else {
+                                pattern_matching_result_9 = 16;
+                              }
+                            } else if (matchValue[0].tag === 4) {
+                              if (matchValue[1].tag === 35) {
+                                pattern_matching_result_9 = 2;
+                                caseValue = matchValue[0].fields[0];
+                                getTypes_4 = matchValue[1].fields[0];
+                              } else if (matchValue[1].tag === 25) {
+                                pattern_matching_result_9 = 3;
+                                elementTypeDelayed = matchValue[1].fields[0];
+                                values_4 = matchValue[0].fields[0];
+                              } else if (matchValue[1].tag === 23) {
+                                pattern_matching_result_9 = 4;
+                                elementTypeDelayed_1 = matchValue[1].fields[0];
+                                values_5 = matchValue[0].fields[0];
+                              } else if (matchValue[1].tag === 24) {
+                                pattern_matching_result_9 = 6;
+                                elementTypeDelayed_3 = matchValue[1].fields[0];
+                                values_6 = matchValue[0].fields[0];
+                              } else if (matchValue[1].tag === 26) {
+                                pattern_matching_result_9 = 7;
+                                elementTypeDelayed_4 = matchValue[1].fields[0];
+                                values_7 = matchValue[0].fields[0];
+                              } else if (matchValue[1].tag === 27) {
+                                pattern_matching_result_9 = 8;
+                                array_9 = matchValue[0].fields[0];
+                                tupleTypesDelayed = matchValue[1].fields[0];
+                              } else if (matchValue[1].tag === 28) {
+                                pattern_matching_result_9 = 10;
+                                getTypes_6 = matchValue[1].fields[0];
+                                tuples = matchValue[0].fields[0];
+                              } else if (matchValue[1].tag === 29) {
+                                pattern_matching_result_9 = 11;
+                                getTypes_7 = matchValue[1].fields[0];
+                                tuples_1 = matchValue[0].fields[0];
+                              } else if (matchValue[1].tag === 31) {
+                                pattern_matching_result_9 = 13;
+                                getType = matchValue[1].fields[0];
+                                items = matchValue[0].fields[0];
+                              } else if (matchValue[1].tag === 19) {
+                                pattern_matching_result_9 = 15;
+                                getType_1 = matchValue[1].fields[0];
+                              } else {
+                                pattern_matching_result_9 = 16;
+                              }
+                            } else if (matchValue[0].tag === 5) {
+                              if (matchValue[1].tag === 23) {
+                                pattern_matching_result_9 = 5;
+                                elementTypeDelayed_2 = matchValue[1].fields[0];
+                                linkedList = matchValue[0].fields[0];
+                              } else if (matchValue[1].tag === 34) {
+                                pattern_matching_result_9 = 9;
+                                dict_1 = matchValue[0].fields[0];
+                                getTypes_5 = matchValue[1].fields[0];
+                              } else if (matchValue[1].tag === 29) {
+                                pattern_matching_result_9 = 12;
+                                dict_2 = matchValue[0].fields[0];
+                                getTypes_8 = matchValue[1].fields[0];
+                              } else if (matchValue[1].tag === 28) {
+                                pattern_matching_result_9 = 14;
+                                getTypes_9 = matchValue[1].fields[0];
+                                map = matchValue[0].fields[0];
+                              } else if (matchValue[1].tag === 19) {
+                                pattern_matching_result_9 = 15;
+                                getType_1 = matchValue[1].fields[0];
+                              } else {
+                                pattern_matching_result_9 = 16;
+                              }
+                            } else if (matchValue[1].tag === 19) {
+                              pattern_matching_result_9 = 15;
+                              getType_1 = matchValue[1].fields[0];
+                            } else {
+                              pattern_matching_result_9 = 16;
+                            }
+
+                            switch (pattern_matching_result_9) {
+                              case 0:
+                                {
+                                  const patternInput_4 = getTypes_3();
+                                  const unionType_2 = patternInput_4[1];
+                                  const caseTypes_1 = patternInput_4[0];
+
+                                  const _arg5 = (0,_fable_library_3_1_1_Array_js__WEBPACK_IMPORTED_MODULE_16__.tryFind)(case$_8 => case$_8.CaseName === caseName_5, caseTypes_1);
+
+                                  if (_arg5 == null) {
+                                    const caseNames_3 = (0,_fable_library_3_1_1_Array_js__WEBPACK_IMPORTED_MODULE_16__.map)(case$_9 => (0,_fable_library_3_1_1_String_js__WEBPACK_IMPORTED_MODULE_7__.toText)((0,_fable_library_3_1_1_String_js__WEBPACK_IMPORTED_MODULE_7__.printf)(" \u0027%s\u0027 "))(case$_9.CaseName), caseTypes_1);
+                                    const expectedCases_3 = (0,_fable_library_3_1_1_String_js__WEBPACK_IMPORTED_MODULE_7__.join)(", ", caseNames_3);
+                                    const arg20_12 = (0,_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.name)(unionType_2);
+                                    return (0,_fable_library_3_1_1_String_js__WEBPACK_IMPORTED_MODULE_7__.toFail)((0,_fable_library_3_1_1_String_js__WEBPACK_IMPORTED_MODULE_7__.printf)("Case %s was not valid for type \u0027%s\u0027, expected one of the cases [%s]"))(caseName_5)(arg20_12)(expectedCases_3);
+                                  } else {
+                                    const caseInfo_2 = _arg5.Info;
+                                    return (0,_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.makeUnion)(caseInfo_2, []);
+                                  }
+                                }
+
+                              case 1:
+                                {
+                                  input_mut = (0,_SimpleJson_fs_js__WEBPACK_IMPORTED_MODULE_12__.SimpleJson_parse)(serializedRecord);
+                                  typeInfo_mut = typeInfo;
+                                  continue Convert_fromJsonAs;
+                                }
+
+                              case 2:
+                                {
+                                  const patternInput_5 = getTypes_4();
+                                  const unionType_3 = patternInput_5[1];
+                                  const cases_1 = patternInput_5[0];
+                                  let pattern_matching_result_10, caseName_6, caseName_8, values_3, otherwise_6;
+
+                                  if (caseValue.tail != null) {
+                                    if (caseValue.head.tag === 1) {
+                                      if (caseValue.tail.tail == null) {
+                                        pattern_matching_result_10 = 0;
+                                        caseName_6 = caseValue.head.fields[0];
+                                      } else {
+                                        pattern_matching_result_10 = 1;
+                                        caseName_8 = caseValue.head.fields[0];
+                                        values_3 = caseValue.tail;
+                                      }
+                                    } else {
+                                      pattern_matching_result_10 = 2;
+                                      otherwise_6 = caseValue;
+                                    }
+                                  } else {
+                                    pattern_matching_result_10 = 2;
+                                    otherwise_6 = caseValue;
+                                  }
+
+                                  switch (pattern_matching_result_10) {
+                                    case 0:
+                                      {
+                                        const _arg6 = (0,_fable_library_3_1_1_Array_js__WEBPACK_IMPORTED_MODULE_16__.tryFind)(case$_10 => case$_10.CaseName === caseName_6, cases_1);
+
+                                        if (_arg6 == null) {
+                                          const caseNames_4 = (0,_fable_library_3_1_1_Array_js__WEBPACK_IMPORTED_MODULE_16__.map)(case$_11 => (0,_fable_library_3_1_1_String_js__WEBPACK_IMPORTED_MODULE_7__.toText)((0,_fable_library_3_1_1_String_js__WEBPACK_IMPORTED_MODULE_7__.printf)(" \u0027%s\u0027 "))(case$_11.CaseName), cases_1);
+                                          const expectedCases_4 = (0,_fable_library_3_1_1_String_js__WEBPACK_IMPORTED_MODULE_7__.join)(", ", caseNames_4);
+                                          const arg20_13 = (0,_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.name)(unionType_3);
+                                          return (0,_fable_library_3_1_1_String_js__WEBPACK_IMPORTED_MODULE_7__.toFail)((0,_fable_library_3_1_1_String_js__WEBPACK_IMPORTED_MODULE_7__.printf)("Case \u0027%s\u0027 was not valid for type \u0027%s\u0027, expected one of the cases [%s]"))(caseName_6)(arg20_13)(expectedCases_4);
+                                        } else {
+                                          const caseName_7 = _arg6.CaseName;
+                                          const caseInfoTypes = _arg6.CaseTypes;
+                                          const caseInfo_3 = _arg6.Info;
+                                          return (0,_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.makeUnion)(caseInfo_3, []);
+                                        }
+                                      }
+
+                                    case 1:
+                                      {
+                                        const _arg7 = (0,_fable_library_3_1_1_Array_js__WEBPACK_IMPORTED_MODULE_16__.tryFind)(case$_12 => case$_12.CaseName === caseName_8, cases_1);
+
+                                        if (_arg7 != null) {
+                                          const types = _arg7.CaseTypes;
+                                          const foundCaseName = _arg7.CaseName;
+                                          const caseInfo_4 = _arg7.Info;
+
+                                          if (types.length !== (0,_fable_library_3_1_1_List_js__WEBPACK_IMPORTED_MODULE_3__.length)(values_3)) {
+                                            (0,_fable_library_3_1_1_String_js__WEBPACK_IMPORTED_MODULE_7__.toFail)((0,_fable_library_3_1_1_String_js__WEBPACK_IMPORTED_MODULE_7__.printf)("The number of union case parameters for \u0027%s\u0027 is different"))(foundCaseName);
+                                          }
+
+                                          const parsedValues_1 = (0,_fable_library_3_1_1_Array_js__WEBPACK_IMPORTED_MODULE_16__.map)(tupledArg_1 => {
+                                            const valueType_1 = tupledArg_1[0];
+                                            const value_45 = tupledArg_1[1];
+                                            return Convert_fromJsonAs(value_45, valueType_1);
+                                          }, (0,_fable_library_3_1_1_Array_js__WEBPACK_IMPORTED_MODULE_16__.zip)(types, Array.from(values_3)));
+                                          return (0,_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.makeUnion)(caseInfo_4, parsedValues_1);
+                                        } else {
+                                          const caseNames_5 = (0,_fable_library_3_1_1_Array_js__WEBPACK_IMPORTED_MODULE_16__.map)(_arg1_1 => {
+                                            const name = _arg1_1.CaseName;
+                                            return name;
+                                          }, cases_1);
+                                          const expectedCases_5 = (0,_fable_library_3_1_1_String_js__WEBPACK_IMPORTED_MODULE_7__.join)(", ", caseNames_5);
+                                          return (0,_fable_library_3_1_1_String_js__WEBPACK_IMPORTED_MODULE_7__.toFail)((0,_fable_library_3_1_1_String_js__WEBPACK_IMPORTED_MODULE_7__.printf)("Case %s was not valid, expected one of [%s]"))(caseName_8)(expectedCases_5);
+                                        }
+                                      }
+
+                                    case 2:
+                                      {
+                                        const unexpectedJson_1 = JSON.stringify(otherwise_6);
+                                        const expectedType_1 = JSON.stringify(cases_1);
+                                        return (0,_fable_library_3_1_1_String_js__WEBPACK_IMPORTED_MODULE_7__.toFail)((0,_fable_library_3_1_1_String_js__WEBPACK_IMPORTED_MODULE_7__.printf)("Expected JSON:\n%s\nto match the type\n%s"))(unexpectedJson_1)(expectedType_1);
+                                      }
+                                  }
+                                }
+
+                              case 3:
+                                {
+                                  const elementType = elementTypeDelayed();
+                                  return Array.from((0,_fable_library_3_1_1_List_js__WEBPACK_IMPORTED_MODULE_3__.map)(value_47 => Convert_fromJsonAs(value_47, elementType), values_4));
+                                }
+
+                              case 4:
+                                {
+                                  const elementType_1 = elementTypeDelayed_1();
+                                  return (0,_fable_library_3_1_1_List_js__WEBPACK_IMPORTED_MODULE_3__.map)(value_49 => Convert_fromJsonAs(value_49, elementType_1), values_5);
+                                }
+
+                              case 5:
+                                {
+                                  const elementType_2 = elementTypeDelayed_2();
+                                  const flattenedList = Convert_flattenFable3Lists(linkedList);
+                                  return (0,_fable_library_3_1_1_List_js__WEBPACK_IMPORTED_MODULE_3__.map)(value_51 => Convert_fromJsonAs(value_51, elementType_2), flattenedList);
+                                }
+
+                              case 6:
+                                {
+                                  const elementType_3 = elementTypeDelayed_3();
+                                  return (0,_fable_library_3_1_1_Set_js__WEBPACK_IMPORTED_MODULE_20__.ofList)((0,_fable_library_3_1_1_List_js__WEBPACK_IMPORTED_MODULE_3__.map)(value_53 => Convert_fromJsonAs(value_53, elementType_3), values_6), {
+                                    Compare: _fable_library_3_1_1_Util_js__WEBPACK_IMPORTED_MODULE_17__.compare
+                                  });
+                                }
+
+                              case 7:
+                                {
+                                  const elementType_4 = elementTypeDelayed_4();
+                                  const converted = (0,_fable_library_3_1_1_List_js__WEBPACK_IMPORTED_MODULE_3__.map)(value_55 => Convert_fromJsonAs(value_55, elementType_4), values_7);
+                                  return converted;
+                                }
+
+                              case 8:
+                                {
+                                  const tupleTypes = tupleTypesDelayed();
+                                  return (0,_fable_library_3_1_1_Array_js__WEBPACK_IMPORTED_MODULE_16__.map)(tupledArg_2 => {
+                                    const jsonType = tupledArg_2[0];
+                                    const jsonData = tupledArg_2[1];
+                                    return Convert_fromJsonAs(jsonData, jsonType);
+                                  }, (0,_fable_library_3_1_1_Array_js__WEBPACK_IMPORTED_MODULE_16__.zip)(tupleTypes, Array.from(array_9)));
+                                }
+
+                              case 9:
+                                {
+                                  const patternInput_6 = getTypes_5();
+                                  const recordType = patternInput_6[1];
+                                  const fields = patternInput_6[0];
+                                  let recordValues;
+                                  const values_8 = (0,_fable_library_3_1_1_Map_js__WEBPACK_IMPORTED_MODULE_6__.toList)(dict_1);
+                                  recordValues = (0,_fable_library_3_1_1_Array_js__WEBPACK_IMPORTED_MODULE_16__.map)(_arg3_1 => {
+                                    const fieldType = _arg3_1.FieldType;
+                                    const fieldName = _arg3_1.FieldName;
+
+                                    const _arg8 = (0,_fable_library_3_1_1_List_js__WEBPACK_IMPORTED_MODULE_3__.tryFind)(tupledArg_3 => {
+                                      const key_1 = tupledArg_3[0];
+                                      const value_57 = tupledArg_3[1];
+                                      return fieldName === key_1;
+                                    }, values_8);
+
+                                    if (_arg8 == null) {
+                                      if (fieldType.tag === 22) {
+                                        return void 0;
+                                      } else {
+                                        let dictKeys;
+                                        const arg10_27 = (0,_fable_library_3_1_1_String_js__WEBPACK_IMPORTED_MODULE_7__.join)(", ", (0,_fable_library_3_1_1_List_js__WEBPACK_IMPORTED_MODULE_3__.map)(arg => (0,_fable_library_3_1_1_String_js__WEBPACK_IMPORTED_MODULE_7__.toText)((0,_fable_library_3_1_1_String_js__WEBPACK_IMPORTED_MODULE_7__.printf)("\u0027%s\u0027"))(arg[0]), (0,_fable_library_3_1_1_Map_js__WEBPACK_IMPORTED_MODULE_6__.toList)(dict_1)));
+                                        dictKeys = (0,_fable_library_3_1_1_String_js__WEBPACK_IMPORTED_MODULE_7__.toText)((0,_fable_library_3_1_1_String_js__WEBPACK_IMPORTED_MODULE_7__.printf)("[ %s ]"))(arg10_27);
+                                        let recordFields;
+                                        const arg10_30 = (0,_fable_library_3_1_1_String_js__WEBPACK_IMPORTED_MODULE_7__.join)(", ", (0,_fable_library_3_1_1_Array_js__WEBPACK_IMPORTED_MODULE_16__.map)(_arg2_1 => {
+                                          const name_1 = _arg2_1.FieldName;
+                                          const innerFieldType = _arg2_1.FieldType;
+
+                                          if (innerFieldType.tag === 22) {
+                                            return (0,_fable_library_3_1_1_String_js__WEBPACK_IMPORTED_MODULE_7__.toText)((0,_fable_library_3_1_1_String_js__WEBPACK_IMPORTED_MODULE_7__.printf)("optional(\u0027%s\u0027)"))(name_1);
+                                          } else {
+                                            return (0,_fable_library_3_1_1_String_js__WEBPACK_IMPORTED_MODULE_7__.toText)((0,_fable_library_3_1_1_String_js__WEBPACK_IMPORTED_MODULE_7__.printf)("required(\u0027%s\u0027)"))(name_1);
+                                          }
+                                        }, fields));
+                                        recordFields = (0,_fable_library_3_1_1_String_js__WEBPACK_IMPORTED_MODULE_7__.toText)((0,_fable_library_3_1_1_String_js__WEBPACK_IMPORTED_MODULE_7__.printf)("[ %s ]"))(arg10_30);
+                                        const arg30_6 = (0,_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.name)(recordType);
+                                        return (0,_fable_library_3_1_1_String_js__WEBPACK_IMPORTED_MODULE_7__.toFail)((0,_fable_library_3_1_1_String_js__WEBPACK_IMPORTED_MODULE_7__.printf)("Could not find the required key \u0027%s\u0027 in the JSON object literal with keys %s to match with record type \u0027%s\u0027 that has fields %s"))(fieldName)(dictKeys)(arg30_6)(recordFields);
+                                      }
+                                    } else {
+                                      const value_58 = _arg8[1];
+                                      const key_2 = _arg8[0];
+                                      return Convert_fromJsonAs(value_58, fieldType);
+                                    }
+                                  }, fields);
+                                  return (0,_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.makeRecord)(recordType, recordValues);
+                                }
+
+                              case 10:
+                                {
+                                  const patternInput_7 = getTypes_6();
+                                  const valueType_2 = patternInput_7[1];
+                                  const keyType = patternInput_7[0];
+                                  const pairs = (0,_fable_library_3_1_1_List_js__WEBPACK_IMPORTED_MODULE_3__.ofSeq)((0,_fable_library_3_1_1_Seq_js__WEBPACK_IMPORTED_MODULE_4__.delay)(() => (0,_fable_library_3_1_1_Seq_js__WEBPACK_IMPORTED_MODULE_4__.collect)(keyValuePair => {
+                                    let a;
+                                    const tuple_1 = Convert_fromJsonAs(keyValuePair, new _TypeInfo_fs_js__WEBPACK_IMPORTED_MODULE_21__.TypeInfo(27, (a = [keyType, valueType_2], () => a)));
+                                    return (0,_fable_library_3_1_1_Seq_js__WEBPACK_IMPORTED_MODULE_4__.singleton)(tuple_1);
+                                  }, tuples)));
+
+                                  switch (keyType.tag) {
+                                    case 5:
+                                    case 1:
+                                    case 6:
+                                      {
+                                        return (0,_fable_library_3_1_1_Map_js__WEBPACK_IMPORTED_MODULE_6__.ofList)(pairs);
+                                      }
+
+                                    default:
+                                      {
+                                        return (0,_fable_library_3_1_1_Map_js__WEBPACK_IMPORTED_MODULE_6__.ofList)(pairs);
+                                      }
+                                  }
+                                }
+
+                              case 11:
+                                {
+                                  const patternInput_8 = getTypes_7();
+                                  const valueType_3 = patternInput_8[1];
+                                  const originalType_2 = patternInput_8[2];
+                                  const keyType_1 = patternInput_8[0];
+                                  const pairs_1 = (0,_fable_library_3_1_1_List_js__WEBPACK_IMPORTED_MODULE_3__.ofSeq)((0,_fable_library_3_1_1_Seq_js__WEBPACK_IMPORTED_MODULE_4__.delay)(() => (0,_fable_library_3_1_1_Seq_js__WEBPACK_IMPORTED_MODULE_4__.collect)(keyValuePair_1 => {
+                                    const tuple_2 = Convert_fromJsonAs(keyValuePair_1, new _TypeInfo_fs_js__WEBPACK_IMPORTED_MODULE_21__.TypeInfo(27, () => [keyType_1, valueType_3]));
+                                    return (0,_fable_library_3_1_1_Seq_js__WEBPACK_IMPORTED_MODULE_4__.singleton)(tuple_2);
+                                  }, tuples_1)));
+                                  const output = keyType_1.tag === 35 ? new _fable_library_3_1_1_MutableMap_js__WEBPACK_IMPORTED_MODULE_22__.Dictionary([], {
+                                    Equals: _fable_library_3_1_1_Util_js__WEBPACK_IMPORTED_MODULE_17__.equals,
+                                    GetHashCode: _fable_library_3_1_1_Util_js__WEBPACK_IMPORTED_MODULE_17__.safeHash
+                                  }) : keyType_1.tag === 34 ? new _fable_library_3_1_1_MutableMap_js__WEBPACK_IMPORTED_MODULE_22__.Dictionary([], {
+                                    Equals: _fable_library_3_1_1_Util_js__WEBPACK_IMPORTED_MODULE_17__.equals,
+                                    GetHashCode: _fable_library_3_1_1_Util_js__WEBPACK_IMPORTED_MODULE_17__.structuralHash
+                                  }) : new _fable_library_3_1_1_MutableMap_js__WEBPACK_IMPORTED_MODULE_22__.Dictionary([], {
+                                    Equals: _fable_library_3_1_1_Util_js__WEBPACK_IMPORTED_MODULE_17__.equals,
+                                    GetHashCode: _fable_library_3_1_1_Util_js__WEBPACK_IMPORTED_MODULE_17__.structuralHash
+                                  });
+                                  const enumerator = (0,_fable_library_3_1_1_Seq_js__WEBPACK_IMPORTED_MODULE_4__.getEnumerator)(pairs_1);
+
+                                  try {
+                                    while (enumerator["System.Collections.IEnumerator.MoveNext"]()) {
+                                      const forLoopVar = enumerator["System.Collections.Generic.IEnumerator`1.get_Current"]();
+                                      const value_65 = forLoopVar[1];
+                                      const key_3 = forLoopVar[0];
+                                      (0,_fable_library_3_1_1_MapUtil_js__WEBPACK_IMPORTED_MODULE_23__.addToDict)(output, key_3, value_65);
+                                    }
+                                  } finally {
+                                    enumerator.Dispose();
+                                  }
+
+                                  return output;
+                                }
+
+                              case 12:
+                                {
+                                  const patternInput_9 = getTypes_8();
+                                  const valueType_4 = patternInput_9[1];
+                                  const originalType_3 = patternInput_9[2];
+                                  const keyType_2 = patternInput_9[0];
+                                  const pairs_2 = (0,_fable_library_3_1_1_List_js__WEBPACK_IMPORTED_MODULE_3__.map)(tupledArg_4 => {
+                                    const key_4 = tupledArg_4[0];
+                                    const value_66 = tupledArg_4[1];
+                                    return [Convert_fromJsonAs(new _Json_fs_js__WEBPACK_IMPORTED_MODULE_2__.Json(1, key_4), keyType_2), Convert_fromJsonAs(value_66, valueType_4)];
+                                  }, (0,_fable_library_3_1_1_Map_js__WEBPACK_IMPORTED_MODULE_6__.toList)(dict_2));
+                                  const output_1 = keyType_2.tag === 35 ? new _fable_library_3_1_1_MutableMap_js__WEBPACK_IMPORTED_MODULE_22__.Dictionary([], {
+                                    Equals: _fable_library_3_1_1_Util_js__WEBPACK_IMPORTED_MODULE_17__.equals,
+                                    GetHashCode: _fable_library_3_1_1_Util_js__WEBPACK_IMPORTED_MODULE_17__.safeHash
+                                  }) : keyType_2.tag === 34 ? new _fable_library_3_1_1_MutableMap_js__WEBPACK_IMPORTED_MODULE_22__.Dictionary([], {
+                                    Equals: _fable_library_3_1_1_Util_js__WEBPACK_IMPORTED_MODULE_17__.equals,
+                                    GetHashCode: _fable_library_3_1_1_Util_js__WEBPACK_IMPORTED_MODULE_17__.structuralHash
+                                  }) : new _fable_library_3_1_1_MutableMap_js__WEBPACK_IMPORTED_MODULE_22__.Dictionary([], {
+                                    Equals: _fable_library_3_1_1_Util_js__WEBPACK_IMPORTED_MODULE_17__.equals,
+                                    GetHashCode: _fable_library_3_1_1_Util_js__WEBPACK_IMPORTED_MODULE_17__.structuralHash
+                                  });
+                                  const enumerator_1 = (0,_fable_library_3_1_1_Seq_js__WEBPACK_IMPORTED_MODULE_4__.getEnumerator)(pairs_2);
+
+                                  try {
+                                    while (enumerator_1["System.Collections.IEnumerator.MoveNext"]()) {
+                                      const forLoopVar_1 = enumerator_1["System.Collections.Generic.IEnumerator`1.get_Current"]();
+                                      const value_69 = forLoopVar_1[1];
+                                      const key_5 = forLoopVar_1[0];
+                                      (0,_fable_library_3_1_1_MapUtil_js__WEBPACK_IMPORTED_MODULE_23__.addToDict)(output_1, key_5, value_69);
+                                    }
+                                  } finally {
+                                    enumerator_1.Dispose();
+                                  }
+
+                                  return output_1;
+                                }
+
+                              case 13:
+                                {
+                                  const elemType_1 = getType();
+                                  const hashset = elemType_1.tag === 35 ? new _fable_library_3_1_1_MutableSet_js__WEBPACK_IMPORTED_MODULE_24__.HashSet([], {
+                                    Equals: _fable_library_3_1_1_Util_js__WEBPACK_IMPORTED_MODULE_17__.equals,
+                                    GetHashCode: _fable_library_3_1_1_Util_js__WEBPACK_IMPORTED_MODULE_17__.safeHash
+                                  }) : elemType_1.tag === 34 ? new _fable_library_3_1_1_MutableSet_js__WEBPACK_IMPORTED_MODULE_24__.HashSet([], {
+                                    Equals: _fable_library_3_1_1_Util_js__WEBPACK_IMPORTED_MODULE_17__.equals,
+                                    GetHashCode: _fable_library_3_1_1_Util_js__WEBPACK_IMPORTED_MODULE_17__.structuralHash
+                                  }) : new _fable_library_3_1_1_MutableSet_js__WEBPACK_IMPORTED_MODULE_24__.HashSet([], {
+                                    Equals: _fable_library_3_1_1_Util_js__WEBPACK_IMPORTED_MODULE_17__.equals,
+                                    GetHashCode: _fable_library_3_1_1_Util_js__WEBPACK_IMPORTED_MODULE_17__.structuralHash
+                                  });
+                                  const enumerator_2 = (0,_fable_library_3_1_1_Seq_js__WEBPACK_IMPORTED_MODULE_4__.getEnumerator)(items);
+
+                                  try {
+                                    while (enumerator_2["System.Collections.IEnumerator.MoveNext"]()) {
+                                      const item = enumerator_2["System.Collections.Generic.IEnumerator`1.get_Current"]();
+                                      const deserialized_1 = Convert_fromJsonAs(item, elemType_1);
+                                      const value_72 = (0,_fable_library_3_1_1_MapUtil_js__WEBPACK_IMPORTED_MODULE_23__.addToSet)(deserialized_1, hashset);
+                                      void value_72;
+                                    }
+                                  } finally {
+                                    enumerator_2.Dispose();
+                                  }
+
+                                  return hashset;
+                                }
+
+                              case 14:
+                                {
+                                  const patternInput_10 = getTypes_9();
+                                  const valueType_5 = patternInput_10[1];
+                                  const keyType_3 = patternInput_10[0];
+                                  const matchValue_5 = [(0,_fable_library_3_1_1_Map_js__WEBPACK_IMPORTED_MODULE_6__.tryFind)("comparer", map), (0,_fable_library_3_1_1_Map_js__WEBPACK_IMPORTED_MODULE_6__.tryFind)("tree", map)];
+                                  let pattern_matching_result_11, comparer_1, tree_1;
+
+                                  if (matchValue_5[0] != null) {
+                                    if (matchValue_5[0].tag === 5) {
+                                      if (matchValue_5[1] != null) {
+                                        if (matchValue_5[1].tag === 4) {
+                                          if (tree = matchValue_5[1].fields[0], (comparer = matchValue_5[0].fields[0], (0,_fable_library_3_1_1_Map_js__WEBPACK_IMPORTED_MODULE_6__.isEmpty)(comparer))) {
+                                            pattern_matching_result_11 = 0;
+                                            comparer_1 = matchValue_5[0].fields[0];
+                                            tree_1 = matchValue_5[1].fields[0];
+                                          } else {
+                                            pattern_matching_result_11 = 1;
+                                          }
+                                        } else {
+                                          pattern_matching_result_11 = 1;
+                                        }
+                                      } else {
+                                        pattern_matching_result_11 = 1;
+                                      }
+                                    } else {
+                                      pattern_matching_result_11 = 1;
+                                    }
+                                  } else {
+                                    pattern_matching_result_11 = 1;
+                                  }
+
+                                  switch (pattern_matching_result_11) {
+                                    case 0:
+                                      {
+                                        const matchValue_6 = Convert_generateMap(new _Json_fs_js__WEBPACK_IMPORTED_MODULE_2__.Json(4, tree_1));
+
+                                        if (matchValue_6 == null) {
+                                          const inputJson = (0,_SimpleJson_fs_js__WEBPACK_IMPORTED_MODULE_12__.SimpleJson_toString)(new _Json_fs_js__WEBPACK_IMPORTED_MODULE_2__.Json(4, tree_1));
+                                          return (0,_fable_library_3_1_1_String_js__WEBPACK_IMPORTED_MODULE_7__.toFail)((0,_fable_library_3_1_1_String_js__WEBPACK_IMPORTED_MODULE_7__.printf)("Could not generate map from JSON\n %s"))(inputJson);
+                                        } else {
+                                          const internalMap = matchValue_6;
+                                          const pairs_3 = (0,_fable_library_3_1_1_List_js__WEBPACK_IMPORTED_MODULE_3__.map)(tupledArg_5 => {
+                                            const key_6 = tupledArg_5[0];
+                                            const value_73 = tupledArg_5[1];
+                                            const nextKey = !Convert_isQuoted(key_6) ? Convert_fromJsonAs(new _Json_fs_js__WEBPACK_IMPORTED_MODULE_2__.Json(1, key_6), keyType_3) : Convert_fromJsonAs((0,_SimpleJson_fs_js__WEBPACK_IMPORTED_MODULE_12__.SimpleJson_parseNative)(key_6), keyType_3);
+                                            const nextValue = Convert_fromJsonAs(value_73, valueType_5);
+                                            return [nextKey, nextValue];
+                                          }, Convert_flattenMap(internalMap));
+
+                                          switch (keyType_3.tag) {
+                                            case 5:
+                                            case 1:
+                                            case 6:
+                                              {
+                                                return (0,_fable_library_3_1_1_Map_js__WEBPACK_IMPORTED_MODULE_6__.ofList)(pairs_3);
+                                              }
+
+                                            default:
+                                              {
+                                                return (0,_fable_library_3_1_1_Map_js__WEBPACK_IMPORTED_MODULE_6__.ofList)(pairs_3);
+                                              }
+                                          }
+                                        }
+                                      }
+
+                                    case 1:
+                                      {
+                                        let pattern_matching_result_12, comparer_3, tree_3;
+
+                                        if (matchValue_5[0] != null) {
+                                          if (matchValue_5[0].tag === 5) {
+                                            if (matchValue_5[1] != null) {
+                                              if (matchValue_5[1].tag === 5) {
+                                                if (tree_2 = matchValue_5[1].fields[0], (comparer_2 = matchValue_5[0].fields[0], (0,_fable_library_3_1_1_Map_js__WEBPACK_IMPORTED_MODULE_6__.isEmpty)(comparer_2))) {
+                                                  pattern_matching_result_12 = 0;
+                                                  comparer_3 = matchValue_5[0].fields[0];
+                                                  tree_3 = matchValue_5[1].fields[0];
+                                                } else {
+                                                  pattern_matching_result_12 = 1;
+                                                }
+                                              } else {
+                                                pattern_matching_result_12 = 1;
+                                              }
+                                            } else {
+                                              pattern_matching_result_12 = 1;
+                                            }
+                                          } else {
+                                            pattern_matching_result_12 = 1;
+                                          }
+                                        } else {
+                                          pattern_matching_result_12 = 1;
+                                        }
+
+                                        switch (pattern_matching_result_12) {
+                                          case 0:
+                                            {
+                                              const flattenedMap = (0,_fable_library_3_1_1_Map_js__WEBPACK_IMPORTED_MODULE_6__.ofList)(Convert_flatteFable3Map(tree_3));
+                                              input_mut = new _Json_fs_js__WEBPACK_IMPORTED_MODULE_2__.Json(5, flattenedMap);
+                                              typeInfo_mut = typeInfo;
+                                              continue Convert_fromJsonAs;
+                                            }
+
+                                          case 1:
+                                            {
+                                              const pairs_4 = (0,_fable_library_3_1_1_List_js__WEBPACK_IMPORTED_MODULE_3__.map)(tupledArg_6 => {
+                                                const key_7 = tupledArg_6[0];
+                                                const value_78 = tupledArg_6[1];
+                                                const nextKey_1 = !Convert_isQuoted(key_7) ? ((0,_TypeInfo_Converter_fs_js__WEBPACK_IMPORTED_MODULE_25__.isPrimitive)(keyType_3) ? true : (0,_TypeInfo_Converter_fs_js__WEBPACK_IMPORTED_MODULE_25__.enumUnion)(keyType_3)) ? Convert_fromJsonAs(new _Json_fs_js__WEBPACK_IMPORTED_MODULE_2__.Json(1, key_7), keyType_3) : Convert_fromJsonAs((0,_SimpleJson_fs_js__WEBPACK_IMPORTED_MODULE_12__.SimpleJson_parseNative)(key_7), keyType_3) : Convert_fromJsonAs((0,_SimpleJson_fs_js__WEBPACK_IMPORTED_MODULE_12__.SimpleJson_parseNative)(key_7), keyType_3);
+                                                const nextValue_1 = Convert_fromJsonAs(value_78, valueType_5);
+                                                return [nextKey_1, nextValue_1];
+                                              }, (0,_fable_library_3_1_1_Map_js__WEBPACK_IMPORTED_MODULE_6__.toList)(map));
+
+                                              switch (keyType_3.tag) {
+                                                case 5:
+                                                case 1:
+                                                case 6:
+                                                  {
+                                                    return (0,_fable_library_3_1_1_Map_js__WEBPACK_IMPORTED_MODULE_6__.ofList)(pairs_4);
+                                                  }
+
+                                                default:
+                                                  {
+                                                    return (0,_fable_library_3_1_1_Map_js__WEBPACK_IMPORTED_MODULE_6__.ofList)(pairs_4);
+                                                  }
+                                              }
+                                            }
+                                        }
+                                      }
+                                  }
+                                }
+
+                              case 15:
+                                {
+                                  const unknownType = getType_1();
+                                  const arg20_17 = (0,_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.fullName)(unknownType);
+                                  const arg10_33 = (0,_SimpleJson_fs_js__WEBPACK_IMPORTED_MODULE_12__.SimpleJson_toString)(input);
+                                  return (0,_fable_library_3_1_1_String_js__WEBPACK_IMPORTED_MODULE_7__.toFail)((0,_fable_library_3_1_1_String_js__WEBPACK_IMPORTED_MODULE_7__.printf)("Cannot convert %s to %s"))(arg10_33)(arg20_17);
+                                }
+
+                              case 16:
+                                {
+                                  const arg20_18 = JSON.stringify(typeInfo);
+                                  const arg10_34 = (0,_SimpleJson_fs_js__WEBPACK_IMPORTED_MODULE_12__.SimpleJson_toString)(input);
+                                  return (0,_fable_library_3_1_1_String_js__WEBPACK_IMPORTED_MODULE_7__.toFail)((0,_fable_library_3_1_1_String_js__WEBPACK_IMPORTED_MODULE_7__.printf)("Cannot convert %s to %s"))(arg10_34)(arg20_18);
+                                }
+                            }
+                          }
+                      }
+                    }
+                }
+              }
+          }
+        }
+    }
+
+    break;
+  }
+}
+function Convert_fromJson(json, typeInfo) {
+  return Convert_fromJsonAs(json, typeInfo);
+}
+const Convert_quoteText = _quote_js__WEBPACK_IMPORTED_MODULE_26__.default;
+function Convert_serialize(value_mut, typeInfo_mut) {
+  let copyOfStruct, copyOfStruct_1, copyOfStruct_2;
+
+  Convert_serialize: while (true) {
+    const value = value_mut,
+          typeInfo = typeInfo_mut;
+
+    switch (typeInfo.tag) {
+      case 1:
+        {
+          const content = value;
+
+          if (content == null) {
+            return "null";
+          } else {
+            return Convert_quoteText(content);
+          }
+        }
+
+      case 0:
+        {
+          return "null";
+        }
+
+      case 8:
+      case 7:
+        {
+          if (Number.isNaN(value)) {
+            return Convert_quoteText("NaN");
+          } else {
+            return value.toString();
+          }
+        }
+
+      case 12:
+      case 2:
+      case 3:
+      case 10:
+      case 33:
+      case 16:
+      case 5:
+        {
+          return (0,_fable_library_3_1_1_Util_js__WEBPACK_IMPORTED_MODULE_17__.int32ToString)(value);
+        }
+
+      case 4:
+      case 11:
+        {
+          return Convert_betweenQuotes((0,_fable_library_3_1_1_Long_js__WEBPACK_IMPORTED_MODULE_11__.toString)(value));
+        }
+
+      case 15:
+        {
+          return Convert_betweenQuotes((0,_fable_library_3_1_1_BigInt_js__WEBPACK_IMPORTED_MODULE_13__.toString)(value));
+        }
+
+      case 9:
+        {
+          return Convert_betweenQuotes((0,_fable_library_3_1_1_Decimal_js__WEBPACK_IMPORTED_MODULE_10__.toString)(value));
+        }
+
+      case 6:
+        {
+          if (value) {
+            return "true";
+          } else {
+            return "false";
+          }
+        }
+
+      case 17:
+        {
+          return Convert_betweenQuotes((copyOfStruct = value, copyOfStruct));
+        }
+
+      case 13:
+        {
+          return Convert_betweenQuotes((copyOfStruct_1 = value, (0,_fable_library_3_1_1_Date_js__WEBPACK_IMPORTED_MODULE_14__.toString)(copyOfStruct_1, "O")));
+        }
+
+      case 14:
+        {
+          return Convert_betweenQuotes((copyOfStruct_2 = value, (0,_fable_library_3_1_1_Date_js__WEBPACK_IMPORTED_MODULE_14__.toString)(copyOfStruct_2, "O")));
+        }
+
+      case 34:
+        {
+          const getFields = typeInfo.fields[0];
+          const patternInput = getFields();
+          const recordType = patternInput[1];
+          const fieldTypes = patternInput[0];
+          const serializedFields = (0,_fable_library_3_1_1_Array_js__WEBPACK_IMPORTED_MODULE_16__.map)(field => {
+            const fieldValue = (0,_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.getRecordField)(value, field.PropertyInfo);
+            const arg20 = Convert_serialize(fieldValue, field.FieldType);
+            return (0,_fable_library_3_1_1_String_js__WEBPACK_IMPORTED_MODULE_7__.toText)((0,_fable_library_3_1_1_String_js__WEBPACK_IMPORTED_MODULE_7__.printf)("\"%s\": %s"))(field.FieldName)(arg20);
+          }, fieldTypes);
+          return "{" + (0,_fable_library_3_1_1_String_js__WEBPACK_IMPORTED_MODULE_7__.join)(", ", serializedFields) + "}";
+        }
+
+      case 30:
+        {
+          const getElementType = typeInfo.fields[0];
+          const elementType = getElementType();
+          const values = (0,_fable_library_3_1_1_String_js__WEBPACK_IMPORTED_MODULE_7__.join)(", ", (0,_fable_library_3_1_1_Seq_js__WEBPACK_IMPORTED_MODULE_4__.map)(element => Convert_serialize(element, elementType), value));
+          return "[" + values + "]";
+        }
+
+      case 31:
+        {
+          const getElementType_1 = typeInfo.fields[0];
+          const elementType_1 = getElementType_1();
+          const values_1 = (0,_fable_library_3_1_1_String_js__WEBPACK_IMPORTED_MODULE_7__.join)(", ", (0,_fable_library_3_1_1_Seq_js__WEBPACK_IMPORTED_MODULE_4__.map)(element_1 => Convert_serialize(element_1, elementType_1), value));
+          return "[" + values_1 + "]";
+        }
+
+      case 24:
+        {
+          const getElementType_2 = typeInfo.fields[0];
+          const elementType_2 = getElementType_2();
+          const values_2 = (0,_fable_library_3_1_1_String_js__WEBPACK_IMPORTED_MODULE_7__.join)(", ", (0,_fable_library_3_1_1_Seq_js__WEBPACK_IMPORTED_MODULE_4__.map)(element_2 => Convert_serialize(element_2, elementType_2), value));
+          return "[" + values_2 + "]";
+        }
+
+      case 25:
+        {
+          const getElementType_3 = typeInfo.fields[0];
+          const elementType_3 = getElementType_3();
+          const values_3 = (0,_fable_library_3_1_1_String_js__WEBPACK_IMPORTED_MODULE_7__.join)(", ", (0,_fable_library_3_1_1_Array_js__WEBPACK_IMPORTED_MODULE_16__.map)(element_3 => Convert_serialize(element_3, elementType_3), value));
+          return "[" + values_3 + "]";
+        }
+
+      case 23:
+        {
+          const getElementType_4 = typeInfo.fields[0];
+          const elementType_4 = getElementType_4();
+          const values_4 = (0,_fable_library_3_1_1_String_js__WEBPACK_IMPORTED_MODULE_7__.join)(", ", (0,_fable_library_3_1_1_List_js__WEBPACK_IMPORTED_MODULE_3__.map)(element_4 => Convert_serialize(element_4, elementType_4), value));
+          return "[" + values_4 + "]";
+        }
+
+      case 26:
+        {
+          const getElementType_5 = typeInfo.fields[0];
+          const elementType_5 = getElementType_5();
+          const values_5 = (0,_fable_library_3_1_1_String_js__WEBPACK_IMPORTED_MODULE_7__.join)(", ", (0,_fable_library_3_1_1_Array_js__WEBPACK_IMPORTED_MODULE_16__.map)(element_5 => Convert_serialize(element_5, elementType_5), Array.from(value)));
+          return "[" + values_5 + "]";
+        }
+
+      case 22:
+        {
+          const getElementType_6 = typeInfo.fields[0];
+          const matchValue = value;
+
+          if (matchValue != null) {
+            const existingValue = (0,_fable_library_3_1_1_Option_js__WEBPACK_IMPORTED_MODULE_5__.value)(matchValue);
+            value_mut = existingValue;
+            typeInfo_mut = getElementType_6();
+            continue Convert_serialize;
+          } else {
+            return "null";
+          }
+        }
+
+      case 35:
+        {
+          const getCases = typeInfo.fields[0];
+          const patternInput_1 = getCases();
+          const unionType = patternInput_1[1];
+          const unionCases = patternInput_1[0];
+          const patternInput_2 = (0,_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.getUnionFields)(value, unionType);
+          const usedCase = patternInput_2[0];
+          const fields = patternInput_2[1];
+          const caseTypes = unionCases.find(case$ => case$.CaseName === (0,_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.name)(usedCase)).CaseTypes;
+
+          if ((0,_TypeInfo_Converter_fs_js__WEBPACK_IMPORTED_MODULE_25__.enumUnion)(typeInfo) ? true : caseTypes.length === 0) {
+            return Convert_betweenQuotes((0,_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.name)(usedCase));
+          } else if (caseTypes.length === 1) {
+            return "{" + Convert_betweenQuotes((0,_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.name)(usedCase)) + ": " + Convert_serialize(fields[0], caseTypes[0]) + "}";
+          } else {
+            const serializedFields_1 = (0,_fable_library_3_1_1_String_js__WEBPACK_IMPORTED_MODULE_7__.join)(", ", (0,_fable_library_3_1_1_Array_js__WEBPACK_IMPORTED_MODULE_16__.mapIndexed)((index, caseType) => Convert_serialize(fields[index], caseType), caseTypes));
+            return "{" + Convert_betweenQuotes((0,_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.name)(usedCase)) + ": " + "[" + serializedFields_1 + "] }";
+          }
+        }
+
+      case 28:
+        {
+          const getPairTypes = typeInfo.fields[0];
+          const patternInput_3 = getPairTypes();
+          const valueType = patternInput_3[1];
+          const keyType = patternInput_3[0];
+          const serializedValues = (0,_fable_library_3_1_1_String_js__WEBPACK_IMPORTED_MODULE_7__.join)(", ", (0,_fable_library_3_1_1_Array_js__WEBPACK_IMPORTED_MODULE_16__.map)(tupledArg => {
+            const key = tupledArg[0];
+            const value_8 = tupledArg[1];
+            const serializedKey = Convert_serialize(key, keyType);
+            const serializedValue = Convert_serialize(value_8, valueType);
+
+            if ((0,_TypeInfo_Converter_fs_js__WEBPACK_IMPORTED_MODULE_25__.isPrimitive)(keyType) ? true : (0,_TypeInfo_Converter_fs_js__WEBPACK_IMPORTED_MODULE_25__.enumUnion)(keyType)) {
+              if (!Convert_isQuoted(serializedKey)) {
+                return Convert_quoteText(serializedKey) + ": " + serializedValue;
+              } else {
+                return serializedKey + ": " + serializedValue;
+              }
+            } else {
+              return "[" + serializedKey + ", " + serializedValue + "]";
+            }
+          }, (0,_fable_library_3_1_1_Map_js__WEBPACK_IMPORTED_MODULE_6__.toArray)(value)));
+
+          if ((0,_TypeInfo_Converter_fs_js__WEBPACK_IMPORTED_MODULE_25__.isPrimitive)(keyType) ? true : (0,_TypeInfo_Converter_fs_js__WEBPACK_IMPORTED_MODULE_25__.enumUnion)(keyType)) {
+            return "{" + serializedValues + "}";
+          } else {
+            return "[" + serializedValues + "]";
+          }
+        }
+
+      case 29:
+        {
+          const getPairTypes_1 = typeInfo.fields[0];
+          const patternInput_4 = getPairTypes_1();
+          const valueType_1 = patternInput_4[1];
+          const originalType = patternInput_4[2];
+          const keyType_1 = patternInput_4[0];
+          const serializedValues_1 = (0,_fable_library_3_1_1_String_js__WEBPACK_IMPORTED_MODULE_7__.join)(", ", (0,_fable_library_3_1_1_Seq_js__WEBPACK_IMPORTED_MODULE_4__.map)(pair => {
+            const patternInput_5 = [pair[0], pair[1]];
+            const value_10 = patternInput_5[1];
+            const key_1 = patternInput_5[0];
+            const serializedKey_1 = Convert_serialize(key_1, keyType_1);
+            const serializedValue_1 = Convert_serialize(value_10, valueType_1);
+
+            if ((0,_TypeInfo_Converter_fs_js__WEBPACK_IMPORTED_MODULE_25__.isPrimitive)(keyType_1) ? true : (0,_TypeInfo_Converter_fs_js__WEBPACK_IMPORTED_MODULE_25__.enumUnion)(keyType_1)) {
+              if (!Convert_isQuoted(serializedKey_1)) {
+                return Convert_betweenQuotes(serializedKey_1) + ": " + serializedValue_1;
+              } else {
+                return serializedKey_1 + ": " + serializedValue_1;
+              }
+            } else {
+              return "[" + serializedKey_1 + ", " + serializedValue_1 + "]";
+            }
+          }, value));
+
+          if ((0,_TypeInfo_Converter_fs_js__WEBPACK_IMPORTED_MODULE_25__.isPrimitive)(keyType_1) ? true : (0,_TypeInfo_Converter_fs_js__WEBPACK_IMPORTED_MODULE_25__.enumUnion)(keyType_1)) {
+            return "{" + serializedValues_1 + "}";
+          } else {
+            return "[" + serializedValues_1 + "]";
+          }
+        }
+
+      case 27:
+        {
+          const getTupleTypes = typeInfo.fields[0];
+          const tupleTypes = getTupleTypes();
+
+          if (tupleTypes.length === 1) {
+            return "[" + Convert_serialize(value, tupleTypes[0]) + "]";
+          } else {
+            const serializedValues_2 = (0,_fable_library_3_1_1_String_js__WEBPACK_IMPORTED_MODULE_7__.join)(", ", (0,_fable_library_3_1_1_Array_js__WEBPACK_IMPORTED_MODULE_16__.mapIndexed)((index_1, element_6) => Convert_serialize(element_6, tupleTypes[index_1]), value));
+            return "[" + serializedValues_2 + "]";
+          }
+        }
+
+      case 18:
+        {
+          return (0,_SimpleJson_fs_js__WEBPACK_IMPORTED_MODULE_12__.SimpleJson_stringify)(value);
+        }
+
+      case 19:
+        {
+          const getType = typeInfo.fields[0];
+          return (0,_SimpleJson_fs_js__WEBPACK_IMPORTED_MODULE_12__.SimpleJson_stringify)(value);
+        }
+
+      default:
+        {
+          return "null";
+        }
+    }
+
+    break;
+  }
+}
+function Fable_SimpleJson_Json__Json_stringify_Static_4E60E31B(value) {
+  if (Convert_isUsingFable3) {
+    console.warn((0,_fable_library_3_1_1_Option_js__WEBPACK_IMPORTED_MODULE_5__.some)("It looks like you using the function Json.stringify from Fable.SimpleJson while also using Fable 3 (nagareyama). Please use Json.serialize instead which supports both Fable 3 and Fable 2.x"));
+  }
+
+  return (0,_SimpleJson_fs_js__WEBPACK_IMPORTED_MODULE_12__.SimpleJson_stringify)(value);
+}
+
+/***/ }),
+
+/***/ "./resources/js/.fable/Fable.SimpleJson.3.19.0/Json.fs.js":
+/*!****************************************************************!*\
+  !*** ./resources/js/.fable/Fable.SimpleJson.3.19.0/Json.fs.js ***!
+  \****************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Json": () => (/* binding */ Json),
+/* harmony export */   "Json$reflection": () => (/* binding */ Json$reflection)
+/* harmony export */ });
+/* harmony import */ var _fable_library_3_1_1_Types_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../fable-library.3.1.1/Types.js */ "./resources/js/.fable/fable-library.3.1.1/Types.js");
+/* harmony import */ var _fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../fable-library.3.1.1/Reflection.js */ "./resources/js/.fable/fable-library.3.1.1/Reflection.js");
+
+
+class Json extends _fable_library_3_1_1_Types_js__WEBPACK_IMPORTED_MODULE_0__.Union {
+  constructor(tag, ...fields) {
+    super();
+    this.tag = tag | 0;
+    this.fields = fields;
+  }
+
+  cases() {
+    return ["JNumber", "JString", "JBool", "JNull", "JArray", "JObject"];
+  }
+
+}
+function Json$reflection() {
+  return (0,_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.union_type)("Fable.SimpleJson.Json", [], Json, () => [[["Item", _fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.float64_type]], [["Item", _fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.string_type]], [["Item", _fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.bool_type]], [], [["Item", (0,_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.list_type)(Json$reflection())]], [["Item", (0,_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.class_type)("Microsoft.FSharp.Collections.FSharpMap`2", [_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.string_type, Json$reflection()])]]]);
+}
+
+/***/ }),
+
+/***/ "./resources/js/.fable/Fable.SimpleJson.3.19.0/Parser.fs.js":
+/*!******************************************************************!*\
+  !*** ./resources/js/.fable/Fable.SimpleJson.3.19.0/Parser.fs.js ***!
+  \******************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "digits": () => (/* binding */ digits),
+/* harmony export */   "jint": () => (/* binding */ jint),
+/* harmony export */   "negJint": () => (/* binding */ negJint),
+/* harmony export */   "jfloat": () => (/* binding */ jfloat),
+/* harmony export */   "negativeJFloat": () => (/* binding */ negativeJFloat),
+/* harmony export */   "jnumber": () => (/* binding */ jnumber),
+/* harmony export */   "jbool": () => (/* binding */ jbool),
+/* harmony export */   "jnull": () => (/* binding */ jnull),
+/* harmony export */   "stringLiteral": () => (/* binding */ stringLiteral),
+/* harmony export */   "jstring": () => (/* binding */ jstring),
+/* harmony export */   "withWhitespace": () => (/* binding */ withWhitespace),
+/* harmony export */   "jvalue": () => (/* binding */ jvalue),
+/* harmony export */   "comma": () => (/* binding */ comma),
+/* harmony export */   "json": () => (/* binding */ json),
+/* harmony export */   "jsonParser": () => (/* binding */ jsonParser)
+/* harmony export */ });
+/* harmony import */ var _Fable_Parsimmon_4_0_0_Parsimmon_fs_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../Fable.Parsimmon.4.0.0/Parsimmon.fs.js */ "./resources/js/.fable/Fable.Parsimmon.4.0.0/Parsimmon.fs.js");
+/* harmony import */ var _fable_library_3_1_1_Double_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../fable-library.3.1.1/Double.js */ "./resources/js/.fable/fable-library.3.1.1/Double.js");
+/* harmony import */ var _fable_library_3_1_1_String_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../fable-library.3.1.1/String.js */ "./resources/js/.fable/fable-library.3.1.1/String.js");
+/* harmony import */ var _Json_fs_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Json.fs.js */ "./resources/js/.fable/Fable.SimpleJson.3.19.0/Json.fs.js");
+/* harmony import */ var _fable_library_3_1_1_List_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../fable-library.3.1.1/List.js */ "./resources/js/.fable/fable-library.3.1.1/List.js");
+/* harmony import */ var _fable_library_3_1_1_Map_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../fable-library.3.1.1/Map.js */ "./resources/js/.fable/fable-library.3.1.1/Map.js");
+/* harmony import */ var _fable_library_3_1_1_Util_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../fable-library.3.1.1/Util.js */ "./resources/js/.fable/fable-library.3.1.1/Util.js");
+
+
+
+
+
+
+
+const digits = (0,_Fable_Parsimmon_4_0_0_Parsimmon_fs_js__WEBPACK_IMPORTED_MODULE_0__.Parsimmon_concat)((0,_Fable_Parsimmon_4_0_0_Parsimmon_fs_js__WEBPACK_IMPORTED_MODULE_0__.Parsimmon_atLeastOneOrMany)(_Fable_Parsimmon_4_0_0_Parsimmon_fs_js__WEBPACK_IMPORTED_MODULE_0__.Parsimmon_digit));
+const jint = (0,_Fable_Parsimmon_4_0_0_Parsimmon_fs_js__WEBPACK_IMPORTED_MODULE_0__.Parsimmon_map)(_fable_library_3_1_1_Double_js__WEBPACK_IMPORTED_MODULE_1__.parse, digits);
+const negJint = (0,_Fable_Parsimmon_4_0_0_Parsimmon_fs_js__WEBPACK_IMPORTED_MODULE_0__.Parsimmon_map)(tupledArg => {
+  const sign = tupledArg[0];
+  const number = tupledArg[1];
+  return -number;
+}, (0,_Fable_Parsimmon_4_0_0_Parsimmon_fs_js__WEBPACK_IMPORTED_MODULE_0__.Parsimmon_seq2)((0,_Fable_Parsimmon_4_0_0_Parsimmon_fs_js__WEBPACK_IMPORTED_MODULE_0__.Parsimmon_str)("-"), jint));
+const jfloat = (() => {
+  const digits_1 = (0,_Fable_Parsimmon_4_0_0_Parsimmon_fs_js__WEBPACK_IMPORTED_MODULE_0__.Parsimmon_concat)((0,_Fable_Parsimmon_4_0_0_Parsimmon_fs_js__WEBPACK_IMPORTED_MODULE_0__.Parsimmon_many)(_Fable_Parsimmon_4_0_0_Parsimmon_fs_js__WEBPACK_IMPORTED_MODULE_0__.Parsimmon_digit));
+  const dot = (0,_Fable_Parsimmon_4_0_0_Parsimmon_fs_js__WEBPACK_IMPORTED_MODULE_0__.Parsimmon_str)(".");
+  const decimals = (0,_Fable_Parsimmon_4_0_0_Parsimmon_fs_js__WEBPACK_IMPORTED_MODULE_0__.Parsimmon_concat)((0,_Fable_Parsimmon_4_0_0_Parsimmon_fs_js__WEBPACK_IMPORTED_MODULE_0__.Parsimmon_atLeastOneOrMany)(_Fable_Parsimmon_4_0_0_Parsimmon_fs_js__WEBPACK_IMPORTED_MODULE_0__.Parsimmon_digit));
+  return (0,_Fable_Parsimmon_4_0_0_Parsimmon_fs_js__WEBPACK_IMPORTED_MODULE_0__.Parsimmon_map)(tupledArg => {
+    let other;
+    const digitsLeft = tupledArg[0];
+    const dot_1 = tupledArg[1];
+    const digitsRight = tupledArg[2];
+    return (0,_fable_library_3_1_1_Double_js__WEBPACK_IMPORTED_MODULE_1__.parse)((0,_fable_library_3_1_1_String_js__WEBPACK_IMPORTED_MODULE_2__.join)("", [digitsLeft === "" ? "0" : (other = digitsLeft, other), dot_1, digitsRight]));
+  }, (0,_Fable_Parsimmon_4_0_0_Parsimmon_fs_js__WEBPACK_IMPORTED_MODULE_0__.Parsimmon_seq3)(digits_1, dot, decimals));
+})();
+const negativeJFloat = (0,_Fable_Parsimmon_4_0_0_Parsimmon_fs_js__WEBPACK_IMPORTED_MODULE_0__.Parsimmon_map)(tupledArg => {
+  const sign = tupledArg[0];
+  const number = tupledArg[1];
+  return -number;
+}, (0,_Fable_Parsimmon_4_0_0_Parsimmon_fs_js__WEBPACK_IMPORTED_MODULE_0__.Parsimmon_seq2)((0,_Fable_Parsimmon_4_0_0_Parsimmon_fs_js__WEBPACK_IMPORTED_MODULE_0__.Parsimmon_str)("-"), jfloat));
+const jnumber = (0,_Fable_Parsimmon_4_0_0_Parsimmon_fs_js__WEBPACK_IMPORTED_MODULE_0__.Parsimmon_map)(arg0 => new _Json_fs_js__WEBPACK_IMPORTED_MODULE_3__.Json(0, arg0), (0,_Fable_Parsimmon_4_0_0_Parsimmon_fs_js__WEBPACK_IMPORTED_MODULE_0__.Parsimmon_choose)((0,_fable_library_3_1_1_List_js__WEBPACK_IMPORTED_MODULE_4__.ofArray)([jfloat, negativeJFloat, jint, negJint])));
+const jbool = (0,_Fable_Parsimmon_4_0_0_Parsimmon_fs_js__WEBPACK_IMPORTED_MODULE_0__.Parsimmon_choose)((0,_fable_library_3_1_1_List_js__WEBPACK_IMPORTED_MODULE_4__.ofArray)([(0,_Fable_Parsimmon_4_0_0_Parsimmon_fs_js__WEBPACK_IMPORTED_MODULE_0__.Parsimmon_stringReturn)("true", new _Json_fs_js__WEBPACK_IMPORTED_MODULE_3__.Json(2, true)), (0,_Fable_Parsimmon_4_0_0_Parsimmon_fs_js__WEBPACK_IMPORTED_MODULE_0__.Parsimmon_stringReturn)("false", new _Json_fs_js__WEBPACK_IMPORTED_MODULE_3__.Json(2, false))]));
+const jnull = (0,_Fable_Parsimmon_4_0_0_Parsimmon_fs_js__WEBPACK_IMPORTED_MODULE_0__.Parsimmon_stringReturn)("null", new _Json_fs_js__WEBPACK_IMPORTED_MODULE_3__.Json(3));
+const stringLiteral = (() => {
+  const escape = (0,_Fable_Parsimmon_4_0_0_Parsimmon_fs_js__WEBPACK_IMPORTED_MODULE_0__.Parsimmon_map)(_arg1 => {
+    switch (_arg1) {
+      case "b":
+        {
+          return "\b";
+        }
+
+      case "f":
+        {
+          return "\f";
+        }
+
+      case "n":
+        {
+          return "\n";
+        }
+
+      case "r":
+        {
+          return "\r";
+        }
+
+      case "t":
+        {
+          return "\t";
+        }
+
+      default:
+        {
+          const c = _arg1;
+          return c;
+        }
+    }
+  }, (0,_Fable_Parsimmon_4_0_0_Parsimmon_fs_js__WEBPACK_IMPORTED_MODULE_0__.Parsimmon_oneOf)("\"\\/bfnrt"));
+  const escapedCharSnippet = (0,_Fable_Parsimmon_4_0_0_Parsimmon_fs_js__WEBPACK_IMPORTED_MODULE_0__.Parsimmon_map)(tuple => tuple[1], (0,_Fable_Parsimmon_4_0_0_Parsimmon_fs_js__WEBPACK_IMPORTED_MODULE_0__.Parsimmon_seq2)((0,_Fable_Parsimmon_4_0_0_Parsimmon_fs_js__WEBPACK_IMPORTED_MODULE_0__.Parsimmon_str)("\\"), escape));
+  const normalCharSnippet = (0,_Fable_Parsimmon_4_0_0_Parsimmon_fs_js__WEBPACK_IMPORTED_MODULE_0__.Parsimmon_satisfy)(c_1 => c_1 !== "\"" ? c_1 !== "\\" : false);
+  const anyCharSnippet = (0,_Fable_Parsimmon_4_0_0_Parsimmon_fs_js__WEBPACK_IMPORTED_MODULE_0__.Parsimmon_concat)((0,_Fable_Parsimmon_4_0_0_Parsimmon_fs_js__WEBPACK_IMPORTED_MODULE_0__.Parsimmon_many)((0,_Fable_Parsimmon_4_0_0_Parsimmon_fs_js__WEBPACK_IMPORTED_MODULE_0__.Parsimmon_orTry)(escapedCharSnippet, normalCharSnippet)));
+  return (0,_Fable_Parsimmon_4_0_0_Parsimmon_fs_js__WEBPACK_IMPORTED_MODULE_0__.Parsimmon_between)((0,_Fable_Parsimmon_4_0_0_Parsimmon_fs_js__WEBPACK_IMPORTED_MODULE_0__.Parsimmon_str)("\""), (0,_Fable_Parsimmon_4_0_0_Parsimmon_fs_js__WEBPACK_IMPORTED_MODULE_0__.Parsimmon_str)("\""), anyCharSnippet);
+})();
+const jstring = stringLiteral.map(arg0 => new _Json_fs_js__WEBPACK_IMPORTED_MODULE_3__.Json(1, arg0));
+function withWhitespace(p) {
+  return (0,_Fable_Parsimmon_4_0_0_Parsimmon_fs_js__WEBPACK_IMPORTED_MODULE_0__.Parsimmon_between)(_Fable_Parsimmon_4_0_0_Parsimmon_fs_js__WEBPACK_IMPORTED_MODULE_0__.Parsimmon_optionalWhitespace, _Fable_Parsimmon_4_0_0_Parsimmon_fs_js__WEBPACK_IMPORTED_MODULE_0__.Parsimmon_optionalWhitespace, p);
+}
+const jvalue = (0,_Fable_Parsimmon_4_0_0_Parsimmon_fs_js__WEBPACK_IMPORTED_MODULE_0__.Parsimmon_choose)((0,_fable_library_3_1_1_List_js__WEBPACK_IMPORTED_MODULE_4__.map)(withWhitespace, (0,_fable_library_3_1_1_List_js__WEBPACK_IMPORTED_MODULE_4__.ofArray)([jnull, jbool, jnumber, jstring])));
+const comma = withWhitespace((0,_Fable_Parsimmon_4_0_0_Parsimmon_fs_js__WEBPACK_IMPORTED_MODULE_0__.Parsimmon_str)(","));
+
+function json$004099() {
+  return (0,_Fable_Parsimmon_4_0_0_Parsimmon_fs_js__WEBPACK_IMPORTED_MODULE_0__.Parsimmon_ofLazy)(() => {
+    const leftBracket = withWhitespace((0,_Fable_Parsimmon_4_0_0_Parsimmon_fs_js__WEBPACK_IMPORTED_MODULE_0__.Parsimmon_str)("["));
+    const rightBracket = withWhitespace((0,_Fable_Parsimmon_4_0_0_Parsimmon_fs_js__WEBPACK_IMPORTED_MODULE_0__.Parsimmon_str)("]"));
+    const arrayValue = (0,_Fable_Parsimmon_4_0_0_Parsimmon_fs_js__WEBPACK_IMPORTED_MODULE_0__.Parsimmon_seperateBy)(comma, json$004099$002D1.Value);
+    const jarray = (0,_Fable_Parsimmon_4_0_0_Parsimmon_fs_js__WEBPACK_IMPORTED_MODULE_0__.Parsimmon_map)(arg => new _Json_fs_js__WEBPACK_IMPORTED_MODULE_3__.Json(4, (0,_fable_library_3_1_1_List_js__WEBPACK_IMPORTED_MODULE_4__.ofArray)(arg)), (0,_Fable_Parsimmon_4_0_0_Parsimmon_fs_js__WEBPACK_IMPORTED_MODULE_0__.Parsimmon_between)(leftBracket, rightBracket, arrayValue));
+    const leftBrace = withWhitespace((0,_Fable_Parsimmon_4_0_0_Parsimmon_fs_js__WEBPACK_IMPORTED_MODULE_0__.Parsimmon_str)("{"));
+    const rightBrace = withWhitespace((0,_Fable_Parsimmon_4_0_0_Parsimmon_fs_js__WEBPACK_IMPORTED_MODULE_0__.Parsimmon_str)("}"));
+    const keyValues = (0,_Fable_Parsimmon_4_0_0_Parsimmon_fs_js__WEBPACK_IMPORTED_MODULE_0__.Parsimmon_seperateBy)(comma, (0,_Fable_Parsimmon_4_0_0_Parsimmon_fs_js__WEBPACK_IMPORTED_MODULE_0__.Parsimmon_map)(tupledArg => {
+      const key = tupledArg[0];
+      const value = tupledArg[2];
+      return [key, value];
+    }, (0,_Fable_Parsimmon_4_0_0_Parsimmon_fs_js__WEBPACK_IMPORTED_MODULE_0__.Parsimmon_seq3)(withWhitespace(stringLiteral), withWhitespace((0,_Fable_Parsimmon_4_0_0_Parsimmon_fs_js__WEBPACK_IMPORTED_MODULE_0__.Parsimmon_str)(":")), withWhitespace(json$004099$002D1.Value))));
+    const jobject = (0,_Fable_Parsimmon_4_0_0_Parsimmon_fs_js__WEBPACK_IMPORTED_MODULE_0__.Parsimmon_map)(arg_2 => new _Json_fs_js__WEBPACK_IMPORTED_MODULE_3__.Json(5, (0,_fable_library_3_1_1_Map_js__WEBPACK_IMPORTED_MODULE_5__.ofList)((0,_fable_library_3_1_1_List_js__WEBPACK_IMPORTED_MODULE_4__.ofArray)(arg_2))), (0,_Fable_Parsimmon_4_0_0_Parsimmon_fs_js__WEBPACK_IMPORTED_MODULE_0__.Parsimmon_between)(leftBrace, rightBrace, keyValues));
+    return (0,_Fable_Parsimmon_4_0_0_Parsimmon_fs_js__WEBPACK_IMPORTED_MODULE_0__.Parsimmon_choose)((0,_fable_library_3_1_1_List_js__WEBPACK_IMPORTED_MODULE_4__.ofArray)([jvalue, jarray, jobject]));
+  });
+}
+
+const json$004099$002D1 = new _fable_library_3_1_1_Util_js__WEBPACK_IMPORTED_MODULE_6__.Lazy(json$004099);
+const json = json$004099$002D1.Value;
+const jsonParser = withWhitespace(json);
+
+/***/ }),
+
+/***/ "./resources/js/.fable/Fable.SimpleJson.3.19.0/SimpleJson.fs.js":
+/*!**********************************************************************!*\
+  !*** ./resources/js/.fable/Fable.SimpleJson.3.19.0/SimpleJson.fs.js ***!
+  \**********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "InteropUtil_isDateOffset": () => (/* binding */ InteropUtil_isDateOffset),
+/* harmony export */   "InteropUtil_isObjectLiteral": () => (/* binding */ InteropUtil_isObjectLiteral),
+/* harmony export */   "InteropUtil_isBigInt": () => (/* binding */ InteropUtil_isBigInt),
+/* harmony export */   "SimpleJson_tryParse": () => (/* binding */ SimpleJson_tryParse),
+/* harmony export */   "SimpleJson_parse": () => (/* binding */ SimpleJson_parse),
+/* harmony export */   "SimpleJson_toString": () => (/* binding */ SimpleJson_toString),
+/* harmony export */   "SimpleJson_toPlainObject": () => (/* binding */ SimpleJson_toPlainObject),
+/* harmony export */   "SimpleJson_stringify": () => (/* binding */ SimpleJson_stringify),
+/* harmony export */   "SimpleJson_parseNative$0027": () => (/* binding */ SimpleJson_parseNative$0027),
+/* harmony export */   "SimpleJson_parseNative": () => (/* binding */ SimpleJson_parseNative),
+/* harmony export */   "SimpleJson_tryParseNative": () => (/* binding */ SimpleJson_tryParseNative),
+/* harmony export */   "SimpleJson_fromObjectLiteral": () => (/* binding */ SimpleJson_fromObjectLiteral),
+/* harmony export */   "SimpleJson_mapKeys": () => (/* binding */ SimpleJson_mapKeys),
+/* harmony export */   "SimpleJson_mapbyKey": () => (/* binding */ SimpleJson_mapbyKey),
+/* harmony export */   "SimpleJson_mapKeysByPath": () => (/* binding */ SimpleJson_mapKeysByPath),
+/* harmony export */   "SimpleJson_readPath": () => (/* binding */ SimpleJson_readPath)
+/* harmony export */ });
+/* harmony import */ var _Fable_Parsimmon_4_0_0_Parsimmon_fs_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../Fable.Parsimmon.4.0.0/Parsimmon.fs.js */ "./resources/js/.fable/Fable.Parsimmon.4.0.0/Parsimmon.fs.js");
+/* harmony import */ var _Parser_fs_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Parser.fs.js */ "./resources/js/.fable/Fable.SimpleJson.3.19.0/Parser.fs.js");
+/* harmony import */ var _fable_library_3_1_1_String_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../fable-library.3.1.1/String.js */ "./resources/js/.fable/fable-library.3.1.1/String.js");
+/* harmony import */ var _fable_library_3_1_1_List_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../fable-library.3.1.1/List.js */ "./resources/js/.fable/fable-library.3.1.1/List.js");
+/* harmony import */ var _fable_library_3_1_1_Map_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../fable-library.3.1.1/Map.js */ "./resources/js/.fable/fable-library.3.1.1/Map.js");
+/* harmony import */ var _fable_library_3_1_1_Seq_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../fable-library.3.1.1/Seq.js */ "./resources/js/.fable/fable-library.3.1.1/Seq.js");
+/* harmony import */ var _fable_library_3_1_1_Decimal_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../fable-library.3.1.1/Decimal.js */ "./resources/js/.fable/fable-library.3.1.1/Decimal.js");
+/* harmony import */ var _fable_library_3_1_1_BigInt_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../fable-library.3.1.1/BigInt.js */ "./resources/js/.fable/fable-library.3.1.1/BigInt.js");
+/* harmony import */ var _fable_library_3_1_1_Date_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../fable-library.3.1.1/Date.js */ "./resources/js/.fable/fable-library.3.1.1/Date.js");
+/* harmony import */ var _fable_library_3_1_1_Util_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../fable-library.3.1.1/Util.js */ "./resources/js/.fable/fable-library.3.1.1/Util.js");
+/* harmony import */ var _fable_library_3_1_1_Option_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../fable-library.3.1.1/Option.js */ "./resources/js/.fable/fable-library.3.1.1/Option.js");
+/* harmony import */ var _TypeCheck_fs_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./TypeCheck.fs.js */ "./resources/js/.fable/Fable.SimpleJson.3.19.0/TypeCheck.fs.js");
+/* harmony import */ var _Json_fs_js__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./Json.fs.js */ "./resources/js/.fable/Fable.SimpleJson.3.19.0/Json.fs.js");
+/* harmony import */ var _fable_library_3_1_1_Array_js__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../fable-library.3.1.1/Array.js */ "./resources/js/.fable/fable-library.3.1.1/Array.js");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function InteropUtil_isDateOffset(x) {
+  if (x instanceof Date) {
+    return "offset" in x;
+  } else {
+    return false;
+  }
+}
+function InteropUtil_isObjectLiteral(x) {
+  return typeof x === "object";
+}
+function InteropUtil_isBigInt(x) {
+  if ((((!(x == null) ? InteropUtil_isObjectLiteral(x) : false) ? "signInt" in x : false) ? "v" in x : false) ? "digits" in x["v"] : false) {
+    return "bound" in x["v"];
+  } else {
+    return false;
+  }
+}
+function SimpleJson_tryParse(input) {
+  return (0,_Fable_Parsimmon_4_0_0_Parsimmon_fs_js__WEBPACK_IMPORTED_MODULE_0__.Parsimmon_parse)(input, _Parser_fs_js__WEBPACK_IMPORTED_MODULE_1__.jsonParser);
+}
+function SimpleJson_parse(input) {
+  const matchValue = SimpleJson_tryParse(input);
+
+  if (matchValue == null) {
+    return (0,_fable_library_3_1_1_String_js__WEBPACK_IMPORTED_MODULE_2__.toFail)((0,_fable_library_3_1_1_String_js__WEBPACK_IMPORTED_MODULE_2__.printf)("Could not parse the JSON input: %s"))(input);
+  } else {
+    const result = matchValue;
+    return result;
+  }
+}
+function SimpleJson_toString(_arg1) {
+  if (_arg1.tag === 2) {
+    if (_arg1.fields[0]) {
+      return "true";
+    } else {
+      return "false";
+    }
+  } else if (_arg1.tag === 0) {
+    const number = _arg1.fields[0];
+    return number.toString();
+  } else if (_arg1.tag === 1) {
+    const text = _arg1.fields[0];
+    return (0,_fable_library_3_1_1_String_js__WEBPACK_IMPORTED_MODULE_2__.toText)((0,_fable_library_3_1_1_String_js__WEBPACK_IMPORTED_MODULE_2__.printf)("\"%s\""))(text);
+  } else if (_arg1.tag === 4) {
+    const elements = _arg1.fields[0];
+    const arg10_1 = (0,_fable_library_3_1_1_String_js__WEBPACK_IMPORTED_MODULE_2__.join)(",", (0,_fable_library_3_1_1_List_js__WEBPACK_IMPORTED_MODULE_3__.map)(SimpleJson_toString, elements));
+    return (0,_fable_library_3_1_1_String_js__WEBPACK_IMPORTED_MODULE_2__.toText)((0,_fable_library_3_1_1_String_js__WEBPACK_IMPORTED_MODULE_2__.printf)("[%s]"))(arg10_1);
+  } else if (_arg1.tag === 5) {
+    const map = _arg1.fields[0];
+    const arg10_3 = (0,_fable_library_3_1_1_String_js__WEBPACK_IMPORTED_MODULE_2__.join)(",", (0,_fable_library_3_1_1_List_js__WEBPACK_IMPORTED_MODULE_3__.map)(tupledArg => {
+      const key = tupledArg[0];
+      const value = tupledArg[1];
+      const arg20 = SimpleJson_toString(value);
+      return (0,_fable_library_3_1_1_String_js__WEBPACK_IMPORTED_MODULE_2__.toText)((0,_fable_library_3_1_1_String_js__WEBPACK_IMPORTED_MODULE_2__.printf)("\"%s\":%s"))(key)(arg20);
+    }, (0,_fable_library_3_1_1_Map_js__WEBPACK_IMPORTED_MODULE_4__.toList)(map)));
+    return (0,_fable_library_3_1_1_String_js__WEBPACK_IMPORTED_MODULE_2__.toText)((0,_fable_library_3_1_1_String_js__WEBPACK_IMPORTED_MODULE_2__.printf)("{%s}"))(arg10_3);
+  } else {
+    return "null";
+  }
+}
+function SimpleJson_toPlainObject(input) {
+  switch (input.tag) {
+    case 2:
+      {
+        const value = input.fields[0];
+        return value;
+      }
+
+    case 0:
+      {
+        const value_1 = input.fields[0];
+        return value_1;
+      }
+
+    case 1:
+      {
+        const value_2 = input.fields[0];
+        return value_2;
+      }
+
+    case 4:
+      {
+        const values = input.fields[0];
+        const array = [];
+        const enumerator = (0,_fable_library_3_1_1_Seq_js__WEBPACK_IMPORTED_MODULE_5__.getEnumerator)(values);
+
+        try {
+          while (enumerator["System.Collections.IEnumerator.MoveNext"]()) {
+            const value_3 = enumerator["System.Collections.Generic.IEnumerator`1.get_Current"]();
+            void array.push(SimpleJson_toPlainObject(value_3));
+          }
+        } finally {
+          enumerator.Dispose();
+        }
+
+        return array;
+      }
+
+    case 5:
+      {
+        const map = input.fields[0];
+        const jsObject = {};
+        const enumerator_1 = (0,_fable_library_3_1_1_Seq_js__WEBPACK_IMPORTED_MODULE_5__.getEnumerator)((0,_fable_library_3_1_1_Map_js__WEBPACK_IMPORTED_MODULE_4__.toList)(map));
+
+        try {
+          while (enumerator_1["System.Collections.IEnumerator.MoveNext"]()) {
+            const forLoopVar = enumerator_1["System.Collections.Generic.IEnumerator`1.get_Current"]();
+            const value_4 = forLoopVar[1];
+            const key = forLoopVar[0];
+            jsObject[key] = SimpleJson_toPlainObject(value_4);
+          }
+        } finally {
+          enumerator_1.Dispose();
+        }
+
+        return jsObject;
+      }
+
+    default:
+      {
+        return null;
+      }
+  }
+}
+function SimpleJson_stringify(value) {
+  if (value == null) {
+    return JSON.stringify(null);
+  } else {
+    return JSON.stringify(value, (key, jsonValue) => {
+      let copyOfStruct;
+
+      if (InteropUtil_isBigInt(jsonValue)) {
+        const bigInt = jsonValue;
+        return (0,_fable_library_3_1_1_Decimal_js__WEBPACK_IMPORTED_MODULE_6__.toString)((0,_fable_library_3_1_1_BigInt_js__WEBPACK_IMPORTED_MODULE_7__.toDecimal)(bigInt));
+      } else if (jsonValue instanceof Date) {
+        const dateOffset = jsonValue;
+        return (0,_fable_library_3_1_1_Date_js__WEBPACK_IMPORTED_MODULE_8__.toString)(dateOffset, "o");
+      } else {
+        return typeof jsonValue === "string" ? jsonValue : (0,_fable_library_3_1_1_Util_js__WEBPACK_IMPORTED_MODULE_9__.isIterable)(jsonValue) ? Array.isArray(jsonValue) ? jsonValue : Array.from(jsonValue) : InteropUtil_isBigInt(jsonValue) ? (0,_fable_library_3_1_1_Decimal_js__WEBPACK_IMPORTED_MODULE_6__.toString)((0,_fable_library_3_1_1_BigInt_js__WEBPACK_IMPORTED_MODULE_7__.toDecimal)(jsonValue)) : InteropUtil_isDateOffset(jsonValue) ? (copyOfStruct = jsonValue, (0,_fable_library_3_1_1_Date_js__WEBPACK_IMPORTED_MODULE_8__.toString)(copyOfStruct, "O")) : jsonValue;
+      }
+    }, (0,_fable_library_3_1_1_Option_js__WEBPACK_IMPORTED_MODULE_10__.some)(0));
+  }
+}
+function SimpleJson_parseNative$0027(x) {
+  const activePatternResult1761 = (0,_TypeCheck_fs_js__WEBPACK_IMPORTED_MODULE_11__.$007CNativeString$007C_$007C)(x);
+
+  if (activePatternResult1761 != null) {
+    const str = activePatternResult1761;
+    return new _Json_fs_js__WEBPACK_IMPORTED_MODULE_12__.Json(1, str);
+  } else {
+    const activePatternResult1760 = (0,_TypeCheck_fs_js__WEBPACK_IMPORTED_MODULE_11__.$007CNativeNumber$007C_$007C)(x);
+
+    if (activePatternResult1760 != null) {
+      const number = activePatternResult1760;
+      return new _Json_fs_js__WEBPACK_IMPORTED_MODULE_12__.Json(0, number);
+    } else {
+      const activePatternResult1759 = (0,_TypeCheck_fs_js__WEBPACK_IMPORTED_MODULE_11__.$007CNativeBool$007C_$007C)(x);
+
+      if (activePatternResult1759 != null) {
+        const value = activePatternResult1759;
+        return new _Json_fs_js__WEBPACK_IMPORTED_MODULE_12__.Json(2, value);
+      } else if ((0,_TypeCheck_fs_js__WEBPACK_IMPORTED_MODULE_11__.$007CNull$007C_$007C)(x) != null) {
+        return new _Json_fs_js__WEBPACK_IMPORTED_MODULE_12__.Json(3);
+      } else {
+        const activePatternResult1757 = (0,_TypeCheck_fs_js__WEBPACK_IMPORTED_MODULE_11__.$007CNativeArray$007C_$007C)(x);
+
+        if (activePatternResult1757 != null) {
+          const arr = activePatternResult1757;
+          return new _Json_fs_js__WEBPACK_IMPORTED_MODULE_12__.Json(4, (0,_fable_library_3_1_1_List_js__WEBPACK_IMPORTED_MODULE_3__.ofArray)((0,_fable_library_3_1_1_Array_js__WEBPACK_IMPORTED_MODULE_13__.map)(SimpleJson_parseNative$0027, arr)));
+        } else {
+          const activePatternResult1756 = (0,_TypeCheck_fs_js__WEBPACK_IMPORTED_MODULE_11__.$007CNativeObject$007C_$007C)(x);
+
+          if (activePatternResult1756 != null) {
+            const object = (0,_fable_library_3_1_1_Option_js__WEBPACK_IMPORTED_MODULE_10__.value)(activePatternResult1756);
+            return new _Json_fs_js__WEBPACK_IMPORTED_MODULE_12__.Json(5, (0,_fable_library_3_1_1_Map_js__WEBPACK_IMPORTED_MODULE_4__.ofList)((0,_fable_library_3_1_1_List_js__WEBPACK_IMPORTED_MODULE_3__.ofSeq)((0,_fable_library_3_1_1_Seq_js__WEBPACK_IMPORTED_MODULE_5__.delay)(() => (0,_fable_library_3_1_1_Seq_js__WEBPACK_IMPORTED_MODULE_5__.map)(key => [key, SimpleJson_parseNative$0027(object[key])], Object.keys(object))))));
+          } else {
+            return new _Json_fs_js__WEBPACK_IMPORTED_MODULE_12__.Json(3);
+          }
+        }
+      }
+    }
+  }
+}
+function SimpleJson_parseNative(input) {
+  const parsed = JSON.parse(input);
+  return SimpleJson_parseNative$0027(parsed);
+}
+function SimpleJson_tryParseNative(input) {
+  try {
+    return SimpleJson_parseNative(input);
+  } catch (ex) {
+    return void 0;
+  }
+}
+function SimpleJson_fromObjectLiteral(x) {
+  try {
+    return SimpleJson_parseNative$0027(x);
+  } catch (matchValue) {
+    return void 0;
+  }
+}
+function SimpleJson_mapKeys(f, _arg1) {
+  switch (_arg1.tag) {
+    case 5:
+      {
+        const dictionary = _arg1.fields[0];
+        return new _Json_fs_js__WEBPACK_IMPORTED_MODULE_12__.Json(5, (0,_fable_library_3_1_1_Map_js__WEBPACK_IMPORTED_MODULE_4__.ofList)((0,_fable_library_3_1_1_List_js__WEBPACK_IMPORTED_MODULE_3__.map)(tupledArg => {
+          const key = tupledArg[0];
+          const value = tupledArg[1];
+          return [f(key), SimpleJson_mapKeys(f, value)];
+        }, (0,_fable_library_3_1_1_Map_js__WEBPACK_IMPORTED_MODULE_4__.toList)(dictionary))));
+      }
+
+    case 4:
+      {
+        const values = _arg1.fields[0];
+        return new _Json_fs_js__WEBPACK_IMPORTED_MODULE_12__.Json(4, (0,_fable_library_3_1_1_List_js__WEBPACK_IMPORTED_MODULE_3__.map)(_arg1_1 => SimpleJson_mapKeys(f, _arg1_1), values));
+      }
+
+    default:
+      {
+        const otherJsonValue = _arg1;
+        return otherJsonValue;
+      }
+  }
+}
+function SimpleJson_mapbyKey(f, _arg1) {
+  switch (_arg1.tag) {
+    case 5:
+      {
+        const dictionary = _arg1.fields[0];
+        return new _Json_fs_js__WEBPACK_IMPORTED_MODULE_12__.Json(5, (0,_fable_library_3_1_1_Map_js__WEBPACK_IMPORTED_MODULE_4__.ofList)((0,_fable_library_3_1_1_List_js__WEBPACK_IMPORTED_MODULE_3__.map)(tupledArg => {
+          const key = tupledArg[0];
+          const value = tupledArg[1];
+          return [key, f(key, value)];
+        }, (0,_fable_library_3_1_1_Map_js__WEBPACK_IMPORTED_MODULE_4__.toList)(dictionary))));
+      }
+
+    case 4:
+      {
+        const values = _arg1.fields[0];
+        return new _Json_fs_js__WEBPACK_IMPORTED_MODULE_12__.Json(4, (0,_fable_library_3_1_1_List_js__WEBPACK_IMPORTED_MODULE_3__.map)(_arg1_1 => SimpleJson_mapbyKey(f, _arg1_1), values));
+      }
+
+    default:
+      {
+        const otherJsonValue = _arg1;
+        return otherJsonValue;
+      }
+  }
+}
+function SimpleJson_mapKeysByPath(f, json) {
+  const mapKey = (xs, _arg1) => {
+    switch (_arg1.tag) {
+      case 5:
+        {
+          const dictionary = _arg1.fields[0];
+          return new _Json_fs_js__WEBPACK_IMPORTED_MODULE_12__.Json(5, (0,_fable_library_3_1_1_Map_js__WEBPACK_IMPORTED_MODULE_4__.ofList)((0,_fable_library_3_1_1_List_js__WEBPACK_IMPORTED_MODULE_3__.map)(tupledArg => {
+            const key = tupledArg[0];
+            const value = tupledArg[1];
+            const keyPath = (0,_fable_library_3_1_1_List_js__WEBPACK_IMPORTED_MODULE_3__.concat)([xs, (0,_fable_library_3_1_1_List_js__WEBPACK_IMPORTED_MODULE_3__.singleton)(key)]);
+            const matchValue = f(keyPath);
+
+            if (matchValue == null) {
+              return [key, mapKey(keyPath, value)];
+            } else {
+              const nextKey = matchValue;
+              return [nextKey, mapKey(keyPath, value)];
+            }
+          }, (0,_fable_library_3_1_1_Map_js__WEBPACK_IMPORTED_MODULE_4__.toList)(dictionary))));
+        }
+
+      case 4:
+        {
+          const values = _arg1.fields[0];
+          return new _Json_fs_js__WEBPACK_IMPORTED_MODULE_12__.Json(4, (0,_fable_library_3_1_1_List_js__WEBPACK_IMPORTED_MODULE_3__.map)((0,_fable_library_3_1_1_Util_js__WEBPACK_IMPORTED_MODULE_9__.partialApply)(1, mapKey, [xs]), values));
+        }
+
+      default:
+        {
+          const otherJsonValue = _arg1;
+          return otherJsonValue;
+        }
+    }
+  };
+
+  return mapKey((0,_fable_library_3_1_1_List_js__WEBPACK_IMPORTED_MODULE_3__.empty)(), json);
+}
+function SimpleJson_readPath(keys_mut, input_mut) {
+  SimpleJson_readPath: while (true) {
+    const keys = keys_mut,
+          input = input_mut;
+    const matchValue = [keys, input];
+    let pattern_matching_result, dict, key, dict_1, firstKey, rest;
+
+    if (matchValue[0].tail != null) {
+      if (matchValue[0].tail.tail == null) {
+        if (matchValue[1].tag === 5) {
+          pattern_matching_result = 1;
+          dict = matchValue[1].fields[0];
+          key = matchValue[0].head;
+        } else {
+          pattern_matching_result = 3;
+        }
+      } else if (matchValue[1].tag === 5) {
+        pattern_matching_result = 2;
+        dict_1 = matchValue[1].fields[0];
+        firstKey = matchValue[0].head;
+        rest = matchValue[0].tail;
+      } else {
+        pattern_matching_result = 3;
+      }
+    } else {
+      pattern_matching_result = 0;
+    }
+
+    switch (pattern_matching_result) {
+      case 0:
+        {
+          return void 0;
+        }
+
+      case 1:
+        {
+          return (0,_fable_library_3_1_1_Map_js__WEBPACK_IMPORTED_MODULE_4__.tryFind)(key, dict);
+        }
+
+      case 2:
+        {
+          const matchValue_1 = (0,_fable_library_3_1_1_Map_js__WEBPACK_IMPORTED_MODULE_4__.tryFind)(firstKey, dict_1);
+          let pattern_matching_result_1, nextDict;
+
+          if (matchValue_1 != null) {
+            if (matchValue_1.tag === 5) {
+              pattern_matching_result_1 = 0;
+              nextDict = matchValue_1.fields[0];
+            } else {
+              pattern_matching_result_1 = 1;
+            }
+          } else {
+            pattern_matching_result_1 = 1;
+          }
+
+          switch (pattern_matching_result_1) {
+            case 0:
+              {
+                keys_mut = rest;
+                input_mut = new _Json_fs_js__WEBPACK_IMPORTED_MODULE_12__.Json(5, nextDict);
+                continue SimpleJson_readPath;
+              }
+
+            case 1:
+              {
+                return void 0;
+              }
+          }
+        }
+
+      case 3:
+        {
+          return void 0;
+        }
+    }
+
+    break;
+  }
+}
+
+/***/ }),
+
+/***/ "./resources/js/.fable/Fable.SimpleJson.3.19.0/TypeCheck.fs.js":
+/*!*********************************************************************!*\
+  !*** ./resources/js/.fable/Fable.SimpleJson.3.19.0/TypeCheck.fs.js ***!
+  \*********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "$007CNativeString$007C_$007C": () => (/* binding */ $007CNativeString$007C_$007C),
+/* harmony export */   "$007CNativeBool$007C_$007C": () => (/* binding */ $007CNativeBool$007C_$007C),
+/* harmony export */   "$007CNativeNumber$007C_$007C": () => (/* binding */ $007CNativeNumber$007C_$007C),
+/* harmony export */   "$007CNativeObject$007C_$007C": () => (/* binding */ $007CNativeObject$007C_$007C),
+/* harmony export */   "$007CNull$007C_$007C": () => (/* binding */ $007CNull$007C_$007C),
+/* harmony export */   "$007CNativeArray$007C_$007C": () => (/* binding */ $007CNativeArray$007C_$007C)
+/* harmony export */ });
+/* harmony import */ var _fable_library_3_1_1_Option_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../fable-library.3.1.1/Option.js */ "./resources/js/.fable/fable-library.3.1.1/Option.js");
+
+function $007CNativeString$007C_$007C(x) {
+  if (typeof x === 'string') {
+    return x;
+  } else {
+    return void 0;
+  }
+}
+function $007CNativeBool$007C_$007C(x) {
+  if (typeof x === 'boolean') {
+    return x;
+  } else {
+    return void 0;
+  }
+}
+function $007CNativeNumber$007C_$007C(x) {
+  if (typeof x === 'number') {
+    return x;
+  } else {
+    return void 0;
+  }
+}
+function $007CNativeObject$007C_$007C(x) {
+  if (typeof x === 'object') {
+    return (0,_fable_library_3_1_1_Option_js__WEBPACK_IMPORTED_MODULE_0__.some)(x);
+  } else {
+    return void 0;
+  }
+}
+function $007CNull$007C_$007C(x) {
+  if (x == null) {
+    return (0,_fable_library_3_1_1_Option_js__WEBPACK_IMPORTED_MODULE_0__.some)(x);
+  } else {
+    return void 0;
+  }
+}
+function $007CNativeArray$007C_$007C(x) {
+  if (Array.isArray(x)) {
+    return x;
+  } else {
+    return void 0;
+  }
+}
+
+/***/ }),
+
+/***/ "./resources/js/.fable/Fable.SimpleJson.3.19.0/TypeInfo.Converter.fs.js":
+/*!******************************************************************************!*\
+  !*** ./resources/js/.fable/Fable.SimpleJson.3.19.0/TypeInfo.Converter.fs.js ***!
+  \******************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "$007CPrimitiveType$007C_$007C": () => (/* binding */ $007CPrimitiveType$007C_$007C),
+/* harmony export */   "$007CRecordType$007C_$007C": () => (/* binding */ $007CRecordType$007C_$007C),
+/* harmony export */   "$007CSetType$007C_$007C": () => (/* binding */ $007CSetType$007C_$007C),
+/* harmony export */   "$007CNullable$007C_$007C": () => (/* binding */ $007CNullable$007C_$007C),
+/* harmony export */   "$007CUnionType$007C_$007C": () => (/* binding */ $007CUnionType$007C_$007C),
+/* harmony export */   "$007CMapType$007C_$007C": () => (/* binding */ $007CMapType$007C_$007C),
+/* harmony export */   "$007CListType$007C_$007C": () => (/* binding */ $007CListType$007C_$007C),
+/* harmony export */   "flattenFuncTypes": () => (/* binding */ flattenFuncTypes),
+/* harmony export */   "$007CFuncType$007C_$007C": () => (/* binding */ $007CFuncType$007C_$007C),
+/* harmony export */   "$007CArrayType$007C_$007C": () => (/* binding */ $007CArrayType$007C_$007C),
+/* harmony export */   "$007COptionType$007C_$007C": () => (/* binding */ $007COptionType$007C_$007C),
+/* harmony export */   "$007CTupleType$007C_$007C": () => (/* binding */ $007CTupleType$007C_$007C),
+/* harmony export */   "$007CSeqType$007C_$007C": () => (/* binding */ $007CSeqType$007C_$007C),
+/* harmony export */   "$007CDictionaryType$007C_$007C": () => (/* binding */ $007CDictionaryType$007C_$007C),
+/* harmony export */   "$007CResizeArrayType$007C_$007C": () => (/* binding */ $007CResizeArrayType$007C_$007C),
+/* harmony export */   "$007CHashSetType$007C_$007C": () => (/* binding */ $007CHashSetType$007C_$007C),
+/* harmony export */   "$007CAsyncType$007C_$007C": () => (/* binding */ $007CAsyncType$007C_$007C),
+/* harmony export */   "$007CPromiseType$007C_$007C": () => (/* binding */ $007CPromiseType$007C_$007C),
+/* harmony export */   "$007CEnumType$007C_$007C": () => (/* binding */ $007CEnumType$007C_$007C),
+/* harmony export */   "createTypeInfo": () => (/* binding */ createTypeInfo),
+/* harmony export */   "isPrimitive": () => (/* binding */ isPrimitive),
+/* harmony export */   "enumUnion": () => (/* binding */ enumUnion)
+/* harmony export */ });
+/* harmony import */ var _fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../fable-library.3.1.1/Reflection.js */ "./resources/js/.fable/fable-library.3.1.1/Reflection.js");
+/* harmony import */ var _TypeInfo_fs_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./TypeInfo.fs.js */ "./resources/js/.fable/Fable.SimpleJson.3.19.0/TypeInfo.fs.js");
+/* harmony import */ var _fable_library_3_1_1_Array_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../fable-library.3.1.1/Array.js */ "./resources/js/.fable/fable-library.3.1.1/Array.js");
+/* harmony import */ var _fable_library_3_1_1_Seq_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../fable-library.3.1.1/Seq.js */ "./resources/js/.fable/fable-library.3.1.1/Seq.js");
+/* harmony import */ var _fable_library_3_1_1_Util_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../fable-library.3.1.1/Util.js */ "./resources/js/.fable/fable-library.3.1.1/Util.js");
+/* harmony import */ var _fable_library_3_1_1_MutableMap_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../fable-library.3.1.1/MutableMap.js */ "./resources/js/.fable/fable-library.3.1.1/MutableMap.js");
+/* harmony import */ var _fable_library_3_1_1_MapUtil_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../fable-library.3.1.1/MapUtil.js */ "./resources/js/.fable/fable-library.3.1.1/MapUtil.js");
+/* harmony import */ var _fable_library_3_1_1_Types_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../fable-library.3.1.1/Types.js */ "./resources/js/.fable/fable-library.3.1.1/Types.js");
+/* harmony import */ var _fable_library_3_1_1_String_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../fable-library.3.1.1/String.js */ "./resources/js/.fable/fable-library.3.1.1/String.js");
+
+
+
+
+
+
+
+
+
+function $007CPrimitiveType$007C_$007C(primType) {
+  const matchValue = (0,_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_0__.fullName)(primType);
+
+  switch (matchValue) {
+    case "System.String":
+      {
+        return new _TypeInfo_fs_js__WEBPACK_IMPORTED_MODULE_1__.TypeInfo(1);
+      }
+
+    case "System.Int16":
+      {
+        return new _TypeInfo_fs_js__WEBPACK_IMPORTED_MODULE_1__.TypeInfo(10);
+      }
+
+    case "System.Int32":
+      {
+        return new _TypeInfo_fs_js__WEBPACK_IMPORTED_MODULE_1__.TypeInfo(5);
+      }
+
+    case "Microsoft.FSharp.Core.int64`1":
+    case "System.Int64":
+      {
+        return new _TypeInfo_fs_js__WEBPACK_IMPORTED_MODULE_1__.TypeInfo(11);
+      }
+
+    case "System.UInt16":
+      {
+        return new _TypeInfo_fs_js__WEBPACK_IMPORTED_MODULE_1__.TypeInfo(2);
+      }
+
+    case "System.UInt32":
+      {
+        return new _TypeInfo_fs_js__WEBPACK_IMPORTED_MODULE_1__.TypeInfo(3);
+      }
+
+    case "System.UInt64":
+      {
+        return new _TypeInfo_fs_js__WEBPACK_IMPORTED_MODULE_1__.TypeInfo(4);
+      }
+
+    case "System.DateTime":
+      {
+        return new _TypeInfo_fs_js__WEBPACK_IMPORTED_MODULE_1__.TypeInfo(13);
+      }
+
+    case "System.TimeSpan":
+      {
+        return new _TypeInfo_fs_js__WEBPACK_IMPORTED_MODULE_1__.TypeInfo(16);
+      }
+
+    case "System.DateTimeOffset":
+      {
+        return new _TypeInfo_fs_js__WEBPACK_IMPORTED_MODULE_1__.TypeInfo(14);
+      }
+
+    case "System.Boolean":
+      {
+        return new _TypeInfo_fs_js__WEBPACK_IMPORTED_MODULE_1__.TypeInfo(6);
+      }
+
+    case "System.Single":
+      {
+        return new _TypeInfo_fs_js__WEBPACK_IMPORTED_MODULE_1__.TypeInfo(7);
+      }
+
+    case "System.Double":
+      {
+        return new _TypeInfo_fs_js__WEBPACK_IMPORTED_MODULE_1__.TypeInfo(8);
+      }
+
+    case "Microsoft.FSharp.Core.decimal`1":
+    case "System.Decimal":
+      {
+        return new _TypeInfo_fs_js__WEBPACK_IMPORTED_MODULE_1__.TypeInfo(9);
+      }
+
+    case "System.Numerics.BigInteger":
+      {
+        return new _TypeInfo_fs_js__WEBPACK_IMPORTED_MODULE_1__.TypeInfo(15);
+      }
+
+    case "Microsoft.FSharp.Core.Unit":
+      {
+        return new _TypeInfo_fs_js__WEBPACK_IMPORTED_MODULE_1__.TypeInfo(0);
+      }
+
+    case "System.Guid":
+      {
+        return new _TypeInfo_fs_js__WEBPACK_IMPORTED_MODULE_1__.TypeInfo(17);
+      }
+
+    case "System.Byte":
+      {
+        return new _TypeInfo_fs_js__WEBPACK_IMPORTED_MODULE_1__.TypeInfo(12);
+      }
+
+    case "System.Object":
+      {
+        return new _TypeInfo_fs_js__WEBPACK_IMPORTED_MODULE_1__.TypeInfo(18);
+      }
+
+    default:
+      {
+        return void 0;
+      }
+  }
+}
+function $007CRecordType$007C_$007C(t) {
+  if ((0,_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_0__.isRecord)(t)) {
+    return (0,_fable_library_3_1_1_Array_js__WEBPACK_IMPORTED_MODULE_2__.map)(field => [field, (0,_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_0__.name)(field), field[1]], (0,_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_0__.getRecordElements)(t));
+  } else {
+    return void 0;
+  }
+}
+function $007CSetType$007C_$007C(t) {
+  if ((0,_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_0__.fullName)(t).indexOf("Microsoft.FSharp.Collections.FSharpSet`1") === 0) {
+    return (0,_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_0__.getGenerics)(t)[0];
+  } else {
+    return void 0;
+  }
+}
+function $007CNullable$007C_$007C(t) {
+  if ((0,_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_0__.fullName)(t).indexOf("System.Nullable`1") === 0) {
+    return (0,_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_0__.getGenerics)(t)[0];
+  } else {
+    return void 0;
+  }
+}
+function $007CUnionType$007C_$007C(t) {
+  if ((0,_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_0__.isUnion)(t)) {
+    return (0,_fable_library_3_1_1_Array_js__WEBPACK_IMPORTED_MODULE_2__.map)(info => {
+      const caseName = (0,_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_0__.name)(info);
+      const caseTypes = (0,_fable_library_3_1_1_Array_js__WEBPACK_IMPORTED_MODULE_2__.map)(prop => prop[1], (0,_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_0__.getUnionCaseFields)(info));
+      return [caseName, info, caseTypes];
+    }, (0,_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_0__.getUnionCases)(t));
+  } else {
+    return void 0;
+  }
+}
+function $007CMapType$007C_$007C(t) {
+  if ((0,_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_0__.fullName)(t).indexOf("Microsoft.FSharp.Collections.FSharpMap`2") === 0) {
+    const genArgs = (0,_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_0__.getGenerics)(t);
+    return [genArgs[0], genArgs[1]];
+  } else {
+    return void 0;
+  }
+}
+function $007CListType$007C_$007C(t) {
+  if ((0,_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_0__.fullName)(t).indexOf("Microsoft.FSharp.Collections.FSharpList`1") === 0) {
+    return (0,_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_0__.getGenerics)(t)[0];
+  } else {
+    return void 0;
+  }
+}
+function flattenFuncTypes(typeDef) {
+  return Array.from((0,_fable_library_3_1_1_Seq_js__WEBPACK_IMPORTED_MODULE_3__.delay)(() => {
+    if ((0,_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_0__.isFunction)(typeDef)) {
+      const patternInput = (0,_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_0__.getFunctionElements)(typeDef);
+      const range = patternInput[1];
+      const domain = patternInput[0];
+      return (0,_fable_library_3_1_1_Seq_js__WEBPACK_IMPORTED_MODULE_3__.append)(flattenFuncTypes(domain), (0,_fable_library_3_1_1_Seq_js__WEBPACK_IMPORTED_MODULE_3__.delay)(() => flattenFuncTypes(range)));
+    } else {
+      return (0,_fable_library_3_1_1_Seq_js__WEBPACK_IMPORTED_MODULE_3__.singleton)(typeDef);
+    }
+  }));
+}
+function $007CFuncType$007C_$007C(t) {
+  if ((0,_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_0__.isFunction)(t)) {
+    return flattenFuncTypes(t);
+  } else {
+    return void 0;
+  }
+}
+function $007CArrayType$007C_$007C(t) {
+  if ((0,_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_0__.isArray)(t)) {
+    return (0,_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_0__.getElementType)(t);
+  } else {
+    return void 0;
+  }
+}
+function $007COptionType$007C_$007C(t) {
+  if ((0,_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_0__.fullName)(t).indexOf("Microsoft.FSharp.Core.FSharpOption`1") === 0) {
+    return (0,_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_0__.getGenerics)(t)[0];
+  } else {
+    return void 0;
+  }
+}
+function $007CTupleType$007C_$007C(t) {
+  if ((0,_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_0__.isTuple)(t)) {
+    return (0,_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_0__.getTupleElements)(t);
+  } else {
+    return void 0;
+  }
+}
+function $007CSeqType$007C_$007C(t) {
+  if ((0,_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_0__.fullName)(t).indexOf("System.Collections.Generic.IEnumerable`1") === 0) {
+    return (0,_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_0__.getGenerics)(t)[0];
+  } else {
+    return void 0;
+  }
+}
+function $007CDictionaryType$007C_$007C(t) {
+  if ((0,_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_0__.fullName)(t).indexOf("System.Collections.Generic.Dictionary") === 0) {
+    const genArgs = (0,_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_0__.getGenerics)(t);
+    return [genArgs[0], genArgs[1]];
+  } else {
+    return void 0;
+  }
+}
+function $007CResizeArrayType$007C_$007C(t) {
+  if ((0,_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_0__.fullName)(t).indexOf("System.Collections.Generic.List") === 0) {
+    return (0,_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_0__.getGenerics)(t)[0];
+  } else {
+    return void 0;
+  }
+}
+function $007CHashSetType$007C_$007C(t) {
+  if ((0,_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_0__.fullName)(t).indexOf("System.Collections.Generic.HashSet") === 0) {
+    return (0,_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_0__.getGenerics)(t)[0];
+  } else {
+    return void 0;
+  }
+}
+function $007CAsyncType$007C_$007C(t) {
+  if ((0,_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_0__.fullName)(t).indexOf("Microsoft.FSharp.Control.FSharpAsync`1") === 0) {
+    return (0,_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_0__.getGenerics)(t)[0];
+  } else {
+    return void 0;
+  }
+}
+function $007CPromiseType$007C_$007C(t) {
+  if ((0,_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_0__.fullName)(t).indexOf("Fable.Core.JS.Promise`1") === 0) {
+    return (0,_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_0__.getGenerics)(t)[0];
+  } else {
+    return void 0;
+  }
+}
+
+function lazyToDelayed(l, unitVar0) {
+  return l.Value;
+}
+
+function $007CEnumType$007C_$007C(t) {
+  if ((0,_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_0__.isEnum)(t)) {
+    return (0,_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_0__.getEnumUnderlyingType)(t);
+  } else {
+    return void 0;
+  }
+}
+
+function _createTypeInfo(resolvedType) {
+  let l, l_3, l_4, l_5, l_6, l_7, l_8, l_9, l_10, l_11, l_12, l_13, l_14, l_15, l_16, l_17;
+  const activePatternResult1676 = $007CPrimitiveType$007C_$007C(resolvedType);
+
+  if (activePatternResult1676 != null) {
+    const typeInfo = activePatternResult1676;
+    return typeInfo;
+  } else {
+    const activePatternResult1675 = $007CFuncType$007C_$007C(resolvedType);
+
+    if (activePatternResult1675 != null) {
+      const types = activePatternResult1675;
+      return new _TypeInfo_fs_js__WEBPACK_IMPORTED_MODULE_1__.TypeInfo(32, (l = new _fable_library_3_1_1_Util_js__WEBPACK_IMPORTED_MODULE_4__.Lazy(() => (0,_fable_library_3_1_1_Array_js__WEBPACK_IMPORTED_MODULE_2__.map)(createTypeInfo, types)), () => lazyToDelayed(l, void 0)));
+    } else {
+      const activePatternResult1674 = $007CRecordType$007C_$007C(resolvedType);
+
+      if (activePatternResult1674 != null) {
+        const fields = activePatternResult1674;
+        const l_1 = new _fable_library_3_1_1_Util_js__WEBPACK_IMPORTED_MODULE_4__.Lazy(() => {
+          const fields_1 = Array.from((0,_fable_library_3_1_1_Seq_js__WEBPACK_IMPORTED_MODULE_3__.delay)(() => (0,_fable_library_3_1_1_Seq_js__WEBPACK_IMPORTED_MODULE_3__.collect)(matchValue => {
+            const fieldType = matchValue[2];
+            const fieldName = matchValue[1];
+            const field = matchValue[0];
+            return (0,_fable_library_3_1_1_Seq_js__WEBPACK_IMPORTED_MODULE_3__.singleton)(new _TypeInfo_fs_js__WEBPACK_IMPORTED_MODULE_1__.RecordField(fieldName, createTypeInfo(fieldType), field));
+          }, fields)));
+          return [fields_1, resolvedType];
+        });
+        return new _TypeInfo_fs_js__WEBPACK_IMPORTED_MODULE_1__.TypeInfo(34, () => lazyToDelayed(l_1, void 0));
+      } else {
+        const activePatternResult1673 = $007CUnionType$007C_$007C(resolvedType);
+
+        if (activePatternResult1673 != null) {
+          const cases = activePatternResult1673;
+          const l_2 = new _fable_library_3_1_1_Util_js__WEBPACK_IMPORTED_MODULE_4__.Lazy(() => [Array.from((0,_fable_library_3_1_1_Seq_js__WEBPACK_IMPORTED_MODULE_3__.delay)(() => (0,_fable_library_3_1_1_Seq_js__WEBPACK_IMPORTED_MODULE_3__.collect)(matchValue_1 => {
+            const caseTypes = matchValue_1[2];
+            const caseName = matchValue_1[0];
+            const caseInfo = matchValue_1[1];
+            return (0,_fable_library_3_1_1_Seq_js__WEBPACK_IMPORTED_MODULE_3__.singleton)(new _TypeInfo_fs_js__WEBPACK_IMPORTED_MODULE_1__.UnionCase(caseName, (0,_fable_library_3_1_1_Array_js__WEBPACK_IMPORTED_MODULE_2__.map)(createTypeInfo, caseTypes), caseInfo));
+          }, cases))), resolvedType]);
+          return new _TypeInfo_fs_js__WEBPACK_IMPORTED_MODULE_1__.TypeInfo(35, () => lazyToDelayed(l_2, void 0));
+        } else {
+          const activePatternResult1672 = $007CEnumType$007C_$007C(resolvedType);
+
+          if (activePatternResult1672 != null) {
+            const elemType = activePatternResult1672;
+            return new _TypeInfo_fs_js__WEBPACK_IMPORTED_MODULE_1__.TypeInfo(33, (l_3 = new _fable_library_3_1_1_Util_js__WEBPACK_IMPORTED_MODULE_4__.Lazy(() => [createTypeInfo(elemType), resolvedType]), () => lazyToDelayed(l_3, void 0)));
+          } else {
+            const activePatternResult1671 = $007CListType$007C_$007C(resolvedType);
+
+            if (activePatternResult1671 != null) {
+              const elemType_1 = activePatternResult1671;
+              return new _TypeInfo_fs_js__WEBPACK_IMPORTED_MODULE_1__.TypeInfo(23, (l_4 = new _fable_library_3_1_1_Util_js__WEBPACK_IMPORTED_MODULE_4__.Lazy(() => createTypeInfo(elemType_1)), () => lazyToDelayed(l_4, void 0)));
+            } else {
+              const activePatternResult1670 = $007CResizeArrayType$007C_$007C(resolvedType);
+
+              if (activePatternResult1670 != null) {
+                const elemType_2 = activePatternResult1670;
+                return new _TypeInfo_fs_js__WEBPACK_IMPORTED_MODULE_1__.TypeInfo(30, (l_5 = new _fable_library_3_1_1_Util_js__WEBPACK_IMPORTED_MODULE_4__.Lazy(() => createTypeInfo(elemType_2)), () => lazyToDelayed(l_5, void 0)));
+              } else {
+                const activePatternResult1669 = $007CHashSetType$007C_$007C(resolvedType);
+
+                if (activePatternResult1669 != null) {
+                  const elemType_3 = activePatternResult1669;
+                  return new _TypeInfo_fs_js__WEBPACK_IMPORTED_MODULE_1__.TypeInfo(31, (l_6 = new _fable_library_3_1_1_Util_js__WEBPACK_IMPORTED_MODULE_4__.Lazy(() => createTypeInfo(elemType_3)), () => lazyToDelayed(l_6, void 0)));
+                } else {
+                  const activePatternResult1668 = $007CArrayType$007C_$007C(resolvedType);
+
+                  if (activePatternResult1668 != null) {
+                    const elemType_4 = activePatternResult1668;
+                    return new _TypeInfo_fs_js__WEBPACK_IMPORTED_MODULE_1__.TypeInfo(25, (l_7 = new _fable_library_3_1_1_Util_js__WEBPACK_IMPORTED_MODULE_4__.Lazy(() => createTypeInfo(elemType_4)), () => lazyToDelayed(l_7, void 0)));
+                  } else {
+                    const activePatternResult1667 = $007CTupleType$007C_$007C(resolvedType);
+
+                    if (activePatternResult1667 != null) {
+                      const types_1 = activePatternResult1667;
+                      return new _TypeInfo_fs_js__WEBPACK_IMPORTED_MODULE_1__.TypeInfo(27, (l_8 = new _fable_library_3_1_1_Util_js__WEBPACK_IMPORTED_MODULE_4__.Lazy(() => (0,_fable_library_3_1_1_Array_js__WEBPACK_IMPORTED_MODULE_2__.map)(createTypeInfo, types_1)), () => lazyToDelayed(l_8, void 0)));
+                    } else {
+                      const activePatternResult1666 = $007COptionType$007C_$007C(resolvedType);
+
+                      if (activePatternResult1666 != null) {
+                        const elemType_5 = activePatternResult1666;
+                        return new _TypeInfo_fs_js__WEBPACK_IMPORTED_MODULE_1__.TypeInfo(22, (l_9 = new _fable_library_3_1_1_Util_js__WEBPACK_IMPORTED_MODULE_4__.Lazy(() => createTypeInfo(elemType_5)), () => lazyToDelayed(l_9, void 0)));
+                      } else {
+                        const activePatternResult1665 = $007CNullable$007C_$007C(resolvedType);
+
+                        if (activePatternResult1665 != null) {
+                          const elemType_6 = activePatternResult1665;
+                          return new _TypeInfo_fs_js__WEBPACK_IMPORTED_MODULE_1__.TypeInfo(22, (l_10 = new _fable_library_3_1_1_Util_js__WEBPACK_IMPORTED_MODULE_4__.Lazy(() => createTypeInfo(elemType_6)), () => lazyToDelayed(l_10, void 0)));
+                        } else {
+                          const activePatternResult1664 = $007CSetType$007C_$007C(resolvedType);
+
+                          if (activePatternResult1664 != null) {
+                            const elemType_7 = activePatternResult1664;
+                            return new _TypeInfo_fs_js__WEBPACK_IMPORTED_MODULE_1__.TypeInfo(24, (l_11 = new _fable_library_3_1_1_Util_js__WEBPACK_IMPORTED_MODULE_4__.Lazy(() => createTypeInfo(elemType_7)), () => lazyToDelayed(l_11, void 0)));
+                          } else {
+                            const activePatternResult1663 = $007CMapType$007C_$007C(resolvedType);
+
+                            if (activePatternResult1663 != null) {
+                              const keyType = activePatternResult1663[0];
+                              const valueType = activePatternResult1663[1];
+                              return new _TypeInfo_fs_js__WEBPACK_IMPORTED_MODULE_1__.TypeInfo(28, (l_12 = new _fable_library_3_1_1_Util_js__WEBPACK_IMPORTED_MODULE_4__.Lazy(() => [createTypeInfo(keyType), createTypeInfo(valueType)]), () => lazyToDelayed(l_12, void 0)));
+                            } else {
+                              const activePatternResult1662 = $007CDictionaryType$007C_$007C(resolvedType);
+
+                              if (activePatternResult1662 != null) {
+                                const keyType_1 = activePatternResult1662[0];
+                                const valueType_1 = activePatternResult1662[1];
+                                return new _TypeInfo_fs_js__WEBPACK_IMPORTED_MODULE_1__.TypeInfo(29, (l_13 = new _fable_library_3_1_1_Util_js__WEBPACK_IMPORTED_MODULE_4__.Lazy(() => [createTypeInfo(keyType_1), createTypeInfo(valueType_1), valueType_1]), () => lazyToDelayed(l_13, void 0)));
+                              } else {
+                                const activePatternResult1661 = $007CSeqType$007C_$007C(resolvedType);
+
+                                if (activePatternResult1661 != null) {
+                                  const elemType_8 = activePatternResult1661;
+                                  return new _TypeInfo_fs_js__WEBPACK_IMPORTED_MODULE_1__.TypeInfo(26, (l_14 = new _fable_library_3_1_1_Util_js__WEBPACK_IMPORTED_MODULE_4__.Lazy(() => createTypeInfo(elemType_8)), () => lazyToDelayed(l_14, void 0)));
+                                } else {
+                                  const activePatternResult1660 = $007CAsyncType$007C_$007C(resolvedType);
+
+                                  if (activePatternResult1660 != null) {
+                                    const elemType_9 = activePatternResult1660;
+                                    return new _TypeInfo_fs_js__WEBPACK_IMPORTED_MODULE_1__.TypeInfo(20, (l_15 = new _fable_library_3_1_1_Util_js__WEBPACK_IMPORTED_MODULE_4__.Lazy(() => createTypeInfo(elemType_9)), () => lazyToDelayed(l_15, void 0)));
+                                  } else {
+                                    const activePatternResult1659 = $007CPromiseType$007C_$007C(resolvedType);
+
+                                    if (activePatternResult1659 != null) {
+                                      const elemType_10 = activePatternResult1659;
+                                      return new _TypeInfo_fs_js__WEBPACK_IMPORTED_MODULE_1__.TypeInfo(21, (l_16 = new _fable_library_3_1_1_Util_js__WEBPACK_IMPORTED_MODULE_4__.Lazy(() => createTypeInfo(elemType_10)), () => lazyToDelayed(l_16, void 0)));
+                                    } else {
+                                      return new _TypeInfo_fs_js__WEBPACK_IMPORTED_MODULE_1__.TypeInfo(19, (l_17 = new _fable_library_3_1_1_Util_js__WEBPACK_IMPORTED_MODULE_4__.Lazy(() => resolvedType), () => lazyToDelayed(l_17, void 0)));
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+const typeInfoCache = new _fable_library_3_1_1_MutableMap_js__WEBPACK_IMPORTED_MODULE_5__.Dictionary([], {
+  Equals: _fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_0__.equals,
+  GetHashCode: _fable_library_3_1_1_Util_js__WEBPACK_IMPORTED_MODULE_4__.structuralHash
+});
+function createTypeInfo(resolvedType) {
+  let matchValue;
+  let outArg = null;
+  matchValue = [(0,_fable_library_3_1_1_MapUtil_js__WEBPACK_IMPORTED_MODULE_6__.tryGetValue)(typeInfoCache, resolvedType, new _fable_library_3_1_1_Types_js__WEBPACK_IMPORTED_MODULE_7__.FSharpRef(() => outArg, v => {
+    outArg = v;
+  })), outArg];
+
+  if (matchValue[0]) {
+    const ti = matchValue[1];
+    return ti;
+  } else {
+    const ti_1 = _createTypeInfo(resolvedType);
+
+    const notAnonymousRecord = (!(0,_fable_library_3_1_1_String_js__WEBPACK_IMPORTED_MODULE_8__.isNullOrEmpty)((0,_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_0__.fullName)(resolvedType)) ? !(0,_fable_library_3_1_1_String_js__WEBPACK_IMPORTED_MODULE_8__.endsWith)((0,_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_0__.fullName)(resolvedType), "`1[]") : false) ? !(0,_fable_library_3_1_1_String_js__WEBPACK_IMPORTED_MODULE_8__.endsWith)((0,_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_0__.fullName)(resolvedType), "`2[]") : false;
+
+    if (notAnonymousRecord) {
+      typeInfoCache.set(resolvedType, ti_1);
+      return ti_1;
+    } else {
+      return ti_1;
+    }
+  }
+}
+function isPrimitive(_arg1) {
+  switch (_arg1.tag) {
+    case 0:
+    case 1:
+    case 2:
+    case 3:
+    case 4:
+    case 5:
+    case 6:
+    case 7:
+    case 8:
+    case 9:
+    case 10:
+    case 11:
+    case 12:
+    case 13:
+    case 14:
+    case 15:
+    case 17:
+    case 22:
+      {
+        return true;
+      }
+
+    default:
+      {
+        const otherwise = _arg1;
+        return false;
+      }
+  }
+}
+function enumUnion(_arg1) {
+  if (_arg1.tag === 35) {
+    const getCases = _arg1.fields[0];
+    return getCases()[0].every(case$ => case$.CaseTypes.length === 0);
+  } else {
+    const otherwise = _arg1;
+    return false;
+  }
+}
+
+/***/ }),
+
+/***/ "./resources/js/.fable/Fable.SimpleJson.3.19.0/TypeInfo.fs.js":
+/*!********************************************************************!*\
+  !*** ./resources/js/.fable/Fable.SimpleJson.3.19.0/TypeInfo.fs.js ***!
+  \********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "RecordField": () => (/* binding */ RecordField),
+/* harmony export */   "RecordField$reflection": () => (/* binding */ RecordField$reflection),
+/* harmony export */   "UnionCase": () => (/* binding */ UnionCase),
+/* harmony export */   "UnionCase$reflection": () => (/* binding */ UnionCase$reflection),
+/* harmony export */   "TypeInfo": () => (/* binding */ TypeInfo),
+/* harmony export */   "TypeInfo$reflection": () => (/* binding */ TypeInfo$reflection)
+/* harmony export */ });
+/* harmony import */ var _fable_library_3_1_1_Types_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../fable-library.3.1.1/Types.js */ "./resources/js/.fable/fable-library.3.1.1/Types.js");
+/* harmony import */ var _fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../fable-library.3.1.1/Reflection.js */ "./resources/js/.fable/fable-library.3.1.1/Reflection.js");
+
+
+class RecordField extends _fable_library_3_1_1_Types_js__WEBPACK_IMPORTED_MODULE_0__.Record {
+  constructor(FieldName, FieldType, PropertyInfo) {
+    super();
+    this.FieldName = FieldName;
+    this.FieldType = FieldType;
+    this.PropertyInfo = PropertyInfo;
+  }
+
+}
+function RecordField$reflection() {
+  return (0,_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.record_type)("Fable.SimpleJson.RecordField", [], RecordField, () => [["FieldName", _fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.string_type], ["FieldType", TypeInfo$reflection()], ["PropertyInfo", (0,_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.class_type)("System.Reflection.PropertyInfo")]]);
+}
+class UnionCase extends _fable_library_3_1_1_Types_js__WEBPACK_IMPORTED_MODULE_0__.Record {
+  constructor(CaseName, CaseTypes, Info) {
+    super();
+    this.CaseName = CaseName;
+    this.CaseTypes = CaseTypes;
+    this.Info = Info;
+  }
+
+}
+function UnionCase$reflection() {
+  return (0,_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.record_type)("Fable.SimpleJson.UnionCase", [], UnionCase, () => [["CaseName", _fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.string_type], ["CaseTypes", (0,_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.array_type)(TypeInfo$reflection())], ["Info", (0,_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.class_type)("Microsoft.FSharp.Reflection.UnionCaseInfo")]]);
+}
+class TypeInfo extends _fable_library_3_1_1_Types_js__WEBPACK_IMPORTED_MODULE_0__.Union {
+  constructor(tag, ...fields) {
+    super();
+    this.tag = tag | 0;
+    this.fields = fields;
+  }
+
+  cases() {
+    return ["Unit", "String", "UInt16", "UInt32", "UInt64", "Int32", "Bool", "Float32", "Float", "Decimal", "Short", "Long", "Byte", "DateTime", "DateTimeOffset", "BigInt", "TimeSpan", "Guid", "Object", "Any", "Async", "Promise", "Option", "List", "Set", "Array", "Seq", "Tuple", "Map", "Dictionary", "ResizeArray", "HashSet", "Func", "Enum", "Record", "Union"];
+  }
+
+}
+function TypeInfo$reflection() {
+  return (0,_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.union_type)("Fable.SimpleJson.TypeInfo", [], TypeInfo, () => [[], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [["Item", (0,_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.lambda_type)(_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.unit_type, (0,_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.class_type)("System.Type"))]], [["Item", (0,_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.lambda_type)(_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.unit_type, TypeInfo$reflection())]], [["Item", (0,_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.lambda_type)(_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.unit_type, TypeInfo$reflection())]], [["Item", (0,_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.lambda_type)(_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.unit_type, TypeInfo$reflection())]], [["Item", (0,_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.lambda_type)(_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.unit_type, TypeInfo$reflection())]], [["Item", (0,_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.lambda_type)(_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.unit_type, TypeInfo$reflection())]], [["Item", (0,_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.lambda_type)(_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.unit_type, TypeInfo$reflection())]], [["Item", (0,_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.lambda_type)(_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.unit_type, TypeInfo$reflection())]], [["Item", (0,_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.lambda_type)(_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.unit_type, (0,_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.array_type)(TypeInfo$reflection()))]], [["Item", (0,_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.lambda_type)(_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.unit_type, (0,_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.tuple_type)(TypeInfo$reflection(), TypeInfo$reflection()))]], [["Item", (0,_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.lambda_type)(_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.unit_type, (0,_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.tuple_type)(TypeInfo$reflection(), TypeInfo$reflection(), (0,_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.class_type)("System.Type")))]], [["Item", (0,_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.lambda_type)(_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.unit_type, TypeInfo$reflection())]], [["Item", (0,_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.lambda_type)(_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.unit_type, TypeInfo$reflection())]], [["Item", (0,_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.lambda_type)(_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.unit_type, (0,_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.array_type)(TypeInfo$reflection()))]], [["Item", (0,_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.lambda_type)(_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.unit_type, (0,_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.tuple_type)(TypeInfo$reflection(), (0,_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.class_type)("System.Type")))]], [["Item", (0,_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.lambda_type)(_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.unit_type, (0,_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.tuple_type)((0,_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.array_type)(RecordField$reflection()), (0,_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.class_type)("System.Type")))]], [["Item", (0,_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.lambda_type)(_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.unit_type, (0,_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.tuple_type)((0,_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.array_type)(UnionCase$reflection()), (0,_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.class_type)("System.Type")))]]]);
+}
+
+/***/ }),
+
+/***/ "./resources/js/.fable/Fable.SimpleJson.3.19.0/quote.js":
+/*!**************************************************************!*\
+  !*** ./resources/js/.fable/Fable.SimpleJson.3.19.0/quote.js ***!
+  \**************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ quote)
+/* harmony export */ });
+function quote(inputText) {
+  var escapable = /[\\\"\x00-\x1f\x7f-\x9f\u00ad\u0600-\u0604\u070f\u17b4\u17b5\u200c-\u200f\u2028-\u202f\u2060-\u206f\ufeff\ufff0-\uffff]/g;
+  var meta = {
+    '\b': '\\b',
+    '\t': '\\t',
+    '\n': '\\n',
+    '\f': '\\f',
+    '\r': '\\r',
+    '"': '\\"',
+    '\\': '\\\\'
+  };
+  escapable.lastIndex = 0;
+  return escapable.test(inputText) ? '"' + inputText.replace(escapable, function (a) {
+    var c = meta[a];
+    return typeof c === 'string' ? c : '\\u' + ('0000' + a.charCodeAt(0).toString(16)).slice(-4);
+  }) + '"' : '"' + inputText + '"';
+}
+
+/***/ }),
+
 /***/ "./resources/js/.fable/Feliz.1.40.0/Interop.fs.js":
 /*!********************************************************!*\
   !*** ./resources/js/.fable/Feliz.1.40.0/Interop.fs.js ***!
@@ -3161,15 +8689,15 @@ function DateParsing_parse(input) {
       let pattern_matching_result, month, year;
 
       if (!(0,_fable_library_3_1_1_Array_js__WEBPACK_IMPORTED_MODULE_4__.equalsWith)(_fable_library_3_1_1_Util_js__WEBPACK_IMPORTED_MODULE_5__.comparePrimitives, parts, null) ? parts.length === 2 : false) {
-        const activePatternResult1270 = DateParsing_$007CInt$007C_$007C(parts[0]);
+        const activePatternResult2138 = DateParsing_$007CInt$007C_$007C(parts[0]);
 
-        if (activePatternResult1270 != null) {
-          const activePatternResult1271 = DateParsing_$007CInt$007C_$007C(parts[1]);
+        if (activePatternResult2138 != null) {
+          const activePatternResult2139 = DateParsing_$007CInt$007C_$007C(parts[1]);
 
-          if (activePatternResult1271 != null) {
+          if (activePatternResult2139 != null) {
             pattern_matching_result = 0;
-            month = activePatternResult1271;
-            year = activePatternResult1270;
+            month = activePatternResult2139;
+            year = activePatternResult2138;
           } else {
             pattern_matching_result = 1;
           }
@@ -3192,19 +8720,19 @@ function DateParsing_parse(input) {
             let pattern_matching_result_1, day, month_1, year_1;
 
             if (!(0,_fable_library_3_1_1_Array_js__WEBPACK_IMPORTED_MODULE_4__.equalsWith)(_fable_library_3_1_1_Util_js__WEBPACK_IMPORTED_MODULE_5__.comparePrimitives, parts, null) ? parts.length === 3 : false) {
-              const activePatternResult1267 = DateParsing_$007CInt$007C_$007C(parts[0]);
+              const activePatternResult2135 = DateParsing_$007CInt$007C_$007C(parts[0]);
 
-              if (activePatternResult1267 != null) {
-                const activePatternResult1268 = DateParsing_$007CInt$007C_$007C(parts[1]);
+              if (activePatternResult2135 != null) {
+                const activePatternResult2136 = DateParsing_$007CInt$007C_$007C(parts[1]);
 
-                if (activePatternResult1268 != null) {
-                  const activePatternResult1269 = DateParsing_$007CInt$007C_$007C(parts[2]);
+                if (activePatternResult2136 != null) {
+                  const activePatternResult2137 = DateParsing_$007CInt$007C_$007C(parts[2]);
 
-                  if (activePatternResult1269 != null) {
+                  if (activePatternResult2137 != null) {
                     pattern_matching_result_1 = 0;
-                    day = activePatternResult1269;
-                    month_1 = activePatternResult1268;
-                    year_1 = activePatternResult1267;
+                    day = activePatternResult2137;
+                    month_1 = activePatternResult2136;
+                    year_1 = activePatternResult2135;
                   } else {
                     pattern_matching_result_1 = 1;
                   }
@@ -3230,16 +8758,16 @@ function DateParsing_parse(input) {
                   let pattern_matching_result_2, day_1, month_2, year_2;
 
                   if (!(0,_fable_library_3_1_1_Array_js__WEBPACK_IMPORTED_MODULE_4__.equalsWith)(_fable_library_3_1_1_Util_js__WEBPACK_IMPORTED_MODULE_5__.comparePrimitives, parts, null) ? parts.length === 3 : false) {
-                    const activePatternResult1265 = DateParsing_$007CInt$007C_$007C(parts[0]);
+                    const activePatternResult2133 = DateParsing_$007CInt$007C_$007C(parts[0]);
 
-                    if (activePatternResult1265 != null) {
-                      const activePatternResult1266 = DateParsing_$007CInt$007C_$007C(parts[1]);
+                    if (activePatternResult2133 != null) {
+                      const activePatternResult2134 = DateParsing_$007CInt$007C_$007C(parts[1]);
 
-                      if (activePatternResult1266 != null) {
+                      if (activePatternResult2134 != null) {
                         pattern_matching_result_2 = 0;
                         day_1 = parts[2];
-                        month_2 = activePatternResult1266;
-                        year_2 = activePatternResult1265;
+                        month_2 = activePatternResult2134;
+                        year_2 = activePatternResult2133;
                       } else {
                         pattern_matching_result_2 = 1;
                       }
@@ -3258,11 +8786,11 @@ function DateParsing_parse(input) {
                           let pattern_matching_result_3, parsedDay, time;
 
                           if (!(0,_fable_library_3_1_1_Array_js__WEBPACK_IMPORTED_MODULE_4__.equalsWith)(_fable_library_3_1_1_Util_js__WEBPACK_IMPORTED_MODULE_5__.comparePrimitives, matchValue, null) ? matchValue.length === 2 : false) {
-                            const activePatternResult1264 = DateParsing_$007CInt$007C_$007C(matchValue[0]);
+                            const activePatternResult2132 = DateParsing_$007CInt$007C_$007C(matchValue[0]);
 
-                            if (activePatternResult1264 != null) {
+                            if (activePatternResult2132 != null) {
                               pattern_matching_result_3 = 0;
-                              parsedDay = activePatternResult1264;
+                              parsedDay = activePatternResult2132;
                               time = matchValue[1];
                             } else {
                               pattern_matching_result_3 = 1;
@@ -3278,15 +8806,15 @@ function DateParsing_parse(input) {
                                 let pattern_matching_result_4, hour, minute;
 
                                 if (!(0,_fable_library_3_1_1_Array_js__WEBPACK_IMPORTED_MODULE_4__.equalsWith)(_fable_library_3_1_1_Util_js__WEBPACK_IMPORTED_MODULE_5__.comparePrimitives, matchValue_1, null) ? matchValue_1.length === 2 : false) {
-                                  const activePatternResult1262 = DateParsing_$007CInt$007C_$007C(matchValue_1[0]);
+                                  const activePatternResult2130 = DateParsing_$007CInt$007C_$007C(matchValue_1[0]);
 
-                                  if (activePatternResult1262 != null) {
-                                    const activePatternResult1263 = DateParsing_$007CInt$007C_$007C(matchValue_1[1]);
+                                  if (activePatternResult2130 != null) {
+                                    const activePatternResult2131 = DateParsing_$007CInt$007C_$007C(matchValue_1[1]);
 
-                                    if (activePatternResult1263 != null) {
+                                    if (activePatternResult2131 != null) {
                                       pattern_matching_result_4 = 0;
-                                      hour = activePatternResult1262;
-                                      minute = activePatternResult1263;
+                                      hour = activePatternResult2130;
+                                      minute = activePatternResult2131;
                                     } else {
                                       pattern_matching_result_4 = 1;
                                     }
@@ -5292,6 +10820,3891 @@ function transpose(arrays, cons) {
 
 /***/ }),
 
+/***/ "./resources/js/.fable/fable-library.3.1.1/Async.js":
+/*!**********************************************************!*\
+  !*** ./resources/js/.fable/fable-library.3.1.1/Async.js ***!
+  \**********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Async": () => (/* binding */ Async),
+/* harmony export */   "makeAsync": () => (/* binding */ makeAsync),
+/* harmony export */   "invoke": () => (/* binding */ invoke),
+/* harmony export */   "callThenInvoke": () => (/* binding */ callThenInvoke),
+/* harmony export */   "bind": () => (/* binding */ bind),
+/* harmony export */   "createCancellationToken": () => (/* binding */ createCancellationToken),
+/* harmony export */   "cancel": () => (/* binding */ cancel),
+/* harmony export */   "cancelAfter": () => (/* binding */ cancelAfter),
+/* harmony export */   "isCancellationRequested": () => (/* binding */ isCancellationRequested),
+/* harmony export */   "throwIfCancellationRequested": () => (/* binding */ throwIfCancellationRequested),
+/* harmony export */   "startChild": () => (/* binding */ startChild),
+/* harmony export */   "awaitPromise": () => (/* binding */ awaitPromise),
+/* harmony export */   "cancellationToken": () => (/* binding */ cancellationToken),
+/* harmony export */   "defaultCancellationToken": () => (/* binding */ defaultCancellationToken),
+/* harmony export */   "catchAsync": () => (/* binding */ catchAsync),
+/* harmony export */   "fromContinuations": () => (/* binding */ fromContinuations),
+/* harmony export */   "ignore": () => (/* binding */ ignore),
+/* harmony export */   "parallel": () => (/* binding */ parallel),
+/* harmony export */   "sleep": () => (/* binding */ sleep),
+/* harmony export */   "start": () => (/* binding */ start),
+/* harmony export */   "startImmediate": () => (/* binding */ startImmediate),
+/* harmony export */   "startWithContinuations": () => (/* binding */ startWithContinuations),
+/* harmony export */   "startAsPromise": () => (/* binding */ startAsPromise),
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _AsyncBuilder_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./AsyncBuilder.js */ "./resources/js/.fable/fable-library.3.1.1/AsyncBuilder.js");
+/* harmony import */ var _Choice_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Choice.js */ "./resources/js/.fable/fable-library.3.1.1/Choice.js");
+/* harmony import */ var _Seq_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Seq.js */ "./resources/js/.fable/fable-library.3.1.1/Seq.js");
+
+
+
+
+
+
+ // Implemented just for type references
+
+class Async {}
+
+function emptyContinuation(_x) {// NOP
+} // MakeAsync: body:(AsyncActivation<'T> -> AsyncReturn) -> Async<'T>
+
+
+function makeAsync(body) {
+  return body;
+} // Invoke: computation: Async<'T> -> ctxt:AsyncActivation<'T> -> AsyncReturn
+
+function invoke(computation, ctx) {
+  return computation(ctx);
+} // CallThenInvoke: ctxt:AsyncActivation<'T> -> result1:'U -> part2:('U -> Async<'T>) -> AsyncReturn
+
+function callThenInvoke(ctx, result1, part2) {
+  return part2(result1)(ctx);
+} // Bind: ctxt:AsyncActivation<'T> -> part1:Async<'U> -> part2:('U -> Async<'T>) -> AsyncReturn
+
+function bind(ctx, part1, part2) {
+  return (0,_AsyncBuilder_js__WEBPACK_IMPORTED_MODULE_0__.protectedBind)(part1, part2)(ctx);
+}
+function createCancellationToken(arg) {
+  const token = new _AsyncBuilder_js__WEBPACK_IMPORTED_MODULE_0__.CancellationToken(typeof arg === "boolean" ? arg : false);
+
+  if (typeof arg === "number") {
+    setTimeout(() => {
+      token.cancel();
+    }, arg);
+  }
+
+  return token;
+}
+function cancel(token) {
+  token.cancel();
+}
+function cancelAfter(token, ms) {
+  setTimeout(() => {
+    token.cancel();
+  }, ms);
+}
+function isCancellationRequested(token) {
+  return token != null && token.isCancelled;
+}
+function throwIfCancellationRequested(token) {
+  if (token != null && token.isCancelled) {
+    throw new Error("Operation is cancelled");
+  }
+}
+function startChild(computation) {
+  const promise = startAsPromise(computation); // JS Promises are hot, computation has already started
+  // but we delay returning the result
+
+  return (0,_AsyncBuilder_js__WEBPACK_IMPORTED_MODULE_0__.protectedCont)(ctx => (0,_AsyncBuilder_js__WEBPACK_IMPORTED_MODULE_0__.protectedReturn)(awaitPromise(promise))(ctx));
+}
+function awaitPromise(p) {
+  return fromContinuations(conts => p.then(conts[0]).catch(err => (err instanceof _AsyncBuilder_js__WEBPACK_IMPORTED_MODULE_0__.OperationCanceledError ? conts[2] : conts[1])(err)));
+}
+function cancellationToken() {
+  return (0,_AsyncBuilder_js__WEBPACK_IMPORTED_MODULE_0__.protectedCont)(ctx => ctx.onSuccess(ctx.cancelToken));
+}
+const defaultCancellationToken = new _AsyncBuilder_js__WEBPACK_IMPORTED_MODULE_0__.CancellationToken();
+function catchAsync(work) {
+  return (0,_AsyncBuilder_js__WEBPACK_IMPORTED_MODULE_0__.protectedCont)(ctx => {
+    work({
+      onSuccess: x => ctx.onSuccess((0,_Choice_js__WEBPACK_IMPORTED_MODULE_1__.Choice_makeChoice1Of2)(x)),
+      onError: ex => ctx.onSuccess((0,_Choice_js__WEBPACK_IMPORTED_MODULE_1__.Choice_makeChoice2Of2)(ex)),
+      onCancel: ctx.onCancel,
+      cancelToken: ctx.cancelToken,
+      trampoline: ctx.trampoline
+    });
+  });
+}
+function fromContinuations(f) {
+  return (0,_AsyncBuilder_js__WEBPACK_IMPORTED_MODULE_0__.protectedCont)(ctx => f([ctx.onSuccess, ctx.onError, ctx.onCancel]));
+}
+function ignore(computation) {
+  return (0,_AsyncBuilder_js__WEBPACK_IMPORTED_MODULE_0__.protectedBind)(computation, _x => (0,_AsyncBuilder_js__WEBPACK_IMPORTED_MODULE_0__.protectedReturn)(void 0));
+}
+function parallel(computations) {
+  return awaitPromise(Promise.all((0,_Seq_js__WEBPACK_IMPORTED_MODULE_2__.map)(w => startAsPromise(w), computations)));
+}
+function sleep(millisecondsDueTime) {
+  return (0,_AsyncBuilder_js__WEBPACK_IMPORTED_MODULE_0__.protectedCont)(ctx => {
+    let tokenId;
+    const timeoutId = setTimeout(() => {
+      ctx.cancelToken.removeListener(tokenId);
+      ctx.onSuccess(void 0);
+    }, millisecondsDueTime);
+    tokenId = ctx.cancelToken.addListener(() => {
+      clearTimeout(timeoutId);
+      ctx.onCancel(new _AsyncBuilder_js__WEBPACK_IMPORTED_MODULE_0__.OperationCanceledError());
+    });
+  });
+}
+function start(computation, cancellationToken) {
+  return startWithContinuations(computation, cancellationToken);
+}
+function startImmediate(computation, cancellationToken) {
+  return start(computation, cancellationToken);
+}
+function startWithContinuations(computation, continuation, exceptionContinuation, cancellationContinuation, cancelToken) {
+  if (typeof continuation !== "function") {
+    cancelToken = continuation;
+    continuation = undefined;
+  }
+
+  const trampoline = new _AsyncBuilder_js__WEBPACK_IMPORTED_MODULE_0__.Trampoline();
+  computation({
+    onSuccess: continuation ? continuation : emptyContinuation,
+    onError: exceptionContinuation ? exceptionContinuation : emptyContinuation,
+    onCancel: cancellationContinuation ? cancellationContinuation : emptyContinuation,
+    cancelToken: cancelToken ? cancelToken : defaultCancellationToken,
+    trampoline
+  });
+}
+function startAsPromise(computation, cancellationToken) {
+  return new Promise((resolve, reject) => startWithContinuations(computation, resolve, reject, reject, cancellationToken ? cancellationToken : defaultCancellationToken));
+}
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Async);
+
+/***/ }),
+
+/***/ "./resources/js/.fable/fable-library.3.1.1/AsyncBuilder.js":
+/*!*****************************************************************!*\
+  !*** ./resources/js/.fable/fable-library.3.1.1/AsyncBuilder.js ***!
+  \*****************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "CancellationToken": () => (/* binding */ CancellationToken),
+/* harmony export */   "OperationCanceledError": () => (/* binding */ OperationCanceledError),
+/* harmony export */   "Trampoline": () => (/* binding */ Trampoline),
+/* harmony export */   "protectedCont": () => (/* binding */ protectedCont),
+/* harmony export */   "protectedBind": () => (/* binding */ protectedBind),
+/* harmony export */   "protectedReturn": () => (/* binding */ protectedReturn),
+/* harmony export */   "AsyncBuilder": () => (/* binding */ AsyncBuilder),
+/* harmony export */   "singleton": () => (/* binding */ singleton)
+/* harmony export */ });
+class CancellationToken {
+  constructor(cancelled = false) {
+    this._id = 0;
+    this._cancelled = cancelled;
+    this._listeners = new Map();
+  }
+
+  get isCancelled() {
+    return this._cancelled;
+  }
+
+  cancel() {
+    if (!this._cancelled) {
+      this._cancelled = true;
+
+      for (const [, listener] of this._listeners) {
+        listener();
+      }
+    }
+  }
+
+  addListener(f) {
+    const id = this._id;
+
+    this._listeners.set(this._id++, f);
+
+    return id;
+  }
+
+  removeListener(id) {
+    return this._listeners.delete(id);
+  }
+
+  register(f, state) {
+    const $ = this;
+    const id = this.addListener(state == null ? f : () => f(state));
+    return {
+      Dispose() {
+        $.removeListener(id);
+      }
+
+    };
+  }
+
+}
+class OperationCanceledError extends Error {
+  constructor() {
+    super("The operation was canceled");
+    Object.setPrototypeOf(this, OperationCanceledError.prototype);
+  }
+
+}
+class Trampoline {
+  constructor() {
+    this.callCount = 0;
+  }
+
+  static get maxTrampolineCallCount() {
+    return 2000;
+  }
+
+  incrementAndCheck() {
+    return this.callCount++ > Trampoline.maxTrampolineCallCount;
+  }
+
+  hijack(f) {
+    this.callCount = 0;
+    setTimeout(f, 0);
+  }
+
+}
+function protectedCont(f) {
+  return ctx => {
+    if (ctx.cancelToken.isCancelled) {
+      ctx.onCancel(new OperationCanceledError());
+    } else if (ctx.trampoline.incrementAndCheck()) {
+      ctx.trampoline.hijack(() => {
+        try {
+          f(ctx);
+        } catch (err) {
+          ctx.onError(err);
+        }
+      });
+    } else {
+      try {
+        f(ctx);
+      } catch (err) {
+        ctx.onError(err);
+      }
+    }
+  };
+}
+function protectedBind(computation, binder) {
+  return protectedCont(ctx => {
+    computation({
+      onSuccess: x => {
+        try {
+          binder(x)(ctx);
+        } catch (ex) {
+          ctx.onError(ex);
+        }
+      },
+      onError: ctx.onError,
+      onCancel: ctx.onCancel,
+      cancelToken: ctx.cancelToken,
+      trampoline: ctx.trampoline
+    });
+  });
+}
+function protectedReturn(value) {
+  return protectedCont(ctx => ctx.onSuccess(value));
+}
+class AsyncBuilder {
+  Bind(computation, binder) {
+    return protectedBind(computation, binder);
+  }
+
+  Combine(computation1, computation2) {
+    return this.Bind(computation1, () => computation2);
+  }
+
+  Delay(generator) {
+    return protectedCont(ctx => generator()(ctx));
+  }
+
+  For(sequence, body) {
+    const iter = sequence[Symbol.iterator]();
+    let cur = iter.next();
+    return this.While(() => !cur.done, this.Delay(() => {
+      const res = body(cur.value);
+      cur = iter.next();
+      return res;
+    }));
+  }
+
+  Return(value) {
+    return protectedReturn(value);
+  }
+
+  ReturnFrom(computation) {
+    return computation;
+  }
+
+  TryFinally(computation, compensation) {
+    return protectedCont(ctx => {
+      computation({
+        onSuccess: x => {
+          compensation();
+          ctx.onSuccess(x);
+        },
+        onError: x => {
+          compensation();
+          ctx.onError(x);
+        },
+        onCancel: x => {
+          compensation();
+          ctx.onCancel(x);
+        },
+        cancelToken: ctx.cancelToken,
+        trampoline: ctx.trampoline
+      });
+    });
+  }
+
+  TryWith(computation, catchHandler) {
+    return protectedCont(ctx => {
+      computation({
+        onSuccess: ctx.onSuccess,
+        onCancel: ctx.onCancel,
+        cancelToken: ctx.cancelToken,
+        trampoline: ctx.trampoline,
+        onError: ex => {
+          try {
+            catchHandler(ex)(ctx);
+          } catch (ex2) {
+            ctx.onError(ex2);
+          }
+        }
+      });
+    });
+  }
+
+  Using(resource, binder) {
+    return this.TryFinally(binder(resource), () => resource.Dispose());
+  }
+
+  While(guard, computation) {
+    if (guard()) {
+      return this.Bind(computation, () => this.While(guard, computation));
+    } else {
+      return this.Return(void 0);
+    }
+  }
+
+  Zero() {
+    return protectedCont(ctx => ctx.onSuccess(void 0));
+  }
+
+}
+const singleton = new AsyncBuilder();
+
+/***/ }),
+
+/***/ "./resources/js/.fable/fable-library.3.1.1/BigInt.js":
+/*!***********************************************************!*\
+  !*** ./resources/js/.fable/fable-library.3.1.1/BigInt.js ***!
+  \***********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "isBigInt": () => (/* binding */ isBigInt),
+/* harmony export */   "tryParse": () => (/* binding */ tryParse),
+/* harmony export */   "divRem": () => (/* binding */ divRem),
+/* harmony export */   "parse": () => (/* binding */ parse),
+/* harmony export */   "greatestCommonDivisor": () => (/* binding */ greatestCommonDivisor),
+/* harmony export */   "pow": () => (/* binding */ pow),
+/* harmony export */   "abs": () => (/* binding */ abs),
+/* harmony export */   "zero": () => (/* binding */ zero),
+/* harmony export */   "one": () => (/* binding */ one),
+/* harmony export */   "two": () => (/* binding */ two),
+/* harmony export */   "fromString": () => (/* binding */ fromString),
+/* harmony export */   "fromZero": () => (/* binding */ fromZero),
+/* harmony export */   "fromOne": () => (/* binding */ fromOne),
+/* harmony export */   "fromInt64": () => (/* binding */ fromInt64),
+/* harmony export */   "fromInt32": () => (/* binding */ fromInt32),
+/* harmony export */   "toSByte": () => (/* binding */ toSByte),
+/* harmony export */   "toByte": () => (/* binding */ toByte),
+/* harmony export */   "toInt16": () => (/* binding */ toInt16),
+/* harmony export */   "toUInt16": () => (/* binding */ toUInt16),
+/* harmony export */   "toInt32": () => (/* binding */ toInt32),
+/* harmony export */   "toUInt32": () => (/* binding */ toUInt32),
+/* harmony export */   "toInt64": () => (/* binding */ toInt64),
+/* harmony export */   "toUInt64": () => (/* binding */ toUInt64),
+/* harmony export */   "toSingle": () => (/* binding */ toSingle),
+/* harmony export */   "toDouble": () => (/* binding */ toDouble),
+/* harmony export */   "toDecimal": () => (/* binding */ toDecimal),
+/* harmony export */   "sign": () => (/* binding */ sign),
+/* harmony export */   "isZero": () => (/* binding */ isZero),
+/* harmony export */   "isOne": () => (/* binding */ isOne),
+/* harmony export */   "hash": () => (/* binding */ hash),
+/* harmony export */   "compare": () => (/* binding */ compare),
+/* harmony export */   "equals": () => (/* binding */ equals),
+/* harmony export */   "toString": () => (/* binding */ toString),
+/* harmony export */   "get_Zero": () => (/* binding */ get_Zero),
+/* harmony export */   "get_One": () => (/* binding */ get_One),
+/* harmony export */   "op_Addition": () => (/* binding */ op_Addition),
+/* harmony export */   "op_Subtraction": () => (/* binding */ op_Subtraction),
+/* harmony export */   "op_Multiply": () => (/* binding */ op_Multiply),
+/* harmony export */   "op_Division": () => (/* binding */ op_Division),
+/* harmony export */   "op_Modulus": () => (/* binding */ op_Modulus),
+/* harmony export */   "op_UnaryNegation": () => (/* binding */ op_UnaryNegation),
+/* harmony export */   "op_UnaryPlus": () => (/* binding */ op_UnaryPlus),
+/* harmony export */   "op_RightShift": () => (/* binding */ op_RightShift),
+/* harmony export */   "op_LeftShift": () => (/* binding */ op_LeftShift),
+/* harmony export */   "op_BitwiseAnd": () => (/* binding */ op_BitwiseAnd),
+/* harmony export */   "op_BitwiseOr": () => (/* binding */ op_BitwiseOr),
+/* harmony export */   "op_ExclusiveOr": () => (/* binding */ op_ExclusiveOr),
+/* harmony export */   "op_LessThan": () => (/* binding */ op_LessThan),
+/* harmony export */   "op_LessThanOrEqual": () => (/* binding */ op_LessThanOrEqual),
+/* harmony export */   "op_GreaterThan": () => (/* binding */ op_GreaterThan),
+/* harmony export */   "op_GreaterThanOrEqual": () => (/* binding */ op_GreaterThanOrEqual),
+/* harmony export */   "op_Equality": () => (/* binding */ op_Equality),
+/* harmony export */   "op_Inequality": () => (/* binding */ op_Inequality),
+/* harmony export */   "toByteArray": () => (/* binding */ toByteArray),
+/* harmony export */   "fromByteArray": () => (/* binding */ fromByteArray),
+/* harmony export */   "makeRangeStepFunction": () => (/* binding */ makeRangeStepFunction),
+/* harmony export */   "range": () => (/* binding */ range)
+/* harmony export */ });
+/* harmony import */ var _BigInt_z_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./BigInt/z.js */ "./resources/js/.fable/fable-library.3.1.1/BigInt/z.js");
+/* harmony import */ var _Long_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Long.js */ "./resources/js/.fable/fable-library.3.1.1/Long.js");
+/* harmony import */ var _Util_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Util.js */ "./resources/js/.fable/fable-library.3.1.1/Util.js");
+/* harmony import */ var _Types_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Types.js */ "./resources/js/.fable/fable-library.3.1.1/Types.js");
+/* harmony import */ var _List_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./List.js */ "./resources/js/.fable/fable-library.3.1.1/List.js");
+/* harmony import */ var _Seq_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Seq.js */ "./resources/js/.fable/fable-library.3.1.1/Seq.js");
+/* harmony import */ var _Array_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Array.js */ "./resources/js/.fable/fable-library.3.1.1/Array.js");
+
+
+
+
+
+
+
+function isBigInt(x) {
+  return x instanceof _BigInt_z_js__WEBPACK_IMPORTED_MODULE_0__.BigInteger;
+}
+function tryParse(str, res) {
+  try {
+    res.contents = (0,_BigInt_z_js__WEBPACK_IMPORTED_MODULE_0__.BigInteger_Parse_Z721C83C5)(str);
+    return true;
+  } catch (matchValue) {
+    return false;
+  }
+}
+function divRem(x, y, remainder) {
+  const patternInput = (0,_BigInt_z_js__WEBPACK_IMPORTED_MODULE_0__.BigInteger_DivRem_56F059C0)(x, y);
+  remainder.contents = patternInput[1];
+  return patternInput[0];
+}
+function parse(arg00) {
+  return (0,_BigInt_z_js__WEBPACK_IMPORTED_MODULE_0__.BigInteger_Parse_Z721C83C5)(arg00);
+}
+function greatestCommonDivisor(arg00, arg01) {
+  return (0,_BigInt_z_js__WEBPACK_IMPORTED_MODULE_0__.BigInteger_GreatestCommonDivisor_56F059C0)(arg00, arg01);
+}
+function pow(arg00, arg01) {
+  return (0,_BigInt_z_js__WEBPACK_IMPORTED_MODULE_0__.BigInteger_Pow_62E082A2)(arg00, arg01);
+}
+function abs(arg00) {
+  return (0,_BigInt_z_js__WEBPACK_IMPORTED_MODULE_0__.BigInteger_Abs_Z665282C2)(arg00);
+}
+const zero = (0,_BigInt_z_js__WEBPACK_IMPORTED_MODULE_0__.BigInteger_get_Zero)();
+const one = (0,_BigInt_z_js__WEBPACK_IMPORTED_MODULE_0__.BigInteger_get_One)();
+const two = (0,_BigInt_z_js__WEBPACK_IMPORTED_MODULE_0__.BigInteger_get_Two)();
+function fromString(s) {
+  return (0,_BigInt_z_js__WEBPACK_IMPORTED_MODULE_0__.BigInteger_Parse_Z721C83C5)(s);
+}
+function fromZero() {
+  return (0,_BigInt_z_js__WEBPACK_IMPORTED_MODULE_0__.BigInteger_get_Zero)();
+}
+function fromOne() {
+  return (0,_BigInt_z_js__WEBPACK_IMPORTED_MODULE_0__.BigInteger_get_One)();
+}
+function fromInt64(i) {
+  return (0,_BigInt_z_js__WEBPACK_IMPORTED_MODULE_0__.BigInteger_$ctor_Z524259C1)(i);
+}
+function fromInt32(i) {
+  if (i > 2147483647) {
+    return (0,_BigInt_z_js__WEBPACK_IMPORTED_MODULE_0__.BigInteger_$ctor_Z524259C1)((0,_Long_js__WEBPACK_IMPORTED_MODULE_1__.fromInteger)(i, false, 6));
+  } else {
+    return (0,_BigInt_z_js__WEBPACK_IMPORTED_MODULE_0__.BigInteger_$ctor_Z524259A4)(i);
+  }
+}
+function toSByte(x) {
+  return (0,_BigInt_z_js__WEBPACK_IMPORTED_MODULE_0__.BigInteger__get_ToSByte)(x);
+}
+function toByte(x) {
+  return (0,_BigInt_z_js__WEBPACK_IMPORTED_MODULE_0__.BigInteger__get_ToByte)(x);
+}
+function toInt16(x) {
+  return (0,_BigInt_z_js__WEBPACK_IMPORTED_MODULE_0__.BigInteger__get_ToInt16)(x);
+}
+function toUInt16(x) {
+  return (0,_BigInt_z_js__WEBPACK_IMPORTED_MODULE_0__.BigInteger__get_ToUInt16)(x);
+}
+function toInt32(x) {
+  return (0,_BigInt_z_js__WEBPACK_IMPORTED_MODULE_0__.BigInteger__get_ToInt32)(x);
+}
+function toUInt32(x) {
+  return (0,_BigInt_z_js__WEBPACK_IMPORTED_MODULE_0__.BigInteger__get_ToUInt32)(x);
+}
+function toInt64(x) {
+  return (0,_BigInt_z_js__WEBPACK_IMPORTED_MODULE_0__.BigInteger__get_ToInt64)(x);
+}
+function toUInt64(x) {
+  return (0,_BigInt_z_js__WEBPACK_IMPORTED_MODULE_0__.BigInteger__get_ToUInt64)(x);
+}
+function toSingle(x) {
+  return (0,_BigInt_z_js__WEBPACK_IMPORTED_MODULE_0__.BigInteger__get_ToSingle)(x);
+}
+function toDouble(x) {
+  return (0,_BigInt_z_js__WEBPACK_IMPORTED_MODULE_0__.BigInteger__get_ToDouble)(x);
+}
+function toDecimal(x) {
+  return (0,_BigInt_z_js__WEBPACK_IMPORTED_MODULE_0__.BigInteger__get_ToDecimal)(x);
+}
+function sign(x) {
+  return (0,_BigInt_z_js__WEBPACK_IMPORTED_MODULE_0__.BigInteger__get_Sign)(x);
+}
+function isZero(x) {
+  return (0,_BigInt_z_js__WEBPACK_IMPORTED_MODULE_0__.BigInteger__get_IsZero)(x);
+}
+function isOne(x) {
+  return (0,_BigInt_z_js__WEBPACK_IMPORTED_MODULE_0__.BigInteger__get_IsOne)(x);
+}
+function hash(x) {
+  return (0,_Util_js__WEBPACK_IMPORTED_MODULE_2__.safeHash)(x);
+}
+function compare(x, y) {
+  return x.CompareTo(y);
+}
+function equals(x, y) {
+  return (0,_Util_js__WEBPACK_IMPORTED_MODULE_2__.equals)(x, y);
+}
+function toString(x) {
+  return (0,_Types_js__WEBPACK_IMPORTED_MODULE_3__.toString)(x);
+}
+const get_Zero = (0,_BigInt_z_js__WEBPACK_IMPORTED_MODULE_0__.BigInteger_get_Zero)();
+const get_One = (0,_BigInt_z_js__WEBPACK_IMPORTED_MODULE_0__.BigInteger_get_One)();
+function op_Addition(arg00, arg01) {
+  return (0,_BigInt_z_js__WEBPACK_IMPORTED_MODULE_0__.BigInteger_op_Addition_56F059C0)(arg00, arg01);
+}
+function op_Subtraction(arg00, arg01) {
+  return (0,_BigInt_z_js__WEBPACK_IMPORTED_MODULE_0__.BigInteger_op_Subtraction_56F059C0)(arg00, arg01);
+}
+function op_Multiply(arg00, arg01) {
+  return (0,_BigInt_z_js__WEBPACK_IMPORTED_MODULE_0__.BigInteger_op_Multiply_56F059C0)(arg00, arg01);
+}
+function op_Division(arg00, arg01) {
+  return (0,_BigInt_z_js__WEBPACK_IMPORTED_MODULE_0__.BigInteger_op_Division_56F059C0)(arg00, arg01);
+}
+function op_Modulus(arg00, arg01) {
+  return (0,_BigInt_z_js__WEBPACK_IMPORTED_MODULE_0__.BigInteger_op_Modulus_56F059C0)(arg00, arg01);
+}
+function op_UnaryNegation(arg00) {
+  return (0,_BigInt_z_js__WEBPACK_IMPORTED_MODULE_0__.BigInteger_op_UnaryNegation_Z665282C2)(arg00);
+}
+function op_UnaryPlus(arg00) {
+  return (0,_BigInt_z_js__WEBPACK_IMPORTED_MODULE_0__.BigInteger_op_UnaryPlus_Z665282C2)(arg00);
+}
+function op_RightShift(arg00, arg01) {
+  return (0,_BigInt_z_js__WEBPACK_IMPORTED_MODULE_0__.BigInteger_op_RightShift_62E082A2)(arg00, arg01);
+}
+function op_LeftShift(arg00, arg01) {
+  return (0,_BigInt_z_js__WEBPACK_IMPORTED_MODULE_0__.BigInteger_op_LeftShift_62E082A2)(arg00, arg01);
+}
+function op_BitwiseAnd(arg00, arg01) {
+  return (0,_BigInt_z_js__WEBPACK_IMPORTED_MODULE_0__.BigInteger_op_BitwiseAnd_56F059C0)(arg00, arg01);
+}
+function op_BitwiseOr(arg00, arg01) {
+  return (0,_BigInt_z_js__WEBPACK_IMPORTED_MODULE_0__.BigInteger_op_BitwiseOr_56F059C0)(arg00, arg01);
+}
+function op_ExclusiveOr(arg00, arg01) {
+  return (0,_BigInt_z_js__WEBPACK_IMPORTED_MODULE_0__.BigInteger_op_ExclusiveOr_56F059C0)(arg00, arg01);
+}
+function op_LessThan(arg00, arg01) {
+  return (0,_BigInt_z_js__WEBPACK_IMPORTED_MODULE_0__.BigInteger_op_LessThan_56F059C0)(arg00, arg01);
+}
+function op_LessThanOrEqual(arg00, arg01) {
+  return (0,_BigInt_z_js__WEBPACK_IMPORTED_MODULE_0__.BigInteger_op_LessThanOrEqual_56F059C0)(arg00, arg01);
+}
+function op_GreaterThan(arg00, arg01) {
+  return (0,_BigInt_z_js__WEBPACK_IMPORTED_MODULE_0__.BigInteger_op_GreaterThan_56F059C0)(arg00, arg01);
+}
+function op_GreaterThanOrEqual(arg00, arg01) {
+  return (0,_BigInt_z_js__WEBPACK_IMPORTED_MODULE_0__.BigInteger_op_GreaterThanOrEqual_56F059C0)(arg00, arg01);
+}
+function op_Equality(arg00, arg01) {
+  return (0,_BigInt_z_js__WEBPACK_IMPORTED_MODULE_0__.BigInteger_op_Equality_56F059C0)(arg00, arg01);
+}
+function op_Inequality(arg00, arg01) {
+  return (0,_BigInt_z_js__WEBPACK_IMPORTED_MODULE_0__.BigInteger_op_Inequality_56F059C0)(arg00, arg01);
+}
+
+function flipTwosComplement(currByte, lowBitFound) {
+  const matchValue = [currByte, lowBitFound];
+
+  if (matchValue[1]) {
+    return [(currByte ^ 255) & 255, true];
+  } else if (matchValue[0] === 0) {
+    return [0, false];
+  } else {
+    return [(currByte ^ 254 << (0,_List_js__WEBPACK_IMPORTED_MODULE_4__.find)(i => (currByte & 1 << i) > 0, (0,_List_js__WEBPACK_IMPORTED_MODULE_4__.ofSeq)((0,_Seq_js__WEBPACK_IMPORTED_MODULE_5__.rangeNumber)(0, 1, 7)))) & 255, true];
+  }
+}
+
+function toByteArray(value) {
+  if ((0,_Util_js__WEBPACK_IMPORTED_MODULE_2__.equals)(value, zero)) {
+    return new Uint8Array([0]);
+  } else {
+    const isPositive = (0,_Util_js__WEBPACK_IMPORTED_MODULE_2__.compare)(value, zero) > 0;
+    const value_1 = isPositive ? value : (0,_BigInt_z_js__WEBPACK_IMPORTED_MODULE_0__.BigInteger_op_Multiply_56F059C0)((0,_BigInt_z_js__WEBPACK_IMPORTED_MODULE_0__.BigInteger_$ctor_Z524259A4)(-1), value);
+    const mask32 = fromInt64((0,_Long_js__WEBPACK_IMPORTED_MODULE_1__.fromInteger)(4294967295, false, 6));
+
+    const loop = (accumBytes_mut, consumeValue_mut, lowBitFound_mut) => {
+      let value_6, value_8, value_9, value_10;
+
+      loop: while (true) {
+        const accumBytes = accumBytes_mut,
+              consumeValue = consumeValue_mut,
+              lowBitFound = lowBitFound_mut;
+
+        if ((0,_Util_js__WEBPACK_IMPORTED_MODULE_2__.compare)(consumeValue, zero) <= 0) {
+          const accumBytes_1 = isPositive ? (0,_List_js__WEBPACK_IMPORTED_MODULE_4__.skipWhile)(b => b === 0, accumBytes) : (0,_List_js__WEBPACK_IMPORTED_MODULE_4__.skipWhile)(b_1 => b_1 === 255, accumBytes);
+          const isHighBitOne = ((0,_List_js__WEBPACK_IMPORTED_MODULE_4__.head)(accumBytes_1) & 128) !== 0;
+          return (0,_Array_js__WEBPACK_IMPORTED_MODULE_6__.reverse)(Uint8Array.from((isPositive ? isHighBitOne : false) ? new _Types_js__WEBPACK_IMPORTED_MODULE_3__.List(0, accumBytes_1) : (!isPositive ? !isHighBitOne : false) ? new _Types_js__WEBPACK_IMPORTED_MODULE_3__.List(255, accumBytes_1) : accumBytes_1));
+        } else {
+          const currValue = toUInt32((0,_BigInt_z_js__WEBPACK_IMPORTED_MODULE_0__.BigInteger_op_BitwiseAnd_56F059C0)(consumeValue, mask32));
+
+          if (isPositive) {
+            const b0 = currValue & 0xFF;
+            let b1;
+            const value_4 = currValue >>> 8;
+            b1 = value_4 & 0xFF;
+            let b2;
+            const value_5 = currValue >>> 16;
+            b2 = value_5 & 0xFF;
+            accumBytes_mut = new _Types_js__WEBPACK_IMPORTED_MODULE_3__.List((value_6 = currValue >>> 24, value_6 & 0xFF), new _Types_js__WEBPACK_IMPORTED_MODULE_3__.List(b2, new _Types_js__WEBPACK_IMPORTED_MODULE_3__.List(b1, new _Types_js__WEBPACK_IMPORTED_MODULE_3__.List(b0, accumBytes))));
+            consumeValue_mut = (0,_BigInt_z_js__WEBPACK_IMPORTED_MODULE_0__.BigInteger_op_RightShift_62E082A2)(consumeValue, 32);
+            lowBitFound_mut = false;
+            continue loop;
+          } else {
+            const patternInput = flipTwosComplement(currValue & 0xFF, lowBitFound);
+            const patternInput_1 = flipTwosComplement((value_8 = currValue >>> 8, value_8 & 0xFF), patternInput[1]);
+            const patternInput_2 = flipTwosComplement((value_9 = currValue >>> 16, value_9 & 0xFF), patternInput_1[1]);
+            const patternInput_3 = flipTwosComplement((value_10 = currValue >>> 24, value_10 & 0xFF), patternInput_2[1]);
+            accumBytes_mut = new _Types_js__WEBPACK_IMPORTED_MODULE_3__.List(patternInput_3[0], new _Types_js__WEBPACK_IMPORTED_MODULE_3__.List(patternInput_2[0], new _Types_js__WEBPACK_IMPORTED_MODULE_3__.List(patternInput_1[0], new _Types_js__WEBPACK_IMPORTED_MODULE_3__.List(patternInput[0], accumBytes))));
+            consumeValue_mut = (0,_BigInt_z_js__WEBPACK_IMPORTED_MODULE_0__.BigInteger_op_RightShift_62E082A2)(consumeValue, 32);
+            lowBitFound_mut = patternInput_3[1];
+            continue loop;
+          }
+        }
+
+        break;
+      }
+    };
+
+    return loop(new _Types_js__WEBPACK_IMPORTED_MODULE_3__.List(), value_1, false);
+  }
+}
+function fromByteArray(bytes) {
+  if (bytes == null) {
+    throw new Error("bytes");
+  }
+
+  if (bytes.length === 0) {
+    return zero;
+  } else {
+    const isPositive = (bytes[bytes.length - 1] & 128) === 0;
+    const buffer = (0,_Array_js__WEBPACK_IMPORTED_MODULE_6__.fill)(new Uint8Array(4), 0, 4, 0);
+
+    const loop = (accumUInt32_mut, currIndex_mut, bytesRemaining_mut, lowBitFound_mut) => {
+      loop: while (true) {
+        const accumUInt32 = accumUInt32_mut,
+              currIndex = currIndex_mut,
+              bytesRemaining = bytesRemaining_mut,
+              lowBitFound = lowBitFound_mut;
+
+        if (bytesRemaining === 0) {
+          const value_2 = (0,_List_js__WEBPACK_IMPORTED_MODULE_4__.fold)((acc, value) => (0,_BigInt_z_js__WEBPACK_IMPORTED_MODULE_0__.BigInteger_op_Addition_56F059C0)((0,_BigInt_z_js__WEBPACK_IMPORTED_MODULE_0__.BigInteger_op_LeftShift_62E082A2)(acc, 32), fromInt64((0,_Long_js__WEBPACK_IMPORTED_MODULE_1__.fromInteger)(value, false, 6))), zero, accumUInt32);
+
+          if (isPositive) {
+            return value_2;
+          } else {
+            return (0,_BigInt_z_js__WEBPACK_IMPORTED_MODULE_0__.BigInteger_op_Multiply_56F059C0)((0,_BigInt_z_js__WEBPACK_IMPORTED_MODULE_0__.BigInteger_$ctor_Z524259A4)(-1), value_2);
+          }
+        } else {
+          const bytesToProcess = (0,_Util_js__WEBPACK_IMPORTED_MODULE_2__.min)(_Util_js__WEBPACK_IMPORTED_MODULE_2__.comparePrimitives, bytesRemaining, 4) | 0;
+
+          for (let i_1 = 0; i_1 <= bytesToProcess - 1; i_1++) {
+            buffer[i_1] = bytes[currIndex + i_1];
+          }
+
+          if (isPositive) {
+            (0,_Array_js__WEBPACK_IMPORTED_MODULE_6__.fill)(buffer, bytesToProcess, 4 - bytesToProcess, 0);
+            accumUInt32_mut = new _Types_js__WEBPACK_IMPORTED_MODULE_3__.List((((buffer[0] | buffer[1] << 8 >>> 0) >>> 0 | buffer[2] << 16 >>> 0) >>> 0 | buffer[3] << 24 >>> 0) >>> 0, accumUInt32);
+            currIndex_mut = currIndex + bytesToProcess;
+            bytesRemaining_mut = bytesRemaining - bytesToProcess;
+            lowBitFound_mut = false;
+            continue loop;
+          } else {
+            (0,_Array_js__WEBPACK_IMPORTED_MODULE_6__.fill)(buffer, bytesToProcess, 4 - bytesToProcess, 255);
+            const patternInput = flipTwosComplement(buffer[0], lowBitFound);
+            const patternInput_1 = flipTwosComplement(buffer[1], patternInput[1]);
+            const patternInput_2 = flipTwosComplement(buffer[2], patternInput_1[1]);
+            const patternInput_3 = flipTwosComplement(buffer[3], patternInput_2[1]);
+            accumUInt32_mut = new _Types_js__WEBPACK_IMPORTED_MODULE_3__.List((((patternInput[0] | patternInput_1[0] << 8 >>> 0) >>> 0 | patternInput_2[0] << 16 >>> 0) >>> 0 | patternInput_3[0] << 24 >>> 0) >>> 0, accumUInt32);
+            currIndex_mut = currIndex + bytesToProcess;
+            bytesRemaining_mut = bytesRemaining - bytesToProcess;
+            lowBitFound_mut = patternInput_3[1];
+            continue loop;
+          }
+        }
+
+        break;
+      }
+    };
+
+    return loop(new _Types_js__WEBPACK_IMPORTED_MODULE_3__.List(), 0, bytes.length, false);
+  }
+}
+function makeRangeStepFunction(step, last) {
+  const stepComparedWithZero = (0,_Util_js__WEBPACK_IMPORTED_MODULE_2__.compare)(step, zero) | 0;
+
+  if (stepComparedWithZero === 0) {
+    throw new Error("The step of a range cannot be zero");
+  }
+
+  const stepGreaterThanZero = stepComparedWithZero > 0;
+  return x => {
+    const comparedWithLast = (0,_Util_js__WEBPACK_IMPORTED_MODULE_2__.compare)(x, last) | 0;
+    return ((stepGreaterThanZero ? comparedWithLast <= 0 : false) ? true : !stepGreaterThanZero ? comparedWithLast >= 0 : false) ? [x, (0,_BigInt_z_js__WEBPACK_IMPORTED_MODULE_0__.BigInteger_op_Addition_56F059C0)(x, step)] : void 0;
+  };
+}
+function range(first, step, last) {
+  const stepFn = makeRangeStepFunction(step, last);
+  return (0,_Seq_js__WEBPACK_IMPORTED_MODULE_5__.delay)(() => (0,_Seq_js__WEBPACK_IMPORTED_MODULE_5__.unfold)(stepFn, first));
+}
+
+/***/ }),
+
+/***/ "./resources/js/.fable/fable-library.3.1.1/BigInt/n.js":
+/*!*************************************************************!*\
+  !*** ./resources/js/.fable/fable-library.3.1.1/BigInt/n.js ***!
+  \*************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "BigNat": () => (/* binding */ BigNat),
+/* harmony export */   "BigNat$reflection": () => (/* binding */ BigNat$reflection),
+/* harmony export */   "BigNatModule_FFT_pow32": () => (/* binding */ BigNatModule_FFT_pow32),
+/* harmony export */   "BigNatModule_FFT_leastBounding2Power": () => (/* binding */ BigNatModule_FFT_leastBounding2Power),
+/* harmony export */   "BigNatModule_FFT_p": () => (/* binding */ BigNatModule_FFT_p),
+/* harmony export */   "BigNatModule_FFT_w": () => (/* binding */ BigNatModule_FFT_w),
+/* harmony export */   "BigNatModule_FFT_m": () => (/* binding */ BigNatModule_FFT_m),
+/* harmony export */   "BigNatModule_FFT_k": () => (/* binding */ BigNatModule_FFT_k),
+/* harmony export */   "BigNatModule_FFT_g": () => (/* binding */ BigNatModule_FFT_g),
+/* harmony export */   "BigNatModule_FFT_primeP": () => (/* binding */ BigNatModule_FFT_primeP),
+/* harmony export */   "BigNatModule_FFT_maxBitsInsideFp": () => (/* binding */ BigNatModule_FFT_maxBitsInsideFp),
+/* harmony export */   "BigNatModule_FFT_Fp_p": () => (/* binding */ BigNatModule_FFT_Fp_p),
+/* harmony export */   "BigNatModule_FFT_Fp_p64": () => (/* binding */ BigNatModule_FFT_Fp_p64),
+/* harmony export */   "BigNatModule_FFT_Fp_toInt": () => (/* binding */ BigNatModule_FFT_Fp_toInt),
+/* harmony export */   "BigNatModule_FFT_Fp_ofInt32": () => (/* binding */ BigNatModule_FFT_Fp_ofInt32),
+/* harmony export */   "BigNatModule_FFT_Fp_mzero": () => (/* binding */ BigNatModule_FFT_Fp_mzero),
+/* harmony export */   "BigNatModule_FFT_Fp_mone": () => (/* binding */ BigNatModule_FFT_Fp_mone),
+/* harmony export */   "BigNatModule_FFT_Fp_mtwo": () => (/* binding */ BigNatModule_FFT_Fp_mtwo),
+/* harmony export */   "BigNatModule_FFT_Fp_mpow": () => (/* binding */ BigNatModule_FFT_Fp_mpow),
+/* harmony export */   "BigNatModule_FFT_Fp_mpowL": () => (/* binding */ BigNatModule_FFT_Fp_mpowL),
+/* harmony export */   "BigNatModule_FFT_Fp_m2PowNthRoot": () => (/* binding */ BigNatModule_FFT_Fp_m2PowNthRoot),
+/* harmony export */   "BigNatModule_FFT_Fp_minv": () => (/* binding */ BigNatModule_FFT_Fp_minv),
+/* harmony export */   "BigNatModule_FFT_computeFFT": () => (/* binding */ BigNatModule_FFT_computeFFT),
+/* harmony export */   "BigNatModule_FFT_computFftInPlace": () => (/* binding */ BigNatModule_FFT_computFftInPlace),
+/* harmony export */   "BigNatModule_FFT_computeInverseFftInPlace": () => (/* binding */ BigNatModule_FFT_computeInverseFftInPlace),
+/* harmony export */   "BigNatModule_FFT_maxTwoPower": () => (/* binding */ BigNatModule_FFT_maxTwoPower),
+/* harmony export */   "BigNatModule_FFT_twoPowerTable": () => (/* binding */ BigNatModule_FFT_twoPowerTable),
+/* harmony export */   "BigNatModule_FFT_computeFftPaddedPolynomialProduct": () => (/* binding */ BigNatModule_FFT_computeFftPaddedPolynomialProduct),
+/* harmony export */   "BigNatModule_FFT_padTo": () => (/* binding */ BigNatModule_FFT_padTo),
+/* harmony export */   "BigNatModule_FFT_computeFftPolynomialProduct": () => (/* binding */ BigNatModule_FFT_computeFftPolynomialProduct),
+/* harmony export */   "BigNatModule_FFT_mzero": () => (/* binding */ BigNatModule_FFT_mzero),
+/* harmony export */   "BigNatModule_FFT_mone": () => (/* binding */ BigNatModule_FFT_mone),
+/* harmony export */   "BigNatModule_FFT_maxFp": () => (/* binding */ BigNatModule_FFT_maxFp),
+/* harmony export */   "BigNatModule_bound": () => (/* binding */ BigNatModule_bound),
+/* harmony export */   "BigNatModule_setBound": () => (/* binding */ BigNatModule_setBound),
+/* harmony export */   "BigNatModule_coeff": () => (/* binding */ BigNatModule_coeff),
+/* harmony export */   "BigNatModule_coeff64": () => (/* binding */ BigNatModule_coeff64),
+/* harmony export */   "BigNatModule_setCoeff": () => (/* binding */ BigNatModule_setCoeff),
+/* harmony export */   "BigNatModule_pow64": () => (/* binding */ BigNatModule_pow64),
+/* harmony export */   "BigNatModule_pow32": () => (/* binding */ BigNatModule_pow32),
+/* harmony export */   "BigNatModule_hash": () => (/* binding */ BigNatModule_hash),
+/* harmony export */   "BigNatModule_maxInt": () => (/* binding */ BigNatModule_maxInt),
+/* harmony export */   "BigNatModule_minInt": () => (/* binding */ BigNatModule_minInt),
+/* harmony export */   "BigNatModule_baseBits": () => (/* binding */ BigNatModule_baseBits),
+/* harmony export */   "BigNatModule_baseN": () => (/* binding */ BigNatModule_baseN),
+/* harmony export */   "BigNatModule_baseMask": () => (/* binding */ BigNatModule_baseMask),
+/* harmony export */   "BigNatModule_baseNi64": () => (/* binding */ BigNatModule_baseNi64),
+/* harmony export */   "BigNatModule_baseMaski64": () => (/* binding */ BigNatModule_baseMaski64),
+/* harmony export */   "BigNatModule_baseMaskU": () => (/* binding */ BigNatModule_baseMaskU),
+/* harmony export */   "BigNatModule_baseMask32A": () => (/* binding */ BigNatModule_baseMask32A),
+/* harmony export */   "BigNatModule_baseMask32B": () => (/* binding */ BigNatModule_baseMask32B),
+/* harmony export */   "BigNatModule_baseShift32B": () => (/* binding */ BigNatModule_baseShift32B),
+/* harmony export */   "BigNatModule_baseMask64A": () => (/* binding */ BigNatModule_baseMask64A),
+/* harmony export */   "BigNatModule_baseMask64B": () => (/* binding */ BigNatModule_baseMask64B),
+/* harmony export */   "BigNatModule_baseMask64C": () => (/* binding */ BigNatModule_baseMask64C),
+/* harmony export */   "BigNatModule_baseShift64B": () => (/* binding */ BigNatModule_baseShift64B),
+/* harmony export */   "BigNatModule_baseShift64C": () => (/* binding */ BigNatModule_baseShift64C),
+/* harmony export */   "BigNatModule_divbase": () => (/* binding */ BigNatModule_divbase),
+/* harmony export */   "BigNatModule_modbase": () => (/* binding */ BigNatModule_modbase),
+/* harmony export */   "BigNatModule_createN": () => (/* binding */ BigNatModule_createN),
+/* harmony export */   "BigNatModule_copyN": () => (/* binding */ BigNatModule_copyN),
+/* harmony export */   "BigNatModule_normN": () => (/* binding */ BigNatModule_normN),
+/* harmony export */   "BigNatModule_boundInt": () => (/* binding */ BigNatModule_boundInt),
+/* harmony export */   "BigNatModule_boundInt64": () => (/* binding */ BigNatModule_boundInt64),
+/* harmony export */   "BigNatModule_boundBase": () => (/* binding */ BigNatModule_boundBase),
+/* harmony export */   "BigNatModule_embed": () => (/* binding */ BigNatModule_embed),
+/* harmony export */   "BigNatModule_embed64": () => (/* binding */ BigNatModule_embed64),
+/* harmony export */   "BigNatModule_eval32": () => (/* binding */ BigNatModule_eval32),
+/* harmony export */   "BigNatModule_eval64": () => (/* binding */ BigNatModule_eval64),
+/* harmony export */   "BigNatModule_one": () => (/* binding */ BigNatModule_one),
+/* harmony export */   "BigNatModule_zero": () => (/* binding */ BigNatModule_zero),
+/* harmony export */   "BigNatModule_restrictTo": () => (/* binding */ BigNatModule_restrictTo),
+/* harmony export */   "BigNatModule_shiftUp": () => (/* binding */ BigNatModule_shiftUp),
+/* harmony export */   "BigNatModule_shiftDown": () => (/* binding */ BigNatModule_shiftDown),
+/* harmony export */   "BigNatModule_degree": () => (/* binding */ BigNatModule_degree),
+/* harmony export */   "BigNatModule_addP": () => (/* binding */ BigNatModule_addP),
+/* harmony export */   "BigNatModule_add": () => (/* binding */ BigNatModule_add),
+/* harmony export */   "BigNatModule_subP": () => (/* binding */ BigNatModule_subP),
+/* harmony export */   "BigNatModule_sub": () => (/* binding */ BigNatModule_sub),
+/* harmony export */   "BigNatModule_isZero": () => (/* binding */ BigNatModule_isZero),
+/* harmony export */   "BigNatModule_IsZero": () => (/* binding */ BigNatModule_IsZero),
+/* harmony export */   "BigNatModule_isOne": () => (/* binding */ BigNatModule_isOne),
+/* harmony export */   "BigNatModule_equal": () => (/* binding */ BigNatModule_equal),
+/* harmony export */   "BigNatModule_shiftCompare": () => (/* binding */ BigNatModule_shiftCompare),
+/* harmony export */   "BigNatModule_compare": () => (/* binding */ BigNatModule_compare),
+/* harmony export */   "BigNatModule_lt": () => (/* binding */ BigNatModule_lt),
+/* harmony export */   "BigNatModule_gt": () => (/* binding */ BigNatModule_gt),
+/* harmony export */   "BigNatModule_lte": () => (/* binding */ BigNatModule_lte),
+/* harmony export */   "BigNatModule_gte": () => (/* binding */ BigNatModule_gte),
+/* harmony export */   "BigNatModule_min": () => (/* binding */ BigNatModule_min),
+/* harmony export */   "BigNatModule_max": () => (/* binding */ BigNatModule_max),
+/* harmony export */   "BigNatModule_contributeArr": () => (/* binding */ BigNatModule_contributeArr),
+/* harmony export */   "BigNatModule_scale": () => (/* binding */ BigNatModule_scale),
+/* harmony export */   "BigNatModule_mulSchoolBookBothSmall": () => (/* binding */ BigNatModule_mulSchoolBookBothSmall),
+/* harmony export */   "BigNatModule_mulSchoolBookCarry": () => (/* binding */ BigNatModule_mulSchoolBookCarry),
+/* harmony export */   "BigNatModule_mulSchoolBookOneSmall": () => (/* binding */ BigNatModule_mulSchoolBookOneSmall),
+/* harmony export */   "BigNatModule_mulSchoolBookNeitherSmall": () => (/* binding */ BigNatModule_mulSchoolBookNeitherSmall),
+/* harmony export */   "BigNatModule_mulSchoolBook": () => (/* binding */ BigNatModule_mulSchoolBook),
+/* harmony export */   "BigNatModule_encoding": () => (/* binding */ BigNatModule_encoding),
+/* harmony export */   "BigNatModule_encoding$reflection": () => (/* binding */ BigNatModule_encoding$reflection),
+/* harmony export */   "BigNatModule_mkEncoding": () => (/* binding */ BigNatModule_mkEncoding),
+/* harmony export */   "BigNatModule_table": () => (/* binding */ BigNatModule_table),
+/* harmony export */   "BigNatModule_calculateTableTow": () => (/* binding */ BigNatModule_calculateTableTow),
+/* harmony export */   "BigNatModule_encodingGivenResultBits": () => (/* binding */ BigNatModule_encodingGivenResultBits),
+/* harmony export */   "BigNatModule_bitmask": () => (/* binding */ BigNatModule_bitmask),
+/* harmony export */   "BigNatModule_twopowers": () => (/* binding */ BigNatModule_twopowers),
+/* harmony export */   "BigNatModule_twopowersI64": () => (/* binding */ BigNatModule_twopowersI64),
+/* harmony export */   "BigNatModule_wordBits": () => (/* binding */ BigNatModule_wordBits),
+/* harmony export */   "BigNatModule_bits": () => (/* binding */ BigNatModule_bits),
+/* harmony export */   "BigNatModule_extractBits": () => (/* binding */ BigNatModule_extractBits),
+/* harmony export */   "BigNatModule_encodePoly": () => (/* binding */ BigNatModule_encodePoly),
+/* harmony export */   "BigNatModule_decodeResultBits": () => (/* binding */ BigNatModule_decodeResultBits),
+/* harmony export */   "BigNatModule_decodePoly": () => (/* binding */ BigNatModule_decodePoly),
+/* harmony export */   "BigNatModule_quickMulUsingFft": () => (/* binding */ BigNatModule_quickMulUsingFft),
+/* harmony export */   "BigNatModule_minDigitsKaratsuba": () => (/* binding */ BigNatModule_minDigitsKaratsuba),
+/* harmony export */   "BigNatModule_recMulKaratsuba": () => (/* binding */ BigNatModule_recMulKaratsuba),
+/* harmony export */   "BigNatModule_mulKaratsuba": () => (/* binding */ BigNatModule_mulKaratsuba),
+/* harmony export */   "BigNatModule_productDigitsUpperSchoolBook": () => (/* binding */ BigNatModule_productDigitsUpperSchoolBook),
+/* harmony export */   "BigNatModule_singleDigitForceSchoolBook": () => (/* binding */ BigNatModule_singleDigitForceSchoolBook),
+/* harmony export */   "BigNatModule_productDigitsUpperFft": () => (/* binding */ BigNatModule_productDigitsUpperFft),
+/* harmony export */   "BigNatModule_mul": () => (/* binding */ BigNatModule_mul),
+/* harmony export */   "BigNatModule_scaleSubInPlace": () => (/* binding */ BigNatModule_scaleSubInPlace),
+/* harmony export */   "BigNatModule_scaleSub": () => (/* binding */ BigNatModule_scaleSub),
+/* harmony export */   "BigNatModule_scaleAddInPlace": () => (/* binding */ BigNatModule_scaleAddInPlace),
+/* harmony export */   "BigNatModule_scaleAdd": () => (/* binding */ BigNatModule_scaleAdd),
+/* harmony export */   "BigNatModule_removeFactor": () => (/* binding */ BigNatModule_removeFactor),
+/* harmony export */   "BigNatModule_divmod": () => (/* binding */ BigNatModule_divmod),
+/* harmony export */   "BigNatModule_div": () => (/* binding */ BigNatModule_div),
+/* harmony export */   "BigNatModule_rem": () => (/* binding */ BigNatModule_rem),
+/* harmony export */   "BigNatModule_bitAnd": () => (/* binding */ BigNatModule_bitAnd),
+/* harmony export */   "BigNatModule_bitOr": () => (/* binding */ BigNatModule_bitOr),
+/* harmony export */   "BigNatModule_bitXor": () => (/* binding */ BigNatModule_bitXor),
+/* harmony export */   "BigNatModule_hcf": () => (/* binding */ BigNatModule_hcf),
+/* harmony export */   "BigNatModule_two": () => (/* binding */ BigNatModule_two),
+/* harmony export */   "BigNatModule_powi": () => (/* binding */ BigNatModule_powi),
+/* harmony export */   "BigNatModule_pow": () => (/* binding */ BigNatModule_pow),
+/* harmony export */   "BigNatModule_toFloat": () => (/* binding */ BigNatModule_toFloat),
+/* harmony export */   "BigNatModule_ofInt32": () => (/* binding */ BigNatModule_ofInt32),
+/* harmony export */   "BigNatModule_ofInt64": () => (/* binding */ BigNatModule_ofInt64),
+/* harmony export */   "BigNatModule_toUInt32": () => (/* binding */ BigNatModule_toUInt32),
+/* harmony export */   "BigNatModule_toUInt64": () => (/* binding */ BigNatModule_toUInt64),
+/* harmony export */   "BigNatModule_toString": () => (/* binding */ BigNatModule_toString),
+/* harmony export */   "BigNatModule_ofString": () => (/* binding */ BigNatModule_ofString),
+/* harmony export */   "BigNatModule_isSmall": () => (/* binding */ BigNatModule_isSmall),
+/* harmony export */   "BigNatModule_getSmall": () => (/* binding */ BigNatModule_getSmall),
+/* harmony export */   "BigNatModule_factorial": () => (/* binding */ BigNatModule_factorial)
+/* harmony export */ });
+/* harmony import */ var _Types_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../Types.js */ "./resources/js/.fable/fable-library.3.1.1/Types.js");
+/* harmony import */ var _Reflection_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Reflection.js */ "./resources/js/.fable/fable-library.3.1.1/Reflection.js");
+/* harmony import */ var _Long_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Long.js */ "./resources/js/.fable/fable-library.3.1.1/Long.js");
+/* harmony import */ var _Array_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../Array.js */ "./resources/js/.fable/fable-library.3.1.1/Array.js");
+/* harmony import */ var _Util_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../Util.js */ "./resources/js/.fable/fable-library.3.1.1/Util.js");
+/* harmony import */ var _String_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../String.js */ "./resources/js/.fable/fable-library.3.1.1/String.js");
+
+
+
+
+
+
+class BigNat extends _Types_js__WEBPACK_IMPORTED_MODULE_0__.Record {
+  constructor(bound, digits) {
+    super();
+    this.bound = bound | 0;
+    this.digits = digits;
+  }
+
+}
+function BigNat$reflection() {
+  return (0,_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.record_type)("BigInt.BigNat", [], BigNat, () => [["bound", _Reflection_js__WEBPACK_IMPORTED_MODULE_1__.int32_type], ["digits", (0,_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.array_type)(_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.int32_type)]]);
+}
+function BigNatModule_FFT_pow32(x_mut, n_mut) {
+  BigNatModule_FFT_pow32: while (true) {
+    const x = x_mut,
+          n = n_mut;
+
+    if (n === 0) {
+      return 1;
+    } else if (n % 2 === 0) {
+      x_mut = x * x;
+      n_mut = ~~(n / 2);
+      continue BigNatModule_FFT_pow32;
+    } else {
+      return x * BigNatModule_FFT_pow32(x * x, ~~(n / 2)) | 0;
+    }
+
+    break;
+  }
+}
+function BigNatModule_FFT_leastBounding2Power(b) {
+  const findBounding2Power = (b_1_mut, tp_mut, i_mut) => {
+    findBounding2Power: while (true) {
+      const b_1 = b_1_mut,
+            tp = tp_mut,
+            i = i_mut;
+
+      if (b_1 <= tp) {
+        return [tp, i];
+      } else {
+        b_1_mut = b_1;
+        tp_mut = tp * 2;
+        i_mut = i + 1;
+        continue findBounding2Power;
+      }
+
+      break;
+    }
+  };
+
+  return findBounding2Power(b, 1, 0);
+}
+const BigNatModule_FFT_p = (0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.fromBits)(2013265921, 0, false);
+const BigNatModule_FFT_patternInput$004075 = [27, 15, 31, 440564289];
+const BigNatModule_FFT_w = BigNatModule_FFT_patternInput$004075[3];
+const BigNatModule_FFT_m = BigNatModule_FFT_patternInput$004075[1];
+const BigNatModule_FFT_k = BigNatModule_FFT_patternInput$004075[0];
+const BigNatModule_FFT_g = BigNatModule_FFT_patternInput$004075[2];
+const BigNatModule_FFT_primeP = BigNatModule_FFT_p;
+const BigNatModule_FFT_maxBitsInsideFp = 30;
+const BigNatModule_FFT_Fp_p = 2013265921;
+const BigNatModule_FFT_Fp_p64 = (0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.fromBits)(2013265921, 0, true);
+function BigNatModule_FFT_Fp_toInt(x) {
+  return ~~x;
+}
+function BigNatModule_FFT_Fp_ofInt32(x) {
+  return x >>> 0;
+}
+const BigNatModule_FFT_Fp_mzero = 0;
+const BigNatModule_FFT_Fp_mone = 1;
+const BigNatModule_FFT_Fp_mtwo = 2;
+function BigNatModule_FFT_Fp_mpow(x_mut, n_mut) {
+  BigNatModule_FFT_Fp_mpow: while (true) {
+    const x = x_mut,
+          n = n_mut;
+
+    if (n === 0) {
+      return BigNatModule_FFT_Fp_mone;
+    } else if (n % 2 === 0) {
+      x_mut = (0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.toInt)((0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.op_Modulus)((0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.op_Multiply)((0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.fromInteger)(x, true, 6), (0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.fromInteger)(x, true, 6)), BigNatModule_FFT_Fp_p64)) >>> 0;
+      n_mut = ~~(n / 2);
+      continue BigNatModule_FFT_Fp_mpow;
+    } else {
+      const y_2 = BigNatModule_FFT_Fp_mpow((0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.toInt)((0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.op_Modulus)((0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.op_Multiply)((0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.fromInteger)(x, true, 6), (0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.fromInteger)(x, true, 6)), BigNatModule_FFT_Fp_p64)) >>> 0, ~~(n / 2));
+      return (0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.toInt)((0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.op_Modulus)((0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.op_Multiply)((0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.fromInteger)(x, true, 6), (0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.fromInteger)(y_2, true, 6)), BigNatModule_FFT_Fp_p64)) >>> 0;
+    }
+
+    break;
+  }
+}
+function BigNatModule_FFT_Fp_mpowL(x_mut, n_mut) {
+  BigNatModule_FFT_Fp_mpowL: while (true) {
+    const x = x_mut,
+          n = n_mut;
+
+    if ((0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.equals)(n, (0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.fromBits)(0, 0, false))) {
+      return BigNatModule_FFT_Fp_mone;
+    } else if ((0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.equals)((0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.op_Modulus)(n, (0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.fromBits)(2, 0, false)), (0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.fromBits)(0, 0, false))) {
+      x_mut = (0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.toInt)((0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.op_Modulus)((0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.op_Multiply)((0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.fromInteger)(x, true, 6), (0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.fromInteger)(x, true, 6)), BigNatModule_FFT_Fp_p64)) >>> 0;
+      n_mut = (0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.op_Division)(n, (0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.fromBits)(2, 0, false));
+      continue BigNatModule_FFT_Fp_mpowL;
+    } else {
+      const y_2 = BigNatModule_FFT_Fp_mpowL((0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.toInt)((0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.op_Modulus)((0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.op_Multiply)((0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.fromInteger)(x, true, 6), (0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.fromInteger)(x, true, 6)), BigNatModule_FFT_Fp_p64)) >>> 0, (0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.op_Division)(n, (0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.fromBits)(2, 0, false)));
+      return (0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.toInt)((0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.op_Modulus)((0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.op_Multiply)((0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.fromInteger)(x, true, 6), (0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.fromInteger)(y_2, true, 6)), BigNatModule_FFT_Fp_p64)) >>> 0;
+    }
+
+    break;
+  }
+}
+function BigNatModule_FFT_Fp_m2PowNthRoot(n) {
+  return BigNatModule_FFT_Fp_mpow(BigNatModule_FFT_w >>> 0, BigNatModule_FFT_pow32(2, BigNatModule_FFT_k - n));
+}
+function BigNatModule_FFT_Fp_minv(x) {
+  return BigNatModule_FFT_Fp_mpowL(x, (0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.op_Subtraction)(BigNatModule_FFT_primeP, (0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.fromBits)(2, 0, false)));
+}
+function BigNatModule_FFT_computeFFT(lambda, mu, n, w, u, res, offset) {
+  let x_1, x_3;
+
+  if (n === 1) {
+    res[offset] = u[mu];
+  } else {
+    const halfN = ~~(n / 2) | 0;
+    const ww = (0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.toInt)((0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.op_Modulus)((0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.op_Multiply)((0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.fromInteger)(w, true, 6), (0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.fromInteger)(w, true, 6)), BigNatModule_FFT_Fp_p64)) >>> 0;
+    const offsetHalfN = offset + halfN | 0;
+    BigNatModule_FFT_computeFFT(lambda * 2, mu, halfN, ww, u, res, offset);
+    BigNatModule_FFT_computeFFT(lambda * 2, lambda + mu, halfN, ww, u, res, offsetHalfN);
+    let wj = BigNatModule_FFT_Fp_mone;
+
+    for (let j = 0; j <= halfN - 1; j++) {
+      const even = res[offset + j];
+      const odd = res[offsetHalfN + j];
+      res[offset + j] = (even + (x_1 = wj, (0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.toInt)((0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.op_Modulus)((0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.op_Multiply)((0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.fromInteger)(x_1, true, 6), (0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.fromInteger)(odd, true, 6)), BigNatModule_FFT_Fp_p64)) >>> 0)) % BigNatModule_FFT_Fp_p;
+      res[offsetHalfN + j] = (even + BigNatModule_FFT_Fp_p - (x_3 = wj, (0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.toInt)((0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.op_Modulus)((0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.op_Multiply)((0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.fromInteger)(x_3, true, 6), (0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.fromInteger)(odd, true, 6)), BigNatModule_FFT_Fp_p64)) >>> 0)) % BigNatModule_FFT_Fp_p;
+      const y_5 = wj;
+      wj = (0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.toInt)((0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.op_Modulus)((0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.op_Multiply)((0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.fromInteger)(w, true, 6), (0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.fromInteger)(y_5, true, 6)), BigNatModule_FFT_Fp_p64)) >>> 0;
+    }
+  }
+}
+function BigNatModule_FFT_computFftInPlace(n, w, u) {
+  const res = (0,_Array_js__WEBPACK_IMPORTED_MODULE_3__.fill)(new Uint32Array(n), 0, n, BigNatModule_FFT_Fp_mzero);
+  BigNatModule_FFT_computeFFT(1, 0, n, w, u, res, 0);
+  return res;
+}
+function BigNatModule_FFT_computeInverseFftInPlace(n, w, uT) {
+  const bigKInv = BigNatModule_FFT_Fp_minv(n >>> 0);
+  return (0,_Array_js__WEBPACK_IMPORTED_MODULE_3__.map)(y => (0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.toInt)((0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.op_Modulus)((0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.op_Multiply)((0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.fromInteger)(bigKInv, true, 6), (0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.fromInteger)(y, true, 6)), BigNatModule_FFT_Fp_p64)) >>> 0, BigNatModule_FFT_computFftInPlace(n, BigNatModule_FFT_Fp_minv(w), uT), Uint32Array);
+}
+const BigNatModule_FFT_maxTwoPower = 29;
+const BigNatModule_FFT_twoPowerTable = (0,_Array_js__WEBPACK_IMPORTED_MODULE_3__.initialize)(BigNatModule_FFT_maxTwoPower - 1, i => BigNatModule_FFT_pow32(2, i), Int32Array);
+function BigNatModule_FFT_computeFftPaddedPolynomialProduct(bigK, k, u, v) {
+  const w = BigNatModule_FFT_Fp_m2PowNthRoot(k);
+  const n = bigK | 0;
+  const uT = BigNatModule_FFT_computFftInPlace(n, w, u);
+  const vT = BigNatModule_FFT_computFftInPlace(n, w, v);
+  return BigNatModule_FFT_computeInverseFftInPlace(n, w, (0,_Array_js__WEBPACK_IMPORTED_MODULE_3__.initialize)(n, i => {
+    const x = uT[i];
+    const y = vT[i];
+    return (0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.toInt)((0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.op_Modulus)((0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.op_Multiply)((0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.fromInteger)(x, true, 6), (0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.fromInteger)(y, true, 6)), BigNatModule_FFT_Fp_p64)) >>> 0;
+  }, Uint32Array));
+}
+function BigNatModule_FFT_padTo(n, u) {
+  const uBound = u.length | 0;
+  return (0,_Array_js__WEBPACK_IMPORTED_MODULE_3__.initialize)(n, i => i < uBound ? BigNatModule_FFT_Fp_ofInt32(u[i]) : BigNatModule_FFT_Fp_mzero, Uint32Array);
+}
+function BigNatModule_FFT_computeFftPolynomialProduct(degu, u, degv, v) {
+  const patternInput = BigNatModule_FFT_leastBounding2Power(degu + degv + 1);
+  const bigK = patternInput[0] | 0;
+  const w = BigNatModule_FFT_Fp_m2PowNthRoot(patternInput[1]);
+  const u_1 = BigNatModule_FFT_padTo(bigK, u);
+  const v_1 = BigNatModule_FFT_padTo(bigK, v);
+  const n = bigK | 0;
+  const uT = BigNatModule_FFT_computFftInPlace(n, w, u_1);
+  const vT = BigNatModule_FFT_computFftInPlace(n, w, v_1);
+  return (0,_Array_js__WEBPACK_IMPORTED_MODULE_3__.map)(BigNatModule_FFT_Fp_toInt, BigNatModule_FFT_computeInverseFftInPlace(n, w, (0,_Array_js__WEBPACK_IMPORTED_MODULE_3__.initialize)(n, i => {
+    const x = uT[i];
+    const y = vT[i];
+    return (0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.toInt)((0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.op_Modulus)((0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.op_Multiply)((0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.fromInteger)(x, true, 6), (0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.fromInteger)(y, true, 6)), BigNatModule_FFT_Fp_p64)) >>> 0;
+  }, Uint32Array)), Int32Array);
+}
+const BigNatModule_FFT_mzero = BigNatModule_FFT_Fp_mzero;
+const BigNatModule_FFT_mone = BigNatModule_FFT_Fp_mone;
+const BigNatModule_FFT_maxFp = (BigNatModule_FFT_Fp_p + BigNatModule_FFT_Fp_p - BigNatModule_FFT_mone) % BigNatModule_FFT_Fp_p;
+function BigNatModule_bound(n) {
+  return n.bound;
+}
+function BigNatModule_setBound(n, v) {
+  n.bound = v;
+}
+function BigNatModule_coeff(n, i) {
+  return n.digits[i];
+}
+function BigNatModule_coeff64(n, i) {
+  return (0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.fromInteger)(BigNatModule_coeff(n, i), false, 2);
+}
+function BigNatModule_setCoeff(n, i, v) {
+  n.digits[i] = v;
+}
+function BigNatModule_pow64(x_mut, n_mut) {
+  BigNatModule_pow64: while (true) {
+    const x = x_mut,
+          n = n_mut;
+
+    if (n === 0) {
+      return (0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.fromBits)(1, 0, false);
+    } else if (n % 2 === 0) {
+      x_mut = (0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.op_Multiply)(x, x);
+      n_mut = ~~(n / 2);
+      continue BigNatModule_pow64;
+    } else {
+      return (0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.op_Multiply)(x, BigNatModule_pow64((0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.op_Multiply)(x, x), ~~(n / 2)));
+    }
+
+    break;
+  }
+}
+function BigNatModule_pow32(x_mut, n_mut) {
+  BigNatModule_pow32: while (true) {
+    const x = x_mut,
+          n = n_mut;
+
+    if (n === 0) {
+      return 1;
+    } else if (n % 2 === 0) {
+      x_mut = x * x;
+      n_mut = ~~(n / 2);
+      continue BigNatModule_pow32;
+    } else {
+      return x * BigNatModule_pow32(x * x, ~~(n / 2)) | 0;
+    }
+
+    break;
+  }
+}
+function BigNatModule_hash(n) {
+  let res = 0;
+
+  for (let i = 0; i <= n.bound - 1; i++) {
+    res = n.digits[i] + (res << 3);
+  }
+
+  return res | 0;
+}
+function BigNatModule_maxInt(a, b) {
+  if (a < b) {
+    return b | 0;
+  } else {
+    return a | 0;
+  }
+}
+function BigNatModule_minInt(a, b) {
+  if (a < b) {
+    return a | 0;
+  } else {
+    return b | 0;
+  }
+}
+const BigNatModule_baseBits = 24;
+const BigNatModule_baseN = 16777216;
+const BigNatModule_baseMask = 16777215;
+const BigNatModule_baseNi64 = (0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.fromBits)(16777216, 0, false);
+const BigNatModule_baseMaski64 = (0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.fromBits)(16777215, 0, false);
+const BigNatModule_baseMaskU = (0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.fromBits)(16777215, 0, true);
+const BigNatModule_baseMask32A = 16777215;
+const BigNatModule_baseMask32B = 255;
+const BigNatModule_baseShift32B = 24;
+const BigNatModule_baseMask64A = 16777215;
+const BigNatModule_baseMask64B = 16777215;
+const BigNatModule_baseMask64C = 65535;
+const BigNatModule_baseShift64B = 24;
+const BigNatModule_baseShift64C = 48;
+function BigNatModule_divbase(x) {
+  return ~~(x >>> 0 >>> BigNatModule_baseBits);
+}
+function BigNatModule_modbase(x) {
+  return x & BigNatModule_baseMask;
+}
+function BigNatModule_createN(b) {
+  return new BigNat(b, new Int32Array(b));
+}
+function BigNatModule_copyN(x) {
+  return new BigNat(x.bound, (0,_Array_js__WEBPACK_IMPORTED_MODULE_3__.copy)(x.digits));
+}
+function BigNatModule_normN(n) {
+  const findLeastBound = (na_mut, i_mut) => {
+    findLeastBound: while (true) {
+      const na = na_mut,
+            i = i_mut;
+
+      if (i === -1 ? true : na[i] !== 0) {
+        return i + 1 | 0;
+      } else {
+        na_mut = na;
+        i_mut = i - 1;
+        continue findLeastBound;
+      }
+
+      break;
+    }
+  };
+
+  const bound = findLeastBound(n.digits, n.bound - 1) | 0;
+  n.bound = bound;
+  return n;
+}
+const BigNatModule_boundInt = 2;
+const BigNatModule_boundInt64 = 3;
+const BigNatModule_boundBase = 1;
+function BigNatModule_embed(x) {
+  const x_1 = (x < 0 ? 0 : x) | 0;
+
+  if (x_1 < BigNatModule_baseN) {
+    const r = BigNatModule_createN(1);
+    r.digits[0] = x_1;
+    return BigNatModule_normN(r);
+  } else {
+    const r_1 = BigNatModule_createN(BigNatModule_boundInt);
+
+    for (let i = 0; i <= BigNatModule_boundInt - 1; i++) {
+      r_1.digits[i] = ~~(x_1 / BigNatModule_pow32(BigNatModule_baseN, i)) % BigNatModule_baseN;
+    }
+
+    return BigNatModule_normN(r_1);
+  }
+}
+function BigNatModule_embed64(x) {
+  const x_1 = (0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.compare)(x, (0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.fromBits)(0, 0, false)) < 0 ? (0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.fromBits)(0, 0, false) : x;
+  const r = BigNatModule_createN(BigNatModule_boundInt64);
+
+  for (let i = 0; i <= BigNatModule_boundInt64 - 1; i++) {
+    r.digits[i] = ~~(0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.toInt)((0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.op_Modulus)((0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.op_Division)(x_1, BigNatModule_pow64(BigNatModule_baseNi64, i)), BigNatModule_baseNi64));
+  }
+
+  return BigNatModule_normN(r);
+}
+function BigNatModule_eval32(n) {
+  if (n.bound === 1) {
+    return n.digits[0] | 0;
+  } else {
+    let acc = 0;
+
+    for (let i = n.bound - 1; i >= 0; i--) {
+      acc = n.digits[i] + BigNatModule_baseN * acc;
+    }
+
+    return acc | 0;
+  }
+}
+function BigNatModule_eval64(n) {
+  if (n.bound === 1) {
+    return (0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.fromInteger)(n.digits[0], false, 2);
+  } else {
+    let acc = (0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.fromBits)(0, 0, false);
+
+    for (let i = n.bound - 1; i >= 0; i--) {
+      acc = (0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.op_Addition)((0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.fromInteger)(n.digits[i], false, 2), (0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.op_Multiply)(BigNatModule_baseNi64, acc));
+    }
+
+    return acc;
+  }
+}
+const BigNatModule_one = BigNatModule_embed(1);
+const BigNatModule_zero = BigNatModule_embed(0);
+function BigNatModule_restrictTo(d, n) {
+  return new BigNat(BigNatModule_minInt(d, n.bound), n.digits);
+}
+function BigNatModule_shiftUp(d, n) {
+  const m = BigNatModule_createN(n.bound + d);
+
+  for (let i = 0; i <= n.bound - 1; i++) {
+    m.digits[i + d] = n.digits[i];
+  }
+
+  return m;
+}
+function BigNatModule_shiftDown(d, n) {
+  if (n.bound - d <= 0) {
+    return BigNatModule_zero;
+  } else {
+    const m = BigNatModule_createN(n.bound - d);
+
+    for (let i = 0; i <= m.bound - 1; i++) {
+      m.digits[i] = n.digits[i + d];
+    }
+
+    return m;
+  }
+}
+function BigNatModule_degree(n) {
+  return n.bound - 1;
+}
+function BigNatModule_addP(i_mut, n_mut, c_mut, p_mut, q_mut, r_mut) {
+  let z, i_1, z_1, i_2;
+
+  BigNatModule_addP: while (true) {
+    const i = i_mut,
+          n = n_mut,
+          c = c_mut,
+          p = p_mut,
+          q = q_mut,
+          r = r_mut;
+
+    if (i < n) {
+      const x = (z = p, (i_1 = i | 0, i_1 < z.bound ? z.digits[i_1] : 0)) + (z_1 = q, (i_2 = i | 0, i_2 < z_1.bound ? z_1.digits[i_2] : 0)) + c | 0;
+      r.digits[i] = BigNatModule_modbase(x);
+      i_mut = i + 1;
+      n_mut = n;
+      c_mut = BigNatModule_divbase(x);
+      p_mut = p;
+      q_mut = q;
+      r_mut = r;
+      continue BigNatModule_addP;
+    }
+
+    break;
+  }
+}
+function BigNatModule_add(p, q) {
+  const rbound = 1 + BigNatModule_maxInt(p.bound, q.bound) | 0;
+  const r = BigNatModule_createN(rbound);
+  BigNatModule_addP(0, rbound, 0, p, q, r);
+  return BigNatModule_normN(r);
+}
+function BigNatModule_subP(i_mut, n_mut, c_mut, p_mut, q_mut, r_mut) {
+  let z, i_1, z_1, i_2;
+
+  BigNatModule_subP: while (true) {
+    const i = i_mut,
+          n = n_mut,
+          c = c_mut,
+          p = p_mut,
+          q = q_mut,
+          r = r_mut;
+
+    if (i < n) {
+      const x = (z = p, (i_1 = i | 0, i_1 < z.bound ? z.digits[i_1] : 0)) - (z_1 = q, (i_2 = i | 0, i_2 < z_1.bound ? z_1.digits[i_2] : 0)) + c | 0;
+
+      if (x > 0) {
+        r.digits[i] = BigNatModule_modbase(x);
+        i_mut = i + 1;
+        n_mut = n;
+        c_mut = BigNatModule_divbase(x);
+        p_mut = p;
+        q_mut = q;
+        r_mut = r;
+        continue BigNatModule_subP;
+      } else {
+        const x_1 = x + BigNatModule_baseN | 0;
+        r.digits[i] = BigNatModule_modbase(x_1);
+        i_mut = i + 1;
+        n_mut = n;
+        c_mut = BigNatModule_divbase(x_1) - 1;
+        p_mut = p;
+        q_mut = q;
+        r_mut = r;
+        continue BigNatModule_subP;
+      }
+    } else {
+      return c !== 0;
+    }
+
+    break;
+  }
+}
+function BigNatModule_sub(p, q) {
+  const rbound = BigNatModule_maxInt(p.bound, q.bound) | 0;
+  const r = BigNatModule_createN(rbound);
+
+  if (BigNatModule_subP(0, rbound, 0, p, q, r)) {
+    return BigNatModule_embed(0);
+  } else {
+    return BigNatModule_normN(r);
+  }
+}
+function BigNatModule_isZero(p) {
+  return p.bound === 0;
+}
+function BigNatModule_IsZero(p) {
+  return BigNatModule_isZero(p);
+}
+function BigNatModule_isOne(p) {
+  if (p.bound === 1) {
+    return p.digits[0] === 1;
+  } else {
+    return false;
+  }
+}
+function BigNatModule_equal(p, q) {
+  if (p.bound === q.bound) {
+    const check = (pa_mut, qa_mut, i_mut) => {
+      check: while (true) {
+        const pa = pa_mut,
+              qa = qa_mut,
+              i = i_mut;
+
+        if (i === -1) {
+          return true;
+        } else if (pa[i] === qa[i]) {
+          pa_mut = pa;
+          qa_mut = qa;
+          i_mut = i - 1;
+          continue check;
+        } else {
+          return false;
+        }
+
+        break;
+      }
+    };
+
+    return check(p.digits, q.digits, p.bound - 1);
+  } else {
+    return false;
+  }
+}
+function BigNatModule_shiftCompare(p, pn, q, qn) {
+  if (p.bound + pn < q.bound + qn) {
+    return -1;
+  } else if (p.bound + pn > q.bound + pn) {
+    return 1;
+  } else {
+    const check = (pa_mut, qa_mut, i_mut) => {
+      check: while (true) {
+        const pa = pa_mut,
+              qa = qa_mut,
+              i = i_mut;
+
+        if (i === -1) {
+          return 0;
+        } else {
+          const pai = (i < pn ? 0 : pa[i - pn]) | 0;
+          const qai = (i < qn ? 0 : qa[i - qn]) | 0;
+
+          if (pai === qai) {
+            pa_mut = pa;
+            qa_mut = qa;
+            i_mut = i - 1;
+            continue check;
+          } else if (pai < qai) {
+            return -1;
+          } else {
+            return 1;
+          }
+        }
+
+        break;
+      }
+    };
+
+    return check(p.digits, q.digits, p.bound + pn - 1) | 0;
+  }
+}
+function BigNatModule_compare(p, q) {
+  if (p.bound < q.bound) {
+    return -1;
+  } else if (p.bound > q.bound) {
+    return 1;
+  } else {
+    const check = (pa_mut, qa_mut, i_mut) => {
+      check: while (true) {
+        const pa = pa_mut,
+              qa = qa_mut,
+              i = i_mut;
+
+        if (i === -1) {
+          return 0;
+        } else if (pa[i] === qa[i]) {
+          pa_mut = pa;
+          qa_mut = qa;
+          i_mut = i - 1;
+          continue check;
+        } else if (pa[i] < qa[i]) {
+          return -1;
+        } else {
+          return 1;
+        }
+
+        break;
+      }
+    };
+
+    return check(p.digits, q.digits, p.bound - 1) | 0;
+  }
+}
+function BigNatModule_lt(p, q) {
+  return BigNatModule_compare(p, q) === -1;
+}
+function BigNatModule_gt(p, q) {
+  return BigNatModule_compare(p, q) === 1;
+}
+function BigNatModule_lte(p, q) {
+  return BigNatModule_compare(p, q) !== 1;
+}
+function BigNatModule_gte(p, q) {
+  return BigNatModule_compare(p, q) !== -1;
+}
+function BigNatModule_min(a, b) {
+  if (BigNatModule_lt(a, b)) {
+    return a;
+  } else {
+    return b;
+  }
+}
+function BigNatModule_max(a, b) {
+  if (BigNatModule_lt(a, b)) {
+    return b;
+  } else {
+    return a;
+  }
+}
+function BigNatModule_contributeArr(a_mut, i_mut, c_mut) {
+  BigNatModule_contributeArr: while (true) {
+    const a = a_mut,
+          i = i_mut,
+          c = c_mut;
+    const x = (0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.op_Addition)((0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.fromInteger)(a[i], false, 2), c);
+    const c_1 = (0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.op_Division)(x, BigNatModule_baseNi64);
+    const x_3 = ~~(0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.toInt)((0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.op_BitwiseAnd)(x, BigNatModule_baseMaski64)) | 0;
+    a[i] = x_3;
+
+    if ((0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.compare)(c_1, (0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.fromBits)(0, 0, false)) > 0) {
+      a_mut = a;
+      i_mut = i + 1;
+      c_mut = c_1;
+      continue BigNatModule_contributeArr;
+    }
+
+    break;
+  }
+}
+function BigNatModule_scale(k, p) {
+  const r = BigNatModule_createN(p.bound + BigNatModule_boundInt);
+  const k_1 = (0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.fromInteger)(k, false, 2);
+
+  for (let i = 0; i <= p.bound - 1; i++) {
+    BigNatModule_contributeArr(r.digits, i, (0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.op_Multiply)(k_1, (0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.fromInteger)(p.digits[i], false, 2)));
+  }
+
+  return BigNatModule_normN(r);
+}
+function BigNatModule_mulSchoolBookBothSmall(p, q) {
+  const r = BigNatModule_createN(2);
+  const rak = (0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.op_Multiply)((0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.fromInteger)(p, false, 2), (0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.fromInteger)(q, false, 2));
+  BigNatModule_setCoeff(r, 0, ~~(0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.toInt)((0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.op_BitwiseAnd)(rak, BigNatModule_baseMaski64)));
+  BigNatModule_setCoeff(r, 1, ~~(0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.toInt)((0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.op_Division)(rak, BigNatModule_baseNi64)));
+  return BigNatModule_normN(r);
+}
+function BigNatModule_mulSchoolBookCarry(r_mut, c_mut, k_mut) {
+  BigNatModule_mulSchoolBookCarry: while (true) {
+    const r = r_mut,
+          c = c_mut,
+          k = k_mut;
+
+    if ((0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.compare)(c, (0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.fromBits)(0, 0, false)) > 0) {
+      const rak = (0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.op_Addition)(BigNatModule_coeff64(r, k), c);
+      BigNatModule_setCoeff(r, k, ~~(0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.toInt)((0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.op_BitwiseAnd)(rak, BigNatModule_baseMaski64)));
+      r_mut = r;
+      c_mut = (0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.op_Division)(rak, BigNatModule_baseNi64);
+      k_mut = k + 1;
+      continue BigNatModule_mulSchoolBookCarry;
+    }
+
+    break;
+  }
+}
+function BigNatModule_mulSchoolBookOneSmall(p, q) {
+  const bp = BigNatModule_bound(p) | 0;
+  const r = BigNatModule_createN(bp + 1);
+  const q_1 = (0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.fromInteger)(q, false, 2);
+  let c = (0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.fromBits)(0, 0, false);
+
+  for (let i = 0; i <= bp - 1; i++) {
+    const rak = (0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.op_Addition)((0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.op_Addition)(c, BigNatModule_coeff64(r, i)), (0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.op_Multiply)(BigNatModule_coeff64(p, i), q_1));
+    BigNatModule_setCoeff(r, i, ~~(0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.toInt)((0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.op_BitwiseAnd)(rak, BigNatModule_baseMaski64)));
+    c = (0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.op_Division)(rak, BigNatModule_baseNi64);
+  }
+
+  BigNatModule_mulSchoolBookCarry(r, c, bp);
+  return BigNatModule_normN(r);
+}
+function BigNatModule_mulSchoolBookNeitherSmall(p, q) {
+  const r = BigNatModule_createN(p.bound + q.bound);
+  const ra = r.digits;
+
+  for (let i = 0; i <= p.bound - 1; i++) {
+    const pai = (0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.fromInteger)(p.digits[i], false, 2);
+    let c = (0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.fromBits)(0, 0, false);
+    let k = i | 0;
+
+    for (let j = 0; j <= q.bound - 1; j++) {
+      const qaj = (0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.fromInteger)(q.digits[j], false, 2);
+      const rak = (0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.op_Addition)((0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.op_Addition)((0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.fromInteger)(ra[k], false, 2), c), (0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.op_Multiply)(pai, qaj));
+      ra[k] = ~~(0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.toInt)((0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.op_BitwiseAnd)(rak, BigNatModule_baseMaski64));
+      c = (0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.op_Division)(rak, BigNatModule_baseNi64);
+      k = k + 1;
+    }
+
+    BigNatModule_mulSchoolBookCarry(r, c, k);
+  }
+
+  return BigNatModule_normN(r);
+}
+function BigNatModule_mulSchoolBook(p, q) {
+  const pSmall = BigNatModule_bound(p) === 1;
+  const qSmall = BigNatModule_bound(q) === 1;
+
+  if (pSmall ? qSmall : false) {
+    return BigNatModule_mulSchoolBookBothSmall(BigNatModule_coeff(p, 0), BigNatModule_coeff(q, 0));
+  } else if (pSmall) {
+    return BigNatModule_mulSchoolBookOneSmall(q, BigNatModule_coeff(p, 0));
+  } else if (qSmall) {
+    return BigNatModule_mulSchoolBookOneSmall(p, BigNatModule_coeff(q, 0));
+  } else {
+    return BigNatModule_mulSchoolBookNeitherSmall(p, q);
+  }
+}
+class BigNatModule_encoding extends _Types_js__WEBPACK_IMPORTED_MODULE_0__.Record {
+  constructor(bigL, twoToBigL, k, bigK, bigN, split, splits) {
+    super();
+    this.bigL = bigL | 0;
+    this.twoToBigL = twoToBigL | 0;
+    this.k = k | 0;
+    this.bigK = bigK | 0;
+    this.bigN = bigN | 0;
+    this.split = split | 0;
+    this.splits = splits;
+  }
+
+}
+function BigNatModule_encoding$reflection() {
+  return (0,_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.record_type)("BigInt.BigNatModule.encoding", [], BigNatModule_encoding, () => [["bigL", _Reflection_js__WEBPACK_IMPORTED_MODULE_1__.int32_type], ["twoToBigL", _Reflection_js__WEBPACK_IMPORTED_MODULE_1__.int32_type], ["k", _Reflection_js__WEBPACK_IMPORTED_MODULE_1__.int32_type], ["bigK", _Reflection_js__WEBPACK_IMPORTED_MODULE_1__.int32_type], ["bigN", _Reflection_js__WEBPACK_IMPORTED_MODULE_1__.int32_type], ["split", _Reflection_js__WEBPACK_IMPORTED_MODULE_1__.int32_type], ["splits", (0,_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.array_type)(_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.int32_type)]]);
+}
+function BigNatModule_mkEncoding(bigL, k, bigK, bigN) {
+  return new BigNatModule_encoding(bigL, BigNatModule_pow32(2, bigL), k, bigK, bigN, ~~(BigNatModule_baseBits / bigL), (0,_Array_js__WEBPACK_IMPORTED_MODULE_3__.initialize)(~~(BigNatModule_baseBits / bigL), i => BigNatModule_pow32(2, bigL * i), Int32Array));
+}
+const BigNatModule_table = [BigNatModule_mkEncoding(1, 28, 268435456, 268435456), BigNatModule_mkEncoding(2, 26, 67108864, 134217728), BigNatModule_mkEncoding(3, 24, 16777216, 50331648), BigNatModule_mkEncoding(4, 22, 4194304, 16777216), BigNatModule_mkEncoding(5, 20, 1048576, 5242880), BigNatModule_mkEncoding(6, 18, 262144, 1572864), BigNatModule_mkEncoding(7, 16, 65536, 458752), BigNatModule_mkEncoding(8, 14, 16384, 131072), BigNatModule_mkEncoding(9, 12, 4096, 36864), BigNatModule_mkEncoding(10, 10, 1024, 10240), BigNatModule_mkEncoding(11, 8, 256, 2816), BigNatModule_mkEncoding(12, 6, 64, 768), BigNatModule_mkEncoding(13, 4, 16, 208)];
+function BigNatModule_calculateTableTow(bigL) {
+  const k = BigNatModule_FFT_maxBitsInsideFp - 2 * bigL | 0;
+  const bigK = BigNatModule_pow64((0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.fromBits)(2, 0, false), k);
+  return [bigL, k, bigK, (0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.op_Multiply)(bigK, (0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.fromInteger)(bigL, false, 2))];
+}
+function BigNatModule_encodingGivenResultBits(bitsRes) {
+  const selectFrom = i_mut => {
+    selectFrom: while (true) {
+      const i = i_mut;
+
+      if (i + 1 < BigNatModule_table.length ? bitsRes < BigNatModule_table[i + 1].bigN : false) {
+        i_mut = i + 1;
+        continue selectFrom;
+      } else {
+        return BigNatModule_table[i];
+      }
+
+      break;
+    }
+  };
+
+  if (bitsRes >= BigNatModule_table[0].bigN) {
+    throw new Error("Product is huge, around 268435456 bits, beyond quickmul");
+  } else {
+    return selectFrom(0);
+  }
+}
+const BigNatModule_bitmask = (0,_Array_js__WEBPACK_IMPORTED_MODULE_3__.initialize)(BigNatModule_baseBits, i => BigNatModule_pow32(2, i) - 1, Int32Array);
+const BigNatModule_twopowers = (0,_Array_js__WEBPACK_IMPORTED_MODULE_3__.initialize)(BigNatModule_baseBits, i => BigNatModule_pow32(2, i), Int32Array);
+const BigNatModule_twopowersI64 = (0,_Array_js__WEBPACK_IMPORTED_MODULE_3__.initialize)(BigNatModule_baseBits, i => BigNatModule_pow64((0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.fromBits)(2, 0, false), i));
+function BigNatModule_wordBits(word) {
+  const hi = k_mut => {
+    hi: while (true) {
+      const k = k_mut;
+
+      if (k === 0) {
+        return 0;
+      } else if ((word & BigNatModule_twopowers[k - 1]) !== 0) {
+        return k | 0;
+      } else {
+        k_mut = k - 1;
+        continue hi;
+      }
+
+      break;
+    }
+  };
+
+  return hi(BigNatModule_baseBits) | 0;
+}
+function BigNatModule_bits(u) {
+  if (u.bound === 0) {
+    return 0;
+  } else {
+    return BigNatModule_degree(u) * BigNatModule_baseBits + BigNatModule_wordBits(u.digits[BigNatModule_degree(u)]) | 0;
+  }
+}
+function BigNatModule_extractBits(n, enc, bi) {
+  let z, i, z_1, i_1, z_2, i_2;
+  const biw = ~~(bi / BigNatModule_baseBits) | 0;
+  const bjw = ~~((bi + enc.bigL - 1) / BigNatModule_baseBits) | 0;
+
+  if (biw !== bjw) {
+    const xbit = bi % BigNatModule_baseBits | 0;
+    return ((z = n, (i = biw | 0, i < z.bound ? z.digits[i] : 0)) >> xbit | (z_1 = n, (i_1 = bjw | 0, i_1 < z_1.bound ? z_1.digits[i_1] : 0)) << BigNatModule_baseBits - xbit) & BigNatModule_bitmask[enc.bigL] | 0;
+  } else {
+    return (z_2 = n, (i_2 = biw | 0, i_2 < z_2.bound ? z_2.digits[i_2] : 0)) >> bi % BigNatModule_baseBits & BigNatModule_bitmask[enc.bigL] | 0;
+  }
+}
+function BigNatModule_encodePoly(enc, n) {
+  const poly = (0,_Array_js__WEBPACK_IMPORTED_MODULE_3__.fill)(new Uint32Array(enc.bigK), 0, enc.bigK, BigNatModule_FFT_Fp_ofInt32(0));
+  const biMax = n.bound * BigNatModule_baseBits | 0;
+
+  const encoder = (i_mut, bi_mut) => {
+    encoder: while (true) {
+      const i = i_mut,
+            bi = bi_mut;
+
+      if (i === enc.bigK ? true : bi > biMax) {} else {
+        const pi = BigNatModule_extractBits(n, enc, bi) | 0;
+        poly[i] = BigNatModule_FFT_Fp_ofInt32(pi);
+        i_mut = i + 1;
+        bi_mut = bi + enc.bigL;
+        continue encoder;
+      }
+
+      break;
+    }
+  };
+
+  encoder(0, 0);
+  return poly;
+}
+function BigNatModule_decodeResultBits(enc, poly) {
+  let n = 0;
+
+  for (let i = 0; i <= poly.length - 1; i++) {
+    if (poly[i] !== BigNatModule_FFT_mzero) {
+      n = i;
+    }
+  }
+
+  return BigNatModule_FFT_maxBitsInsideFp + enc.bigL * n + 1 + 1 | 0;
+}
+function BigNatModule_decodePoly(enc, poly) {
+  const rbound = ~~(BigNatModule_decodeResultBits(enc, poly) / BigNatModule_baseBits) + 1 | 0;
+  const r = BigNatModule_createN(rbound);
+
+  const evaluate = (i_mut, j_mut, d_mut) => {
+    evaluate: while (true) {
+      const i = i_mut,
+            j = j_mut,
+            d = d_mut;
+
+      if (i === enc.bigK) {} else {
+        if (j >= rbound) {} else {
+          BigNatModule_contributeArr(r.digits, j, (0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.op_Multiply)((0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.fromInteger)(BigNatModule_FFT_Fp_toInt(poly[i]), false, 2), BigNatModule_twopowersI64[d]));
+        }
+
+        const d_1 = d + enc.bigL | 0;
+        const patternInput = d_1 >= BigNatModule_baseBits ? [j + 1, d_1 - BigNatModule_baseBits] : [j, d_1];
+        i_mut = i + 1;
+        j_mut = patternInput[0];
+        d_mut = patternInput[1];
+        continue evaluate;
+      }
+
+      break;
+    }
+  };
+
+  evaluate(0, 0, 0);
+  return BigNatModule_normN(r);
+}
+function BigNatModule_quickMulUsingFft(u, v) {
+  const enc = BigNatModule_encodingGivenResultBits(BigNatModule_bits(u) + BigNatModule_bits(v));
+  return BigNatModule_normN(BigNatModule_decodePoly(enc, BigNatModule_FFT_computeFftPaddedPolynomialProduct(enc.bigK, enc.k, BigNatModule_encodePoly(enc, u), BigNatModule_encodePoly(enc, v))));
+}
+const BigNatModule_minDigitsKaratsuba = 16;
+function BigNatModule_recMulKaratsuba(mul, p, q) {
+  const bmax = BigNatModule_maxInt(p.bound, q.bound) | 0;
+
+  if (bmax > BigNatModule_minDigitsKaratsuba) {
+    const k = ~~(bmax / 2) | 0;
+    const a0 = BigNatModule_restrictTo(k, p);
+    const a1 = BigNatModule_shiftDown(k, p);
+    const b0 = BigNatModule_restrictTo(k, q);
+    const b1 = BigNatModule_shiftDown(k, q);
+    const q0 = mul(a0, b0);
+    const q1 = mul(BigNatModule_add(a0, a1), BigNatModule_add(b0, b1));
+    const q2 = mul(a1, b1);
+    return BigNatModule_add(q0, BigNatModule_shiftUp(k, BigNatModule_add(BigNatModule_sub(q1, BigNatModule_add(q0, q2)), BigNatModule_shiftUp(k, q2))));
+  } else {
+    return BigNatModule_mulSchoolBook(p, q);
+  }
+}
+function BigNatModule_mulKaratsuba(x, y) {
+  return BigNatModule_recMulKaratsuba(BigNatModule_mulKaratsuba, x, y);
+}
+const BigNatModule_productDigitsUpperSchoolBook = ~~(64000 / BigNatModule_baseBits);
+const BigNatModule_singleDigitForceSchoolBook = ~~(32000 / BigNatModule_baseBits);
+const BigNatModule_productDigitsUpperFft = ~~(BigNatModule_table[0].bigN / BigNatModule_baseBits);
+function BigNatModule_mul(p, q) {
+  return BigNatModule_mulSchoolBook(p, q);
+}
+function BigNatModule_scaleSubInPlace(x, f, a, n) {
+  const patternInput = [x.digits, BigNatModule_degree(x)];
+  const x_1 = patternInput[0];
+  const patternInput_1 = [a.digits, BigNatModule_degree(a)];
+  const ad = patternInput_1[1] | 0;
+  const a_1 = patternInput_1[0];
+  const f_1 = (0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.fromInteger)(f, false, 2);
+  let j = 0;
+  let z = (0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.op_Multiply)(f_1, (0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.fromInteger)(a_1[0], false, 2));
+
+  while ((0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.compare)(z, (0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.fromBits)(0, 0, false)) > 0 ? true : j < ad) {
+    if (j > patternInput[1]) {
+      throw new Error("scaleSubInPlace: pre-condition did not apply, result would be -ve");
+    }
+
+    let zLo = ~~(0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.toInt)((0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.op_BitwiseAnd)(z, BigNatModule_baseMaski64)) | 0;
+    let zHi = (0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.op_Division)(z, BigNatModule_baseNi64);
+
+    if (zLo <= x_1[j + n]) {
+      x_1[j + n] = x_1[j + n] - zLo;
+    } else {
+      x_1[j + n] = x_1[j + n] + (BigNatModule_baseN - zLo);
+      zHi = (0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.op_Addition)(zHi, (0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.fromBits)(1, 0, false));
+    }
+
+    if (j < ad) {
+      z = (0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.op_Addition)(zHi, (0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.op_Multiply)(f_1, (0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.fromInteger)(a_1[j + 1], false, 2)));
+    } else {
+      z = zHi;
+    }
+
+    j = j + 1;
+  }
+
+  void BigNatModule_normN(x);
+}
+function BigNatModule_scaleSub(x, f, a, n) {
+  const freshx = BigNatModule_add(x, BigNatModule_zero);
+  BigNatModule_scaleSubInPlace(freshx, f, a, n);
+  return BigNatModule_normN(freshx);
+}
+function BigNatModule_scaleAddInPlace(x, f, a, n) {
+  const patternInput = [x.digits, BigNatModule_degree(x)];
+  const x_1 = patternInput[0];
+  const patternInput_1 = [a.digits, BigNatModule_degree(a)];
+  const ad = patternInput_1[1] | 0;
+  const a_1 = patternInput_1[0];
+  const f_1 = (0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.fromInteger)(f, false, 2);
+  let j = 0;
+  let z = (0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.op_Multiply)(f_1, (0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.fromInteger)(a_1[0], false, 2));
+
+  while ((0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.compare)(z, (0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.fromBits)(0, 0, false)) > 0 ? true : j < ad) {
+    if (j > patternInput[1]) {
+      throw new Error("scaleSubInPlace: pre-condition did not apply, result would be -ve");
+    }
+
+    let zLo = ~~(0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.toInt)((0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.op_BitwiseAnd)(z, BigNatModule_baseMaski64)) | 0;
+    let zHi = (0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.op_Division)(z, BigNatModule_baseNi64);
+
+    if (zLo < BigNatModule_baseN - x_1[j + n]) {
+      x_1[j + n] = x_1[j + n] + zLo;
+    } else {
+      x_1[j + n] = zLo - (BigNatModule_baseN - x_1[j + n]);
+      zHi = (0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.op_Addition)(zHi, (0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.fromBits)(1, 0, false));
+    }
+
+    if (j < ad) {
+      z = (0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.op_Addition)(zHi, (0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.op_Multiply)(f_1, (0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.fromInteger)(a_1[j + 1], false, 2)));
+    } else {
+      z = zHi;
+    }
+
+    j = j + 1;
+  }
+
+  void BigNatModule_normN(x);
+}
+function BigNatModule_scaleAdd(x, f, a, n) {
+  const freshx = BigNatModule_add(x, BigNatModule_zero);
+  BigNatModule_scaleAddInPlace(freshx, f, a, n);
+  return BigNatModule_normN(freshx);
+}
+function BigNatModule_removeFactor(x, a, n) {
+  const patternInput = [BigNatModule_degree(a), BigNatModule_degree(x)];
+  const degx = patternInput[1] | 0;
+  const dega = patternInput[0] | 0;
+
+  if (degx < dega + n) {
+    return 0;
+  } else {
+    const patternInput_1 = [a.digits, x.digits];
+    const xa = patternInput_1[1];
+    const aa = patternInput_1[0];
+    const f = (dega === 0 ? degx === n ? ~~(xa[n] / aa[0]) : ~~(0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.toInt)((0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.op_Division)((0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.op_Addition)((0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.op_Multiply)((0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.fromInteger)(xa[degx], false, 2), BigNatModule_baseNi64), (0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.fromInteger)(xa[degx - 1], false, 2)), (0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.fromInteger)(aa[0], false, 2))) : degx === dega + n ? ~~(xa[degx] / (aa[dega] + 1)) : ~~(0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.toInt)((0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.op_Division)((0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.op_Addition)((0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.op_Multiply)((0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.fromInteger)(xa[degx], false, 2), BigNatModule_baseNi64), (0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.fromInteger)(xa[degx - 1], false, 2)), (0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.op_Addition)((0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.fromInteger)(aa[dega], false, 2), (0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.fromBits)(1, 0, false))))) | 0;
+
+    if (f === 0) {
+      if (BigNatModule_shiftCompare(a, n, x, 0) !== 1) {
+        return 1;
+      } else {
+        return 0;
+      }
+    } else {
+      return f | 0;
+    }
+  }
+}
+function BigNatModule_divmod(b, a) {
+  if (BigNatModule_isZero(a)) {
+    throw new Error();
+  } else if (BigNatModule_degree(b) < BigNatModule_degree(a)) {
+    return [BigNatModule_zero, b];
+  } else {
+    const x = BigNatModule_copyN(b);
+    const d = BigNatModule_createN(BigNatModule_degree(b) - BigNatModule_degree(a) + 1 + 1);
+    let p = BigNatModule_degree(b) | 0;
+    const m = BigNatModule_degree(a) | 0;
+    let n = p - m | 0;
+
+    const Invariant = tupledArg => {};
+
+    let finished = false;
+
+    while (!finished) {
+      Invariant([d, x, n, p]);
+      const f = BigNatModule_removeFactor(x, a, n) | 0;
+
+      if (f > 0) {
+        BigNatModule_scaleSubInPlace(x, f, a, n);
+        BigNatModule_scaleAddInPlace(d, f, BigNatModule_one, n);
+        Invariant([d, x, n, p]);
+      } else {
+        finished = f === 0 ? n === 0 : false;
+
+        if (!finished) {
+          if (p === m + n) {
+            Invariant([d, x, n - 1, p]);
+            n = n - 1;
+          } else {
+            Invariant([d, x, n - 1, p - 1]);
+            n = n - 1;
+            p = p - 1;
+          }
+        }
+      }
+    }
+
+    return [BigNatModule_normN(d), BigNatModule_normN(x)];
+  }
+}
+function BigNatModule_div(b, a) {
+  return BigNatModule_divmod(b, a)[0];
+}
+function BigNatModule_rem(b, a) {
+  return BigNatModule_divmod(b, a)[1];
+}
+function BigNatModule_bitAnd(a, b) {
+  const r = BigNatModule_createN(BigNatModule_minInt(a.bound, b.bound));
+
+  for (let i = 0; i <= r.bound - 1; i++) {
+    r.digits[i] = a.digits[i] & b.digits[i];
+  }
+
+  return BigNatModule_normN(r);
+}
+function BigNatModule_bitOr(a, b) {
+  const r = BigNatModule_createN(BigNatModule_maxInt(a.bound, b.bound));
+
+  for (let i = 0; i <= a.bound - 1; i++) {
+    r.digits[i] = r.digits[i] | a.digits[i];
+  }
+
+  for (let i_1 = 0; i_1 <= b.bound - 1; i_1++) {
+    r.digits[i_1] = r.digits[i_1] | b.digits[i_1];
+  }
+
+  return BigNatModule_normN(r);
+}
+function BigNatModule_bitXor(a, b) {
+  const r = BigNatModule_createN(BigNatModule_maxInt(a.bound, b.bound));
+
+  for (let i = 0; i <= a.bound - 1; i++) {
+    r.digits[i] = r.digits[i] ^ a.digits[i];
+  }
+
+  for (let i_1 = 0; i_1 <= b.bound - 1; i_1++) {
+    r.digits[i_1] = r.digits[i_1] ^ b.digits[i_1];
+  }
+
+  return BigNatModule_normN(r);
+}
+function BigNatModule_hcf(a, b) {
+  const hcfloop = (a_1_mut, b_1_mut) => {
+    hcfloop: while (true) {
+      const a_1 = a_1_mut,
+            b_1 = b_1_mut;
+
+      if (BigNatModule_equal(BigNatModule_zero, a_1)) {
+        return b_1;
+      } else {
+        a_1_mut = BigNatModule_divmod(b_1, a_1)[1];
+        b_1_mut = a_1;
+        continue hcfloop;
+      }
+
+      break;
+    }
+  };
+
+  if (BigNatModule_lt(a, b)) {
+    return hcfloop(a, b);
+  } else {
+    return hcfloop(b, a);
+  }
+}
+const BigNatModule_two = BigNatModule_embed(2);
+function BigNatModule_powi(x, n) {
+  const power = (acc_mut, x_1_mut, n_1_mut) => {
+    power: while (true) {
+      const acc = acc_mut,
+            x_1 = x_1_mut,
+            n_1 = n_1_mut;
+
+      if (n_1 === 0) {
+        return acc;
+      } else if (n_1 % 2 === 0) {
+        acc_mut = acc;
+        x_1_mut = BigNatModule_mul(x_1, x_1);
+        n_1_mut = ~~(n_1 / 2);
+        continue power;
+      } else {
+        acc_mut = BigNatModule_mul(x_1, acc);
+        x_1_mut = BigNatModule_mul(x_1, x_1);
+        n_1_mut = ~~(n_1 / 2);
+        continue power;
+      }
+
+      break;
+    }
+  };
+
+  return power(BigNatModule_one, x, n);
+}
+function BigNatModule_pow(x, n) {
+  const power = (acc_mut, x_1_mut, n_1_mut) => {
+    power: while (true) {
+      const acc = acc_mut,
+            x_1 = x_1_mut,
+            n_1 = n_1_mut;
+
+      if (BigNatModule_isZero(n_1)) {
+        return acc;
+      } else {
+        const patternInput = BigNatModule_divmod(n_1, BigNatModule_two);
+        const ndiv2 = patternInput[0];
+
+        if (BigNatModule_isZero(patternInput[1])) {
+          acc_mut = acc;
+          x_1_mut = BigNatModule_mul(x_1, x_1);
+          n_1_mut = ndiv2;
+          continue power;
+        } else {
+          acc_mut = BigNatModule_mul(x_1, acc);
+          x_1_mut = BigNatModule_mul(x_1, x_1);
+          n_1_mut = ndiv2;
+          continue power;
+        }
+      }
+
+      break;
+    }
+  };
+
+  return power(BigNatModule_one, x, n);
+}
+function BigNatModule_toFloat(n) {
+  const evalFloat = (acc_mut, k_mut, i_mut) => {
+    evalFloat: while (true) {
+      const acc = acc_mut,
+            k = k_mut,
+            i = i_mut;
+
+      if (i === n.bound) {
+        return acc;
+      } else {
+        acc_mut = acc + k * n.digits[i];
+        k_mut = k * BigNatModule_baseN;
+        i_mut = i + 1;
+        continue evalFloat;
+      }
+
+      break;
+    }
+  };
+
+  return evalFloat(0, 1, 0);
+}
+function BigNatModule_ofInt32(n) {
+  return BigNatModule_embed(n);
+}
+function BigNatModule_ofInt64(n) {
+  return BigNatModule_embed64(n);
+}
+function BigNatModule_toUInt32(n) {
+  const matchValue = n.bound | 0;
+
+  switch (matchValue) {
+    case 0:
+      {
+        return 0;
+      }
+
+    case 1:
+      {
+        const value = n.digits[0] | 0;
+        return value >>> 0;
+      }
+
+    case 2:
+      {
+        const patternInput = [n.digits[0], n.digits[1]];
+        const xB = patternInput[1] | 0;
+
+        if (xB > BigNatModule_baseMask32B) {
+          throw new Error();
+        }
+
+        return ((patternInput[0] & BigNatModule_baseMask32A) >>> 0) + ((xB & BigNatModule_baseMask32B) >>> 0 << BigNatModule_baseShift32B >>> 0);
+      }
+
+    default:
+      {
+        throw new Error();
+      }
+  }
+}
+function BigNatModule_toUInt64(n) {
+  const matchValue = n.bound | 0;
+
+  switch (matchValue) {
+    case 0:
+      {
+        return (0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.fromBits)(0, 0, true);
+      }
+
+    case 1:
+      {
+        return (0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.fromInteger)(n.digits[0], true, 2);
+      }
+
+    case 2:
+      {
+        const patternInput = [n.digits[0], n.digits[1]];
+        return (0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.op_Addition)((0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.fromInteger)(patternInput[0] & BigNatModule_baseMask64A, true, 2), (0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.op_LeftShift)((0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.fromInteger)(patternInput[1] & BigNatModule_baseMask64B, true, 2), BigNatModule_baseShift64B));
+      }
+
+    case 3:
+      {
+        const patternInput_1 = [n.digits[0], n.digits[1], n.digits[2]];
+        const xC = patternInput_1[2] | 0;
+
+        if (xC > BigNatModule_baseMask64C) {
+          throw new Error();
+        }
+
+        return (0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.op_Addition)((0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.op_Addition)((0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.fromInteger)(patternInput_1[0] & BigNatModule_baseMask64A, true, 2), (0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.op_LeftShift)((0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.fromInteger)(patternInput_1[1] & BigNatModule_baseMask64B, true, 2), BigNatModule_baseShift64B)), (0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.op_LeftShift)((0,_Long_js__WEBPACK_IMPORTED_MODULE_2__.fromInteger)(xC & BigNatModule_baseMask64C, true, 2), BigNatModule_baseShift64C));
+      }
+
+    default:
+      {
+        throw new Error();
+      }
+  }
+}
+function BigNatModule_toString(n) {
+  const degn = BigNatModule_degree(n) | 0;
+
+  const route = (prior_mut, k_mut, ten2k_mut) => {
+    route: while (true) {
+      const prior = prior_mut,
+            k = k_mut,
+            ten2k = ten2k_mut;
+
+      if (BigNatModule_degree(ten2k) > degn) {
+        return new _Types_js__WEBPACK_IMPORTED_MODULE_0__.List([k, ten2k], prior);
+      } else {
+        prior_mut = new _Types_js__WEBPACK_IMPORTED_MODULE_0__.List([k, ten2k], prior);
+        k_mut = k + 1;
+        ten2k_mut = BigNatModule_mul(ten2k, ten2k);
+        continue route;
+      }
+
+      break;
+    }
+  };
+
+  const collect = (isLeading_mut, digits_mut, n_1_mut, _arg1_mut) => {
+    collect: while (true) {
+      const isLeading = isLeading_mut,
+            digits = digits_mut,
+            n_1 = n_1_mut,
+            _arg1 = _arg1_mut;
+
+      if (_arg1.tail != null) {
+        const prior_1 = _arg1.tail;
+        const patternInput = BigNatModule_divmod(n_1, _arg1.head[1]);
+        const nL = patternInput[1];
+        const nH = patternInput[0];
+
+        if (isLeading ? BigNatModule_isZero(nH) : false) {
+          isLeading_mut = isLeading;
+          digits_mut = digits;
+          n_1_mut = nL;
+          _arg1_mut = prior_1;
+          continue collect;
+        } else {
+          isLeading_mut = isLeading;
+          digits_mut = collect(false, digits, nL, prior_1);
+          n_1_mut = nH;
+          _arg1_mut = prior_1;
+          continue collect;
+        }
+      } else {
+        const n_2 = BigNatModule_eval32(n_1) | 0;
+
+        if (isLeading ? n_2 === 0 : false) {
+          return digits;
+        } else {
+          return new _Types_js__WEBPACK_IMPORTED_MODULE_0__.List((0,_Util_js__WEBPACK_IMPORTED_MODULE_4__.int32ToString)(n_2), digits);
+        }
+      }
+
+      break;
+    }
+  };
+
+  const digits_4 = collect(true, new _Types_js__WEBPACK_IMPORTED_MODULE_0__.List(), n, route(new _Types_js__WEBPACK_IMPORTED_MODULE_0__.List(), 0, BigNatModule_embed(10)));
+
+  if (digits_4.tail == null) {
+    return "0";
+  } else {
+    return (0,_String_js__WEBPACK_IMPORTED_MODULE_5__.join)("", Array.from(digits_4));
+  }
+}
+function BigNatModule_ofString(str) {
+  const len = str.length | 0;
+
+  if ((0,_String_js__WEBPACK_IMPORTED_MODULE_5__.isNullOrEmpty)(str)) {
+    throw new Error("empty string\\nParameter name: str");
+  }
+
+  const ten = BigNatModule_embed(10);
+
+  const build = (acc_mut, i_mut) => {
+    build: while (true) {
+      const acc = acc_mut,
+            i = i_mut;
+
+      if (i === len) {
+        return acc;
+      } else {
+        const d = str[i].charCodeAt(0) - "0".charCodeAt(0) | 0;
+
+        if (0 <= d ? d <= 9 : false) {
+          acc_mut = BigNatModule_add(BigNatModule_mul(ten, acc), BigNatModule_embed(d));
+          i_mut = i + 1;
+          continue build;
+        } else {
+          throw new Error();
+        }
+      }
+
+      break;
+    }
+  };
+
+  return build(BigNatModule_embed(0), 0);
+}
+function BigNatModule_isSmall(n) {
+  return n.bound <= 1;
+}
+function BigNatModule_getSmall(n) {
+  const z = n;
+  const i = 0;
+
+  if (i < z.bound) {
+    return z.digits[i] | 0;
+  } else {
+    return 0;
+  }
+}
+function BigNatModule_factorial(n) {
+  const productR = (a, b) => {
+    if (BigNatModule_equal(a, b)) {
+      return a;
+    } else {
+      const m = BigNatModule_div(BigNatModule_add(a, b), BigNatModule_ofInt32(2));
+      return BigNatModule_mul(productR(a, m), productR(BigNatModule_add(m, BigNatModule_one), b));
+    }
+  };
+
+  return productR(BigNatModule_one, n);
+}
+
+/***/ }),
+
+/***/ "./resources/js/.fable/fable-library.3.1.1/BigInt/z.js":
+/*!*************************************************************!*\
+  !*** ./resources/js/.fable/fable-library.3.1.1/BigInt/z.js ***!
+  \*************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "BigInteger": () => (/* binding */ BigInteger),
+/* harmony export */   "BigInteger$reflection": () => (/* binding */ BigInteger$reflection),
+/* harmony export */   "BigInteger_$ctor_Z2BE94A1": () => (/* binding */ BigInteger_$ctor_Z2BE94A1),
+/* harmony export */   "BigInteger_nat_Z67CCE57D": () => (/* binding */ BigInteger_nat_Z67CCE57D),
+/* harmony export */   "BigInteger_create_Z2BE94A1": () => (/* binding */ BigInteger_create_Z2BE94A1),
+/* harmony export */   "BigInteger_posn_Z67CCE57D": () => (/* binding */ BigInteger_posn_Z67CCE57D),
+/* harmony export */   "BigInteger_negn_Z67CCE57D": () => (/* binding */ BigInteger_negn_Z67CCE57D),
+/* harmony export */   "BigInteger__get_Sign": () => (/* binding */ BigInteger__get_Sign),
+/* harmony export */   "BigInteger__get_SignInt": () => (/* binding */ BigInteger__get_SignInt),
+/* harmony export */   "BigInteger__get_V": () => (/* binding */ BigInteger__get_V),
+/* harmony export */   "BigInteger_op_Equality_56F059C0": () => (/* binding */ BigInteger_op_Equality_56F059C0),
+/* harmony export */   "BigInteger_op_Inequality_56F059C0": () => (/* binding */ BigInteger_op_Inequality_56F059C0),
+/* harmony export */   "BigInteger_op_LessThan_56F059C0": () => (/* binding */ BigInteger_op_LessThan_56F059C0),
+/* harmony export */   "BigInteger_op_GreaterThan_56F059C0": () => (/* binding */ BigInteger_op_GreaterThan_56F059C0),
+/* harmony export */   "BigInteger_compare_56F059C0": () => (/* binding */ BigInteger_compare_56F059C0),
+/* harmony export */   "BigInteger_hash_Z665282C2": () => (/* binding */ BigInteger_hash_Z665282C2),
+/* harmony export */   "BigInteger__get_StructuredDisplayString": () => (/* binding */ BigInteger__get_StructuredDisplayString),
+/* harmony export */   "BigInteger_$ctor_Z524259A4": () => (/* binding */ BigInteger_$ctor_Z524259A4),
+/* harmony export */   "BigInteger_$ctor_Z524259C1": () => (/* binding */ BigInteger_$ctor_Z524259C1),
+/* harmony export */   "BigInteger_get_One": () => (/* binding */ BigInteger_get_One),
+/* harmony export */   "BigInteger_get_Two": () => (/* binding */ BigInteger_get_Two),
+/* harmony export */   "BigInteger_get_Zero": () => (/* binding */ BigInteger_get_Zero),
+/* harmony export */   "BigInteger_op_UnaryNegation_Z665282C2": () => (/* binding */ BigInteger_op_UnaryNegation_Z665282C2),
+/* harmony export */   "BigInteger_Scale_Z320F31E": () => (/* binding */ BigInteger_Scale_Z320F31E),
+/* harmony export */   "BigInteger_subnn_6A57060": () => (/* binding */ BigInteger_subnn_6A57060),
+/* harmony export */   "BigInteger_addnn_6A57060": () => (/* binding */ BigInteger_addnn_6A57060),
+/* harmony export */   "BigInteger__get_IsZero": () => (/* binding */ BigInteger__get_IsZero),
+/* harmony export */   "BigInteger__get_IsOne": () => (/* binding */ BigInteger__get_IsOne),
+/* harmony export */   "BigInteger_op_Addition_56F059C0": () => (/* binding */ BigInteger_op_Addition_56F059C0),
+/* harmony export */   "BigInteger_op_Subtraction_56F059C0": () => (/* binding */ BigInteger_op_Subtraction_56F059C0),
+/* harmony export */   "BigInteger_op_Multiply_56F059C0": () => (/* binding */ BigInteger_op_Multiply_56F059C0),
+/* harmony export */   "BigInteger_DivRem_56F059C0": () => (/* binding */ BigInteger_DivRem_56F059C0),
+/* harmony export */   "BigInteger_op_Division_56F059C0": () => (/* binding */ BigInteger_op_Division_56F059C0),
+/* harmony export */   "BigInteger_op_Modulus_56F059C0": () => (/* binding */ BigInteger_op_Modulus_56F059C0),
+/* harmony export */   "BigInteger_op_RightShift_62E082A2": () => (/* binding */ BigInteger_op_RightShift_62E082A2),
+/* harmony export */   "BigInteger_op_LeftShift_62E082A2": () => (/* binding */ BigInteger_op_LeftShift_62E082A2),
+/* harmony export */   "BigInteger_op_BitwiseAnd_56F059C0": () => (/* binding */ BigInteger_op_BitwiseAnd_56F059C0),
+/* harmony export */   "BigInteger_op_BitwiseOr_56F059C0": () => (/* binding */ BigInteger_op_BitwiseOr_56F059C0),
+/* harmony export */   "BigInteger_op_ExclusiveOr_56F059C0": () => (/* binding */ BigInteger_op_ExclusiveOr_56F059C0),
+/* harmony export */   "BigInteger_GreatestCommonDivisor_56F059C0": () => (/* binding */ BigInteger_GreatestCommonDivisor_56F059C0),
+/* harmony export */   "BigInteger__get_IsNegative": () => (/* binding */ BigInteger__get_IsNegative),
+/* harmony export */   "BigInteger__get_IsPositive": () => (/* binding */ BigInteger__get_IsPositive),
+/* harmony export */   "BigInteger_Abs_Z665282C2": () => (/* binding */ BigInteger_Abs_Z665282C2),
+/* harmony export */   "BigInteger_op_LessThanOrEqual_56F059C0": () => (/* binding */ BigInteger_op_LessThanOrEqual_56F059C0),
+/* harmony export */   "BigInteger_op_GreaterThanOrEqual_56F059C0": () => (/* binding */ BigInteger_op_GreaterThanOrEqual_56F059C0),
+/* harmony export */   "BigInteger_Pow_62E082A2": () => (/* binding */ BigInteger_Pow_62E082A2),
+/* harmony export */   "BigInteger__get_ToInt32": () => (/* binding */ BigInteger__get_ToInt32),
+/* harmony export */   "BigInteger__get_ToUInt32": () => (/* binding */ BigInteger__get_ToUInt32),
+/* harmony export */   "BigInteger__get_ToInt64": () => (/* binding */ BigInteger__get_ToInt64),
+/* harmony export */   "BigInteger__get_ToUInt64": () => (/* binding */ BigInteger__get_ToUInt64),
+/* harmony export */   "BigInteger__get_ToDouble": () => (/* binding */ BigInteger__get_ToDouble),
+/* harmony export */   "BigInteger__get_ToSByte": () => (/* binding */ BigInteger__get_ToSByte),
+/* harmony export */   "BigInteger__get_ToByte": () => (/* binding */ BigInteger__get_ToByte),
+/* harmony export */   "BigInteger__get_ToInt16": () => (/* binding */ BigInteger__get_ToInt16),
+/* harmony export */   "BigInteger__get_ToUInt16": () => (/* binding */ BigInteger__get_ToUInt16),
+/* harmony export */   "BigInteger__get_ToSingle": () => (/* binding */ BigInteger__get_ToSingle),
+/* harmony export */   "BigInteger__get_ToDecimal": () => (/* binding */ BigInteger__get_ToDecimal),
+/* harmony export */   "BigInteger_Parse_Z721C83C5": () => (/* binding */ BigInteger_Parse_Z721C83C5),
+/* harmony export */   "BigInteger__get_IsSmall": () => (/* binding */ BigInteger__get_IsSmall),
+/* harmony export */   "BigInteger_Factorial_Z665282C2": () => (/* binding */ BigInteger_Factorial_Z665282C2),
+/* harmony export */   "BigInteger_op_UnaryPlus_Z665282C2": () => (/* binding */ BigInteger_op_UnaryPlus_Z665282C2),
+/* harmony export */   "BigInteger_FromInt64_Z524259C1": () => (/* binding */ BigInteger_FromInt64_Z524259C1),
+/* harmony export */   "BigInteger_FromInt32_Z524259A4": () => (/* binding */ BigInteger_FromInt32_Z524259A4)
+/* harmony export */ });
+/* harmony import */ var _n_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./n.js */ "./resources/js/.fable/fable-library.3.1.1/BigInt/n.js");
+/* harmony import */ var _Types_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Types.js */ "./resources/js/.fable/fable-library.3.1.1/Types.js");
+/* harmony import */ var _Reflection_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Reflection.js */ "./resources/js/.fable/fable-library.3.1.1/Reflection.js");
+/* harmony import */ var _Array_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../Array.js */ "./resources/js/.fable/fable-library.3.1.1/Array.js");
+/* harmony import */ var _Long_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../Long.js */ "./resources/js/.fable/fable-library.3.1.1/Long.js");
+/* harmony import */ var _Int32_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../Int32.js */ "./resources/js/.fable/fable-library.3.1.1/Int32.js");
+/* harmony import */ var _Decimal_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../Decimal.js */ "./resources/js/.fable/fable-library.3.1.1/Decimal.js");
+
+
+
+
+
+
+
+class BigInteger extends _Types_js__WEBPACK_IMPORTED_MODULE_1__.Record {
+  constructor(signInt, v) {
+    super();
+    this.signInt = signInt;
+    this.v = v;
+  }
+
+  toString() {
+    const x = this;
+    const matchValue = BigInteger__get_SignInt(x) | 0;
+
+    switch (matchValue) {
+      case -1:
+        {
+          return (0,_n_js__WEBPACK_IMPORTED_MODULE_0__.BigNatModule_isZero)(BigInteger__get_V(x)) ? "0" : "-" + (0,_n_js__WEBPACK_IMPORTED_MODULE_0__.BigNatModule_toString)(BigInteger__get_V(x));
+        }
+
+      case 0:
+        {
+          return "0";
+        }
+
+      case 1:
+        {
+          return (0,_n_js__WEBPACK_IMPORTED_MODULE_0__.BigNatModule_toString)(BigInteger__get_V(x));
+        }
+
+      default:
+        {
+          throw new Error("signs should be +/- 1 or 0");
+        }
+    }
+  }
+
+  Equals(obj) {
+    const this$ = this;
+    return obj instanceof BigInteger ? BigInteger_op_Equality_56F059C0(this$, obj) : false;
+  }
+
+  GetHashCode() {
+    const x = this;
+    return BigInteger_hash_Z665282C2(x) | 0;
+  }
+
+  CompareTo(obj) {
+    const this$ = this;
+
+    if (obj instanceof BigInteger) {
+      return BigInteger_compare_56F059C0(this$, obj) | 0;
+    } else {
+      throw new Error("the objects are not comparable\\nParameter name: obj");
+    }
+  }
+
+}
+function BigInteger$reflection() {
+  return (0,_Reflection_js__WEBPACK_IMPORTED_MODULE_2__.class_type)("BigInt.BigInteger", void 0, BigInteger, (0,_Reflection_js__WEBPACK_IMPORTED_MODULE_2__.class_type)("System.ValueType"));
+}
+function BigInteger_$ctor_Z2BE94A1(signInt, v) {
+  return new BigInteger(signInt, v);
+}
+
+(() => {
+  BigInteger.smallLim = 4096;
+  BigInteger.smallPosTab = (0,_Array_js__WEBPACK_IMPORTED_MODULE_3__.initialize)(BigInteger.smallLim, _n_js__WEBPACK_IMPORTED_MODULE_0__.BigNatModule_ofInt32);
+  BigInteger.one = BigInteger_$ctor_Z524259A4(1);
+  BigInteger.two = BigInteger_$ctor_Z524259A4(2);
+  BigInteger.zero = BigInteger_$ctor_Z524259A4(0);
+})();
+
+function BigInteger_nat_Z67CCE57D(n) {
+  if ((0,_n_js__WEBPACK_IMPORTED_MODULE_0__.BigNatModule_isSmall)(n) ? (0,_n_js__WEBPACK_IMPORTED_MODULE_0__.BigNatModule_getSmall)(n) < BigInteger.smallLim : false) {
+    return BigInteger.smallPosTab[(0,_n_js__WEBPACK_IMPORTED_MODULE_0__.BigNatModule_getSmall)(n)];
+  } else {
+    return n;
+  }
+}
+function BigInteger_create_Z2BE94A1(s, n) {
+  return BigInteger_$ctor_Z2BE94A1(s, BigInteger_nat_Z67CCE57D(n));
+}
+function BigInteger_posn_Z67CCE57D(n) {
+  return BigInteger_$ctor_Z2BE94A1(1, BigInteger_nat_Z67CCE57D(n));
+}
+function BigInteger_negn_Z67CCE57D(n) {
+  return BigInteger_$ctor_Z2BE94A1(-1, BigInteger_nat_Z67CCE57D(n));
+}
+function BigInteger__get_Sign(x) {
+  if (BigInteger__get_IsZero(x)) {
+    return 0;
+  } else {
+    return x.signInt | 0;
+  }
+}
+function BigInteger__get_SignInt(x) {
+  return x.signInt;
+}
+function BigInteger__get_V(x) {
+  return x.v;
+}
+function BigInteger_op_Equality_56F059C0(x, y) {
+  const matchValue = [BigInteger__get_SignInt(x), BigInteger__get_SignInt(y)];
+  let pattern_matching_result;
+
+  if (matchValue[0] === -1) {
+    if (matchValue[1] === -1) {
+      pattern_matching_result = 1;
+    } else if (matchValue[1] === 0) {
+      pattern_matching_result = 8;
+    } else if (matchValue[1] === 1) {
+      pattern_matching_result = 3;
+    } else {
+      pattern_matching_result = 9;
+    }
+  } else if (matchValue[0] === 0) {
+    if (matchValue[1] === -1) {
+      pattern_matching_result = 6;
+    } else if (matchValue[1] === 0) {
+      pattern_matching_result = 4;
+    } else if (matchValue[1] === 1) {
+      pattern_matching_result = 5;
+    } else {
+      pattern_matching_result = 9;
+    }
+  } else if (matchValue[0] === 1) {
+    if (matchValue[1] === -1) {
+      pattern_matching_result = 2;
+    } else if (matchValue[1] === 0) {
+      pattern_matching_result = 7;
+    } else if (matchValue[1] === 1) {
+      pattern_matching_result = 0;
+    } else {
+      pattern_matching_result = 9;
+    }
+  } else {
+    pattern_matching_result = 9;
+  }
+
+  switch (pattern_matching_result) {
+    case 0:
+      {
+        return (0,_n_js__WEBPACK_IMPORTED_MODULE_0__.BigNatModule_equal)(BigInteger__get_V(x), BigInteger__get_V(y));
+      }
+
+    case 1:
+      {
+        return (0,_n_js__WEBPACK_IMPORTED_MODULE_0__.BigNatModule_equal)(BigInteger__get_V(x), BigInteger__get_V(y));
+      }
+
+    case 2:
+      {
+        if ((0,_n_js__WEBPACK_IMPORTED_MODULE_0__.BigNatModule_isZero)(BigInteger__get_V(x))) {
+          return (0,_n_js__WEBPACK_IMPORTED_MODULE_0__.BigNatModule_isZero)(BigInteger__get_V(y));
+        } else {
+          return false;
+        }
+      }
+
+    case 3:
+      {
+        if ((0,_n_js__WEBPACK_IMPORTED_MODULE_0__.BigNatModule_isZero)(BigInteger__get_V(x))) {
+          return (0,_n_js__WEBPACK_IMPORTED_MODULE_0__.BigNatModule_isZero)(BigInteger__get_V(y));
+        } else {
+          return false;
+        }
+      }
+
+    case 4:
+      {
+        return true;
+      }
+
+    case 5:
+      {
+        return (0,_n_js__WEBPACK_IMPORTED_MODULE_0__.BigNatModule_isZero)(BigInteger__get_V(y));
+      }
+
+    case 6:
+      {
+        return (0,_n_js__WEBPACK_IMPORTED_MODULE_0__.BigNatModule_isZero)(BigInteger__get_V(y));
+      }
+
+    case 7:
+      {
+        return (0,_n_js__WEBPACK_IMPORTED_MODULE_0__.BigNatModule_isZero)(BigInteger__get_V(x));
+      }
+
+    case 8:
+      {
+        return (0,_n_js__WEBPACK_IMPORTED_MODULE_0__.BigNatModule_isZero)(BigInteger__get_V(x));
+      }
+
+    case 9:
+      {
+        throw new Error("signs should be +/- 1 or 0\\nParameter name: x");
+      }
+  }
+}
+function BigInteger_op_Inequality_56F059C0(x, y) {
+  return !BigInteger_op_Equality_56F059C0(x, y);
+}
+function BigInteger_op_LessThan_56F059C0(x, y) {
+  const matchValue = [BigInteger__get_SignInt(x), BigInteger__get_SignInt(y)];
+  let pattern_matching_result;
+
+  if (matchValue[0] === -1) {
+    if (matchValue[1] === -1) {
+      pattern_matching_result = 1;
+    } else if (matchValue[1] === 0) {
+      pattern_matching_result = 8;
+    } else if (matchValue[1] === 1) {
+      pattern_matching_result = 3;
+    } else {
+      pattern_matching_result = 9;
+    }
+  } else if (matchValue[0] === 0) {
+    if (matchValue[1] === -1) {
+      pattern_matching_result = 6;
+    } else if (matchValue[1] === 0) {
+      pattern_matching_result = 4;
+    } else if (matchValue[1] === 1) {
+      pattern_matching_result = 5;
+    } else {
+      pattern_matching_result = 9;
+    }
+  } else if (matchValue[0] === 1) {
+    if (matchValue[1] === -1) {
+      pattern_matching_result = 2;
+    } else if (matchValue[1] === 0) {
+      pattern_matching_result = 7;
+    } else if (matchValue[1] === 1) {
+      pattern_matching_result = 0;
+    } else {
+      pattern_matching_result = 9;
+    }
+  } else {
+    pattern_matching_result = 9;
+  }
+
+  switch (pattern_matching_result) {
+    case 0:
+      {
+        return (0,_n_js__WEBPACK_IMPORTED_MODULE_0__.BigNatModule_lt)(BigInteger__get_V(x), BigInteger__get_V(y));
+      }
+
+    case 1:
+      {
+        return (0,_n_js__WEBPACK_IMPORTED_MODULE_0__.BigNatModule_lt)(BigInteger__get_V(y), BigInteger__get_V(x));
+      }
+
+    case 2:
+      {
+        return false;
+      }
+
+    case 3:
+      {
+        if (!(0,_n_js__WEBPACK_IMPORTED_MODULE_0__.BigNatModule_isZero)(BigInteger__get_V(x))) {
+          return true;
+        } else {
+          return !(0,_n_js__WEBPACK_IMPORTED_MODULE_0__.BigNatModule_isZero)(BigInteger__get_V(y));
+        }
+      }
+
+    case 4:
+      {
+        return false;
+      }
+
+    case 5:
+      {
+        return !(0,_n_js__WEBPACK_IMPORTED_MODULE_0__.BigNatModule_isZero)(BigInteger__get_V(y));
+      }
+
+    case 6:
+      {
+        return false;
+      }
+
+    case 7:
+      {
+        return false;
+      }
+
+    case 8:
+      {
+        return !(0,_n_js__WEBPACK_IMPORTED_MODULE_0__.BigNatModule_isZero)(BigInteger__get_V(x));
+      }
+
+    case 9:
+      {
+        throw new Error("signs should be +/- 1 or 0\\nParameter name: x");
+      }
+  }
+}
+function BigInteger_op_GreaterThan_56F059C0(x, y) {
+  const matchValue = [BigInteger__get_SignInt(x), BigInteger__get_SignInt(y)];
+  let pattern_matching_result;
+
+  if (matchValue[0] === -1) {
+    if (matchValue[1] === -1) {
+      pattern_matching_result = 1;
+    } else if (matchValue[1] === 0) {
+      pattern_matching_result = 8;
+    } else if (matchValue[1] === 1) {
+      pattern_matching_result = 3;
+    } else {
+      pattern_matching_result = 9;
+    }
+  } else if (matchValue[0] === 0) {
+    if (matchValue[1] === -1) {
+      pattern_matching_result = 6;
+    } else if (matchValue[1] === 0) {
+      pattern_matching_result = 4;
+    } else if (matchValue[1] === 1) {
+      pattern_matching_result = 5;
+    } else {
+      pattern_matching_result = 9;
+    }
+  } else if (matchValue[0] === 1) {
+    if (matchValue[1] === -1) {
+      pattern_matching_result = 2;
+    } else if (matchValue[1] === 0) {
+      pattern_matching_result = 7;
+    } else if (matchValue[1] === 1) {
+      pattern_matching_result = 0;
+    } else {
+      pattern_matching_result = 9;
+    }
+  } else {
+    pattern_matching_result = 9;
+  }
+
+  switch (pattern_matching_result) {
+    case 0:
+      {
+        return (0,_n_js__WEBPACK_IMPORTED_MODULE_0__.BigNatModule_gt)(BigInteger__get_V(x), BigInteger__get_V(y));
+      }
+
+    case 1:
+      {
+        return (0,_n_js__WEBPACK_IMPORTED_MODULE_0__.BigNatModule_gt)(BigInteger__get_V(y), BigInteger__get_V(x));
+      }
+
+    case 2:
+      {
+        if (!(0,_n_js__WEBPACK_IMPORTED_MODULE_0__.BigNatModule_isZero)(BigInteger__get_V(x))) {
+          return true;
+        } else {
+          return !(0,_n_js__WEBPACK_IMPORTED_MODULE_0__.BigNatModule_isZero)(BigInteger__get_V(y));
+        }
+      }
+
+    case 3:
+      {
+        return false;
+      }
+
+    case 4:
+      {
+        return false;
+      }
+
+    case 5:
+      {
+        return false;
+      }
+
+    case 6:
+      {
+        return !(0,_n_js__WEBPACK_IMPORTED_MODULE_0__.BigNatModule_isZero)(BigInteger__get_V(y));
+      }
+
+    case 7:
+      {
+        return !(0,_n_js__WEBPACK_IMPORTED_MODULE_0__.BigNatModule_isZero)(BigInteger__get_V(x));
+      }
+
+    case 8:
+      {
+        return false;
+      }
+
+    case 9:
+      {
+        throw new Error("signs should be +/- 1 or 0\\nParameter name: x");
+      }
+  }
+}
+function BigInteger_compare_56F059C0(n, nn) {
+  if (BigInteger_op_LessThan_56F059C0(n, nn)) {
+    return -1;
+  } else if (BigInteger_op_Equality_56F059C0(n, nn)) {
+    return 0;
+  } else {
+    return 1;
+  }
+}
+function BigInteger_hash_Z665282C2(z) {
+  if (BigInteger__get_SignInt(z) === 0) {
+    return 1;
+  } else {
+    return BigInteger__get_SignInt(z) + (0,_n_js__WEBPACK_IMPORTED_MODULE_0__.BigNatModule_hash)(BigInteger__get_V(z)) | 0;
+  }
+}
+function BigInteger__get_StructuredDisplayString(x) {
+  return (0,_Types_js__WEBPACK_IMPORTED_MODULE_1__.toString)(x);
+}
+function BigInteger_$ctor_Z524259A4(n) {
+  if (n >= 0) {
+    return BigInteger_$ctor_Z2BE94A1(1, BigInteger_nat_Z67CCE57D((0,_n_js__WEBPACK_IMPORTED_MODULE_0__.BigNatModule_ofInt32)(n)));
+  } else if (n === -2147483648) {
+    return BigInteger_$ctor_Z2BE94A1(-1, BigInteger_nat_Z67CCE57D((0,_n_js__WEBPACK_IMPORTED_MODULE_0__.BigNatModule_ofInt64)((0,_Long_js__WEBPACK_IMPORTED_MODULE_4__.op_UnaryNegation)((0,_Long_js__WEBPACK_IMPORTED_MODULE_4__.fromInteger)(n, false, 2)))));
+  } else {
+    return BigInteger_$ctor_Z2BE94A1(-1, BigInteger_nat_Z67CCE57D((0,_n_js__WEBPACK_IMPORTED_MODULE_0__.BigNatModule_ofInt32)((0,_Int32_js__WEBPACK_IMPORTED_MODULE_5__.op_UnaryNegation_Int32)(n))));
+  }
+}
+function BigInteger_$ctor_Z524259C1(n) {
+  if ((0,_Long_js__WEBPACK_IMPORTED_MODULE_4__.compare)(n, (0,_Long_js__WEBPACK_IMPORTED_MODULE_4__.fromBits)(0, 0, false)) >= 0) {
+    return BigInteger_$ctor_Z2BE94A1(1, BigInteger_nat_Z67CCE57D((0,_n_js__WEBPACK_IMPORTED_MODULE_0__.BigNatModule_ofInt64)(n)));
+  } else if ((0,_Long_js__WEBPACK_IMPORTED_MODULE_4__.equals)(n, (0,_Long_js__WEBPACK_IMPORTED_MODULE_4__.fromBits)(0, 2147483648, false))) {
+    return BigInteger_$ctor_Z2BE94A1(-1, BigInteger_nat_Z67CCE57D((0,_n_js__WEBPACK_IMPORTED_MODULE_0__.BigNatModule_add)((0,_n_js__WEBPACK_IMPORTED_MODULE_0__.BigNatModule_ofInt64)((0,_Long_js__WEBPACK_IMPORTED_MODULE_4__.fromBits)(4294967295, 2147483647, false)), _n_js__WEBPACK_IMPORTED_MODULE_0__.BigNatModule_one)));
+  } else {
+    return BigInteger_$ctor_Z2BE94A1(-1, BigInteger_nat_Z67CCE57D((0,_n_js__WEBPACK_IMPORTED_MODULE_0__.BigNatModule_ofInt64)((0,_Long_js__WEBPACK_IMPORTED_MODULE_4__.op_UnaryNegation)(n))));
+  }
+}
+function BigInteger_get_One() {
+  return BigInteger.one;
+}
+function BigInteger_get_Two() {
+  return BigInteger.two;
+}
+function BigInteger_get_Zero() {
+  return BigInteger.zero;
+}
+function BigInteger_op_UnaryNegation_Z665282C2(z) {
+  const matchValue = BigInteger__get_SignInt(z) | 0;
+
+  if (matchValue === 0) {
+    return BigInteger_get_Zero();
+  } else {
+    return BigInteger_create_Z2BE94A1((0,_Int32_js__WEBPACK_IMPORTED_MODULE_5__.op_UnaryNegation_Int32)(matchValue), BigInteger__get_V(z));
+  }
+}
+function BigInteger_Scale_Z320F31E(k, z) {
+  if (BigInteger__get_SignInt(z) === 0) {
+    return BigInteger_get_Zero();
+  } else if (k < 0) {
+    return BigInteger_create_Z2BE94A1((0,_Int32_js__WEBPACK_IMPORTED_MODULE_5__.op_UnaryNegation_Int32)(BigInteger__get_SignInt(z)), (0,_n_js__WEBPACK_IMPORTED_MODULE_0__.BigNatModule_scale)((0,_Int32_js__WEBPACK_IMPORTED_MODULE_5__.op_UnaryNegation_Int32)(k), BigInteger__get_V(z)));
+  } else {
+    return BigInteger_create_Z2BE94A1(BigInteger__get_SignInt(z), (0,_n_js__WEBPACK_IMPORTED_MODULE_0__.BigNatModule_scale)(k, BigInteger__get_V(z)));
+  }
+}
+function BigInteger_subnn_6A57060(nx, ny) {
+  if ((0,_n_js__WEBPACK_IMPORTED_MODULE_0__.BigNatModule_gte)(nx, ny)) {
+    return BigInteger_posn_Z67CCE57D((0,_n_js__WEBPACK_IMPORTED_MODULE_0__.BigNatModule_sub)(nx, ny));
+  } else {
+    return BigInteger_negn_Z67CCE57D((0,_n_js__WEBPACK_IMPORTED_MODULE_0__.BigNatModule_sub)(ny, nx));
+  }
+}
+function BigInteger_addnn_6A57060(nx, ny) {
+  return BigInteger_posn_Z67CCE57D((0,_n_js__WEBPACK_IMPORTED_MODULE_0__.BigNatModule_add)(nx, ny));
+}
+function BigInteger__get_IsZero(x) {
+  if (BigInteger__get_SignInt(x) === 0) {
+    return true;
+  } else {
+    return (0,_n_js__WEBPACK_IMPORTED_MODULE_0__.BigNatModule_isZero)(BigInteger__get_V(x));
+  }
+}
+function BigInteger__get_IsOne(x) {
+  if (BigInteger__get_SignInt(x) === 1) {
+    return (0,_n_js__WEBPACK_IMPORTED_MODULE_0__.BigNatModule_isOne)(BigInteger__get_V(x));
+  } else {
+    return false;
+  }
+}
+function BigInteger_op_Addition_56F059C0(x, y) {
+  if (BigInteger__get_IsZero(y)) {
+    return x;
+  } else if (BigInteger__get_IsZero(x)) {
+    return y;
+  } else {
+    const matchValue = [BigInteger__get_SignInt(x), BigInteger__get_SignInt(y)];
+    let pattern_matching_result;
+
+    if (matchValue[0] === -1) {
+      if (matchValue[1] === -1) {
+        pattern_matching_result = 1;
+      } else if (matchValue[1] === 1) {
+        pattern_matching_result = 3;
+      } else {
+        pattern_matching_result = 4;
+      }
+    } else if (matchValue[0] === 1) {
+      if (matchValue[1] === -1) {
+        pattern_matching_result = 2;
+      } else if (matchValue[1] === 1) {
+        pattern_matching_result = 0;
+      } else {
+        pattern_matching_result = 4;
+      }
+    } else {
+      pattern_matching_result = 4;
+    }
+
+    switch (pattern_matching_result) {
+      case 0:
+        {
+          return BigInteger_addnn_6A57060(BigInteger__get_V(x), BigInteger__get_V(y));
+        }
+
+      case 1:
+        {
+          return BigInteger_op_UnaryNegation_Z665282C2(BigInteger_addnn_6A57060(BigInteger__get_V(x), BigInteger__get_V(y)));
+        }
+
+      case 2:
+        {
+          return BigInteger_subnn_6A57060(BigInteger__get_V(x), BigInteger__get_V(y));
+        }
+
+      case 3:
+        {
+          return BigInteger_subnn_6A57060(BigInteger__get_V(y), BigInteger__get_V(x));
+        }
+
+      case 4:
+        {
+          throw new Error("signs should be +/- 1\\nParameter name: x");
+        }
+    }
+  }
+}
+function BigInteger_op_Subtraction_56F059C0(x, y) {
+  if (BigInteger__get_IsZero(y)) {
+    return x;
+  } else if (BigInteger__get_IsZero(x)) {
+    return BigInteger_op_UnaryNegation_Z665282C2(y);
+  } else {
+    const matchValue = [BigInteger__get_SignInt(x), BigInteger__get_SignInt(y)];
+    let pattern_matching_result;
+
+    if (matchValue[0] === -1) {
+      if (matchValue[1] === -1) {
+        pattern_matching_result = 1;
+      } else if (matchValue[1] === 1) {
+        pattern_matching_result = 3;
+      } else {
+        pattern_matching_result = 4;
+      }
+    } else if (matchValue[0] === 1) {
+      if (matchValue[1] === -1) {
+        pattern_matching_result = 2;
+      } else if (matchValue[1] === 1) {
+        pattern_matching_result = 0;
+      } else {
+        pattern_matching_result = 4;
+      }
+    } else {
+      pattern_matching_result = 4;
+    }
+
+    switch (pattern_matching_result) {
+      case 0:
+        {
+          return BigInteger_subnn_6A57060(BigInteger__get_V(x), BigInteger__get_V(y));
+        }
+
+      case 1:
+        {
+          return BigInteger_subnn_6A57060(BigInteger__get_V(y), BigInteger__get_V(x));
+        }
+
+      case 2:
+        {
+          return BigInteger_addnn_6A57060(BigInteger__get_V(x), BigInteger__get_V(y));
+        }
+
+      case 3:
+        {
+          return BigInteger_op_UnaryNegation_Z665282C2(BigInteger_addnn_6A57060(BigInteger__get_V(x), BigInteger__get_V(y)));
+        }
+
+      case 4:
+        {
+          throw new Error("signs should be +/- 1\\nParameter name: x");
+        }
+    }
+  }
+}
+function BigInteger_op_Multiply_56F059C0(x, y) {
+  if (BigInteger__get_IsZero(x)) {
+    return x;
+  } else if (BigInteger__get_IsZero(y)) {
+    return y;
+  } else if (BigInteger__get_IsOne(x)) {
+    return y;
+  } else if (BigInteger__get_IsOne(y)) {
+    return x;
+  } else {
+    const m = (0,_n_js__WEBPACK_IMPORTED_MODULE_0__.BigNatModule_mul)(BigInteger__get_V(x), BigInteger__get_V(y));
+    return BigInteger_create_Z2BE94A1(BigInteger__get_SignInt(x) * BigInteger__get_SignInt(y), m);
+  }
+}
+function BigInteger_DivRem_56F059C0(x, y) {
+  if (BigInteger__get_IsZero(y)) {
+    throw new Error();
+  }
+
+  if (BigInteger__get_IsZero(x)) {
+    return [BigInteger_get_Zero(), BigInteger_get_Zero()];
+  } else {
+    const patternInput = (0,_n_js__WEBPACK_IMPORTED_MODULE_0__.BigNatModule_divmod)(BigInteger__get_V(x), BigInteger__get_V(y));
+    const r = patternInput[1];
+    const d = patternInput[0];
+    const matchValue = [BigInteger__get_SignInt(x), BigInteger__get_SignInt(y)];
+    let pattern_matching_result;
+
+    if (matchValue[0] === -1) {
+      if (matchValue[1] === -1) {
+        pattern_matching_result = 1;
+      } else if (matchValue[1] === 1) {
+        pattern_matching_result = 3;
+      } else {
+        pattern_matching_result = 4;
+      }
+    } else if (matchValue[0] === 1) {
+      if (matchValue[1] === -1) {
+        pattern_matching_result = 2;
+      } else if (matchValue[1] === 1) {
+        pattern_matching_result = 0;
+      } else {
+        pattern_matching_result = 4;
+      }
+    } else {
+      pattern_matching_result = 4;
+    }
+
+    switch (pattern_matching_result) {
+      case 0:
+        {
+          return [BigInteger_posn_Z67CCE57D(d), BigInteger_posn_Z67CCE57D(r)];
+        }
+
+      case 1:
+        {
+          return [BigInteger_posn_Z67CCE57D(d), BigInteger_negn_Z67CCE57D(r)];
+        }
+
+      case 2:
+        {
+          return [BigInteger_negn_Z67CCE57D(d), BigInteger_posn_Z67CCE57D(r)];
+        }
+
+      case 3:
+        {
+          return [BigInteger_negn_Z67CCE57D(d), BigInteger_negn_Z67CCE57D(r)];
+        }
+
+      case 4:
+        {
+          throw new Error("signs should be +/- 1\\nParameter name: x");
+        }
+    }
+  }
+}
+function BigInteger_op_Division_56F059C0(x, y) {
+  return BigInteger_DivRem_56F059C0(x, y)[0];
+}
+function BigInteger_op_Modulus_56F059C0(x, y) {
+  return BigInteger_DivRem_56F059C0(x, y)[1];
+}
+function BigInteger_op_RightShift_62E082A2(x, y) {
+  return BigInteger_op_Division_56F059C0(x, BigInteger_Pow_62E082A2(BigInteger_get_Two(), y));
+}
+function BigInteger_op_LeftShift_62E082A2(x, y) {
+  return BigInteger_op_Multiply_56F059C0(x, BigInteger_Pow_62E082A2(BigInteger_get_Two(), y));
+}
+function BigInteger_op_BitwiseAnd_56F059C0(x, y) {
+  return BigInteger_posn_Z67CCE57D((0,_n_js__WEBPACK_IMPORTED_MODULE_0__.BigNatModule_bitAnd)(BigInteger__get_V(x), BigInteger__get_V(y)));
+}
+function BigInteger_op_BitwiseOr_56F059C0(x, y) {
+  return BigInteger_posn_Z67CCE57D((0,_n_js__WEBPACK_IMPORTED_MODULE_0__.BigNatModule_bitOr)(BigInteger__get_V(x), BigInteger__get_V(y)));
+}
+function BigInteger_op_ExclusiveOr_56F059C0(x, y) {
+  return BigInteger_posn_Z67CCE57D((0,_n_js__WEBPACK_IMPORTED_MODULE_0__.BigNatModule_bitXor)(BigInteger__get_V(x), BigInteger__get_V(y)));
+}
+function BigInteger_GreatestCommonDivisor_56F059C0(x, y) {
+  const matchValue = [BigInteger__get_SignInt(x), BigInteger__get_SignInt(y)];
+
+  if (matchValue[0] === 0) {
+    if (matchValue[1] === 0) {
+      return BigInteger_get_Zero();
+    } else {
+      return BigInteger_posn_Z67CCE57D(BigInteger__get_V(y));
+    }
+  } else if (matchValue[1] === 0) {
+    return BigInteger_posn_Z67CCE57D(BigInteger__get_V(x));
+  } else {
+    return BigInteger_posn_Z67CCE57D((0,_n_js__WEBPACK_IMPORTED_MODULE_0__.BigNatModule_hcf)(BigInteger__get_V(x), BigInteger__get_V(y)));
+  }
+}
+function BigInteger__get_IsNegative(x) {
+  if (BigInteger__get_SignInt(x) === -1) {
+    return !BigInteger__get_IsZero(x);
+  } else {
+    return false;
+  }
+}
+function BigInteger__get_IsPositive(x) {
+  if (BigInteger__get_SignInt(x) === 1) {
+    return !BigInteger__get_IsZero(x);
+  } else {
+    return false;
+  }
+}
+function BigInteger_Abs_Z665282C2(x) {
+  if (BigInteger__get_SignInt(x) === -1) {
+    return BigInteger_op_UnaryNegation_Z665282C2(x);
+  } else {
+    return x;
+  }
+}
+function BigInteger_op_LessThanOrEqual_56F059C0(x, y) {
+  const matchValue = [BigInteger__get_SignInt(x), BigInteger__get_SignInt(y)];
+  let pattern_matching_result;
+
+  if (matchValue[0] === -1) {
+    if (matchValue[1] === -1) {
+      pattern_matching_result = 1;
+    } else if (matchValue[1] === 0) {
+      pattern_matching_result = 6;
+    } else if (matchValue[1] === 1) {
+      pattern_matching_result = 3;
+    } else {
+      pattern_matching_result = 9;
+    }
+  } else if (matchValue[0] === 0) {
+    if (matchValue[1] === -1) {
+      pattern_matching_result = 8;
+    } else if (matchValue[1] === 0) {
+      pattern_matching_result = 4;
+    } else if (matchValue[1] === 1) {
+      pattern_matching_result = 7;
+    } else {
+      pattern_matching_result = 9;
+    }
+  } else if (matchValue[0] === 1) {
+    if (matchValue[1] === -1) {
+      pattern_matching_result = 2;
+    } else if (matchValue[1] === 0) {
+      pattern_matching_result = 5;
+    } else if (matchValue[1] === 1) {
+      pattern_matching_result = 0;
+    } else {
+      pattern_matching_result = 9;
+    }
+  } else {
+    pattern_matching_result = 9;
+  }
+
+  switch (pattern_matching_result) {
+    case 0:
+      {
+        return (0,_n_js__WEBPACK_IMPORTED_MODULE_0__.BigNatModule_lte)(BigInteger__get_V(x), BigInteger__get_V(y));
+      }
+
+    case 1:
+      {
+        return (0,_n_js__WEBPACK_IMPORTED_MODULE_0__.BigNatModule_lte)(BigInteger__get_V(y), BigInteger__get_V(x));
+      }
+
+    case 2:
+      {
+        if ((0,_n_js__WEBPACK_IMPORTED_MODULE_0__.BigNatModule_isZero)(BigInteger__get_V(x))) {
+          return (0,_n_js__WEBPACK_IMPORTED_MODULE_0__.BigNatModule_isZero)(BigInteger__get_V(y));
+        } else {
+          return false;
+        }
+      }
+
+    case 3:
+      {
+        return true;
+      }
+
+    case 4:
+      {
+        return true;
+      }
+
+    case 5:
+      {
+        return (0,_n_js__WEBPACK_IMPORTED_MODULE_0__.BigNatModule_isZero)(BigInteger__get_V(x));
+      }
+
+    case 6:
+      {
+        return true;
+      }
+
+    case 7:
+      {
+        return true;
+      }
+
+    case 8:
+      {
+        return (0,_n_js__WEBPACK_IMPORTED_MODULE_0__.BigNatModule_isZero)(BigInteger__get_V(y));
+      }
+
+    case 9:
+      {
+        throw new Error("signs should be +/- 1 or 0\\nParameter name: x");
+      }
+  }
+}
+function BigInteger_op_GreaterThanOrEqual_56F059C0(x, y) {
+  const matchValue = [BigInteger__get_SignInt(x), BigInteger__get_SignInt(y)];
+  let pattern_matching_result;
+
+  if (matchValue[0] === -1) {
+    if (matchValue[1] === -1) {
+      pattern_matching_result = 1;
+    } else if (matchValue[1] === 0) {
+      pattern_matching_result = 6;
+    } else if (matchValue[1] === 1) {
+      pattern_matching_result = 3;
+    } else {
+      pattern_matching_result = 9;
+    }
+  } else if (matchValue[0] === 0) {
+    if (matchValue[1] === -1) {
+      pattern_matching_result = 8;
+    } else if (matchValue[1] === 0) {
+      pattern_matching_result = 4;
+    } else if (matchValue[1] === 1) {
+      pattern_matching_result = 7;
+    } else {
+      pattern_matching_result = 9;
+    }
+  } else if (matchValue[0] === 1) {
+    if (matchValue[1] === -1) {
+      pattern_matching_result = 2;
+    } else if (matchValue[1] === 0) {
+      pattern_matching_result = 5;
+    } else if (matchValue[1] === 1) {
+      pattern_matching_result = 0;
+    } else {
+      pattern_matching_result = 9;
+    }
+  } else {
+    pattern_matching_result = 9;
+  }
+
+  switch (pattern_matching_result) {
+    case 0:
+      {
+        return (0,_n_js__WEBPACK_IMPORTED_MODULE_0__.BigNatModule_gte)(BigInteger__get_V(x), BigInteger__get_V(y));
+      }
+
+    case 1:
+      {
+        return (0,_n_js__WEBPACK_IMPORTED_MODULE_0__.BigNatModule_gte)(BigInteger__get_V(y), BigInteger__get_V(x));
+      }
+
+    case 2:
+      {
+        return true;
+      }
+
+    case 3:
+      {
+        if ((0,_n_js__WEBPACK_IMPORTED_MODULE_0__.BigNatModule_isZero)(BigInteger__get_V(x))) {
+          return (0,_n_js__WEBPACK_IMPORTED_MODULE_0__.BigNatModule_isZero)(BigInteger__get_V(y));
+        } else {
+          return false;
+        }
+      }
+
+    case 4:
+      {
+        return true;
+      }
+
+    case 5:
+      {
+        return true;
+      }
+
+    case 6:
+      {
+        return (0,_n_js__WEBPACK_IMPORTED_MODULE_0__.BigNatModule_isZero)(BigInteger__get_V(x));
+      }
+
+    case 7:
+      {
+        return (0,_n_js__WEBPACK_IMPORTED_MODULE_0__.BigNatModule_isZero)(BigInteger__get_V(y));
+      }
+
+    case 8:
+      {
+        return true;
+      }
+
+    case 9:
+      {
+        throw new Error("signs should be +/- 1 or 0\\nParameter name: x");
+      }
+  }
+}
+function BigInteger_Pow_62E082A2(x, y) {
+  if (y < 0) {
+    throw new Error("y");
+  }
+
+  const matchValue = [BigInteger__get_IsZero(x), y];
+
+  if (matchValue[0]) {
+    if (matchValue[1] === 0) {
+      return BigInteger_get_One();
+    } else {
+      return BigInteger_get_Zero();
+    }
+  } else {
+    const yval = BigInteger_$ctor_Z524259A4(y);
+    return BigInteger_create_Z2BE94A1((0,_n_js__WEBPACK_IMPORTED_MODULE_0__.BigNatModule_isZero)((0,_n_js__WEBPACK_IMPORTED_MODULE_0__.BigNatModule_rem)(BigInteger__get_V(yval), _n_js__WEBPACK_IMPORTED_MODULE_0__.BigNatModule_two)) ? 1 : BigInteger__get_SignInt(x), (0,_n_js__WEBPACK_IMPORTED_MODULE_0__.BigNatModule_pow)(BigInteger__get_V(x), BigInteger__get_V(yval)));
+  }
+}
+function BigInteger__get_ToInt32(x) {
+  if (BigInteger__get_IsZero(x)) {
+    return 0;
+  } else {
+    const u = (0,_n_js__WEBPACK_IMPORTED_MODULE_0__.BigNatModule_toUInt32)(BigInteger__get_V(x));
+
+    if (u <= 2147483647 >>> 0) {
+      return BigInteger__get_SignInt(x) * ~~u | 0;
+    } else if (BigInteger__get_SignInt(x) === -1 ? u === 2147483647 + 1 >>> 0 : false) {
+      return -2147483648;
+    } else {
+      throw new Error();
+    }
+  }
+}
+function BigInteger__get_ToUInt32(x) {
+  if (BigInteger__get_IsZero(x)) {
+    return 0;
+  } else {
+    return (0,_n_js__WEBPACK_IMPORTED_MODULE_0__.BigNatModule_toUInt32)(BigInteger__get_V(x));
+  }
+}
+function BigInteger__get_ToInt64(x) {
+  if (BigInteger__get_IsZero(x)) {
+    return (0,_Long_js__WEBPACK_IMPORTED_MODULE_4__.fromBits)(0, 0, false);
+  } else {
+    const u = (0,_n_js__WEBPACK_IMPORTED_MODULE_0__.BigNatModule_toUInt64)(BigInteger__get_V(x));
+
+    if ((0,_Long_js__WEBPACK_IMPORTED_MODULE_4__.compare)(u, (0,_Long_js__WEBPACK_IMPORTED_MODULE_4__.fromValue)((0,_Long_js__WEBPACK_IMPORTED_MODULE_4__.fromBits)(4294967295, 2147483647, false), true)) <= 0) {
+      return (0,_Long_js__WEBPACK_IMPORTED_MODULE_4__.op_Multiply)((0,_Long_js__WEBPACK_IMPORTED_MODULE_4__.fromInteger)(BigInteger__get_SignInt(x), false, 2), (0,_Long_js__WEBPACK_IMPORTED_MODULE_4__.fromValue)(u, false));
+    } else if (BigInteger__get_SignInt(x) === -1 ? (0,_Long_js__WEBPACK_IMPORTED_MODULE_4__.equals)(u, (0,_Long_js__WEBPACK_IMPORTED_MODULE_4__.fromValue)((0,_Long_js__WEBPACK_IMPORTED_MODULE_4__.op_Addition)((0,_Long_js__WEBPACK_IMPORTED_MODULE_4__.fromBits)(4294967295, 2147483647, false), (0,_Long_js__WEBPACK_IMPORTED_MODULE_4__.fromBits)(1, 0, false)), true)) : false) {
+      return (0,_Long_js__WEBPACK_IMPORTED_MODULE_4__.fromBits)(0, 2147483648, false);
+    } else {
+      throw new Error();
+    }
+  }
+}
+function BigInteger__get_ToUInt64(x) {
+  if (BigInteger__get_IsZero(x)) {
+    return (0,_Long_js__WEBPACK_IMPORTED_MODULE_4__.fromBits)(0, 0, true);
+  } else {
+    return (0,_n_js__WEBPACK_IMPORTED_MODULE_0__.BigNatModule_toUInt64)(BigInteger__get_V(x));
+  }
+}
+function BigInteger__get_ToDouble(x) {
+  const matchValue = BigInteger__get_SignInt(x) | 0;
+
+  switch (matchValue) {
+    case -1:
+      {
+        return -(0,_n_js__WEBPACK_IMPORTED_MODULE_0__.BigNatModule_toFloat)(BigInteger__get_V(x));
+      }
+
+    case 0:
+      {
+        return 0;
+      }
+
+    case 1:
+      {
+        return (0,_n_js__WEBPACK_IMPORTED_MODULE_0__.BigNatModule_toFloat)(BigInteger__get_V(x));
+      }
+
+    default:
+      {
+        throw new Error("signs should be +/- 1 or 0\\nParameter name: x");
+      }
+  }
+}
+function BigInteger__get_ToSByte(x) {
+  return (BigInteger__get_ToInt32(x) + 0x80 & 0xFF) - 0x80;
+}
+function BigInteger__get_ToByte(x) {
+  return BigInteger__get_ToUInt32(x) & 0xFF;
+}
+function BigInteger__get_ToInt16(x) {
+  return (BigInteger__get_ToInt32(x) + 0x8000 & 0xFFFF) - 0x8000;
+}
+function BigInteger__get_ToUInt16(x) {
+  return BigInteger__get_ToUInt32(x) & 0xFFFF;
+}
+function BigInteger__get_ToSingle(x) {
+  return BigInteger__get_ToDouble(x);
+}
+function BigInteger__get_ToDecimal(x) {
+  return new _Decimal_js__WEBPACK_IMPORTED_MODULE_6__.default(BigInteger__get_ToDouble(x));
+}
+function BigInteger_Parse_Z721C83C5(text) {
+  if (text == null) {
+    throw new Error("text");
+  }
+
+  const text_1 = text.trim();
+  const len = text_1.length | 0;
+
+  if (len === 0) {
+    throw new Error();
+  }
+
+  const matchValue = [text_1[0], len];
+
+  if (matchValue[0] === "+") {
+    if (matchValue[1] === 1) {
+      throw new Error();
+    } else {
+      return BigInteger_posn_Z67CCE57D((0,_n_js__WEBPACK_IMPORTED_MODULE_0__.BigNatModule_ofString)(text_1.slice(1, len - 1 + 1)));
+    }
+  } else if (matchValue[0] === "-") {
+    if (matchValue[1] === 1) {
+      throw new Error();
+    } else {
+      return BigInteger_negn_Z67CCE57D((0,_n_js__WEBPACK_IMPORTED_MODULE_0__.BigNatModule_ofString)(text_1.slice(1, len - 1 + 1)));
+    }
+  } else {
+    return BigInteger_posn_Z67CCE57D((0,_n_js__WEBPACK_IMPORTED_MODULE_0__.BigNatModule_ofString)(text_1));
+  }
+}
+function BigInteger__get_IsSmall(x) {
+  if (BigInteger__get_IsZero(x)) {
+    return true;
+  } else {
+    return (0,_n_js__WEBPACK_IMPORTED_MODULE_0__.BigNatModule_isSmall)(BigInteger__get_V(x));
+  }
+}
+function BigInteger_Factorial_Z665282C2(x) {
+  if (BigInteger__get_IsNegative(x)) {
+    throw new Error("mustBeNonNegative\\nParameter name: x");
+  }
+
+  if (BigInteger__get_IsPositive(x)) {
+    return BigInteger_posn_Z67CCE57D((0,_n_js__WEBPACK_IMPORTED_MODULE_0__.BigNatModule_factorial)(BigInteger__get_V(x)));
+  } else {
+    return BigInteger_get_One();
+  }
+}
+function BigInteger_op_UnaryPlus_Z665282C2(n1) {
+  return n1;
+}
+function BigInteger_FromInt64_Z524259C1(x) {
+  return BigInteger_$ctor_Z524259C1(x);
+}
+function BigInteger_FromInt32_Z524259A4(x) {
+  return BigInteger_$ctor_Z524259A4(x);
+}
+
+/***/ }),
+
+/***/ "./resources/js/.fable/fable-library.3.1.1/BitConverter.js":
+/*!*****************************************************************!*\
+  !*** ./resources/js/.fable/fable-library.3.1.1/BitConverter.js ***!
+  \*****************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "isLittleEndian": () => (/* binding */ isLittleEndian),
+/* harmony export */   "getBytesBoolean": () => (/* binding */ getBytesBoolean),
+/* harmony export */   "getBytesChar": () => (/* binding */ getBytesChar),
+/* harmony export */   "getBytesInt16": () => (/* binding */ getBytesInt16),
+/* harmony export */   "getBytesInt32": () => (/* binding */ getBytesInt32),
+/* harmony export */   "getBytesInt64": () => (/* binding */ getBytesInt64),
+/* harmony export */   "getBytesUInt16": () => (/* binding */ getBytesUInt16),
+/* harmony export */   "getBytesUInt32": () => (/* binding */ getBytesUInt32),
+/* harmony export */   "getBytesUInt64": () => (/* binding */ getBytesUInt64),
+/* harmony export */   "getBytesSingle": () => (/* binding */ getBytesSingle),
+/* harmony export */   "getBytesDouble": () => (/* binding */ getBytesDouble),
+/* harmony export */   "int64BitsToDouble": () => (/* binding */ int64BitsToDouble),
+/* harmony export */   "doubleToInt64Bits": () => (/* binding */ doubleToInt64Bits),
+/* harmony export */   "toBoolean": () => (/* binding */ toBoolean),
+/* harmony export */   "toChar": () => (/* binding */ toChar),
+/* harmony export */   "toInt16": () => (/* binding */ toInt16),
+/* harmony export */   "toInt32": () => (/* binding */ toInt32),
+/* harmony export */   "toInt64": () => (/* binding */ toInt64),
+/* harmony export */   "toUInt16": () => (/* binding */ toUInt16),
+/* harmony export */   "toUInt32": () => (/* binding */ toUInt32),
+/* harmony export */   "toUInt64": () => (/* binding */ toUInt64),
+/* harmony export */   "toSingle": () => (/* binding */ toSingle),
+/* harmony export */   "toDouble": () => (/* binding */ toDouble),
+/* harmony export */   "toString": () => (/* binding */ toString)
+/* harmony export */ });
+/* harmony import */ var _Long_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Long.js */ "./resources/js/.fable/fable-library.3.1.1/Long.js");
+
+const littleEndian = true;
+function isLittleEndian() {
+  return littleEndian;
+}
+function getBytesBoolean(value) {
+  const bytes = new Uint8Array(1);
+  const view = new DataView(bytes.buffer, bytes.byteOffset, bytes.byteLength);
+  view.setUint8(0, value ? 1 : 0);
+  return bytes;
+}
+function getBytesChar(value) {
+  const bytes = new Uint8Array(2);
+  const view = new DataView(bytes.buffer, bytes.byteOffset, bytes.byteLength);
+  view.setUint16(0, value.charCodeAt(0), littleEndian);
+  return bytes;
+}
+function getBytesInt16(value) {
+  const bytes = new Uint8Array(2);
+  const view = new DataView(bytes.buffer, bytes.byteOffset, bytes.byteLength);
+  view.setInt16(0, value, littleEndian);
+  return bytes;
+}
+function getBytesInt32(value) {
+  const bytes = new Uint8Array(4);
+  const view = new DataView(bytes.buffer, bytes.byteOffset, bytes.byteLength);
+  view.setInt32(0, value, littleEndian);
+  return bytes;
+}
+function getBytesInt64(value) {
+  const bytes = new Uint8Array(8);
+  const view = new DataView(bytes.buffer, bytes.byteOffset, bytes.byteLength);
+  view.setInt32(littleEndian ? 0 : 4, (0,_Long_js__WEBPACK_IMPORTED_MODULE_0__.getLowBits)(value), littleEndian);
+  view.setInt32(littleEndian ? 4 : 0, (0,_Long_js__WEBPACK_IMPORTED_MODULE_0__.getHighBits)(value), littleEndian);
+  return bytes;
+}
+function getBytesUInt16(value) {
+  const bytes = new Uint8Array(2);
+  const view = new DataView(bytes.buffer, bytes.byteOffset, bytes.byteLength);
+  view.setUint16(0, value, littleEndian);
+  return bytes;
+}
+function getBytesUInt32(value) {
+  const bytes = new Uint8Array(4);
+  const view = new DataView(bytes.buffer, bytes.byteOffset, bytes.byteLength);
+  view.setUint32(0, value, littleEndian);
+  return bytes;
+}
+function getBytesUInt64(value) {
+  const bytes = new Uint8Array(8);
+  const view = new DataView(bytes.buffer, bytes.byteOffset, bytes.byteLength);
+  view.setUint32(littleEndian ? 0 : 4, (0,_Long_js__WEBPACK_IMPORTED_MODULE_0__.getLowBitsUnsigned)(value), littleEndian);
+  view.setUint32(littleEndian ? 4 : 0, (0,_Long_js__WEBPACK_IMPORTED_MODULE_0__.getHighBitsUnsigned)(value), littleEndian);
+  return bytes;
+}
+function getBytesSingle(value) {
+  const bytes = new Uint8Array(4);
+  const view = new DataView(bytes.buffer, bytes.byteOffset, bytes.byteLength);
+  view.setFloat32(0, value, littleEndian);
+  return bytes;
+}
+function getBytesDouble(value) {
+  const bytes = new Uint8Array(8);
+  const view = new DataView(bytes.buffer, bytes.byteOffset, bytes.byteLength);
+  view.setFloat64(0, value, littleEndian);
+  return bytes;
+}
+function int64BitsToDouble(value) {
+  const buffer = new ArrayBuffer(8);
+  const view = new DataView(buffer);
+  view.setInt32(littleEndian ? 0 : 4, (0,_Long_js__WEBPACK_IMPORTED_MODULE_0__.getLowBits)(value), littleEndian);
+  view.setInt32(littleEndian ? 4 : 0, (0,_Long_js__WEBPACK_IMPORTED_MODULE_0__.getHighBits)(value), littleEndian);
+  return view.getFloat64(0, littleEndian);
+}
+function doubleToInt64Bits(value) {
+  const buffer = new ArrayBuffer(8);
+  const view = new DataView(buffer);
+  view.setFloat64(0, value, littleEndian);
+  const lowBits = view.getInt32(littleEndian ? 0 : 4, littleEndian);
+  const highBits = view.getInt32(littleEndian ? 4 : 0, littleEndian);
+  return (0,_Long_js__WEBPACK_IMPORTED_MODULE_0__.fromBits)(lowBits, highBits, false);
+}
+function toBoolean(bytes, offset) {
+  const array = ArrayBuffer.isView(bytes) ? bytes : Uint8Array.from(bytes);
+  const view = new DataView(array.buffer, array.byteOffset, array.byteLength);
+  return view.getUint8(offset) === 1 ? true : false;
+}
+function toChar(bytes, offset) {
+  const array = ArrayBuffer.isView(bytes) ? bytes : Uint8Array.from(bytes);
+  const view = new DataView(array.buffer, array.byteOffset, array.byteLength);
+  const code = view.getUint16(offset, littleEndian);
+  return String.fromCharCode(code);
+}
+function toInt16(bytes, offset) {
+  const array = ArrayBuffer.isView(bytes) ? bytes : Uint8Array.from(bytes);
+  const view = new DataView(array.buffer, array.byteOffset, array.byteLength);
+  return view.getInt16(offset, littleEndian);
+}
+function toInt32(bytes, offset) {
+  const array = ArrayBuffer.isView(bytes) ? bytes : Uint8Array.from(bytes);
+  const view = new DataView(array.buffer, array.byteOffset, array.byteLength);
+  return view.getInt32(offset, littleEndian);
+}
+function toInt64(bytes, offset) {
+  const array = ArrayBuffer.isView(bytes) ? bytes : Uint8Array.from(bytes);
+  const view = new DataView(array.buffer, array.byteOffset, array.byteLength);
+  const lowBits = view.getInt32(offset + (littleEndian ? 0 : 4), littleEndian);
+  const highBits = view.getInt32(offset + (littleEndian ? 4 : 0), littleEndian);
+  return (0,_Long_js__WEBPACK_IMPORTED_MODULE_0__.fromBits)(lowBits, highBits, false);
+}
+function toUInt16(bytes, offset) {
+  const array = ArrayBuffer.isView(bytes) ? bytes : Uint8Array.from(bytes);
+  const view = new DataView(array.buffer, array.byteOffset, array.byteLength);
+  return view.getUint16(offset, littleEndian);
+}
+function toUInt32(bytes, offset) {
+  const array = ArrayBuffer.isView(bytes) ? bytes : Uint8Array.from(bytes);
+  const view = new DataView(array.buffer, array.byteOffset, array.byteLength);
+  return view.getUint32(offset, littleEndian);
+}
+function toUInt64(bytes, offset) {
+  const array = ArrayBuffer.isView(bytes) ? bytes : Uint8Array.from(bytes);
+  const view = new DataView(array.buffer, array.byteOffset, array.byteLength);
+  const lowBits = view.getUint32(offset + (littleEndian ? 0 : 4), littleEndian);
+  const highBits = view.getUint32(offset + (littleEndian ? 4 : 0), littleEndian);
+  return (0,_Long_js__WEBPACK_IMPORTED_MODULE_0__.fromBits)(lowBits, highBits, true);
+}
+function toSingle(bytes, offset) {
+  const array = ArrayBuffer.isView(bytes) ? bytes : Uint8Array.from(bytes);
+  const view = new DataView(array.buffer, array.byteOffset, array.byteLength);
+  return view.getFloat32(offset, littleEndian);
+}
+function toDouble(bytes, offset) {
+  const array = ArrayBuffer.isView(bytes) ? bytes : Uint8Array.from(bytes);
+  const view = new DataView(array.buffer, array.byteOffset, array.byteLength);
+  return view.getFloat64(offset, littleEndian);
+}
+function toString(bytes, offset, count) {
+  const array = ArrayBuffer.isView(bytes) ? bytes : Uint8Array.from(bytes);
+  let buffer = new Uint8Array(array.buffer, array.byteOffset, array.byteLength);
+
+  if (offset != null && count != null) {
+    buffer = buffer.subarray(offset, offset + count);
+  } else if (offset != null) {
+    buffer = buffer.subarray(offset);
+  }
+
+  return Array.from(buffer).map(b => ("0" + b.toString(16)).slice(-2)).join("-");
+}
+
+/***/ }),
+
+/***/ "./resources/js/.fable/fable-library.3.1.1/Choice.js":
+/*!***********************************************************!*\
+  !*** ./resources/js/.fable/fable-library.3.1.1/Choice.js ***!
+  \***********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "FSharpResult$2": () => (/* binding */ FSharpResult$2),
+/* harmony export */   "FSharpResult$2$reflection": () => (/* binding */ FSharpResult$2$reflection),
+/* harmony export */   "Result_Map": () => (/* binding */ Result_Map),
+/* harmony export */   "Result_MapError": () => (/* binding */ Result_MapError),
+/* harmony export */   "Result_Bind": () => (/* binding */ Result_Bind),
+/* harmony export */   "FSharpChoice$2": () => (/* binding */ FSharpChoice$2),
+/* harmony export */   "FSharpChoice$2$reflection": () => (/* binding */ FSharpChoice$2$reflection),
+/* harmony export */   "FSharpChoice$3": () => (/* binding */ FSharpChoice$3),
+/* harmony export */   "FSharpChoice$3$reflection": () => (/* binding */ FSharpChoice$3$reflection),
+/* harmony export */   "FSharpChoice$4": () => (/* binding */ FSharpChoice$4),
+/* harmony export */   "FSharpChoice$4$reflection": () => (/* binding */ FSharpChoice$4$reflection),
+/* harmony export */   "FSharpChoice$5": () => (/* binding */ FSharpChoice$5),
+/* harmony export */   "FSharpChoice$5$reflection": () => (/* binding */ FSharpChoice$5$reflection),
+/* harmony export */   "FSharpChoice$6": () => (/* binding */ FSharpChoice$6),
+/* harmony export */   "FSharpChoice$6$reflection": () => (/* binding */ FSharpChoice$6$reflection),
+/* harmony export */   "FSharpChoice$7": () => (/* binding */ FSharpChoice$7),
+/* harmony export */   "FSharpChoice$7$reflection": () => (/* binding */ FSharpChoice$7$reflection),
+/* harmony export */   "Choice_makeChoice1Of2": () => (/* binding */ Choice_makeChoice1Of2),
+/* harmony export */   "Choice_makeChoice2Of2": () => (/* binding */ Choice_makeChoice2Of2),
+/* harmony export */   "Choice_tryValueIfChoice1Of2": () => (/* binding */ Choice_tryValueIfChoice1Of2),
+/* harmony export */   "Choice_tryValueIfChoice2Of2": () => (/* binding */ Choice_tryValueIfChoice2Of2)
+/* harmony export */ });
+/* harmony import */ var _Types_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Types.js */ "./resources/js/.fable/fable-library.3.1.1/Types.js");
+/* harmony import */ var _Reflection_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Reflection.js */ "./resources/js/.fable/fable-library.3.1.1/Reflection.js");
+/* harmony import */ var _Option_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Option.js */ "./resources/js/.fable/fable-library.3.1.1/Option.js");
+
+
+
+class FSharpResult$2 extends _Types_js__WEBPACK_IMPORTED_MODULE_0__.Union {
+  constructor(tag, ...fields) {
+    super();
+    this.tag = tag | 0;
+    this.fields = fields;
+  }
+
+  cases() {
+    return ["Ok", "Error"];
+  }
+
+}
+function FSharpResult$2$reflection(gen0, gen1) {
+  return (0,_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.union_type)("FSharp.Core.FSharpResult`2", [gen0, gen1], FSharpResult$2, () => [[["ResultValue", gen0]], [["ErrorValue", gen1]]]);
+}
+function Result_Map(mapping, result) {
+  if (result.tag === 0) {
+    return new FSharpResult$2(0, mapping(result.fields[0]));
+  } else {
+    return new FSharpResult$2(1, result.fields[0]);
+  }
+}
+function Result_MapError(mapping, result) {
+  if (result.tag === 0) {
+    return new FSharpResult$2(0, result.fields[0]);
+  } else {
+    return new FSharpResult$2(1, mapping(result.fields[0]));
+  }
+}
+function Result_Bind(binder, result) {
+  if (result.tag === 0) {
+    return binder(result.fields[0]);
+  } else {
+    return new FSharpResult$2(1, result.fields[0]);
+  }
+}
+class FSharpChoice$2 extends _Types_js__WEBPACK_IMPORTED_MODULE_0__.Union {
+  constructor(tag, ...fields) {
+    super();
+    this.tag = tag | 0;
+    this.fields = fields;
+  }
+
+  cases() {
+    return ["Choice1Of2", "Choice2Of2"];
+  }
+
+}
+function FSharpChoice$2$reflection(gen0, gen1) {
+  return (0,_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.union_type)("FSharp.Core.FSharpChoice`2", [gen0, gen1], FSharpChoice$2, () => [[["Item", gen0]], [["Item", gen1]]]);
+}
+class FSharpChoice$3 extends _Types_js__WEBPACK_IMPORTED_MODULE_0__.Union {
+  constructor(tag, ...fields) {
+    super();
+    this.tag = tag | 0;
+    this.fields = fields;
+  }
+
+  cases() {
+    return ["Choice1Of3", "Choice2Of3", "Choice3Of3"];
+  }
+
+}
+function FSharpChoice$3$reflection(gen0, gen1, gen2) {
+  return (0,_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.union_type)("FSharp.Core.FSharpChoice`3", [gen0, gen1, gen2], FSharpChoice$3, () => [[["Item", gen0]], [["Item", gen1]], [["Item", gen2]]]);
+}
+class FSharpChoice$4 extends _Types_js__WEBPACK_IMPORTED_MODULE_0__.Union {
+  constructor(tag, ...fields) {
+    super();
+    this.tag = tag | 0;
+    this.fields = fields;
+  }
+
+  cases() {
+    return ["Choice1Of4", "Choice2Of4", "Choice3Of4", "Choice4Of4"];
+  }
+
+}
+function FSharpChoice$4$reflection(gen0, gen1, gen2, gen3) {
+  return (0,_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.union_type)("FSharp.Core.FSharpChoice`4", [gen0, gen1, gen2, gen3], FSharpChoice$4, () => [[["Item", gen0]], [["Item", gen1]], [["Item", gen2]], [["Item", gen3]]]);
+}
+class FSharpChoice$5 extends _Types_js__WEBPACK_IMPORTED_MODULE_0__.Union {
+  constructor(tag, ...fields) {
+    super();
+    this.tag = tag | 0;
+    this.fields = fields;
+  }
+
+  cases() {
+    return ["Choice1Of5", "Choice2Of5", "Choice3Of5", "Choice4Of5", "Choice5Of5"];
+  }
+
+}
+function FSharpChoice$5$reflection(gen0, gen1, gen2, gen3, gen4) {
+  return (0,_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.union_type)("FSharp.Core.FSharpChoice`5", [gen0, gen1, gen2, gen3, gen4], FSharpChoice$5, () => [[["Item", gen0]], [["Item", gen1]], [["Item", gen2]], [["Item", gen3]], [["Item", gen4]]]);
+}
+class FSharpChoice$6 extends _Types_js__WEBPACK_IMPORTED_MODULE_0__.Union {
+  constructor(tag, ...fields) {
+    super();
+    this.tag = tag | 0;
+    this.fields = fields;
+  }
+
+  cases() {
+    return ["Choice1Of6", "Choice2Of6", "Choice3Of6", "Choice4Of6", "Choice5Of6", "Choice6Of6"];
+  }
+
+}
+function FSharpChoice$6$reflection(gen0, gen1, gen2, gen3, gen4, gen5) {
+  return (0,_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.union_type)("FSharp.Core.FSharpChoice`6", [gen0, gen1, gen2, gen3, gen4, gen5], FSharpChoice$6, () => [[["Item", gen0]], [["Item", gen1]], [["Item", gen2]], [["Item", gen3]], [["Item", gen4]], [["Item", gen5]]]);
+}
+class FSharpChoice$7 extends _Types_js__WEBPACK_IMPORTED_MODULE_0__.Union {
+  constructor(tag, ...fields) {
+    super();
+    this.tag = tag | 0;
+    this.fields = fields;
+  }
+
+  cases() {
+    return ["Choice1Of7", "Choice2Of7", "Choice3Of7", "Choice4Of7", "Choice5Of7", "Choice6Of7", "Choice7Of7"];
+  }
+
+}
+function FSharpChoice$7$reflection(gen0, gen1, gen2, gen3, gen4, gen5, gen6) {
+  return (0,_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.union_type)("FSharp.Core.FSharpChoice`7", [gen0, gen1, gen2, gen3, gen4, gen5, gen6], FSharpChoice$7, () => [[["Item", gen0]], [["Item", gen1]], [["Item", gen2]], [["Item", gen3]], [["Item", gen4]], [["Item", gen5]], [["Item", gen6]]]);
+}
+function Choice_makeChoice1Of2(x) {
+  return new FSharpChoice$2(0, x);
+}
+function Choice_makeChoice2Of2(x) {
+  return new FSharpChoice$2(1, x);
+}
+function Choice_tryValueIfChoice1Of2(x) {
+  if (x.tag === 0) {
+    return (0,_Option_js__WEBPACK_IMPORTED_MODULE_2__.some)(x.fields[0]);
+  } else {
+    return void 0;
+  }
+}
+function Choice_tryValueIfChoice2Of2(x) {
+  if (x.tag === 1) {
+    return (0,_Option_js__WEBPACK_IMPORTED_MODULE_2__.some)(x.fields[0]);
+  } else {
+    return void 0;
+  }
+}
+
+/***/ }),
+
 /***/ "./resources/js/.fable/fable-library.3.1.1/Date.js":
 /*!*********************************************************!*\
   !*** ./resources/js/.fable/fable-library.3.1.1/Date.js ***!
@@ -5867,6 +15280,333 @@ function isDST(janOffset, julOffset, tOffset) {
 
 /***/ }),
 
+/***/ "./resources/js/.fable/fable-library.3.1.1/DateOffset.js":
+/*!***************************************************************!*\
+  !*** ./resources/js/.fable/fable-library.3.1.1/DateOffset.js ***!
+  \***************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ DateTimeOffset),
+/* harmony export */   "fromDate": () => (/* binding */ fromDate),
+/* harmony export */   "fromTicks": () => (/* binding */ fromTicks),
+/* harmony export */   "getUtcTicks": () => (/* binding */ getUtcTicks),
+/* harmony export */   "minValue": () => (/* binding */ minValue),
+/* harmony export */   "maxValue": () => (/* binding */ maxValue),
+/* harmony export */   "parse": () => (/* binding */ parse),
+/* harmony export */   "tryParse": () => (/* binding */ tryParse),
+/* harmony export */   "create": () => (/* binding */ create),
+/* harmony export */   "now": () => (/* binding */ now),
+/* harmony export */   "utcNow": () => (/* binding */ utcNow),
+/* harmony export */   "toUniversalTime": () => (/* binding */ toUniversalTime),
+/* harmony export */   "toLocalTime": () => (/* binding */ toLocalTime),
+/* harmony export */   "timeOfDay": () => (/* binding */ timeOfDay),
+/* harmony export */   "date": () => (/* binding */ date),
+/* harmony export */   "day": () => (/* binding */ day),
+/* harmony export */   "hour": () => (/* binding */ hour),
+/* harmony export */   "millisecond": () => (/* binding */ millisecond),
+/* harmony export */   "minute": () => (/* binding */ minute),
+/* harmony export */   "month": () => (/* binding */ month),
+/* harmony export */   "second": () => (/* binding */ second),
+/* harmony export */   "year": () => (/* binding */ year),
+/* harmony export */   "dayOfWeek": () => (/* binding */ dayOfWeek),
+/* harmony export */   "dayOfYear": () => (/* binding */ dayOfYear),
+/* harmony export */   "add": () => (/* binding */ add),
+/* harmony export */   "addDays": () => (/* binding */ addDays),
+/* harmony export */   "addHours": () => (/* binding */ addHours),
+/* harmony export */   "addMinutes": () => (/* binding */ addMinutes),
+/* harmony export */   "addSeconds": () => (/* binding */ addSeconds),
+/* harmony export */   "addMilliseconds": () => (/* binding */ addMilliseconds),
+/* harmony export */   "addYears": () => (/* binding */ addYears),
+/* harmony export */   "addMonths": () => (/* binding */ addMonths),
+/* harmony export */   "subtract": () => (/* binding */ subtract),
+/* harmony export */   "equals": () => (/* binding */ equals),
+/* harmony export */   "equalsExact": () => (/* binding */ equalsExact),
+/* harmony export */   "compare": () => (/* binding */ compare),
+/* harmony export */   "compareTo": () => (/* binding */ compareTo),
+/* harmony export */   "op_Addition": () => (/* binding */ op_Addition),
+/* harmony export */   "op_Subtraction": () => (/* binding */ op_Subtraction)
+/* harmony export */ });
+/* harmony import */ var _Date_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Date.js */ "./resources/js/.fable/fable-library.3.1.1/Date.js");
+/* harmony import */ var _Long_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Long.js */ "./resources/js/.fable/fable-library.3.1.1/Long.js");
+/* harmony import */ var _Util_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Util.js */ "./resources/js/.fable/fable-library.3.1.1/Util.js");
+/**
+ * DateTimeOffset functions.
+ *
+ * Note: DateOffset instances are always DateObjects in local
+ * timezone (because JS dates are all kinds of messed up).
+ * A local date returns UTC epoc when `.getTime()` is called.
+ *
+ * However, this means that in order to construct an UTC date
+ * from a DateOffset with offset of +5 hours, you first need
+ * to subtract those 5 hours, than add the "local" offset.
+ * As said, all kinds of messed up.
+ *
+ * Basically; invariant: date.getTime() always return UTC time.
+ */
+
+
+
+function DateTimeOffset(value, offset) {
+  const d = new Date(value);
+  d.offset = offset != null ? offset : new Date().getTimezoneOffset() * -60000;
+  return d;
+}
+function fromDate(date, offset) {
+  const isUtc = date.kind === 1
+  /* UTC */
+  ;
+  const offset2 = isUtc ? 0 : date.getTimezoneOffset() * -60000;
+
+  if (offset != null && offset !== offset2) {
+    throw new Error(isUtc ? "The UTC Offset for Utc DateTime instances must be 0." : "The UTC Offset of the local dateTime parameter does not match the offset argument.");
+  }
+
+  return DateTimeOffset(date.getTime(), offset2);
+}
+function fromTicks(ticks, offset) {
+  ticks = (0,_Long_js__WEBPACK_IMPORTED_MODULE_1__.fromValue)(ticks);
+  const epoc = (0,_Long_js__WEBPACK_IMPORTED_MODULE_1__.ticksToUnixEpochMilliseconds)(ticks) - offset;
+  return DateTimeOffset(epoc, offset);
+}
+function getUtcTicks(date) {
+  return (0,_Long_js__WEBPACK_IMPORTED_MODULE_1__.unixEpochMillisecondsToTicks)(date.getTime(), 0);
+}
+function minValue() {
+  // This is "0001-01-01T00:00:00.000Z", actual JS min value is -8640000000000000
+  return DateTimeOffset(-62135596800000, 0);
+}
+function maxValue() {
+  // This is "9999-12-31T23:59:59.999Z", actual JS max value is 8640000000000000
+  return DateTimeOffset(253402300799999, 0);
+}
+function parse(str) {
+  const date = (0,_Date_js__WEBPACK_IMPORTED_MODULE_0__.parseRaw)(str);
+  const offsetMatch = _Date_js__WEBPACK_IMPORTED_MODULE_0__.offsetRegex.exec(str);
+  const offset = offsetMatch == null ? date.getTimezoneOffset() * -60000 : offsetMatch[0] === "Z" ? 0 : parseInt(offsetMatch[1], 10) * 3600000 + parseInt(offsetMatch[2], 10) * 60000;
+  return DateTimeOffset(date.getTime(), offset);
+}
+function tryParse(v, defValue) {
+  try {
+    defValue.contents = parse(v);
+    return true;
+  } catch (_err) {
+    return false;
+  }
+}
+function create(year, month, day, h, m, s, ms, offset) {
+  if (offset == null) {
+    offset = ms;
+    ms = 0;
+  }
+
+  if (offset !== 0) {
+    if (offset % 60000 !== 0) {
+      throw new Error("Offset must be specified in whole minutes");
+    }
+
+    if (~~(offset / 3600000) > 14) {
+      throw new Error("Offset must be within plus or minus 14 hour");
+    }
+  }
+
+  let date;
+
+  if (offset === 0) {
+    date = new Date(Date.UTC(year, month - 1, day, h, m, s, ms));
+
+    if (year <= 99) {
+      date.setFullYear(year, month - 1, day);
+    }
+  } else {
+    const str = (0,_Util_js__WEBPACK_IMPORTED_MODULE_2__.padWithZeros)(year, 4) + "-" + (0,_Util_js__WEBPACK_IMPORTED_MODULE_2__.padWithZeros)(month, 2) + "-" + (0,_Util_js__WEBPACK_IMPORTED_MODULE_2__.padWithZeros)(day, 2) + "T" + (0,_Util_js__WEBPACK_IMPORTED_MODULE_2__.padWithZeros)(h, 2) + ":" + (0,_Util_js__WEBPACK_IMPORTED_MODULE_2__.padWithZeros)(m, 2) + ":" + (0,_Util_js__WEBPACK_IMPORTED_MODULE_2__.padWithZeros)(s, 2) + "." + (0,_Util_js__WEBPACK_IMPORTED_MODULE_2__.padWithZeros)(ms, 3) + (0,_Date_js__WEBPACK_IMPORTED_MODULE_0__.dateOffsetToString)(offset);
+    date = new Date(str);
+  }
+
+  const dateValue = date.getTime();
+
+  if (isNaN(dateValue)) {
+    throw new Error("The parameters describe an unrepresentable Date");
+  }
+
+  return DateTimeOffset(dateValue, offset);
+}
+function now() {
+  const date = new Date();
+  const offset = date.getTimezoneOffset() * -60000;
+  return DateTimeOffset(date.getTime(), offset);
+}
+function utcNow() {
+  const date = now();
+  return DateTimeOffset(date.getTime(), 0);
+}
+function toUniversalTime(date) {
+  return DateTimeOffset(date.getTime(), 0);
+}
+function toLocalTime(date) {
+  return DateTimeOffset(date.getTime(), date.getTimezoneOffset() * -60000);
+}
+function timeOfDay(d) {
+  var _a;
+
+  const d2 = new Date(d.getTime() + ((_a = d.offset) !== null && _a !== void 0 ? _a : 0));
+  return d2.getUTCHours() * 3600000 + d2.getUTCMinutes() * 60000 + d2.getUTCSeconds() * 1000 + d2.getUTCMilliseconds();
+}
+function date(d) {
+  var _a;
+
+  const d2 = new Date(d.getTime() + ((_a = d.offset) !== null && _a !== void 0 ? _a : 0));
+  return (0,_Date_js__WEBPACK_IMPORTED_MODULE_0__.create)(d2.getUTCFullYear(), d2.getUTCMonth() + 1, d2.getUTCDate(), 0, 0, 0, 0);
+}
+function day(d) {
+  var _a;
+
+  return new Date(d.getTime() + ((_a = d.offset) !== null && _a !== void 0 ? _a : 0)).getUTCDate();
+}
+function hour(d) {
+  var _a;
+
+  return new Date(d.getTime() + ((_a = d.offset) !== null && _a !== void 0 ? _a : 0)).getUTCHours();
+}
+function millisecond(d) {
+  var _a;
+
+  return new Date(d.getTime() + ((_a = d.offset) !== null && _a !== void 0 ? _a : 0)).getUTCMilliseconds();
+}
+function minute(d) {
+  var _a;
+
+  return new Date(d.getTime() + ((_a = d.offset) !== null && _a !== void 0 ? _a : 0)).getUTCMinutes();
+}
+function month(d) {
+  var _a;
+
+  return new Date(d.getTime() + ((_a = d.offset) !== null && _a !== void 0 ? _a : 0)).getUTCMonth() + 1;
+}
+function second(d) {
+  var _a;
+
+  return new Date(d.getTime() + ((_a = d.offset) !== null && _a !== void 0 ? _a : 0)).getUTCSeconds();
+}
+function year(d) {
+  var _a;
+
+  return new Date(d.getTime() + ((_a = d.offset) !== null && _a !== void 0 ? _a : 0)).getUTCFullYear();
+}
+function dayOfWeek(d) {
+  var _a;
+
+  return new Date(d.getTime() + ((_a = d.offset) !== null && _a !== void 0 ? _a : 0)).getUTCDay();
+}
+function dayOfYear(d) {
+  var _a;
+
+  const d2 = new Date(d.getTime() + ((_a = d.offset) !== null && _a !== void 0 ? _a : 0));
+
+  const _year = d2.getUTCFullYear();
+
+  const _month = d2.getUTCMonth() + 1;
+
+  let _day = d2.getUTCDate();
+
+  for (let i = 1; i < _month; i++) {
+    _day += (0,_Date_js__WEBPACK_IMPORTED_MODULE_0__.daysInMonth)(_year, i);
+  }
+
+  return _day;
+}
+function add(d, ts) {
+  var _a;
+
+  return DateTimeOffset(d.getTime() + ts, (_a = d.offset) !== null && _a !== void 0 ? _a : 0);
+}
+function addDays(d, v) {
+  var _a;
+
+  return DateTimeOffset(d.getTime() + v * 86400000, (_a = d.offset) !== null && _a !== void 0 ? _a : 0);
+}
+function addHours(d, v) {
+  var _a;
+
+  return DateTimeOffset(d.getTime() + v * 3600000, (_a = d.offset) !== null && _a !== void 0 ? _a : 0);
+}
+function addMinutes(d, v) {
+  var _a;
+
+  return DateTimeOffset(d.getTime() + v * 60000, (_a = d.offset) !== null && _a !== void 0 ? _a : 0);
+}
+function addSeconds(d, v) {
+  var _a;
+
+  return DateTimeOffset(d.getTime() + v * 1000, (_a = d.offset) !== null && _a !== void 0 ? _a : 0);
+}
+function addMilliseconds(d, v) {
+  var _a;
+
+  return DateTimeOffset(d.getTime() + v, (_a = d.offset) !== null && _a !== void 0 ? _a : 0);
+}
+function addYears(d, v) {
+  var _a;
+
+  const newMonth = d.getUTCMonth() + 1;
+  const newYear = d.getUTCFullYear() + v;
+
+  const _daysInMonth = (0,_Date_js__WEBPACK_IMPORTED_MODULE_0__.daysInMonth)(newYear, newMonth);
+
+  const newDay = Math.min(_daysInMonth, d.getUTCDate());
+  return create(newYear, newMonth, newDay, d.getUTCHours(), d.getUTCMinutes(), d.getUTCSeconds(), d.getUTCMilliseconds(), (_a = d.offset) !== null && _a !== void 0 ? _a : 0);
+}
+function addMonths(d, v) {
+  var _a, _b;
+
+  const d2 = new Date(d.getTime() + ((_a = d.offset) !== null && _a !== void 0 ? _a : 0));
+  let newMonth = d2.getUTCMonth() + 1 + v;
+  let newMonth_ = 0;
+  let yearOffset = 0;
+
+  if (newMonth > 12) {
+    newMonth_ = newMonth % 12;
+    yearOffset = Math.floor(newMonth / 12);
+    newMonth = newMonth_;
+  } else if (newMonth < 1) {
+    newMonth_ = 12 + newMonth % 12;
+    yearOffset = Math.floor(newMonth / 12) + (newMonth_ === 12 ? -1 : 0);
+    newMonth = newMonth_;
+  }
+
+  const newYear = d2.getUTCFullYear() + yearOffset;
+
+  const _daysInMonth = (0,_Date_js__WEBPACK_IMPORTED_MODULE_0__.daysInMonth)(newYear, newMonth);
+
+  const newDay = Math.min(_daysInMonth, d2.getUTCDate());
+  return create(newYear, newMonth, newDay, d2.getUTCHours(), d2.getUTCMinutes(), d2.getUTCSeconds(), d2.getUTCMilliseconds(), (_b = d.offset) !== null && _b !== void 0 ? _b : 0);
+}
+function subtract(d, that) {
+  var _a;
+
+  return typeof that === "number" ? DateTimeOffset(d.getTime() - that, (_a = d.offset) !== null && _a !== void 0 ? _a : 0) : d.getTime() - that.getTime();
+}
+function equals(d1, d2) {
+  return d1.getTime() === d2.getTime();
+}
+function equalsExact(d1, d2) {
+  return d1.getTime() === d2.getTime() && d1.offset === d2.offset;
+}
+function compare(d1, d2) {
+  return (0,_Util_js__WEBPACK_IMPORTED_MODULE_2__.compareDates)(d1, d2);
+}
+const compareTo = compare;
+function op_Addition(x, y) {
+  return add(x, y);
+}
+function op_Subtraction(x, y) {
+  return subtract(x, y);
+}
+
+/***/ }),
+
 /***/ "./resources/js/.fable/fable-library.3.1.1/Decimal.js":
 /*!************************************************************!*\
   !*** ./resources/js/.fable/fable-library.3.1.1/Decimal.js ***!
@@ -6124,6 +15864,373 @@ function makeRangeStepFunction(step, last) {
       return undefined;
     }
   };
+}
+
+/***/ }),
+
+/***/ "./resources/js/.fable/fable-library.3.1.1/Double.js":
+/*!***********************************************************!*\
+  !*** ./resources/js/.fable/fable-library.3.1.1/Double.js ***!
+  \***********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "tryParse": () => (/* binding */ tryParse),
+/* harmony export */   "parse": () => (/* binding */ parse),
+/* harmony export */   "isInfinity": () => (/* binding */ isInfinity)
+/* harmony export */ });
+/* harmony import */ var _Types_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Types.js */ "./resources/js/.fable/fable-library.3.1.1/Types.js");
+
+function tryParse(str, defValue) {
+  // TODO: test if value is valid and in range
+  if (str != null && /\S/.test(str)) {
+    const v = +str.replace("_", "");
+
+    if (!Number.isNaN(v)) {
+      defValue.contents = v;
+      return true;
+    }
+  }
+
+  return false;
+}
+function parse(str) {
+  const defValue = new _Types_js__WEBPACK_IMPORTED_MODULE_0__.FSharpRef(0);
+
+  if (tryParse(str, defValue)) {
+    return defValue.contents;
+  } else {
+    throw new Error("Input string was not in a correct format.");
+  }
+} // JS Number.isFinite function evals false for NaN
+
+function isInfinity(x) {
+  return x === Number.POSITIVE_INFINITY || x === Number.NEGATIVE_INFINITY;
+}
+
+/***/ }),
+
+/***/ "./resources/js/.fable/fable-library.3.1.1/FSharp.Collections.js":
+/*!***********************************************************************!*\
+  !*** ./resources/js/.fable/fable-library.3.1.1/FSharp.Collections.js ***!
+  \***********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "HashIdentity_FromFunctions": () => (/* binding */ HashIdentity_FromFunctions),
+/* harmony export */   "HashIdentity_Structural": () => (/* binding */ HashIdentity_Structural),
+/* harmony export */   "HashIdentity_Reference": () => (/* binding */ HashIdentity_Reference),
+/* harmony export */   "ComparisonIdentity_FromFunction": () => (/* binding */ ComparisonIdentity_FromFunction),
+/* harmony export */   "ComparisonIdentity_Structural": () => (/* binding */ ComparisonIdentity_Structural)
+/* harmony export */ });
+/* harmony import */ var _Util_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Util.js */ "./resources/js/.fable/fable-library.3.1.1/Util.js");
+
+function HashIdentity_FromFunctions(hash, eq) {
+  return {
+    Equals(x, y) {
+      return eq(x, y);
+    },
+
+    GetHashCode(x_1) {
+      return hash(x_1);
+    }
+
+  };
+}
+function HashIdentity_Structural() {
+  return HashIdentity_FromFunctions(_Util_js__WEBPACK_IMPORTED_MODULE_0__.structuralHash, _Util_js__WEBPACK_IMPORTED_MODULE_0__.equals);
+}
+function HashIdentity_Reference() {
+  return HashIdentity_FromFunctions(_Util_js__WEBPACK_IMPORTED_MODULE_0__.physicalHash, (e1, e2) => e1 === e2);
+}
+function ComparisonIdentity_FromFunction(comparer) {
+  return {
+    Compare(x, y) {
+      return comparer(x, y);
+    }
+
+  };
+}
+function ComparisonIdentity_Structural() {
+  return ComparisonIdentity_FromFunction(_Util_js__WEBPACK_IMPORTED_MODULE_0__.compare);
+}
+
+/***/ }),
+
+/***/ "./resources/js/.fable/fable-library.3.1.1/FSharp.Core.js":
+/*!****************************************************************!*\
+  !*** ./resources/js/.fable/fable-library.3.1.1/FSharp.Core.js ***!
+  \****************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "LanguagePrimitives_GenericEqualityComparer": () => (/* binding */ LanguagePrimitives_GenericEqualityComparer),
+/* harmony export */   "LanguagePrimitives_GenericEqualityERComparer": () => (/* binding */ LanguagePrimitives_GenericEqualityERComparer),
+/* harmony export */   "LanguagePrimitives_FastGenericComparer": () => (/* binding */ LanguagePrimitives_FastGenericComparer),
+/* harmony export */   "LanguagePrimitives_FastGenericComparerFromTable": () => (/* binding */ LanguagePrimitives_FastGenericComparerFromTable),
+/* harmony export */   "LanguagePrimitives_FastGenericEqualityComparer": () => (/* binding */ LanguagePrimitives_FastGenericEqualityComparer),
+/* harmony export */   "LanguagePrimitives_FastGenericEqualityComparerFromTable": () => (/* binding */ LanguagePrimitives_FastGenericEqualityComparerFromTable),
+/* harmony export */   "Operators_Failure": () => (/* binding */ Operators_Failure),
+/* harmony export */   "Operators_FailurePattern": () => (/* binding */ Operators_FailurePattern),
+/* harmony export */   "Operators_NullArg": () => (/* binding */ Operators_NullArg),
+/* harmony export */   "Operators_Using": () => (/* binding */ Operators_Using),
+/* harmony export */   "Operators_Lock": () => (/* binding */ Operators_Lock),
+/* harmony export */   "ExtraTopLevelOperators_LazyPattern": () => (/* binding */ ExtraTopLevelOperators_LazyPattern),
+/* harmony export */   "PrintfModule_PrintFormatToStringBuilderThen": () => (/* binding */ PrintfModule_PrintFormatToStringBuilderThen),
+/* harmony export */   "PrintfModule_PrintFormatToStringBuilder": () => (/* binding */ PrintfModule_PrintFormatToStringBuilder)
+/* harmony export */ });
+/* harmony import */ var _Util_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Util.js */ "./resources/js/.fable/fable-library.3.1.1/Util.js");
+/* harmony import */ var _FSharp_Collections_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./FSharp.Collections.js */ "./resources/js/.fable/fable-library.3.1.1/FSharp.Collections.js");
+/* harmony import */ var _System_Text_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./System.Text.js */ "./resources/js/.fable/fable-library.3.1.1/System.Text.js");
+
+
+
+const LanguagePrimitives_GenericEqualityComparer = {
+  ["System.Collections.IEqualityComparer.Equals541DA560"](x, y) {
+    return (0,_Util_js__WEBPACK_IMPORTED_MODULE_0__.equals)(x, y);
+  },
+
+  ["System.Collections.IEqualityComparer.GetHashCode4E60E31B"](x_1) {
+    return (0,_Util_js__WEBPACK_IMPORTED_MODULE_0__.structuralHash)(x_1);
+  }
+
+};
+const LanguagePrimitives_GenericEqualityERComparer = {
+  ["System.Collections.IEqualityComparer.Equals541DA560"](x, y) {
+    return (0,_Util_js__WEBPACK_IMPORTED_MODULE_0__.equals)(x, y);
+  },
+
+  ["System.Collections.IEqualityComparer.GetHashCode4E60E31B"](x_1) {
+    return (0,_Util_js__WEBPACK_IMPORTED_MODULE_0__.structuralHash)(x_1);
+  }
+
+};
+function LanguagePrimitives_FastGenericComparer() {
+  return (0,_FSharp_Collections_js__WEBPACK_IMPORTED_MODULE_1__.ComparisonIdentity_Structural)();
+}
+function LanguagePrimitives_FastGenericComparerFromTable() {
+  return (0,_FSharp_Collections_js__WEBPACK_IMPORTED_MODULE_1__.ComparisonIdentity_Structural)();
+}
+function LanguagePrimitives_FastGenericEqualityComparer() {
+  return (0,_FSharp_Collections_js__WEBPACK_IMPORTED_MODULE_1__.HashIdentity_Structural)();
+}
+function LanguagePrimitives_FastGenericEqualityComparerFromTable() {
+  return (0,_FSharp_Collections_js__WEBPACK_IMPORTED_MODULE_1__.HashIdentity_Structural)();
+}
+function Operators_Failure(message) {
+  return new Error(message);
+}
+function Operators_FailurePattern(exn) {
+  return exn.message;
+}
+function Operators_NullArg(x) {
+  throw new Error(x);
+}
+function Operators_Using(resource, action) {
+  try {
+    return action(resource);
+  } finally {
+    if ((0,_Util_js__WEBPACK_IMPORTED_MODULE_0__.equals)(resource, null)) {} else {
+      resource.Dispose();
+    }
+  }
+}
+function Operators_Lock(_lockObj, action) {
+  return action();
+}
+function ExtraTopLevelOperators_LazyPattern(input) {
+  return input.Value;
+}
+function PrintfModule_PrintFormatToStringBuilderThen(continuation, builder, format) {
+  return format.cont(s => {
+    const value = (0,_System_Text_js__WEBPACK_IMPORTED_MODULE_2__.StringBuilder__Append_Z721C83C5)(builder, s);
+    void value;
+    return continuation();
+  });
+}
+function PrintfModule_PrintFormatToStringBuilder(builder, format) {
+  return PrintfModule_PrintFormatToStringBuilderThen(() => {
+    void undefined;
+  }, builder, format);
+}
+
+/***/ }),
+
+/***/ "./resources/js/.fable/fable-library.3.1.1/Guid.js":
+/*!*********************************************************!*\
+  !*** ./resources/js/.fable/fable-library.3.1.1/Guid.js ***!
+  \*********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "toString": () => (/* binding */ toString),
+/* harmony export */   "parse": () => (/* binding */ parse),
+/* harmony export */   "tryParse": () => (/* binding */ tryParse),
+/* harmony export */   "newGuid": () => (/* binding */ newGuid),
+/* harmony export */   "guidToArray": () => (/* binding */ guidToArray),
+/* harmony export */   "arrayToGuid": () => (/* binding */ arrayToGuid)
+/* harmony export */ });
+/* harmony import */ var _String_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./String.js */ "./resources/js/.fable/fable-library.3.1.1/String.js");
+ // RFC 4122 compliant. From https://stackoverflow.com/a/13653180/3922220
+// const guidRegex = /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/;
+// Relax GUID parsing, see #1637
+
+const guidRegex = /^[\(\{]{0,2}[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}[\)\}]{0,2}$/;
+const guidRegexNoHyphen = /^([0-9a-f]{8})([0-9a-f]{4})([0-9a-f]{4})([0-9a-f]{4})([0-9a-f]{12})$/;
+const guidRegexHex = /^\{0x[0-9a-f]{8},(0x[0-9a-f]{4},){2}\{(0x[0-9a-f]{2},){7}0x[0-9a-f]{2}\}\}$/;
+const guidHexCaptures = /^([0-9a-f]{8})-(([0-9a-f]{4})-)(([0-9a-f]{4})-)([0-9a-f]{2})([0-9a-f]{2})-([0-9a-f]{2})([0-9a-f]{2})([0-9a-f]{2})([0-9a-f]{2})([0-9a-f]{2})([0-9a-f]{2})$/;
+function toString(str, format, _provider) {
+  if (format && (format === null || format === void 0 ? void 0 : format.length) > 0) {
+    switch (format) {
+      case "N":
+        return str.replace(/-/g, '');
+
+      case "D":
+        return str;
+
+      case "B":
+        return "{" + str + "}";
+
+      case "P":
+        return "(" + str + ")";
+
+      case "X":
+        return str.replace(guidHexCaptures, "{0x$1,0x$3,0x$5,{0x$6,0x$7,0x$8,0x$9,0x$10,0x$11,0x$12,0x$13}}");
+
+      default:
+        throw new Error("Unrecognized Guid print format");
+    }
+  } else {
+    return str;
+  }
+}
+/** Validates UUID as specified in RFC4122 (versions 1-5). */
+
+function parse(str) {
+  function hyphenateGuid(str) {
+    return str.replace(guidRegexNoHyphen, "$1-$2-$3-$4-$5");
+  }
+
+  const wsTrimAndLowered = str.trim().toLowerCase();
+
+  if (guidRegex.test(wsTrimAndLowered)) {
+    return (0,_String_js__WEBPACK_IMPORTED_MODULE_0__.trim)(wsTrimAndLowered, "{", "}", "(", ")");
+  } else if (guidRegexNoHyphen.test(wsTrimAndLowered)) {
+    return hyphenateGuid(wsTrimAndLowered);
+  } else if (guidRegexHex.test(wsTrimAndLowered)) {
+    return hyphenateGuid(wsTrimAndLowered.replace(/[\{\},]|0x/g, ''));
+  } else {
+    throw new Error("Guid should contain 32 digits with 4 dashes: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx");
+  }
+}
+function tryParse(str, defValue) {
+  try {
+    defValue.contents = parse(str);
+    return true;
+  } catch (_a) {
+    return false;
+  }
+} // From https://gist.github.com/LeverOne/1308368
+
+function newGuid() {
+  let b = "";
+
+  for (let a = 0; a++ < 36;) {
+    b += a * 51 & 52 ? (a ^ 15 ? 8 ^ Math.random() * (a ^ 20 ? 16 : 4) : 4).toString(16) : "-";
+  }
+
+  return b;
+} // Maps for number <-> hex string conversion
+
+let _convertMapsInitialized = false;
+
+let _byteToHex;
+
+let _hexToByte;
+
+function initConvertMaps() {
+  _byteToHex = new Array(256);
+  _hexToByte = {};
+
+  for (let i = 0; i < 256; i++) {
+    _byteToHex[i] = (i + 0x100).toString(16).substr(1);
+    _hexToByte[_byteToHex[i]] = i;
+  }
+
+  _convertMapsInitialized = true;
+}
+/** Parse a UUID into it's component bytes */
+// Adapted from https://github.com/zefferus/uuid-parse
+
+
+function guidToArray(s) {
+  if (!_convertMapsInitialized) {
+    initConvertMaps();
+  }
+
+  let i = 0;
+  const buf = new Uint8Array(16);
+  s.toLowerCase().replace(/[0-9a-f]{2}/g, oct => {
+    switch (i) {
+      // .NET saves first three byte groups with different endianness
+      // See https://stackoverflow.com/a/16722909/3922220
+      case 0:
+      case 1:
+      case 2:
+      case 3:
+        buf[3 - i++] = _hexToByte[oct];
+        break;
+
+      case 4:
+      case 5:
+        buf[9 - i++] = _hexToByte[oct];
+        break;
+
+      case 6:
+      case 7:
+        buf[13 - i++] = _hexToByte[oct];
+        break;
+
+      case 8:
+      case 9:
+      case 10:
+      case 11:
+      case 12:
+      case 13:
+      case 14:
+      case 15:
+        buf[i++] = _hexToByte[oct];
+        break;
+    }
+  }); // Zero out remaining bytes if string was short
+
+  while (i < 16) {
+    buf[i++] = 0;
+  }
+
+  return buf;
+}
+/** Convert UUID byte array into a string */
+
+function arrayToGuid(buf) {
+  if (buf.length !== 16) {
+    throw new Error("Byte array for GUID must be exactly 16 bytes long");
+  }
+
+  if (!_convertMapsInitialized) {
+    initConvertMaps();
+  }
+
+  const guid = _byteToHex[buf[3]] + _byteToHex[buf[2]] + _byteToHex[buf[1]] + _byteToHex[buf[0]] + "-" + _byteToHex[buf[5]] + _byteToHex[buf[4]] + "-" + _byteToHex[buf[7]] + _byteToHex[buf[6]] + "-" + _byteToHex[buf[8]] + _byteToHex[buf[9]] + "-" + _byteToHex[buf[10]] + _byteToHex[buf[11]] + _byteToHex[buf[12]] + _byteToHex[buf[13]] + _byteToHex[buf[14]] + _byteToHex[buf[15]];
+  return guid;
 }
 
 /***/ }),
@@ -7735,6 +17842,1515 @@ function makeRangeStepFunction(step, last, unsigned) {
       return undefined;
     }
   };
+}
+
+/***/ }),
+
+/***/ "./resources/js/.fable/fable-library.3.1.1/Map.js":
+/*!********************************************************!*\
+  !*** ./resources/js/.fable/fable-library.3.1.1/Map.js ***!
+  \********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "MapTreeLeaf$2": () => (/* binding */ MapTreeLeaf$2),
+/* harmony export */   "MapTreeLeaf$2$reflection": () => (/* binding */ MapTreeLeaf$2$reflection),
+/* harmony export */   "MapTreeLeaf$2_$ctor_5BDDA1": () => (/* binding */ MapTreeLeaf$2_$ctor_5BDDA1),
+/* harmony export */   "MapTreeLeaf$2__get_Key": () => (/* binding */ MapTreeLeaf$2__get_Key),
+/* harmony export */   "MapTreeLeaf$2__get_Value": () => (/* binding */ MapTreeLeaf$2__get_Value),
+/* harmony export */   "MapTreeNode$2": () => (/* binding */ MapTreeNode$2),
+/* harmony export */   "MapTreeNode$2$reflection": () => (/* binding */ MapTreeNode$2$reflection),
+/* harmony export */   "MapTreeNode$2_$ctor_499A11FD": () => (/* binding */ MapTreeNode$2_$ctor_499A11FD),
+/* harmony export */   "MapTreeNode$2__get_Left": () => (/* binding */ MapTreeNode$2__get_Left),
+/* harmony export */   "MapTreeNode$2__get_Right": () => (/* binding */ MapTreeNode$2__get_Right),
+/* harmony export */   "MapTreeNode$2__get_Height": () => (/* binding */ MapTreeNode$2__get_Height),
+/* harmony export */   "MapTreeModule_empty": () => (/* binding */ MapTreeModule_empty),
+/* harmony export */   "MapTreeModule_sizeAux": () => (/* binding */ MapTreeModule_sizeAux),
+/* harmony export */   "MapTreeModule_size": () => (/* binding */ MapTreeModule_size),
+/* harmony export */   "MapTreeModule_mk": () => (/* binding */ MapTreeModule_mk),
+/* harmony export */   "MapTreeModule_rebalance": () => (/* binding */ MapTreeModule_rebalance),
+/* harmony export */   "MapTreeModule_add": () => (/* binding */ MapTreeModule_add),
+/* harmony export */   "MapTreeModule_tryFind": () => (/* binding */ MapTreeModule_tryFind),
+/* harmony export */   "MapTreeModule_find": () => (/* binding */ MapTreeModule_find),
+/* harmony export */   "MapTreeModule_partition1": () => (/* binding */ MapTreeModule_partition1),
+/* harmony export */   "MapTreeModule_partitionAux": () => (/* binding */ MapTreeModule_partitionAux),
+/* harmony export */   "MapTreeModule_partition": () => (/* binding */ MapTreeModule_partition),
+/* harmony export */   "MapTreeModule_filter1": () => (/* binding */ MapTreeModule_filter1),
+/* harmony export */   "MapTreeModule_filterAux": () => (/* binding */ MapTreeModule_filterAux),
+/* harmony export */   "MapTreeModule_filter": () => (/* binding */ MapTreeModule_filter),
+/* harmony export */   "MapTreeModule_spliceOutSuccessor": () => (/* binding */ MapTreeModule_spliceOutSuccessor),
+/* harmony export */   "MapTreeModule_remove": () => (/* binding */ MapTreeModule_remove),
+/* harmony export */   "MapTreeModule_change": () => (/* binding */ MapTreeModule_change),
+/* harmony export */   "MapTreeModule_mem": () => (/* binding */ MapTreeModule_mem),
+/* harmony export */   "MapTreeModule_iterOpt": () => (/* binding */ MapTreeModule_iterOpt),
+/* harmony export */   "MapTreeModule_iter": () => (/* binding */ MapTreeModule_iter),
+/* harmony export */   "MapTreeModule_tryPickOpt": () => (/* binding */ MapTreeModule_tryPickOpt),
+/* harmony export */   "MapTreeModule_tryPick": () => (/* binding */ MapTreeModule_tryPick),
+/* harmony export */   "MapTreeModule_existsOpt": () => (/* binding */ MapTreeModule_existsOpt),
+/* harmony export */   "MapTreeModule_exists": () => (/* binding */ MapTreeModule_exists),
+/* harmony export */   "MapTreeModule_forallOpt": () => (/* binding */ MapTreeModule_forallOpt),
+/* harmony export */   "MapTreeModule_forall": () => (/* binding */ MapTreeModule_forall),
+/* harmony export */   "MapTreeModule_map": () => (/* binding */ MapTreeModule_map),
+/* harmony export */   "MapTreeModule_mapiOpt": () => (/* binding */ MapTreeModule_mapiOpt),
+/* harmony export */   "MapTreeModule_mapi": () => (/* binding */ MapTreeModule_mapi),
+/* harmony export */   "MapTreeModule_foldBackOpt": () => (/* binding */ MapTreeModule_foldBackOpt),
+/* harmony export */   "MapTreeModule_foldBack": () => (/* binding */ MapTreeModule_foldBack),
+/* harmony export */   "MapTreeModule_foldOpt": () => (/* binding */ MapTreeModule_foldOpt),
+/* harmony export */   "MapTreeModule_fold": () => (/* binding */ MapTreeModule_fold),
+/* harmony export */   "MapTreeModule_foldSectionOpt": () => (/* binding */ MapTreeModule_foldSectionOpt),
+/* harmony export */   "MapTreeModule_foldSection": () => (/* binding */ MapTreeModule_foldSection),
+/* harmony export */   "MapTreeModule_toList": () => (/* binding */ MapTreeModule_toList),
+/* harmony export */   "MapTreeModule_toArray": () => (/* binding */ MapTreeModule_toArray),
+/* harmony export */   "MapTreeModule_ofList": () => (/* binding */ MapTreeModule_ofList),
+/* harmony export */   "MapTreeModule_mkFromEnumerator": () => (/* binding */ MapTreeModule_mkFromEnumerator),
+/* harmony export */   "MapTreeModule_ofArray": () => (/* binding */ MapTreeModule_ofArray),
+/* harmony export */   "MapTreeModule_ofSeq": () => (/* binding */ MapTreeModule_ofSeq),
+/* harmony export */   "MapTreeModule_copyToArray": () => (/* binding */ MapTreeModule_copyToArray),
+/* harmony export */   "MapTreeModule_MapIterator$2": () => (/* binding */ MapTreeModule_MapIterator$2),
+/* harmony export */   "MapTreeModule_MapIterator$2$reflection": () => (/* binding */ MapTreeModule_MapIterator$2$reflection),
+/* harmony export */   "MapTreeModule_collapseLHS": () => (/* binding */ MapTreeModule_collapseLHS),
+/* harmony export */   "MapTreeModule_mkIterator": () => (/* binding */ MapTreeModule_mkIterator),
+/* harmony export */   "MapTreeModule_notStarted": () => (/* binding */ MapTreeModule_notStarted),
+/* harmony export */   "MapTreeModule_alreadyFinished": () => (/* binding */ MapTreeModule_alreadyFinished),
+/* harmony export */   "MapTreeModule_current": () => (/* binding */ MapTreeModule_current),
+/* harmony export */   "MapTreeModule_moveNext": () => (/* binding */ MapTreeModule_moveNext),
+/* harmony export */   "MapTreeModule_mkIEnumerator": () => (/* binding */ MapTreeModule_mkIEnumerator),
+/* harmony export */   "MapTreeModule_toSeq": () => (/* binding */ MapTreeModule_toSeq),
+/* harmony export */   "FSharpMap": () => (/* binding */ FSharpMap),
+/* harmony export */   "FSharpMap$reflection": () => (/* binding */ FSharpMap$reflection),
+/* harmony export */   "FSharpMap_$ctor": () => (/* binding */ FSharpMap_$ctor),
+/* harmony export */   "FSharpMap_get_Empty": () => (/* binding */ FSharpMap_get_Empty),
+/* harmony export */   "FSharpMap_Create": () => (/* binding */ FSharpMap_Create),
+/* harmony export */   "FSharpMap__get_Comparer": () => (/* binding */ FSharpMap__get_Comparer),
+/* harmony export */   "FSharpMap__get_Tree": () => (/* binding */ FSharpMap__get_Tree),
+/* harmony export */   "FSharpMap__Add": () => (/* binding */ FSharpMap__Add),
+/* harmony export */   "FSharpMap__Change": () => (/* binding */ FSharpMap__Change),
+/* harmony export */   "FSharpMap__get_IsEmpty": () => (/* binding */ FSharpMap__get_IsEmpty),
+/* harmony export */   "FSharpMap__get_Item": () => (/* binding */ FSharpMap__get_Item),
+/* harmony export */   "FSharpMap__TryPick": () => (/* binding */ FSharpMap__TryPick),
+/* harmony export */   "FSharpMap__Exists": () => (/* binding */ FSharpMap__Exists),
+/* harmony export */   "FSharpMap__Filter": () => (/* binding */ FSharpMap__Filter),
+/* harmony export */   "FSharpMap__ForAll": () => (/* binding */ FSharpMap__ForAll),
+/* harmony export */   "FSharpMap__Fold": () => (/* binding */ FSharpMap__Fold),
+/* harmony export */   "FSharpMap__FoldSection": () => (/* binding */ FSharpMap__FoldSection),
+/* harmony export */   "FSharpMap__Iterate": () => (/* binding */ FSharpMap__Iterate),
+/* harmony export */   "FSharpMap__MapRange": () => (/* binding */ FSharpMap__MapRange),
+/* harmony export */   "FSharpMap__Map": () => (/* binding */ FSharpMap__Map),
+/* harmony export */   "FSharpMap__Partition": () => (/* binding */ FSharpMap__Partition),
+/* harmony export */   "FSharpMap__get_Count": () => (/* binding */ FSharpMap__get_Count),
+/* harmony export */   "FSharpMap__ContainsKey": () => (/* binding */ FSharpMap__ContainsKey),
+/* harmony export */   "FSharpMap__Remove": () => (/* binding */ FSharpMap__Remove),
+/* harmony export */   "FSharpMap__TryGetValue": () => (/* binding */ FSharpMap__TryGetValue),
+/* harmony export */   "FSharpMap__TryFind": () => (/* binding */ FSharpMap__TryFind),
+/* harmony export */   "FSharpMap__ToList": () => (/* binding */ FSharpMap__ToList),
+/* harmony export */   "FSharpMap__ToArray": () => (/* binding */ FSharpMap__ToArray),
+/* harmony export */   "FSharpMap__ComputeHashCode": () => (/* binding */ FSharpMap__ComputeHashCode),
+/* harmony export */   "isEmpty": () => (/* binding */ isEmpty),
+/* harmony export */   "add": () => (/* binding */ add),
+/* harmony export */   "change": () => (/* binding */ change),
+/* harmony export */   "find": () => (/* binding */ find),
+/* harmony export */   "tryFind": () => (/* binding */ tryFind),
+/* harmony export */   "remove": () => (/* binding */ remove),
+/* harmony export */   "containsKey": () => (/* binding */ containsKey),
+/* harmony export */   "iterate": () => (/* binding */ iterate),
+/* harmony export */   "tryPick": () => (/* binding */ tryPick),
+/* harmony export */   "pick": () => (/* binding */ pick),
+/* harmony export */   "exists": () => (/* binding */ exists),
+/* harmony export */   "filter": () => (/* binding */ filter),
+/* harmony export */   "partition": () => (/* binding */ partition),
+/* harmony export */   "forAll": () => (/* binding */ forAll),
+/* harmony export */   "map": () => (/* binding */ map),
+/* harmony export */   "fold": () => (/* binding */ fold),
+/* harmony export */   "foldBack": () => (/* binding */ foldBack),
+/* harmony export */   "toSeq": () => (/* binding */ toSeq),
+/* harmony export */   "findKey": () => (/* binding */ findKey),
+/* harmony export */   "tryFindKey": () => (/* binding */ tryFindKey),
+/* harmony export */   "ofList": () => (/* binding */ ofList),
+/* harmony export */   "ofSeq": () => (/* binding */ ofSeq),
+/* harmony export */   "ofArray": () => (/* binding */ ofArray),
+/* harmony export */   "toList": () => (/* binding */ toList),
+/* harmony export */   "toArray": () => (/* binding */ toArray),
+/* harmony export */   "empty": () => (/* binding */ empty),
+/* harmony export */   "createMutable": () => (/* binding */ createMutable),
+/* harmony export */   "groupBy": () => (/* binding */ groupBy),
+/* harmony export */   "countBy": () => (/* binding */ countBy),
+/* harmony export */   "count": () => (/* binding */ count)
+/* harmony export */ });
+/* harmony import */ var _Reflection_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Reflection.js */ "./resources/js/.fable/fable-library.3.1.1/Reflection.js");
+/* harmony import */ var _Option_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Option.js */ "./resources/js/.fable/fable-library.3.1.1/Option.js");
+/* harmony import */ var _Types_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Types.js */ "./resources/js/.fable/fable-library.3.1.1/Types.js");
+/* harmony import */ var _List_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./List.js */ "./resources/js/.fable/fable-library.3.1.1/List.js");
+/* harmony import */ var _Util_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Util.js */ "./resources/js/.fable/fable-library.3.1.1/Util.js");
+/* harmony import */ var _Seq_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Seq.js */ "./resources/js/.fable/fable-library.3.1.1/Seq.js");
+/* harmony import */ var _String_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./String.js */ "./resources/js/.fable/fable-library.3.1.1/String.js");
+/* harmony import */ var _FSharp_Core_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./FSharp.Core.js */ "./resources/js/.fable/fable-library.3.1.1/FSharp.Core.js");
+/* harmony import */ var _MutableMap_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./MutableMap.js */ "./resources/js/.fable/fable-library.3.1.1/MutableMap.js");
+
+
+
+
+
+
+
+
+
+class MapTreeLeaf$2 {
+  constructor(k, v) {
+    this.k = k;
+    this.v = v;
+  }
+
+}
+function MapTreeLeaf$2$reflection(gen0, gen1) {
+  return (0,_Reflection_js__WEBPACK_IMPORTED_MODULE_0__.class_type)("Map.MapTreeLeaf`2", [gen0, gen1], MapTreeLeaf$2);
+}
+function MapTreeLeaf$2_$ctor_5BDDA1(k, v) {
+  return new MapTreeLeaf$2(k, v);
+}
+function MapTreeLeaf$2__get_Key(_) {
+  return _.k;
+}
+function MapTreeLeaf$2__get_Value(_) {
+  return _.v;
+}
+class MapTreeNode$2 extends MapTreeLeaf$2 {
+  constructor(k, v, left, right, h) {
+    super(k, v);
+    this.left = left;
+    this.right = right;
+    this.h = h;
+  }
+
+}
+function MapTreeNode$2$reflection(gen0, gen1) {
+  return (0,_Reflection_js__WEBPACK_IMPORTED_MODULE_0__.class_type)("Map.MapTreeNode`2", [gen0, gen1], MapTreeNode$2, MapTreeLeaf$2$reflection(gen0, gen1));
+}
+function MapTreeNode$2_$ctor_499A11FD(k, v, left, right, h) {
+  return new MapTreeNode$2(k, v, left, right, h);
+}
+function MapTreeNode$2__get_Left(_) {
+  return _.left;
+}
+function MapTreeNode$2__get_Right(_) {
+  return _.right;
+}
+function MapTreeNode$2__get_Height(_) {
+  return _.h;
+}
+function MapTreeModule_empty() {
+  return void 0;
+}
+function MapTreeModule_sizeAux(acc_mut, m_mut) {
+  MapTreeModule_sizeAux: while (true) {
+    const acc = acc_mut,
+          m = m_mut;
+
+    if (m != null) {
+      const m2 = m;
+
+      if (m2 instanceof MapTreeNode$2) {
+        acc_mut = MapTreeModule_sizeAux(acc + 1, MapTreeNode$2__get_Left(m2));
+        m_mut = MapTreeNode$2__get_Right(m2);
+        continue MapTreeModule_sizeAux;
+      } else {
+        return acc + 1 | 0;
+      }
+    } else {
+      return acc | 0;
+    }
+
+    break;
+  }
+}
+function MapTreeModule_size(x) {
+  return MapTreeModule_sizeAux(0, x);
+}
+function MapTreeModule_mk(l, k, v, r) {
+  let hl;
+  const m = l;
+
+  if (m != null) {
+    const m2 = m;
+    hl = m2 instanceof MapTreeNode$2 ? MapTreeNode$2__get_Height(m2) : 1;
+  } else {
+    hl = 0;
+  }
+
+  let hr;
+  const m_1 = r;
+
+  if (m_1 != null) {
+    const m2_1 = m_1;
+    hr = m2_1 instanceof MapTreeNode$2 ? MapTreeNode$2__get_Height(m2_1) : 1;
+  } else {
+    hr = 0;
+  }
+
+  const m_2 = (hl < hr ? hr : hl) | 0;
+
+  if (m_2 === 0) {
+    return MapTreeLeaf$2_$ctor_5BDDA1(k, v);
+  } else {
+    return MapTreeNode$2_$ctor_499A11FD(k, v, l, r, m_2 + 1);
+  }
+}
+function MapTreeModule_rebalance(t1, k, v, t2) {
+  let m_2, m2_2, m_3, m2_3;
+  let t1h;
+  const m = t1;
+
+  if (m != null) {
+    const m2 = m;
+    t1h = m2 instanceof MapTreeNode$2 ? MapTreeNode$2__get_Height(m2) : 1;
+  } else {
+    t1h = 0;
+  }
+
+  let t2h;
+  const m_1 = t2;
+
+  if (m_1 != null) {
+    const m2_1 = m_1;
+    t2h = m2_1 instanceof MapTreeNode$2 ? MapTreeNode$2__get_Height(m2_1) : 1;
+  } else {
+    t2h = 0;
+  }
+
+  if (t2h > t1h + 2) {
+    const matchValue = (0,_Option_js__WEBPACK_IMPORTED_MODULE_1__.value)(t2);
+
+    if (matchValue instanceof MapTreeNode$2) {
+      if ((m_2 = MapTreeNode$2__get_Left(matchValue), m_2 != null ? (m2_2 = m_2, m2_2 instanceof MapTreeNode$2 ? MapTreeNode$2__get_Height(m2_2) : 1) : 0) > t1h + 1) {
+        const matchValue_1 = (0,_Option_js__WEBPACK_IMPORTED_MODULE_1__.value)(MapTreeNode$2__get_Left(matchValue));
+
+        if (matchValue_1 instanceof MapTreeNode$2) {
+          return MapTreeModule_mk(MapTreeModule_mk(t1, k, v, MapTreeNode$2__get_Left(matchValue_1)), MapTreeLeaf$2__get_Key(matchValue_1), MapTreeLeaf$2__get_Value(matchValue_1), MapTreeModule_mk(MapTreeNode$2__get_Right(matchValue_1), MapTreeLeaf$2__get_Key(matchValue), MapTreeLeaf$2__get_Value(matchValue), MapTreeNode$2__get_Right(matchValue)));
+        } else {
+          throw new Error("internal error: Map.rebalance");
+        }
+      } else {
+        return MapTreeModule_mk(MapTreeModule_mk(t1, k, v, MapTreeNode$2__get_Left(matchValue)), MapTreeLeaf$2__get_Key(matchValue), MapTreeLeaf$2__get_Value(matchValue), MapTreeNode$2__get_Right(matchValue));
+      }
+    } else {
+      throw new Error("internal error: Map.rebalance");
+    }
+  } else if (t1h > t2h + 2) {
+    const matchValue_2 = (0,_Option_js__WEBPACK_IMPORTED_MODULE_1__.value)(t1);
+
+    if (matchValue_2 instanceof MapTreeNode$2) {
+      if ((m_3 = MapTreeNode$2__get_Right(matchValue_2), m_3 != null ? (m2_3 = m_3, m2_3 instanceof MapTreeNode$2 ? MapTreeNode$2__get_Height(m2_3) : 1) : 0) > t2h + 1) {
+        const matchValue_3 = (0,_Option_js__WEBPACK_IMPORTED_MODULE_1__.value)(MapTreeNode$2__get_Right(matchValue_2));
+
+        if (matchValue_3 instanceof MapTreeNode$2) {
+          return MapTreeModule_mk(MapTreeModule_mk(MapTreeNode$2__get_Left(matchValue_2), MapTreeLeaf$2__get_Key(matchValue_2), MapTreeLeaf$2__get_Value(matchValue_2), MapTreeNode$2__get_Left(matchValue_3)), MapTreeLeaf$2__get_Key(matchValue_3), MapTreeLeaf$2__get_Value(matchValue_3), MapTreeModule_mk(MapTreeNode$2__get_Right(matchValue_3), k, v, t2));
+        } else {
+          throw new Error("internal error: Map.rebalance");
+        }
+      } else {
+        return MapTreeModule_mk(MapTreeNode$2__get_Left(matchValue_2), MapTreeLeaf$2__get_Key(matchValue_2), MapTreeLeaf$2__get_Value(matchValue_2), MapTreeModule_mk(MapTreeNode$2__get_Right(matchValue_2), k, v, t2));
+      }
+    } else {
+      throw new Error("internal error: Map.rebalance");
+    }
+  } else {
+    return MapTreeModule_mk(t1, k, v, t2);
+  }
+}
+function MapTreeModule_add(comparer, k, v, m) {
+  if (m != null) {
+    const m2 = m;
+    const c = comparer.Compare(k, MapTreeLeaf$2__get_Key(m2)) | 0;
+
+    if (m2 instanceof MapTreeNode$2) {
+      if (c < 0) {
+        return MapTreeModule_rebalance(MapTreeModule_add(comparer, k, v, MapTreeNode$2__get_Left(m2)), MapTreeLeaf$2__get_Key(m2), MapTreeLeaf$2__get_Value(m2), MapTreeNode$2__get_Right(m2));
+      } else if (c === 0) {
+        return MapTreeNode$2_$ctor_499A11FD(k, v, MapTreeNode$2__get_Left(m2), MapTreeNode$2__get_Right(m2), MapTreeNode$2__get_Height(m2));
+      } else {
+        return MapTreeModule_rebalance(MapTreeNode$2__get_Left(m2), MapTreeLeaf$2__get_Key(m2), MapTreeLeaf$2__get_Value(m2), MapTreeModule_add(comparer, k, v, MapTreeNode$2__get_Right(m2)));
+      }
+    } else if (c < 0) {
+      return MapTreeNode$2_$ctor_499A11FD(k, v, MapTreeModule_empty(), m, 2);
+    } else if (c === 0) {
+      return MapTreeLeaf$2_$ctor_5BDDA1(k, v);
+    } else {
+      return MapTreeNode$2_$ctor_499A11FD(k, v, m, MapTreeModule_empty(), 2);
+    }
+  } else {
+    return MapTreeLeaf$2_$ctor_5BDDA1(k, v);
+  }
+}
+function MapTreeModule_tryFind(comparer_mut, k_mut, m_mut) {
+  MapTreeModule_tryFind: while (true) {
+    const comparer = comparer_mut,
+          k = k_mut,
+          m = m_mut;
+
+    if (m != null) {
+      const m2 = m;
+      const c = comparer.Compare(k, MapTreeLeaf$2__get_Key(m2)) | 0;
+
+      if (c === 0) {
+        return (0,_Option_js__WEBPACK_IMPORTED_MODULE_1__.some)(MapTreeLeaf$2__get_Value(m2));
+      } else if (m2 instanceof MapTreeNode$2) {
+        comparer_mut = comparer;
+        k_mut = k;
+        m_mut = c < 0 ? MapTreeNode$2__get_Left(m2) : MapTreeNode$2__get_Right(m2);
+        continue MapTreeModule_tryFind;
+      } else {
+        return void 0;
+      }
+    } else {
+      return void 0;
+    }
+
+    break;
+  }
+}
+function MapTreeModule_find(comparer, k, m) {
+  const matchValue = MapTreeModule_tryFind(comparer, k, m);
+
+  if (matchValue == null) {
+    throw new Error();
+  } else {
+    return (0,_Option_js__WEBPACK_IMPORTED_MODULE_1__.value)(matchValue);
+  }
+}
+function MapTreeModule_partition1(comparer, f, k, v, acc1, acc2) {
+  if (f(k, v)) {
+    return [MapTreeModule_add(comparer, k, v, acc1), acc2];
+  } else {
+    return [acc1, MapTreeModule_add(comparer, k, v, acc2)];
+  }
+}
+function MapTreeModule_partitionAux(comparer_mut, f_mut, m_mut, acc_0_mut, acc_1_mut) {
+  MapTreeModule_partitionAux: while (true) {
+    const comparer = comparer_mut,
+          f = f_mut,
+          m = m_mut,
+          acc_0 = acc_0_mut,
+          acc_1 = acc_1_mut;
+    const acc = [acc_0, acc_1];
+
+    if (m != null) {
+      const m2 = m;
+
+      if (m2 instanceof MapTreeNode$2) {
+        const acc_2 = MapTreeModule_partitionAux(comparer, f, MapTreeNode$2__get_Right(m2), acc[0], acc[1]);
+        const acc_3 = MapTreeModule_partition1(comparer, f, MapTreeLeaf$2__get_Key(m2), MapTreeLeaf$2__get_Value(m2), acc_2[0], acc_2[1]);
+        comparer_mut = comparer;
+        f_mut = f;
+        m_mut = MapTreeNode$2__get_Left(m2);
+        acc_0_mut = acc_3[0];
+        acc_1_mut = acc_3[1];
+        continue MapTreeModule_partitionAux;
+      } else {
+        return MapTreeModule_partition1(comparer, f, MapTreeLeaf$2__get_Key(m2), MapTreeLeaf$2__get_Value(m2), acc[0], acc[1]);
+      }
+    } else {
+      return acc;
+    }
+
+    break;
+  }
+}
+function MapTreeModule_partition(comparer, f, m) {
+  return MapTreeModule_partitionAux(comparer, f, m, MapTreeModule_empty(), MapTreeModule_empty());
+}
+function MapTreeModule_filter1(comparer, f, k, v, acc) {
+  if (f(k, v)) {
+    return MapTreeModule_add(comparer, k, v, acc);
+  } else {
+    return acc;
+  }
+}
+function MapTreeModule_filterAux(comparer_mut, f_mut, m_mut, acc_mut) {
+  MapTreeModule_filterAux: while (true) {
+    const comparer = comparer_mut,
+          f = f_mut,
+          m = m_mut,
+          acc = acc_mut;
+
+    if (m != null) {
+      const m2 = m;
+
+      if (m2 instanceof MapTreeNode$2) {
+        const acc_1 = MapTreeModule_filterAux(comparer, f, MapTreeNode$2__get_Left(m2), acc);
+        const acc_2 = MapTreeModule_filter1(comparer, f, MapTreeLeaf$2__get_Key(m2), MapTreeLeaf$2__get_Value(m2), acc_1);
+        comparer_mut = comparer;
+        f_mut = f;
+        m_mut = MapTreeNode$2__get_Right(m2);
+        acc_mut = acc_2;
+        continue MapTreeModule_filterAux;
+      } else {
+        return MapTreeModule_filter1(comparer, f, MapTreeLeaf$2__get_Key(m2), MapTreeLeaf$2__get_Value(m2), acc);
+      }
+    } else {
+      return acc;
+    }
+
+    break;
+  }
+}
+function MapTreeModule_filter(comparer, f, m) {
+  return MapTreeModule_filterAux(comparer, f, m, MapTreeModule_empty());
+}
+function MapTreeModule_spliceOutSuccessor(m) {
+  if (m != null) {
+    const m2 = m;
+
+    if (m2 instanceof MapTreeNode$2) {
+      if (MapTreeNode$2__get_Left(m2) == null) {
+        return [MapTreeLeaf$2__get_Key(m2), MapTreeLeaf$2__get_Value(m2), MapTreeNode$2__get_Right(m2)];
+      } else {
+        const patternInput = MapTreeModule_spliceOutSuccessor(MapTreeNode$2__get_Left(m2));
+        return [patternInput[0], patternInput[1], MapTreeModule_mk(patternInput[2], MapTreeLeaf$2__get_Key(m2), MapTreeLeaf$2__get_Value(m2), MapTreeNode$2__get_Right(m2))];
+      }
+    } else {
+      return [MapTreeLeaf$2__get_Key(m2), MapTreeLeaf$2__get_Value(m2), MapTreeModule_empty()];
+    }
+  } else {
+    throw new Error("internal error: Map.spliceOutSuccessor");
+  }
+}
+function MapTreeModule_remove(comparer, k, m) {
+  if (m != null) {
+    const m2 = m;
+    const c = comparer.Compare(k, MapTreeLeaf$2__get_Key(m2)) | 0;
+
+    if (m2 instanceof MapTreeNode$2) {
+      if (c < 0) {
+        return MapTreeModule_rebalance(MapTreeModule_remove(comparer, k, MapTreeNode$2__get_Left(m2)), MapTreeLeaf$2__get_Key(m2), MapTreeLeaf$2__get_Value(m2), MapTreeNode$2__get_Right(m2));
+      } else if (c === 0) {
+        if (MapTreeNode$2__get_Left(m2) == null) {
+          return MapTreeNode$2__get_Right(m2);
+        } else if (MapTreeNode$2__get_Right(m2) == null) {
+          return MapTreeNode$2__get_Left(m2);
+        } else {
+          const patternInput = MapTreeModule_spliceOutSuccessor(MapTreeNode$2__get_Right(m2));
+          return MapTreeModule_mk(MapTreeNode$2__get_Left(m2), patternInput[0], patternInput[1], patternInput[2]);
+        }
+      } else {
+        return MapTreeModule_rebalance(MapTreeNode$2__get_Left(m2), MapTreeLeaf$2__get_Key(m2), MapTreeLeaf$2__get_Value(m2), MapTreeModule_remove(comparer, k, MapTreeNode$2__get_Right(m2)));
+      }
+    } else if (c === 0) {
+      return MapTreeModule_empty();
+    } else {
+      return m;
+    }
+  } else {
+    return MapTreeModule_empty();
+  }
+}
+function MapTreeModule_change(comparer, k, u, m) {
+  if (m != null) {
+    const m2 = m;
+
+    if (m2 instanceof MapTreeNode$2) {
+      const c = comparer.Compare(k, MapTreeLeaf$2__get_Key(m2)) | 0;
+
+      if (c < 0) {
+        return MapTreeModule_rebalance(MapTreeModule_change(comparer, k, u, MapTreeNode$2__get_Left(m2)), MapTreeLeaf$2__get_Key(m2), MapTreeLeaf$2__get_Value(m2), MapTreeNode$2__get_Right(m2));
+      } else if (c === 0) {
+        const matchValue_1 = u((0,_Option_js__WEBPACK_IMPORTED_MODULE_1__.some)(MapTreeLeaf$2__get_Value(m2)));
+
+        if (matchValue_1 != null) {
+          return MapTreeNode$2_$ctor_499A11FD(k, (0,_Option_js__WEBPACK_IMPORTED_MODULE_1__.value)(matchValue_1), MapTreeNode$2__get_Left(m2), MapTreeNode$2__get_Right(m2), MapTreeNode$2__get_Height(m2));
+        } else if (MapTreeNode$2__get_Left(m2) == null) {
+          return MapTreeNode$2__get_Right(m2);
+        } else if (MapTreeNode$2__get_Right(m2) == null) {
+          return MapTreeNode$2__get_Left(m2);
+        } else {
+          const patternInput = MapTreeModule_spliceOutSuccessor(MapTreeNode$2__get_Right(m2));
+          return MapTreeModule_mk(MapTreeNode$2__get_Left(m2), patternInput[0], patternInput[1], patternInput[2]);
+        }
+      } else {
+        return MapTreeModule_rebalance(MapTreeNode$2__get_Left(m2), MapTreeLeaf$2__get_Key(m2), MapTreeLeaf$2__get_Value(m2), MapTreeModule_change(comparer, k, u, MapTreeNode$2__get_Right(m2)));
+      }
+    } else {
+      const c_1 = comparer.Compare(k, MapTreeLeaf$2__get_Key(m2)) | 0;
+
+      if (c_1 < 0) {
+        const matchValue_2 = u(void 0);
+
+        if (matchValue_2 != null) {
+          return MapTreeNode$2_$ctor_499A11FD(k, (0,_Option_js__WEBPACK_IMPORTED_MODULE_1__.value)(matchValue_2), MapTreeModule_empty(), m, 2);
+        } else {
+          return m;
+        }
+      } else if (c_1 === 0) {
+        const matchValue_3 = u((0,_Option_js__WEBPACK_IMPORTED_MODULE_1__.some)(MapTreeLeaf$2__get_Value(m2)));
+
+        if (matchValue_3 != null) {
+          return MapTreeLeaf$2_$ctor_5BDDA1(k, (0,_Option_js__WEBPACK_IMPORTED_MODULE_1__.value)(matchValue_3));
+        } else {
+          return MapTreeModule_empty();
+        }
+      } else {
+        const matchValue_4 = u(void 0);
+
+        if (matchValue_4 != null) {
+          return MapTreeNode$2_$ctor_499A11FD(k, (0,_Option_js__WEBPACK_IMPORTED_MODULE_1__.value)(matchValue_4), m, MapTreeModule_empty(), 2);
+        } else {
+          return m;
+        }
+      }
+    }
+  } else {
+    const matchValue = u(void 0);
+
+    if (matchValue != null) {
+      return MapTreeLeaf$2_$ctor_5BDDA1(k, (0,_Option_js__WEBPACK_IMPORTED_MODULE_1__.value)(matchValue));
+    } else {
+      return m;
+    }
+  }
+}
+function MapTreeModule_mem(comparer_mut, k_mut, m_mut) {
+  MapTreeModule_mem: while (true) {
+    const comparer = comparer_mut,
+          k = k_mut,
+          m = m_mut;
+
+    if (m != null) {
+      const m2 = m;
+      const c = comparer.Compare(k, MapTreeLeaf$2__get_Key(m2)) | 0;
+
+      if (m2 instanceof MapTreeNode$2) {
+        if (c < 0) {
+          comparer_mut = comparer;
+          k_mut = k;
+          m_mut = MapTreeNode$2__get_Left(m2);
+          continue MapTreeModule_mem;
+        } else if (c === 0) {
+          return true;
+        } else {
+          comparer_mut = comparer;
+          k_mut = k;
+          m_mut = MapTreeNode$2__get_Right(m2);
+          continue MapTreeModule_mem;
+        }
+      } else {
+        return c === 0;
+      }
+    } else {
+      return false;
+    }
+
+    break;
+  }
+}
+function MapTreeModule_iterOpt(f_mut, m_mut) {
+  MapTreeModule_iterOpt: while (true) {
+    const f = f_mut,
+          m = m_mut;
+
+    if (m != null) {
+      const m2 = m;
+
+      if (m2 instanceof MapTreeNode$2) {
+        MapTreeModule_iterOpt(f, MapTreeNode$2__get_Left(m2));
+        f(MapTreeLeaf$2__get_Key(m2), MapTreeLeaf$2__get_Value(m2));
+        f_mut = f;
+        m_mut = MapTreeNode$2__get_Right(m2);
+        continue MapTreeModule_iterOpt;
+      } else {
+        f(MapTreeLeaf$2__get_Key(m2), MapTreeLeaf$2__get_Value(m2));
+      }
+    }
+
+    break;
+  }
+}
+function MapTreeModule_iter(f, m) {
+  MapTreeModule_iterOpt(f, m);
+}
+function MapTreeModule_tryPickOpt(f_mut, m_mut) {
+  MapTreeModule_tryPickOpt: while (true) {
+    const f = f_mut,
+          m = m_mut;
+
+    if (m != null) {
+      const m2 = m;
+
+      if (m2 instanceof MapTreeNode$2) {
+        const matchValue = MapTreeModule_tryPickOpt(f, MapTreeNode$2__get_Left(m2));
+
+        if (matchValue == null) {
+          const matchValue_1 = f(MapTreeLeaf$2__get_Key(m2), MapTreeLeaf$2__get_Value(m2));
+
+          if (matchValue_1 == null) {
+            f_mut = f;
+            m_mut = MapTreeNode$2__get_Right(m2);
+            continue MapTreeModule_tryPickOpt;
+          } else {
+            return matchValue_1;
+          }
+        } else {
+          return matchValue;
+        }
+      } else {
+        return f(MapTreeLeaf$2__get_Key(m2), MapTreeLeaf$2__get_Value(m2));
+      }
+    } else {
+      return void 0;
+    }
+
+    break;
+  }
+}
+function MapTreeModule_tryPick(f, m) {
+  return MapTreeModule_tryPickOpt(f, m);
+}
+function MapTreeModule_existsOpt(f_mut, m_mut) {
+  MapTreeModule_existsOpt: while (true) {
+    const f = f_mut,
+          m = m_mut;
+
+    if (m != null) {
+      const m2 = m;
+
+      if (m2 instanceof MapTreeNode$2) {
+        if (MapTreeModule_existsOpt(f, MapTreeNode$2__get_Left(m2)) ? true : f(MapTreeLeaf$2__get_Key(m2), MapTreeLeaf$2__get_Value(m2))) {
+          return true;
+        } else {
+          f_mut = f;
+          m_mut = MapTreeNode$2__get_Right(m2);
+          continue MapTreeModule_existsOpt;
+        }
+      } else {
+        return f(MapTreeLeaf$2__get_Key(m2), MapTreeLeaf$2__get_Value(m2));
+      }
+    } else {
+      return false;
+    }
+
+    break;
+  }
+}
+function MapTreeModule_exists(f, m) {
+  return MapTreeModule_existsOpt(f, m);
+}
+function MapTreeModule_forallOpt(f_mut, m_mut) {
+  MapTreeModule_forallOpt: while (true) {
+    const f = f_mut,
+          m = m_mut;
+
+    if (m != null) {
+      const m2 = m;
+
+      if (m2 instanceof MapTreeNode$2) {
+        if (MapTreeModule_forallOpt(f, MapTreeNode$2__get_Left(m2)) ? f(MapTreeLeaf$2__get_Key(m2), MapTreeLeaf$2__get_Value(m2)) : false) {
+          f_mut = f;
+          m_mut = MapTreeNode$2__get_Right(m2);
+          continue MapTreeModule_forallOpt;
+        } else {
+          return false;
+        }
+      } else {
+        return f(MapTreeLeaf$2__get_Key(m2), MapTreeLeaf$2__get_Value(m2));
+      }
+    } else {
+      return true;
+    }
+
+    break;
+  }
+}
+function MapTreeModule_forall(f, m) {
+  return MapTreeModule_forallOpt(f, m);
+}
+function MapTreeModule_map(f, m) {
+  if (m != null) {
+    const m2 = m;
+
+    if (m2 instanceof MapTreeNode$2) {
+      const l2 = MapTreeModule_map(f, MapTreeNode$2__get_Left(m2));
+      const v2 = f(MapTreeLeaf$2__get_Value(m2));
+      const r2 = MapTreeModule_map(f, MapTreeNode$2__get_Right(m2));
+      return MapTreeNode$2_$ctor_499A11FD(MapTreeLeaf$2__get_Key(m2), v2, l2, r2, MapTreeNode$2__get_Height(m2));
+    } else {
+      return MapTreeLeaf$2_$ctor_5BDDA1(MapTreeLeaf$2__get_Key(m2), f(MapTreeLeaf$2__get_Value(m2)));
+    }
+  } else {
+    return MapTreeModule_empty();
+  }
+}
+function MapTreeModule_mapiOpt(f, m) {
+  if (m != null) {
+    const m2 = m;
+
+    if (m2 instanceof MapTreeNode$2) {
+      const l2 = MapTreeModule_mapiOpt(f, MapTreeNode$2__get_Left(m2));
+      const v2 = f(MapTreeLeaf$2__get_Key(m2), MapTreeLeaf$2__get_Value(m2));
+      const r2 = MapTreeModule_mapiOpt(f, MapTreeNode$2__get_Right(m2));
+      return MapTreeNode$2_$ctor_499A11FD(MapTreeLeaf$2__get_Key(m2), v2, l2, r2, MapTreeNode$2__get_Height(m2));
+    } else {
+      return MapTreeLeaf$2_$ctor_5BDDA1(MapTreeLeaf$2__get_Key(m2), f(MapTreeLeaf$2__get_Key(m2), MapTreeLeaf$2__get_Value(m2)));
+    }
+  } else {
+    return MapTreeModule_empty();
+  }
+}
+function MapTreeModule_mapi(f, m) {
+  return MapTreeModule_mapiOpt(f, m);
+}
+function MapTreeModule_foldBackOpt(f_mut, m_mut, x_mut) {
+  MapTreeModule_foldBackOpt: while (true) {
+    const f = f_mut,
+          m = m_mut,
+          x = x_mut;
+
+    if (m != null) {
+      const m2 = m;
+
+      if (m2 instanceof MapTreeNode$2) {
+        const x_1 = MapTreeModule_foldBackOpt(f, MapTreeNode$2__get_Right(m2), x);
+        const x_2 = f(MapTreeLeaf$2__get_Key(m2), MapTreeLeaf$2__get_Value(m2), x_1);
+        f_mut = f;
+        m_mut = MapTreeNode$2__get_Left(m2);
+        x_mut = x_2;
+        continue MapTreeModule_foldBackOpt;
+      } else {
+        return f(MapTreeLeaf$2__get_Key(m2), MapTreeLeaf$2__get_Value(m2), x);
+      }
+    } else {
+      return x;
+    }
+
+    break;
+  }
+}
+function MapTreeModule_foldBack(f, m, x) {
+  return MapTreeModule_foldBackOpt(f, m, x);
+}
+function MapTreeModule_foldOpt(f_mut, x_mut, m_mut) {
+  MapTreeModule_foldOpt: while (true) {
+    const f = f_mut,
+          x = x_mut,
+          m = m_mut;
+
+    if (m != null) {
+      const m2 = m;
+
+      if (m2 instanceof MapTreeNode$2) {
+        f_mut = f;
+        x_mut = f(MapTreeModule_foldOpt(f, x, MapTreeNode$2__get_Left(m2)), MapTreeLeaf$2__get_Key(m2), MapTreeLeaf$2__get_Value(m2));
+        m_mut = MapTreeNode$2__get_Right(m2);
+        continue MapTreeModule_foldOpt;
+      } else {
+        return f(x, MapTreeLeaf$2__get_Key(m2), MapTreeLeaf$2__get_Value(m2));
+      }
+    } else {
+      return x;
+    }
+
+    break;
+  }
+}
+function MapTreeModule_fold(f, x, m) {
+  return MapTreeModule_foldOpt(f, x, m);
+}
+function MapTreeModule_foldSectionOpt(comparer, lo, hi, f, m, x) {
+  const foldFromTo = (f_1_mut, m_1_mut, x_1_mut) => {
+    foldFromTo: while (true) {
+      const f_1 = f_1_mut,
+            m_1 = m_1_mut,
+            x_1 = x_1_mut;
+
+      if (m_1 != null) {
+        const m2 = m_1;
+
+        if (m2 instanceof MapTreeNode$2) {
+          const cLoKey = comparer.Compare(lo, MapTreeLeaf$2__get_Key(m2)) | 0;
+          const cKeyHi = comparer.Compare(MapTreeLeaf$2__get_Key(m2), hi) | 0;
+          const x_2 = cLoKey < 0 ? foldFromTo(f_1, MapTreeNode$2__get_Left(m2), x_1) : x_1;
+          const x_3 = (cLoKey <= 0 ? cKeyHi <= 0 : false) ? f_1(MapTreeLeaf$2__get_Key(m2), MapTreeLeaf$2__get_Value(m2), x_2) : x_2;
+
+          if (cKeyHi < 0) {
+            f_1_mut = f_1;
+            m_1_mut = MapTreeNode$2__get_Right(m2);
+            x_1_mut = x_3;
+            continue foldFromTo;
+          } else {
+            return x_3;
+          }
+        } else if (comparer.Compare(lo, MapTreeLeaf$2__get_Key(m2)) <= 0 ? comparer.Compare(MapTreeLeaf$2__get_Key(m2), hi) <= 0 : false) {
+          return f_1(MapTreeLeaf$2__get_Key(m2), MapTreeLeaf$2__get_Value(m2), x_1);
+        } else {
+          return x_1;
+        }
+      } else {
+        return x_1;
+      }
+
+      break;
+    }
+  };
+
+  if (comparer.Compare(lo, hi) === 1) {
+    return x;
+  } else {
+    return foldFromTo(f, m, x);
+  }
+}
+function MapTreeModule_foldSection(comparer, lo, hi, f, m, x) {
+  return MapTreeModule_foldSectionOpt(comparer, lo, hi, f, m, x);
+}
+function MapTreeModule_toList(m) {
+  const loop = (m_1_mut, acc_mut) => {
+    loop: while (true) {
+      const m_1 = m_1_mut,
+            acc = acc_mut;
+
+      if (m_1 != null) {
+        const m2 = m_1;
+
+        if (m2 instanceof MapTreeNode$2) {
+          m_1_mut = MapTreeNode$2__get_Left(m2);
+          acc_mut = new _Types_js__WEBPACK_IMPORTED_MODULE_2__.List([MapTreeLeaf$2__get_Key(m2), MapTreeLeaf$2__get_Value(m2)], loop(MapTreeNode$2__get_Right(m2), acc));
+          continue loop;
+        } else {
+          return new _Types_js__WEBPACK_IMPORTED_MODULE_2__.List([MapTreeLeaf$2__get_Key(m2), MapTreeLeaf$2__get_Value(m2)], acc);
+        }
+      } else {
+        return acc;
+      }
+
+      break;
+    }
+  };
+
+  return loop(m, new _Types_js__WEBPACK_IMPORTED_MODULE_2__.List());
+}
+function MapTreeModule_toArray(m) {
+  return Array.from(MapTreeModule_toList(m));
+}
+function MapTreeModule_ofList(comparer, l) {
+  return (0,_List_js__WEBPACK_IMPORTED_MODULE_3__.fold)((acc, tupledArg) => MapTreeModule_add(comparer, tupledArg[0], tupledArg[1], acc), MapTreeModule_empty(), l);
+}
+function MapTreeModule_mkFromEnumerator(comparer_mut, acc_mut, e_mut) {
+  MapTreeModule_mkFromEnumerator: while (true) {
+    const comparer = comparer_mut,
+          acc = acc_mut,
+          e = e_mut;
+
+    if (e["System.Collections.IEnumerator.MoveNext"]()) {
+      const patternInput = e["System.Collections.Generic.IEnumerator`1.get_Current"]();
+      comparer_mut = comparer;
+      acc_mut = MapTreeModule_add(comparer, patternInput[0], patternInput[1], acc);
+      e_mut = e;
+      continue MapTreeModule_mkFromEnumerator;
+    } else {
+      return acc;
+    }
+
+    break;
+  }
+}
+function MapTreeModule_ofArray(comparer, arr) {
+  let res = MapTreeModule_empty();
+
+  for (let idx = 0; idx <= arr.length - 1; idx++) {
+    const forLoopVar = arr[idx];
+    res = MapTreeModule_add(comparer, forLoopVar[0], forLoopVar[1], res);
+  }
+
+  return res;
+}
+function MapTreeModule_ofSeq(comparer, c) {
+  if ((0,_Util_js__WEBPACK_IMPORTED_MODULE_4__.isArrayLike)(c)) {
+    return MapTreeModule_ofArray(comparer, c);
+  } else if (c instanceof _Types_js__WEBPACK_IMPORTED_MODULE_2__.List) {
+    return MapTreeModule_ofList(comparer, c);
+  } else {
+    const ie = (0,_Seq_js__WEBPACK_IMPORTED_MODULE_5__.getEnumerator)(c);
+
+    try {
+      return MapTreeModule_mkFromEnumerator(comparer, MapTreeModule_empty(), ie);
+    } finally {
+      ie.Dispose();
+    }
+  }
+}
+function MapTreeModule_copyToArray(m, arr, i) {
+  let j = i | 0;
+  MapTreeModule_iter((x, y) => {
+    arr[j] = [x, y];
+    j = j + 1;
+  }, m);
+}
+class MapTreeModule_MapIterator$2 extends _Types_js__WEBPACK_IMPORTED_MODULE_2__.Record {
+  constructor(stack, started) {
+    super();
+    this.stack = stack;
+    this.started = started;
+  }
+
+}
+function MapTreeModule_MapIterator$2$reflection(gen0, gen1) {
+  return (0,_Reflection_js__WEBPACK_IMPORTED_MODULE_0__.record_type)("Map.MapTreeModule.MapIterator`2", [gen0, gen1], MapTreeModule_MapIterator$2, () => [["stack", (0,_Reflection_js__WEBPACK_IMPORTED_MODULE_0__.list_type)((0,_Reflection_js__WEBPACK_IMPORTED_MODULE_0__.option_type)(MapTreeLeaf$2$reflection(gen0, gen1)))], ["started", _Reflection_js__WEBPACK_IMPORTED_MODULE_0__.bool_type]]);
+}
+function MapTreeModule_collapseLHS(stack_mut) {
+  MapTreeModule_collapseLHS: while (true) {
+    const stack = stack_mut;
+
+    if (stack.tail != null) {
+      const rest = stack.tail;
+      const m = stack.head;
+
+      if (m != null) {
+        const m2 = m;
+
+        if (m2 instanceof MapTreeNode$2) {
+          stack_mut = new _Types_js__WEBPACK_IMPORTED_MODULE_2__.List(MapTreeNode$2__get_Left(m2), new _Types_js__WEBPACK_IMPORTED_MODULE_2__.List(MapTreeLeaf$2_$ctor_5BDDA1(MapTreeLeaf$2__get_Key(m2), MapTreeLeaf$2__get_Value(m2)), new _Types_js__WEBPACK_IMPORTED_MODULE_2__.List(MapTreeNode$2__get_Right(m2), rest)));
+          continue MapTreeModule_collapseLHS;
+        } else {
+          return stack;
+        }
+      } else {
+        stack_mut = rest;
+        continue MapTreeModule_collapseLHS;
+      }
+    } else {
+      return new _Types_js__WEBPACK_IMPORTED_MODULE_2__.List();
+    }
+
+    break;
+  }
+}
+function MapTreeModule_mkIterator(m) {
+  return new MapTreeModule_MapIterator$2(MapTreeModule_collapseLHS(new _Types_js__WEBPACK_IMPORTED_MODULE_2__.List(m, new _Types_js__WEBPACK_IMPORTED_MODULE_2__.List())), false);
+}
+function MapTreeModule_notStarted() {
+  throw new Error("enumeration not started");
+}
+function MapTreeModule_alreadyFinished() {
+  throw new Error("enumeration already finished");
+}
+function MapTreeModule_current(i) {
+  if (i.started) {
+    const matchValue = i.stack;
+
+    if (matchValue.tail != null) {
+      if (matchValue.head != null) {
+        const m = matchValue.head;
+
+        if (m instanceof MapTreeNode$2) {
+          throw new Error("Please report error: Map iterator, unexpected stack for current");
+        } else {
+          return [MapTreeLeaf$2__get_Key(m), MapTreeLeaf$2__get_Value(m)];
+        }
+      } else {
+        throw new Error("Please report error: Map iterator, unexpected stack for current");
+      }
+    } else {
+      return MapTreeModule_alreadyFinished();
+    }
+  } else {
+    return MapTreeModule_notStarted();
+  }
+}
+function MapTreeModule_moveNext(i) {
+  if (i.started) {
+    const matchValue = i.stack;
+
+    if (matchValue.tail != null) {
+      if (matchValue.head != null) {
+        const m = matchValue.head;
+
+        if (m instanceof MapTreeNode$2) {
+          throw new Error("Please report error: Map iterator, unexpected stack for moveNext");
+        } else {
+          i.stack = MapTreeModule_collapseLHS(matchValue.tail);
+          return !(i.stack.tail == null);
+        }
+      } else {
+        throw new Error("Please report error: Map iterator, unexpected stack for moveNext");
+      }
+    } else {
+      return false;
+    }
+  } else {
+    i.started = true;
+    return !(i.stack.tail == null);
+  }
+}
+function MapTreeModule_mkIEnumerator(m) {
+  let i = MapTreeModule_mkIterator(m);
+  return {
+    ["System.Collections.Generic.IEnumerator`1.get_Current"]() {
+      return MapTreeModule_current(i);
+    },
+
+    ["System.Collections.IEnumerator.get_Current"]() {
+      return MapTreeModule_current(i);
+    },
+
+    ["System.Collections.IEnumerator.MoveNext"]() {
+      return MapTreeModule_moveNext(i);
+    },
+
+    ["System.Collections.IEnumerator.Reset"]() {
+      i = MapTreeModule_mkIterator(m);
+    },
+
+    Dispose() {}
+
+  };
+}
+function MapTreeModule_toSeq(s) {
+  return (0,_Seq_js__WEBPACK_IMPORTED_MODULE_5__.unfold)(en_1 => {
+    if (en_1["System.Collections.IEnumerator.MoveNext"]()) {
+      return [en_1["System.Collections.Generic.IEnumerator`1.get_Current"](), en_1];
+    } else {
+      return void 0;
+    }
+  }, MapTreeModule_mkIEnumerator(s));
+}
+class FSharpMap {
+  constructor(comparer, tree) {
+    this.comparer = comparer;
+    this.tree = tree;
+  }
+
+  GetHashCode() {
+    const this$ = this;
+    return FSharpMap__ComputeHashCode(this$) | 0;
+  }
+
+  Equals(that) {
+    const this$ = this;
+
+    if (that instanceof FSharpMap) {
+      const e1 = (0,_Seq_js__WEBPACK_IMPORTED_MODULE_5__.getEnumerator)(this$);
+
+      try {
+        const e2 = (0,_Seq_js__WEBPACK_IMPORTED_MODULE_5__.getEnumerator)(that);
+
+        try {
+          const loop = () => {
+            const m1 = e1["System.Collections.IEnumerator.MoveNext"]();
+
+            if (m1 === e2["System.Collections.IEnumerator.MoveNext"]()) {
+              if (!m1) {
+                return true;
+              } else {
+                const e1c = e1["System.Collections.Generic.IEnumerator`1.get_Current"]();
+                const e2c = e2["System.Collections.Generic.IEnumerator`1.get_Current"]();
+
+                if ((0,_Util_js__WEBPACK_IMPORTED_MODULE_4__.equals)(e1c[0], e2c[0]) ? (0,_Util_js__WEBPACK_IMPORTED_MODULE_4__.equals)(e1c[1], e2c[1]) : false) {
+                  return loop();
+                } else {
+                  return false;
+                }
+              }
+            } else {
+              return false;
+            }
+          };
+
+          return loop();
+        } finally {
+          e2.Dispose();
+        }
+      } finally {
+        e1.Dispose();
+      }
+    } else {
+      return false;
+    }
+  }
+
+  toString() {
+    const this$ = this;
+    return "map [" + (0,_String_js__WEBPACK_IMPORTED_MODULE_6__.join)("; ", (0,_Seq_js__WEBPACK_IMPORTED_MODULE_5__.map)(kv => (0,_String_js__WEBPACK_IMPORTED_MODULE_6__.format)("({0}, {1})", kv[0], kv[1]), this$)) + "]";
+  }
+
+  get [Symbol.toStringTag]() {
+    return "FSharpMap";
+  }
+
+  GetEnumerator() {
+    const __ = this;
+
+    return MapTreeModule_mkIEnumerator(__.tree);
+  }
+
+  [Symbol.iterator]() {
+    return (0,_Seq_js__WEBPACK_IMPORTED_MODULE_5__.toIterator)(this.GetEnumerator());
+  }
+
+  ["System.Collections.IEnumerable.GetEnumerator"]() {
+    const __ = this;
+
+    return MapTreeModule_mkIEnumerator(__.tree);
+  }
+
+  CompareTo(obj) {
+    const m = this;
+
+    if (obj instanceof FSharpMap) {
+      return (0,_Seq_js__WEBPACK_IMPORTED_MODULE_5__.compareWith)((kvp1, kvp2) => {
+        const c = m.comparer.Compare(kvp1[0], kvp2[0]) | 0;
+        return (c !== 0 ? c : (0,_Util_js__WEBPACK_IMPORTED_MODULE_4__.compare)(kvp1[1], kvp2[1])) | 0;
+      }, m, obj) | 0;
+    } else {
+      throw new Error("not comparable\\nParameter name: obj");
+    }
+  }
+
+  ["System.Collections.Generic.ICollection`1.Add2B595"](x) {
+    void x;
+    throw new Error("Map cannot be mutated");
+  }
+
+  ["System.Collections.Generic.ICollection`1.Clear"]() {
+    throw new Error("Map cannot be mutated");
+  }
+
+  ["System.Collections.Generic.ICollection`1.Remove2B595"](x) {
+    void x;
+    throw new Error("Map cannot be mutated");
+  }
+
+  ["System.Collections.Generic.ICollection`1.Contains2B595"](x) {
+    const m = this;
+    return FSharpMap__ContainsKey(m, x[0]) ? (0,_Util_js__WEBPACK_IMPORTED_MODULE_4__.equals)(FSharpMap__get_Item(m, x[0]), x[1]) : false;
+  }
+
+  ["System.Collections.Generic.ICollection`1.CopyToZ2E171D71"](arr, i) {
+    const m = this;
+    MapTreeModule_copyToArray(m.tree, arr, i);
+  }
+
+  ["System.Collections.Generic.ICollection`1.get_IsReadOnly"]() {
+    return true;
+  }
+
+  ["System.Collections.Generic.ICollection`1.get_Count"]() {
+    const m = this;
+    return FSharpMap__get_Count(m) | 0;
+  }
+
+  ["System.Collections.Generic.IReadOnlyCollection`1.get_Count"]() {
+    const m = this;
+    return FSharpMap__get_Count(m) | 0;
+  }
+
+  get size() {
+    const m = this;
+    return FSharpMap__get_Count(m) | 0;
+  }
+
+  clear() {
+    throw new Error("Map cannot be mutated");
+  }
+
+  delete(_arg1) {
+    throw new Error("Map cannot be mutated");
+    return false;
+  }
+
+  entries() {
+    const m = this;
+    return (0,_Seq_js__WEBPACK_IMPORTED_MODULE_5__.map)(p => [p[0], p[1]], m);
+  }
+
+  get(k) {
+    const m = this;
+    return FSharpMap__get_Item(m, k);
+  }
+
+  has(k) {
+    const m = this;
+    return FSharpMap__ContainsKey(m, k);
+  }
+
+  keys() {
+    const m = this;
+    return (0,_Seq_js__WEBPACK_IMPORTED_MODULE_5__.map)(p => p[0], m);
+  }
+
+  set(k, v) {
+    const m = this;
+    throw new Error("Map cannot be mutated");
+    return m;
+  }
+
+  values() {
+    const m = this;
+    return (0,_Seq_js__WEBPACK_IMPORTED_MODULE_5__.map)(p => p[1], m);
+  }
+
+  forEach(f, thisArg) {
+    const m = this;
+    (0,_Seq_js__WEBPACK_IMPORTED_MODULE_5__.iterate)(p => {
+      f(p[1], p[0], m);
+    }, m);
+  }
+
+}
+function FSharpMap$reflection(gen0, gen1) {
+  return (0,_Reflection_js__WEBPACK_IMPORTED_MODULE_0__.class_type)("Map.FSharpMap", [gen0, gen1], FSharpMap);
+}
+function FSharpMap_$ctor(comparer, tree) {
+  return new FSharpMap(comparer, tree);
+}
+
+(() => {
+  FSharpMap.empty = FSharpMap_$ctor((0,_FSharp_Core_js__WEBPACK_IMPORTED_MODULE_7__.LanguagePrimitives_FastGenericComparer)(), MapTreeModule_empty());
+})();
+
+function FSharpMap_get_Empty() {
+  return FSharpMap.empty;
+}
+function FSharpMap_Create(ie) {
+  const comparer = (0,_FSharp_Core_js__WEBPACK_IMPORTED_MODULE_7__.LanguagePrimitives_FastGenericComparer)();
+  return FSharpMap_$ctor(comparer, MapTreeModule_ofSeq(comparer, ie));
+}
+function FSharpMap__get_Comparer(m) {
+  return m.comparer;
+}
+function FSharpMap__get_Tree(m) {
+  return m.tree;
+}
+function FSharpMap__Add(m, key, value) {
+  return FSharpMap_$ctor(m.comparer, MapTreeModule_add(m.comparer, key, value, m.tree));
+}
+function FSharpMap__Change(m, key, f) {
+  return FSharpMap_$ctor(m.comparer, MapTreeModule_change(m.comparer, key, f, m.tree));
+}
+function FSharpMap__get_IsEmpty(m) {
+  return m.tree == null;
+}
+function FSharpMap__get_Item(m, key) {
+  return MapTreeModule_find(m.comparer, key, m.tree);
+}
+function FSharpMap__TryPick(m, f) {
+  return MapTreeModule_tryPick(f, m.tree);
+}
+function FSharpMap__Exists(m, predicate) {
+  return MapTreeModule_exists(predicate, m.tree);
+}
+function FSharpMap__Filter(m, predicate) {
+  return FSharpMap_$ctor(m.comparer, MapTreeModule_filter(m.comparer, predicate, m.tree));
+}
+function FSharpMap__ForAll(m, predicate) {
+  return MapTreeModule_forall(predicate, m.tree);
+}
+function FSharpMap__Fold(m, f, acc) {
+  return MapTreeModule_foldBack(f, m.tree, acc);
+}
+function FSharpMap__FoldSection(m, lo, hi, f, acc) {
+  return MapTreeModule_foldSection(m.comparer, lo, hi, f, m.tree, acc);
+}
+function FSharpMap__Iterate(m, f) {
+  MapTreeModule_iter(f, m.tree);
+}
+function FSharpMap__MapRange(m, f) {
+  return FSharpMap_$ctor(m.comparer, MapTreeModule_map(f, m.tree));
+}
+function FSharpMap__Map(m, f) {
+  return FSharpMap_$ctor(m.comparer, MapTreeModule_mapi(f, m.tree));
+}
+function FSharpMap__Partition(m, predicate) {
+  const patternInput = MapTreeModule_partition(m.comparer, predicate, m.tree);
+  return [FSharpMap_$ctor(m.comparer, patternInput[0]), FSharpMap_$ctor(m.comparer, patternInput[1])];
+}
+function FSharpMap__get_Count(m) {
+  return MapTreeModule_size(m.tree);
+}
+function FSharpMap__ContainsKey(m, key) {
+  return MapTreeModule_mem(m.comparer, key, m.tree);
+}
+function FSharpMap__Remove(m, key) {
+  return FSharpMap_$ctor(m.comparer, MapTreeModule_remove(m.comparer, key, m.tree));
+}
+function FSharpMap__TryGetValue(__, key, value) {
+  const matchValue = MapTreeModule_tryFind(__.comparer, key, __.tree);
+
+  if (matchValue == null) {
+    return false;
+  } else {
+    const v = (0,_Option_js__WEBPACK_IMPORTED_MODULE_1__.value)(matchValue);
+    value.contents = v;
+    return true;
+  }
+}
+function FSharpMap__TryFind(m, key) {
+  return MapTreeModule_tryFind(m.comparer, key, m.tree);
+}
+function FSharpMap__ToList(m) {
+  return MapTreeModule_toList(m.tree);
+}
+function FSharpMap__ToArray(m) {
+  return MapTreeModule_toArray(m.tree);
+}
+function FSharpMap__ComputeHashCode(this$) {
+  const combineHash = (x, y) => (x << 1) + y + 631;
+
+  let res = 0;
+  const enumerator = (0,_Seq_js__WEBPACK_IMPORTED_MODULE_5__.getEnumerator)(this$);
+
+  try {
+    while (enumerator["System.Collections.IEnumerator.MoveNext"]()) {
+      const activePatternResult4281 = enumerator["System.Collections.Generic.IEnumerator`1.get_Current"]();
+      res = combineHash(res, (0,_Util_js__WEBPACK_IMPORTED_MODULE_4__.structuralHash)(activePatternResult4281[0]));
+      res = combineHash(res, (0,_Util_js__WEBPACK_IMPORTED_MODULE_4__.structuralHash)(activePatternResult4281[1]));
+    }
+  } finally {
+    enumerator.Dispose();
+  }
+
+  return res | 0;
+}
+function isEmpty(table) {
+  return FSharpMap__get_IsEmpty(table);
+}
+function add(key, value, table) {
+  return FSharpMap__Add(table, key, value);
+}
+function change(key, f, table) {
+  return FSharpMap__Change(table, key, f);
+}
+function find(key, table) {
+  return FSharpMap__get_Item(table, key);
+}
+function tryFind(key, table) {
+  return FSharpMap__TryFind(table, key);
+}
+function remove(key, table) {
+  return FSharpMap__Remove(table, key);
+}
+function containsKey(key, table) {
+  return FSharpMap__ContainsKey(table, key);
+}
+function iterate(action, table) {
+  FSharpMap__Iterate(table, action);
+}
+function tryPick(chooser, table) {
+  return FSharpMap__TryPick(table, chooser);
+}
+function pick(chooser, table) {
+  const matchValue = tryPick(chooser, table);
+
+  if (matchValue != null) {
+    return (0,_Option_js__WEBPACK_IMPORTED_MODULE_1__.value)(matchValue);
+  } else {
+    throw new Error();
+  }
+}
+function exists(predicate, table) {
+  return FSharpMap__Exists(table, predicate);
+}
+function filter(predicate, table) {
+  return FSharpMap__Filter(table, predicate);
+}
+function partition(predicate, table) {
+  return FSharpMap__Partition(table, predicate);
+}
+function forAll(predicate, table) {
+  return FSharpMap__ForAll(table, predicate);
+}
+function map(mapping, table) {
+  return FSharpMap__Map(table, mapping);
+}
+function fold(folder, state, table) {
+  return MapTreeModule_fold(folder, state, FSharpMap__get_Tree(table));
+}
+function foldBack(folder, table, state) {
+  return MapTreeModule_foldBack(folder, FSharpMap__get_Tree(table), state);
+}
+function toSeq(table) {
+  return (0,_Seq_js__WEBPACK_IMPORTED_MODULE_5__.map)(kvp => [kvp[0], kvp[1]], table);
+}
+function findKey(predicate, table) {
+  return (0,_Seq_js__WEBPACK_IMPORTED_MODULE_5__.pick)(kvp => {
+    const k = kvp[0];
+
+    if (predicate(k, kvp[1])) {
+      return (0,_Option_js__WEBPACK_IMPORTED_MODULE_1__.some)(k);
+    } else {
+      return void 0;
+    }
+  }, table);
+}
+function tryFindKey(predicate, table) {
+  return (0,_Seq_js__WEBPACK_IMPORTED_MODULE_5__.tryPick)(kvp => {
+    const k = kvp[0];
+
+    if (predicate(k, kvp[1])) {
+      return (0,_Option_js__WEBPACK_IMPORTED_MODULE_1__.some)(k);
+    } else {
+      return void 0;
+    }
+  }, table);
+}
+function ofList(elements) {
+  return FSharpMap_Create(elements);
+}
+function ofSeq(elements) {
+  return FSharpMap_Create(elements);
+}
+function ofArray(elements) {
+  const comparer = (0,_FSharp_Core_js__WEBPACK_IMPORTED_MODULE_7__.LanguagePrimitives_FastGenericComparer)();
+  return FSharpMap_$ctor(comparer, MapTreeModule_ofArray(comparer, elements));
+}
+function toList(table) {
+  return FSharpMap__ToList(table);
+}
+function toArray(table) {
+  return FSharpMap__ToArray(table);
+}
+function empty() {
+  return FSharpMap_get_Empty();
+}
+function createMutable(source, comparer) {
+  return (0,_MutableMap_js__WEBPACK_IMPORTED_MODULE_8__.Dictionary_$ctor_6623D9B3)(source, comparer);
+}
+function groupBy(projection, xs, comparer) {
+  const dict = createMutable((0,_Seq_js__WEBPACK_IMPORTED_MODULE_5__.empty)(), comparer);
+  const enumerator = (0,_Seq_js__WEBPACK_IMPORTED_MODULE_5__.getEnumerator)(xs);
+
+  try {
+    while (enumerator["System.Collections.IEnumerator.MoveNext"]()) {
+      const v = enumerator["System.Collections.Generic.IEnumerator`1.get_Current"]();
+      const key = projection(v);
+
+      if (dict.has(key)) {
+        void dict.get(key).push(v);
+      } else {
+        const value = dict.set(key, [v]);
+        void value;
+      }
+    }
+  } finally {
+    enumerator.Dispose();
+  }
+
+  return (0,_Seq_js__WEBPACK_IMPORTED_MODULE_5__.map)(tupledArg => [tupledArg[0], tupledArg[1]], dict.entries());
+}
+function countBy(projection, xs, comparer) {
+  const dict = createMutable((0,_Seq_js__WEBPACK_IMPORTED_MODULE_5__.empty)(), comparer);
+  const enumerator = (0,_Seq_js__WEBPACK_IMPORTED_MODULE_5__.getEnumerator)(xs);
+
+  try {
+    while (enumerator["System.Collections.IEnumerator.MoveNext"]()) {
+      const key = projection(enumerator["System.Collections.Generic.IEnumerator`1.get_Current"]());
+      const value_1 = dict.has(key) ? dict.set(key, dict.get(key) + 1) : dict.set(key, 1);
+      void value_1;
+    }
+  } finally {
+    enumerator.Dispose();
+  }
+
+  return dict.entries();
+}
+function count(table) {
+  return FSharpMap__get_Count(table);
 }
 
 /***/ }),
@@ -10426,6 +22042,1944 @@ function transpose(source) {
 
 /***/ }),
 
+/***/ "./resources/js/.fable/fable-library.3.1.1/Set.js":
+/*!********************************************************!*\
+  !*** ./resources/js/.fable/fable-library.3.1.1/Set.js ***!
+  \********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "SetTreeLeaf$1": () => (/* binding */ SetTreeLeaf$1),
+/* harmony export */   "SetTreeLeaf$1$reflection": () => (/* binding */ SetTreeLeaf$1$reflection),
+/* harmony export */   "SetTreeLeaf$1_$ctor_2B595": () => (/* binding */ SetTreeLeaf$1_$ctor_2B595),
+/* harmony export */   "SetTreeLeaf$1__get_Key": () => (/* binding */ SetTreeLeaf$1__get_Key),
+/* harmony export */   "SetTreeNode$1": () => (/* binding */ SetTreeNode$1),
+/* harmony export */   "SetTreeNode$1$reflection": () => (/* binding */ SetTreeNode$1$reflection),
+/* harmony export */   "SetTreeNode$1_$ctor_Z6E7BE5F7": () => (/* binding */ SetTreeNode$1_$ctor_Z6E7BE5F7),
+/* harmony export */   "SetTreeNode$1__get_Left": () => (/* binding */ SetTreeNode$1__get_Left),
+/* harmony export */   "SetTreeNode$1__get_Right": () => (/* binding */ SetTreeNode$1__get_Right),
+/* harmony export */   "SetTreeNode$1__get_Height": () => (/* binding */ SetTreeNode$1__get_Height),
+/* harmony export */   "SetTreeModule_empty": () => (/* binding */ SetTreeModule_empty),
+/* harmony export */   "SetTreeModule_countAux": () => (/* binding */ SetTreeModule_countAux),
+/* harmony export */   "SetTreeModule_count": () => (/* binding */ SetTreeModule_count),
+/* harmony export */   "SetTreeModule_mk": () => (/* binding */ SetTreeModule_mk),
+/* harmony export */   "SetTreeModule_rebalance": () => (/* binding */ SetTreeModule_rebalance),
+/* harmony export */   "SetTreeModule_add": () => (/* binding */ SetTreeModule_add),
+/* harmony export */   "SetTreeModule_balance": () => (/* binding */ SetTreeModule_balance),
+/* harmony export */   "SetTreeModule_split": () => (/* binding */ SetTreeModule_split),
+/* harmony export */   "SetTreeModule_spliceOutSuccessor": () => (/* binding */ SetTreeModule_spliceOutSuccessor),
+/* harmony export */   "SetTreeModule_remove": () => (/* binding */ SetTreeModule_remove),
+/* harmony export */   "SetTreeModule_mem": () => (/* binding */ SetTreeModule_mem),
+/* harmony export */   "SetTreeModule_iter": () => (/* binding */ SetTreeModule_iter),
+/* harmony export */   "SetTreeModule_foldBackOpt": () => (/* binding */ SetTreeModule_foldBackOpt),
+/* harmony export */   "SetTreeModule_foldBack": () => (/* binding */ SetTreeModule_foldBack),
+/* harmony export */   "SetTreeModule_foldOpt": () => (/* binding */ SetTreeModule_foldOpt),
+/* harmony export */   "SetTreeModule_fold": () => (/* binding */ SetTreeModule_fold),
+/* harmony export */   "SetTreeModule_forall": () => (/* binding */ SetTreeModule_forall),
+/* harmony export */   "SetTreeModule_exists": () => (/* binding */ SetTreeModule_exists),
+/* harmony export */   "SetTreeModule_subset": () => (/* binding */ SetTreeModule_subset),
+/* harmony export */   "SetTreeModule_properSubset": () => (/* binding */ SetTreeModule_properSubset),
+/* harmony export */   "SetTreeModule_filterAux": () => (/* binding */ SetTreeModule_filterAux),
+/* harmony export */   "SetTreeModule_filter": () => (/* binding */ SetTreeModule_filter),
+/* harmony export */   "SetTreeModule_diffAux": () => (/* binding */ SetTreeModule_diffAux),
+/* harmony export */   "SetTreeModule_diff": () => (/* binding */ SetTreeModule_diff),
+/* harmony export */   "SetTreeModule_union": () => (/* binding */ SetTreeModule_union),
+/* harmony export */   "SetTreeModule_intersectionAux": () => (/* binding */ SetTreeModule_intersectionAux),
+/* harmony export */   "SetTreeModule_intersection": () => (/* binding */ SetTreeModule_intersection),
+/* harmony export */   "SetTreeModule_partition1": () => (/* binding */ SetTreeModule_partition1),
+/* harmony export */   "SetTreeModule_partitionAux": () => (/* binding */ SetTreeModule_partitionAux),
+/* harmony export */   "SetTreeModule_partition": () => (/* binding */ SetTreeModule_partition),
+/* harmony export */   "SetTreeModule_minimumElementAux": () => (/* binding */ SetTreeModule_minimumElementAux),
+/* harmony export */   "SetTreeModule_minimumElementOpt": () => (/* binding */ SetTreeModule_minimumElementOpt),
+/* harmony export */   "SetTreeModule_maximumElementAux": () => (/* binding */ SetTreeModule_maximumElementAux),
+/* harmony export */   "SetTreeModule_maximumElementOpt": () => (/* binding */ SetTreeModule_maximumElementOpt),
+/* harmony export */   "SetTreeModule_minimumElement": () => (/* binding */ SetTreeModule_minimumElement),
+/* harmony export */   "SetTreeModule_maximumElement": () => (/* binding */ SetTreeModule_maximumElement),
+/* harmony export */   "SetTreeModule_SetIterator$1": () => (/* binding */ SetTreeModule_SetIterator$1),
+/* harmony export */   "SetTreeModule_SetIterator$1$reflection": () => (/* binding */ SetTreeModule_SetIterator$1$reflection),
+/* harmony export */   "SetTreeModule_collapseLHS": () => (/* binding */ SetTreeModule_collapseLHS),
+/* harmony export */   "SetTreeModule_mkIterator": () => (/* binding */ SetTreeModule_mkIterator),
+/* harmony export */   "SetTreeModule_notStarted": () => (/* binding */ SetTreeModule_notStarted),
+/* harmony export */   "SetTreeModule_alreadyFinished": () => (/* binding */ SetTreeModule_alreadyFinished),
+/* harmony export */   "SetTreeModule_current": () => (/* binding */ SetTreeModule_current),
+/* harmony export */   "SetTreeModule_moveNext": () => (/* binding */ SetTreeModule_moveNext),
+/* harmony export */   "SetTreeModule_mkIEnumerator": () => (/* binding */ SetTreeModule_mkIEnumerator),
+/* harmony export */   "SetTreeModule_compareStacks": () => (/* binding */ SetTreeModule_compareStacks),
+/* harmony export */   "SetTreeModule_compare": () => (/* binding */ SetTreeModule_compare),
+/* harmony export */   "SetTreeModule_choose": () => (/* binding */ SetTreeModule_choose),
+/* harmony export */   "SetTreeModule_toList": () => (/* binding */ SetTreeModule_toList),
+/* harmony export */   "SetTreeModule_copyToArray": () => (/* binding */ SetTreeModule_copyToArray),
+/* harmony export */   "SetTreeModule_toArray": () => (/* binding */ SetTreeModule_toArray),
+/* harmony export */   "SetTreeModule_mkFromEnumerator": () => (/* binding */ SetTreeModule_mkFromEnumerator),
+/* harmony export */   "SetTreeModule_ofSeq": () => (/* binding */ SetTreeModule_ofSeq),
+/* harmony export */   "SetTreeModule_ofArray": () => (/* binding */ SetTreeModule_ofArray),
+/* harmony export */   "FSharpSet": () => (/* binding */ FSharpSet),
+/* harmony export */   "FSharpSet$reflection": () => (/* binding */ FSharpSet$reflection),
+/* harmony export */   "FSharpSet_$ctor": () => (/* binding */ FSharpSet_$ctor),
+/* harmony export */   "FSharpSet__get_Comparer": () => (/* binding */ FSharpSet__get_Comparer),
+/* harmony export */   "FSharpSet__get_Tree": () => (/* binding */ FSharpSet__get_Tree),
+/* harmony export */   "FSharpSet_Empty": () => (/* binding */ FSharpSet_Empty),
+/* harmony export */   "FSharpSet__Add": () => (/* binding */ FSharpSet__Add),
+/* harmony export */   "FSharpSet__Remove": () => (/* binding */ FSharpSet__Remove),
+/* harmony export */   "FSharpSet__get_Count": () => (/* binding */ FSharpSet__get_Count),
+/* harmony export */   "FSharpSet__Contains": () => (/* binding */ FSharpSet__Contains),
+/* harmony export */   "FSharpSet__Iterate": () => (/* binding */ FSharpSet__Iterate),
+/* harmony export */   "FSharpSet__Fold": () => (/* binding */ FSharpSet__Fold),
+/* harmony export */   "FSharpSet__get_IsEmpty": () => (/* binding */ FSharpSet__get_IsEmpty),
+/* harmony export */   "FSharpSet__Partition": () => (/* binding */ FSharpSet__Partition),
+/* harmony export */   "FSharpSet__Filter": () => (/* binding */ FSharpSet__Filter),
+/* harmony export */   "FSharpSet__Map": () => (/* binding */ FSharpSet__Map),
+/* harmony export */   "FSharpSet__Exists": () => (/* binding */ FSharpSet__Exists),
+/* harmony export */   "FSharpSet__ForAll": () => (/* binding */ FSharpSet__ForAll),
+/* harmony export */   "FSharpSet_op_Subtraction": () => (/* binding */ FSharpSet_op_Subtraction),
+/* harmony export */   "FSharpSet_op_Addition": () => (/* binding */ FSharpSet_op_Addition),
+/* harmony export */   "FSharpSet_Intersection": () => (/* binding */ FSharpSet_Intersection),
+/* harmony export */   "FSharpSet_IntersectionMany": () => (/* binding */ FSharpSet_IntersectionMany),
+/* harmony export */   "FSharpSet_Equality": () => (/* binding */ FSharpSet_Equality),
+/* harmony export */   "FSharpSet_Compare": () => (/* binding */ FSharpSet_Compare),
+/* harmony export */   "FSharpSet__get_Choose": () => (/* binding */ FSharpSet__get_Choose),
+/* harmony export */   "FSharpSet__get_MinimumElement": () => (/* binding */ FSharpSet__get_MinimumElement),
+/* harmony export */   "FSharpSet__get_MaximumElement": () => (/* binding */ FSharpSet__get_MaximumElement),
+/* harmony export */   "FSharpSet__IsSubsetOf": () => (/* binding */ FSharpSet__IsSubsetOf),
+/* harmony export */   "FSharpSet__IsSupersetOf": () => (/* binding */ FSharpSet__IsSupersetOf),
+/* harmony export */   "FSharpSet__IsProperSubsetOf": () => (/* binding */ FSharpSet__IsProperSubsetOf),
+/* harmony export */   "FSharpSet__IsProperSupersetOf": () => (/* binding */ FSharpSet__IsProperSupersetOf),
+/* harmony export */   "FSharpSet__ToList": () => (/* binding */ FSharpSet__ToList),
+/* harmony export */   "FSharpSet__ToArray": () => (/* binding */ FSharpSet__ToArray),
+/* harmony export */   "FSharpSet__ComputeHashCode": () => (/* binding */ FSharpSet__ComputeHashCode),
+/* harmony export */   "isEmpty": () => (/* binding */ isEmpty),
+/* harmony export */   "contains": () => (/* binding */ contains),
+/* harmony export */   "add": () => (/* binding */ add),
+/* harmony export */   "singleton": () => (/* binding */ singleton),
+/* harmony export */   "remove": () => (/* binding */ remove),
+/* harmony export */   "union": () => (/* binding */ union),
+/* harmony export */   "unionMany": () => (/* binding */ unionMany),
+/* harmony export */   "intersect": () => (/* binding */ intersect),
+/* harmony export */   "intersectMany": () => (/* binding */ intersectMany),
+/* harmony export */   "iterate": () => (/* binding */ iterate),
+/* harmony export */   "empty": () => (/* binding */ empty),
+/* harmony export */   "forAll": () => (/* binding */ forAll),
+/* harmony export */   "exists": () => (/* binding */ exists),
+/* harmony export */   "filter": () => (/* binding */ filter),
+/* harmony export */   "partition": () => (/* binding */ partition),
+/* harmony export */   "fold": () => (/* binding */ fold),
+/* harmony export */   "foldBack": () => (/* binding */ foldBack),
+/* harmony export */   "map": () => (/* binding */ map),
+/* harmony export */   "count": () => (/* binding */ count),
+/* harmony export */   "ofList": () => (/* binding */ ofList),
+/* harmony export */   "ofArray": () => (/* binding */ ofArray),
+/* harmony export */   "toList": () => (/* binding */ toList),
+/* harmony export */   "toArray": () => (/* binding */ toArray),
+/* harmony export */   "toSeq": () => (/* binding */ toSeq),
+/* harmony export */   "ofSeq": () => (/* binding */ ofSeq),
+/* harmony export */   "difference": () => (/* binding */ difference),
+/* harmony export */   "isSubset": () => (/* binding */ isSubset),
+/* harmony export */   "isSuperset": () => (/* binding */ isSuperset),
+/* harmony export */   "isProperSubset": () => (/* binding */ isProperSubset),
+/* harmony export */   "isProperSuperset": () => (/* binding */ isProperSuperset),
+/* harmony export */   "minElement": () => (/* binding */ minElement),
+/* harmony export */   "maxElement": () => (/* binding */ maxElement),
+/* harmony export */   "createMutable": () => (/* binding */ createMutable),
+/* harmony export */   "distinct": () => (/* binding */ distinct),
+/* harmony export */   "distinctBy": () => (/* binding */ distinctBy),
+/* harmony export */   "unionWith": () => (/* binding */ unionWith),
+/* harmony export */   "intersectWith": () => (/* binding */ intersectWith),
+/* harmony export */   "exceptWith": () => (/* binding */ exceptWith),
+/* harmony export */   "isSubsetOf": () => (/* binding */ isSubsetOf),
+/* harmony export */   "isSupersetOf": () => (/* binding */ isSupersetOf),
+/* harmony export */   "isProperSubsetOf": () => (/* binding */ isProperSubsetOf),
+/* harmony export */   "isProperSupersetOf": () => (/* binding */ isProperSupersetOf)
+/* harmony export */ });
+/* harmony import */ var _Reflection_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Reflection.js */ "./resources/js/.fable/fable-library.3.1.1/Reflection.js");
+/* harmony import */ var _Option_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Option.js */ "./resources/js/.fable/fable-library.3.1.1/Option.js");
+/* harmony import */ var _Types_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Types.js */ "./resources/js/.fable/fable-library.3.1.1/Types.js");
+/* harmony import */ var _Seq_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Seq.js */ "./resources/js/.fable/fable-library.3.1.1/Seq.js");
+/* harmony import */ var _Array_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Array.js */ "./resources/js/.fable/fable-library.3.1.1/Array.js");
+/* harmony import */ var _String_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./String.js */ "./resources/js/.fable/fable-library.3.1.1/String.js");
+/* harmony import */ var _Util_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Util.js */ "./resources/js/.fable/fable-library.3.1.1/Util.js");
+/* harmony import */ var _MutableSet_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./MutableSet.js */ "./resources/js/.fable/fable-library.3.1.1/MutableSet.js");
+
+
+
+
+
+
+
+
+class SetTreeLeaf$1 {
+  constructor(k) {
+    this.k = k;
+  }
+
+}
+function SetTreeLeaf$1$reflection(gen0) {
+  return (0,_Reflection_js__WEBPACK_IMPORTED_MODULE_0__.class_type)("Set.SetTreeLeaf`1", [gen0], SetTreeLeaf$1);
+}
+function SetTreeLeaf$1_$ctor_2B595(k) {
+  return new SetTreeLeaf$1(k);
+}
+function SetTreeLeaf$1__get_Key(_) {
+  return _.k;
+}
+class SetTreeNode$1 extends SetTreeLeaf$1 {
+  constructor(v, left, right, h) {
+    super(v);
+    this.left = left;
+    this.right = right;
+    this.h = h;
+  }
+
+}
+function SetTreeNode$1$reflection(gen0) {
+  return (0,_Reflection_js__WEBPACK_IMPORTED_MODULE_0__.class_type)("Set.SetTreeNode`1", [gen0], SetTreeNode$1, SetTreeLeaf$1$reflection(gen0));
+}
+function SetTreeNode$1_$ctor_Z6E7BE5F7(v, left, right, h) {
+  return new SetTreeNode$1(v, left, right, h);
+}
+function SetTreeNode$1__get_Left(_) {
+  return _.left;
+}
+function SetTreeNode$1__get_Right(_) {
+  return _.right;
+}
+function SetTreeNode$1__get_Height(_) {
+  return _.h;
+}
+function SetTreeModule_empty() {
+  return void 0;
+}
+function SetTreeModule_countAux(t_mut, acc_mut) {
+  SetTreeModule_countAux: while (true) {
+    const t = t_mut,
+          acc = acc_mut;
+
+    if (t != null) {
+      const t2 = t;
+
+      if (t2 instanceof SetTreeNode$1) {
+        t_mut = SetTreeNode$1__get_Left(t2);
+        acc_mut = SetTreeModule_countAux(SetTreeNode$1__get_Right(t2), acc + 1);
+        continue SetTreeModule_countAux;
+      } else {
+        return acc + 1 | 0;
+      }
+    } else {
+      return acc | 0;
+    }
+
+    break;
+  }
+}
+function SetTreeModule_count(s) {
+  return SetTreeModule_countAux(s, 0);
+}
+function SetTreeModule_mk(l, k, r) {
+  let hl;
+  const t = l;
+
+  if (t != null) {
+    const t2 = t;
+    hl = t2 instanceof SetTreeNode$1 ? SetTreeNode$1__get_Height(t2) : 1;
+  } else {
+    hl = 0;
+  }
+
+  let hr;
+  const t_1 = r;
+
+  if (t_1 != null) {
+    const t2_1 = t_1;
+    hr = t2_1 instanceof SetTreeNode$1 ? SetTreeNode$1__get_Height(t2_1) : 1;
+  } else {
+    hr = 0;
+  }
+
+  const m = (hl < hr ? hr : hl) | 0;
+
+  if (m === 0) {
+    return SetTreeLeaf$1_$ctor_2B595(k);
+  } else {
+    return SetTreeNode$1_$ctor_Z6E7BE5F7(k, l, r, m + 1);
+  }
+}
+function SetTreeModule_rebalance(t1, v, t2) {
+  let t_2, t2_3, t_3, t2_4;
+  let t1h;
+  const t = t1;
+
+  if (t != null) {
+    const t2_1 = t;
+    t1h = t2_1 instanceof SetTreeNode$1 ? SetTreeNode$1__get_Height(t2_1) : 1;
+  } else {
+    t1h = 0;
+  }
+
+  let t2h;
+  const t_1 = t2;
+
+  if (t_1 != null) {
+    const t2_2 = t_1;
+    t2h = t2_2 instanceof SetTreeNode$1 ? SetTreeNode$1__get_Height(t2_2) : 1;
+  } else {
+    t2h = 0;
+  }
+
+  if (t2h > t1h + 2) {
+    const matchValue = (0,_Option_js__WEBPACK_IMPORTED_MODULE_1__.value)(t2);
+
+    if (matchValue instanceof SetTreeNode$1) {
+      if ((t_2 = SetTreeNode$1__get_Left(matchValue), t_2 != null ? (t2_3 = t_2, t2_3 instanceof SetTreeNode$1 ? SetTreeNode$1__get_Height(t2_3) : 1) : 0) > t1h + 1) {
+        const matchValue_1 = (0,_Option_js__WEBPACK_IMPORTED_MODULE_1__.value)(SetTreeNode$1__get_Left(matchValue));
+
+        if (matchValue_1 instanceof SetTreeNode$1) {
+          return SetTreeModule_mk(SetTreeModule_mk(t1, v, SetTreeNode$1__get_Left(matchValue_1)), SetTreeLeaf$1__get_Key(matchValue_1), SetTreeModule_mk(SetTreeNode$1__get_Right(matchValue_1), SetTreeLeaf$1__get_Key(matchValue), SetTreeNode$1__get_Right(matchValue)));
+        } else {
+          throw new Error("internal error: Set.rebalance");
+        }
+      } else {
+        return SetTreeModule_mk(SetTreeModule_mk(t1, v, SetTreeNode$1__get_Left(matchValue)), SetTreeLeaf$1__get_Key(matchValue), SetTreeNode$1__get_Right(matchValue));
+      }
+    } else {
+      throw new Error("internal error: Set.rebalance");
+    }
+  } else if (t1h > t2h + 2) {
+    const matchValue_2 = (0,_Option_js__WEBPACK_IMPORTED_MODULE_1__.value)(t1);
+
+    if (matchValue_2 instanceof SetTreeNode$1) {
+      if ((t_3 = SetTreeNode$1__get_Right(matchValue_2), t_3 != null ? (t2_4 = t_3, t2_4 instanceof SetTreeNode$1 ? SetTreeNode$1__get_Height(t2_4) : 1) : 0) > t2h + 1) {
+        const matchValue_3 = (0,_Option_js__WEBPACK_IMPORTED_MODULE_1__.value)(SetTreeNode$1__get_Right(matchValue_2));
+
+        if (matchValue_3 instanceof SetTreeNode$1) {
+          return SetTreeModule_mk(SetTreeModule_mk(SetTreeNode$1__get_Left(matchValue_2), SetTreeLeaf$1__get_Key(matchValue_2), SetTreeNode$1__get_Left(matchValue_3)), SetTreeLeaf$1__get_Key(matchValue_3), SetTreeModule_mk(SetTreeNode$1__get_Right(matchValue_3), v, t2));
+        } else {
+          throw new Error("internal error: Set.rebalance");
+        }
+      } else {
+        return SetTreeModule_mk(SetTreeNode$1__get_Left(matchValue_2), SetTreeLeaf$1__get_Key(matchValue_2), SetTreeModule_mk(SetTreeNode$1__get_Right(matchValue_2), v, t2));
+      }
+    } else {
+      throw new Error("internal error: Set.rebalance");
+    }
+  } else {
+    return SetTreeModule_mk(t1, v, t2);
+  }
+}
+function SetTreeModule_add(comparer, k, t) {
+  if (t != null) {
+    const t2 = t;
+    const c = comparer.Compare(k, SetTreeLeaf$1__get_Key(t2)) | 0;
+
+    if (t2 instanceof SetTreeNode$1) {
+      if (c < 0) {
+        return SetTreeModule_rebalance(SetTreeModule_add(comparer, k, SetTreeNode$1__get_Left(t2)), SetTreeLeaf$1__get_Key(t2), SetTreeNode$1__get_Right(t2));
+      } else if (c === 0) {
+        return t;
+      } else {
+        return SetTreeModule_rebalance(SetTreeNode$1__get_Left(t2), SetTreeLeaf$1__get_Key(t2), SetTreeModule_add(comparer, k, SetTreeNode$1__get_Right(t2)));
+      }
+    } else {
+      const c_1 = comparer.Compare(k, SetTreeLeaf$1__get_Key(t2)) | 0;
+
+      if (c_1 < 0) {
+        return SetTreeNode$1_$ctor_Z6E7BE5F7(k, SetTreeModule_empty(), t, 2);
+      } else if (c_1 === 0) {
+        return t;
+      } else {
+        return SetTreeNode$1_$ctor_Z6E7BE5F7(k, t, SetTreeModule_empty(), 2);
+      }
+    }
+  } else {
+    return SetTreeLeaf$1_$ctor_2B595(k);
+  }
+}
+function SetTreeModule_balance(comparer, t1, k, t2) {
+  if (t1 != null) {
+    const t1$0027 = t1;
+
+    if (t2 != null) {
+      const t2$0027 = t2;
+
+      if (t1$0027 instanceof SetTreeNode$1) {
+        if (t2$0027 instanceof SetTreeNode$1) {
+          if (SetTreeNode$1__get_Height(t1$0027) + 2 < SetTreeNode$1__get_Height(t2$0027)) {
+            return SetTreeModule_rebalance(SetTreeModule_balance(comparer, t1, k, SetTreeNode$1__get_Left(t2$0027)), SetTreeLeaf$1__get_Key(t2$0027), SetTreeNode$1__get_Right(t2$0027));
+          } else if (SetTreeNode$1__get_Height(t2$0027) + 2 < SetTreeNode$1__get_Height(t1$0027)) {
+            return SetTreeModule_rebalance(SetTreeNode$1__get_Left(t1$0027), SetTreeLeaf$1__get_Key(t1$0027), SetTreeModule_balance(comparer, SetTreeNode$1__get_Right(t1$0027), k, t2));
+          } else {
+            return SetTreeModule_mk(t1, k, t2);
+          }
+        } else {
+          return SetTreeModule_add(comparer, k, SetTreeModule_add(comparer, SetTreeLeaf$1__get_Key(t2$0027), t1));
+        }
+      } else {
+        return SetTreeModule_add(comparer, k, SetTreeModule_add(comparer, SetTreeLeaf$1__get_Key(t1$0027), t2));
+      }
+    } else {
+      return SetTreeModule_add(comparer, k, t1);
+    }
+  } else {
+    return SetTreeModule_add(comparer, k, t2);
+  }
+}
+function SetTreeModule_split(comparer, pivot, t) {
+  if (t != null) {
+    const t2 = t;
+
+    if (t2 instanceof SetTreeNode$1) {
+      const c = comparer.Compare(pivot, SetTreeLeaf$1__get_Key(t2)) | 0;
+
+      if (c < 0) {
+        const patternInput = SetTreeModule_split(comparer, pivot, SetTreeNode$1__get_Left(t2));
+        return [patternInput[0], patternInput[1], SetTreeModule_balance(comparer, patternInput[2], SetTreeLeaf$1__get_Key(t2), SetTreeNode$1__get_Right(t2))];
+      } else if (c === 0) {
+        return [SetTreeNode$1__get_Left(t2), true, SetTreeNode$1__get_Right(t2)];
+      } else {
+        const patternInput_1 = SetTreeModule_split(comparer, pivot, SetTreeNode$1__get_Right(t2));
+        return [SetTreeModule_balance(comparer, SetTreeNode$1__get_Left(t2), SetTreeLeaf$1__get_Key(t2), patternInput_1[0]), patternInput_1[1], patternInput_1[2]];
+      }
+    } else {
+      const c_1 = comparer.Compare(SetTreeLeaf$1__get_Key(t2), pivot) | 0;
+
+      if (c_1 < 0) {
+        return [t, false, SetTreeModule_empty()];
+      } else if (c_1 === 0) {
+        return [SetTreeModule_empty(), true, SetTreeModule_empty()];
+      } else {
+        return [SetTreeModule_empty(), false, t];
+      }
+    }
+  } else {
+    return [SetTreeModule_empty(), false, SetTreeModule_empty()];
+  }
+}
+function SetTreeModule_spliceOutSuccessor(t) {
+  if (t != null) {
+    const t2 = t;
+
+    if (t2 instanceof SetTreeNode$1) {
+      if (SetTreeNode$1__get_Left(t2) == null) {
+        return [SetTreeLeaf$1__get_Key(t2), SetTreeNode$1__get_Right(t2)];
+      } else {
+        const patternInput = SetTreeModule_spliceOutSuccessor(SetTreeNode$1__get_Left(t2));
+        return [patternInput[0], SetTreeModule_mk(patternInput[1], SetTreeLeaf$1__get_Key(t2), SetTreeNode$1__get_Right(t2))];
+      }
+    } else {
+      return [SetTreeLeaf$1__get_Key(t2), SetTreeModule_empty()];
+    }
+  } else {
+    throw new Error("internal error: Set.spliceOutSuccessor");
+  }
+}
+function SetTreeModule_remove(comparer, k, t) {
+  if (t != null) {
+    const t2 = t;
+    const c = comparer.Compare(k, SetTreeLeaf$1__get_Key(t2)) | 0;
+
+    if (t2 instanceof SetTreeNode$1) {
+      if (c < 0) {
+        return SetTreeModule_rebalance(SetTreeModule_remove(comparer, k, SetTreeNode$1__get_Left(t2)), SetTreeLeaf$1__get_Key(t2), SetTreeNode$1__get_Right(t2));
+      } else if (c === 0) {
+        if (SetTreeNode$1__get_Left(t2) == null) {
+          return SetTreeNode$1__get_Right(t2);
+        } else if (SetTreeNode$1__get_Right(t2) == null) {
+          return SetTreeNode$1__get_Left(t2);
+        } else {
+          const patternInput = SetTreeModule_spliceOutSuccessor(SetTreeNode$1__get_Right(t2));
+          return SetTreeModule_mk(SetTreeNode$1__get_Left(t2), patternInput[0], patternInput[1]);
+        }
+      } else {
+        return SetTreeModule_rebalance(SetTreeNode$1__get_Left(t2), SetTreeLeaf$1__get_Key(t2), SetTreeModule_remove(comparer, k, SetTreeNode$1__get_Right(t2)));
+      }
+    } else if (c === 0) {
+      return SetTreeModule_empty();
+    } else {
+      return t;
+    }
+  } else {
+    return t;
+  }
+}
+function SetTreeModule_mem(comparer_mut, k_mut, t_mut) {
+  SetTreeModule_mem: while (true) {
+    const comparer = comparer_mut,
+          k = k_mut,
+          t = t_mut;
+
+    if (t != null) {
+      const t2 = t;
+      const c = comparer.Compare(k, SetTreeLeaf$1__get_Key(t2)) | 0;
+
+      if (t2 instanceof SetTreeNode$1) {
+        if (c < 0) {
+          comparer_mut = comparer;
+          k_mut = k;
+          t_mut = SetTreeNode$1__get_Left(t2);
+          continue SetTreeModule_mem;
+        } else if (c === 0) {
+          return true;
+        } else {
+          comparer_mut = comparer;
+          k_mut = k;
+          t_mut = SetTreeNode$1__get_Right(t2);
+          continue SetTreeModule_mem;
+        }
+      } else {
+        return c === 0;
+      }
+    } else {
+      return false;
+    }
+
+    break;
+  }
+}
+function SetTreeModule_iter(f_mut, t_mut) {
+  SetTreeModule_iter: while (true) {
+    const f = f_mut,
+          t = t_mut;
+
+    if (t != null) {
+      const t2 = t;
+
+      if (t2 instanceof SetTreeNode$1) {
+        SetTreeModule_iter(f, SetTreeNode$1__get_Left(t2));
+        f(SetTreeLeaf$1__get_Key(t2));
+        f_mut = f;
+        t_mut = SetTreeNode$1__get_Right(t2);
+        continue SetTreeModule_iter;
+      } else {
+        f(SetTreeLeaf$1__get_Key(t2));
+      }
+    }
+
+    break;
+  }
+}
+function SetTreeModule_foldBackOpt(f_mut, t_mut, x_mut) {
+  SetTreeModule_foldBackOpt: while (true) {
+    const f = f_mut,
+          t = t_mut,
+          x = x_mut;
+
+    if (t != null) {
+      const t2 = t;
+
+      if (t2 instanceof SetTreeNode$1) {
+        f_mut = f;
+        t_mut = SetTreeNode$1__get_Left(t2);
+        x_mut = f(SetTreeLeaf$1__get_Key(t2), SetTreeModule_foldBackOpt(f, SetTreeNode$1__get_Right(t2), x));
+        continue SetTreeModule_foldBackOpt;
+      } else {
+        return f(SetTreeLeaf$1__get_Key(t2), x);
+      }
+    } else {
+      return x;
+    }
+
+    break;
+  }
+}
+function SetTreeModule_foldBack(f, m, x) {
+  return SetTreeModule_foldBackOpt(f, m, x);
+}
+function SetTreeModule_foldOpt(f_mut, x_mut, t_mut) {
+  SetTreeModule_foldOpt: while (true) {
+    const f = f_mut,
+          x = x_mut,
+          t = t_mut;
+
+    if (t != null) {
+      const t2 = t;
+
+      if (t2 instanceof SetTreeNode$1) {
+        f_mut = f;
+        x_mut = f(SetTreeModule_foldOpt(f, x, SetTreeNode$1__get_Left(t2)), SetTreeLeaf$1__get_Key(t2));
+        t_mut = SetTreeNode$1__get_Right(t2);
+        continue SetTreeModule_foldOpt;
+      } else {
+        return f(x, SetTreeLeaf$1__get_Key(t2));
+      }
+    } else {
+      return x;
+    }
+
+    break;
+  }
+}
+function SetTreeModule_fold(f, x, m) {
+  return SetTreeModule_foldOpt(f, x, m);
+}
+function SetTreeModule_forall(f_mut, t_mut) {
+  SetTreeModule_forall: while (true) {
+    const f = f_mut,
+          t = t_mut;
+
+    if (t != null) {
+      const t2 = t;
+
+      if (t2 instanceof SetTreeNode$1) {
+        if (f(SetTreeLeaf$1__get_Key(t2)) ? SetTreeModule_forall(f, SetTreeNode$1__get_Left(t2)) : false) {
+          f_mut = f;
+          t_mut = SetTreeNode$1__get_Right(t2);
+          continue SetTreeModule_forall;
+        } else {
+          return false;
+        }
+      } else {
+        return f(SetTreeLeaf$1__get_Key(t2));
+      }
+    } else {
+      return true;
+    }
+
+    break;
+  }
+}
+function SetTreeModule_exists(f_mut, t_mut) {
+  SetTreeModule_exists: while (true) {
+    const f = f_mut,
+          t = t_mut;
+
+    if (t != null) {
+      const t2 = t;
+
+      if (t2 instanceof SetTreeNode$1) {
+        if (f(SetTreeLeaf$1__get_Key(t2)) ? true : SetTreeModule_exists(f, SetTreeNode$1__get_Left(t2))) {
+          return true;
+        } else {
+          f_mut = f;
+          t_mut = SetTreeNode$1__get_Right(t2);
+          continue SetTreeModule_exists;
+        }
+      } else {
+        return f(SetTreeLeaf$1__get_Key(t2));
+      }
+    } else {
+      return false;
+    }
+
+    break;
+  }
+}
+function SetTreeModule_subset(comparer, a, b) {
+  return SetTreeModule_forall(x => SetTreeModule_mem(comparer, x, b), a);
+}
+function SetTreeModule_properSubset(comparer, a, b) {
+  if (SetTreeModule_forall(x => SetTreeModule_mem(comparer, x, b), a)) {
+    return SetTreeModule_exists(x_1 => !SetTreeModule_mem(comparer, x_1, a), b);
+  } else {
+    return false;
+  }
+}
+function SetTreeModule_filterAux(comparer_mut, f_mut, t_mut, acc_mut) {
+  SetTreeModule_filterAux: while (true) {
+    const comparer = comparer_mut,
+          f = f_mut,
+          t = t_mut,
+          acc = acc_mut;
+
+    if (t != null) {
+      const t2 = t;
+
+      if (t2 instanceof SetTreeNode$1) {
+        const acc_1 = f(SetTreeLeaf$1__get_Key(t2)) ? SetTreeModule_add(comparer, SetTreeLeaf$1__get_Key(t2), acc) : acc;
+        comparer_mut = comparer;
+        f_mut = f;
+        t_mut = SetTreeNode$1__get_Left(t2);
+        acc_mut = SetTreeModule_filterAux(comparer, f, SetTreeNode$1__get_Right(t2), acc_1);
+        continue SetTreeModule_filterAux;
+      } else if (f(SetTreeLeaf$1__get_Key(t2))) {
+        return SetTreeModule_add(comparer, SetTreeLeaf$1__get_Key(t2), acc);
+      } else {
+        return acc;
+      }
+    } else {
+      return acc;
+    }
+
+    break;
+  }
+}
+function SetTreeModule_filter(comparer, f, s) {
+  return SetTreeModule_filterAux(comparer, f, s, SetTreeModule_empty());
+}
+function SetTreeModule_diffAux(comparer_mut, t_mut, acc_mut) {
+  SetTreeModule_diffAux: while (true) {
+    const comparer = comparer_mut,
+          t = t_mut,
+          acc = acc_mut;
+
+    if (acc == null) {
+      return acc;
+    } else if (t != null) {
+      const t2 = t;
+
+      if (t2 instanceof SetTreeNode$1) {
+        comparer_mut = comparer;
+        t_mut = SetTreeNode$1__get_Left(t2);
+        acc_mut = SetTreeModule_diffAux(comparer, SetTreeNode$1__get_Right(t2), SetTreeModule_remove(comparer, SetTreeLeaf$1__get_Key(t2), acc));
+        continue SetTreeModule_diffAux;
+      } else {
+        return SetTreeModule_remove(comparer, SetTreeLeaf$1__get_Key(t2), acc);
+      }
+    } else {
+      return acc;
+    }
+
+    break;
+  }
+}
+function SetTreeModule_diff(comparer, a, b) {
+  return SetTreeModule_diffAux(comparer, b, a);
+}
+function SetTreeModule_union(comparer, t1, t2) {
+  if (t1 != null) {
+    const t1$0027 = t1;
+
+    if (t2 != null) {
+      const t2$0027 = t2;
+
+      if (t1$0027 instanceof SetTreeNode$1) {
+        if (t2$0027 instanceof SetTreeNode$1) {
+          if (SetTreeNode$1__get_Height(t1$0027) > SetTreeNode$1__get_Height(t2$0027)) {
+            const patternInput = SetTreeModule_split(comparer, SetTreeLeaf$1__get_Key(t1$0027), t2);
+            return SetTreeModule_balance(comparer, SetTreeModule_union(comparer, SetTreeNode$1__get_Left(t1$0027), patternInput[0]), SetTreeLeaf$1__get_Key(t1$0027), SetTreeModule_union(comparer, SetTreeNode$1__get_Right(t1$0027), patternInput[2]));
+          } else {
+            const patternInput_1 = SetTreeModule_split(comparer, SetTreeLeaf$1__get_Key(t2$0027), t1);
+            return SetTreeModule_balance(comparer, SetTreeModule_union(comparer, SetTreeNode$1__get_Left(t2$0027), patternInput_1[0]), SetTreeLeaf$1__get_Key(t2$0027), SetTreeModule_union(comparer, SetTreeNode$1__get_Right(t2$0027), patternInput_1[2]));
+          }
+        } else {
+          return SetTreeModule_add(comparer, SetTreeLeaf$1__get_Key(t2$0027), t1);
+        }
+      } else {
+        return SetTreeModule_add(comparer, SetTreeLeaf$1__get_Key(t1$0027), t2);
+      }
+    } else {
+      return t1;
+    }
+  } else {
+    return t2;
+  }
+}
+function SetTreeModule_intersectionAux(comparer_mut, b_mut, t_mut, acc_mut) {
+  SetTreeModule_intersectionAux: while (true) {
+    const comparer = comparer_mut,
+          b = b_mut,
+          t = t_mut,
+          acc = acc_mut;
+
+    if (t != null) {
+      const t2 = t;
+
+      if (t2 instanceof SetTreeNode$1) {
+        const acc_1 = SetTreeModule_intersectionAux(comparer, b, SetTreeNode$1__get_Right(t2), acc);
+        const acc_2 = SetTreeModule_mem(comparer, SetTreeLeaf$1__get_Key(t2), b) ? SetTreeModule_add(comparer, SetTreeLeaf$1__get_Key(t2), acc_1) : acc_1;
+        comparer_mut = comparer;
+        b_mut = b;
+        t_mut = SetTreeNode$1__get_Left(t2);
+        acc_mut = acc_2;
+        continue SetTreeModule_intersectionAux;
+      } else if (SetTreeModule_mem(comparer, SetTreeLeaf$1__get_Key(t2), b)) {
+        return SetTreeModule_add(comparer, SetTreeLeaf$1__get_Key(t2), acc);
+      } else {
+        return acc;
+      }
+    } else {
+      return acc;
+    }
+
+    break;
+  }
+}
+function SetTreeModule_intersection(comparer, a, b) {
+  return SetTreeModule_intersectionAux(comparer, b, a, SetTreeModule_empty());
+}
+function SetTreeModule_partition1(comparer, f, k, acc1, acc2) {
+  if (f(k)) {
+    return [SetTreeModule_add(comparer, k, acc1), acc2];
+  } else {
+    return [acc1, SetTreeModule_add(comparer, k, acc2)];
+  }
+}
+function SetTreeModule_partitionAux(comparer_mut, f_mut, t_mut, acc_0_mut, acc_1_mut) {
+  SetTreeModule_partitionAux: while (true) {
+    const comparer = comparer_mut,
+          f = f_mut,
+          t = t_mut,
+          acc_0 = acc_0_mut,
+          acc_1 = acc_1_mut;
+    const acc = [acc_0, acc_1];
+
+    if (t != null) {
+      const t2 = t;
+
+      if (t2 instanceof SetTreeNode$1) {
+        const acc_2 = SetTreeModule_partitionAux(comparer, f, SetTreeNode$1__get_Right(t2), acc[0], acc[1]);
+        const acc_3 = SetTreeModule_partition1(comparer, f, SetTreeLeaf$1__get_Key(t2), acc_2[0], acc_2[1]);
+        comparer_mut = comparer;
+        f_mut = f;
+        t_mut = SetTreeNode$1__get_Left(t2);
+        acc_0_mut = acc_3[0];
+        acc_1_mut = acc_3[1];
+        continue SetTreeModule_partitionAux;
+      } else {
+        return SetTreeModule_partition1(comparer, f, SetTreeLeaf$1__get_Key(t2), acc[0], acc[1]);
+      }
+    } else {
+      return acc;
+    }
+
+    break;
+  }
+}
+function SetTreeModule_partition(comparer, f, s) {
+  return SetTreeModule_partitionAux(comparer, f, s, SetTreeModule_empty(), SetTreeModule_empty());
+}
+function SetTreeModule_minimumElementAux(t_mut, n_mut) {
+  SetTreeModule_minimumElementAux: while (true) {
+    const t = t_mut,
+          n = n_mut;
+
+    if (t != null) {
+      const t2 = t;
+
+      if (t2 instanceof SetTreeNode$1) {
+        t_mut = SetTreeNode$1__get_Left(t2);
+        n_mut = SetTreeLeaf$1__get_Key(t2);
+        continue SetTreeModule_minimumElementAux;
+      } else {
+        return SetTreeLeaf$1__get_Key(t2);
+      }
+    } else {
+      return n;
+    }
+
+    break;
+  }
+}
+function SetTreeModule_minimumElementOpt(t) {
+  if (t != null) {
+    const t2 = t;
+
+    if (t2 instanceof SetTreeNode$1) {
+      return (0,_Option_js__WEBPACK_IMPORTED_MODULE_1__.some)(SetTreeModule_minimumElementAux(SetTreeNode$1__get_Left(t2), SetTreeLeaf$1__get_Key(t2)));
+    } else {
+      return (0,_Option_js__WEBPACK_IMPORTED_MODULE_1__.some)(SetTreeLeaf$1__get_Key(t2));
+    }
+  } else {
+    return void 0;
+  }
+}
+function SetTreeModule_maximumElementAux(t_mut, n_mut) {
+  SetTreeModule_maximumElementAux: while (true) {
+    const t = t_mut,
+          n = n_mut;
+
+    if (t != null) {
+      const t2 = t;
+
+      if (t2 instanceof SetTreeNode$1) {
+        t_mut = SetTreeNode$1__get_Right(t2);
+        n_mut = SetTreeLeaf$1__get_Key(t2);
+        continue SetTreeModule_maximumElementAux;
+      } else {
+        return SetTreeLeaf$1__get_Key(t2);
+      }
+    } else {
+      return n;
+    }
+
+    break;
+  }
+}
+function SetTreeModule_maximumElementOpt(t) {
+  if (t != null) {
+    const t2 = t;
+
+    if (t2 instanceof SetTreeNode$1) {
+      return (0,_Option_js__WEBPACK_IMPORTED_MODULE_1__.some)(SetTreeModule_maximumElementAux(SetTreeNode$1__get_Right(t2), SetTreeLeaf$1__get_Key(t2)));
+    } else {
+      return (0,_Option_js__WEBPACK_IMPORTED_MODULE_1__.some)(SetTreeLeaf$1__get_Key(t2));
+    }
+  } else {
+    return void 0;
+  }
+}
+function SetTreeModule_minimumElement(s) {
+  const matchValue = SetTreeModule_minimumElementOpt(s);
+
+  if (matchValue == null) {
+    throw new Error("Set contains no elements");
+  } else {
+    return (0,_Option_js__WEBPACK_IMPORTED_MODULE_1__.value)(matchValue);
+  }
+}
+function SetTreeModule_maximumElement(s) {
+  const matchValue = SetTreeModule_maximumElementOpt(s);
+
+  if (matchValue == null) {
+    throw new Error("Set contains no elements");
+  } else {
+    return (0,_Option_js__WEBPACK_IMPORTED_MODULE_1__.value)(matchValue);
+  }
+}
+class SetTreeModule_SetIterator$1 extends _Types_js__WEBPACK_IMPORTED_MODULE_2__.Record {
+  constructor(stack, started) {
+    super();
+    this.stack = stack;
+    this.started = started;
+  }
+
+}
+function SetTreeModule_SetIterator$1$reflection(gen0) {
+  return (0,_Reflection_js__WEBPACK_IMPORTED_MODULE_0__.record_type)("Set.SetTreeModule.SetIterator`1", [gen0], SetTreeModule_SetIterator$1, () => [["stack", (0,_Reflection_js__WEBPACK_IMPORTED_MODULE_0__.list_type)((0,_Reflection_js__WEBPACK_IMPORTED_MODULE_0__.option_type)(SetTreeLeaf$1$reflection(gen0)))], ["started", _Reflection_js__WEBPACK_IMPORTED_MODULE_0__.bool_type]]);
+}
+function SetTreeModule_collapseLHS(stack_mut) {
+  SetTreeModule_collapseLHS: while (true) {
+    const stack = stack_mut;
+
+    if (stack.tail != null) {
+      const x = stack.head;
+      const rest = stack.tail;
+
+      if (x != null) {
+        const x2 = x;
+
+        if (x2 instanceof SetTreeNode$1) {
+          stack_mut = new _Types_js__WEBPACK_IMPORTED_MODULE_2__.List(SetTreeNode$1__get_Left(x2), new _Types_js__WEBPACK_IMPORTED_MODULE_2__.List(SetTreeLeaf$1_$ctor_2B595(SetTreeLeaf$1__get_Key(x2)), new _Types_js__WEBPACK_IMPORTED_MODULE_2__.List(SetTreeNode$1__get_Right(x2), rest)));
+          continue SetTreeModule_collapseLHS;
+        } else {
+          return stack;
+        }
+      } else {
+        stack_mut = rest;
+        continue SetTreeModule_collapseLHS;
+      }
+    } else {
+      return new _Types_js__WEBPACK_IMPORTED_MODULE_2__.List();
+    }
+
+    break;
+  }
+}
+function SetTreeModule_mkIterator(s) {
+  return new SetTreeModule_SetIterator$1(SetTreeModule_collapseLHS(new _Types_js__WEBPACK_IMPORTED_MODULE_2__.List(s, new _Types_js__WEBPACK_IMPORTED_MODULE_2__.List())), false);
+}
+function SetTreeModule_notStarted() {
+  throw new Error("Enumeration not started");
+}
+function SetTreeModule_alreadyFinished() {
+  throw new Error("Enumeration already started");
+}
+function SetTreeModule_current(i) {
+  if (i.started) {
+    const matchValue = i.stack;
+
+    if (matchValue.tail == null) {
+      return SetTreeModule_alreadyFinished();
+    } else if (matchValue.head != null) {
+      const t = matchValue.head;
+      return SetTreeLeaf$1__get_Key(t);
+    } else {
+      throw new Error("Please report error: Set iterator, unexpected stack for current");
+    }
+  } else {
+    return SetTreeModule_notStarted();
+  }
+}
+function SetTreeModule_moveNext(i) {
+  if (i.started) {
+    const matchValue = i.stack;
+
+    if (matchValue.tail != null) {
+      if (matchValue.head != null) {
+        const t = matchValue.head;
+
+        if (t instanceof SetTreeNode$1) {
+          throw new Error("Please report error: Set iterator, unexpected stack for moveNext");
+        } else {
+          i.stack = SetTreeModule_collapseLHS(matchValue.tail);
+          return !(i.stack.tail == null);
+        }
+      } else {
+        throw new Error("Please report error: Set iterator, unexpected stack for moveNext");
+      }
+    } else {
+      return false;
+    }
+  } else {
+    i.started = true;
+    return !(i.stack.tail == null);
+  }
+}
+function SetTreeModule_mkIEnumerator(s) {
+  let i = SetTreeModule_mkIterator(s);
+  return {
+    ["System.Collections.Generic.IEnumerator`1.get_Current"]() {
+      return SetTreeModule_current(i);
+    },
+
+    ["System.Collections.IEnumerator.get_Current"]() {
+      return SetTreeModule_current(i);
+    },
+
+    ["System.Collections.IEnumerator.MoveNext"]() {
+      return SetTreeModule_moveNext(i);
+    },
+
+    ["System.Collections.IEnumerator.Reset"]() {
+      i = SetTreeModule_mkIterator(s);
+    },
+
+    Dispose() {}
+
+  };
+}
+function SetTreeModule_compareStacks(comparer_mut, l1_mut, l2_mut) {
+  SetTreeModule_compareStacks: while (true) {
+    const comparer = comparer_mut,
+          l1 = l1_mut,
+          l2 = l2_mut;
+    const matchValue = [l1, l2];
+
+    if (matchValue[0].tail != null) {
+      if (matchValue[1].tail != null) {
+        if (matchValue[1].head != null) {
+          if (matchValue[0].head != null) {
+            const x1_3 = matchValue[0].head;
+            const x2_3 = matchValue[1].head;
+
+            if (x1_3 instanceof SetTreeNode$1) {
+              if (SetTreeNode$1__get_Left(x1_3) == null) {
+                if (x2_3 instanceof SetTreeNode$1) {
+                  if (SetTreeNode$1__get_Left(x2_3) == null) {
+                    const c = comparer.Compare(SetTreeLeaf$1__get_Key(x1_3), SetTreeLeaf$1__get_Key(x2_3)) | 0;
+
+                    if (c !== 0) {
+                      return c | 0;
+                    } else {
+                      comparer_mut = comparer;
+                      l1_mut = new _Types_js__WEBPACK_IMPORTED_MODULE_2__.List(SetTreeNode$1__get_Right(x1_3), matchValue[0].tail);
+                      l2_mut = new _Types_js__WEBPACK_IMPORTED_MODULE_2__.List(SetTreeNode$1__get_Right(x2_3), matchValue[1].tail);
+                      continue SetTreeModule_compareStacks;
+                    }
+                  } else {
+                    const matchValue_3 = [l1, l2];
+                    let pattern_matching_result, t1_6, x1_4, t2_6, x2_4;
+
+                    if (matchValue_3[0].tail != null) {
+                      if (matchValue_3[0].head != null) {
+                        pattern_matching_result = 0;
+                        t1_6 = matchValue_3[0].tail;
+                        x1_4 = matchValue_3[0].head;
+                      } else if (matchValue_3[1].tail != null) {
+                        if (matchValue_3[1].head != null) {
+                          pattern_matching_result = 1;
+                          t2_6 = matchValue_3[1].tail;
+                          x2_4 = matchValue_3[1].head;
+                        } else {
+                          pattern_matching_result = 2;
+                        }
+                      } else {
+                        pattern_matching_result = 2;
+                      }
+                    } else if (matchValue_3[1].tail != null) {
+                      if (matchValue_3[1].head != null) {
+                        pattern_matching_result = 1;
+                        t2_6 = matchValue_3[1].tail;
+                        x2_4 = matchValue_3[1].head;
+                      } else {
+                        pattern_matching_result = 2;
+                      }
+                    } else {
+                      pattern_matching_result = 2;
+                    }
+
+                    switch (pattern_matching_result) {
+                      case 0:
+                        {
+                          if (x1_4 instanceof SetTreeNode$1) {
+                            comparer_mut = comparer;
+                            l1_mut = new _Types_js__WEBPACK_IMPORTED_MODULE_2__.List(SetTreeNode$1__get_Left(x1_4), new _Types_js__WEBPACK_IMPORTED_MODULE_2__.List(SetTreeNode$1_$ctor_Z6E7BE5F7(SetTreeLeaf$1__get_Key(x1_4), SetTreeModule_empty(), SetTreeNode$1__get_Right(x1_4), 0), t1_6));
+                            l2_mut = l2;
+                            continue SetTreeModule_compareStacks;
+                          } else {
+                            comparer_mut = comparer;
+                            l1_mut = new _Types_js__WEBPACK_IMPORTED_MODULE_2__.List(SetTreeModule_empty(), new _Types_js__WEBPACK_IMPORTED_MODULE_2__.List(SetTreeLeaf$1_$ctor_2B595(SetTreeLeaf$1__get_Key(x1_4)), t1_6));
+                            l2_mut = l2;
+                            continue SetTreeModule_compareStacks;
+                          }
+                        }
+
+                      case 1:
+                        {
+                          if (x2_4 instanceof SetTreeNode$1) {
+                            comparer_mut = comparer;
+                            l1_mut = l1;
+                            l2_mut = new _Types_js__WEBPACK_IMPORTED_MODULE_2__.List(SetTreeNode$1__get_Left(x2_4), new _Types_js__WEBPACK_IMPORTED_MODULE_2__.List(SetTreeNode$1_$ctor_Z6E7BE5F7(SetTreeLeaf$1__get_Key(x2_4), SetTreeModule_empty(), SetTreeNode$1__get_Right(x2_4), 0), t2_6));
+                            continue SetTreeModule_compareStacks;
+                          } else {
+                            comparer_mut = comparer;
+                            l1_mut = l1;
+                            l2_mut = new _Types_js__WEBPACK_IMPORTED_MODULE_2__.List(SetTreeModule_empty(), new _Types_js__WEBPACK_IMPORTED_MODULE_2__.List(SetTreeLeaf$1_$ctor_2B595(SetTreeLeaf$1__get_Key(x2_4)), t2_6));
+                            continue SetTreeModule_compareStacks;
+                          }
+                        }
+
+                      case 2:
+                        {
+                          throw new Error("unexpected state in SetTree.compareStacks");
+                        }
+                    }
+                  }
+                } else {
+                  const c_1 = comparer.Compare(SetTreeLeaf$1__get_Key(x1_3), SetTreeLeaf$1__get_Key(x2_3)) | 0;
+
+                  if (c_1 !== 0) {
+                    return c_1 | 0;
+                  } else {
+                    comparer_mut = comparer;
+                    l1_mut = new _Types_js__WEBPACK_IMPORTED_MODULE_2__.List(SetTreeNode$1__get_Right(x1_3), matchValue[0].tail);
+                    l2_mut = new _Types_js__WEBPACK_IMPORTED_MODULE_2__.List(SetTreeModule_empty(), matchValue[1].tail);
+                    continue SetTreeModule_compareStacks;
+                  }
+                }
+              } else {
+                const matchValue_4 = [l1, l2];
+                let pattern_matching_result_1, t1_7, x1_5, t2_7, x2_5;
+
+                if (matchValue_4[0].tail != null) {
+                  if (matchValue_4[0].head != null) {
+                    pattern_matching_result_1 = 0;
+                    t1_7 = matchValue_4[0].tail;
+                    x1_5 = matchValue_4[0].head;
+                  } else if (matchValue_4[1].tail != null) {
+                    if (matchValue_4[1].head != null) {
+                      pattern_matching_result_1 = 1;
+                      t2_7 = matchValue_4[1].tail;
+                      x2_5 = matchValue_4[1].head;
+                    } else {
+                      pattern_matching_result_1 = 2;
+                    }
+                  } else {
+                    pattern_matching_result_1 = 2;
+                  }
+                } else if (matchValue_4[1].tail != null) {
+                  if (matchValue_4[1].head != null) {
+                    pattern_matching_result_1 = 1;
+                    t2_7 = matchValue_4[1].tail;
+                    x2_5 = matchValue_4[1].head;
+                  } else {
+                    pattern_matching_result_1 = 2;
+                  }
+                } else {
+                  pattern_matching_result_1 = 2;
+                }
+
+                switch (pattern_matching_result_1) {
+                  case 0:
+                    {
+                      if (x1_5 instanceof SetTreeNode$1) {
+                        comparer_mut = comparer;
+                        l1_mut = new _Types_js__WEBPACK_IMPORTED_MODULE_2__.List(SetTreeNode$1__get_Left(x1_5), new _Types_js__WEBPACK_IMPORTED_MODULE_2__.List(SetTreeNode$1_$ctor_Z6E7BE5F7(SetTreeLeaf$1__get_Key(x1_5), SetTreeModule_empty(), SetTreeNode$1__get_Right(x1_5), 0), t1_7));
+                        l2_mut = l2;
+                        continue SetTreeModule_compareStacks;
+                      } else {
+                        comparer_mut = comparer;
+                        l1_mut = new _Types_js__WEBPACK_IMPORTED_MODULE_2__.List(SetTreeModule_empty(), new _Types_js__WEBPACK_IMPORTED_MODULE_2__.List(SetTreeLeaf$1_$ctor_2B595(SetTreeLeaf$1__get_Key(x1_5)), t1_7));
+                        l2_mut = l2;
+                        continue SetTreeModule_compareStacks;
+                      }
+                    }
+
+                  case 1:
+                    {
+                      if (x2_5 instanceof SetTreeNode$1) {
+                        comparer_mut = comparer;
+                        l1_mut = l1;
+                        l2_mut = new _Types_js__WEBPACK_IMPORTED_MODULE_2__.List(SetTreeNode$1__get_Left(x2_5), new _Types_js__WEBPACK_IMPORTED_MODULE_2__.List(SetTreeNode$1_$ctor_Z6E7BE5F7(SetTreeLeaf$1__get_Key(x2_5), SetTreeModule_empty(), SetTreeNode$1__get_Right(x2_5), 0), t2_7));
+                        continue SetTreeModule_compareStacks;
+                      } else {
+                        comparer_mut = comparer;
+                        l1_mut = l1;
+                        l2_mut = new _Types_js__WEBPACK_IMPORTED_MODULE_2__.List(SetTreeModule_empty(), new _Types_js__WEBPACK_IMPORTED_MODULE_2__.List(SetTreeLeaf$1_$ctor_2B595(SetTreeLeaf$1__get_Key(x2_5)), t2_7));
+                        continue SetTreeModule_compareStacks;
+                      }
+                    }
+
+                  case 2:
+                    {
+                      throw new Error("unexpected state in SetTree.compareStacks");
+                    }
+                }
+              }
+            } else if (x2_3 instanceof SetTreeNode$1) {
+              if (SetTreeNode$1__get_Left(x2_3) == null) {
+                const c_2 = comparer.Compare(SetTreeLeaf$1__get_Key(x1_3), SetTreeLeaf$1__get_Key(x2_3)) | 0;
+
+                if (c_2 !== 0) {
+                  return c_2 | 0;
+                } else {
+                  comparer_mut = comparer;
+                  l1_mut = new _Types_js__WEBPACK_IMPORTED_MODULE_2__.List(SetTreeModule_empty(), matchValue[0].tail);
+                  l2_mut = new _Types_js__WEBPACK_IMPORTED_MODULE_2__.List(SetTreeNode$1__get_Right(x2_3), matchValue[1].tail);
+                  continue SetTreeModule_compareStacks;
+                }
+              } else {
+                const matchValue_5 = [l1, l2];
+                let pattern_matching_result_2, t1_8, x1_6, t2_8, x2_6;
+
+                if (matchValue_5[0].tail != null) {
+                  if (matchValue_5[0].head != null) {
+                    pattern_matching_result_2 = 0;
+                    t1_8 = matchValue_5[0].tail;
+                    x1_6 = matchValue_5[0].head;
+                  } else if (matchValue_5[1].tail != null) {
+                    if (matchValue_5[1].head != null) {
+                      pattern_matching_result_2 = 1;
+                      t2_8 = matchValue_5[1].tail;
+                      x2_6 = matchValue_5[1].head;
+                    } else {
+                      pattern_matching_result_2 = 2;
+                    }
+                  } else {
+                    pattern_matching_result_2 = 2;
+                  }
+                } else if (matchValue_5[1].tail != null) {
+                  if (matchValue_5[1].head != null) {
+                    pattern_matching_result_2 = 1;
+                    t2_8 = matchValue_5[1].tail;
+                    x2_6 = matchValue_5[1].head;
+                  } else {
+                    pattern_matching_result_2 = 2;
+                  }
+                } else {
+                  pattern_matching_result_2 = 2;
+                }
+
+                switch (pattern_matching_result_2) {
+                  case 0:
+                    {
+                      if (x1_6 instanceof SetTreeNode$1) {
+                        comparer_mut = comparer;
+                        l1_mut = new _Types_js__WEBPACK_IMPORTED_MODULE_2__.List(SetTreeNode$1__get_Left(x1_6), new _Types_js__WEBPACK_IMPORTED_MODULE_2__.List(SetTreeNode$1_$ctor_Z6E7BE5F7(SetTreeLeaf$1__get_Key(x1_6), SetTreeModule_empty(), SetTreeNode$1__get_Right(x1_6), 0), t1_8));
+                        l2_mut = l2;
+                        continue SetTreeModule_compareStacks;
+                      } else {
+                        comparer_mut = comparer;
+                        l1_mut = new _Types_js__WEBPACK_IMPORTED_MODULE_2__.List(SetTreeModule_empty(), new _Types_js__WEBPACK_IMPORTED_MODULE_2__.List(SetTreeLeaf$1_$ctor_2B595(SetTreeLeaf$1__get_Key(x1_6)), t1_8));
+                        l2_mut = l2;
+                        continue SetTreeModule_compareStacks;
+                      }
+                    }
+
+                  case 1:
+                    {
+                      if (x2_6 instanceof SetTreeNode$1) {
+                        comparer_mut = comparer;
+                        l1_mut = l1;
+                        l2_mut = new _Types_js__WEBPACK_IMPORTED_MODULE_2__.List(SetTreeNode$1__get_Left(x2_6), new _Types_js__WEBPACK_IMPORTED_MODULE_2__.List(SetTreeNode$1_$ctor_Z6E7BE5F7(SetTreeLeaf$1__get_Key(x2_6), SetTreeModule_empty(), SetTreeNode$1__get_Right(x2_6), 0), t2_8));
+                        continue SetTreeModule_compareStacks;
+                      } else {
+                        comparer_mut = comparer;
+                        l1_mut = l1;
+                        l2_mut = new _Types_js__WEBPACK_IMPORTED_MODULE_2__.List(SetTreeModule_empty(), new _Types_js__WEBPACK_IMPORTED_MODULE_2__.List(SetTreeLeaf$1_$ctor_2B595(SetTreeLeaf$1__get_Key(x2_6)), t2_8));
+                        continue SetTreeModule_compareStacks;
+                      }
+                    }
+
+                  case 2:
+                    {
+                      throw new Error("unexpected state in SetTree.compareStacks");
+                    }
+                }
+              }
+            } else {
+              const c_3 = comparer.Compare(SetTreeLeaf$1__get_Key(x1_3), SetTreeLeaf$1__get_Key(x2_3)) | 0;
+
+              if (c_3 !== 0) {
+                return c_3 | 0;
+              } else {
+                comparer_mut = comparer;
+                l1_mut = matchValue[0].tail;
+                l2_mut = matchValue[1].tail;
+                continue SetTreeModule_compareStacks;
+              }
+            }
+          } else {
+            const x2 = matchValue[1].head;
+            const matchValue_1 = [l1, l2];
+            let pattern_matching_result_3, t1_2, x1, t2_2, x2_1;
+
+            if (matchValue_1[0].tail != null) {
+              if (matchValue_1[0].head != null) {
+                pattern_matching_result_3 = 0;
+                t1_2 = matchValue_1[0].tail;
+                x1 = matchValue_1[0].head;
+              } else if (matchValue_1[1].tail != null) {
+                if (matchValue_1[1].head != null) {
+                  pattern_matching_result_3 = 1;
+                  t2_2 = matchValue_1[1].tail;
+                  x2_1 = matchValue_1[1].head;
+                } else {
+                  pattern_matching_result_3 = 2;
+                }
+              } else {
+                pattern_matching_result_3 = 2;
+              }
+            } else if (matchValue_1[1].tail != null) {
+              if (matchValue_1[1].head != null) {
+                pattern_matching_result_3 = 1;
+                t2_2 = matchValue_1[1].tail;
+                x2_1 = matchValue_1[1].head;
+              } else {
+                pattern_matching_result_3 = 2;
+              }
+            } else {
+              pattern_matching_result_3 = 2;
+            }
+
+            switch (pattern_matching_result_3) {
+              case 0:
+                {
+                  if (x1 instanceof SetTreeNode$1) {
+                    comparer_mut = comparer;
+                    l1_mut = new _Types_js__WEBPACK_IMPORTED_MODULE_2__.List(SetTreeNode$1__get_Left(x1), new _Types_js__WEBPACK_IMPORTED_MODULE_2__.List(SetTreeNode$1_$ctor_Z6E7BE5F7(SetTreeLeaf$1__get_Key(x1), SetTreeModule_empty(), SetTreeNode$1__get_Right(x1), 0), t1_2));
+                    l2_mut = l2;
+                    continue SetTreeModule_compareStacks;
+                  } else {
+                    comparer_mut = comparer;
+                    l1_mut = new _Types_js__WEBPACK_IMPORTED_MODULE_2__.List(SetTreeModule_empty(), new _Types_js__WEBPACK_IMPORTED_MODULE_2__.List(SetTreeLeaf$1_$ctor_2B595(SetTreeLeaf$1__get_Key(x1)), t1_2));
+                    l2_mut = l2;
+                    continue SetTreeModule_compareStacks;
+                  }
+                }
+
+              case 1:
+                {
+                  if (x2_1 instanceof SetTreeNode$1) {
+                    comparer_mut = comparer;
+                    l1_mut = l1;
+                    l2_mut = new _Types_js__WEBPACK_IMPORTED_MODULE_2__.List(SetTreeNode$1__get_Left(x2_1), new _Types_js__WEBPACK_IMPORTED_MODULE_2__.List(SetTreeNode$1_$ctor_Z6E7BE5F7(SetTreeLeaf$1__get_Key(x2_1), SetTreeModule_empty(), SetTreeNode$1__get_Right(x2_1), 0), t2_2));
+                    continue SetTreeModule_compareStacks;
+                  } else {
+                    comparer_mut = comparer;
+                    l1_mut = l1;
+                    l2_mut = new _Types_js__WEBPACK_IMPORTED_MODULE_2__.List(SetTreeModule_empty(), new _Types_js__WEBPACK_IMPORTED_MODULE_2__.List(SetTreeLeaf$1_$ctor_2B595(SetTreeLeaf$1__get_Key(x2_1)), t2_2));
+                    continue SetTreeModule_compareStacks;
+                  }
+                }
+
+              case 2:
+                {
+                  throw new Error("unexpected state in SetTree.compareStacks");
+                }
+            }
+          }
+        } else if (matchValue[0].head != null) {
+          const x1_1 = matchValue[0].head;
+          const matchValue_2 = [l1, l2];
+          let pattern_matching_result_4, t1_4, x1_2, t2_4, x2_2;
+
+          if (matchValue_2[0].tail != null) {
+            if (matchValue_2[0].head != null) {
+              pattern_matching_result_4 = 0;
+              t1_4 = matchValue_2[0].tail;
+              x1_2 = matchValue_2[0].head;
+            } else if (matchValue_2[1].tail != null) {
+              if (matchValue_2[1].head != null) {
+                pattern_matching_result_4 = 1;
+                t2_4 = matchValue_2[1].tail;
+                x2_2 = matchValue_2[1].head;
+              } else {
+                pattern_matching_result_4 = 2;
+              }
+            } else {
+              pattern_matching_result_4 = 2;
+            }
+          } else if (matchValue_2[1].tail != null) {
+            if (matchValue_2[1].head != null) {
+              pattern_matching_result_4 = 1;
+              t2_4 = matchValue_2[1].tail;
+              x2_2 = matchValue_2[1].head;
+            } else {
+              pattern_matching_result_4 = 2;
+            }
+          } else {
+            pattern_matching_result_4 = 2;
+          }
+
+          switch (pattern_matching_result_4) {
+            case 0:
+              {
+                if (x1_2 instanceof SetTreeNode$1) {
+                  comparer_mut = comparer;
+                  l1_mut = new _Types_js__WEBPACK_IMPORTED_MODULE_2__.List(SetTreeNode$1__get_Left(x1_2), new _Types_js__WEBPACK_IMPORTED_MODULE_2__.List(SetTreeNode$1_$ctor_Z6E7BE5F7(SetTreeLeaf$1__get_Key(x1_2), SetTreeModule_empty(), SetTreeNode$1__get_Right(x1_2), 0), t1_4));
+                  l2_mut = l2;
+                  continue SetTreeModule_compareStacks;
+                } else {
+                  comparer_mut = comparer;
+                  l1_mut = new _Types_js__WEBPACK_IMPORTED_MODULE_2__.List(SetTreeModule_empty(), new _Types_js__WEBPACK_IMPORTED_MODULE_2__.List(SetTreeLeaf$1_$ctor_2B595(SetTreeLeaf$1__get_Key(x1_2)), t1_4));
+                  l2_mut = l2;
+                  continue SetTreeModule_compareStacks;
+                }
+              }
+
+            case 1:
+              {
+                if (x2_2 instanceof SetTreeNode$1) {
+                  comparer_mut = comparer;
+                  l1_mut = l1;
+                  l2_mut = new _Types_js__WEBPACK_IMPORTED_MODULE_2__.List(SetTreeNode$1__get_Left(x2_2), new _Types_js__WEBPACK_IMPORTED_MODULE_2__.List(SetTreeNode$1_$ctor_Z6E7BE5F7(SetTreeLeaf$1__get_Key(x2_2), SetTreeModule_empty(), SetTreeNode$1__get_Right(x2_2), 0), t2_4));
+                  continue SetTreeModule_compareStacks;
+                } else {
+                  comparer_mut = comparer;
+                  l1_mut = l1;
+                  l2_mut = new _Types_js__WEBPACK_IMPORTED_MODULE_2__.List(SetTreeModule_empty(), new _Types_js__WEBPACK_IMPORTED_MODULE_2__.List(SetTreeLeaf$1_$ctor_2B595(SetTreeLeaf$1__get_Key(x2_2)), t2_4));
+                  continue SetTreeModule_compareStacks;
+                }
+              }
+
+            case 2:
+              {
+                throw new Error("unexpected state in SetTree.compareStacks");
+              }
+          }
+        } else {
+          comparer_mut = comparer;
+          l1_mut = matchValue[0].tail;
+          l2_mut = matchValue[1].tail;
+          continue SetTreeModule_compareStacks;
+        }
+      } else {
+        return 1;
+      }
+    } else if (matchValue[1].tail == null) {
+      return 0;
+    } else {
+      return -1;
+    }
+
+    break;
+  }
+}
+function SetTreeModule_compare(comparer, t1, t2) {
+  if (t1 == null) {
+    if (t2 == null) {
+      return 0;
+    } else {
+      return -1;
+    }
+  } else if (t2 == null) {
+    return 1;
+  } else {
+    return SetTreeModule_compareStacks(comparer, new _Types_js__WEBPACK_IMPORTED_MODULE_2__.List(t1, new _Types_js__WEBPACK_IMPORTED_MODULE_2__.List()), new _Types_js__WEBPACK_IMPORTED_MODULE_2__.List(t2, new _Types_js__WEBPACK_IMPORTED_MODULE_2__.List())) | 0;
+  }
+}
+function SetTreeModule_choose(s) {
+  return SetTreeModule_minimumElement(s);
+}
+function SetTreeModule_toList(t) {
+  const loop = (t$0027_mut, acc_mut) => {
+    loop: while (true) {
+      const t$0027 = t$0027_mut,
+            acc = acc_mut;
+
+      if (t$0027 != null) {
+        const t2 = t$0027;
+
+        if (t2 instanceof SetTreeNode$1) {
+          t$0027_mut = SetTreeNode$1__get_Left(t2);
+          acc_mut = new _Types_js__WEBPACK_IMPORTED_MODULE_2__.List(SetTreeLeaf$1__get_Key(t2), loop(SetTreeNode$1__get_Right(t2), acc));
+          continue loop;
+        } else {
+          return new _Types_js__WEBPACK_IMPORTED_MODULE_2__.List(SetTreeLeaf$1__get_Key(t2), acc);
+        }
+      } else {
+        return acc;
+      }
+
+      break;
+    }
+  };
+
+  return loop(t, new _Types_js__WEBPACK_IMPORTED_MODULE_2__.List());
+}
+function SetTreeModule_copyToArray(s, arr, i) {
+  let j = i | 0;
+  SetTreeModule_iter(x => {
+    arr[j] = x;
+    j = j + 1;
+  }, s);
+}
+function SetTreeModule_toArray(s) {
+  const n = SetTreeModule_count(s) | 0;
+  const res = new Array(n);
+  SetTreeModule_copyToArray(s, res, 0);
+  return res;
+}
+function SetTreeModule_mkFromEnumerator(comparer_mut, acc_mut, e_mut) {
+  SetTreeModule_mkFromEnumerator: while (true) {
+    const comparer = comparer_mut,
+          acc = acc_mut,
+          e = e_mut;
+
+    if (e["System.Collections.IEnumerator.MoveNext"]()) {
+      comparer_mut = comparer;
+      acc_mut = SetTreeModule_add(comparer, e["System.Collections.Generic.IEnumerator`1.get_Current"](), acc);
+      e_mut = e;
+      continue SetTreeModule_mkFromEnumerator;
+    } else {
+      return acc;
+    }
+
+    break;
+  }
+}
+function SetTreeModule_ofSeq(comparer, c) {
+  const ie = (0,_Seq_js__WEBPACK_IMPORTED_MODULE_3__.getEnumerator)(c);
+
+  try {
+    return SetTreeModule_mkFromEnumerator(comparer, SetTreeModule_empty(), ie);
+  } finally {
+    ie.Dispose();
+  }
+}
+function SetTreeModule_ofArray(comparer, l) {
+  return (0,_Array_js__WEBPACK_IMPORTED_MODULE_4__.fold)((acc, k) => SetTreeModule_add(comparer, k, acc), SetTreeModule_empty(), l);
+}
+class FSharpSet {
+  constructor(comparer, tree) {
+    this.comparer = comparer;
+    this.tree = tree;
+  }
+
+  GetHashCode() {
+    const this$ = this;
+    return FSharpSet__ComputeHashCode(this$) | 0;
+  }
+
+  Equals(that) {
+    const this$ = this;
+    return that instanceof FSharpSet ? SetTreeModule_compare(FSharpSet__get_Comparer(this$), FSharpSet__get_Tree(this$), FSharpSet__get_Tree(that)) === 0 : false;
+  }
+
+  toString() {
+    const this$ = this;
+    return "set [" + (0,_String_js__WEBPACK_IMPORTED_MODULE_5__.join)("; ", (0,_Seq_js__WEBPACK_IMPORTED_MODULE_3__.map)(x => {
+      let copyOfStruct = x;
+      return (0,_Types_js__WEBPACK_IMPORTED_MODULE_2__.toString)(copyOfStruct);
+    }, this$)) + "]";
+  }
+
+  get [Symbol.toStringTag]() {
+    return "FSharpSet";
+  }
+
+  CompareTo(that) {
+    const s = this;
+    return SetTreeModule_compare(FSharpSet__get_Comparer(s), FSharpSet__get_Tree(s), FSharpSet__get_Tree(that)) | 0;
+  }
+
+  ["System.Collections.Generic.ICollection`1.Add2B595"](x) {
+    void x;
+    throw new Error("ReadOnlyCollection");
+  }
+
+  ["System.Collections.Generic.ICollection`1.Clear"]() {
+    throw new Error("ReadOnlyCollection");
+  }
+
+  ["System.Collections.Generic.ICollection`1.Remove2B595"](x) {
+    void x;
+    throw new Error("ReadOnlyCollection");
+  }
+
+  ["System.Collections.Generic.ICollection`1.Contains2B595"](x) {
+    const s = this;
+    return SetTreeModule_mem(FSharpSet__get_Comparer(s), x, FSharpSet__get_Tree(s));
+  }
+
+  ["System.Collections.Generic.ICollection`1.CopyToZ2E171D71"](arr, i) {
+    const s = this;
+    SetTreeModule_copyToArray(FSharpSet__get_Tree(s), arr, i);
+  }
+
+  ["System.Collections.Generic.ICollection`1.get_IsReadOnly"]() {
+    return true;
+  }
+
+  ["System.Collections.Generic.ICollection`1.get_Count"]() {
+    const s = this;
+    return FSharpSet__get_Count(s) | 0;
+  }
+
+  ["System.Collections.Generic.IReadOnlyCollection`1.get_Count"]() {
+    const s = this;
+    return FSharpSet__get_Count(s) | 0;
+  }
+
+  GetEnumerator() {
+    const s = this;
+    return SetTreeModule_mkIEnumerator(FSharpSet__get_Tree(s));
+  }
+
+  [Symbol.iterator]() {
+    return (0,_Seq_js__WEBPACK_IMPORTED_MODULE_3__.toIterator)(this.GetEnumerator());
+  }
+
+  ["System.Collections.IEnumerable.GetEnumerator"]() {
+    const s = this;
+    return SetTreeModule_mkIEnumerator(FSharpSet__get_Tree(s));
+  }
+
+  get size() {
+    const s = this;
+    return FSharpSet__get_Count(s) | 0;
+  }
+
+  add(k) {
+    const s = this;
+    throw new Error("Set cannot be mutated");
+    return s;
+  }
+
+  clear() {
+    throw new Error("Set cannot be mutated");
+  }
+
+  delete(k) {
+    throw new Error("Set cannot be mutated");
+    return false;
+  }
+
+  has(k) {
+    const s = this;
+    return FSharpSet__Contains(s, k);
+  }
+
+  keys() {
+    const s = this;
+    return (0,_Seq_js__WEBPACK_IMPORTED_MODULE_3__.map)(x => x, s);
+  }
+
+  values() {
+    const s = this;
+    return (0,_Seq_js__WEBPACK_IMPORTED_MODULE_3__.map)(x => x, s);
+  }
+
+  entries() {
+    const s = this;
+    return (0,_Seq_js__WEBPACK_IMPORTED_MODULE_3__.map)(v => [v, v], s);
+  }
+
+  forEach(f, thisArg) {
+    const s = this;
+    (0,_Seq_js__WEBPACK_IMPORTED_MODULE_3__.iterate)(x => {
+      f(x, x, s);
+    }, s);
+  }
+
+}
+function FSharpSet$reflection(gen0) {
+  return (0,_Reflection_js__WEBPACK_IMPORTED_MODULE_0__.class_type)("Set.FSharpSet", [gen0], FSharpSet);
+}
+function FSharpSet_$ctor(comparer, tree) {
+  return new FSharpSet(comparer, tree);
+}
+function FSharpSet__get_Comparer(set$) {
+  return set$.comparer;
+}
+function FSharpSet__get_Tree(set$) {
+  return set$.tree;
+}
+function FSharpSet_Empty(comparer) {
+  return FSharpSet_$ctor(comparer, SetTreeModule_empty());
+}
+function FSharpSet__Add(s, value) {
+  return FSharpSet_$ctor(FSharpSet__get_Comparer(s), SetTreeModule_add(FSharpSet__get_Comparer(s), value, FSharpSet__get_Tree(s)));
+}
+function FSharpSet__Remove(s, value) {
+  return FSharpSet_$ctor(FSharpSet__get_Comparer(s), SetTreeModule_remove(FSharpSet__get_Comparer(s), value, FSharpSet__get_Tree(s)));
+}
+function FSharpSet__get_Count(s) {
+  return SetTreeModule_count(FSharpSet__get_Tree(s));
+}
+function FSharpSet__Contains(s, value) {
+  return SetTreeModule_mem(FSharpSet__get_Comparer(s), value, FSharpSet__get_Tree(s));
+}
+function FSharpSet__Iterate(s, x) {
+  SetTreeModule_iter(x, FSharpSet__get_Tree(s));
+}
+function FSharpSet__Fold(s, f, z) {
+  const f_1 = f;
+  return SetTreeModule_fold((x, z_1) => f_1(z_1, x), z, FSharpSet__get_Tree(s));
+}
+function FSharpSet__get_IsEmpty(s) {
+  return FSharpSet__get_Tree(s) == null;
+}
+function FSharpSet__Partition(s, f) {
+  if (FSharpSet__get_Tree(s) == null) {
+    return [s, s];
+  } else {
+    const patternInput = SetTreeModule_partition(FSharpSet__get_Comparer(s), f, FSharpSet__get_Tree(s));
+    return [FSharpSet_$ctor(FSharpSet__get_Comparer(s), patternInput[0]), FSharpSet_$ctor(FSharpSet__get_Comparer(s), patternInput[1])];
+  }
+}
+function FSharpSet__Filter(s, f) {
+  if (FSharpSet__get_Tree(s) == null) {
+    return s;
+  } else {
+    return FSharpSet_$ctor(FSharpSet__get_Comparer(s), SetTreeModule_filter(FSharpSet__get_Comparer(s), f, FSharpSet__get_Tree(s)));
+  }
+}
+function FSharpSet__Map(s, f, comparer) {
+  return FSharpSet_$ctor(comparer, SetTreeModule_fold((acc, k) => SetTreeModule_add(comparer, f(k), acc), SetTreeModule_empty(), FSharpSet__get_Tree(s)));
+}
+function FSharpSet__Exists(s, f) {
+  return SetTreeModule_exists(f, FSharpSet__get_Tree(s));
+}
+function FSharpSet__ForAll(s, f) {
+  return SetTreeModule_forall(f, FSharpSet__get_Tree(s));
+}
+function FSharpSet_op_Subtraction(set1, set2) {
+  if (FSharpSet__get_Tree(set1) == null) {
+    return set1;
+  } else if (FSharpSet__get_Tree(set2) == null) {
+    return set1;
+  } else {
+    return FSharpSet_$ctor(FSharpSet__get_Comparer(set1), SetTreeModule_diff(FSharpSet__get_Comparer(set1), FSharpSet__get_Tree(set1), FSharpSet__get_Tree(set2)));
+  }
+}
+function FSharpSet_op_Addition(set1, set2) {
+  if (FSharpSet__get_Tree(set2) == null) {
+    return set1;
+  } else if (FSharpSet__get_Tree(set1) == null) {
+    return set2;
+  } else {
+    return FSharpSet_$ctor(FSharpSet__get_Comparer(set1), SetTreeModule_union(FSharpSet__get_Comparer(set1), FSharpSet__get_Tree(set1), FSharpSet__get_Tree(set2)));
+  }
+}
+function FSharpSet_Intersection(a, b) {
+  if (FSharpSet__get_Tree(b) == null) {
+    return b;
+  } else if (FSharpSet__get_Tree(a) == null) {
+    return a;
+  } else {
+    return FSharpSet_$ctor(FSharpSet__get_Comparer(a), SetTreeModule_intersection(FSharpSet__get_Comparer(a), FSharpSet__get_Tree(a), FSharpSet__get_Tree(b)));
+  }
+}
+function FSharpSet_IntersectionMany(sets) {
+  return (0,_Seq_js__WEBPACK_IMPORTED_MODULE_3__.reduce)(FSharpSet_Intersection, sets);
+}
+function FSharpSet_Equality(a, b) {
+  return SetTreeModule_compare(FSharpSet__get_Comparer(a), FSharpSet__get_Tree(a), FSharpSet__get_Tree(b)) === 0;
+}
+function FSharpSet_Compare(a, b) {
+  return SetTreeModule_compare(FSharpSet__get_Comparer(a), FSharpSet__get_Tree(a), FSharpSet__get_Tree(b));
+}
+function FSharpSet__get_Choose(x) {
+  return SetTreeModule_choose(FSharpSet__get_Tree(x));
+}
+function FSharpSet__get_MinimumElement(x) {
+  return SetTreeModule_minimumElement(FSharpSet__get_Tree(x));
+}
+function FSharpSet__get_MaximumElement(x) {
+  return SetTreeModule_maximumElement(FSharpSet__get_Tree(x));
+}
+function FSharpSet__IsSubsetOf(x, otherSet) {
+  return SetTreeModule_subset(FSharpSet__get_Comparer(x), FSharpSet__get_Tree(x), FSharpSet__get_Tree(otherSet));
+}
+function FSharpSet__IsSupersetOf(x, otherSet) {
+  return SetTreeModule_subset(FSharpSet__get_Comparer(x), FSharpSet__get_Tree(otherSet), FSharpSet__get_Tree(x));
+}
+function FSharpSet__IsProperSubsetOf(x, otherSet) {
+  return SetTreeModule_properSubset(FSharpSet__get_Comparer(x), FSharpSet__get_Tree(x), FSharpSet__get_Tree(otherSet));
+}
+function FSharpSet__IsProperSupersetOf(x, otherSet) {
+  return SetTreeModule_properSubset(FSharpSet__get_Comparer(x), FSharpSet__get_Tree(otherSet), FSharpSet__get_Tree(x));
+}
+function FSharpSet__ToList(x) {
+  return SetTreeModule_toList(FSharpSet__get_Tree(x));
+}
+function FSharpSet__ToArray(x) {
+  return SetTreeModule_toArray(FSharpSet__get_Tree(x));
+}
+function FSharpSet__ComputeHashCode(this$) {
+  let res = 0;
+  const enumerator = (0,_Seq_js__WEBPACK_IMPORTED_MODULE_3__.getEnumerator)(this$);
+
+  try {
+    while (enumerator["System.Collections.IEnumerator.MoveNext"]()) {
+      const x_1 = enumerator["System.Collections.Generic.IEnumerator`1.get_Current"]();
+      res = (res << 1) + (0,_Util_js__WEBPACK_IMPORTED_MODULE_6__.structuralHash)(x_1) + 631;
+    }
+  } finally {
+    enumerator.Dispose();
+  }
+
+  return Math.abs(res) | 0;
+}
+function isEmpty(set$) {
+  return FSharpSet__get_IsEmpty(set$);
+}
+function contains(element, set$) {
+  return FSharpSet__Contains(set$, element);
+}
+function add(value, set$) {
+  return FSharpSet__Add(set$, value);
+}
+function singleton(value, comparer) {
+  return FSharpSet__Add(FSharpSet_Empty(comparer), value);
+}
+function remove(value, set$) {
+  return FSharpSet__Remove(set$, value);
+}
+function union(set1, set2) {
+  return FSharpSet_op_Addition(set1, set2);
+}
+function unionMany(sets, comparer) {
+  return (0,_Seq_js__WEBPACK_IMPORTED_MODULE_3__.fold)(FSharpSet_op_Addition, FSharpSet_Empty(comparer), sets);
+}
+function intersect(set1, set2) {
+  return FSharpSet_Intersection(set1, set2);
+}
+function intersectMany(sets) {
+  return FSharpSet_IntersectionMany(sets);
+}
+function iterate(action, set$) {
+  FSharpSet__Iterate(set$, action);
+}
+function empty(comparer) {
+  return FSharpSet_Empty(comparer);
+}
+function forAll(predicate, set$) {
+  return FSharpSet__ForAll(set$, predicate);
+}
+function exists(predicate, set$) {
+  return FSharpSet__Exists(set$, predicate);
+}
+function filter(predicate, set$) {
+  return FSharpSet__Filter(set$, predicate);
+}
+function partition(predicate, set$) {
+  return FSharpSet__Partition(set$, predicate);
+}
+function fold(folder, state, set$) {
+  return SetTreeModule_fold(folder, state, FSharpSet__get_Tree(set$));
+}
+function foldBack(folder, set$, state) {
+  return SetTreeModule_foldBack(folder, FSharpSet__get_Tree(set$), state);
+}
+function map(mapping, set$, comparer) {
+  return FSharpSet__Map(set$, mapping, comparer);
+}
+function count(set$) {
+  return FSharpSet__get_Count(set$);
+}
+function ofList(elements, comparer) {
+  return FSharpSet_$ctor(comparer, SetTreeModule_ofSeq(comparer, elements));
+}
+function ofArray(array, comparer) {
+  return FSharpSet_$ctor(comparer, SetTreeModule_ofArray(comparer, array));
+}
+function toList(set$) {
+  return FSharpSet__ToList(set$);
+}
+function toArray(set$) {
+  return FSharpSet__ToArray(set$);
+}
+function toSeq(set$) {
+  return (0,_Seq_js__WEBPACK_IMPORTED_MODULE_3__.map)(x => x, set$);
+}
+function ofSeq(elements, comparer) {
+  return FSharpSet_$ctor(comparer, SetTreeModule_ofSeq(comparer, elements));
+}
+function difference(set1, set2) {
+  return FSharpSet_op_Subtraction(set1, set2);
+}
+function isSubset(set1, set2) {
+  return SetTreeModule_subset(FSharpSet__get_Comparer(set1), FSharpSet__get_Tree(set1), FSharpSet__get_Tree(set2));
+}
+function isSuperset(set1, set2) {
+  return SetTreeModule_subset(FSharpSet__get_Comparer(set1), FSharpSet__get_Tree(set2), FSharpSet__get_Tree(set1));
+}
+function isProperSubset(set1, set2) {
+  return SetTreeModule_properSubset(FSharpSet__get_Comparer(set1), FSharpSet__get_Tree(set1), FSharpSet__get_Tree(set2));
+}
+function isProperSuperset(set1, set2) {
+  return SetTreeModule_properSubset(FSharpSet__get_Comparer(set1), FSharpSet__get_Tree(set2), FSharpSet__get_Tree(set1));
+}
+function minElement(set$) {
+  return FSharpSet__get_MinimumElement(set$);
+}
+function maxElement(set$) {
+  return FSharpSet__get_MaximumElement(set$);
+}
+function createMutable(source, comparer) {
+  return (0,_MutableSet_js__WEBPACK_IMPORTED_MODULE_7__.HashSet_$ctor_Z6150332D)(source, comparer);
+}
+function distinct(xs, comparer) {
+  return (0,_Seq_js__WEBPACK_IMPORTED_MODULE_3__.delay)(() => {
+    const set$ = (0,_MutableSet_js__WEBPACK_IMPORTED_MODULE_7__.HashSet_$ctor_Z6150332D)((0,_Seq_js__WEBPACK_IMPORTED_MODULE_3__.empty)(), comparer);
+    return (0,_Seq_js__WEBPACK_IMPORTED_MODULE_3__.collect)(x => (0,_MutableSet_js__WEBPACK_IMPORTED_MODULE_7__.HashSet__Add_2B595)(set$, x) ? (0,_Seq_js__WEBPACK_IMPORTED_MODULE_3__.singleton)(x) : (0,_Seq_js__WEBPACK_IMPORTED_MODULE_3__.empty)(), xs);
+  });
+}
+function distinctBy(projection, xs, comparer) {
+  return (0,_Seq_js__WEBPACK_IMPORTED_MODULE_3__.delay)(() => {
+    const set$ = (0,_MutableSet_js__WEBPACK_IMPORTED_MODULE_7__.HashSet_$ctor_Z6150332D)((0,_Seq_js__WEBPACK_IMPORTED_MODULE_3__.empty)(), comparer);
+    return (0,_Seq_js__WEBPACK_IMPORTED_MODULE_3__.collect)(x => (0,_MutableSet_js__WEBPACK_IMPORTED_MODULE_7__.HashSet__Add_2B595)(set$, projection(x)) ? (0,_Seq_js__WEBPACK_IMPORTED_MODULE_3__.singleton)(x) : (0,_Seq_js__WEBPACK_IMPORTED_MODULE_3__.empty)(), xs);
+  });
+}
+function unionWith(s1, s2) {
+  return (0,_Seq_js__WEBPACK_IMPORTED_MODULE_3__.fold)((acc, x) => acc.add(x), s1, s2);
+}
+function intersectWith(s1, s2, comparer) {
+  const s2_1 = ofSeq(s2, comparer);
+  const enumerator = (0,_Seq_js__WEBPACK_IMPORTED_MODULE_3__.getEnumerator)(s1.keys());
+
+  try {
+    while (enumerator["System.Collections.IEnumerator.MoveNext"]()) {
+      const x = enumerator["System.Collections.Generic.IEnumerator`1.get_Current"]();
+
+      if (!FSharpSet__Contains(s2_1, x)) {
+        const value = s1.delete(x);
+        void value;
+      }
+    }
+  } finally {
+    enumerator.Dispose();
+  }
+}
+function exceptWith(s1, s2) {
+  const enumerator = (0,_Seq_js__WEBPACK_IMPORTED_MODULE_3__.getEnumerator)(s2);
+
+  try {
+    while (enumerator["System.Collections.IEnumerator.MoveNext"]()) {
+      const value = s1.delete(enumerator["System.Collections.Generic.IEnumerator`1.get_Current"]());
+      void value;
+    }
+  } finally {
+    enumerator.Dispose();
+  }
+}
+function isSubsetOf(s1, s2, comparer) {
+  return isSubset(ofSeq(s1.values(), comparer), ofSeq(s2, comparer));
+}
+function isSupersetOf(s1, s2, comparer) {
+  return isSuperset(ofSeq(s1.values(), comparer), ofSeq(s2, comparer));
+}
+function isProperSubsetOf(s1, s2, comparer) {
+  return isProperSubset(ofSeq(s1.values(), comparer), ofSeq(s2, comparer));
+}
+function isProperSupersetOf(s1, s2, comparer) {
+  return isProperSuperset(ofSeq(s1.values(), comparer), ofSeq(s2, comparer));
+}
+
+/***/ }),
+
 /***/ "./resources/js/.fable/fable-library.3.1.1/String.js":
 /*!***********************************************************!*\
   !*** ./resources/js/.fable/fable-library.3.1.1/String.js ***!
@@ -11022,6 +24576,138 @@ function substring(str, startIndex, length) {
   }
 
   return length != null ? str.substr(startIndex, length) : str.substr(startIndex);
+}
+
+/***/ }),
+
+/***/ "./resources/js/.fable/fable-library.3.1.1/System.Text.js":
+/*!****************************************************************!*\
+  !*** ./resources/js/.fable/fable-library.3.1.1/System.Text.js ***!
+  \****************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "StringBuilder": () => (/* binding */ StringBuilder),
+/* harmony export */   "StringBuilder$reflection": () => (/* binding */ StringBuilder$reflection),
+/* harmony export */   "StringBuilder_$ctor_Z18115A39": () => (/* binding */ StringBuilder_$ctor_Z18115A39),
+/* harmony export */   "StringBuilder_$ctor_Z524259A4": () => (/* binding */ StringBuilder_$ctor_Z524259A4),
+/* harmony export */   "StringBuilder_$ctor_Z721C83C5": () => (/* binding */ StringBuilder_$ctor_Z721C83C5),
+/* harmony export */   "StringBuilder_$ctor": () => (/* binding */ StringBuilder_$ctor),
+/* harmony export */   "StringBuilder__Append_Z721C83C5": () => (/* binding */ StringBuilder__Append_Z721C83C5),
+/* harmony export */   "StringBuilder__Append_244C7CD6": () => (/* binding */ StringBuilder__Append_244C7CD6),
+/* harmony export */   "StringBuilder__Append_Z524259A4": () => (/* binding */ StringBuilder__Append_Z524259A4),
+/* harmony export */   "StringBuilder__Append_5E38073B": () => (/* binding */ StringBuilder__Append_5E38073B),
+/* harmony export */   "StringBuilder__Append_Z1FBCCD16": () => (/* binding */ StringBuilder__Append_Z1FBCCD16),
+/* harmony export */   "StringBuilder__Append_4E60E31B": () => (/* binding */ StringBuilder__Append_4E60E31B),
+/* harmony export */   "StringBuilder__Append_695F1130": () => (/* binding */ StringBuilder__Append_695F1130),
+/* harmony export */   "StringBuilder__Append_43A65C09": () => (/* binding */ StringBuilder__Append_43A65C09),
+/* harmony export */   "StringBuilder__AppendFormat_433E080": () => (/* binding */ StringBuilder__AppendFormat_433E080),
+/* harmony export */   "StringBuilder__AppendLine": () => (/* binding */ StringBuilder__AppendLine),
+/* harmony export */   "StringBuilder__AppendLine_Z721C83C5": () => (/* binding */ StringBuilder__AppendLine_Z721C83C5),
+/* harmony export */   "StringBuilder__get_Length": () => (/* binding */ StringBuilder__get_Length),
+/* harmony export */   "StringBuilder__ToString_Z37302880": () => (/* binding */ StringBuilder__ToString_Z37302880),
+/* harmony export */   "StringBuilder__Clear": () => (/* binding */ StringBuilder__Clear)
+/* harmony export */ });
+/* harmony import */ var _String_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./String.js */ "./resources/js/.fable/fable-library.3.1.1/String.js");
+/* harmony import */ var _Reflection_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Reflection.js */ "./resources/js/.fable/fable-library.3.1.1/Reflection.js");
+/* harmony import */ var _Util_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Util.js */ "./resources/js/.fable/fable-library.3.1.1/Util.js");
+/* harmony import */ var _Types_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Types.js */ "./resources/js/.fable/fable-library.3.1.1/Types.js");
+/* harmony import */ var _Seq_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Seq.js */ "./resources/js/.fable/fable-library.3.1.1/Seq.js");
+
+
+
+
+
+class StringBuilder {
+  constructor(value, capacity) {
+    this.buf = [];
+
+    if (!(0,_String_js__WEBPACK_IMPORTED_MODULE_0__.isNullOrEmpty)(value)) {
+      void this.buf.push(value);
+    }
+  }
+
+  toString() {
+    const __ = this;
+
+    return (0,_String_js__WEBPACK_IMPORTED_MODULE_0__.join)("", __.buf);
+  }
+
+}
+function StringBuilder$reflection() {
+  return (0,_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.class_type)("System.Text.StringBuilder", void 0, StringBuilder);
+}
+function StringBuilder_$ctor_Z18115A39(value, capacity) {
+  return new StringBuilder(value, capacity);
+}
+function StringBuilder_$ctor_Z524259A4(capacity) {
+  return StringBuilder_$ctor_Z18115A39("", capacity);
+}
+function StringBuilder_$ctor_Z721C83C5(value) {
+  return StringBuilder_$ctor_Z18115A39(value, 16);
+}
+function StringBuilder_$ctor() {
+  return StringBuilder_$ctor_Z18115A39("", 16);
+}
+function StringBuilder__Append_Z721C83C5(x, s) {
+  void x.buf.push(s);
+  return x;
+}
+function StringBuilder__Append_244C7CD6(x, c) {
+  void x.buf.push(c);
+  return x;
+}
+function StringBuilder__Append_Z524259A4(x, o) {
+  void x.buf.push((0,_Util_js__WEBPACK_IMPORTED_MODULE_2__.int32ToString)(o));
+  return x;
+}
+function StringBuilder__Append_5E38073B(x, o) {
+  void x.buf.push(o.toString());
+  return x;
+}
+function StringBuilder__Append_Z1FBCCD16(x, o) {
+  void x.buf.push((0,_Types_js__WEBPACK_IMPORTED_MODULE_3__.toString)(o));
+  return x;
+}
+function StringBuilder__Append_4E60E31B(x, o) {
+  void x.buf.push((0,_Types_js__WEBPACK_IMPORTED_MODULE_3__.toString)(o));
+  return x;
+}
+function StringBuilder__Append_695F1130(x, cs) {
+  void x.buf.push(cs.join(''));
+  return x;
+}
+function StringBuilder__Append_43A65C09(x, s) {
+  void x.buf.push((0,_Types_js__WEBPACK_IMPORTED_MODULE_3__.toString)(s));
+  return x;
+}
+function StringBuilder__AppendFormat_433E080(x, fmt, o) {
+  void x.buf.push((0,_String_js__WEBPACK_IMPORTED_MODULE_0__.format)(fmt, o));
+  return x;
+}
+function StringBuilder__AppendLine(x) {
+  void x.buf.push("\n");
+  return x;
+}
+function StringBuilder__AppendLine_Z721C83C5(x, s) {
+  void x.buf.push(s);
+  void x.buf.push("\n");
+  return x;
+}
+function StringBuilder__get_Length(x) {
+  return (0,_Seq_js__WEBPACK_IMPORTED_MODULE_4__.sumBy)(str => str.length, x.buf, {
+    GetZero: () => 0,
+    Add: (x_1, y) => x_1 + y
+  });
+}
+function StringBuilder__ToString_Z37302880(x, firstIndex, length) {
+  return (0,_String_js__WEBPACK_IMPORTED_MODULE_0__.substring)((0,_Types_js__WEBPACK_IMPORTED_MODULE_3__.toString)(x), firstIndex, length);
+}
+function StringBuilder__Clear(x) {
+  (0,_Util_js__WEBPACK_IMPORTED_MODULE_2__.clear)(x.buf);
+  return x;
 }
 
 /***/ }),
@@ -14875,23 +28561,36 @@ function FormTextarea(formTextareaInputProps) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "ErrorFields": () => (/* binding */ ErrorFields),
+/* harmony export */   "ErrorFields$reflection": () => (/* binding */ ErrorFields$reflection),
+/* harmony export */   "ValidationErrorResponse": () => (/* binding */ ValidationErrorResponse),
+/* harmony export */   "ValidationErrorResponse$reflection": () => (/* binding */ ValidationErrorResponse$reflection),
 /* harmony export */   "FormFields": () => (/* binding */ FormFields),
 /* harmony export */   "FormFields$reflection": () => (/* binding */ FormFields$reflection),
+/* harmony export */   "getValueOrReturnEmptyString": () => (/* binding */ getValueOrReturnEmptyString),
 /* harmony export */   "GetStarted": () => (/* binding */ GetStarted)
 /* harmony export */ });
 /* harmony import */ var _fable_fable_library_3_1_1_Types_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../.fable/fable-library.3.1.1/Types.js */ "./resources/js/.fable/fable-library.3.1.1/Types.js");
-/* harmony import */ var _Main_fs_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Main.fs.js */ "./resources/js/Main.fs.js");
-/* harmony import */ var _fable_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../.fable/fable-library.3.1.1/Reflection.js */ "./resources/js/.fable/fable-library.3.1.1/Reflection.js");
+/* harmony import */ var _fable_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../.fable/fable-library.3.1.1/Reflection.js */ "./resources/js/.fable/fable-library.3.1.1/Reflection.js");
+/* harmony import */ var _Main_fs_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Main.fs.js */ "./resources/js/Main.fs.js");
 /* harmony import */ var _fable_Feliz_1_40_0_React_fs_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../.fable/Feliz.1.40.0/React.fs.js */ "./resources/js/.fable/Feliz.1.40.0/React.fs.js");
 /* harmony import */ var _fable_fable_library_3_1_1_Util_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../.fable/fable-library.3.1.1/Util.js */ "./resources/js/.fable/fable-library.3.1.1/Util.js");
-/* harmony import */ var _fable_fable_library_3_1_1_Option_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../.fable/fable-library.3.1.1/Option.js */ "./resources/js/.fable/fable-library.3.1.1/Option.js");
-/* harmony import */ var _fable_fable_library_3_1_1_List_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../.fable/fable-library.3.1.1/List.js */ "./resources/js/.fable/fable-library.3.1.1/List.js");
-/* harmony import */ var _fable_fable_library_3_1_1_Seq_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../.fable/fable-library.3.1.1/Seq.js */ "./resources/js/.fable/fable-library.3.1.1/Seq.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var _fable_Feliz_1_40_0_Interop_fs_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../.fable/Feliz.1.40.0/Interop.fs.js */ "./resources/js/.fable/Feliz.1.40.0/Interop.fs.js");
-/* harmony import */ var _ClientDetails_fs_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./ClientDetails.fs.js */ "./resources/js/components/ClientDetails.fs.js");
-/* harmony import */ var _ProjectDetails_fs_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./ProjectDetails.fs.js */ "./resources/js/components/ProjectDetails.fs.js");
-/* harmony import */ var _Summary_fs_js__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./Summary.fs.js */ "./resources/js/components/Summary.fs.js");
+/* harmony import */ var _fable_fable_library_3_1_1_Async_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../.fable/fable-library.3.1.1/Async.js */ "./resources/js/.fable/fable-library.3.1.1/Async.js");
+/* harmony import */ var _fable_fable_library_3_1_1_AsyncBuilder_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../.fable/fable-library.3.1.1/AsyncBuilder.js */ "./resources/js/.fable/fable-library.3.1.1/AsyncBuilder.js");
+/* harmony import */ var _fable_Fable_SimpleHttp_3_0_0_Http_fs_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../.fable/Fable.SimpleHttp.3.0.0/Http.fs.js */ "./resources/js/.fable/Fable.SimpleHttp.3.0.0/Http.fs.js");
+/* harmony import */ var _fable_Fable_SimpleHttp_3_0_0_Types_fs_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../.fable/Fable.SimpleHttp.3.0.0/Types.fs.js */ "./resources/js/.fable/Fable.SimpleHttp.3.0.0/Types.fs.js");
+/* harmony import */ var _fable_fable_library_3_1_1_Option_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../.fable/fable-library.3.1.1/Option.js */ "./resources/js/.fable/fable-library.3.1.1/Option.js");
+/* harmony import */ var _fable_fable_library_3_1_1_Choice_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../.fable/fable-library.3.1.1/Choice.js */ "./resources/js/.fable/fable-library.3.1.1/Choice.js");
+/* harmony import */ var _fable_Fable_SimpleJson_3_19_0_SimpleJson_fs_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../.fable/Fable.SimpleJson.3.19.0/SimpleJson.fs.js */ "./resources/js/.fable/Fable.SimpleJson.3.19.0/SimpleJson.fs.js");
+/* harmony import */ var _fable_Fable_SimpleJson_3_19_0_TypeInfo_Converter_fs_js__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../.fable/Fable.SimpleJson.3.19.0/TypeInfo.Converter.fs.js */ "./resources/js/.fable/Fable.SimpleJson.3.19.0/TypeInfo.Converter.fs.js");
+/* harmony import */ var _fable_Fable_SimpleJson_3_19_0_Json_Converter_fs_js__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../.fable/Fable.SimpleJson.3.19.0/Json.Converter.fs.js */ "./resources/js/.fable/Fable.SimpleJson.3.19.0/Json.Converter.fs.js");
+/* harmony import */ var _fable_fable_library_3_1_1_List_js__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../.fable/fable-library.3.1.1/List.js */ "./resources/js/.fable/fable-library.3.1.1/List.js");
+/* harmony import */ var _fable_fable_library_3_1_1_Seq_js__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../.fable/fable-library.3.1.1/Seq.js */ "./resources/js/.fable/fable-library.3.1.1/Seq.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _fable_Feliz_1_40_0_Interop_fs_js__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../.fable/Feliz.1.40.0/Interop.fs.js */ "./resources/js/.fable/Feliz.1.40.0/Interop.fs.js");
+/* harmony import */ var _ClientDetails_fs_js__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./ClientDetails.fs.js */ "./resources/js/components/ClientDetails.fs.js");
+/* harmony import */ var _ProjectDetails_fs_js__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./ProjectDetails.fs.js */ "./resources/js/components/ProjectDetails.fs.js");
+/* harmony import */ var _Summary_fs_js__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./Summary.fs.js */ "./resources/js/components/Summary.fs.js");
 
 
 
@@ -14905,6 +28604,57 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+
+
+
+
+
+
+
+class ErrorFields extends _fable_fable_library_3_1_1_Types_js__WEBPACK_IMPORTED_MODULE_0__.Record {
+  constructor(first_name, last_name, company_name, vat_number, address, city, zip_code, country, email_address, phone, topic, budget, subject, q1, q2, q3, q4, q5, q6, q7, q8, q9, gdpr_consent) {
+    super();
+    this.first_name = first_name;
+    this.last_name = last_name;
+    this.company_name = company_name;
+    this.vat_number = vat_number;
+    this.address = address;
+    this.city = city;
+    this.zip_code = zip_code;
+    this.country = country;
+    this.email_address = email_address;
+    this.phone = phone;
+    this.topic = topic;
+    this.budget = budget;
+    this.subject = subject;
+    this.q1 = q1;
+    this.q2 = q2;
+    this.q3 = q3;
+    this.q4 = q4;
+    this.q5 = q5;
+    this.q6 = q6;
+    this.q7 = q7;
+    this.q8 = q8;
+    this.q9 = q9;
+    this.gdpr_consent = gdpr_consent;
+  }
+
+}
+function ErrorFields$reflection() {
+  return (0,_fable_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.record_type)("GetStarted.ErrorFields", [], ErrorFields, () => [["first_name", (0,_fable_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.option_type)((0,_fable_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.array_type)(_fable_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.string_type))], ["last_name", (0,_fable_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.option_type)((0,_fable_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.array_type)(_fable_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.string_type))], ["company_name", (0,_fable_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.option_type)((0,_fable_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.array_type)(_fable_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.string_type))], ["vat_number", (0,_fable_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.option_type)((0,_fable_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.array_type)(_fable_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.string_type))], ["address", (0,_fable_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.option_type)((0,_fable_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.array_type)(_fable_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.string_type))], ["city", (0,_fable_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.option_type)((0,_fable_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.array_type)(_fable_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.string_type))], ["zip_code", (0,_fable_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.option_type)((0,_fable_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.array_type)(_fable_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.string_type))], ["country", (0,_fable_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.option_type)((0,_fable_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.array_type)(_fable_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.string_type))], ["email_address", (0,_fable_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.option_type)((0,_fable_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.array_type)(_fable_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.string_type))], ["phone", (0,_fable_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.option_type)((0,_fable_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.array_type)(_fable_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.string_type))], ["topic", (0,_fable_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.option_type)((0,_fable_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.array_type)(_fable_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.string_type))], ["budget", (0,_fable_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.option_type)((0,_fable_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.array_type)(_fable_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.string_type))], ["subject", (0,_fable_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.option_type)((0,_fable_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.array_type)(_fable_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.string_type))], ["q1", (0,_fable_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.option_type)((0,_fable_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.array_type)(_fable_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.string_type))], ["q2", (0,_fable_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.option_type)((0,_fable_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.array_type)(_fable_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.string_type))], ["q3", (0,_fable_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.option_type)((0,_fable_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.array_type)(_fable_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.string_type))], ["q4", (0,_fable_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.option_type)((0,_fable_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.array_type)(_fable_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.string_type))], ["q5", (0,_fable_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.option_type)((0,_fable_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.array_type)(_fable_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.string_type))], ["q6", (0,_fable_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.option_type)((0,_fable_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.array_type)(_fable_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.string_type))], ["q7", (0,_fable_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.option_type)((0,_fable_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.array_type)(_fable_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.string_type))], ["q8", (0,_fable_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.option_type)((0,_fable_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.array_type)(_fable_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.string_type))], ["q9", (0,_fable_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.option_type)((0,_fable_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.array_type)(_fable_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.string_type))], ["gdpr_consent", (0,_fable_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.option_type)((0,_fable_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.array_type)(_fable_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.string_type))]]);
+}
+class ValidationErrorResponse extends _fable_fable_library_3_1_1_Types_js__WEBPACK_IMPORTED_MODULE_0__.Record {
+  constructor(errors, message) {
+    super();
+    this.errors = errors;
+    this.message = message;
+  }
+
+}
+function ValidationErrorResponse$reflection() {
+  return (0,_fable_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.record_type)("GetStarted.ValidationErrorResponse", [], ValidationErrorResponse, () => [["errors", ErrorFields$reflection()], ["message", _fable_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.string_type]]);
+}
 class FormFields extends _fable_fable_library_3_1_1_Types_js__WEBPACK_IMPORTED_MODULE_0__.Record {
   constructor(first_name, last_name, company_name, vat_number, address, city, zip_code, country, email_address, phone, topic, budget, subject, q1, q2, q3, q4, q5, q6, q7, q8, q9, gdpr_consent) {
     super();
@@ -14935,13 +28685,21 @@ class FormFields extends _fable_fable_library_3_1_1_Types_js__WEBPACK_IMPORTED_M
 
 }
 function FormFields$reflection() {
-  return (0,_fable_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_2__.record_type)("GetStarted.FormFields", [], FormFields, () => [["first_name", (0,_Main_fs_js__WEBPACK_IMPORTED_MODULE_1__.Field$reflection)()], ["last_name", (0,_Main_fs_js__WEBPACK_IMPORTED_MODULE_1__.Field$reflection)()], ["company_name", (0,_Main_fs_js__WEBPACK_IMPORTED_MODULE_1__.Field$reflection)()], ["vat_number", (0,_Main_fs_js__WEBPACK_IMPORTED_MODULE_1__.Field$reflection)()], ["address", (0,_Main_fs_js__WEBPACK_IMPORTED_MODULE_1__.Field$reflection)()], ["city", (0,_Main_fs_js__WEBPACK_IMPORTED_MODULE_1__.Field$reflection)()], ["zip_code", (0,_Main_fs_js__WEBPACK_IMPORTED_MODULE_1__.Field$reflection)()], ["country", (0,_Main_fs_js__WEBPACK_IMPORTED_MODULE_1__.Field$reflection)()], ["email_address", (0,_Main_fs_js__WEBPACK_IMPORTED_MODULE_1__.Field$reflection)()], ["phone", (0,_Main_fs_js__WEBPACK_IMPORTED_MODULE_1__.Field$reflection)()], ["topic", (0,_Main_fs_js__WEBPACK_IMPORTED_MODULE_1__.Field$reflection)()], ["budget", (0,_Main_fs_js__WEBPACK_IMPORTED_MODULE_1__.Field$reflection)()], ["subject", (0,_Main_fs_js__WEBPACK_IMPORTED_MODULE_1__.Field$reflection)()], ["q1", (0,_Main_fs_js__WEBPACK_IMPORTED_MODULE_1__.Field$reflection)()], ["q2", (0,_Main_fs_js__WEBPACK_IMPORTED_MODULE_1__.Field$reflection)()], ["q3", (0,_Main_fs_js__WEBPACK_IMPORTED_MODULE_1__.Field$reflection)()], ["q4", (0,_Main_fs_js__WEBPACK_IMPORTED_MODULE_1__.Field$reflection)()], ["q5", (0,_Main_fs_js__WEBPACK_IMPORTED_MODULE_1__.Field$reflection)()], ["q6", (0,_Main_fs_js__WEBPACK_IMPORTED_MODULE_1__.Field$reflection)()], ["q7", (0,_Main_fs_js__WEBPACK_IMPORTED_MODULE_1__.Field$reflection)()], ["q8", (0,_Main_fs_js__WEBPACK_IMPORTED_MODULE_1__.Field$reflection)()], ["q9", (0,_Main_fs_js__WEBPACK_IMPORTED_MODULE_1__.Field$reflection)()], ["gdpr_consent", (0,_Main_fs_js__WEBPACK_IMPORTED_MODULE_1__.BooleanField$reflection)()]]);
+  return (0,_fable_fable_library_3_1_1_Reflection_js__WEBPACK_IMPORTED_MODULE_1__.record_type)("GetStarted.FormFields", [], FormFields, () => [["first_name", (0,_Main_fs_js__WEBPACK_IMPORTED_MODULE_2__.Field$reflection)()], ["last_name", (0,_Main_fs_js__WEBPACK_IMPORTED_MODULE_2__.Field$reflection)()], ["company_name", (0,_Main_fs_js__WEBPACK_IMPORTED_MODULE_2__.Field$reflection)()], ["vat_number", (0,_Main_fs_js__WEBPACK_IMPORTED_MODULE_2__.Field$reflection)()], ["address", (0,_Main_fs_js__WEBPACK_IMPORTED_MODULE_2__.Field$reflection)()], ["city", (0,_Main_fs_js__WEBPACK_IMPORTED_MODULE_2__.Field$reflection)()], ["zip_code", (0,_Main_fs_js__WEBPACK_IMPORTED_MODULE_2__.Field$reflection)()], ["country", (0,_Main_fs_js__WEBPACK_IMPORTED_MODULE_2__.Field$reflection)()], ["email_address", (0,_Main_fs_js__WEBPACK_IMPORTED_MODULE_2__.Field$reflection)()], ["phone", (0,_Main_fs_js__WEBPACK_IMPORTED_MODULE_2__.Field$reflection)()], ["topic", (0,_Main_fs_js__WEBPACK_IMPORTED_MODULE_2__.Field$reflection)()], ["budget", (0,_Main_fs_js__WEBPACK_IMPORTED_MODULE_2__.Field$reflection)()], ["subject", (0,_Main_fs_js__WEBPACK_IMPORTED_MODULE_2__.Field$reflection)()], ["q1", (0,_Main_fs_js__WEBPACK_IMPORTED_MODULE_2__.Field$reflection)()], ["q2", (0,_Main_fs_js__WEBPACK_IMPORTED_MODULE_2__.Field$reflection)()], ["q3", (0,_Main_fs_js__WEBPACK_IMPORTED_MODULE_2__.Field$reflection)()], ["q4", (0,_Main_fs_js__WEBPACK_IMPORTED_MODULE_2__.Field$reflection)()], ["q5", (0,_Main_fs_js__WEBPACK_IMPORTED_MODULE_2__.Field$reflection)()], ["q6", (0,_Main_fs_js__WEBPACK_IMPORTED_MODULE_2__.Field$reflection)()], ["q7", (0,_Main_fs_js__WEBPACK_IMPORTED_MODULE_2__.Field$reflection)()], ["q8", (0,_Main_fs_js__WEBPACK_IMPORTED_MODULE_2__.Field$reflection)()], ["q9", (0,_Main_fs_js__WEBPACK_IMPORTED_MODULE_2__.Field$reflection)()], ["gdpr_consent", (0,_Main_fs_js__WEBPACK_IMPORTED_MODULE_2__.BooleanField$reflection)()]]);
+}
+function getValueOrReturnEmptyString(errorField) {
+  if (errorField == null) {
+    return "";
+  } else {
+    const value = errorField;
+    return value[0];
+  }
 }
 function GetStarted() {
   const patternInput = (0,_fable_Feliz_1_40_0_React_fs_js__WEBPACK_IMPORTED_MODULE_3__.useFeliz_React__React_useState_Static_1505)(false);
   const setSent = patternInput[1];
   const sent = patternInput[0];
-  const patternInput_1 = (0,_fable_Feliz_1_40_0_React_fs_js__WEBPACK_IMPORTED_MODULE_3__.useFeliz_React__React_useState_Static_1505)(new FormFields(new _Main_fs_js__WEBPACK_IMPORTED_MODULE_1__.Field("", ""), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_1__.Field("", ""), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_1__.Field("", ""), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_1__.Field("", ""), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_1__.Field("", ""), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_1__.Field("", ""), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_1__.Field("", ""), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_1__.Field("", ""), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_1__.Field("", ""), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_1__.Field("", ""), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_1__.Field("", ""), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_1__.Field("", ""), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_1__.Field("", ""), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_1__.Field("", ""), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_1__.Field("", ""), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_1__.Field("", ""), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_1__.Field("", ""), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_1__.Field("", ""), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_1__.Field("", ""), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_1__.Field("", ""), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_1__.Field("", ""), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_1__.Field("", ""), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_1__.BooleanField("", false)));
+  const patternInput_1 = (0,_fable_Feliz_1_40_0_React_fs_js__WEBPACK_IMPORTED_MODULE_3__.useFeliz_React__React_useState_Static_1505)(new FormFields(new _Main_fs_js__WEBPACK_IMPORTED_MODULE_2__.Field("", ""), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_2__.Field("", ""), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_2__.Field("", ""), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_2__.Field("", ""), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_2__.Field("", ""), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_2__.Field("", ""), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_2__.Field("", ""), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_2__.Field("", ""), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_2__.Field("", ""), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_2__.Field("", ""), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_2__.Field("", ""), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_2__.Field("", ""), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_2__.Field("", ""), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_2__.Field("", ""), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_2__.Field("", ""), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_2__.Field("", ""), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_2__.Field("", ""), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_2__.Field("", ""), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_2__.Field("", ""), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_2__.Field("", ""), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_2__.Field("", ""), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_2__.Field("", ""), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_2__.BooleanField("", false)));
   const setFormFields = patternInput_1[1];
   const formFields = patternInput_1[0];
 
@@ -14953,139 +28711,139 @@ function GetStarted() {
     switch (matchValue) {
       case "first_name":
         {
-          updatedFormFields = new FormFields(new _Main_fs_js__WEBPACK_IMPORTED_MODULE_1__.Field("", input.value), formFields.last_name, formFields.company_name, formFields.vat_number, formFields.address, formFields.city, formFields.zip_code, formFields.country, formFields.email_address, formFields.phone, formFields.topic, formFields.budget, formFields.subject, formFields.q1, formFields.q2, formFields.q3, formFields.q4, formFields.q5, formFields.q6, formFields.q7, formFields.q8, formFields.q9, formFields.gdpr_consent);
+          updatedFormFields = new FormFields(new _Main_fs_js__WEBPACK_IMPORTED_MODULE_2__.Field("", input.value), formFields.last_name, formFields.company_name, formFields.vat_number, formFields.address, formFields.city, formFields.zip_code, formFields.country, formFields.email_address, formFields.phone, formFields.topic, formFields.budget, formFields.subject, formFields.q1, formFields.q2, formFields.q3, formFields.q4, formFields.q5, formFields.q6, formFields.q7, formFields.q8, formFields.q9, formFields.gdpr_consent);
           break;
         }
 
       case "last_name":
         {
-          updatedFormFields = new FormFields(formFields.first_name, new _Main_fs_js__WEBPACK_IMPORTED_MODULE_1__.Field("", input.value), formFields.company_name, formFields.vat_number, formFields.address, formFields.city, formFields.zip_code, formFields.country, formFields.email_address, formFields.phone, formFields.topic, formFields.budget, formFields.subject, formFields.q1, formFields.q2, formFields.q3, formFields.q4, formFields.q5, formFields.q6, formFields.q7, formFields.q8, formFields.q9, formFields.gdpr_consent);
+          updatedFormFields = new FormFields(formFields.first_name, new _Main_fs_js__WEBPACK_IMPORTED_MODULE_2__.Field("", input.value), formFields.company_name, formFields.vat_number, formFields.address, formFields.city, formFields.zip_code, formFields.country, formFields.email_address, formFields.phone, formFields.topic, formFields.budget, formFields.subject, formFields.q1, formFields.q2, formFields.q3, formFields.q4, formFields.q5, formFields.q6, formFields.q7, formFields.q8, formFields.q9, formFields.gdpr_consent);
           break;
         }
 
       case "company_name":
         {
-          updatedFormFields = new FormFields(formFields.first_name, formFields.last_name, new _Main_fs_js__WEBPACK_IMPORTED_MODULE_1__.Field("", input.value), formFields.vat_number, formFields.address, formFields.city, formFields.zip_code, formFields.country, formFields.email_address, formFields.phone, formFields.topic, formFields.budget, formFields.subject, formFields.q1, formFields.q2, formFields.q3, formFields.q4, formFields.q5, formFields.q6, formFields.q7, formFields.q8, formFields.q9, formFields.gdpr_consent);
+          updatedFormFields = new FormFields(formFields.first_name, formFields.last_name, new _Main_fs_js__WEBPACK_IMPORTED_MODULE_2__.Field("", input.value), formFields.vat_number, formFields.address, formFields.city, formFields.zip_code, formFields.country, formFields.email_address, formFields.phone, formFields.topic, formFields.budget, formFields.subject, formFields.q1, formFields.q2, formFields.q3, formFields.q4, formFields.q5, formFields.q6, formFields.q7, formFields.q8, formFields.q9, formFields.gdpr_consent);
           break;
         }
 
       case "vat_number":
         {
-          updatedFormFields = new FormFields(formFields.first_name, formFields.last_name, formFields.company_name, new _Main_fs_js__WEBPACK_IMPORTED_MODULE_1__.Field("", input.value), formFields.address, formFields.city, formFields.zip_code, formFields.country, formFields.email_address, formFields.phone, formFields.topic, formFields.budget, formFields.subject, formFields.q1, formFields.q2, formFields.q3, formFields.q4, formFields.q5, formFields.q6, formFields.q7, formFields.q8, formFields.q9, formFields.gdpr_consent);
+          updatedFormFields = new FormFields(formFields.first_name, formFields.last_name, formFields.company_name, new _Main_fs_js__WEBPACK_IMPORTED_MODULE_2__.Field("", input.value), formFields.address, formFields.city, formFields.zip_code, formFields.country, formFields.email_address, formFields.phone, formFields.topic, formFields.budget, formFields.subject, formFields.q1, formFields.q2, formFields.q3, formFields.q4, formFields.q5, formFields.q6, formFields.q7, formFields.q8, formFields.q9, formFields.gdpr_consent);
           break;
         }
 
       case "address":
         {
-          updatedFormFields = new FormFields(formFields.first_name, formFields.last_name, formFields.company_name, formFields.vat_number, new _Main_fs_js__WEBPACK_IMPORTED_MODULE_1__.Field("", input.value), formFields.city, formFields.zip_code, formFields.country, formFields.email_address, formFields.phone, formFields.topic, formFields.budget, formFields.subject, formFields.q1, formFields.q2, formFields.q3, formFields.q4, formFields.q5, formFields.q6, formFields.q7, formFields.q8, formFields.q9, formFields.gdpr_consent);
+          updatedFormFields = new FormFields(formFields.first_name, formFields.last_name, formFields.company_name, formFields.vat_number, new _Main_fs_js__WEBPACK_IMPORTED_MODULE_2__.Field("", input.value), formFields.city, formFields.zip_code, formFields.country, formFields.email_address, formFields.phone, formFields.topic, formFields.budget, formFields.subject, formFields.q1, formFields.q2, formFields.q3, formFields.q4, formFields.q5, formFields.q6, formFields.q7, formFields.q8, formFields.q9, formFields.gdpr_consent);
           break;
         }
 
       case "city":
         {
-          updatedFormFields = new FormFields(formFields.first_name, formFields.last_name, formFields.company_name, formFields.vat_number, formFields.address, new _Main_fs_js__WEBPACK_IMPORTED_MODULE_1__.Field("", input.value), formFields.zip_code, formFields.country, formFields.email_address, formFields.phone, formFields.topic, formFields.budget, formFields.subject, formFields.q1, formFields.q2, formFields.q3, formFields.q4, formFields.q5, formFields.q6, formFields.q7, formFields.q8, formFields.q9, formFields.gdpr_consent);
+          updatedFormFields = new FormFields(formFields.first_name, formFields.last_name, formFields.company_name, formFields.vat_number, formFields.address, new _Main_fs_js__WEBPACK_IMPORTED_MODULE_2__.Field("", input.value), formFields.zip_code, formFields.country, formFields.email_address, formFields.phone, formFields.topic, formFields.budget, formFields.subject, formFields.q1, formFields.q2, formFields.q3, formFields.q4, formFields.q5, formFields.q6, formFields.q7, formFields.q8, formFields.q9, formFields.gdpr_consent);
           break;
         }
 
       case "zip_code":
         {
-          updatedFormFields = new FormFields(formFields.first_name, formFields.last_name, formFields.company_name, formFields.vat_number, formFields.address, formFields.city, new _Main_fs_js__WEBPACK_IMPORTED_MODULE_1__.Field("", input.value), formFields.country, formFields.email_address, formFields.phone, formFields.topic, formFields.budget, formFields.subject, formFields.q1, formFields.q2, formFields.q3, formFields.q4, formFields.q5, formFields.q6, formFields.q7, formFields.q8, formFields.q9, formFields.gdpr_consent);
+          updatedFormFields = new FormFields(formFields.first_name, formFields.last_name, formFields.company_name, formFields.vat_number, formFields.address, formFields.city, new _Main_fs_js__WEBPACK_IMPORTED_MODULE_2__.Field("", input.value), formFields.country, formFields.email_address, formFields.phone, formFields.topic, formFields.budget, formFields.subject, formFields.q1, formFields.q2, formFields.q3, formFields.q4, formFields.q5, formFields.q6, formFields.q7, formFields.q8, formFields.q9, formFields.gdpr_consent);
           break;
         }
 
       case "country":
         {
-          updatedFormFields = new FormFields(formFields.first_name, formFields.last_name, formFields.company_name, formFields.vat_number, formFields.address, formFields.city, formFields.zip_code, new _Main_fs_js__WEBPACK_IMPORTED_MODULE_1__.Field("", input.value), formFields.email_address, formFields.phone, formFields.topic, formFields.budget, formFields.subject, formFields.q1, formFields.q2, formFields.q3, formFields.q4, formFields.q5, formFields.q6, formFields.q7, formFields.q8, formFields.q9, formFields.gdpr_consent);
+          updatedFormFields = new FormFields(formFields.first_name, formFields.last_name, formFields.company_name, formFields.vat_number, formFields.address, formFields.city, formFields.zip_code, new _Main_fs_js__WEBPACK_IMPORTED_MODULE_2__.Field("", input.value), formFields.email_address, formFields.phone, formFields.topic, formFields.budget, formFields.subject, formFields.q1, formFields.q2, formFields.q3, formFields.q4, formFields.q5, formFields.q6, formFields.q7, formFields.q8, formFields.q9, formFields.gdpr_consent);
           break;
         }
 
       case "email_address":
         {
-          updatedFormFields = new FormFields(formFields.first_name, formFields.last_name, formFields.company_name, formFields.vat_number, formFields.address, formFields.city, formFields.zip_code, formFields.country, new _Main_fs_js__WEBPACK_IMPORTED_MODULE_1__.Field("", input.value), formFields.phone, formFields.topic, formFields.budget, formFields.subject, formFields.q1, formFields.q2, formFields.q3, formFields.q4, formFields.q5, formFields.q6, formFields.q7, formFields.q8, formFields.q9, formFields.gdpr_consent);
+          updatedFormFields = new FormFields(formFields.first_name, formFields.last_name, formFields.company_name, formFields.vat_number, formFields.address, formFields.city, formFields.zip_code, formFields.country, new _Main_fs_js__WEBPACK_IMPORTED_MODULE_2__.Field("", input.value), formFields.phone, formFields.topic, formFields.budget, formFields.subject, formFields.q1, formFields.q2, formFields.q3, formFields.q4, formFields.q5, formFields.q6, formFields.q7, formFields.q8, formFields.q9, formFields.gdpr_consent);
           break;
         }
 
       case "phone":
         {
-          updatedFormFields = new FormFields(formFields.first_name, formFields.last_name, formFields.company_name, formFields.vat_number, formFields.address, formFields.city, formFields.zip_code, formFields.country, formFields.email_address, new _Main_fs_js__WEBPACK_IMPORTED_MODULE_1__.Field("", input.value), formFields.topic, formFields.budget, formFields.subject, formFields.q1, formFields.q2, formFields.q3, formFields.q4, formFields.q5, formFields.q6, formFields.q7, formFields.q8, formFields.q9, formFields.gdpr_consent);
+          updatedFormFields = new FormFields(formFields.first_name, formFields.last_name, formFields.company_name, formFields.vat_number, formFields.address, formFields.city, formFields.zip_code, formFields.country, formFields.email_address, new _Main_fs_js__WEBPACK_IMPORTED_MODULE_2__.Field("", input.value), formFields.topic, formFields.budget, formFields.subject, formFields.q1, formFields.q2, formFields.q3, formFields.q4, formFields.q5, formFields.q6, formFields.q7, formFields.q8, formFields.q9, formFields.gdpr_consent);
           break;
         }
 
       case "topic":
         {
-          updatedFormFields = new FormFields(formFields.first_name, formFields.last_name, formFields.company_name, formFields.vat_number, formFields.address, formFields.city, formFields.zip_code, formFields.country, formFields.email_address, formFields.phone, new _Main_fs_js__WEBPACK_IMPORTED_MODULE_1__.Field("", input.value), formFields.budget, formFields.subject, formFields.q1, formFields.q2, formFields.q3, formFields.q4, formFields.q5, formFields.q6, formFields.q7, formFields.q8, formFields.q9, formFields.gdpr_consent);
+          updatedFormFields = new FormFields(formFields.first_name, formFields.last_name, formFields.company_name, formFields.vat_number, formFields.address, formFields.city, formFields.zip_code, formFields.country, formFields.email_address, formFields.phone, new _Main_fs_js__WEBPACK_IMPORTED_MODULE_2__.Field("", input.value), formFields.budget, formFields.subject, formFields.q1, formFields.q2, formFields.q3, formFields.q4, formFields.q5, formFields.q6, formFields.q7, formFields.q8, formFields.q9, formFields.gdpr_consent);
           break;
         }
 
       case "budget":
         {
-          updatedFormFields = new FormFields(formFields.first_name, formFields.last_name, formFields.company_name, formFields.vat_number, formFields.address, formFields.city, formFields.zip_code, formFields.country, formFields.email_address, formFields.phone, formFields.topic, new _Main_fs_js__WEBPACK_IMPORTED_MODULE_1__.Field("", input.value), formFields.subject, formFields.q1, formFields.q2, formFields.q3, formFields.q4, formFields.q5, formFields.q6, formFields.q7, formFields.q8, formFields.q9, formFields.gdpr_consent);
+          updatedFormFields = new FormFields(formFields.first_name, formFields.last_name, formFields.company_name, formFields.vat_number, formFields.address, formFields.city, formFields.zip_code, formFields.country, formFields.email_address, formFields.phone, formFields.topic, new _Main_fs_js__WEBPACK_IMPORTED_MODULE_2__.Field("", input.value), formFields.subject, formFields.q1, formFields.q2, formFields.q3, formFields.q4, formFields.q5, formFields.q6, formFields.q7, formFields.q8, formFields.q9, formFields.gdpr_consent);
           break;
         }
 
       case "subject":
         {
-          updatedFormFields = new FormFields(formFields.first_name, formFields.last_name, formFields.company_name, formFields.vat_number, formFields.address, formFields.city, formFields.zip_code, formFields.country, formFields.email_address, formFields.phone, formFields.topic, formFields.budget, new _Main_fs_js__WEBPACK_IMPORTED_MODULE_1__.Field("", input.value), formFields.q1, formFields.q2, formFields.q3, formFields.q4, formFields.q5, formFields.q6, formFields.q7, formFields.q8, formFields.q9, formFields.gdpr_consent);
+          updatedFormFields = new FormFields(formFields.first_name, formFields.last_name, formFields.company_name, formFields.vat_number, formFields.address, formFields.city, formFields.zip_code, formFields.country, formFields.email_address, formFields.phone, formFields.topic, formFields.budget, new _Main_fs_js__WEBPACK_IMPORTED_MODULE_2__.Field("", input.value), formFields.q1, formFields.q2, formFields.q3, formFields.q4, formFields.q5, formFields.q6, formFields.q7, formFields.q8, formFields.q9, formFields.gdpr_consent);
           break;
         }
 
       case "q1":
         {
-          updatedFormFields = new FormFields(formFields.first_name, formFields.last_name, formFields.company_name, formFields.vat_number, formFields.address, formFields.city, formFields.zip_code, formFields.country, formFields.email_address, formFields.phone, formFields.topic, formFields.budget, formFields.subject, new _Main_fs_js__WEBPACK_IMPORTED_MODULE_1__.Field("", input.value), formFields.q2, formFields.q3, formFields.q4, formFields.q5, formFields.q6, formFields.q7, formFields.q8, formFields.q9, formFields.gdpr_consent);
+          updatedFormFields = new FormFields(formFields.first_name, formFields.last_name, formFields.company_name, formFields.vat_number, formFields.address, formFields.city, formFields.zip_code, formFields.country, formFields.email_address, formFields.phone, formFields.topic, formFields.budget, formFields.subject, new _Main_fs_js__WEBPACK_IMPORTED_MODULE_2__.Field("", input.value), formFields.q2, formFields.q3, formFields.q4, formFields.q5, formFields.q6, formFields.q7, formFields.q8, formFields.q9, formFields.gdpr_consent);
           break;
         }
 
       case "q2":
         {
-          updatedFormFields = new FormFields(formFields.first_name, formFields.last_name, formFields.company_name, formFields.vat_number, formFields.address, formFields.city, formFields.zip_code, formFields.country, formFields.email_address, formFields.phone, formFields.topic, formFields.budget, formFields.subject, formFields.q1, new _Main_fs_js__WEBPACK_IMPORTED_MODULE_1__.Field("", input.value), formFields.q3, formFields.q4, formFields.q5, formFields.q6, formFields.q7, formFields.q8, formFields.q9, formFields.gdpr_consent);
+          updatedFormFields = new FormFields(formFields.first_name, formFields.last_name, formFields.company_name, formFields.vat_number, formFields.address, formFields.city, formFields.zip_code, formFields.country, formFields.email_address, formFields.phone, formFields.topic, formFields.budget, formFields.subject, formFields.q1, new _Main_fs_js__WEBPACK_IMPORTED_MODULE_2__.Field("", input.value), formFields.q3, formFields.q4, formFields.q5, formFields.q6, formFields.q7, formFields.q8, formFields.q9, formFields.gdpr_consent);
           break;
         }
 
       case "q3":
         {
-          updatedFormFields = new FormFields(formFields.first_name, formFields.last_name, formFields.company_name, formFields.vat_number, formFields.address, formFields.city, formFields.zip_code, formFields.country, formFields.email_address, formFields.phone, formFields.topic, formFields.budget, formFields.subject, formFields.q1, formFields.q2, new _Main_fs_js__WEBPACK_IMPORTED_MODULE_1__.Field("", input.value), formFields.q4, formFields.q5, formFields.q6, formFields.q7, formFields.q8, formFields.q9, formFields.gdpr_consent);
+          updatedFormFields = new FormFields(formFields.first_name, formFields.last_name, formFields.company_name, formFields.vat_number, formFields.address, formFields.city, formFields.zip_code, formFields.country, formFields.email_address, formFields.phone, formFields.topic, formFields.budget, formFields.subject, formFields.q1, formFields.q2, new _Main_fs_js__WEBPACK_IMPORTED_MODULE_2__.Field("", input.value), formFields.q4, formFields.q5, formFields.q6, formFields.q7, formFields.q8, formFields.q9, formFields.gdpr_consent);
           break;
         }
 
       case "q4":
         {
-          updatedFormFields = new FormFields(formFields.first_name, formFields.last_name, formFields.company_name, formFields.vat_number, formFields.address, formFields.city, formFields.zip_code, formFields.country, formFields.email_address, formFields.phone, formFields.topic, formFields.budget, formFields.subject, formFields.q1, formFields.q2, formFields.q3, new _Main_fs_js__WEBPACK_IMPORTED_MODULE_1__.Field("", input.value), formFields.q5, formFields.q6, formFields.q7, formFields.q8, formFields.q9, formFields.gdpr_consent);
+          updatedFormFields = new FormFields(formFields.first_name, formFields.last_name, formFields.company_name, formFields.vat_number, formFields.address, formFields.city, formFields.zip_code, formFields.country, formFields.email_address, formFields.phone, formFields.topic, formFields.budget, formFields.subject, formFields.q1, formFields.q2, formFields.q3, new _Main_fs_js__WEBPACK_IMPORTED_MODULE_2__.Field("", input.value), formFields.q5, formFields.q6, formFields.q7, formFields.q8, formFields.q9, formFields.gdpr_consent);
           break;
         }
 
       case "q5":
         {
-          updatedFormFields = new FormFields(formFields.first_name, formFields.last_name, formFields.company_name, formFields.vat_number, formFields.address, formFields.city, formFields.zip_code, formFields.country, formFields.email_address, formFields.phone, formFields.topic, formFields.budget, formFields.subject, formFields.q1, formFields.q2, formFields.q3, formFields.q4, new _Main_fs_js__WEBPACK_IMPORTED_MODULE_1__.Field("", input.value), formFields.q6, formFields.q7, formFields.q8, formFields.q9, formFields.gdpr_consent);
+          updatedFormFields = new FormFields(formFields.first_name, formFields.last_name, formFields.company_name, formFields.vat_number, formFields.address, formFields.city, formFields.zip_code, formFields.country, formFields.email_address, formFields.phone, formFields.topic, formFields.budget, formFields.subject, formFields.q1, formFields.q2, formFields.q3, formFields.q4, new _Main_fs_js__WEBPACK_IMPORTED_MODULE_2__.Field("", input.value), formFields.q6, formFields.q7, formFields.q8, formFields.q9, formFields.gdpr_consent);
           break;
         }
 
       case "q6":
         {
-          updatedFormFields = new FormFields(formFields.first_name, formFields.last_name, formFields.company_name, formFields.vat_number, formFields.address, formFields.city, formFields.zip_code, formFields.country, formFields.email_address, formFields.phone, formFields.topic, formFields.budget, formFields.subject, formFields.q1, formFields.q2, formFields.q3, formFields.q4, formFields.q5, new _Main_fs_js__WEBPACK_IMPORTED_MODULE_1__.Field("", input.value), formFields.q7, formFields.q8, formFields.q9, formFields.gdpr_consent);
+          updatedFormFields = new FormFields(formFields.first_name, formFields.last_name, formFields.company_name, formFields.vat_number, formFields.address, formFields.city, formFields.zip_code, formFields.country, formFields.email_address, formFields.phone, formFields.topic, formFields.budget, formFields.subject, formFields.q1, formFields.q2, formFields.q3, formFields.q4, formFields.q5, new _Main_fs_js__WEBPACK_IMPORTED_MODULE_2__.Field("", input.value), formFields.q7, formFields.q8, formFields.q9, formFields.gdpr_consent);
           break;
         }
 
       case "q7":
         {
-          updatedFormFields = new FormFields(formFields.first_name, formFields.last_name, formFields.company_name, formFields.vat_number, formFields.address, formFields.city, formFields.zip_code, formFields.country, formFields.email_address, formFields.phone, formFields.topic, formFields.budget, formFields.subject, formFields.q1, formFields.q2, formFields.q3, formFields.q4, formFields.q5, formFields.q6, new _Main_fs_js__WEBPACK_IMPORTED_MODULE_1__.Field("", input.value), formFields.q8, formFields.q9, formFields.gdpr_consent);
+          updatedFormFields = new FormFields(formFields.first_name, formFields.last_name, formFields.company_name, formFields.vat_number, formFields.address, formFields.city, formFields.zip_code, formFields.country, formFields.email_address, formFields.phone, formFields.topic, formFields.budget, formFields.subject, formFields.q1, formFields.q2, formFields.q3, formFields.q4, formFields.q5, formFields.q6, new _Main_fs_js__WEBPACK_IMPORTED_MODULE_2__.Field("", input.value), formFields.q8, formFields.q9, formFields.gdpr_consent);
           break;
         }
 
       case "q8":
         {
-          updatedFormFields = new FormFields(formFields.first_name, formFields.last_name, formFields.company_name, formFields.vat_number, formFields.address, formFields.city, formFields.zip_code, formFields.country, formFields.email_address, formFields.phone, formFields.topic, formFields.budget, formFields.subject, formFields.q1, formFields.q2, formFields.q3, formFields.q4, formFields.q5, formFields.q6, formFields.q7, new _Main_fs_js__WEBPACK_IMPORTED_MODULE_1__.Field("", input.value), formFields.q9, formFields.gdpr_consent);
+          updatedFormFields = new FormFields(formFields.first_name, formFields.last_name, formFields.company_name, formFields.vat_number, formFields.address, formFields.city, formFields.zip_code, formFields.country, formFields.email_address, formFields.phone, formFields.topic, formFields.budget, formFields.subject, formFields.q1, formFields.q2, formFields.q3, formFields.q4, formFields.q5, formFields.q6, formFields.q7, new _Main_fs_js__WEBPACK_IMPORTED_MODULE_2__.Field("", input.value), formFields.q9, formFields.gdpr_consent);
           break;
         }
 
       case "q9":
         {
-          updatedFormFields = new FormFields(formFields.first_name, formFields.last_name, formFields.company_name, formFields.vat_number, formFields.address, formFields.city, formFields.zip_code, formFields.country, formFields.email_address, formFields.phone, formFields.topic, formFields.budget, formFields.subject, formFields.q1, formFields.q2, formFields.q3, formFields.q4, formFields.q5, formFields.q6, formFields.q7, formFields.q8, new _Main_fs_js__WEBPACK_IMPORTED_MODULE_1__.Field("", input.value), formFields.gdpr_consent);
+          updatedFormFields = new FormFields(formFields.first_name, formFields.last_name, formFields.company_name, formFields.vat_number, formFields.address, formFields.city, formFields.zip_code, formFields.country, formFields.email_address, formFields.phone, formFields.topic, formFields.budget, formFields.subject, formFields.q1, formFields.q2, formFields.q3, formFields.q4, formFields.q5, formFields.q6, formFields.q7, formFields.q8, new _Main_fs_js__WEBPACK_IMPORTED_MODULE_2__.Field("", input.value), formFields.gdpr_consent);
           break;
         }
 
       case "gdpr_consent":
         {
-          updatedFormFields = new FormFields(formFields.first_name, formFields.last_name, formFields.company_name, formFields.vat_number, formFields.address, formFields.city, formFields.zip_code, formFields.country, formFields.email_address, formFields.phone, formFields.topic, formFields.budget, formFields.subject, formFields.q1, formFields.q2, formFields.q3, formFields.q4, formFields.q5, formFields.q6, formFields.q7, formFields.q8, formFields.q9, new _Main_fs_js__WEBPACK_IMPORTED_MODULE_1__.BooleanField("", input.checked));
+          updatedFormFields = new FormFields(formFields.first_name, formFields.last_name, formFields.company_name, formFields.vat_number, formFields.address, formFields.city, formFields.zip_code, formFields.country, formFields.email_address, formFields.phone, formFields.topic, formFields.budget, formFields.subject, formFields.q1, formFields.q2, formFields.q3, formFields.q4, formFields.q5, formFields.q6, formFields.q7, formFields.q8, formFields.q9, new _Main_fs_js__WEBPACK_IMPORTED_MODULE_2__.BooleanField("", input.checked));
           break;
         }
 
@@ -15101,45 +28859,102 @@ function GetStarted() {
   };
 
   const clearErrors = () => {
-    setFormFields(new FormFields(new _Main_fs_js__WEBPACK_IMPORTED_MODULE_1__.Field("", formFields.first_name.value), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_1__.Field("", formFields.last_name.value), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_1__.Field("", formFields.company_name.value), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_1__.Field("", formFields.vat_number.value), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_1__.Field("", formFields.address.value), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_1__.Field("", formFields.city.value), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_1__.Field("", formFields.zip_code.value), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_1__.Field("", formFields.country.value), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_1__.Field("", formFields.email_address.value), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_1__.Field("", formFields.phone.value), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_1__.Field("", formFields.topic.value), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_1__.Field("", formFields.budget.value), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_1__.Field("", formFields.subject.value), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_1__.Field("", formFields.q1.value), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_1__.Field("", formFields.q2.value), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_1__.Field("", formFields.q3.value), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_1__.Field("", formFields.q4.value), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_1__.Field("", formFields.q5.value), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_1__.Field("", formFields.q6.value), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_1__.Field("", formFields.q7.value), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_1__.Field("", formFields.q8.value), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_1__.Field("", formFields.q9.value), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_1__.BooleanField("", formFields.gdpr_consent.value)));
+    setFormFields(new FormFields(new _Main_fs_js__WEBPACK_IMPORTED_MODULE_2__.Field("", formFields.first_name.value), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_2__.Field("", formFields.last_name.value), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_2__.Field("", formFields.company_name.value), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_2__.Field("", formFields.vat_number.value), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_2__.Field("", formFields.address.value), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_2__.Field("", formFields.city.value), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_2__.Field("", formFields.zip_code.value), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_2__.Field("", formFields.country.value), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_2__.Field("", formFields.email_address.value), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_2__.Field("", formFields.phone.value), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_2__.Field("", formFields.topic.value), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_2__.Field("", formFields.budget.value), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_2__.Field("", formFields.subject.value), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_2__.Field("", formFields.q1.value), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_2__.Field("", formFields.q2.value), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_2__.Field("", formFields.q3.value), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_2__.Field("", formFields.q4.value), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_2__.Field("", formFields.q5.value), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_2__.Field("", formFields.q6.value), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_2__.Field("", formFields.q7.value), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_2__.Field("", formFields.q8.value), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_2__.Field("", formFields.q9.value), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_2__.BooleanField("", formFields.gdpr_consent.value)));
+  };
+
+  const updateFormFieldWithErrors = errors => {
+    setFormFields(new FormFields(new _Main_fs_js__WEBPACK_IMPORTED_MODULE_2__.Field(getValueOrReturnEmptyString(errors.first_name), formFields.first_name.value), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_2__.Field(getValueOrReturnEmptyString(errors.last_name), formFields.last_name.value), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_2__.Field(getValueOrReturnEmptyString(errors.company_name), formFields.company_name.value), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_2__.Field(getValueOrReturnEmptyString(errors.vat_number), formFields.vat_number.value), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_2__.Field(getValueOrReturnEmptyString(errors.address), formFields.address.value), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_2__.Field(getValueOrReturnEmptyString(errors.city), formFields.city.value), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_2__.Field(getValueOrReturnEmptyString(errors.zip_code), formFields.zip_code.value), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_2__.Field(getValueOrReturnEmptyString(errors.country), formFields.country.value), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_2__.Field(getValueOrReturnEmptyString(errors.email_address), formFields.email_address.value), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_2__.Field(getValueOrReturnEmptyString(errors.phone), formFields.phone.value), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_2__.Field(getValueOrReturnEmptyString(errors.topic), formFields.topic.value), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_2__.Field(getValueOrReturnEmptyString(errors.budget), formFields.budget.value), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_2__.Field(getValueOrReturnEmptyString(errors.subject), formFields.subject.value), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_2__.Field(getValueOrReturnEmptyString(errors.q1), formFields.q1.value), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_2__.Field(getValueOrReturnEmptyString(errors.q2), formFields.q2.value), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_2__.Field(getValueOrReturnEmptyString(errors.q3), formFields.q3.value), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_2__.Field(getValueOrReturnEmptyString(errors.q4), formFields.q4.value), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_2__.Field(getValueOrReturnEmptyString(errors.q5), formFields.q5.value), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_2__.Field(getValueOrReturnEmptyString(errors.q6), formFields.q6.value), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_2__.Field(getValueOrReturnEmptyString(errors.q7), formFields.q7.value), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_2__.Field(getValueOrReturnEmptyString(errors.q8), formFields.q8.value), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_2__.Field(getValueOrReturnEmptyString(errors.q9), formFields.q9.value), new _Main_fs_js__WEBPACK_IMPORTED_MODULE_2__.BooleanField(getValueOrReturnEmptyString(errors.gdpr_consent), formFields.gdpr_consent.value)));
   };
 
   const handleSubmit = event_1 => {
     event_1.preventDefault();
 
-    if (formFields.gdpr_consent.value) {
-      clearErrors();
-      console.log((0,_fable_fable_library_3_1_1_Option_js__WEBPACK_IMPORTED_MODULE_5__.some)("form submitted"));
-    }
+    if (formFields.gdpr_consent.value === false) {}
+
+    clearErrors();
+    const xCsrfToken = document.getElementsByName("csrf-token")[0].getAttribute("content");
+    (0,_fable_fable_library_3_1_1_Async_js__WEBPACK_IMPORTED_MODULE_5__.startImmediate)(_fable_fable_library_3_1_1_AsyncBuilder_js__WEBPACK_IMPORTED_MODULE_6__.singleton.Delay(() => {
+      let req_3, req_2;
+      return _fable_fable_library_3_1_1_AsyncBuilder_js__WEBPACK_IMPORTED_MODULE_6__.singleton.Bind((0,_fable_Fable_SimpleHttp_3_0_0_Http_fs_js__WEBPACK_IMPORTED_MODULE_7__.Http_send)((req_3 = (req_2 = (0,_fable_Fable_SimpleHttp_3_0_0_Http_fs_js__WEBPACK_IMPORTED_MODULE_7__.Http_content)(new _fable_Fable_SimpleHttp_3_0_0_Types_fs_js__WEBPACK_IMPORTED_MODULE_8__.BodyContent(1, "{ \"first_name\": \"test\" }"), (0,_fable_Fable_SimpleHttp_3_0_0_Http_fs_js__WEBPACK_IMPORTED_MODULE_7__.Http_method)(new _fable_Fable_SimpleHttp_3_0_0_Types_fs_js__WEBPACK_IMPORTED_MODULE_8__.HttpMethod(1), (0,_fable_Fable_SimpleHttp_3_0_0_Http_fs_js__WEBPACK_IMPORTED_MODULE_7__.Http_request)("/start"))), (0,_fable_Fable_SimpleHttp_3_0_0_Http_fs_js__WEBPACK_IMPORTED_MODULE_7__.Http_header)((0,_fable_Fable_SimpleHttp_3_0_0_Http_fs_js__WEBPACK_IMPORTED_MODULE_7__.Headers_contentType)("application/json"), req_2)), (0,_fable_Fable_SimpleHttp_3_0_0_Http_fs_js__WEBPACK_IMPORTED_MODULE_7__.Http_header)((0,_fable_Fable_SimpleHttp_3_0_0_Http_fs_js__WEBPACK_IMPORTED_MODULE_7__.Headers_create)("X-CSRF-TOKEN", xCsrfToken), req_3))), _arg1 => {
+        let matchValue_2, inputJson, typeInfo;
+        const response = _arg1;
+        const matchValue_1 = response.statusCode | 0;
+
+        switch (matchValue_1) {
+          case 200:
+            {
+              setSent(true);
+              return _fable_fable_library_3_1_1_AsyncBuilder_js__WEBPACK_IMPORTED_MODULE_6__.singleton.Zero();
+            }
+
+          case 419:
+            {
+              window.alert((0,_fable_fable_library_3_1_1_Option_js__WEBPACK_IMPORTED_MODULE_9__.some)("Session expired. The page is going to refresh. Try again."));
+              window.location.reload();
+              return _fable_fable_library_3_1_1_AsyncBuilder_js__WEBPACK_IMPORTED_MODULE_6__.singleton.Zero();
+            }
+
+          case 422:
+            {
+              let result;
+
+              try {
+                result = new _fable_fable_library_3_1_1_Choice_js__WEBPACK_IMPORTED_MODULE_10__.FSharpResult$2(0, (matchValue_2 = (0,_fable_Fable_SimpleJson_3_19_0_SimpleJson_fs_js__WEBPACK_IMPORTED_MODULE_11__.SimpleJson_tryParse)(response.responseText), matchValue_2 != null ? (inputJson = matchValue_2, (typeInfo = (0,_fable_Fable_SimpleJson_3_19_0_TypeInfo_Converter_fs_js__WEBPACK_IMPORTED_MODULE_12__.createTypeInfo)(ValidationErrorResponse$reflection()), (0,_fable_Fable_SimpleJson_3_19_0_Json_Converter_fs_js__WEBPACK_IMPORTED_MODULE_13__.Convert_fromJson)(inputJson, typeInfo))) : (() => {
+                  throw new Error("Couldn\u0027t parse the input JSON string because it seems to be invalid");
+                })()));
+              } catch (ex) {
+                result = new _fable_fable_library_3_1_1_Choice_js__WEBPACK_IMPORTED_MODULE_10__.FSharpResult$2(1, ex.message);
+              }
+
+              if (result.tag === 0) {
+                const data = result.fields[0];
+                updateFormFieldWithErrors(data.errors);
+                return _fable_fable_library_3_1_1_AsyncBuilder_js__WEBPACK_IMPORTED_MODULE_6__.singleton.Zero();
+              } else {
+                const errorMsg = result.fields[0];
+                console.log((0,_fable_fable_library_3_1_1_Option_js__WEBPACK_IMPORTED_MODULE_9__.some)(errorMsg));
+                return _fable_fable_library_3_1_1_AsyncBuilder_js__WEBPACK_IMPORTED_MODULE_6__.singleton.Zero();
+              }
+            }
+
+          default:
+            {
+              window.alert((0,_fable_fable_library_3_1_1_Option_js__WEBPACK_IMPORTED_MODULE_9__.some)("An unexpected error has occured! Send me an email to report this. Thank you."));
+              window.location.reload();
+              return _fable_fable_library_3_1_1_AsyncBuilder_js__WEBPACK_IMPORTED_MODULE_6__.singleton.Zero();
+            }
+        }
+      });
+    }));
   };
 
-  const children = (0,_fable_fable_library_3_1_1_List_js__WEBPACK_IMPORTED_MODULE_6__.ofSeq)((0,_fable_fable_library_3_1_1_Seq_js__WEBPACK_IMPORTED_MODULE_7__.delay)(() => sent === true ? (0,_fable_fable_library_3_1_1_Seq_js__WEBPACK_IMPORTED_MODULE_7__.singleton)( /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_8__.createElement)("div", {
+  const children = (0,_fable_fable_library_3_1_1_List_js__WEBPACK_IMPORTED_MODULE_14__.ofSeq)((0,_fable_fable_library_3_1_1_Seq_js__WEBPACK_IMPORTED_MODULE_15__.delay)(() => sent === true ? (0,_fable_fable_library_3_1_1_Seq_js__WEBPACK_IMPORTED_MODULE_15__.singleton)( /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_16__.createElement)("div", {
     className: "row mb-4",
-    children: _fable_Feliz_1_40_0_Interop_fs_js__WEBPACK_IMPORTED_MODULE_9__.Interop_reactApi.Children.toArray([/*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_8__.createElement)("div", {
+    children: _fable_Feliz_1_40_0_Interop_fs_js__WEBPACK_IMPORTED_MODULE_17__.Interop_reactApi.Children.toArray([/*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_16__.createElement)("div", {
       className: "col-lg-4 text-center mb-5",
-      children: _fable_Feliz_1_40_0_Interop_fs_js__WEBPACK_IMPORTED_MODULE_9__.Interop_reactApi.Children.toArray([/*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_8__.createElement)("i", {
+      children: _fable_Feliz_1_40_0_Interop_fs_js__WEBPACK_IMPORTED_MODULE_17__.Interop_reactApi.Children.toArray([/*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_16__.createElement)("i", {
         ["aria-hidden"]: true,
         className: "fas fa-globe-europe start-success-icon"
       })])
-    }), /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_8__.createElement)("div", {
+    }), /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_16__.createElement)("div", {
       className: "cold-lg-8",
-      children: _fable_Feliz_1_40_0_Interop_fs_js__WEBPACK_IMPORTED_MODULE_9__.Interop_reactApi.Children.toArray([/*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_8__.createElement)("h2", {
+      children: _fable_Feliz_1_40_0_Interop_fs_js__WEBPACK_IMPORTED_MODULE_17__.Interop_reactApi.Children.toArray([/*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_16__.createElement)("h2", {
         className: "display-2",
         children: "Success"
-      }), /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_8__.createElement)("p", {
+      }), /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_16__.createElement)("p", {
         className: "lead",
         children: "Thank you for trusting me."
-      }), /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_8__.createElement)("p", {
+      }), /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_16__.createElement)("p", {
         children: ["I have received your project details and I will contact you as soon as possible."]
       })])
     })])
-  })) : (0,_fable_fable_library_3_1_1_Seq_js__WEBPACK_IMPORTED_MODULE_7__.singleton)( /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_8__.createElement)("form", {
+  })) : (0,_fable_fable_library_3_1_1_Seq_js__WEBPACK_IMPORTED_MODULE_15__.singleton)( /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_16__.createElement)("form", {
     onSubmit: handleSubmit,
-    children: _fable_Feliz_1_40_0_Interop_fs_js__WEBPACK_IMPORTED_MODULE_9__.Interop_reactApi.Children.toArray([/*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_8__.createElement)("div", {
+    children: _fable_Feliz_1_40_0_Interop_fs_js__WEBPACK_IMPORTED_MODULE_17__.Interop_reactApi.Children.toArray([/*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_16__.createElement)("div", {
       className: "row",
-      children: _fable_Feliz_1_40_0_Interop_fs_js__WEBPACK_IMPORTED_MODULE_9__.Interop_reactApi.Children.toArray([/*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_8__.createElement)("div", {
+      children: _fable_Feliz_1_40_0_Interop_fs_js__WEBPACK_IMPORTED_MODULE_17__.Interop_reactApi.Children.toArray([/*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_16__.createElement)("div", {
         className: "col-lg-7",
-        children: _fable_Feliz_1_40_0_Interop_fs_js__WEBPACK_IMPORTED_MODULE_9__.Interop_reactApi.Children.toArray([/*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_8__.createElement)(_ClientDetails_fs_js__WEBPACK_IMPORTED_MODULE_10__.ClientDetails, {
+        children: _fable_Feliz_1_40_0_Interop_fs_js__WEBPACK_IMPORTED_MODULE_17__.Interop_reactApi.Children.toArray([/*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_16__.createElement)(_ClientDetails_fs_js__WEBPACK_IMPORTED_MODULE_18__.ClientDetails, {
           onInputChange: handleInputChange,
           firstName: formFields.first_name,
           lastName: formFields.last_name,
@@ -15151,7 +28966,7 @@ function GetStarted() {
           country: formFields.country,
           emailAddress: formFields.email_address,
           phone: formFields.phone
-        }), /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_8__.createElement)(_ProjectDetails_fs_js__WEBPACK_IMPORTED_MODULE_11__.ProjectDetails, {
+        }), /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_16__.createElement)(_ProjectDetails_fs_js__WEBPACK_IMPORTED_MODULE_19__.ProjectDetails, {
           onInputChange: handleInputChange,
           topic: formFields.topic,
           budget: formFields.budget,
@@ -15166,9 +28981,9 @@ function GetStarted() {
           q8: formFields.q8,
           q9: formFields.q9
         })])
-      }), /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_8__.createElement)("div", {
+      }), /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_16__.createElement)("div", {
         className: "col-lg-5 mt-5 mt-sm-0",
-        children: _fable_Feliz_1_40_0_Interop_fs_js__WEBPACK_IMPORTED_MODULE_9__.Interop_reactApi.Children.toArray([/*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_8__.createElement)(_Summary_fs_js__WEBPACK_IMPORTED_MODULE_12__.Summary, {
+        children: _fable_Feliz_1_40_0_Interop_fs_js__WEBPACK_IMPORTED_MODULE_17__.Interop_reactApi.Children.toArray([/*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_16__.createElement)(_Summary_fs_js__WEBPACK_IMPORTED_MODULE_20__.Summary, {
           onInputChange: handleInputChange,
           firstName: formFields.first_name,
           lastName: formFields.last_name,
@@ -15188,8 +29003,8 @@ function GetStarted() {
       })])
     })])
   }))));
-  return /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_8__.createElement)("div", {
-    children: _fable_Feliz_1_40_0_Interop_fs_js__WEBPACK_IMPORTED_MODULE_9__.Interop_reactApi.Children.toArray(Array.from(children))
+  return /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_16__.createElement)("div", {
+    children: _fable_Feliz_1_40_0_Interop_fs_js__WEBPACK_IMPORTED_MODULE_17__.Interop_reactApi.Children.toArray(Array.from(children))
   });
 }
 
