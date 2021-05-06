@@ -65,6 +65,14 @@
        :subtitle "Alternative to React.js"
        :intro "If you know React.js you know Vue.js."})
     (unit
+     @{:title "Phel"
+       :subtitle "Lisp inspired functional programming language that compiles to PHP"
+       :intro "This website is built with Phel."})
+    (unit
+     @{:title "F#"
+       :subtitle "Strongly-typed, functional-first programming language"
+       :intro "This website javascript is written with Fable/F#."})
+    (unit
      @{:title "Go"
        :subtitle "Small, simple, easy, powerful"
        :intro "I like this language a lot, but have not used it very much."})
@@ -72,10 +80,6 @@
      @{:title "Elixir"
        :subtitle "Dynamic, functional language for building scalable and maintainable applications"
        :intro "Still reading the documentation and learning."})
-    (unit
-     @{:title "Phel"
-       :subtitle "Lisp inspired functional programming language that compiles to PHP"
-       :intro "This website is built with Phel."})
     (unit
      @{:title "ReScript"
        :subtitle "The JavaScript-like language you've been waiting for"

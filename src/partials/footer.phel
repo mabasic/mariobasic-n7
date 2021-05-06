@@ -8,7 +8,7 @@
       [:hr]
       [:p @{:class "text-muted d-flex justify-content-between flex-md-row flex-column"}
        [:small
-        "©️ Mario Bašić 2014-" (php/date "Y") ".  All rights reserved. Made with " [:a @{:href "https://phel-lang.org/" :rel "noopener nofollow" :target "_blank" :class "link-light"} "Phel-lang"] "." [:br]
+        "©️ Mario Bašić 2014-" (php/date "Y") ".  All rights reserved. Made with " [:a @{:href "https://phel-lang.org/" :rel "noopener nofollow" :target "_blank" :class "link-light"} "Phel-lang"] " and " [:a @{:href "https://fable.io/" :rel "noopener nofollow" :target "_blank" :class "link-light"} "Fable/F#"] "." [:br]
         [:a @{:href "/privacy" :class "link-light"} "Privacy Notice"]
         [:a @{:href "https://github.com/mabasic/mariobasic-n7" :rel "noopener nofollow" :target "_blank" :class "link-light ms-2"} "Source Code"]]
        [:span

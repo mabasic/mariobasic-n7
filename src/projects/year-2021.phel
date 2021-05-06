@@ -5,8 +5,8 @@
   @[(project
      "Mario Bašić (this website)"
      "https://mariobasic.com"
-     "My personal/business portfolio/resume website made with Phel, React.js and Rescript."
-     ["phel" "react.js" "rescript"]
+     "My personal/business portfolio/resume website made with Phel and Fable/F#."
+     ["phel" "fsharp" "fable"]
      "website")
     (project
      "mabasic/phel-json"
