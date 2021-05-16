@@ -1,6 +1,6 @@
 import { createElement } from "react";
 import { Interop_reactApi } from "../.fable/Feliz.1.40.0/Interop.fs.js";
-import { ofArray } from "../.fable/fable-library.3.1.1/List.js";
+import { ofArray } from "../.fable/fable-library.3.1.16/List.js";
 import { FormSelect } from "./FormSelect.fs.js";
 import { Topics } from "../constants/Topics.fs.js";
 import { Budgets } from "../constants/Budgets.fs.js";

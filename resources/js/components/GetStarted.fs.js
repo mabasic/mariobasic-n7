@@ -1,19 +1,18 @@
-import { Record } from "../.fable/fable-library.3.1.1/Types.js";
-import { anonRecord_type, bool_type, record_type, option_type, array_type, string_type } from "../.fable/fable-library.3.1.1/Reflection.js";
-import { BooleanField, Field, BooleanField$reflection, Field$reflection } from "../Main.fs.js";
+import { Record } from "../.fable/fable-library.3.1.16/Types.js";
+import { anonRecord_type, bool_type, record_type, option_type, array_type, string_type } from "../.fable/fable-library.3.1.16/Reflection.js";
+import { BooleanField, Field, BooleanField$reflection, Field$reflection } from "../Types.fs.js";
 import { useFeliz_React__React_useState_Static_1505 } from "../.fable/Feliz.1.40.0/React.fs.js";
-import { equals } from "../.fable/fable-library.3.1.1/Util.js";
+import { equals } from "../.fable/fable-library.3.1.16/Util.js";
 import { createTypeInfo } from "../.fable/Fable.SimpleJson.3.19.0/TypeInfo.Converter.fs.js";
 import { Convert_fromJson, Convert_serialize } from "../.fable/Fable.SimpleJson.3.19.0/Json.Converter.fs.js";
-import { startImmediate } from "../.fable/fable-library.3.1.1/Async.js";
-import { singleton } from "../.fable/fable-library.3.1.1/AsyncBuilder.js";
+import { startImmediate } from "../.fable/fable-library.3.1.16/Async.js";
+import { singleton } from "../.fable/fable-library.3.1.16/AsyncBuilder.js";
 import { Headers_create, Headers_contentType, Http_header, Http_content, Http_request, Http_method, Http_send } from "../.fable/Fable.SimpleHttp.3.0.0/Http.fs.js";
 import { BodyContent, HttpMethod } from "../.fable/Fable.SimpleHttp.3.0.0/Types.fs.js";
-import { some } from "../.fable/fable-library.3.1.1/Option.js";
-import { FSharpResult$2 } from "../.fable/fable-library.3.1.1/Choice.js";
+import { some } from "../.fable/fable-library.3.1.16/Option.js";
+import { FSharpResult$2 } from "../.fable/fable-library.3.1.16/Choice.js";
 import { SimpleJson_tryParse } from "../.fable/Fable.SimpleJson.3.19.0/SimpleJson.fs.js";
-import { ofSeq } from "../.fable/fable-library.3.1.1/List.js";
-import { singleton as singleton_1, delay } from "../.fable/fable-library.3.1.1/Seq.js";
+import { singleton as singleton_1, delay, toList } from "../.fable/fable-library.3.1.16/Seq.js";
 import { createElement } from "react";
 import { Interop_reactApi } from "../.fable/Feliz.1.40.0/Interop.fs.js";
 import { ClientDetails } from "./ClientDetails.fs.js";
@@ -307,7 +306,7 @@ export function GetStarted() {
             });
         }));
     };
-    const children = ofSeq(delay(() => ((sent === true) ? singleton_1(createElement("div", {
+    const children = toList(delay(() => ((sent === true) ? singleton_1(createElement("div", {
         className: "row mb-4",
         children: Interop_reactApi.Children.toArray([createElement("div", {
             className: "col-lg-4 text-center mb-5",

@@ -4,6 +4,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Main.fs" />
+    <Compile Include="Types.fs" />
     <Compile Include="constants/Topics.fs" />
     <Compile Include="constants/Budgets.fs" />
     <Compile Include="constants/Countries.fs" />

@@ -2,7 +2,7 @@ namespace Constants
 
 module Countries =
 
-  open Main
+  open Types
 
   let Countries = 
     [| { value = "AF"; text = "Afghanistan" }

@@ -1,7 +1,6 @@
 import { createElement } from "react";
 import { Interop_reactApi } from "../.fable/Feliz.1.40.0/Interop.fs.js";
-import { ofSeq } from "../.fable/fable-library.3.1.1/List.js";
-import { empty, singleton, append, delay } from "../.fable/fable-library.3.1.1/Seq.js";
+import { empty, singleton, append, delay, toList } from "../.fable/fable-library.3.1.16/Seq.js";
 
 export function FormInput(formInputInputProps) {
     const onChange = formInputInputProps.onChange;
@@ -11,7 +10,7 @@ export function FormInput(formInputInputProps) {
     const name = formInputInputProps.name;
     return createElement("div", {
         className: "mb-3",
-        children: Interop_reactApi.Children.toArray(Array.from(ofSeq(delay(() => append(singleton(createElement("label", {
+        children: Interop_reactApi.Children.toArray(Array.from(toList(delay(() => append(singleton(createElement("label", {
             htmlFor: name,
             children: placeholder,
         })), delay(() => append(singleton(createElement("input", {

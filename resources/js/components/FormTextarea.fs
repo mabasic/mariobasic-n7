@@ -1,7 +1,7 @@
 module FormTextarea
 
 open Feliz
-open Main
+open Types
 
 [<ReactComponent>]
 let FormTextarea(name: string, 

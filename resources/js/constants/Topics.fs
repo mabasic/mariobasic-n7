@@ -2,7 +2,7 @@ namespace Constants
 
 module Topics =
 
-  open Main
+  open Types
 
   let Topics = 
     [| { value = "corporate-website"; text = "Corporate website" }

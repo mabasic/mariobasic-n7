@@ -6,7 +6,7 @@ open Fable.SimpleHttp
 open Fable.SimpleJson
 open Browser.Dom
 
-open Main
+open Types
 open ClientDetails
 open ProjectDetails
 open Summary

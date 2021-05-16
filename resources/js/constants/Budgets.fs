@@ -2,7 +2,7 @@ namespace Constants
 
 module Budgets =
 
-  open Main
+  open Types
 
   let Budgets = 
     [| { value = "<1000$"; text = "Less than 1000$" }

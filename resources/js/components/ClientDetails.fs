@@ -4,7 +4,7 @@ open Feliz
 
 open FormInput
 open FormSelect
-open Main
+open Types
 
 open Constants.Countries
 

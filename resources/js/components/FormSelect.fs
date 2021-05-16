@@ -1,7 +1,7 @@
 module FormSelect
 
 open Feliz
-open Main
+open Types
 
 let selectPlaceholder = Html.option [
     prop.value ""

@@ -5,7 +5,7 @@ open Feliz
 open FormInput
 open FormSelect
 open FormTextarea
-open Main
+open Types
 
 open Constants.Budgets
 open Constants.Topics
