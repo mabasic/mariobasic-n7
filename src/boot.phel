@@ -9,9 +9,11 @@
   (:require app\pages\laravel-collection)
   (:require app\pages\portfolio)
   (:require app\pages\start)
+  (:require app\pages\blog)
   (:require app\pages\page-not-found)
   (:require app\csrf)
   (:require app\redirector)
+  (:require app\router)
   (:require app\middleware\verify-csrf-token)
   (:use Dotenv\Dotenv))
 
@@ -40,12 +42,13 @@
    (route "GET" "/portfolio" portfolio/render)
    (route "GET" "/a-collection-of-laravel-tutorials" laravel-collection/render)
    (route "GET" "/start" start/render)
-   (route "POST" "/start" start/store)])
+   (route "POST" "/start" start/store)
+   (route "GET" "/blog" blog/index)
+   (route "GET" "/blog/{slug}" blog/show)])
 
 (def redirects
   [(redirect "/about" "/origin" redirector/moved-permanently)
    (redirect "/the-book" "/a-collection-of-laravel-tutorials" redirector/moved-permanently)
-   (redirect "/blog" "/a-collection-of-laravel-tutorials" redirector/moved-permanently)
    (redirect "/signup" "/a-collection-of-laravel-tutorials" redirector/moved-permanently)
    (redirect "/login" "/a-collection-of-laravel-tutorials" redirector/moved-permanently)
    (redirect "/json-web-token-authentication-for-lumen" "/a-collection-of-laravel-tutorials" redirector/moved-permanently)
@@ -59,14 +62,15 @@
 
 (def request (http/request-from-globals))
 
-(defn route-match [request routes]
+(defn route-match [request routes redirects]
   (let
     [route (find
             (fn [route]
               (and
-               (=
-                (get route :url)
-                (get (get request :uri) :path))
+               (true? 
+                (router/match-route 
+                  (:url route) 
+                  (:path (:uri request))))
                (=
                 (get route :method)
                 (get request :method))))
@@ -100,5 +104,5 @@
 
 (let [response (run-global-middleware request global-middleware)]
   (if (= response request)
-    (emit-response (route-match request routes))
+    (emit-response (route-match request routes redirects))
     (emit-response response)))

@@ -1,0 +1,31 @@
+(ns app\router)
+
+(def regex "[a-zA-Z-_]+")
+
+(def pattern (str "/{" regex "}/i"))
+
+(defn replace-pattern-with-regex [url pattern regex]
+  (php/preg_replace pattern regex url))
+
+(defn escape-forwardslash [url]
+  (php/str_replace "/" "\\/" url))
+
+# ^ match everything from the beginning of a string
+# & match everthing to the end of a string
+(defn prepare-pattern [escaped-url]
+  (str "/^" escaped-url "$/i"))
+
+(defn get-pattern [url]
+  (prepare-pattern
+   (escape-forwardslash
+    (replace-pattern-with-regex url pattern regex))))
+
+# route = /blog/{slug}
+# url = /blog/a-simple-post
+(defn match-route [route url]
+  (if
+    (=
+     (php/preg_match (get-pattern route) url)
+     1)
+    true
+    false))
