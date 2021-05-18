@@ -67,10 +67,10 @@
     [route (find
             (fn [route]
               (and
-               (true? 
-                (router/match-route 
-                  (:url route) 
-                  (:path (:uri request))))
+               (true?
+                (router/match-route
+                 (:url route)
+                 (:path (:uri request))))
                (=
                 (get route :method)
                 (get request :method))))

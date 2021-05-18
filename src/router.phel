@@ -16,7 +16,7 @@
   (str "/^" escaped-url "$/i"))
 
 (defn trim-last-slash [string]
-    (php/rtrim string "/"))
+  (php/rtrim string "/"))
 
 (defn get-pattern [url]
   (prepare-pattern
@@ -34,17 +34,17 @@
     false))
 
 (defn get-keyword-from-route-parameter [parameter]
-    (keyword (php/preg_replace "/[{|}]/" "" parameter)))
+  (keyword (php/preg_replace "/[{|}]/" "" parameter)))
 
 (defn get-parameters [route url]
-    (let [route-parts (php/explode "/" route)
-          url-parts (php/explode "/" url)
-          parameters @{}]
-        (do 
-            (foreach [index part route-parts]
-                (if (= (php/preg_match (str "/^{" regex "}$/i") part) 1)
+  (let [route-parts (php/explode "/" route)
+        url-parts (php/explode "/" url)
+        parameters @{}]
+    (do
+      (foreach [index part route-parts]
+        (if (= (php/preg_match (str "/^{" regex "}$/i") part) 1)
                     # :slug 0
-                    (put parameters (get-keyword-from-route-parameter part) index)))
-            (foreach [key index parameters]
-                (put parameters key (get url-parts index))))
-            parameters))
+          (put parameters (get-keyword-from-route-parameter part) index)))
+      (foreach [key index parameters]
+        (put parameters key (get url-parts index))))
+    parameters))
