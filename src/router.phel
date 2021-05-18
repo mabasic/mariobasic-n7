@@ -46,5 +46,5 @@
                     # :slug 0
           (put parameters (get-keyword-from-route-parameter part) index)))
       (foreach [key index parameters]
-        (put parameters key (get url-parts index))))
-    parameters))
+        (put parameters key (get url-parts index)))
+      parameters)))
