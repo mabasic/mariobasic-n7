@@ -88,7 +88,7 @@
     (cond
       (and (nil? route) (nil? redirect)) (page-not-found/render request)
       (not (nil? redirect)) ((:handler redirect) (:to redirect))
-      true ((get route :page) request))))
+      true ((get route :page) request (router/get-parameters (:url route) (:path (:uri request)))))))
 
 (defn run-global-middleware [request global-middleware]
   (if (= (count global-middleware) 0)

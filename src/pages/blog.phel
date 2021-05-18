@@ -37,5 +37,5 @@
              :white white
              :black black})})
 
-(defn show [request & slug]
+(defn show [request & [@{:slug slug}]]
   (println slug))
