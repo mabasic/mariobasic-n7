@@ -1,0 +1,39 @@
+(ns app\posts
+  (:use \DirectoryIterator)
+  (:use \Spatie\YamlFrontMatter\YamlFrontMatter))
+
+(def posts-path "/../content/posts")
+
+(defn get-posts-iterator []
+  (php/new DirectoryIterator (str __DIR__ posts-path)))
+
+(defn parse-front-matter [file]
+  (php/:: YamlFrontMatter (parse (php/file_get_contents file))))
+
+(defn get-all []
+  (for [file :in (get-posts-iterator) :when (not (php/-> file (isDot)))]
+    (parse-front-matter (php/-> file (getPathname)))))
+
+(defn get-by-slug [slug]
+  @[])
+
+(defn query-front-matter [post key]
+  (php/-> post (matter key)))
+
+(defn get-title [post]
+  (query-front-matter post "title"))
+
+(defn get-date [post]
+  (query-front-matter post "date"))
+
+(defn slugify [string]
+  (php/strtolower
+   (php/trim
+    (php/preg_replace "/[^A-Za-z0-9-]+/" "-" string)
+    "-")))
+
+# (defn slugify-date [post]
+#     (php/str_replace "-" "/" (get-date post)))
+
+(defn generate-slug [post]
+  (str (get-date post) "-" (slugify (get-title post))))
