@@ -15,7 +15,7 @@
   [:div @{:class "row"}
    [:div @{:class "col"}
     [:article @{:class "post-content"}
-      (raw-string (posts/markdown-to-html (posts/get-body post)))]]])
+     (raw-string (posts/markdown-to-html (posts/get-body post)))]]])
 
 (defn show [request & [@{:slug slug}]]
   (let [post (posts/get-by-slug slug)]

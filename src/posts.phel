@@ -29,7 +29,7 @@
 
 (defn get-formatted-date [post & [format]]
   (let [format (or format "F jS, Y")]
-  (php/date_format (php/new \Datetime (get-date post)) format)))
+    (php/date_format (php/new \Datetime (get-date post)) format)))
 
 (defn get-author [post]
   (query-front-matter post "author"))
@@ -51,8 +51,11 @@
   (str (get-date post) "-" (slugify (get-title post))))
 
 (defn get-all []
-  (reverse (sort-by (fn [post] (get-date post)) (for [file :in (get-posts-iterator) :when (not (php/-> file (isDot)))]
-    (parse-front-matter (php/-> file (getPathname)))))))
+  (reverse
+   (sort-by
+    (fn [post] (get-date post))
+    (for [file :in (get-posts-iterator) :when (not (php/-> file (isDot)))]
+      (parse-front-matter (php/-> file (getPathname)))))))
 
 (defn get-by-slug [slug]
   (let [posts (get-all)]
