@@ -1,8 +1,13 @@
 (ns app\posts
   (:use \DirectoryIterator)
+  (:use \ParsedownExtra)
   (:use \Spatie\YamlFrontMatter\YamlFrontMatter))
 
 (def posts-path "/../content/posts")
+
+(defn markdown-to-html [markdown]
+  (let [parsedown (php/new ParsedownExtra)]
+    (php/-> parsedown (text markdown))))
 
 (defn get-posts-iterator []
   (php/new DirectoryIterator (str __DIR__ posts-path)))
@@ -10,22 +15,29 @@
 (defn parse-front-matter [file]
   (php/:: YamlFrontMatter (parse (php/file_get_contents file))))
 
-(defn get-all []
-  (for [file :in (get-posts-iterator) :when (not (php/-> file (isDot)))]
-    (parse-front-matter (php/-> file (getPathname)))))
-
-(defn get-by-slug [slug]
-  @[])
-
 (defn query-front-matter [post key]
   (php/-> post (matter key)))
 
 (defn get-title [post]
   (query-front-matter post "title"))
 
+(defn get-excerpt [post]
+  (query-front-matter post "excerpt"))
+
 (defn get-date [post]
   (query-front-matter post "date"))
 
+(defn get-formatted-date [post & [format]]
+  (let [format (or format "F jS, Y")]
+  (php/date_format (php/new \Datetime (get-date post)) format)))
+
+(defn get-author [post]
+  (query-front-matter post "author"))
+
+(defn get-body [post]
+  (php/-> post (body)))
+
+# TODO: Move this somewhere else since it is a helper function.
 (defn slugify [string]
   (php/strtolower
    (php/trim
@@ -37,3 +49,11 @@
 
 (defn generate-slug [post]
   (str (get-date post) "-" (slugify (get-title post))))
+
+(defn get-all []
+  (reverse (sort-by (fn [post] (get-date post)) (for [file :in (get-posts-iterator) :when (not (php/-> file (isDot)))]
+    (parse-front-matter (php/-> file (getPathname)))))))
+
+(defn get-by-slug [slug]
+  (let [posts (get-all)]
+    (find (fn [post] (= (generate-slug post) slug)) posts)))

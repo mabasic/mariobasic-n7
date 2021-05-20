@@ -207,3 +207,39 @@ body {
     color: rgba(255, 255, 255, 0.4);
   }
 }
+
+article.post-content {
+  p:first-child {
+    margin-bottom: 3rem;
+  }
+
+  p:not(:first-child) {
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+  }
+
+  img {
+    max-width: 100%;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    height: auto;
+    border-radius: 0.25rem;
+  }
+
+  a {
+    color: #f8f9fa;
+  }
+}
+
+article.post-index {
+  margin-bottom: 3rem;
+
+  p {
+    margin-bottom: 0;
+    color: rgba(255, 255, 255, 0.85);
+  }
+
+  p > small {
+    color: rgba(255, 255, 255, 0.7);
+  }
+}

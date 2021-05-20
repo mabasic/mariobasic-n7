@@ -1,4 +1,4 @@
-(ns app\pages\blog
+(ns app\pages\posts\index
   (:require app\layouts\main)
   (:require app\posts))
 
@@ -11,11 +11,11 @@
   [:div @{:class "row"}
    [:div @{:class "col"}
     (for [post :in posts]
-      [:article
-       [:h2
-        [:a @{:href (str "/blog/" (posts/generate-slug post))} (posts/get-title post)]]
-       [:p (php/-> post (matter "excerpt"))]
-       [:p (php/date_format (php/new \Datetime (posts/get-date post)) "F jS, Y")]])]])
+      [:article @{:class "post-index"}
+       [:h2 @{:class "h4"}
+        [:a @{:href (str "/blog/" (posts/generate-slug post)) :class "link-light"} (posts/get-title post)]]
+       [:p (posts/get-excerpt post)]
+       [:p [:small (posts/get-formatted-date post) " ‧ " (posts/get-author post)]]])]])
 
 (defn index [request]
   @{:status 200
@@ -25,6 +25,3 @@
              :meta-description "Read all my blog posts."
              :white white
              :black (black (posts/get-all))})})
-
-(defn show [request & [@{:slug slug}]]
-  (println slug))

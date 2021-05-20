@@ -5,7 +5,7 @@
   @[(project
      "Mario Bašić (this website)"
      "https://mariobasic.com"
-     "My personal/business portfolio/resume website made with Phel and Fable/F#."
+     "My personal/business portfolio/resume website made with Phel and F#/Fable."
      ["phel" "fsharp" "fable"]
      "website")
     (project

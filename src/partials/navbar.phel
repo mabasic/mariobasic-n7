@@ -25,6 +25,8 @@
        [:li @{:class "nav-item"}
         [:a @{:class (str "nav-link" (is-active-class active-item "/origin")) :href "/origin"} "The Origin Story"]]
        [:li @{:class "nav-item"}
+        [:a @{:class (str "nav-link" (is-active-class active-item "/blog")) :href "/blog"} "Blog"]]
+       [:li @{:class "nav-item"}
         [:a @{:class (str "nav-link" (is-active-class active-item "/portfolio")) :href "/portfolio"} "Portfolio"]]
        [:li @{:class "nav-item dropdown"}
         [:a @{:class (str "nav-link dropdown-toggle" (is-active-class active-item ["/a-collection-of-laravel-tutorials"]))

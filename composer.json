@@ -11,7 +11,7 @@
   "require": {
     "php": "^7.4|^8.0",
     "aws/aws-sdk-php": "^3.175",
-    "erusev/parsedown": "^1.7",
+    "erusev/parsedown-extra": "^0.8.1",
     "mabasic/phel-json": "^0.1.0",
     "phel-lang/phel-lang": "^0.2",
     "rakibtg/sleekdb": "^2.8",

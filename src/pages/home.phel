@@ -71,7 +71,7 @@
     (unit
      @{:title "F#"
        :subtitle "Strongly-typed, functional-first programming language"
-       :intro "This website javascript is written with Fable/F#."})
+       :intro "This website javascript is written with F#/Fable."})
     (unit
      @{:title "Go"
        :subtitle "Small, simple, easy, powerful"

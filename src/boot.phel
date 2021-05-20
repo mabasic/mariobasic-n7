@@ -9,7 +9,8 @@
   (:require app\pages\laravel-collection)
   (:require app\pages\portfolio)
   (:require app\pages\start)
-  (:require app\pages\blog)
+  (:require app\pages\posts\index :as posts-index)
+  (:require app\pages\posts\show :as posts-show)
   (:require app\pages\page-not-found)
   (:require app\csrf)
   (:require app\redirector)
@@ -43,8 +44,8 @@
    (route "GET" "/a-collection-of-laravel-tutorials" laravel-collection/render)
    (route "GET" "/start" start/render)
    (route "POST" "/start" start/store)
-   (route "GET" "/blog" blog/index)
-   (route "GET" "/blog/{slug}" blog/show)])
+   (route "GET" "/blog" posts-index/index)
+   (route "GET" "/blog/{slug}" posts-show/show)])
 
 (def redirects
   [(redirect "/about" "/origin" redirector/moved-permanently)
