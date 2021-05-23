@@ -44,11 +44,14 @@
     (php/preg_replace "/[^A-Za-z0-9-]+/" "-" string)
     "-")))
 
-# (defn slugify-date [post]
-#     (php/str_replace "-" "/" (get-date post)))
+(defn slugify-date [post]
+  (php/str_replace "-" "/" (get-date post)))
 
 (defn generate-slug [post]
-  (str (get-date post) "-" (slugify (get-title post))))
+  (str (slugify-date post) "/" (slugify (get-title post))))
+
+(defn glue-slug-together [year month day slug]
+  (str year "/" month "/" day "/" slug))
 
 (defn get-all []
   (reverse
@@ -57,6 +60,7 @@
     (for [file :in (get-posts-iterator) :when (not (php/-> file (isDot)))]
       (parse-front-matter (php/-> file (getPathname)))))))
 
-(defn get-by-slug [slug]
+(defn get-by-slug [year month day slug]
   (let [posts (get-all)]
-    (find (fn [post] (= (generate-slug post) slug)) posts)))
+    (find
+     (fn [post] (= (generate-slug post) (glue-slug-together year month day slug))) posts)))

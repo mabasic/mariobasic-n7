@@ -4,21 +4,31 @@
   (:require app\pages\page-not-found)
   (:require phel\html :refer [raw-string]))
 
+(defn get-post-meta [post]
+  [:p
+   [:small
+    "Written by "
+    [:b (posts/get-author post)]
+    " on "
+    [:b (posts/get-formatted-date post)]]])
+
 (defn white [post]
   [:div
    [:h1 @{:class "display-1 pt-5 mt-5"} (posts/get-title post)]
    [:p @{:class "lead"} (posts/get-excerpt post)]
-   [:p [:small (str "Written by " (posts/get-author post) " on " (posts/get-formatted-date post))]]
+   (get-post-meta post)
    [:p [:a @{:href "/" :class "text-dark"} "home"] "/ blog"]])
 
 (defn black [post]
   [:div @{:class "row"}
    [:div @{:class "col"}
     [:article @{:class "post-content"}
-     (raw-string (posts/markdown-to-html (posts/get-body post)))]]])
+     (raw-string (posts/markdown-to-html (posts/get-body post)))
+     [:hr @{:style "width: 130px;" :class "mb-4"}]
+     (get-post-meta post)]]])
 
-(defn show [request & [@{:slug slug}]]
-  (let [post (posts/get-by-slug slug)]
+(defn show [request & [@{:year year :month month :day day :slug slug}]]
+  (let [post (posts/get-by-slug year month day slug)]
     (if (nil? post)
       (page-not-found/render request)
       @{:status 200

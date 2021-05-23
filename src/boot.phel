@@ -45,7 +45,7 @@
    (route "GET" "/start" start/render)
    (route "POST" "/start" start/store)
    (route "GET" "/blog" posts-index/index)
-   (route "GET" "/blog/{slug}" posts-show/show)])
+   (route "GET" "/{year}/{month}/{day}/{slug}" posts-show/show)])
 
 (def redirects
   [(redirect "/about" "/origin" redirector/moved-permanently)

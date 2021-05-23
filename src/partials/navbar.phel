@@ -1,5 +1,9 @@
 (ns app\partials\navbar)
 
+# TODO: Implement logic for detecting wildcards (*).
+# eg. "["/blog" "/blog/*"]" would return "active" for URLs
+# - /blog
+# - /blog/something
 (defn- is-active-class [active-item path]
   (cond
     (string? path) (if (= active-item path) " active" "")
@@ -25,6 +29,7 @@
        [:li @{:class "nav-item"}
         [:a @{:class (str "nav-link" (is-active-class active-item "/origin")) :href "/origin"} "The Origin Story"]]
        [:li @{:class "nav-item"}
+        # TODO: Once is-active-class todo is implemented add paths here.
         [:a @{:class (str "nav-link" (is-active-class active-item "/blog")) :href "/blog"} "Blog"]]
        [:li @{:class "nav-item"}
         [:a @{:class (str "nav-link" (is-active-class active-item "/portfolio")) :href "/portfolio"} "Portfolio"]]

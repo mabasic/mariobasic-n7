@@ -13,7 +13,7 @@
     (for [post :in posts]
       [:article @{:class "post-index"}
        [:h2 @{:class "h4"}
-        [:a @{:href (str "/blog/" (posts/generate-slug post)) :class "link-light"} (posts/get-title post)]]
+        [:a @{:href (posts/generate-slug post) :class "link-light"} (posts/get-title post)]]
        [:p (posts/get-excerpt post)]
        [:p [:small (posts/get-formatted-date post) " ‧ " (posts/get-author post)]]])]])
 
