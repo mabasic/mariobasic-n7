@@ -4,19 +4,19 @@
   (:use \Spatie\YamlFrontMatter\YamlFrontMatter)
   (:require app\helpers))
 
-(def posts-path "/../content/posts")
+(def- posts-path "/../content/posts")
 
 (defn markdown-to-html [markdown]
   (let [parsedown (php/new ParsedownExtra)]
     (php/-> parsedown (text markdown))))
 
-(defn get-posts-iterator []
+(defn- get-posts-iterator []
   (php/new DirectoryIterator (str __DIR__ posts-path)))
 
-(defn parse-front-matter [file]
+(defn- parse-front-matter [file]
   (php/:: YamlFrontMatter (parse (php/file_get_contents file))))
 
-(defn query-front-matter [post key]
+(defn- query-front-matter [post key]
   (php/-> post (matter key)))
 
 (defn get-title [post]
@@ -38,19 +38,19 @@
 (defn get-body [post]
   (php/-> post (body)))
 
-(defn slugify [string]
+(defn- slugify [string]
   (php/strtolower
    (php/trim
     (php/preg_replace "/[^A-Za-z0-9-]+/" "-" string)
     "-")))
 
-(defn slugify-date [post]
+(defn- slugify-date [post]
   (php/str_replace "-" "/" (get-date post)))
 
-(defn generate-slug [post]
+(defn- generate-slug [post]
   (str (slugify-date post) "/" (slugify (get-title post))))
 
-(defn glue-slug-together [year month day slug]
+(defn- glue-slug-together [year month day slug]
   (str year "/" month "/" day "/" slug))
 
 (defn get-all []

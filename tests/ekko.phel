@@ -1,0 +1,12 @@
+(ns app\tests\ekko
+  (:require app\ekko)
+  (:require phel\test :refer [deftest is]))
+
+(deftest test-is-active
+  (is (= " active" (ekko/is-active "/" "/")))
+  (is (= "" (ekko/is-active "/blog" "/")))
+  (is (= " active" (ekko/is-active "/blog" "/blog")))
+  (is (= "" (ekko/is-active "/blog" "/blog/*")))
+  (is (= " active" (ekko/is-active "/blog/post" "/blog/*")))
+  (is (= "" (ekko/is-active "/blog" "/*/*")))
+  (is (= " active" (ekko/is-active "/blog/post" "/*/*"))))

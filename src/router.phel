@@ -1,24 +1,24 @@
 (ns app\router)
 
-(def regex "[a-zA-Z-_0-9]+")
+(def- regex "[a-zA-Z-_0-9]+")
 
-(def pattern (str "/{" regex "}/i"))
+(def- pattern (str "/{" regex "}/i"))
 
-(defn replace-pattern-with-regex [url pattern regex]
+(defn- replace-pattern-with-regex [url pattern regex]
   (php/preg_replace pattern regex url))
 
-(defn escape-forwardslash [url]
+(defn- escape-forwardslash [url]
   (php/str_replace "/" "\\/" url))
 
 # ^ match everything from the beginning of a string
 # & match everthing to the end of a string
-(defn prepare-pattern [escaped-url]
+(defn- prepare-pattern [escaped-url]
   (str "/^" escaped-url "$/i"))
 
-(defn trim-last-slash [string]
+(defn- trim-last-slash [string]
   (php/rtrim string "/"))
 
-(defn get-pattern [url]
+(defn- get-pattern [url]
   (prepare-pattern
    (escape-forwardslash
     (replace-pattern-with-regex (trim-last-slash url) pattern regex))))
@@ -33,7 +33,7 @@
     true
     false))
 
-(defn get-keyword-from-route-parameter [parameter]
+(defn- get-keyword-from-route-parameter [parameter]
   (keyword (php/preg_replace "/[{|}]/" "" parameter)))
 
 (defn get-parameters [route url]

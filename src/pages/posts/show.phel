@@ -31,7 +31,7 @@
     [:hr @{:style "width: 130px;" :class "mb-4"}]
     (get-post-meta post)]])
 
-(defn show [request & [@{:year year :month month :day day :slug slug}]]
+(defn render [request & [@{:year year :month month :day day :slug slug}]]
   (let [post (posts/get-by-slug year month day slug)]
     (if (nil? post)
       (page-not-found/render request)

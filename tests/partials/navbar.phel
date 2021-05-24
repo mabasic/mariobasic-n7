@@ -1,0 +1,8 @@
+(ns app\tests\partials\navbar
+  (:require phel\test :refer [deftest is])
+  (:require app\partials\navbar))
+
+(def rendered (navbar/render "/"))
+
+(deftest test-render
+  (is (tuple? rendered)))

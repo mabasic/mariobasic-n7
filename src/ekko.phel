@@ -1,0 +1,15 @@
+(ns app\ekko)
+
+(defn- regex [path]
+  (str
+   "/^"
+   (php/str_replace
+    (php/preg_quote "*")
+    ".*?"
+    (php/preg_quote path "/"))
+   "(\\?.*?)*?$/"))
+
+(defn is-active [active-item path]
+  (cond
+    (string? path) (if (= (php/preg_match (regex path) active-item) 1) " active" "")
+    (array? path) (if (find (fn [x] (= (php/preg_match (regex x) active-item) 1)) path) " active" "")))

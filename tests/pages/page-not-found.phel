@@ -1,0 +1,9 @@
+(ns app\tests\pages\page-not-found
+  (:require phel\test :refer [deftest is])
+  (:require app\pages\page-not-found))
+
+(def rendered (page-not-found/render @{:uri @{:host "/unknown-url"}}))
+
+(deftest test-render
+  (is (= 404 (get rendered :status)))
+  (is (string? (get rendered :body))))

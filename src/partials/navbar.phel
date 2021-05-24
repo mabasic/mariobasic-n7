@@ -1,18 +1,5 @@
-(ns app\partials\navbar)
-
-(defn regex [path]
-  (str
-   "/^"
-   (php/str_replace
-    (php/preg_quote "*")
-    ".*?"
-    (php/preg_quote path "/"))
-   "(\\?.*?)*?$/"))
-
-(defn is-active [active-item path]
-  (cond
-    (string? path) (if (= (php/preg_match (regex path) active-item) 1) " active" "")
-    (array? path) (if (find (fn [x] (= (php/preg_match (regex x) active-item) 1)) path) " active" "")))
+(ns app\partials\navbar
+  (:require app\ekko))
 
 (defn render [active-item]
   [:nav @{:class "navbar navbar-expand-lg navbar-light"}
@@ -30,15 +17,15 @@
     [:div @{:class "collapse navbar-collapse justify-content-end" :id "navbarTogglerDemo03"}
      [:ul @{:class "navbar-nav mb-2 mb-lg-0"}
       [:li @{:class "nav-item"}
-       [:a @{:class (str "nav-link" (is-active active-item "/")) :href "/"} "Home"]
+       [:a @{:class (str "nav-link" (ekko/is-active active-item "/")) :href "/"} "Home"]
        [:li @{:class "nav-item"}
-        [:a @{:class (str "nav-link" (is-active active-item "/origin")) :href "/origin"} "The Origin Story"]]
+        [:a @{:class (str "nav-link" (ekko/is-active active-item "/origin")) :href "/origin"} "The Origin Story"]]
        [:li @{:class "nav-item"}
-        [:a @{:class (str "nav-link" (is-active active-item @["/blog" "/*/*/*/*"])) :href "/blog"} "Blog"]]
+        [:a @{:class (str "nav-link" (ekko/is-active active-item @["/blog" "/*/*/*/*"])) :href "/blog"} "Blog"]]
        [:li @{:class "nav-item"}
-        [:a @{:class (str "nav-link" (is-active active-item "/portfolio")) :href "/portfolio"} "Portfolio"]]
+        [:a @{:class (str "nav-link" (ekko/is-active active-item "/portfolio")) :href "/portfolio"} "Portfolio"]]
        [:li @{:class "nav-item dropdown"}
-        [:a @{:class (str "nav-link dropdown-toggle" (is-active active-item @["/a-collection-of-laravel-tutorials"]))
+        [:a @{:class (str "nav-link dropdown-toggle" (ekko/is-active active-item @["/a-collection-of-laravel-tutorials"]))
               :href "#"
               :id "BooksMenuLink"
               :role "button"
@@ -47,18 +34,18 @@
         [:ul @{:class "dropdown-menu" :aria-labelledby "BooksMenuLink"}
          [:li
           [:a
-           @{:class (str "dropdown-item" (is-active active-item "/a-collection-of-laravel-tutorials"))
+           @{:class (str "dropdown-item" (ekko/is-active active-item "/a-collection-of-laravel-tutorials"))
              :href "/a-collection-of-laravel-tutorials"} "A Collection of Laravel Tutorials"]]]]
        [:li @{:class "nav-item dropdown"}
-        [:a @{:class (str "nav-link dropdown-toggle" (is-active active-item @["/code-of-conduct" "/contributing" "/backers"]))
+        [:a @{:class (str "nav-link dropdown-toggle" (ekko/is-active active-item @["/code-of-conduct" "/contributing" "/backers"]))
               :href "#"
               :id "OpenSourceMenuLink"
               :role "button"
               :data-bs-toggle "dropdown"
               :aria-expanded "false"} "Open Source"]
         [:ul @{:class "dropdown-menu" :aria-labelledby "OpenSourceMenuLink"}
-         [:li [:a @{:class (str "dropdown-item" (is-active active-item "/code-of-conduct")) :href "/code-of-conduct"} "Code of Conduct"]]
-         [:li [:a @{:class (str "dropdown-item" (is-active active-item "/contributing")) :href "/contributing"} "Contributing"]]
-         [:li [:a @{:class (str "dropdown-item" (is-active active-item "/backers")) :href "/backers"} "Backers"]]]]
+         [:li [:a @{:class (str "dropdown-item" (ekko/is-active active-item "/code-of-conduct")) :href "/code-of-conduct"} "Code of Conduct"]]
+         [:li [:a @{:class (str "dropdown-item" (ekko/is-active active-item "/contributing")) :href "/contributing"} "Contributing"]]
+         [:li [:a @{:class (str "dropdown-item" (ekko/is-active active-item "/backers")) :href "/backers"} "Backers"]]]]
        [:li @{:class "nav-item"}
-        [:a @{:class (str "nav-link" (is-active active-item "/start")) :href "/start"} "Start 🚀"]]]]]]])
+        [:a @{:class (str "nav-link" (ekko/is-active active-item "/start")) :href "/start"} "Start 🚀"]]]]]]])

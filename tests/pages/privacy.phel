@@ -2,7 +2,7 @@
   (:require phel\test :refer [deftest is])
   (:require app\pages\privacy))
 
-(def rendered (privacy/render @{:uri @{:host "/"}}))
+(def rendered (privacy/render @{:uri @{:host "/privacy"}}))
 
 (deftest test-render
   (is (= 200 (get rendered :status)))

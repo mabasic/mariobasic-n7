@@ -1,8 +1,8 @@
-(ns app\tests\pages\origin
+(ns app\tests\pages\posts\index
   (:require phel\test :refer [deftest is])
-  (:require app\pages\origin))
+  (:require app\pages\posts\index))
 
-(def rendered (origin/render @{:uri @{:host "/origin"}}))
+(def rendered (index/render @{:uri @{:host "/blog"}}))
 
 (deftest test-render
   (is (= 200 (get rendered :status)))

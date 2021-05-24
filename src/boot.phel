@@ -44,8 +44,8 @@
    (route "GET" "/a-collection-of-laravel-tutorials" laravel-collection/render)
    (route "GET" "/start" start/render)
    (route "POST" "/start" start/store)
-   (route "GET" "/blog" posts-index/index)
-   (route "GET" "/{year}/{month}/{day}/{slug}" posts-show/show)])
+   (route "GET" "/blog" posts-index/render)
+   (route "GET" "/{year}/{month}/{day}/{slug}" posts-show/render)])
 
 (def redirects
   [(redirect "/about" "/origin" redirector/moved-permanently)

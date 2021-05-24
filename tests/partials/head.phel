@@ -1,0 +1,8 @@
+(ns app\tests\partials\head
+  (:require phel\test :refer [deftest is])
+  (:require app\partials\head))
+
+(def rendered (head/render "Meta title" "Meta description"))
+
+(deftest test-render
+  (is (tuple? rendered)))

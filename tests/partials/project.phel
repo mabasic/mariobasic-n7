@@ -1,0 +1,16 @@
+(ns app\tests\partials\project
+  (:require phel\test :refer [deftest is])
+  (:require app\partials\project :as project-partial)
+  (:require app\projects\project :refer [project]))
+
+(def vjeran-paic (project
+                  "Attorney \"Vjeran Paić\""
+                  "https://odvjetnik-vjeran-paic.com"
+                  "Attorney at law website made with Joomla."
+                  ["joomla"]
+                  "website"))
+
+(def rendered (project-partial/render vjeran-paic))
+
+(deftest test-render
+  (is (tuple? rendered)))

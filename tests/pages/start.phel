@@ -1,0 +1,11 @@
+(ns app\tests\pages\start
+  (:require phel\test :refer [deftest is])
+  (:require app\pages\start))
+
+(def rendered (start/render @{:uri @{:host "/start"}}))
+
+(deftest test-render
+  (is (= 200 (get rendered :status)))
+  (is (string? (get rendered :body))))
+
+# TODO: Add test for store function
