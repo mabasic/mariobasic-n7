@@ -60,7 +60,7 @@
     (if (nil? field-value) true)))
 
 # It returns :result true if validation has passed. 
-# In this case :errors should be an empty table.
+# In this case :errors should be an empty hash-map.
 (defn validate [request rules]
   (let [errors (transient {})]
     (foreach [field field-rules rules]
@@ -80,7 +80,7 @@
                      (= field-rule :required) (rule-required request field)
                      (= field-rule :string) (rule-string request field)
                      (= field-rule :accepted) (rule-accepted request field)
-                     (table? field-rule)
+                     (hash-map? field-rule)
                      (case (:rule field-rule)
                         # Handles additional string rule options like: max, min, etc ...
                        :string (rule-string request field field-rule))))))]

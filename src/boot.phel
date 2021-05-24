@@ -86,7 +86,6 @@
                    "GET"
                    (get request :method))))
                redirects)]
-    # (println ((get route :page) request (router/get-parameters (:url route) (:path (:uri request)))))
     (cond
       (and (nil? route) (nil? redirect)) (page-not-found/render request)
       (not (nil? redirect)) ((:handler redirect) (:to redirect))

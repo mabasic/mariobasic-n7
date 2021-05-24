@@ -12,16 +12,16 @@
 
 (defn black []
   [:div
-   (for [item :in projects/index]
-     [:div {:class "row mb-5"}
-      [:div {:class "col"}
-       [:h2 (get item :year)]
-       [:hr {:style "width: 130px;" :class "mb-4"}]
-       (for [project-subset :in (partition 4 (get item :projects))]
-         [:div {:class "row"}
-          (for [project :in project-subset]
-            [:div {:class "col-lg-3"}
-             (project-partial/render project)])])]])])
+   (helpers/convert-to-php-array (for [item :in projects/index]
+                                   [:div {:class "row mb-5"}
+                                    [:div {:class "col"}
+                                     [:h2 (get item :year)]
+                                     [:hr {:style "width: 130px;" :class "mb-4"}]
+                                     (helpers/convert-to-php-array (for [project-subset :in (partition 4 (get item :projects))]
+                                                                     [:div {:class "row"}
+                                                                      (helpers/convert-to-php-array (for [project :in project-subset]
+                                                                                                      [:div {:class "col-lg-3"}
+                                                                                                       (project-partial/render project)]))]))]]))])
 
 (defn render [request]
   {:status 200

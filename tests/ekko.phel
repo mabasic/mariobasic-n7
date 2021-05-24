@@ -9,4 +9,6 @@
   (is (= "" (ekko/is-active "/blog" "/blog/*")))
   (is (= " active" (ekko/is-active "/blog/post" "/blog/*")))
   (is (= "" (ekko/is-active "/blog" "/*/*")))
-  (is (= " active" (ekko/is-active "/blog/post" "/*/*"))))
+  (is (= " active" (ekko/is-active "/blog/post" "/*/*")))
+  (is (= " active" (ekko/is-active "/2021/05/24/slug" "/*/*/*/*")))
+  (is (= " active" (ekko/is-active "/2021/05/24/slug" ["/blog" "/*/*/*/*"]))))

@@ -2,7 +2,7 @@
   (:require mabasic\json\json))
 
 # It returns data from :parsed-body if any, otherwise it looks for data
-# in php://input, else it returns and empty table.
+# in php://input, else it returns an empty hash-map.
 (defn extract-data-from-request [request]
   (or
    (:parsed-body request)
@@ -28,3 +28,9 @@
     (keyword? x) (str (php/-> x (getName)))
     (float? x) (str x)
     true x))
+
+# This is only temporary until [#287](https://github.com/phel-lang/phel-lang/issues/287) is resolved.
+(defn convert-to-php-array
+  "This should be faster than converting to a list instead"
+  [vector]
+  (apply php/array vector))

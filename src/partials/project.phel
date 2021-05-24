@@ -1,5 +1,6 @@
 (ns app\partials\project
-  (:require app\pages\home :refer [unit]))
+  (:require app\pages\home :refer [unit])
+  (:require app\helpers))
 
 (defn render [project]
   (unit
@@ -21,5 +22,5 @@
     [:div
      (get project :description)
      [:br]
-     (for [badge :in (get project :badges)]
-       [:span {:class "badge"} "#" badge])]}))
+     (helpers/convert-to-php-array (for [badge :in (get project :badges)]
+                                     [:span {:class "badge"} "#" badge]))]}))

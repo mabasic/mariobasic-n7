@@ -12,4 +12,4 @@
 (defn is-active [active-item path]
   (cond
     (string? path) (if (= (php/preg_match (regex path) active-item) 1) " active" "")
-    (array? path) (if (find (fn [x] (= (php/preg_match (regex x) active-item) 1)) path) " active" "")))
+    (vector? path) (if (find (fn [x] (= (php/preg_match (regex x) active-item) 1)) path) " active" "")))
