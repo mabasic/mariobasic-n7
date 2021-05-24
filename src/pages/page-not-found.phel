@@ -1,22 +1,22 @@
 (ns app\pages\page-not-found
   (:require app\layouts\main))
 
-(def white
+(defn white []
   [:div
-   [:h1 @{:class "display-1 pt-5 mt-5"} "Page not found"]
-   [:p [:a @{:href "/" :class "text-dark"} "home"] "/ 404"]])
+   [:h1 {:class "display-1 pt-5 mt-5"} "Page not found"]
+   [:p [:a {:href "/" :class "text-dark"} "home"] "/ 404"]])
 
-(def black
-  [:div @{:class "row"}
-   [:div @{:class "col"}
-    [:p @{:class "lead"} "The page you're looking for, couldn't be found."]
-    [:a @{:href "/" :class "btn btn-primary"} "Back to home page"]]])
+(defn black []
+  [:div {:class "row"}
+   [:div {:class "col"}
+    [:p {:class "lead"} "The page you're looking for, couldn't be found."]
+    [:a {:href "/" :class "btn btn-primary"} "Back to home page"]]])
 
 (defn render [request]
-  @{:status 404
-    :body (main/render
-           request
-           @{:title "Page not found | Mario Bašić"
-             :meta-description "Full Stack Developer. Specialized in building Web &amp; Mobile Applications."
-             :white white
-             :black black})})
+  {:status 404
+   :body (main/render
+          request
+          {:title "Page not found | Mario Bašić"
+           :meta-description "Full Stack Developer. Specialized in building Web &amp; Mobile Applications."
+           :white (white)
+           :black (black)})})

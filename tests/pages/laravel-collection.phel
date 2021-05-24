@@ -2,7 +2,7 @@
   (:require phel\test :refer [deftest is])
   (:require app\pages\laravel-collection))
 
-(def rendered (laravel-collection/render @{:uri @{:host "/a-collection-of-laravel-tutorials"}}))
+(def rendered (laravel-collection/render {:uri {:host "/a-collection-of-laravel-tutorials"}}))
 
 (deftest test-render
   (is (= 200 (get rendered :status)))

@@ -2,33 +2,33 @@
   (:require app\projects\project :refer [project]))
 
 (def index
-  @[(project
-     "Visit Murter"
-     "https://visitmurter.com"
-     "Tourist info portal made with Laravel."
-     ["laravel"]
-     "business-application")
-    (project
-     "Car service \"Antušina\""
-     "https://antusina.hr"
-     "Car service company website made with Laravel."
-     ["laravel"]
-     "website")
-    (project
-     "Apartments \"Milina\""
-     "https://apartmanimilina.com"
-     "Apartment booking website made with Laravel."
-     ["laravel"]
-     "website")
-    (project
-     "Mario Bašić (website)"
-     "https://mariobasic.com"
-     "After closing Laravelista subscription based website I've created a website for my freelance business."
-     ["laravel" "react.js"]
-     "website")
-    (project
-     "mabasic/mailchimp"
-     "https://github.com/mabasic/mailchimp"
-     "It subscribes an email address to your mailchimp list."
-     ["php-library" "open-source"]
-     "github-repository")])
+  [(project
+    "Visit Murter"
+    "https://visitmurter.com"
+    "Tourist info portal made with Laravel."
+    ["laravel"]
+    "business-application")
+   (project
+    "Car service \"Antušina\""
+    "https://antusina.hr"
+    "Car service company website made with Laravel."
+    ["laravel"]
+    "website")
+   (project
+    "Apartments \"Milina\""
+    "https://apartmanimilina.com"
+    "Apartment booking website made with Laravel."
+    ["laravel"]
+    "website")
+   (project
+    "Mario Bašić (website)"
+    "https://mariobasic.com"
+    "After closing Laravelista subscription based website I've created a website for my freelance business."
+    ["laravel" "react.js"]
+    "website")
+   (project
+    "mabasic/mailchimp"
+    "https://github.com/mabasic/mailchimp"
+    "It subscribes an email address to your mailchimp list."
+    ["php-library" "open-source"]
+    "github-repository")])

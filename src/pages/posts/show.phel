@@ -6,10 +6,10 @@
 
 (defn get-post-meta [post & [show-heading]]
   (let [show-heading (or show-heading true)]
-    [:section @{:class "post-meta"}
+    [:section {:class "post-meta"}
      (if (= show-heading true)
-       [:p @{:class "lead post-meta-heading"} (posts/get-title post)])
-     [:p @{:class "post-meta-author"}
+       [:p {:class "lead post-meta-heading"} (posts/get-title post)])
+     [:p {:class "post-meta-author"}
       [:small
        "Written by "
        [:b (posts/get-author post)]
@@ -18,27 +18,27 @@
 
 (defn white [post]
   [:div
-   [:h1 @{:class "display-1 pt-5 mt-5"} (posts/get-title post)]
-   [:p @{:class "lead"} (posts/get-excerpt post)]
-   (get-post-meta post @{:heading false})
-   [:p [:a @{:href "/" :class "text-dark"} "home"] "/ blog"]])
+   [:h1 {:class "display-1 pt-5 mt-5"} (posts/get-title post)]
+   [:p {:class "lead"} (posts/get-excerpt post)]
+   (get-post-meta post {:heading false})
+   [:p [:a {:href "/" :class "text-dark"} "home"] "/ blog"]])
 
 (defn black [post]
-  [:div @{:class "row"}
-   [:div @{:class "col"}
-    [:article @{:class "post-content"}
+  [:div {:class "row"}
+   [:div {:class "col"}
+    [:article {:class "post-content"}
      (raw-string (posts/markdown-to-html (posts/get-body post)))]
-    [:hr @{:style "width: 130px;" :class "mb-4"}]
+    [:hr {:style "width: 130px;" :class "mb-4"}]
     (get-post-meta post)]])
 
-(defn render [request & [@{:year year :month month :day day :slug slug}]]
+(defn render [request & [{:year year :month month :day day :slug slug}]]
   (let [post (posts/get-by-slug year month day slug)]
     (if (nil? post)
       (page-not-found/render request)
-      @{:status 200
-        :body (main/render
-               request
-               @{:title (str (posts/get-title post) " | Mario Bašić")
-                 :meta-description (posts/get-excerpt post)
-                 :white (white post)
-                 :black (black post)})})))
+      {:status 200
+       :body (main/render
+              request
+              {:title (str (posts/get-title post) " | Mario Bašić")
+               :meta-description (posts/get-excerpt post)
+               :white (white post)
+               :black (black post)})})))

@@ -13,4 +13,4 @@
 (def rendered (project-partial/render vjeran-paic))
 
 (deftest test-render
-  (is (tuple? rendered)))
+  (is (vector? rendered)))

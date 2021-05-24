@@ -4,51 +4,51 @@
 
 (def per-page 6)
 
-(def white
+(defn white []
   [:div
-   [:h1 @{:class "display-1 pt-5 mt-5"} "All posts"]
-   [:p [:a @{:href "/" :class "text-dark"} "home"] "/ blog"]])
+   [:h1 {:class "display-1 pt-5 mt-5"} "All posts"]
+   [:p [:a {:href "/" :class "text-dark"} "home"] "/ blog"]])
 
 (defn pagination [posts-count page]
   (let [max-page (/ posts-count per-page)]
     (if (> max-page 1)
-      [:nav @{:aria-label "Page navigation"}
-       [:ul @{:class "pagination pagination-sm"}
+      [:nav {:aria-label "Page navigation"}
+       [:ul {:class "pagination pagination-sm"}
         (for [index :range [1 (+ max-page 1)]]
-          [:li @{:class (str "page-item" (if (= page index) " active"))}
-           [:a @{:class "page-link" :href (str "/blog?page=" index)} index]])]])))
+          [:li {:class (str "page-item" (if (= page index) " active"))}
+           [:a {:class "page-link" :href (str "/blog?page=" index)} index]])]])))
 
 (defn black [posts posts-count page]
-  [:div @{:class "row"}
-   [:div @{:class "col"}
+  [:div {:class "row"}
+   [:div {:class "col"}
     (for [post :in posts]
-      [:article @{:class "post-index"}
-       [:h2 @{:class "h4"}
-        [:a @{:href (posts/generate-slug post) :class "link-light"} (posts/get-title post)]]
+      [:article {:class "post-index"}
+       [:h2 {:class "h4"}
+        [:a {:href (posts/generate-slug post) :class "link-light"} (posts/get-title post)]]
        [:p (posts/get-excerpt post)]
        [:p [:small (posts/get-formatted-date post) " ‧ " (posts/get-author post)]]])
     (if-not (= (count posts) 0) (pagination posts-count page)
-            [:p @{:class "lead"} "There are no posts on this page."])]])
+            [:p {:class "lead"} "There are no posts on this page."])]])
 
 (defn extract-query-parameters-from-request [request]
   (let [query (:query (:uri request))
         pairs (php/explode "&" query)
-        parameters @{}]
+        parameters (transient {})]
     (foreach [k v pairs]
       (let [[key value] (php/explode "=" v)]
         (put parameters (keyword key) value)))
-    parameters))
+    (persistent parameters)))
 
 (defn render [request]
-  (let [@{:page page} (extract-query-parameters-from-request request)
+  (let [{:page page} (extract-query-parameters-from-request request)
         page (or (php/intval page) 1)
         page (if (= page 0) 1 page)
         all-posts (posts/get-all)
         posts-count (count all-posts)]
-    @{:status 200
-      :body (main/render
-             request
-             @{:title "Blog | Mario Bašić"
-               :meta-description "Read all my blog posts."
-               :white white
-               :black (black (posts/paginate all-posts page per-page) posts-count page)})}))
+    {:status 200
+     :body (main/render
+            request
+            {:title "Blog | Mario Bašić"
+             :meta-description "Read all my blog posts."
+             :white white
+             :black (black (posts/paginate all-posts page per-page) posts-count page)})}))

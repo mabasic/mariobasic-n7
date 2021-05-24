@@ -28,7 +28,7 @@
 (defn rule-string [request field  & [field-rule]]
   (let [data (helpers/extract-data-from-request request)
         field-value ((keyword field) data)
-        field-rule (or field-rule @{:rule :string})]
+        field-rule (or field-rule {:rule :string})]
     (if (string? field-value)
       (let [rule-validation-results
             (filter
@@ -62,7 +62,7 @@
 # It returns :result true if validation has passed. 
 # In this case :errors should be an empty table.
 (defn validate [request rules]
-  (let [errors @{}]
+  (let [errors (transient {})]
     (foreach [field field-rules rules]
       (let [# It returns a boolean depending if the field-rules contain :nullable value.
             field-has-nullable-rule (not (nil? (find (fn [x] (= x :nullable)) field-rules)))
@@ -71,7 +71,7 @@
             field-validation-results
             # If field-rules contain :nullable and field-value is null, it returns an empty array,
             # otherwise it returns an array with validation error messages if any.
-            (if (and field-has-nullable-rule field-value-is-null) @[]
+            (if (and field-has-nullable-rule field-value-is-null) []
                 (filter
                   # It filters results which are nil or true. It keeps only validation messages.
                  (fn [result] (not (or (nil? result) (true? result))))
@@ -86,12 +86,12 @@
                        :string (rule-string request field field-rule))))))]
         (if (> (count field-validation-results) 0)
           (put errors field field-validation-results))))
-    @{:result (= (count errors) 0)
-      :errors errors}))
+    {:result (= (count errors) 0)
+     :errors (persistent errors)}))
 
 (defn validation-failed-response [errors]
-  @{:status 422
-    :headers @{"Content-Type" "application/json"}
-    :body (json/encode
-           @{:message "The given data was invalid."
-             :errors errors})})
+  {:status 422
+   :headers {"Content-Type" "application/json"}
+   :body (json/encode
+          {:message "The given data was invalid."
+           :errors errors})})

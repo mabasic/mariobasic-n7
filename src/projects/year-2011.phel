@@ -2,9 +2,9 @@
   (:require app\projects\project :refer [project]))
 
 (def index
-  @[(project
-     "Attorney \"Vjeran Paić\""
-     "https://odvjetnik-vjeran-paic.com"
-     "Attorney at law website made with Joomla."
-     ["joomla"]
-     "website")])
+  [(project
+    "Attorney \"Vjeran Paić\""
+    "https://odvjetnik-vjeran-paic.com"
+    "Attorney at law website made with Joomla."
+    ["joomla"]
+    "website")])

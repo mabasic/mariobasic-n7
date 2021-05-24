@@ -24,6 +24,6 @@
      (is-reading request)
      (tokens-match request))
     request
-    @{:status 419
-      :headers @{"Content-Type" "application/json"}
-      :body (json/encode @{:message "CSRF token mismatch."})}))
+    {:status 419
+     :headers {"Content-Type" "application/json"}
+     :body (json/encode {:message "CSRF token mismatch."})}))

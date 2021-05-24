@@ -2,53 +2,53 @@
   (:require app\projects\project :refer [project]))
 
 (def index
-  @[(project
-     "Private transfers \"Karoca\""
-     "https://taxiotokmurter.com"
-     "Company website for booking private transfers made with Laravel."
-     ["laravel"]
-     "website")
-    (project
-     "Butcher shop \"Milina\""
-     "https://milina.hr"
-     "Simple one-page company website for a butcher shop made with Laravel."
-     ["laravel"]
-     "website")
-    (project
-     "Mario Bašić (blog)"
-     "https://github.com/mabasic/mariobasic-blog"
-     "Blog about latest things in full stack web development and in-depth posts about specific topics."
-     ["gatsby.js"]
-     "website")
-    (project
-     "Visit Murter (android)"
-     "https://play.google.com/store/apps/details?id=com.visitmurter"
-     "React Native mobile application which connects to the Visit Murter API."
-     ["react-native" "react.js"]
-     "android-app")
-    (project
-     "mabasic/ulauncher-laravel"
-     "https://github.com/mabasic/ulauncher-laravel"
-     "Ulauncher extension for quick access to the Laravel documentation."
-     ["python" "ulauncher-extension" "open-source"]
-     "github-repository")
-    (project
-     "mabasic/white-theme-sublime"
-     "https://github.com/mabasic/white-theme-sublime"
-     "Minimalist monochrome theme for Sublime Text 3."
-     ["python" "sublime-text-theme" "open-source"]
-     "github-repository")
-    (project
-     "themsaid/wink"
-     "https://github.com/themsaid/wink/pull/190"
-     "Forces data wrapping on resources #190."
-     ["pull-request" "open-source"]
-     "pull-request")
-    (project
-     "narative/gatsby-theme-novela"
-     "https://github.com/narative/gatsby-theme-novela/pulls?q=is%3Apr+author%3Amabasic"
-     "Multiple PRs: #188, #187, #186, #179, #128, #114, #106, #103, #100, #97, #95, #94, #92."
-     ["pull-request" "open-source"]
-     "pull-request")])
+  [(project
+    "Private transfers \"Karoca\""
+    "https://taxiotokmurter.com"
+    "Company website for booking private transfers made with Laravel."
+    ["laravel"]
+    "website")
+   (project
+    "Butcher shop \"Milina\""
+    "https://milina.hr"
+    "Simple one-page company website for a butcher shop made with Laravel."
+    ["laravel"]
+    "website")
+   (project
+    "Mario Bašić (blog)"
+    "https://github.com/mabasic/mariobasic-blog"
+    "Blog about latest things in full stack web development and in-depth posts about specific topics."
+    ["gatsby.js"]
+    "website")
+   (project
+    "Visit Murter (android)"
+    "https://play.google.com/store/apps/details?id=com.visitmurter"
+    "React Native mobile application which connects to the Visit Murter API."
+    ["react-native" "react.js"]
+    "android-app")
+   (project
+    "mabasic/ulauncher-laravel"
+    "https://github.com/mabasic/ulauncher-laravel"
+    "Ulauncher extension for quick access to the Laravel documentation."
+    ["python" "ulauncher-extension" "open-source"]
+    "github-repository")
+   (project
+    "mabasic/white-theme-sublime"
+    "https://github.com/mabasic/white-theme-sublime"
+    "Minimalist monochrome theme for Sublime Text 3."
+    ["python" "sublime-text-theme" "open-source"]
+    "github-repository")
+   (project
+    "themsaid/wink"
+    "https://github.com/themsaid/wink/pull/190"
+    "Forces data wrapping on resources #190."
+    ["pull-request" "open-source"]
+    "pull-request")
+   (project
+    "narative/gatsby-theme-novela"
+    "https://github.com/narative/gatsby-theme-novela/pulls?q=is%3Apr+author%3Amabasic"
+    "Multiple PRs: #188, #187, #186, #179, #128, #114, #106, #103, #100, #97, #95, #94, #92."
+    ["pull-request" "open-source"]
+    "pull-request")])
 
 # SEO optimization for social links #188. A way to manually set the icon for social link #187. Adds DigitalOcean icon #186. Fixes overflow issue on code blocks #179. Fixes article seo structured data #128. Fix for secret articles in next section and RSS feed #114. [Feature] Adds RSS feed #106. More articles no longer displays secret articles #103. Bugfix/horizontal scroll #100. Fixes component shadowing & other things #97. Fixes subscription panel fade when having only one post #95. [WIP] Adds RSS feed #94. Adds patreon and paypal icons #92.

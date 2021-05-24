@@ -4,14 +4,14 @@
 
 (deftest test-render-found
   (let [rendered (show/render
-                  @{:uri @{:host "/2020/01/29/github-archive-program-02-02-2020"}}
-                  @{:year "2020" :month "01" :day "29" :slug "github-archive-program-02-02-2020"})]
+                  {:uri {:host "/2020/01/29/github-archive-program-02-02-2020"}}
+                  {:year "2020" :month "01" :day "29" :slug "github-archive-program-02-02-2020"})]
     (is (= 200 (get rendered :status)))
     (is (string? (get rendered :body)))))
 
 (deftest test-render-not-found
   (let [rendered (show/render
-                  @{:uri @{:host "/2021/01/01/not-found"}}
-                  @{:year "2021" :month "01" :day "01" :slug "not-found"})]
+                  {:uri {:host "/2021/01/01/not-found"}}
+                  {:year "2021" :month "01" :day "01" :slug "not-found"})]
     (is (= 404 (get rendered :status)))
     (is (string? (get rendered :body)))))

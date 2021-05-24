@@ -1,22 +1,22 @@
 (ns app\pages\code-of-conduct
   (:require app\layouts\main))
 
-(def white
+(defn white []
   [:div
-   [:h1 @{:class "display-1 pt-5 mt-5"} "Code of Conduct"]
-   [:p [:a @{:href "/" :class "text-dark"} "home"] "/ open-source"]])
+   [:h1 {:class "display-1 pt-5 mt-5"} "Code of Conduct"]
+   [:p [:a {:href "/" :class "text-dark"} "home"] "/ open-source"]])
 
-(def black
-  [:div @{:class "row"}
-   [:div @{:class "col"}
-    [:p @{:class "lead"} "This document provides community guidelines for a safe, respectful, productive, and collaborative place for any person who is willing to contribute to any of my repositories."]
+(defn black []
+  [:div {:class "row"}
+   [:div {:class "col"}
+    [:p {:class "lead"} "This document provides community guidelines for a safe, respectful, productive, and collaborative place for any person who is willing to contribute to any of my repositories."]
     [:p "This code of conduct is derived from the "
-     [:a @{:href "https://www.ruby-lang.org/en/conduct/"
-           :class "link-light"
-           :rel "noopener nofollow"
-           :target "_blank"} "Ruby code of conduct"]
+     [:a {:href "https://www.ruby-lang.org/en/conduct/"
+          :class "link-light"
+          :rel "noopener nofollow"
+          :target "_blank"} "Ruby code of conduct"]
      ". Any violations of the code of conduct may be reported to "
-     [:a @{:href "mailto:mario@laravelista.hr" :class "link-light"} "Mario Bašić"]
+     [:a {:href "mailto:mario@laravelista.hr" :class "link-light"} "Mario Bašić"]
      "."]
     [:ul
      [:li "Participants will be tolerant of opposing views."]
@@ -25,10 +25,10 @@
      [:li "Behavior which can be reasonably considered harassment will not be tolerated."]]]])
 
 (defn render [request]
-  @{:status 200
-    :body (main/render
-           request
-           @{:title "Code of Conduct | Mario Bašić"
-             :meta-description "This document provides community guidelines for a safe, respectful, productive, and collaborative place for any person who is willing to contribute to any of my repositories."
-             :white white
-             :black black})})
+  {:status 200
+   :body (main/render
+          request
+          {:title "Code of Conduct | Mario Bašić"
+           :meta-description "This document provides community guidelines for a safe, respectful, productive, and collaborative place for any person who is willing to contribute to any of my repositories."
+           :white (white)
+           :black (black)})})

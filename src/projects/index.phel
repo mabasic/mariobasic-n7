@@ -12,14 +12,14 @@
   (:require app\projects\year-2011))
 
 (def index
-  @[@{:year "2021" :projects year-2021/index}
-    @{:year "2020" :projects year-2020/index}
-    @{:year "2019" :projects year-2019/index}
-    @{:year "2018" :projects year-2018/index}
-    @{:year "2017" :projects year-2017/index}
-    @{:year "2016" :projects year-2016/index}
-    @{:year "2015" :projects year-2015/index}
-    @{:year "2014" :projects year-2014/index}
-    @{:year "2013" :projects year-2013/index}
-    @{:year "2012" :projects year-2012/index}
-    @{:year "2011" :projects year-2011/index}])
+  [{:year "2021" :projects year-2021/index}
+   {:year "2020" :projects year-2020/index}
+   {:year "2019" :projects year-2019/index}
+   {:year "2018" :projects year-2018/index}
+   {:year "2017" :projects year-2017/index}
+   {:year "2016" :projects year-2016/index}
+   {:year "2015" :projects year-2015/index}
+   {:year "2014" :projects year-2014/index}
+   {:year "2013" :projects year-2013/index}
+   {:year "2012" :projects year-2012/index}
+   {:year "2011" :projects year-2011/index}])

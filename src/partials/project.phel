@@ -3,23 +3,23 @@
 
 (defn render [project]
   (unit
-   @{:title
-     [:a
-      @{:class "text-white"
-        :href (get project :link)
-        :target "_blank"
-        :rel "nofollow noopener"}
-      (case (get project :type)
-        "website" [:i @{:class "fas fa-fw fa-globe-europe me-1"}]
-        "android-app" [:i @{:class "fab fa-fw fa-google-play me-1"}]
-        "business-application" [:i @{:class "fas fa-fw fa-cogs me-1"}]
-        "online-store" [:i @{:class "fas fa-fw fa-shopping-cart me-1"}]
-        "pull-request" [:i @{:class "fas fa-fw fa-code-branch me-1"}]
-        "github-repository" [:i @{:class "fab fa-fw fa-github me-1"}])
-      (get project :title)]
-     :intro
-     [:div
-      (get project :description)
-      [:br]
-      (for [badge :in (get project :badges)]
-        [:span @{:class "badge"} "#" badge])]}))
+   {:title
+    [:a
+     {:class "text-white"
+      :href (get project :link)
+      :target "_blank"
+      :rel "nofollow noopener"}
+     (case (get project :type)
+       "website" [:i {:class "fas fa-fw fa-globe-europe me-1"}]
+       "android-app" [:i {:class "fab fa-fw fa-google-play me-1"}]
+       "business-application" [:i {:class "fas fa-fw fa-cogs me-1"}]
+       "online-store" [:i {:class "fas fa-fw fa-shopping-cart me-1"}]
+       "pull-request" [:i {:class "fas fa-fw fa-code-branch me-1"}]
+       "github-repository" [:i {:class "fab fa-fw fa-github me-1"}])
+     (get project :title)]
+    :intro
+    [:div
+     (get project :description)
+     [:br]
+     (for [badge :in (get project :badges)]
+       [:span {:class "badge"} "#" badge])]}))

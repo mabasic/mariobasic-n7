@@ -86,6 +86,7 @@
                    "GET"
                    (get request :method))))
                redirects)]
+    # (println ((get route :page) request (router/get-parameters (:url route) (:path (:uri request)))))
     (cond
       (and (nil? route) (nil? redirect)) (page-not-found/render request)
       (not (nil? redirect)) ((:handler redirect) (:to redirect))
@@ -100,7 +101,8 @@
         response))))
 
 (defn emit-response [response]
-  (let [rsp (http/create-response-from-table response)]
+
+  (let [rsp (http/create-response-from-map response)]
     (http/emit-response rsp)))
 
 (let [response (run-global-middleware request global-middleware)]

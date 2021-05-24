@@ -2,81 +2,81 @@
   (:require app\projects\project :refer [project]))
 
 (def index
-  @[(project
-     "Adriatica Consult"
-     "http://adriaticaconsult.com"
-     "Business consulting company one-page website made with Laravel."
-     ["laravel"]
-     "website")
-    (project
-     "Studio \"Renata\""
-     "http://studio-renata.hr"
-     "Hair salon company one-page website made with Laravel."
-     ["laravel"]
-     "website")
-    (project
-     "Real estate agency \"Treva\""
-     "https://nekretnine-treva.com"
-     "Real estate agency website made with Laravel."
-     ["laravel"]
-     "website")
-    (project
-     "Laravelista"
-     "https://laravelista.com"
-     "Subscription based website for teaching Laravel made with Laravel. Integrated Braintree payment gateway with Cashier."
-     ["laravel" "braintree"]
-     "business-application")
-    (project
-     "mabasic/translatethis"
-     "https://github.com/mabasic/translatethis"
-     "Exports localization files to plain text files ready for translation."
-     ["php" "cli" "open-source"]
-     "github-repository")
-    (project
-     "mabasic/maria"
-     "https://github.com/mabasic/maria"
-     "It grabs images from a folder and converts them to desired dimensions."
-     ["php" "cli" "open-source"]
-     "github-repository")
-    (project
-     "laravelista/sherlock"
-     "https://github.com/laravelista/sherlock"
-     "Sherlock is a PHP package that provides unique features for markdown."
-     ["php-library" "open-source"]
-     "github-repository")
-    (project
-     "laravelista/kyle"
-     "https://github.com/laravelista/kyle"
-     "Monitor when to bill clients based on the services they use."
-     ["laravel-project" "open-source"]
-     "github-repository")
-    (project
-     "laravelista/comments"
-     "https://github.com/laravelista/comments"
-     "Native comments for your Laravel application."
-     ["laravel-package" "open-source"]
-     "github-repository")
-    (project
-     "tiipiik/OctoberCMS-RoomBooking"
-     "https://github.com/tiipiik/OctoberCMS-RoomBooking/pull/7"
-     "Fix for incorrect booked date array #9."
-     ["pull-request" "open-source"]
-     "pull-request")
-    (project
-     "themsaid/katana"
-     "https://github.com/themsaid/katana/pull/11"
-     "Meta description for pages and posts #11."
-     ["pull-request" "open-source"]
-     "pull-request")
-    (project
-     "laravel/docs"
-     "https://github.com/laravel/docs/pulls?q=is%3Apr+author%3Amabasic"
-     "Added token based authentication chapter #2325. Improved homestead function for daily usage #2308. Replaced bash alias with bash function #2284."
-     ["pull-request" "open-source"]
-     "pull-request")
-    (project
-     "laravel/lumen-docs"
-     "https://github.com/laravel/lumen-docs/pull/114"
-     "Updated the location of routes file #114."
-     ["pull-request" "open-source"]
-     "pull-request")])
+  [(project
+    "Adriatica Consult"
+    "http://adriaticaconsult.com"
+    "Business consulting company one-page website made with Laravel."
+    ["laravel"]
+    "website")
+   (project
+    "Studio \"Renata\""
+    "http://studio-renata.hr"
+    "Hair salon company one-page website made with Laravel."
+    ["laravel"]
+    "website")
+   (project
+    "Real estate agency \"Treva\""
+    "https://nekretnine-treva.com"
+    "Real estate agency website made with Laravel."
+    ["laravel"]
+    "website")
+   (project
+    "Laravelista"
+    "https://laravelista.com"
+    "Subscription based website for teaching Laravel made with Laravel. Integrated Braintree payment gateway with Cashier."
+    ["laravel" "braintree"]
+    "business-application")
+   (project
+    "mabasic/translatethis"
+    "https://github.com/mabasic/translatethis"
+    "Exports localization files to plain text files ready for translation."
+    ["php" "cli" "open-source"]
+    "github-repository")
+   (project
+    "mabasic/maria"
+    "https://github.com/mabasic/maria"
+    "It grabs images from a folder and converts them to desired dimensions."
+    ["php" "cli" "open-source"]
+    "github-repository")
+   (project
+    "laravelista/sherlock"
+    "https://github.com/laravelista/sherlock"
+    "Sherlock is a PHP package that provides unique features for markdown."
+    ["php-library" "open-source"]
+    "github-repository")
+   (project
+    "laravelista/kyle"
+    "https://github.com/laravelista/kyle"
+    "Monitor when to bill clients based on the services they use."
+    ["laravel-project" "open-source"]
+    "github-repository")
+   (project
+    "laravelista/comments"
+    "https://github.com/laravelista/comments"
+    "Native comments for your Laravel application."
+    ["laravel-package" "open-source"]
+    "github-repository")
+   (project
+    "tiipiik/OctoberCMS-RoomBooking"
+    "https://github.com/tiipiik/OctoberCMS-RoomBooking/pull/7"
+    "Fix for incorrect booked date array #9."
+    ["pull-request" "open-source"]
+    "pull-request")
+   (project
+    "themsaid/katana"
+    "https://github.com/themsaid/katana/pull/11"
+    "Meta description for pages and posts #11."
+    ["pull-request" "open-source"]
+    "pull-request")
+   (project
+    "laravel/docs"
+    "https://github.com/laravel/docs/pulls?q=is%3Apr+author%3Amabasic"
+    "Added token based authentication chapter #2325. Improved homestead function for daily usage #2308. Replaced bash alias with bash function #2284."
+    ["pull-request" "open-source"]
+    "pull-request")
+   (project
+    "laravel/lumen-docs"
+    "https://github.com/laravel/lumen-docs/pull/114"
+    "Updated the location of routes file #114."
+    ["pull-request" "open-source"]
+    "pull-request")])

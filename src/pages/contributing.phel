@@ -1,33 +1,33 @@
 (ns app\pages\contributing
   (:require app\layouts\main))
 
-(def white
+(defn white []
   [:div
-   [:h1 @{:class "display-1 pt-5 mt-5"} "Contributing"]
-   [:p [:a @{:href "/" :class "text-dark"} "home"] "/ open-source"]])
+   [:h1 {:class "display-1 pt-5 mt-5"} "Contributing"]
+   [:p [:a {:href "/" :class "text-dark"} "home"] "/ open-source"]])
 
-(def black
-  [:div @{:class "row"}
-   [:div @{:class "col"}
-    [:p @{:class "lead"} "There are no strict rules when contributing, but here are my suggestions."]
+(defn black []
+  [:div {:class "row"}
+   [:div {:class "col"}
+    [:p {:class "lead"} "There are no strict rules when contributing, but here are my suggestions."]
     [:p "I use a combination of "
-     [:a @{:href "https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow"
-           :class "link-light"
-           :rel "noopener nofollow"
-           :target "_blank"} "Gitflow Workflow"]
+     [:a {:href "https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow"
+          :class "link-light"
+          :rel "noopener nofollow"
+          :target "_blank"} "Gitflow Workflow"]
      " and "
-     [:a @{:href "https://www.atlassian.com/git/tutorials/comparing-workflows/forking-workflow"
-           :class "link-light"
-           :rel "noopener nofollow"
-           :target "_blank"} "Forking Workflow"]
+     [:a {:href "https://www.atlassian.com/git/tutorials/comparing-workflows/forking-workflow"
+          :class "link-light"
+          :rel "noopener nofollow"
+          :target "_blank"} "Forking Workflow"]
      "."]
-    [:h2 @{:class "mt-5"} "Steps"]
+    [:h2 {:class "mt-5"} "Steps"]
     [:ol
      [:li "Fork the repository."]
      [:li "Create a branch depending on the issue that you are working on. See branch reference list bellow."]
      [:li "Do your work and commit."]
      [:li "Create a Pull Request to the main branch."]]
-    [:h3 @{:class "mt-4"} "Branch reference list"]
+    [:h3 {:class "mt-4"} "Branch reference list"]
     [:ul
      [:li [:code "feature/{name}"] " - New functionality or refactoring."]
      [:li [:code "bugfix/{name}"] " - Fixes existing code."]
@@ -36,10 +36,10 @@
     [:p "Replace " [:code "{name}"] " with the name that best describes what your PR is about."]]])
 
 (defn render [request]
-  @{:status 200
-    :body (main/render
-           request
-           @{:title "Contributing | Mario Bašić"
-             :meta-description "There are no strict rules when contributing, but here are my suggestions."
-             :white white
-             :black black})})
+  {:status 200
+   :body (main/render
+          request
+          {:title "Contributing | Mario Bašić"
+           :meta-description "There are no strict rules when contributing, but here are my suggestions."
+           :white (white)
+           :black (black)})})

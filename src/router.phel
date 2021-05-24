@@ -39,7 +39,7 @@
 (defn get-parameters [route url]
   (let [route-parts (php/explode "/" route)
         url-parts (php/explode "/" url)
-        parameters @{}]
+        parameters (transient {})]
     (do
       (foreach [index part route-parts]
         (if (= (php/preg_match (str "/^{" regex "}$/i") part) 1)
@@ -47,4 +47,4 @@
           (put parameters (get-keyword-from-route-parameter part) index)))
       (foreach [key index parameters]
         (put parameters key (get url-parts index)))
-      parameters)))
+      (persistent parameters))))

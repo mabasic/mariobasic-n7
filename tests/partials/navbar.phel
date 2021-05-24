@@ -5,4 +5,4 @@
 (def rendered (navbar/render "/"))
 
 (deftest test-render
-  (is (tuple? rendered)))
+  (is (vector? rendered)))

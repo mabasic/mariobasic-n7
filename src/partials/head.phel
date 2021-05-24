@@ -3,23 +3,23 @@
 
 (defn render [& [title meta-description]]
   [:head
-   [:meta @{:charset "utf-8"}]
-   [:meta @{:name "viewport" :content "width=device-width, initial-scale=1"}]
-   [:meta @{:name "author" :content "Mario Bašić"}]
+   [:meta {:charset "utf-8"}]
+   [:meta {:name "viewport" :content "width=device-width, initial-scale=1"}]
+   [:meta {:name "author" :content "Mario Bašić"}]
    (if-not (nil? meta-description)
-     [:meta @{:name "description" :content meta-description}])
+     [:meta {:name "description" :content meta-description}])
    (if-not (nil? (php/aget php/$_SESSION "_token"))
-     [:meta @{:name "csrf-token" :content (php/aget php/$_SESSION "_token")}])
-   [:link @{:href "/3eb06c702e27fb110194.woff2" :rel "preload" :as "font" :type "font/woff2" :crossorigin true}]
-   [:link @{:href "/6e63bd22128f27b83f22.woff2" :rel "preload" :as "font" :type "font/woff2" :crossorigin true}]
-   [:link @{:href "/main.css" :rel "stylesheet"}]
-   [:link @{:href "/favicon.ico" :rel "icon"}]
-   [:link @{:href "/favicon.png" :rel "shortcut icon"}]
-   [:link @{:href "/apple-touch-icon.png" :rel "apple-touch-icon"}]
-   [:link @{:href "/apple-touch-icon-72x72.png" :rel "apple-touch-icon" :sizes "72x72"}]
-   [:link @{:href "/apple-touch-icon-114x114.png" :rel "apple-touch-icon" :sizes "114x114"}]
-   [:link @{:href "/apple-touch-icon-192x192.png" :rel "icon" :sizes "192x192"}]
-   [:link @{:rel "canonical" :href "https://mariobasic.com"}]
+     [:meta {:name "csrf-token" :content (php/aget php/$_SESSION "_token")}])
+   [:link {:href "/3eb06c702e27fb110194.woff2" :rel "preload" :as "font" :type "font/woff2" :crossorigin true}]
+   [:link {:href "/6e63bd22128f27b83f22.woff2" :rel "preload" :as "font" :type "font/woff2" :crossorigin true}]
+   [:link {:href "/main.css" :rel "stylesheet"}]
+   [:link {:href "/favicon.ico" :rel "icon"}]
+   [:link {:href "/favicon.png" :rel "shortcut icon"}]
+   [:link {:href "/apple-touch-icon.png" :rel "apple-touch-icon"}]
+   [:link {:href "/apple-touch-icon-72x72.png" :rel "apple-touch-icon" :sizes "72x72"}]
+   [:link {:href "/apple-touch-icon-114x114.png" :rel "apple-touch-icon" :sizes "114x114"}]
+   [:link {:href "/apple-touch-icon-192x192.png" :rel "icon" :sizes "192x192"}]
+   [:link {:rel "canonical" :href "https://mariobasic.com"}]
    (if (= (app/environment) "production")
-     [:script @{:async true :defer true :data-domain "mariobasic.com" :src "https://plausible.laravelista.com/js/plausible.js"}])
+     [:script {:async true :defer true :data-domain "mariobasic.com" :src "https://plausible.laravelista.com/js/plausible.js"}])
    [:title title]])

@@ -1,141 +1,141 @@
 (ns app\pages\laravel-collection
   (:require app\layouts\main))
 
-(def white
-  [:div @{:class "mt-5 pt-5 mb-4"}
-   [:div @{:class "row"}
-    [:div @{:class "col-lg-5"}
+(defn white []
+  [:div {:class "mt-5 pt-5 mb-4"}
+   [:div {:class "row"}
+    [:div {:class "col-lg-5"}
      [:img
-      @{:src "/book.png"
-        :alt "A Collection of Laravel Tutorials Book Cover"
-        :loading "lazy"
-        :width "441"
-        :height "500"
-        :class "img-fluid rounded mx-auto d-block"}]]
-    [:div @{:class "col-lg-7 ps-lg-5"}
-     [:h1 @{:class "display-1 mt-5 mt-lg-0"} "A Collection of Laravel Tutorials"]
-     [:p @{:class "lead"} "This book contains all tutorials that have been published on the Laravelista website in the period from >= 2016. to < 2018."]
-     [:p @{:class "mb-5"}
+      {:src "/book.png"
+       :alt "A Collection of Laravel Tutorials Book Cover"
+       :loading "lazy"
+       :width "441"
+       :height "500"
+       :class "img-fluid rounded mx-auto d-block"}]]
+    [:div {:class "col-lg-7 ps-lg-5"}
+     [:h1 {:class "display-1 mt-5 mt-lg-0"} "A Collection of Laravel Tutorials"]
+     [:p {:class "lead"} "This book contains all tutorials that have been published on the Laravelista website in the period from >= 2016. to < 2018."]
+     [:p {:class "mb-5"}
       [:a
-       @{:class "btn btn-dark btn-lg mb-2 mt-3"
-         :href "https://leanpub.com/laravelista-collection"
-         :rel "nofollow noopener"
-         :target "_blank"} "Buy on Leanpub"]]]]])
+       {:class "btn btn-dark btn-lg mb-2 mt-3"
+        :href "https://leanpub.com/laravelista-collection"
+        :rel "nofollow noopener"
+        :target "_blank"} "Buy on Leanpub"]]]]])
 
 (defn icon-unit [icon title body]
-  [:div @{:class "icon-unit d-flex mb-3 mb-lg-0"}
-   [:div @{:class "icon-unit-left"} [:span @{:class "h3"} icon]]
-   [:div @{:class "icon-unit-right"}
-    [:h3 @{:class "icon-unit-title"} title]
-    [:p @{:class "icon-unit-body"} body]]])
+  [:div {:class "icon-unit d-flex mb-3 mb-lg-0"}
+   [:div {:class "icon-unit-left"} [:span {:class "h3"} icon]]
+   [:div {:class "icon-unit-right"}
+    [:h3 {:class "icon-unit-title"} title]
+    [:p {:class "icon-unit-body"} body]]])
 
 (defn centered-icon-unit [icon title body]
-  [:div @{:class "centered-icon-unit text-center mb-5 mb-lg-0"}
-   [:span @{:class "h1"} icon]
-   [:h5 @{:class "centered-icon-unit-title mt-2"} title]
-   [:p @{:class "centered-icon-unit-body"} body]])
+  [:div {:class "centered-icon-unit text-center mb-5 mb-lg-0"}
+   [:span {:class "h1"} icon]
+   [:h5 {:class "centered-icon-unit-title mt-2"} title]
+   [:p {:class "centered-icon-unit-body"} body]])
 
-(def black
+(defn black []
   [:div
-   [:div @{:class "row pb-lg-5"}
-    [:div @{:class "col-lg-4 mb-5"}
-     [:h3 @{:class "display-3"} "Complete Edition."]
-     [:hr @{:style "width: 20%;"}]]
-    [:div @{:class "col-lg-8"}
-     [:div @{:class "row pb-lg-5"}
-      [:div @{:class "col-lg-6"}
+   [:div {:class "row pb-lg-5"}
+    [:div {:class "col-lg-4 mb-5"}
+     [:h3 {:class "display-3"} "Complete Edition."]
+     [:hr {:style "width: 20%;"}]]
+    [:div {:class "col-lg-8"}
+     [:div {:class "row pb-lg-5"}
+      [:div {:class "col-lg-6"}
        (icon-unit
-        [:i @{:class "fab fa-git-alt"}]
+        [:i {:class "fab fa-git-alt"}]
         "Code samples"
         "All tutorials in this book come with a working code repository on GitHub.")]
-      [:div @{:class "col-lg-6"}
+      [:div {:class "col-lg-6"}
        (icon-unit
-        [:i @{:class "fas fa-lightbulb"}]
+        [:i {:class "fas fa-lightbulb"}]
         "Learning tips"
         "Throughout the whole book you will find tips to expand your knowledge on a topic.")]]
-     [:div @{:class "row"}
-      [:div @{:class "col-lg-6"}
+     [:div {:class "row"}
+      [:div {:class "col-lg-6"}
        (icon-unit
-        [:i @{:class "fas fa-walking"}]
+        [:i {:class "fas fa-walking"}]
         "Step by step"
         "Each chapter comes with a commit that shows the changes that have been made in it.")]
-      [:div @{:class "col-lg-6"}
+      [:div {:class "col-lg-6"}
        (icon-unit
-        [:i @{:class "fas fa-bookmark"}]
+        [:i {:class "fas fa-bookmark"}]
         "Jump in anywhere"
         "No need to read the whole book. Find a tutorial that interests you and start reading.")]]]]
-   [:div @{:class "row mt-5 pt-5"}
-    [:div @{:class "col-lg-12 mb-3"}
+   [:div {:class "row mt-5 pt-5"}
+    [:div {:class "col-lg-12 mb-3"}
      [:h3 "A programmer guides an another programmer to build stuff."]
-     [:p @{:class "lead"} "This book represents my two year effort to teach others how to build web sites and web applications using Laravel framework. It is a great starting point if you want to jump straight to the thing that interests you."]]]
-   [:div @{:class "row mt-5"}
-    [:div @{:class "col-lg-6"}
+     [:p {:class "lead"} "This book represents my two year effort to teach others how to build web sites and web applications using Laravel framework. It is a great starting point if you want to jump straight to the thing that interests you."]]]
+   [:div {:class "row mt-5"}
+    [:div {:class "col-lg-6"}
      (icon-unit
-      [:i @{:class "fas fa-terminal"}]
+      [:i {:class "fas fa-terminal"}]
       "API Development"
       "Building and documenting an API with Laravel.")]
-    [:div @{:class "col-lg-6"}
+    [:div {:class "col-lg-6"}
      (icon-unit
-      [:i @{:class "fas fa-user-secret"}]
+      [:i {:class "fas fa-user-secret"}]
       "JWT Authentication"
       "Most popular tutorial on JWT for Lumen.")]]
-   [:div @{:class "row mt-lg-5 mb-5 pb-5"}
-    [:div @{:class "col-lg-6"}
+   [:div {:class "row mt-lg-5 mb-5 pb-5"}
+    [:div {:class "col-lg-6"}
      (icon-unit
-      [:i @{:class "fas fa-laptop-code"}]
+      [:i {:class "fas fa-laptop-code"}]
       "Laravel on Windows"
       "Homestead or Laragon, pick one and start building.")]
-    [:div @{:class "col-lg-6"}
+    [:div {:class "col-lg-6"}
      (icon-unit
-      [:i @{:class "fas fa-code"}]
+      [:i {:class "fas fa-code"}]
       "Codeception testing"
       "Testing with Codeception on Laravel and Lumen.")]]
-   [:div @{:class "row mt-5 pt-5"}
-    [:div @{:class "col-lg-4"}
+   [:div {:class "row mt-5 pt-5"}
+    [:div {:class "col-lg-4"}
      (centered-icon-unit
-      [:i @{:class "fas fa-user-tie"}]
+      [:i {:class "fas fa-user-tie"}]
       "Forms and Validation"
       "Learn how to create and validate forms. Includes tutorials on validating form arrays and different ways of validating data.")]
-    [:div @{:class "col-lg-4"}
+    [:div {:class "col-lg-4"}
      (centered-icon-unit
-      [:i @{:class "fas fa-tools"}]
+      [:i {:class "fas fa-tools"}]
       "Compiling Frontend Assets"
       "Learn how to use Laravel Mix to compile frontend assets. Also, learn how to use Laravel Mix or Laravel Elixir without Laravel.")]
-    [:div @{:class "col-lg-4"}
+    [:div {:class "col-lg-4"}
      (centered-icon-unit
-      [:i @{:class "fas fa-globe-europe"}]
+      [:i {:class "fas fa-globe-europe"}]
       "Mulitilingual Web Applications"
       "Learn how to create multilingual web application with Laravel. From simple text localization to database model translations.")]]
-   [:div @{:class "row mt-lg-5 mb-5 pb-5"}
-    [:div @{:class "col-lg-4"}
+   [:div {:class "row mt-lg-5 mb-5 pb-5"}
+    [:div {:class "col-lg-4"}
      (centered-icon-unit
-      [:i @{:class "fas fa-paper-plane"}]
+      [:i {:class "fas fa-paper-plane"}]
       "Deployment with Envoy"
       "Learn everything about Laravel Envoy with practical examples. There is also a tutorial on deploying a Laravel app from GitHub to Heroku.")]
-    [:div @{:class "col-lg-4"}
+    [:div {:class "col-lg-4"}
      (centered-icon-unit
-      [:i @{:class "fas fa-database"}]
+      [:i {:class "fas fa-database"}]
       "Database and Eloquent ORM"
       "Learn all about pagination presenters and how to paginate a collection of different models. Also, learn different ways of deleting records.")]
-    [:div @{:class "col-lg-4"}
+    [:div {:class "col-lg-4"}
      (centered-icon-unit
-      [:i @{:class "fas fa-server"}]
+      [:i {:class "fas fa-server"}]
       "Server Administration"
       "For the brave, there are a couple of tutorials on installing Nginx, PHP7, obtaining certificates with Let's encrypt and bash scripting.")]]
-   [:div @{:class "row mt-5 pt-6"}
-    [:div @{:class "col"}
+   [:div {:class "row mt-5 pt-6"}
+    [:div {:class "col"}
      [:h2 "Reader Testimonials"]
-     [:figure @{:class "mt-5"}
-      [:blockquote @{:class "blockquote"}
-       [:p @{:class "lead text-uppercase"} "CLEAR AND EASY"]
+     [:figure {:class "mt-5"}
+      [:blockquote {:class "blockquote"}
+       [:p {:class "lead text-uppercase"} "CLEAR AND EASY"]
        [:p "\"The book is clear and easy to understand, I found some useful stuff like setting up Laravel on shared hosting, RSS, and sitemap.\""]]
-      [:figcaption @{:class "blockquote-footer"} "Marcel Pow"]]]]])
+      [:figcaption {:class "blockquote-footer"} "Marcel Pow"]]]]])
 
 (defn render [request]
-  @{:status 200
-    :body (main/render
-           request
-           @{:title "The Book | Mario Bašić"
-             :meta-description "This book represents my two year effort to teach others how to build web sites and web applications using Laravel framework."
-             :white white
-             :black black})})
+  {:status 200
+   :body (main/render
+          request
+          {:title "The Book | Mario Bašić"
+           :meta-description "This book represents my two year effort to teach others how to build web sites and web applications using Laravel framework."
+           :white (white)
+           :black (black)})})

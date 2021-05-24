@@ -2,7 +2,7 @@
   (:require phel\test :refer [deftest is])
   (:require app\pages\portfolio))
 
-(def rendered (portfolio/render @{:uri @{:host "/portfolio"}}))
+(def rendered (portfolio/render {:uri {:host "/portfolio"}}))
 
 (deftest test-render
   (is (= 200 (get rendered :status)))

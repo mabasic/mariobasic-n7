@@ -2,27 +2,27 @@
   (:require app\projects\project :refer [project]))
 
 (def index
-  @[(project
-     "Tourist agency \"Murterin\""
-     "https://murterin.com"
-     "Company website for a tourist agency made with Laravel. Consists of two Laravel applications: one API/CMS and one Website."
-     ["laravel"]
-     "website")
-    (project
-     "Real estate agency \"Duos\""
-     "https://duos-croatia.com"
-     "Real estate agency website made with Laravel. Integrated external service iRealOne for property management."
-     ["laravel" "irealone"]
-     "website")
-    (project
-     "Online store \"Daba\""
-     "https://daba.hr"
-     "Webshop for a woodworking company in Murter made with Laravel."
-     ["laravel"]
-     "online-store")
-    (project
-     "Virmanix"
-     "https://virmanix.damex.hr"
-     "Business web application for printing virmans for a bookkeeping company made with Laravel."
-     ["laravel"]
-     "business-application")])
+  [(project
+    "Tourist agency \"Murterin\""
+    "https://murterin.com"
+    "Company website for a tourist agency made with Laravel. Consists of two Laravel applications: one API/CMS and one Website."
+    ["laravel"]
+    "website")
+   (project
+    "Real estate agency \"Duos\""
+    "https://duos-croatia.com"
+    "Real estate agency website made with Laravel. Integrated external service iRealOne for property management."
+    ["laravel" "irealone"]
+    "website")
+   (project
+    "Online store \"Daba\""
+    "https://daba.hr"
+    "Webshop for a woodworking company in Murter made with Laravel."
+    ["laravel"]
+    "online-store")
+   (project
+    "Virmanix"
+    "https://virmanix.damex.hr"
+    "Business web application for printing virmans for a bookkeeping company made with Laravel."
+    ["laravel"]
+    "business-application")])

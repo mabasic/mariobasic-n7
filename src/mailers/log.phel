@@ -10,7 +10,7 @@
    (if-not (nil? reply-to) (str "Reply-To: <" reply-to ">" php/PHP_EOL))
    "To: <" to ">" php/PHP_EOL))
 
-(defn send [@{:to to :subject subject :message message :reply-to reply-to}]
+(defn send [{:to to :subject subject :message message :reply-to reply-to}]
   (logger/debug
    (str
     (get-headers subject (mail/from-address) to reply-to)

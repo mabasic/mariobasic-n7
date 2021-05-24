@@ -5,29 +5,29 @@
   (:require app\projects\index :as projects)
   (:require app\helpers))
 
-(def white
+(defn white []
   [:div
-   [:h1 @{:class "display-1 pt-5 mt-5"} "Portfolio"]
-   [:p [:a @{:href "/" :class "text-dark"} "home"] "/ portfolio"]])
+   [:h1 {:class "display-1 pt-5 mt-5"} "Portfolio"]
+   [:p [:a {:href "/" :class "text-dark"} "home"] "/ portfolio"]])
 
-(def black
+(defn black []
   [:div
    (for [item :in projects/index]
-     [:div @{:class "row mb-5"}
-      [:div @{:class "col"}
+     [:div {:class "row mb-5"}
+      [:div {:class "col"}
        [:h2 (get item :year)]
-       [:hr @{:style "width: 130px;" :class "mb-4"}]
-       (for [project-subset :in (helpers/partition 4 (get item :projects))]
-         [:div @{:class "row"}
+       [:hr {:style "width: 130px;" :class "mb-4"}]
+       (for [project-subset :in (partition 4 (get item :projects))]
+         [:div {:class "row"}
           (for [project :in project-subset]
-            [:div @{:class "col-lg-3"}
+            [:div {:class "col-lg-3"}
              (project-partial/render project)])])]])])
 
 (defn render [request]
-  @{:status 200
-    :body (main/render
-           request
-           @{:title "Portfolio | Mario Bašić"
-             :meta-description "Websites, repositories, pull requests and more."
-             :white white
-             :black black})})
+  {:status 200
+   :body (main/render
+          request
+          {:title "Portfolio | Mario Bašić"
+           :meta-description "Websites, repositories, pull requests and more."
+           :white (white)
+           :black (black)})})

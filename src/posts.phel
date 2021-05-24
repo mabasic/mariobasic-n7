@@ -61,9 +61,9 @@
       (parse-front-matter (php/-> file (getPathname)))))))
 
 (defn paginate [posts page perPage]
-  (let [pages (helpers/partition perPage posts)
-        page-posts (get (helpers/partition perPage posts) (- page 1))]
-    (if (nil? page-posts) @[] page-posts)))
+  (let [pages (partition perPage posts)
+        page-posts (get (partition perPage posts) (- page 1))]
+    (if (nil? page-posts) [] page-posts)))
 
 (defn get-by-slug [year month day slug]
   (let [posts (get-all)]

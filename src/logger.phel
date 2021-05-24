@@ -6,7 +6,7 @@
 (def level-info "INFO")
 (def level-debug "DEBUG")
 
-(defn log [data & [@{:level level}]]
+(defn log [data & [{:level level}]]
   (let [level (or level level-info)]
     (php/file_put_contents
      log-file
@@ -17,7 +17,7 @@
      php/FILE_APPEND)))
 
 (defn debug [data]
-  (log data @{:level level-debug}))
+  (log data {:level level-debug}))
 
 (defn info [data]
-  (log data @{:level level-info}))
+  (log data {:level level-info}))

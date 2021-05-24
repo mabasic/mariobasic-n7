@@ -2,29 +2,29 @@
   (:require app\config\app))
 
 # This email HTML is taken from Laravel Mail.
-(defn render [@{:first_name first-name
-                :last_name last-name
-                :company_name company-name
-                :vat_number vat-number
-                :address address
-                :city city
-                :zip_code zip-code
-                :country country
-                :email_address email-address
-                :phone phone
-                :topic topic
-                :budget budget
-                :subject subject
-                :q1 q1
-                :q2 q2
-                :q3 q3
-                :q4 q4
-                :q5 q5
-                :q6 q6
-                :q7 q7
-                :q8 q8
-                :q9 q9
-                :gdpr_consent gdpr-consent}]
+(defn render [{:first_name first-name
+               :last_name last-name
+               :company_name company-name
+               :vat_number vat-number
+               :address address
+               :city city
+               :zip_code zip-code
+               :country country
+               :email_address email-address
+               :phone phone
+               :topic topic
+               :budget budget
+               :subject subject
+               :q1 q1
+               :q2 q2
+               :q3 q3
+               :q4 q4
+               :q5 q5
+               :q6 q6
+               :q7 q7
+               :q8 q8
+               :q9 q9
+               :gdpr_consent gdpr-consent}]
   (str "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">
 <html xmlns=\"http://www.w3.org/1999/xhtml\">
 <head>

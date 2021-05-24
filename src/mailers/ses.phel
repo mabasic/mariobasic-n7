@@ -12,7 +12,7 @@
                            "secret" (services/ses-secret)
                            "key" (services/ses-key)))))
 
-(defn send [@{:to to :subject subject :message message :reply-to reply-to}]
+(defn send [{:to to :subject subject :message message :reply-to reply-to}]
   (php/-> (client) (sendEmail
                     (php-associative-array
                      "Destination" (php-associative-array

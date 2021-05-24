@@ -2,57 +2,57 @@
   (:require app\projects\project :refer [project]))
 
 (def index
-  @[(project
-     "Dance studio \"Plesni Koraci\""
-     "https://plesnikoraci.com"
-     "Company website for dance lessons and dance shows made with Laravel."
-     ["laravel"]
-     "website")
-    (project
-     "Hotel \"Murter\""
-     "https://hotelmurter.com"
-     "Company website for a hotel in Murter made with Laravel. Integrated external service Rentlio for room bookings."
-     ["laravel" "rentlio"]
-     "website")
-    (project
-     "Real estate agency \"Adriatica\""
-     "https://adriatica-nekretnine.hr"
-     "Real estate agency website made with Laravel. Integrated external service Crozilla for property marketing."
-     ["laravel" "crozilla"]
-     "website")
-    (project
-     "Laravelista (blog)"
-     "https://laravelista.com"
-     "Original Laravelista blog made with Ghost CMS."
-     ["ghost-cms"]
-     "website")
-    (project
-     "mabasic/translate-that-model"
-     "https://github.com/mabasic/translate-that-model"
-     "This Laravel package adds a single trait to enable simple model translation."
-     ["laravel-package" "open-source"]
-     "github-repository")
-    (project
-     "mabasic/GalleryLoader"
-     "https://github.com/mabasic/GalleryLoader"
-     "Laravel facade that gets images from a folder sorted by filename and filtered."
-     ["laravel-package" "open-source"]
-     "github-repository")
-    (project
-     "mabasic/mailer"
-     "https://github.com/mabasic/mailer"
-     "Laravel package for more efficient email sending inspired by Laracasts."
-     ["laravel-package" "open-source"]
-     "github-repository")
-    (project
-     "mabasic/wakatime-php-api"
-     "https://github.com/mabasic/wakatime-php-api"
-     "WakaTime API for PHP."
-     ["php-library" "open-source"]
-     "github-repository")
-    (project
-     "laravelista/Laranotti"
-     "https://github.com/laravelista/Laranotti"
-     "Laranotti is a Chrome extension which notifies you of new lessons from Laracasts and lets you view the latest."
-     ["chrome-extension" "react.js" "open-source"]
-     "github-repository")])
+  [(project
+    "Dance studio \"Plesni Koraci\""
+    "https://plesnikoraci.com"
+    "Company website for dance lessons and dance shows made with Laravel."
+    ["laravel"]
+    "website")
+   (project
+    "Hotel \"Murter\""
+    "https://hotelmurter.com"
+    "Company website for a hotel in Murter made with Laravel. Integrated external service Rentlio for room bookings."
+    ["laravel" "rentlio"]
+    "website")
+   (project
+    "Real estate agency \"Adriatica\""
+    "https://adriatica-nekretnine.hr"
+    "Real estate agency website made with Laravel. Integrated external service Crozilla for property marketing."
+    ["laravel" "crozilla"]
+    "website")
+   (project
+    "Laravelista (blog)"
+    "https://laravelista.com"
+    "Original Laravelista blog made with Ghost CMS."
+    ["ghost-cms"]
+    "website")
+   (project
+    "mabasic/translate-that-model"
+    "https://github.com/mabasic/translate-that-model"
+    "This Laravel package adds a single trait to enable simple model translation."
+    ["laravel-package" "open-source"]
+    "github-repository")
+   (project
+    "mabasic/GalleryLoader"
+    "https://github.com/mabasic/GalleryLoader"
+    "Laravel facade that gets images from a folder sorted by filename and filtered."
+    ["laravel-package" "open-source"]
+    "github-repository")
+   (project
+    "mabasic/mailer"
+    "https://github.com/mabasic/mailer"
+    "Laravel package for more efficient email sending inspired by Laracasts."
+    ["laravel-package" "open-source"]
+    "github-repository")
+   (project
+    "mabasic/wakatime-php-api"
+    "https://github.com/mabasic/wakatime-php-api"
+    "WakaTime API for PHP."
+    ["php-library" "open-source"]
+    "github-repository")
+   (project
+    "laravelista/Laranotti"
+    "https://github.com/laravelista/Laranotti"
+    "Laranotti is a Chrome extension which notifies you of new lessons from Laracasts and lets you view the latest."
+    ["chrome-extension" "react.js" "open-source"]
+    "github-repository")])

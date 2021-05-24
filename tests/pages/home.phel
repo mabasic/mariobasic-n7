@@ -2,7 +2,7 @@
   (:require phel\test :refer [deftest is])
   (:require app\pages\home))
 
-(def rendered (home/render @{:uri @{:host "/"}}))
+(def rendered (home/render {:uri {:host "/"}}))
 
 (deftest test-render
   (is (= 200 (get rendered :status)))
