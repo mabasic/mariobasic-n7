@@ -17104,12 +17104,8 @@ body {
   color: rgba(255, 255, 255, 0.4);
 }
 
-article.post-content p:first-child {
-  margin-bottom: 3rem;
-}
-article.post-content p:not(:first-child) {
-  margin-top: 2rem;
-  margin-bottom: 3rem;
+article.post-content {
+  margin-bottom: 4rem;
 }
 article.post-content img {
   max-width: 100%;
@@ -17121,6 +17117,35 @@ article.post-content img {
 article.post-content a {
   color: #f8f9fa;
 }
+article.post-content pre {
+  padding: 7px 24px;
+  border-left: 1px solid rgba(214, 51, 132, 0.25);
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  white-space: break-spaces;
+}
+article.post-content ol, article.post-content ul, article.post-content dl {
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+article.post-content blockquote {
+  margin-bottom: 2rem;
+  font-size: 1.25rem;
+  border-left: 1px solid rgba(255, 255, 255, 0.25);
+  padding-left: 24px;
+  color: #808080;
+}
+article.post-content table {
+  margin-bottom: 2rem;
+  margin-top: 1rem;
+}
+
+.post-meta p.post-meta-heading {
+  margin-bottom: 0;
+}
+.post-meta p.post-meta-author {
+  margin-top: 0;
+}
 
 article.post-index {
   margin-bottom: 3rem;
@@ -17131,6 +17156,12 @@ article.post-index p {
 }
 article.post-index p > small, article.post-index p > .small {
   color: rgba(255, 255, 255, 0.7);
+}
+
+.page-item .page-link {
+  border: none !important;
+  border-radius: 0 !important;
+  background-color: transparent !important;
 }
 
 /*# sourceMappingURL=main.css.map*/

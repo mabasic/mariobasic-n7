@@ -25,8 +25,10 @@ This is a big deal! This means that the code I wrote (including this blog) will 
 
 ![My daughter](/content/posts/2020-01-29-github-archive-program/father-daughter.jpg)
 
-Since I don't believe that I will live long enough to see 100 generations of my grand kids, here is a picture of myself and my daughter Sofia. **She is my next generation.**
+Since I don't believe that I will live long enough to see 100 generations of my grand kids, here is a picture of myself and my daughter Sofia. 
+
+> She is my next generation.
 
 ![Family](/content/posts/2020-01-29-github-archive-program/family.jpg)
 
-**The cold vault will be updated every five years, so in the meantime I can think of something better to write for the future...**
+The cold vault will be updated every five years, so in the meantime I can think of something better to write for the future...

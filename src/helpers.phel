@@ -28,3 +28,19 @@
     (keyword? x) (str (php/-> x (getName)))
     (float? x) (str x)
     true x))
+
+# This is here until they sort out the PR: https://github.com/phel-lang/phel-lang/pull/246
+(defn partition
+  "Partitions an indexed data structure into arrays of max size n. Returns a new array."
+  [n xs]
+  (if (<= (count xs) n)
+    (if (= (count xs) 0) @[] @[xs])
+    (let [res @[]]
+      (loop [xs xs]
+        (let [[a b] (split-at n xs)]
+          (push res a)
+          (if (>= (count b) n)
+            (recur b)
+            (if (= (count b) 0)
+              res
+              (do (push res b) res))))))))

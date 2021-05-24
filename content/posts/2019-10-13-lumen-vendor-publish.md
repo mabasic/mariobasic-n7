@@ -9,9 +9,7 @@ Back in 2015. I put together a small helper package for Lumen which enabled me t
 
 **By default Lumen has no way of publishing files that come with service providers to this day.**
 
-It was initially built for I think Lumen 5.3. I stopped using Lumen short after that and this package went mostly unmaintained. A few people sent PRs for newer Lumen releases and that is it.
-
-At the time when Lumen 6 was released I received multiple requests to add Lumen 6 support. I've even received emails, and you know that when you get an email for something like this it means that people really need it.
+It was initially built for I think Lumen 5.3. I stopped using Lumen short after that and this package went mostly unmaintained. A few people sent PRs for newer Lumen releases and that is it. At the time when Lumen 6 was released I received multiple requests to add Lumen 6 support. I've even received emails, and you know that when you get an email for something like this it means that people really need it.
 
 ## Backward compatibility
 

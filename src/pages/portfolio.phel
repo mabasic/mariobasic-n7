@@ -2,28 +2,15 @@
   (:require app\layouts\main)
   (:require app\pages\home :refer [unit])
   (:require app\partials\project :as project-partial)
-  (:require app\projects\index :as projects))
+  (:require app\projects\index :as projects)
+  (:require app\helpers))
 
 (def white
   [:div
    [:h1 @{:class "display-1 pt-5 mt-5"} "Portfolio"]
    [:p [:a @{:href "/" :class "text-dark"} "home"] "/ portfolio"]])
 
-# This is here until they sort out the PR: https://github.com/phel-lang/phel-lang/pull/246
-(defn partition
-  "Partitions an indexed data structure into arrays of max size n. Returns a new array."
-  [n xs]
-  (if (<= (count xs) n)
-    (if (= (count xs) 0) @[] @[xs])
-    (let [res @[]]
-      (loop [xs xs]
-        (let [[a b] (split-at n xs)]
-          (push res a)
-          (if (>= (count b) n)
-            (recur b)
-            (if (= (count b) 0)
-              res
-              (do (push res b) res))))))))
+
 
 (def black
   [:div
@@ -32,7 +19,7 @@
       [:div @{:class "col"}
        [:h2 (get item :year)]
        [:hr @{:style "width: 130px;" :class "mb-4"}]
-       (for [project-subset :in (partition 4 (get item :projects))]
+       (for [project-subset :in (helpers/partition 4 (get item :projects))]
          [:div @{:class "row"}
           (for [project :in project-subset]
             [:div @{:class "col-lg-3"}

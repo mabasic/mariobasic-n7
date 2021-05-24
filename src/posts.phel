@@ -1,7 +1,8 @@
 (ns app\posts
   (:use \DirectoryIterator)
   (:use \ParsedownExtra)
-  (:use \Spatie\YamlFrontMatter\YamlFrontMatter))
+  (:use \Spatie\YamlFrontMatter\YamlFrontMatter)
+  (:require app\helpers))
 
 (def posts-path "/../content/posts")
 
@@ -37,7 +38,6 @@
 (defn get-body [post]
   (php/-> post (body)))
 
-# TODO: Move this somewhere else since it is a helper function.
 (defn slugify [string]
   (php/strtolower
    (php/trim
@@ -59,6 +59,11 @@
     (fn [post] (get-date post))
     (for [file :in (get-posts-iterator) :when (not (php/-> file (isDot)))]
       (parse-front-matter (php/-> file (getPathname)))))))
+
+(defn paginate [posts page perPage]
+  (let [pages (helpers/partition perPage posts)
+        page-posts (get (helpers/partition perPage posts) (- page 1))]
+    (if (nil? page-posts) @[] page-posts)))
 
 (defn get-by-slug [year month day slug]
   (let [posts (get-all)]
