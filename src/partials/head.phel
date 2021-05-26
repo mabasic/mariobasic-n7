@@ -10,8 +10,8 @@
      [:meta {:name "description" :content meta-description}])
    (if-not (nil? (php/aget php/$_SESSION "_token"))
      [:meta {:name "csrf-token" :content (php/aget php/$_SESSION "_token")}])
-   [:link {:href "/3eb06c702e27fb110194.woff2" :rel "preload" :as "font" :type "font/woff2" :crossorigin true}]
-   [:link {:href "/6e63bd22128f27b83f22.woff2" :rel "preload" :as "font" :type "font/woff2" :crossorigin true}]
+   [:link {:href "/ada6e6df937f7e5e8b79.woff2" :rel "preload" :as "font" :type "font/woff2" :crossorigin true}]
+   [:link {:href "/c1210e5ebe4344da5083.woff2" :rel "preload" :as "font" :type "font/woff2" :crossorigin true}]
    [:link {:href "/main.css" :rel "stylesheet"}]
    [:link {:href "/favicon.ico" :rel "icon"}]
    [:link {:href "/favicon.png" :rel "shortcut icon"}]
