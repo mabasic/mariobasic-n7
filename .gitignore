@@ -9,3 +9,4 @@ public/*.map
 .ionide
 resources/js/bin
 resources/js/obj
+*.fs.js
