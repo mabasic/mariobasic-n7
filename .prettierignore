@@ -1,9 +1,0 @@
-**/vendor/**/*
-**/node_modules/**/*
-package-lock.json
-**/tests/**/*
-**/src/**/*
-**/public/**/*
-**/database/**/*
-*.md
-composer.lock

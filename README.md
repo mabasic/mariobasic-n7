@@ -1,6 +1,6 @@
 # mariobasic-n7
 
-**My personal website built with Phel.**
+**My personal website built with Phel and Fable/F#.**
 
 "n" in "n7" stands for the **number** of times that I have created a new personal website for myself. Meaning that this is the seventh time as I recall.
 
@@ -22,7 +22,7 @@ I've rewritten Javascript with F#/Fable. After reading about F# and F#/Fable, co
 
 Since I was/am new to the language I had to figure out a lot of stuff including the tooling, the ecosystem, the syntax, the libraries. The documentation for Fable could be better. There are so many options for everything. I had to find a React library, a JSON library and figure out how to do HTTP requests. There were times where I almost gave up on the F#/Fable rewrite.
 
-For archive purposes I've kept the original JS files in the source code so that I can compare the syntax and code in the future.
+~~For archive purposes I've kept the original JS files in the source code so that I can compare the syntax and code in the future.~~
 
 **Update 24.05.2021 Blog**
 
@@ -53,31 +53,28 @@ The code in `src/helpers.phel` should be somewhere else. Maybe in Phel (extract-
 composer install
 composer dev
 
+# Run commands bellow in a new terminal.
+
 # dotnet
 dotnet tool restore
-dotnet fable watch resources/js
 
 # node
 npm install
 npm run watch
 ```
 
-## Javascript builds
+
+## Javascript/F# Scripts
 
 - `npm run dev` - for generating a development build once.
+- `npm run watch` - for generating a development build and watching for changes.
 - `npm run prod` - for generating a production build once.
 
-## Formatting and linting
+
+## Code Formatting
 
 ```
 vendor/bin/phel fmt src/
 vendor/bin/phel fmt tests/
-npx prettier --write .
-npx eslint resources
 ```
 
-## F#
-
-- `.config/dotnet-tools.json` - Holds tools (fable) which are then available by using `dotnet fable watch resources/js`
-- `Nuget.config` - No clue what this does. This is the comment that came with it: "This clears Nuget configuration in the machine to avoid conflicts".
-- `resources/js/App.fsproj` - Holds the reference to all dotnet packages used and F# files that are included/compiled in the solution.

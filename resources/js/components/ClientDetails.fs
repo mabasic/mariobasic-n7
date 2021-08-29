@@ -35,109 +35,109 @@ let ClientDetails(onInputChange: Browser.Types.Event -> unit,
                             prop.className "col-md-12 mb-3"
                             prop.children [
                                 Html.p [
-                                    Html.text "Fields marked with " 
+                                    Html.text "Fields marked with "
                                     Html.b "*"
                                     Html.text " are required."
-                                ]   
+                                ]
                             ]
                         ]
                         Html.div [
                             prop.className "col-md-6"
                             prop.children [
-                                FormInput("first_name", 
-                                          "First Name*", 
-                                          "text", 
-                                          firstName, 
+                                FormInput("first_name",
+                                          "First Name*",
+                                          "text",
+                                          firstName,
                                           onInputChange)
                             ]
                         ]
                         Html.div [
                             prop.className "col-md-6"
                             prop.children [
-                                FormInput("last_name", 
-                                          "Last Name*", 
-                                          "text", 
-                                          lastName, 
+                                FormInput("last_name",
+                                          "Last Name*",
+                                          "text",
+                                          lastName,
                                           onInputChange)
                             ]
                         ]
                         Html.div [
                             prop.className "col-md-12"
                             prop.children [
-                                FormInput("company_name", 
-                                          "Company Name", 
-                                          "text", 
-                                          companyName, 
+                                FormInput("company_name",
+                                          "Company Name",
+                                          "text",
+                                          companyName,
                                           onInputChange)
                             ]
                         ]
                         Html.div [
                             prop.className "col-md-12"
                             prop.children [
-                                FormInput("vat_number", 
-                                          "VAT Number", 
-                                          "text", 
-                                          vatNumber, 
+                                FormInput("vat_number",
+                                          "VAT Number",
+                                          "text",
+                                          vatNumber,
                                           onInputChange)
                             ]
                         ]
                         Html.div [
                             prop.className "col-md-12"
                             prop.children [
-                                FormInput("address", 
-                                          "Address*", 
-                                          "text", 
-                                          address, 
+                                FormInput("address",
+                                          "Address*",
+                                          "text",
+                                          address,
                                           onInputChange)
                             ]
                         ]
                         Html.div [
                             prop.className "col-md-6"
                             prop.children [
-                                FormInput("city", 
-                                          "City / Town*", 
-                                          "text", 
-                                          city, 
+                                FormInput("city",
+                                          "City / Town*",
+                                          "text",
+                                          city,
                                           onInputChange)
                             ]
                         ]
                         Html.div [
                             prop.className "col-md-6"
                             prop.children [
-                                FormInput("zip_code", 
-                                          "Zip Code*", 
-                                          "text", 
-                                          zipCode, 
+                                FormInput("zip_code",
+                                          "Zip Code*",
+                                          "text",
+                                          zipCode,
                                           onInputChange)
                             ]
                         ]
                         Html.div [
                             prop.className "col-md-12"
                             prop.children [
-                                FormSelect("country", 
-                                          "Select a country*", 
-                                          Countries, 
-                                          country, 
+                                FormSelect("country",
+                                          "Select a country*",
+                                          Countries,
+                                          country,
                                           onInputChange)
                             ]
                         ]
                         Html.div [
                             prop.className "col-md-6"
                             prop.children [
-                                FormInput("email_address", 
-                                          "Email Address*", 
-                                          "email", 
-                                          emailAddress, 
+                                FormInput("email_address",
+                                          "Email Address*",
+                                          "email",
+                                          emailAddress,
                                           onInputChange)
                             ]
                         ]
                         Html.div [
                             prop.className "col-md-6"
                             prop.children [
-                                FormInput("phone", 
-                                          "Phone*", 
-                                          "tel", 
-                                          phone, 
+                                FormInput("phone",
+                                          "Phone*",
+                                          "tel",
+                                          phone,
                                           onInputChange)
                             ]
                         ]
