@@ -44,16 +44,22 @@ The code in `src/helpers.phel` should be somewhere else. Maybe in Phel (extract-
 
 - PHP 8
 - Node.js v14.16.0
+- .NET 5
 
 ## Quickstart
 
 ```bash
-cp .env.example .env
+# php
 composer install
+composer dev
+
+# dotnet
+dotnet tool restore
+dotnet fable watch resources/js
+
+# node
 npm install
-npm run fable-start
 npm run watch
-php -S localhost:8000 -t public/
 ```
 
 ## Javascript builds
@@ -70,7 +76,7 @@ npx prettier --write .
 npx eslint resources
 ```
 
-## F# 
+## F#
 
 - `.config/dotnet-tools.json` - Holds tools (fable) which are then available by using `dotnet fable watch resources/js`
 - `Nuget.config` - No clue what this does. This is the comment that came with it: "This clears Nuget configuration in the machine to avoid conflicts".

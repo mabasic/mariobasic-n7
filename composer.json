@@ -36,5 +36,11 @@
         "tests/"
       ]
     }
+  },
+  "scripts": {
+    "dev": "php -S localhost:8000 -t public/",
+    "pre-install-cmd": [
+      "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+    ]
   }
 }
