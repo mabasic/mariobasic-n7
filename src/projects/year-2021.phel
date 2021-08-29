@@ -41,12 +41,24 @@
    (project
     "MangelMaxime/Nacara"
     "https://github.com/MangelMaxime/Nacara/pull/42"
-    "Repository improvements #42"
+    "Repository improvements #42."
     ["pull-request" "open-source" "fsharp"]
     "pull-request")
    (project
     "Zaid-Ajaj/Fable.SimpleJson"
     "https://github.com/Zaid-Ajaj/Fable.SimpleJson/pull/72"
-    "Updates readme. #72"
+    "Updates readme #72."
     ["pull-request" "open-source" "fsharp"]
-    "pull-request")])
+    "pull-request")
+   (project
+    "Jet Ski Murter Kornati"
+    "https://jetski-murterkornati.com/"
+    "Rent a Jet Ski in Murter website made with vanilla PHP."
+    ["html" "php" "css"]
+    "website")
+   (project
+    "Meling Gradnja"
+    "https://meling-gradnja.hr/"
+    "Website for a construction company made with Laravel. Uses self made sponsorware laravel packages."
+    ["laravel" "algo" "localized"]
+    "website")])
