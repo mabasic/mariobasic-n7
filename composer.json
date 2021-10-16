@@ -10,11 +10,11 @@
   "minimum-stability": "dev",
   "require": {
     "php": "^8.0",
-    "aws/aws-sdk-php": "^3.175",
+    "aws/aws-sdk-php": "^3.198",
     "erusev/parsedown-extra": "^0.8.1",
-    "mabasic/phel-json": "^0.2.1",
-    "phel-lang/phel-lang": "^0.3.2",
-    "rakibtg/sleekdb": "^2.8",
+    "mabasic/phel-json": "^0.3",
+    "phel-lang/phel-lang": "^0.4",
+    "rakibtg/sleekdb": "^2.13",
     "spatie/yaml-front-matter": "^2.0",
     "vlucas/phpdotenv": "^5.3"
   },
@@ -24,23 +24,11 @@
     "sort-packages": true
   },
   "prefer-stable": true,
-  "extra": {
-    "phel": {
-      "loader": {
-        "app\\": "src/"
-      },
-      "loader-dev": {
-        "app\\tests\\": "tests/"
-      },
-      "tests": [
-        "tests/"
-      ]
-    }
-  },
   "scripts": {
     "dev": "php -S localhost:8000 -t public/",
     "pre-install-cmd": [
       "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
-    ]
+    ],
+    "test": "vendor/bin/phel test"
   }
 }

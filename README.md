@@ -63,6 +63,12 @@ npm install
 npm run watch
 ```
 
+Run tests with:
+
+```
+composer test
+```
+
 
 ## Javascript/F# Scripts
 
@@ -74,7 +80,7 @@ npm run watch
 ## Code Formatting
 
 ```
-vendor/bin/phel fmt src/
-vendor/bin/phel fmt tests/
+vendor/bin/phel format src/
+vendor/bin/phel format tests/
 ```
 

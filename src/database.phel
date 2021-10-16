@@ -3,4 +3,4 @@
 
 (def database-directory (str __DIR__ "/../database"))
 
-(def inquiries-store (php/new Store "inquiries" database-directory))
+(def inquiries-store (php/new Store "inquiries" database-directory (php-associative-array "timeout" false)))

@@ -10,3 +10,4 @@ public/*.map
 resources/js/bin
 resources/js/obj
 *.fs.js
+phel-config-local.php
