@@ -8,6 +8,7 @@ return [
 
     # TODO: Will be made redundant in the next version of Phel. Remove then.
     'vendor-dir' => 'vendor',
+    'out-dir' => 'my-out',
     'export' => [
         'directories' => ['src/modules'],
         'namespace-prefix' => 'PhelGenerated',
