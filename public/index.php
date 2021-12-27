@@ -26,4 +26,4 @@ require_once $projectRootDir . "vendor/autoload.php";
 
 GlobalEnvironmentSingleton::initialize(); // I try to ride of this line in a later release.
 
-require_once $projectRootDir . "my-out/app/boot.php";
+require_once $projectRootDir . "dist/app/boot.php";
