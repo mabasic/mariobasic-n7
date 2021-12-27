@@ -61,7 +61,10 @@
 
 (def global-middleware [verify-csrf-token/handle])
 
-(def request (http/request-from-globals))
+(def request
+  (try
+    (http/request-from-globals)
+    (catch \Exception e nil)))
 
 (defn route-match [request routes redirects]
   (let
@@ -100,11 +103,11 @@
         response))))
 
 (defn emit-response [response]
-
   (let [rsp (http/create-response-from-map response)]
     (http/emit-response rsp)))
 
 (let [response (run-global-middleware request global-middleware)]
-  (if (= response request)
-    (emit-response (route-match request routes redirects))
-    (emit-response response)))
+  (if (not (= request nil))
+    (if (= response request)
+      (emit-response (route-match request routes redirects))
+      (emit-response response))))
