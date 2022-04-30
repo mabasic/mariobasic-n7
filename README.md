@@ -84,3 +84,12 @@ vendor/bin/phel format src/
 vendor/bin/phel format tests/
 ```
 
+## Build for production
+
+Compile PHEL to PHP.
+
+```
+vendor/bin/phel compile --no-cache
+```
+
+verify that `index.php` has the right code uncommented (fast/slow).
