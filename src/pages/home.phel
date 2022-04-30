@@ -65,6 +65,10 @@
       :subtitle "Alternative to React.js"
       :intro "If you know React.js you know Vue.js."})
     (unit
+     {:title "TypeScript"
+      :subtitle "TypeScript is JavaScript with syntax for types"
+      :intro "Whenever possible I try to use typescript and not use the any type."})
+    (unit
      {:title "Phel"
       :subtitle "Lisp inspired functional programming language that compiles to PHP"
       :intro "This website is built with Phel."})
@@ -81,19 +85,17 @@
       :subtitle "Dynamic, functional language for building scalable and maintainable applications"
       :intro "Still reading the documentation and learning."})
     (unit
-     {:title "ReScript"
-      :subtitle "The JavaScript-like language you've been waiting for"
-      :intro "Still reading the documentation and learning."}))
-   (group
-    "Portfolio"
-    (unit {:body
-           [:span
-            "To view all my projects go to: "
-            [:a {:href "https://mariobasic.com/portfolio" :class "link-light"} "https://mariobasic.com/portfolio"]]}))
-   (group
-    "Download"
-    (unit {:body
-           [:a {:class "btn btn-primary" :href "/resume.pdf" :target "_blank"} "Curriculum Vitae " [:i {:class "fa fa-fw fa-download"}]]}))))
+     {:title "Next.js"
+      :subtitle "The React Framework for Production"
+      :intro "SSR, SSG, ... A React.js framework with batteries included."})
+    (unit
+     {:title "NestJS"
+      :subtitle "Progressive Node.js framework for building server-side applications"
+      :intro "Backend framework but for Node.js. It supports TypeScript and JavaScript."})
+    (unit
+     {:title "Nx"
+      :subtitle "Smart, Fast and Extensible Build System"
+      :intro "Used for building monorepos and other stuff."}))))
 
 (def middle-column
   (column
@@ -130,12 +132,23 @@
     (unit
      {:title [:a {:href "https://archiveprogram.github.com/" :class "link-light" :rel "noopener nofollow" :target "_blank"} "Arctic Code Vault Contributor"]
       :intro "02/02/2020"
-      :subtitle "Contributed code to several repositories in the 2020 GitHub Archive Program."}))))
+      :subtitle "Contributed code to several repositories in the 2020 GitHub Archive Program."}))
+   (group
+    "Portfolio"
+    (unit {:body
+           [:span
+            "To view all my projects go to: "
+            [:a {:href "https://mariobasic.com/portfolio" :class "link-light"} "https://mariobasic.com/portfolio"]]}))))
 
 (def right-column
   (column
    (group
     "Experience"
+    (unit
+     {:title "RTL Croatia Ltd."
+      :subtitle "2021 to present"
+      :intro "Full stack Developer"
+      :body "Currently working as a full stack developer for RTL media portals in a team."})
     (unit
      {:title "Go Visit Ltd."
       :subtitle "2017 to present"
@@ -169,7 +182,11 @@
     "Languages"
     (unit {:title "Croatian" :subtitle "Native"})
     (unit {:title "English" :subtitle "Fluent"})
-    (unit {:title "Italian" :subtitle "Basic"}))))
+    (unit {:title "Italian" :subtitle "Basic"}))
+   (group
+    "Download"
+    (unit {:body
+           [:a {:class "btn btn-primary" :href "/resume.pdf" :target "_blank"} "Curriculum Vitae " [:i {:class "fa fa-fw fa-download"}]]}))))
 
 (defn black []
   [:div {:class "row"}
