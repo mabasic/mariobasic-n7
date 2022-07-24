@@ -81,9 +81,11 @@ npm run test
 
 ## Code Formatting
 
-```
+```bash
 vendor/bin/phel format src/
 vendor/bin/phel format tests/
+# or
+composer format
 ```
 
 ## Build for production

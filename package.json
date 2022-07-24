@@ -21,11 +21,11 @@
     "css-dev-watch": "sass --watch resources/scss/index.scss public/css/index.css",
     "css-prod": "sass --no-source-map --style=compressed resources/scss/index.scss public/css/index.css",
     "css-lint": "stylelint resources/scss/",
-    "dev": "npm-run-all -r --parallel js-dev css-dev",
-    "prod": "npm-run-all -r --parallel js-prod css-prod",
-    "watch": "npm-run-all -r --parallel js-dev-watch css-dev-watch",
-    "test": "npm-run-all -r --parallel css-lint",
+    "dev": "npm-run-all --parallel js-dev css-dev",
+    "prod": "npm-run-all --parallel js-prod css-prod",
+    "watch": "npm-run-all --parallel js-dev-watch css-dev-watch",
+    "test": "npm-run-all --parallel css-lint",
     "php": "composer dev",
-    "all": "npm-run-all -r --parallel php watch"
+    "all": "npm-run-all --parallel php watch"
   }
 }

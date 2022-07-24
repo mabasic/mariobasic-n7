@@ -12,7 +12,7 @@
     [:p {:class "lead"} "This notice obligates me to protect user privacy and personal data provided via this website."]
     [:p "This notice provides information about the types of information I may collect from you when you visit my website and explains how I use such data, as well as describes the steps I take in order to protect them. The notice also describes the options you have with regard to the collection and use of your data when you visit my website."]
     [:h2 {:class "mt-5"} "Forms"]
-    [:p "The data provided through my contact form (first and last name, company name, VAT number, address, city/town, zip code, country, e-mail address, phone, consent, topic, budget, subject, questions) will be stored in my inbox and my database for an indefinite period of time for the purposes of future analysis and/or contact if given permission. If you want me to delete your email from my inbox and database send me an email at " [:a {:class "link-light" :href "mailto:mario@laravelista.hr"} "mario@laravelista.hr."]]
+    [:p "The data provided through my contact form (name, e-mail address, message, consent) will be stored in my inbox and my database for an indefinite period of time for the purposes of future analysis and/or contact if given permission. If you want me to delete your email from my inbox and database send me an email at " [:a {:class "link-light" :href "mailto:mario@laravelista.hr"} "mario@laravelista.hr."]]
     [:h2 {:class "mt-5"} "Analytics"]
     [:p
      "I use a self-hosted version of "

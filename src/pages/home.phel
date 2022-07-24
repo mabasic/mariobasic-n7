@@ -15,12 +15,12 @@
     [:div {:class "col-lg-4"} [:b {:class "pe-3"} "Phone"] "00385 22 435450"]]])
 
 (defn column [& body]
-  [:div {:class "col-lg-4"} body])
+  [:div {:class "col-lg-4"} (apply list body)])
 
 (defn group [title & units]
   [:div {:class "black-group"}
    [:h2 {:class "black-group-title"} title]
-   units])
+   (apply list units)])
 
 (defn unit
   [&
@@ -194,7 +194,9 @@
 
 (defn black []
   [:div {:class "row"}
-   left-column middle-column right-column])
+   left-column
+   middle-column
+   right-column])
 
 (defn render [request]
   {:status 200

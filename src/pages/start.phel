@@ -64,7 +64,7 @@
                 :name "gdpr_consent"
                 :type "checkbox"
                 :id "gdpr_consent"
-                 :required true
+                :required true
                 :checked (is-checked (get data :gdpr_consent))
                 :value "on"}]
        [:label {:class "form-check-label":for "gdpr_consent"}
