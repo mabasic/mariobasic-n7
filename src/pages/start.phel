@@ -41,6 +41,7 @@
                :type "text"
                :id "name"
                :required true
+               :placeholder "Your name here"
                :value (get data :name)}]
       [:label {:for "name"} (validator/get-first-error-message errors "name" "Name*")]]
      [:div {:class "form-floating mb-3"}
@@ -49,6 +50,7 @@
                :type "text"
                :id "email"
                :required true
+               :placeholder "Your email here"
                :value (get data :email)}]
       [:label {:for "email"} (validator/get-first-error-message errors "email" "Email Address*")]]
      [:div {:class "form-floating mb-3"}
@@ -56,6 +58,7 @@
                   :name "message"
                   :style {:height "200px"}
                   :required true
+                  :placeholder "Your message here"
                   :id "message"} (get data :message)]
       [:label {:for "message"} (validator/get-first-error-message errors "message" "Message*")]]
      [:div {:class "mb-3"}
