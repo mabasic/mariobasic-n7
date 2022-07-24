@@ -144,7 +144,7 @@
           (mail/send {:to "mario@laravelista.hr"
                       :subject "Message Received"
                       :message (received/render data)
-                      :reply-to (:email_address data)})
+                      :reply-to (:email data)})
 
           # Store in database
           (php/-> database/inquiries-store (insert (helpers/encode-value data)))

@@ -4,12 +4,12 @@
 
 (defn render [{:name name
                :message message
-               :email_address email-address
+               :email email
                :gdpr_consent gdpr-consent}]
   (html
    [:div
     [:p [:b "Name: "] [:span name]]
-    [:p [:b "Email: "] [:span email-address]]
+    [:p [:b "Email: "] [:span email]]
     [:p [:b "Message: "] [:span message]]
     [:p "*Has given permission to be contacted in regard to this message."]]))
 
