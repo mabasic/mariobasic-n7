@@ -39,7 +39,7 @@
    (route "GET" "/contributing" contributing/render)
    (route "GET" "/backers" backers/render)
    (route "GET" "/privacy" privacy/render)
-   (route "GET" "/origin" origin/render)
+  #  (route "GET" "/origin" origin/render)
    (route "GET" "/portfolio" portfolio/render)
    (route "GET" "/a-collection-of-laravel-tutorials" laravel-collection/render)
    (route "GET" "/start" start/render)
@@ -57,7 +57,8 @@
    (redirect "/satis-composer-repository-for-your-private-packages" "/a-collection-of-laravel-tutorials" redirector/moved-permanently)
    (redirect "/using-beanstalkd-with-laravel" "/a-collection-of-laravel-tutorials" redirector/moved-permanently)
    (redirect "/deploy-your-app-to-digitialocean-from-codeship-using-envoy" "/a-collection-of-laravel-tutorials" redirector/moved-permanently)
-   (redirect "/build-an-api-with-lumen-and-fractal" "/a-collection-of-laravel-tutorials" redirector/moved-permanently)])
+   (redirect "/build-an-api-with-lumen-and-fractal" "/a-collection-of-laravel-tutorials" redirector/moved-permanently)
+   (redirect "/origin" "/" redirector/moved-permanently)])
 
 (def global-middleware [verify-csrf-token/handle])
 

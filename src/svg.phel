@@ -1,0 +1,11 @@
+(ns app\svg
+  (:require phel\html :refer [raw-string]))
+
+(defn load [path]
+  (let [absolutePath (str __DIR__ "/../resources/svg/" path)]
+    (if (php/file_exists absolutePath)
+      (php/file_get_contents absolutePath)
+      (throw (php/new \Exception (str "SVG path not found:" absolutePath))))))
+
+(defn load-raw [path]
+  (raw-string (load path)))

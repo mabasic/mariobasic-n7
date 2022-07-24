@@ -1,38 +1,26 @@
 $dropdown-link-active-bg: #2e2f2f;
-$form-select-indicator-color: #ffffff;
-@import 'bootstrap/scss/bootstrap';
-
-$fa-font-path: '@fortawesome/fontawesome-free/webfonts';
-@import '@fortawesome/fontawesome-free/scss/fontawesome';
-@import '@fortawesome/fontawesome-free/scss/solid';
-@import '@fortawesome/fontawesome-free/scss/brands';
+$form-select-indicator-color: #fff;
+@import "../../node_modules/bootstrap/scss/bootstrap";
 
 $primary-color: #0d6efd;
 $secondary-color: #0b5ed8;
 
 ::selection {
+  color: #fff;
   background-color: #0d6efd;
-  color: #ffffff;
 }
 
 .paper {
+  padding: 30px;
   background: #fff;
-  box-shadow:
-    /* The top layer shadow */ 0 -1px 1px rgba(0, 0, 0, 0.15),
-    /* The second layer */ 0 -10px 0 -5px #eee,
-    /* The second layer shadow */ 0 -10px 1px -4px rgba(0, 0, 0, 0.15),
-    /* The third layer */ 0 -20px 0 -10px #eee,
-    /* The third layer shadow */ 0 -20px 1px -9px rgba(0, 0, 0, 0.15);
-
-  /* Padding for demo purposes */
-  padding: 30px; 
+  box-shadow: 0 -1px 1px rgba(0, 0, 0, .15), 0 -10px 0 -5px #eee, 0 -10px 1px -4px rgba(0, 0, 0, .15), 0 -20px 0 -10px #eee, 0 -20px 1px -9px rgba(0, 0, 0, .15);
 }
 
 .white .container {
   padding-top: 50px;
   padding-bottom: 60px;
-  background-color: #ffffff;
-  margin-top: 0px;
+  margin-top: 0;
+  background-color: #fff;
 }
 
 @media (min-width: 576px) {
@@ -43,11 +31,11 @@ $secondary-color: #0b5ed8;
 
 .black .container {
   padding-top: 80px;
-  padding-bottom: 60px;
-  background-color: #2e2f2f;
-  color: #ffffff;
-  padding-left: 30px;
   padding-right: 30px;
+  padding-bottom: 60px;
+  padding-left: 30px;
+  color: #fff;
+  background-color: #2e2f2f;
 
   .start-success-icon {
     font-size: 175px;
@@ -56,9 +44,13 @@ $secondary-color: #0b5ed8;
   .summary-item {
     border-bottom: 1px solid #616161;
 
-    span.summary-item-value {
+    .summary-item-value {
       word-break: break-all;
     }
+  }
+
+  input {
+    color-scheme: dark;
   }
 
   // This code bellow makes for look "good" on a dark background.
@@ -66,11 +58,11 @@ $secondary-color: #0b5ed8;
   form .form-floating > .form-control,
   form .form-floating > .form-select,
   form .form-select {
-    background-color: #2e2f2f;
     color: inherit;
+    background-color: #2e2f2f;
     // border: none;
     // border-bottom: 1px solid #ced4da;
-    border-color: #616161;
+    // border-color: #616161;
     // border-radius: 0px;
 
     &:focus {
@@ -82,13 +74,13 @@ $secondary-color: #0b5ed8;
 
     // Only used in .form-select case.
     & > option {
-      color: #ffffff;
+      color: #fff;
     }
   }
 }
 
 footer.black .container {
-  margin-bottom: 0px;
+  margin-bottom: 0;
 }
 
 @media (min-width: 576px) {
@@ -97,7 +89,7 @@ footer.black .container {
   }
 }
 
-p.indent {
+.indent {
   text-indent: 5rem;
 }
 
@@ -116,42 +108,52 @@ body {
 .number-unit {
   .number-unit-left {
     width: 100%;
-    max-width: 70px;
     min-width: 70px;
+    max-width: 70px;
   }
 
   .number-unit-title {
-    color: rgba(255, 255, 255, 0.85);
+    color: rgba(255, 255, 255, .85);
   }
 
   .number-unit-body {
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(255, 255, 255, .7);
   }
 }
 
 .icon-unit {
   .icon-unit-left {
     width: 100%;
-    max-width: 50px;
     min-width: 50px;
+    max-width: 50px;
+
+    .bi {
+      width: 30px;
+      height: 30px;
+    }
   }
 
   .icon-unit-title {
-    color: rgba(255, 255, 255, 0.85);
+    color: rgba(255, 255, 255, .85);
   }
 
   .icon-unit-body {
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(255, 255, 255, .7);
   }
 }
 
 .centered-icon-unit {
+  .bi {
+    width: 40px;
+    height: 40px;
+  }
+
   .centered-icon-unit-title {
-    color: rgba(255, 255, 255, 0.85);
+    color: rgba(255, 255, 255, .85);
   }
 
   .centered-icon-unit-body {
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(255, 255, 255, .7);
   }
 }
 
@@ -167,48 +169,48 @@ body {
 
     &:hover .animation-block {
       background: $secondary-color;
-      transition: background 0.27s cubic-bezier(0.3, 0.1, 0.58, 1);
+      transition: background .27s cubic-bezier(.3, .1, .58, 1);
     }
 
     .animation-cta {
-      transition: margin 700ms;
       position: absolute;
       top: 40px;
       left: 0;
+      transition: margin 700ms;
     }
 
     .animation-block {
-      margin-left: 60px;
-      height: 200px;
       width: 200px;
+      height: 200px;
+      margin-left: 60px;
       background: $primary-color;
-      transition: background 0.27s cubic-bezier(0.3, 0.1, 0.58, 1);
+      transition: background .27s cubic-bezier(.3, .1, .58, 1);
     }
   }
 }
 
 .unit {
   .unit-title {
-    font-weight: bold;
-    color: rgba(255, 255, 255, 0.85);
+    font-weight: 700;
+    color: rgba(255, 255, 255, .85);
   }
 
   .unit-title > .unit-subtitle {
-    font-weight: normal;
     font-style: italic;
-    color: rgba(255, 255, 255, 0.7);
+    font-weight: 400;
+    color: rgba(255, 255, 255, .7);
   }
 
   .unit-intro {
-    color: rgba(255, 255, 255, 0.5);
+    color: rgba(255, 255, 255, .5);
   }
 
   .unit-body {
-    color: rgba(255, 255, 255, 0.4);
+    color: rgba(255, 255, 255, .4);
   }
 }
 
-article.post-content {
+.post-content {
   margin-bottom: 4rem;
   // p:first-child {
   //   margin-bottom: 3rem;
@@ -221,10 +223,10 @@ article.post-content {
 
   img {
     max-width: 100%;
+    height: auto;
     margin-top: 1rem;
     margin-bottom: 2rem;
-    height: auto;
-    border-radius: 0.25rem;
+    border-radius: .25rem;
   }
 
   a {
@@ -233,56 +235,58 @@ article.post-content {
 
   pre {
     padding: 7px 24px;
-    border-left: 1px solid rgba(#d63384, 0.25);
     margin-top: 2rem;
     margin-bottom: 2rem;
     white-space: break-spaces;
+    border-left: 1px solid rgba(#d63384, .25);
   }
 
-  ol, ul, dl {
+  ol,
+  ul,
+  dl {
     margin-top: 1rem;
     margin-bottom: 2rem;
   }
 
   blockquote {
+    padding-left: 24px;
     margin-bottom: 2rem;
     font-size: 1.25rem;
-    border-left: 1px solid rgba(#ffffff, 0.25);
-    padding-left: 24px;
     color: #808080;
+    border-left: 1px solid rgba(#fff, .25);
   }
 
   table {
-    margin-bottom: 2rem;
     margin-top: 1rem;
+    margin-bottom: 2rem;
   }
 }
 
 .post-meta {
-  p.post-meta-heading {
+  .post-meta-heading {
     margin-bottom: 0;
   }
 
-  p.post-meta-author {
+  .post-meta-author {
     margin-top: 0;
   }
 }
 
-article.post-index {
+.post-index {
   margin-bottom: 3rem;
 
   p {
     margin-bottom: 0;
-    color: rgba(255, 255, 255, 0.85);
+    color: rgba(255, 255, 255, .85);
   }
 
   p > small {
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(255, 255, 255, .7);
   }
 }
 
 .page-item .page-link {
+  background-color: transparent !important;
   border: none !important;
   border-radius: 0 !important;
-  background-color: transparent !important;
 }

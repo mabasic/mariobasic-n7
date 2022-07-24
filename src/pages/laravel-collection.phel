@@ -1,5 +1,6 @@
 (ns app\pages\laravel-collection
-  (:require app\layouts\main))
+  (:require app\layouts\main)
+  (:require app\svg))
 
 (defn white []
   [:div {:class "mt-5 pt-5 mb-4"}
@@ -24,14 +25,14 @@
 
 (defn icon-unit [icon title body]
   [:div {:class "icon-unit d-flex mb-3 mb-lg-0"}
-   [:div {:class "icon-unit-left"} [:span {:class "h3"} icon]]
+   [:div {:class "icon-unit-left"} icon]
    [:div {:class "icon-unit-right"}
     [:h3 {:class "icon-unit-title"} title]
     [:p {:class "icon-unit-body"} body]]])
 
 (defn centered-icon-unit [icon title body]
   [:div {:class "centered-icon-unit text-center mb-5 mb-lg-0"}
-   [:span {:class "h1"} icon]
+   icon
    [:h5 {:class "centered-icon-unit-title mt-2"} title]
    [:p {:class "centered-icon-unit-body"} body]])
 
@@ -45,23 +46,23 @@
      [:div {:class "row pb-lg-5"}
       [:div {:class "col-lg-6"}
        (icon-unit
-        [:i {:class "fab fa-git-alt"}]
+        (svg/load-raw "icons/git.svg")
         "Code samples"
         "All tutorials in this book come with a working code repository on GitHub.")]
       [:div {:class "col-lg-6"}
        (icon-unit
-        [:i {:class "fas fa-lightbulb"}]
+        (svg/load-raw "icons/lightbulb.svg")
         "Learning tips"
         "Throughout the whole book you will find tips to expand your knowledge on a topic.")]]
      [:div {:class "row"}
       [:div {:class "col-lg-6"}
        (icon-unit
-        [:i {:class "fas fa-walking"}]
+        (svg/load-raw "icons/123.svg")
         "Step by step"
         "Each chapter comes with a commit that shows the changes that have been made in it.")]
       [:div {:class "col-lg-6"}
        (icon-unit
-        [:i {:class "fas fa-bookmark"}]
+        (svg/load-raw "icons/journal-bookmark.svg")
         "Jump in anywhere"
         "No need to read the whole book. Find a tutorial that interests you and start reading.")]]]]
    [:div {:class "row mt-5 pt-5"}
@@ -71,55 +72,55 @@
    [:div {:class "row mt-5"}
     [:div {:class "col-lg-6"}
      (icon-unit
-      [:i {:class "fas fa-terminal"}]
+      (svg/load-raw "icons/terminal.svg")
       "API Development"
       "Building and documenting an API with Laravel.")]
     [:div {:class "col-lg-6"}
      (icon-unit
-      [:i {:class "fas fa-user-secret"}]
+      (svg/load-raw "icons/fingerprint.svg")
       "JWT Authentication"
       "Most popular tutorial on JWT for Lumen.")]]
    [:div {:class "row mt-lg-5 mb-5 pb-5"}
     [:div {:class "col-lg-6"}
      (icon-unit
-      [:i {:class "fas fa-laptop-code"}]
+      (svg/load-raw "icons/pc-display.svg")
       "Laravel on Windows"
       "Homestead or Laragon, pick one and start building.")]
     [:div {:class "col-lg-6"}
      (icon-unit
-      [:i {:class "fas fa-code"}]
+      (svg/load-raw "icons/filetype-php.svg")
       "Codeception testing"
       "Testing with Codeception on Laravel and Lumen.")]]
    [:div {:class "row mt-5 pt-5"}
     [:div {:class "col-lg-4"}
      (centered-icon-unit
-      [:i {:class "fas fa-user-tie"}]
+      (svg/load-raw "icons/ui-checks.svg")
       "Forms and Validation"
       "Learn how to create and validate forms. Includes tutorials on validating form arrays and different ways of validating data.")]
     [:div {:class "col-lg-4"}
      (centered-icon-unit
-      [:i {:class "fas fa-tools"}]
+      (svg/load-raw "icons/wrench-adjustable-circle.svg")
       "Compiling Frontend Assets"
       "Learn how to use Laravel Mix to compile frontend assets. Also, learn how to use Laravel Mix or Laravel Elixir without Laravel.")]
     [:div {:class "col-lg-4"}
      (centered-icon-unit
-      [:i {:class "fas fa-globe-europe"}]
+      (svg/load-raw "icons/globe.svg")
       "Mulitilingual Web Applications"
       "Learn how to create multilingual web application with Laravel. From simple text localization to database model translations.")]]
    [:div {:class "row mt-lg-5 mb-5 pb-5"}
     [:div {:class "col-lg-4"}
      (centered-icon-unit
-      [:i {:class "fas fa-paper-plane"}]
+      (svg/load-raw "icons/airplane-engines.svg")
       "Deployment with Envoy"
       "Learn everything about Laravel Envoy with practical examples. There is also a tutorial on deploying a Laravel app from GitHub to Heroku.")]
     [:div {:class "col-lg-4"}
      (centered-icon-unit
-      [:i {:class "fas fa-database"}]
+      (svg/load-raw "icons/server.svg")
       "Database and Eloquent ORM"
       "Learn all about pagination presenters and how to paginate a collection of different models. Also, learn different ways of deleting records.")]
     [:div {:class "col-lg-4"}
      (centered-icon-unit
-      [:i {:class "fas fa-server"}]
+      (svg/load-raw "icons/hdd-rack.svg")
       "Server Administration"
       "For the brave, there are a couple of tutorials on installing Nginx, PHP7, obtaining certificates with Let's encrypt and bash scripting.")]]
    [:div {:class "row mt-5 pt-6"}

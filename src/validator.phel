@@ -7,11 +7,10 @@
 (defn prettify-field [field]
   (php/str_replace (php/array "_" "-") " " field))
 
-# It returns true if the `field` key is present in request :parsed-body,
-# value of the `field` is not nil or an empty string "", otherwise false.
-(defn rule-required [request field]
-  (let [data (helpers/extract-data-from-request request)
-        error-message (str "The " (prettify-field field) " is required.")]
+# It returns true if the `field` key is present in data,
+# value or the `field` is not nil or an empty string "", otherwise false.
+(defn rule-required [data field]
+  (let [error-message (str "The " (prettify-field field) " is required.")]
     (if
       (find
        (fn [key] (= key (keyword field)))
@@ -25,9 +24,8 @@
           true))
       error-message)))
 
-(defn rule-string [request field  & [field-rule]]
-  (let [data (helpers/extract-data-from-request request)
-        field-value ((keyword field) data)
+(defn rule-string [data field  & [field-rule]]
+  (let [field-value ((keyword field) data)
         field-rule (or field-rule {:rule :string})]
     (if (string? field-value)
       (let [rule-validation-results
@@ -41,9 +39,8 @@
         (first rule-validation-results))
       (str "The " (prettify-field field) " must be a string."))))
 
-(defn rule-accepted [request field]
-  (let [data (helpers/extract-data-from-request request)
-        field-value ((keyword field) data)]
+(defn rule-accepted [data field]
+  (let [field-value ((keyword field) data)]
     (if
       (or
        (= field-value "yes")
@@ -54,20 +51,19 @@
       (str "The " (prettify-field field) " must be accepted."))))
 
 # It returns true if the field is null, otherwise it returns nil.
-(defn rule-nullable [request field]
-  (let [data (helpers/extract-data-from-request request)
-        field-value ((keyword field) data)]
+(defn rule-nullable [data field]
+  (let [field-value ((keyword field) data)]
     (if (nil? field-value) true)))
 
-# It returns :result true if validation has passed. 
+# It returns :result true if validation has passed.
 # In this case :errors should be an empty hash-map.
-(defn validate [request rules]
+(defn validate [data rules]
   (let [errors (transient {})]
     (foreach [field field-rules rules]
       (let [# It returns a boolean depending if the field-rules contain :nullable value.
             field-has-nullable-rule (not (nil? (find (fn [x] (= x :nullable)) field-rules)))
             # It returns a boolean depending if the field-value is null
-            field-value-is-null (if field-has-nullable-rule (rule-nullable request field) false)
+            field-value-is-null (if field-has-nullable-rule (rule-nullable data field) false)
             field-validation-results
             # If field-rules contain :nullable and field-value is null, it returns an empty array,
             # otherwise it returns an array with validation error messages if any.
@@ -77,13 +73,13 @@
                  (fn [result] (not (or (nil? result) (true? result))))
                  (for [field-rule :in field-rules]
                    (cond
-                     (= field-rule :required) (rule-required request field)
-                     (= field-rule :string) (rule-string request field)
-                     (= field-rule :accepted) (rule-accepted request field)
+                     (= field-rule :required) (rule-required data field)
+                     (= field-rule :string) (rule-string data field)
+                     (= field-rule :accepted) (rule-accepted data field)
                      (hash-map? field-rule)
                      (case (:rule field-rule)
                         # Handles additional string rule options like: max, min, etc ...
-                       :string (rule-string request field field-rule))))))]
+                       :string (rule-string data field field-rule))))))]
         (if (> (count field-validation-results) 0)
           (put errors field field-validation-results))))
     {:result (= (count errors) 0)
@@ -95,3 +91,17 @@
    :body (json/encode
           {:message "The given data was invalid."
            :errors errors})})
+
+(defn has-error [errors key]
+  (> (count (get errors key)) 0))
+
+(defn get-class [class-value errors field]
+  (str class-value
+       (if (has-error errors field) " is-invalid")))
+
+(defn
+  get-first-error-message [errors key default-value]
+  "It returns the first error message for a field or the given default-value."
+  (if (has-error errors key)
+    (first (get errors key))
+    default-value))

@@ -1,4 +1,5 @@
-(ns app\partials\footer)
+(ns app\partials\footer
+  (:require app\svg))
 
 (defn render []
   [:footer {:class "black"}
@@ -8,7 +9,7 @@
       [:hr]
       [:p {:class "text-muted d-flex justify-content-between flex-md-row flex-column"}
        [:small
-        "©️ Mario Bašić 2014-" (php/date "Y") ".  All rights reserved. Made with " [:a {:href "https://phel-lang.org/" :rel "noopener nofollow" :target "_blank" :class "link-light"} "Phel-lang"] " and " [:a {:href "https://fable.io/" :rel "noopener nofollow" :target "_blank" :class "link-light"} "F#/Fable"] "." [:br]
+        "©️ Mario Bašić 2014-" (php/date "Y") ".  All rights reserved. Made with " [:a {:href "https://phel-lang.org/" :rel "noopener nofollow" :target "_blank" :class "link-light"} "Phel-lang"] "." [:br]
         [:a {:href "/privacy" :class "link-light"} "Privacy Notice"]
         [:a {:href "https://github.com/mabasic/mariobasic-n7" :rel "noopener nofollow" :target "_blank" :class "link-light ms-2"} "Source Code"]]
        [:span
@@ -18,46 +19,46 @@
           :title "LinkedIn"
           :rel "noopener nofollow"
           :target "_blank"}
-         [:i {:class "fab fa-fw fa-linkedin-in"}]]
+         (svg/load-raw "icons/linkedin.svg")]
         [:a
          {:class "btn btn-link link-light"
           :href "https://www.patreon.com/laravelista"
           :title "Patreon"
           :rel "noopener nofollow"
           :target "_blank"}
-         [:i {:class "fab fa-fw fa-patreon"}]]
+         (svg/load-raw "icons/patreon.svg")]
         [:a
          {:class "btn btn-link link-light"
           :href "https://www.paypal.me/laravelista"
           :title "PayPal"
           :rel "noopener nofollow"
           :target "_blank"}
-         [:i {:class "fab fa-fw fa-paypal"}]]
+         (svg/load-raw "icons/paypal.svg")]
         [:a
          {:class "btn btn-link link-light"
           :href "https://m.do.co/c/1bae3920f1e0"
           :title "DigitalOcean"
           :rel "noopener nofollow"
           :target "_blank"}
-         [:i {:class "fab fa-fw fa-digital-ocean"}]]
+         (svg/load-raw "icons/digitalocean.svg")]
         [:a
          {:class "btn btn-link link-light"
           :href "https://github.com/mabasic"
           :title "GitHub (mabasic)"
           :rel "noopener nofollow"
           :target "_blank"}
-         [:i {:class "fab fa-fw fa-github"}]]
+         (svg/load-raw "icons/github.svg")]
         [:a
          {:class "btn btn-link link-light"
           :href "https://github.com/laravelista"
           :title "GitHub (laravelista)"
           :rel "noopener nofollow"
           :target "_blank"}
-         [:i {:class "fab fa-fw fa-github-alt"}]]
+         (svg/load-raw "icons/github.svg")]
         [:a
          {:class "btn btn-link link-light"
           :href "https://twitter.com/BasicMario"
           :title "Twitter"
           :rel "noopener nofollow"
           :target "_blank"}
-         [:i {:class "fab fa-fw fa-twitter"}]]]]]]]])
+         (svg/load-raw "icons/twitter.svg")]]]]]]])

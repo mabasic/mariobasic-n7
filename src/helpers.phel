@@ -1,14 +1,23 @@
 (ns app\helpers
   (:require mabasic\json\json))
 
+(defn convert-keys-to-keywords [items]
+  (reduce
+   (fn [newItems item] (put newItems (first item) (second item)))
+   {}
+   (for [[key value] :pairs items] [(keyword key) value])))
+
 # It returns data from :parsed-body if any, otherwise it looks for data
 # in php://input, else it returns an empty hash-map.
 (defn extract-data-from-request [request]
-  (or
-   (:parsed-body request)
-   (or
-    (json/decode (php/file_get_contents "php://input"))
-    {})))
+  (let [parsed-body (:parsed-body request)]
+    (or
+     (if (nil? parsed-body)
+       false
+       (convert-keys-to-keywords parsed-body))
+     (or
+      (json/decode (php/file_get_contents "php://input"))
+      {}))))
 
 # Taken from mabasic/json library.
 (defn- valid-key? [v]
@@ -28,9 +37,3 @@
     (keyword? x) (str (php/-> x (getName)))
     (float? x) (str x)
     true x))
-
-# This is only temporary until [#287](https://github.com/phel-lang/phel-lang/issues/287) is resolved.
-(defn convert-to-php-array
-  "This should be faster than converting to a list instead"
-  [vector]
-  (apply php/array vector))

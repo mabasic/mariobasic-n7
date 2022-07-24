@@ -2,12 +2,9 @@
 .phel-repl-history
 node_modules
 public/*.map
+public/js/*.map
+public/css/*.map
 .env
 .env.production
-.fake
-.ionide
-resources/js/bin
-resources/js/obj
-*.fs.js
 phel-config-local.php
 /dist/

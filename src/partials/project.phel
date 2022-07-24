@@ -1,6 +1,7 @@
 (ns app\partials\project
   (:require app\pages\home :refer [unit])
-  (:require app\helpers))
+  (:require app\helpers)
+  (:require app\svg))
 
 (defn render [project]
   (unit
@@ -11,16 +12,17 @@
       :target "_blank"
       :rel "nofollow noopener"}
      (case (get project :type)
-       "website" [:i {:class "fas fa-fw fa-globe-europe me-1"}]
-       "android-app" [:i {:class "fab fa-fw fa-google-play me-1"}]
-       "business-application" [:i {:class "fas fa-fw fa-cogs me-1"}]
-       "online-store" [:i {:class "fas fa-fw fa-shopping-cart me-1"}]
-       "pull-request" [:i {:class "fas fa-fw fa-code-branch me-1"}]
-       "github-repository" [:i {:class "fab fa-fw fa-github me-1"}])
-     (get project :title)]
+       "website" (svg/load-raw "icons/globe.svg")
+       "android-app" (svg/load-raw "icons/google-play.svg")
+       "business-application" (svg/load-raw "icons/gear.svg")
+       "online-store" (svg/load-raw "icons/bag.svg")
+       "pull-request" (svg/load-raw "icons/git.svg")
+       "github-repository" (svg/load-raw "icons/github.svg"))
+     [:span {:class "ms-2"} (get project :title)]]
     :intro
     [:div
      (get project :description)
      [:br]
-     (helpers/convert-to-php-array (for [badge :in (get project :badges)]
-                                     [:span {:class "badge"} "#" badge]))]}))
+     (apply list
+            (for [badge :in (get project :badges)]
+              [:span {:class "badge"} "#" badge]))]}))

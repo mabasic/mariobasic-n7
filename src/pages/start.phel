@@ -6,73 +6,161 @@
   (:require app\emails\inquiries\received)
   (:require app\validator)
   (:require app\helpers)
+  (:require app\request)
+  (:require app\logger)
   (:use Exception))
 
 (defn white []
-  [:div
-   [:h1 {:class "display-1 pt-5 mt-5"} "Let's work together 🚀"]
-   [:p [:a {:href "/" :class "text-dark"} "home"] "/ start"]])
+  (list
+   [:h1 {:class "display-1 pt-5 mt-5"} "Say Hello 👋"]
+   [:p [:a {:href "/" :class "text-dark"} "home"] "/ start"]))
 
-(defn black [] [:div {:id "get-started"}])
+(defn black-success []
+  [:div {:class "row mb-4"}
+   [:div {:class "col text-center mb-5"}
+    [:span {:class "start-success-icon"} "💌"]
+    [:h2 {:class "display-2"} "Success"]
+    [:p {:class "lead"} "Thank you for contacting me."]
+    [:p "I have received your message and I will reply as soon as possible."]]])
+
+(defn is-checked [value]
+  (= value "on"))
+
+(defn black [& [data errors]]
+  [:form {:method "POST" :action "/start"}
+   [:div {:class "row"}
+    [:div {:class "col-md-6 offset-md-3"}
+     [:h2 {:class "mt-0 mb-3"} "Send me a message"]
+     [:p "Fields marked with " [:b "*"] " are required."]
+     [:input {:name "_token"
+              :type "hidden"
+              :value (php/aget php/$_SESSION "_token")}]
+     [:div {:class "form-floating mb-3"}
+      [:input {:class (validator/get-class "form-control" errors "name")
+               :name "name"
+               :type "text"
+               :id "name"
+               :required true
+               :value (get data :name)}]
+      [:label {:for "name"} (validator/get-first-error-message errors "name" "Name*")]]
+     [:div {:class "form-floating mb-3"}
+      [:input {:class (validator/get-class "form-control" errors "email")
+               :name "email"
+               :type "text"
+               :id "email"
+               :required true
+               :value (get data :email)}]
+      [:label {:for "email"} (validator/get-first-error-message errors "email" "Email Address*")]]
+     [:div {:class "form-floating mb-3"}
+      [:textarea {:class (validator/get-class "form-control" errors "message")
+                  :name "message"
+                  :style {:height "200px"}
+                  :required true
+                  :id "message"} (get data :message)]
+      [:label {:for "message"} (validator/get-first-error-message errors "message" "Message*")]]
+     [:div {:class "mb-3"}
+      [:div {:class "form-check form-switch"}
+       [:input {:class (validator/get-class "form-check-input" errors "gdpr_consent")
+                :name "gdpr_consent"
+                :type "checkbox"
+                :id "gdpr_consent"
+                 :required true
+                :checked (is-checked (get data :gdpr_consent))
+                :value "on"}]
+       [:label {:class "form-check-label":for "gdpr_consent"}
+        "I have read the "
+        [:a {:class "link-light" :href "/privacy"} "Privacy Notice"]
+        " and I give my permission to be contacted with regard to this form."]]]
+     [:div {:class "mb-2 d-grid gap-2"}
+      [:button {:type "submit"
+                :class "btn btn-primary"} "Send 💌"]]]]])
+
+(def title "Say Hello 👋 | Mario Bašić")
+(def meta-description "I am always looking for new challenges and interesting projects.")
 
 (defn render [request]
   {:status 200
    :body (main/render
           request
-          {:title "Let's work together 🚀 | Mario Bašić"
-           :meta-description "I am always looking for new challenges and interesting projects."
+          {:title title
+           :meta-description meta-description
            :white (white)
-           :black (black)}
-          (list [:script {:src "/start.js"}]))})
+           :black (black)})})
+
+(defn render-validation-errors [request data errors]
+  {:status 422
+   :body (main/render
+          request
+          {:title title
+           :meta-description meta-description
+           :white (white)
+           :black (black data errors)})})
+
+(defn render-success [request]
+  {:status 200
+   :body (main/render
+          request
+          {:title title
+           :meta-description meta-description
+           :white (white)
+           :black (black-success)})})
+
+(def server-error-status-code 500)
+
+(defn black-server-error [message]
+  [:div {:class "row mb-4"}
+   [:div {:class "col text-center mb-5"}
+    [:span {:class "start-success-icon"} "💥"]
+    [:h2 {:class "display-2"} server-error-status-code]
+    [:p {:class "lead"} "An unexpected error has occured!"]
+    [:p message]]])
+
+(defn render-server-error [request message]
+  {:status server-error-status-code
+   :body (main/render
+          request
+          {:title title
+           :meta-description meta-description
+           :white (white)
+           :black (black-server-error message)})})
 
 (def store-rules
-  {"first_name" [:required {:rule :string :max 255}]
-   "last_name" [:required {:rule :string :max 255}]
-   "company_name" [:nullable {:rule :string :max 255}]
-   "vat_number" [:nullable {:rule :string :max 255}]
-   "address" [:required {:rule :string :max 255}]
-   "city" [:required {:rule :string :max 255}]
-   "zip_code" [:required {:rule :string :max 255}]
-   "country" [:required {:rule :string :max 255}]
-   "email_address" [:required {:rule :string :max 255}]
-   "phone" [:required {:rule :string :max 255}]
-   "topic" [:required {:rule :string :max 255}]
-   "budget" [:required {:rule :string :max 255}]
-   "subject" [:required {:rule :string :max 255}]
-   "q1" [:nullable :string]
-   "q2" [:nullable :string]
-   "q3" [:nullable :string]
-   "q4" [:nullable :string]
-   "q5" [:nullable :string]
-   "q6" [:nullable :string]
-   "q7" [:nullable :string]
-   "q8" [:nullable :string]
-   "q9" [:nullable :string]
+  {"name" [:required {:rule :string :max 255}]
+   "email" [:required {:rule :string :max 255}]
+   "message" [:required :string]
    "gdpr_consent" [:required :accepted]})
 
 (defn store [request]
-  (let [{:result validated :errors errors}
-        (validator/validate request store-rules)]
+  (let [data (helpers/extract-data-from-request request)
+        {:result validated :errors errors}
+        (validator/validate data store-rules)]
     (if (= validated false)
-      (validator/validation-failed-response errors)
-      (let [data (helpers/extract-data-from-request request)]
-        (try
-          (do
-            # Send email
-            (mail/send {:to "mario@laravelista.hr"
-                        :subject "Inquiry Received"
-                        :message (received/render data)
-                        :reply-to (:email_address data)})
+      (if (request/expects-json request)
+        (validator/validation-failed-response errors)
+        (render-validation-errors request data errors))
+      (try
+        (do
+          # Send email
+          (mail/send {:to "mario@laravelista.hr"
+                      :subject "Message Received"
+                      :message (received/render data)
+                      :reply-to (:email_address data)})
 
-            # Store in database
-            (php/-> database/inquiries-store (insert (helpers/encode-value data)))
+          # Store in database
+          (php/-> database/inquiries-store (insert (helpers/encode-value data)))
 
-            # Send response "success"
+          # Send response "success"
+          (if (request/expects-json request)
             {:status 200
              :headers {"Content-Type" "application/json"}
-             :body (json/encode {:status "success"})})
-          (catch Exception e
-            # Send response "error"
-            {:status 500
-             :headers {"Content-Type" "application/json"}
-             :body (json/encode {:status "error" :message (php/-> e (getMessage))})}))))))
+             :body (json/encode {:status "success"})}
+            (render-success request)))
+        (catch Exception e
+          # Send response "error"
+          (let [message (php/-> e (getMessage))]
+            (logger/debug message)
+            (if (request/expects-json request)
+              {:status server-error-status-code
+               :headers {"Content-Type" "application/json"}
+               :body (json/encode {:status "error" :message message})}
+              (render-server-error request message))))))))

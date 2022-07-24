@@ -28,6 +28,12 @@ Since I was/am new to the language I had to figure out a lot of stuff including 
 
 I've moved my blog from Gatsby.js to this website. In order to achive this I had to implement named route paramaters in the router, implement reading front matter/markdown from files and converting to html, implement better active route detection (laravelista/Ekko logic) and other related stuff. The whole process was simple, but I had to deal with regex and that was painful. Every time I have to lookup what each symbol means. I have added a bunch of tests and updated the application to Phel 0.3.2 which bring new data structures and fixes.
 
+**Update 23.07.2022 Removed webpack and F#/Fable**
+
+I used F# to build the contact form on the start page because I wanted to try F#. Since then I have started using F# whenever I can. My goal is to make a simple contact form with no JS. Phel renders html form, form submits and the user gets the response as html. Because of that I am removing F# from this repository. I have made a new tag called `fsharp-fable-start` where you can view the last working version of F#/Fable start page form.
+
+Because of this I have moved away from webpack to using rollup for js and sass for css. I think that this is very simple now to maintain and there are no hacks involved.
+
 ## Phel-lang "review"
 
 Working with Phel was very fun and an interesting mind flex. The concept that code is data is mind blowing. This is my first encounter with a lisp inspired language and a functional language. The language has everything needed for rapid development. The language comes with support for the whole PHP ecosystem. It has testing and formatting integrated, and comes with a REPL in which one can quickly prototype functions. The only downside to the language at this point is its speed. I haven't done any concrete metrics, but when you visit the website you will feel the load times. I have talked with the language author and he knows about the issue and is working on a "compile" feature which will make the language as fast as PHP itself. Considering that the language is version 0.2.0, I can't wait for it to reach a stable release.
@@ -36,6 +42,8 @@ Working with Phel was very fun and an interesting mind flex. The concept that co
 
 Originally I have wanted my first F# project to be a backend project, like a simple API or something, but since I wanted to replace Javascript with something I gave F# a chance. I do not regret it. The language is very beautiful. It's syntax is similar to LISP at times. It's immutable but can be mutable, it's functional but can be object oriented, it's strongly typed but most of the times it feels like a dynamic language because of type inference, it's what almost every new language these days wants to be, but is actually around 10 years old. A gem. Writing F# is fun and different than writing JS. Most of the time I was in my code editor, "adjusting" types and making the compiler happy. I would open the browser just to verify that it works after evertyhing compiles. When in case of JS I would write a line of code and then refresh the page in the browser to make sure that it runs or that I gave the correct parameter to a function etc. Maybe this is why Typescript is so loved these days.
 
+
+
 ## TODO
 
 The code in `src/helpers.phel` should be somewhere else. Maybe in Phel (extract-data-from-request) or converted to a public function in mabasic/phel-json library (encode-value).
@@ -43,39 +51,33 @@ The code in `src/helpers.phel` should be somewhere else. Maybe in Phel (extract-
 ## Requirements
 
 - PHP 8
-- Node.js v14.16.0
-- .NET 5
+- Node.js v16.16.0
 
 ## Quickstart
 
 ```bash
 # php
 composer install
-composer dev
-
-# Run commands bellow in a new terminal.
-
-# dotnet
-dotnet tool restore
 
 # node
 npm install
-npm run watch
+
+# Use this to compile the phel application to php.
+composer compile
+
+# (Recommended) This commands starts the watch processes for js and css and starts the php server.
+npm run all
+
+# Use this to only start the phel application.
+composer dev
 ```
 
 Run tests with:
 
 ```
 composer test
+npm run test
 ```
-
-
-## Javascript/F# Scripts
-
-- `npm run dev` - for generating a development build once.
-- `npm run watch` - for generating a development build and watching for changes.
-- `npm run prod` - for generating a production build once.
-
 
 ## Code Formatting
 
@@ -88,8 +90,10 @@ vendor/bin/phel format tests/
 
 Compile PHEL to PHP.
 
-```
+```bash
 vendor/bin/phel compile --no-cache
+# or
+composer compile
 ```
 
 verify that `index.php` has the right code uncommented (fast/slow).

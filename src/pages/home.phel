@@ -1,5 +1,6 @@
 (ns app\pages\home
-  (:require app\layouts\main))
+  (:require app\layouts\main)
+  (:require app\svg))
 
 (defn white []
   [:div {:id "root"}
@@ -185,8 +186,11 @@
     (unit {:title "Italian" :subtitle "Basic"}))
    (group
     "Download"
-    (unit {:body
-           [:a {:class "btn btn-primary" :href "/resume.pdf" :target "_blank"} "Curriculum Vitae " [:i {:class "fa fa-fw fa-download"}]]}))))
+    (unit
+     {:body
+      [:a {:class "btn btn-primary" :href "/resume.pdf" :target "_blank"}
+       [:span {:class "me-2"} "Curriculum Vitae"]
+       (svg/load-raw "icons/download.svg")]}))))
 
 (defn black []
   [:div {:class "row"}

@@ -1,5 +1,7 @@
 (ns app\middleware\verify-csrf-token
-  (:require mabasic\json\json))
+  (:require mabasic\json\json)
+  (:require app\layouts\main)
+  (:require app\request))
 
 (defn is-reading [request]
   (let [request-method (get request :method)
@@ -18,12 +20,41 @@
 (defn tokens-match [request]
   (= (php/aget php/$_SESSION "_token") (get-token-from-request request)))
 
+(def session-expired-status-code 419)
+
+(def title "Session Expired | Mario Bašić")
+(def meta-description "Sorry, your session has expired. Please refresh and try again.")
+
+(defn white []
+  (list
+   [:h1 {:class "display-1 pt-5 mt-5"} "Session Expired"]
+   [:p [:a {:href "/" :class "text-dark"} "home"]]))
+
+(defn black []
+  [:div {:class "row mb-4"}
+   [:div {:class "col text-center mb-5"}
+    [:span {:class "start-success-icon"} "😢"]
+    [:h2 {:class "display-2"} session-expired-status-code]
+    [:p {:class "lead"} "Sorry, your session has expired."]
+    [:p "Please refresh and try again."]]])
+
+(defn render [request]
+  {:status session-expired-status-code
+   :body (main/render
+          request
+          {:title title
+           :meta-description meta-description
+           :white (white)
+           :black (black)})})
+
 (defn handle [request]
   (if
     (or
      (is-reading request)
      (tokens-match request))
     request
-    {:status 419
-     :headers {"Content-Type" "application/json"}
-     :body (json/encode {:message "CSRF token mismatch."})}))
+    (if (request/expects-json request)
+      {:status session-expired-status-code
+       :headers {"Content-Type" "application/json"}
+       :body (json/encode {:message "CSRF token mismatch."})}
+      (render request))))
