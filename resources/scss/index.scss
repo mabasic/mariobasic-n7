@@ -53,6 +53,10 @@ $secondary-color: #0b5ed8;
     color-scheme: dark;
   }
 
+  .full-name {
+    display: none;
+  }
+
   // This code bellow makes for look "good" on a dark background.
   form .form-control,
   form .form-floating > .form-control,
