@@ -35,6 +35,13 @@
      [:input {:name "_token"
               :type "hidden"
               :value (php/aget php/$_SESSION "_token")}]
+     [:input {:class "form-control full-name"
+              :name "full_name"
+              :type "text"
+              :id "full_name"
+              :autocomplete "off"
+              :placeholder "Your full name here"
+              :value ""}]
      [:div {:class "form-floating mb-3"}
       [:input {:class (validator/get-class "form-control" errors "name")
                :name "name"
@@ -131,16 +138,28 @@
   {"name" [:required {:rule :string :max 255}]
    "email" [:required {:rule :string :max 255}]
    "message" [:required :string]
-   "gdpr_consent" [:required :accepted]})
+   "gdpr_consent" [:required :accepted]
+   "full_name" [:honeypot]})
+
+(defn respond-success [request]
+  (if (request/expects-json request)
+    {:status 200
+     :headers {"Content-Type" "application/json"}
+     :body (json/encode {:status "success"})}
+    (render-success request)))
 
 (defn store [request]
   (let [data (helpers/extract-data-from-request request)
         {:result validated :errors errors}
         (validator/validate data store-rules)]
     (if (= validated false)
-      (if (request/expects-json request)
-        (validator/validation-failed-response errors)
-        (render-validation-errors request data errors))
+      (if-not (= (:full_name data) "")
+        (do
+          (logger/info (str "Honeypot spam protection caught this email: " (:email data)))
+          (respond-success request))
+        (if (request/expects-json request)
+          (validator/validation-failed-response errors)
+          (render-validation-errors request data errors)))
       (try
         (do
           # Send email
@@ -153,11 +172,7 @@
           (php/-> database/inquiries-store (insert (helpers/encode-value data)))
 
           # Send response "success"
-          (if (request/expects-json request)
-            {:status 200
-             :headers {"Content-Type" "application/json"}
-             :body (json/encode {:status "success"})}
-            (render-success request)))
+          (respond-success request))
         (catch Exception e
           # Send response "error"
           (let [message (php/-> e (getMessage))]

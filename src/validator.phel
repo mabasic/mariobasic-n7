@@ -24,6 +24,28 @@
           true))
       error-message)))
 
+(defn rule-present [data field]
+  (let [error-message (str "The " (prettify-field field) " needs to be present.")]
+    (if
+      (find
+       (fn [key] (= key (keyword field)))
+       (keys data))
+      true
+      error-message)))
+
+(defn rule-honeypot [data field]
+  (let [error-message (str "The " (prettify-field field) " is used for honeypot spam protection.")]
+    (if
+      (find
+       (fn [key] (= key (keyword field)))
+       (keys data))
+      (let [field-value ((keyword field) data)]
+        (if-not
+          (= field-value "")
+          error-message
+          true))
+      error-message)))
+
 (defn rule-string [data field  & [field-rule]]
   (let [field-value ((keyword field) data)
         field-rule (or field-rule {:rule :string})]
@@ -76,6 +98,8 @@
                      (= field-rule :required) (rule-required data field)
                      (= field-rule :string) (rule-string data field)
                      (= field-rule :accepted) (rule-accepted data field)
+                     (= field-rule :present) (rule-present data field)
+                     (= field-rule :honeypot) (rule-honeypot data field)
                      (hash-map? field-rule)
                      (case (:rule field-rule)
                         # Handles additional string rule options like: max, min, etc ...
