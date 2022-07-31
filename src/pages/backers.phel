@@ -1,29 +1,62 @@
 (ns app\pages\backers
-  (:require app\layouts\main))
+  (:require app\layouts\main)
+  (:require app\config\app))
 
 (defn white []
   [:div
    [:h1 {:class "display-1 pt-5 mt-5"} "Backers"]
    [:p [:a {:href "/" :class "text-dark"} "home"] "/ open-source"]])
 
+(defn custom-link [href text & [options]]
+  (let [attributes {:href href :class "link-light"}
+        seo (if (nil? (:seo options)) true (:seo options))
+        seo-attributes {:rel "noopener nofollow" :target "_blank"}]
+    (if (true? seo)
+      [:a (merge attributes seo-attributes) text]
+      [:a attributes text])))
+
 (defn black []
   [:div {:class "row"}
    [:div {:class "col"}
     [:p {:class "lead"} "Mario Bašić is creating open-source packages."]
-    [:p "Creating, maintaining and adding new features to open-source packages takes a considerable amount of time. I am exploring the possibility of working on open-source full-time in hopes that it will be possible to do so one day."]
+    [:p "My passion is programming and I love contributing to open source either by writing packages/libraries or improving the open source projects that I use."]
+    [:p "Creating, maintaining and adding new features to open-source packages takes a considerable amount of time. I plan to use the funds obtained from this sponsorship to support my open-source work. If I could I would only work on open source, but since that does not pay the bills I have to invest my time in opportunities that bring money so that I can support myself, my family, and my open source contributions."]
     [:p "If you run a business and it is using any of my packages in a revenue-generating product, it would make business sense to sponsor its development. It ensures the project that your product relies on stays healthy and actively maintained. It can also help your exposure in the developer community and makes it easier to attract other developers."]
     [:p "Individual users are welcome to make a recurring pledge if any of my packages has helped them in work or personal projects."]
     [:ul
      [:li
-      [:a {:href "https://www.patreon.com/laravelista"
-           :class "link-light"
-           :rel "noopener nofollow"
-           :target "_blank"} "Become a backer or sponsor on Patreon."]]
+      (custom-link "https://github.com/sponsors/mabasic" "Become a sponsor on GitHub.")]
      [:li
-      [:a {:href "https://www.paypal.me/laravelista"
-           :class "link-light"
-           :rel "noopener nofollow"
-           :target "_blank"} "Send a one-time donation via PayPal."]]]
+      (custom-link "https://www.patreon.com/laravelista" "Become a backer or sponsor on Patreon.")]
+     [:li
+      (custom-link "https://www.paypal.me/laravelista" "Send a one-time donation via PayPal.")]]
+    [:p
+     "You can view my resume and portfolio on my "
+     (custom-link (app/url) "personal website" {:seo false})
+     " which is built using "
+     (custom-link "https://phel-lang.org" "Phel")
+     "."]
+    [:p "I'm currently working:"]
+    [:ul
+     [:li "at my full-time job as a full stack developer at a big media company RTL in Croatia using JS/TS and PHP."]
+     [:li
+      "as a solo developer at my own company "
+      (custom-link "https://govisit.hr" "Go Visit")
+      " for promoting local businesses to tourists ("
+      (custom-link "https://visitmurter.com" "Visit Murter")
+      ") using PHP/Laravel, React Native and F#."]
+     [:li
+      "as a freelancer building websites and business applications using mostly PHP, JS, TS, React.js, Vue.js, and Laravel ("
+      (custom-link "https://laravelista.com" "Laravelista")
+      ")."]
+     [:li
+      "on my "
+      (custom-link "https://packages.laravelista.com/" "private sponsorware PHP packages repository")
+      " using F# serverless functions on Azure."]
+     [:li
+      "on writing new "
+      (custom-link (str (app/url) "/blog") "blog posts" {:seo false})
+      " that help other programmers using markdown 😃"]]
     [:h2 {:class "mt-5"} "Backers via Patreon"]
     [:ul
      [:li "Lucas Rolff - " [:b "The first patron."]]]]])
