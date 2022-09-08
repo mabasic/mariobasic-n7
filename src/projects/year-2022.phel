@@ -1,0 +1,28 @@
+(ns app\projects\year-2022
+  (:require app\projects\project :refer [project]))
+
+(def index
+  [(project
+    "Quad Murter Kornati"
+    "https://quad-murterkornati.com/"
+    "Rent a Quad in Murter website made with vanilla PHP."
+    ["html" "php" "css"]
+    "website")
+   (project
+    "Kikolina"
+    "https://kikolina.hr"
+    "Webshop for a nail salon and nail care products made with Laravel. Uses self made sponsorware laravel packages."
+    ["laravel" "webshop" "localized" "tailwindcss" "laravel-livewire"]
+    "website")
+   (project
+    "phel-lang/phel-lang"
+    "https://github.com/phel-lang/phel-lang/pull/489"
+    "Adds json library to phel. #489"
+    ["pull-request" "open-source"]
+    "pull-request")
+   (project
+    "scala-js/scala-js-dom"
+    "https://github.com/scala-js/scala-js-dom/pull/724"
+    "Updates MediaQueryList to extend EventTarget #724"
+    ["pull-request" "open-source" "scala.js" "scala"]
+    "pull-request")])

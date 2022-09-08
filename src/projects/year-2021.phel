@@ -33,6 +33,18 @@
     ["pull-request" "open-source"]
     "pull-request")
    (project
+    "phel-lang/phel-lang.org"
+    "https://github.com/phel-lang/phel-lang.org/pull/15"
+    "Fixes incorrect variable names and use classes #15"
+    ["pull-request" "open-source"]
+    "pull-request")
+   (project
+    "phel-lang/phel-vs-code-extension"
+    "https://github.com/phel-lang/phel-vs-code-extension/pull/2"
+    "Updates readme with correct instructions #2"
+    ["pull-request" "open-source"]
+    "pull-request")
+   (project
     "mrlesmithjr/ansible-netplan"
     "https://github.com/mrlesmithjr/ansible-netplan/pull/26"
     "Better comments/instructions #26."
@@ -40,8 +52,20 @@
     "pull-request")
    (project
     "MangelMaxime/Nacara"
-    "https://github.com/MangelMaxime/Nacara/pull/42"
-    "Repository improvements #42."
+    "https://github.com/MangelMaxime/Nacara/pulls?q=+is%3Apr+author%3Amabasic+"
+    "Multiple PRs: #42, #46, #72, #84, #85, #86, #87, #89, #93, #95, #100, #107"
+    ["pull-request" "open-source" "fsharp"]
+    "pull-request")
+   (project
+    "fable-compiler/fable-templates"
+    "https://github.com/fable-compiler/fable-templates/pull/46"
+    "Adds new Fable template which uses Snowpack instead of Webpack #46"
+    ["pull-request" "open-source" "fsharp"]
+    "pull-request")
+   (project
+    "fsprojects/FsHttp"
+    "https://github.com/fsprojects/FsHttp/pull/69"
+    "Adds test to prevent regression. #69"
     ["pull-request" "open-source" "fsharp"]
     "pull-request")
    (project
@@ -49,6 +73,12 @@
     "https://github.com/Zaid-Ajaj/Fable.SimpleJson/pull/72"
     "Updates readme #72."
     ["pull-request" "open-source" "fsharp"]
+    "pull-request")
+   (project
+    "pusher/pusher-http-php"
+    "https://github.com/pusher/pusher-http-php/pull/256"
+    "Fixes docblock return statement for get_channels. #256"
+    ["pull-request" "open-source"]
     "pull-request")
    (project
     "Jet Ski Murter Kornati"
@@ -61,4 +91,10 @@
     "https://meling-gradnja.hr/"
     "Website for a construction company made with Laravel. Uses self made sponsorware laravel packages."
     ["laravel" "algo" "localized"]
-    "website")])
+    "website")
+   (project
+    "tailwindcomponents/e-commerce"
+    "https://github.com/tailwindcomponents/e-commerce/pull/1"
+    "Updates for latest version of tailwind and jigsaw. #1"
+    ["pull-request" "open-source" "tailwindcss"]
+    "pull-request")])

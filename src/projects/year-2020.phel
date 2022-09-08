@@ -31,4 +31,10 @@
     "https://github.com/phel-lang/phel-lang/pulls?q=is%3Apr+author%3Amabasic"
     "Multiple PRs: #136, #135, #92, #70, #46, #39"
     ["pull-request" "open-source"]
+    "pull-request")
+   (project
+    "plausible/hosting"
+    "https://github.com/plausible/hosting/pull/23"
+    "Instructs Nginx to listen on both IPv6 and IPv4 #23. Make plausible/analytics container port local only #24."
+    ["pull-request" "open-source"]
     "pull-request")])
