@@ -13,7 +13,7 @@
     "https://kikolina.hr"
     "Webshop for a nail salon and nail care products made with Laravel. Uses self made sponsorware laravel packages."
     ["laravel" "webshop" "localized" "tailwindcss" "laravel-livewire"]
-    "website")
+    "online-store")
    (project
     "phel-lang/phel-lang"
     "https://github.com/phel-lang/phel-lang/pull/489"
