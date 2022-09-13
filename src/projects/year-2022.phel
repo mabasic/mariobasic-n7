@@ -25,4 +25,10 @@
     "https://github.com/scala-js/scala-js-dom/pull/724"
     "Updates MediaQueryList to extend EventTarget #724"
     ["pull-request" "open-source" "scala.js" "scala"]
+    "pull-request")
+   (project
+    "plausible/docs"
+    "https://github.com/plausible/docs/pull/271"
+    "Adds note to make container port local only, after setting up a reverse proxy #271"
+    ["pull-request" "open-source" "analytics"]
     "pull-request")])
