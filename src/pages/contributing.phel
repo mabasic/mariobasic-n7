@@ -41,5 +41,6 @@
           request
           {:title "Contributing | Mario Bašić"
            :meta-description "There are no strict rules when contributing, but here are my suggestions."
+           :canonical-url (:path (:uri request))
            :white (white)
            :black (black)})})

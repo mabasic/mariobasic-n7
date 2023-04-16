@@ -1,0 +1,18 @@
+(ns app\redirects
+  (:require app\redirector))
+
+(defstruct redirect [from to handler])
+
+(def redirects
+  [(redirect "/about" "/origin" redirector/moved-permanently)
+   (redirect "/the-book" "/a-collection-of-laravel-tutorials" redirector/moved-permanently)
+   (redirect "/signup" "/a-collection-of-laravel-tutorials" redirector/moved-permanently)
+   (redirect "/login" "/a-collection-of-laravel-tutorials" redirector/moved-permanently)
+   (redirect "/json-web-token-authentication-for-lumen" "/a-collection-of-laravel-tutorials" redirector/moved-permanently)
+   (redirect "/laravel-fractal" "/a-collection-of-laravel-tutorials" redirector/moved-permanently)
+   (redirect "/satis-composer-repository-for-your-private-packages" "/a-collection-of-laravel-tutorials" redirector/moved-permanently)
+   (redirect "/using-beanstalkd-with-laravel" "/a-collection-of-laravel-tutorials" redirector/moved-permanently)
+   (redirect "/deploy-your-app-to-digitialocean-from-codeship-using-envoy" "/a-collection-of-laravel-tutorials" redirector/moved-permanently)
+   (redirect "/build-an-api-with-lumen-and-fractal" "/a-collection-of-laravel-tutorials" redirector/moved-permanently)
+   (redirect "/origin" "/" redirector/moved-permanently)])
+

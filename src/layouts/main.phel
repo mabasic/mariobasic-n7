@@ -34,7 +34,7 @@
   (html
    (doctype :html5)
    [:html {:lang "en"}
-    (head/render (get sections :title) (get sections :meta-description))
+    (head/render (get sections :title) (get sections :meta-description) (get sections :canonical-url))
     (body request
           (:white sections)
           (:black sections)

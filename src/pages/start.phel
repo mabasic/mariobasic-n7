@@ -94,6 +94,7 @@
           request
           {:title title
            :meta-description meta-description
+           :canonical-url (:path (:uri request))
            :white (white)
            :black (black)})})
 

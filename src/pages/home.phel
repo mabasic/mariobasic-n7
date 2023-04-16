@@ -204,5 +204,6 @@
           request
           {:title "Mario Bašić | Full Stack Developer"
            :meta-description "Full Stack Developer. Specialized in building Web &amp; Mobile Applications."
+           :canonical-url (:path (:uri request))
            :white (white)
            :black (black)})})

@@ -40,5 +40,6 @@
               request
               {:title (str (posts/get-title post) " | Mario Bašić")
                :meta-description (posts/get-excerpt post)
+               :canonical-url (:path (:uri request))
                :white (white post)
                :black (black post)})})))

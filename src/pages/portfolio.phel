@@ -29,5 +29,6 @@
           request
           {:title "Portfolio | Mario Bašić"
            :meta-description "Websites, repositories, pull requests and more."
+           :canonical-url (:path (:uri request))
            :white (white)
            :black (black)})})

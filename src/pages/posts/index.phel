@@ -51,5 +51,6 @@
             request
             {:title "Blog | Mario Bašić"
              :meta-description "Read all my blog posts."
+             :canonical-url (:path (:uri request))
              :white (white)
              :black (black (posts/paginate all-posts page per-page) posts-count page)})}))

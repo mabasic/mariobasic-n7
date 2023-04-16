@@ -30,5 +30,6 @@
           request
           {:title "Code of Conduct | Mario Bašić"
            :meta-description "This document provides community guidelines for a safe, respectful, productive, and collaborative place for any person who is willing to contribute to any of my repositories."
+           :canonical-url (:path (:uri request))
            :white (white)
            :black (black)})})

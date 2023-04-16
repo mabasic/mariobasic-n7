@@ -67,5 +67,6 @@
           request
           {:title "Backers | Mario Bašić"
            :meta-description "I am exploring the possibility of working on open-source full-time in hopes that it will be possible to do so one day."
+           :canonical-url (:path (:uri request))
            :white (white)
            :black (black)})})

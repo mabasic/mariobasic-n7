@@ -1,21 +1,11 @@
 (ns app\boot
   (:require phel\http)
-  (:require app\pages\home)
-  (:require app\pages\code-of-conduct)
-  (:require app\pages\contributing)
-  (:require app\pages\backers)
-  (:require app\pages\privacy)
-  (:require app\pages\origin)
-  (:require app\pages\laravel-collection)
-  (:require app\pages\portfolio)
-  (:require app\pages\start)
-  (:require app\pages\posts\index :as posts-index)
-  (:require app\pages\posts\show :as posts-show)
   (:require app\pages\page-not-found)
   (:require app\csrf)
-  (:require app\redirector)
   (:require app\router)
   (:require app\middleware\verify-csrf-token)
+  (:require app\routes :refer [routes route])
+  (:require app\redirects :refer [redirects redirect])
   (:use Dotenv\Dotenv))
 
 (def dotenv (php/:: Dotenv (createImmutable (str __DIR__ "/../"))))
@@ -28,37 +18,6 @@
 
 (if (nil? (php/aget php/$_SESSION "_token"))
   (php/aset php/$_SESSION "_token" (csrf/generate-token)))
-
-(defstruct route [method url page])
-
-(defstruct redirect [from to handler])
-
-(def routes
-  [(route "GET" "/" home/render)
-   (route "GET" "/code-of-conduct" code-of-conduct/render)
-   (route "GET" "/contributing" contributing/render)
-   (route "GET" "/backers" backers/render)
-   (route "GET" "/privacy" privacy/render)
-  #  (route "GET" "/origin" origin/render)
-   (route "GET" "/portfolio" portfolio/render)
-   (route "GET" "/a-collection-of-laravel-tutorials" laravel-collection/render)
-   (route "GET" "/start" start/render)
-   (route "POST" "/start" start/store)
-   (route "GET" "/blog" posts-index/render)
-   (route "GET" "/{year}/{month}/{day}/{slug}" posts-show/render)])
-
-(def redirects
-  [(redirect "/about" "/origin" redirector/moved-permanently)
-   (redirect "/the-book" "/a-collection-of-laravel-tutorials" redirector/moved-permanently)
-   (redirect "/signup" "/a-collection-of-laravel-tutorials" redirector/moved-permanently)
-   (redirect "/login" "/a-collection-of-laravel-tutorials" redirector/moved-permanently)
-   (redirect "/json-web-token-authentication-for-lumen" "/a-collection-of-laravel-tutorials" redirector/moved-permanently)
-   (redirect "/laravel-fractal" "/a-collection-of-laravel-tutorials" redirector/moved-permanently)
-   (redirect "/satis-composer-repository-for-your-private-packages" "/a-collection-of-laravel-tutorials" redirector/moved-permanently)
-   (redirect "/using-beanstalkd-with-laravel" "/a-collection-of-laravel-tutorials" redirector/moved-permanently)
-   (redirect "/deploy-your-app-to-digitialocean-from-codeship-using-envoy" "/a-collection-of-laravel-tutorials" redirector/moved-permanently)
-   (redirect "/build-an-api-with-lumen-and-fractal" "/a-collection-of-laravel-tutorials" redirector/moved-permanently)
-   (redirect "/origin" "/" redirector/moved-permanently)])
 
 (def global-middleware [verify-csrf-token/handle])
 

@@ -36,5 +36,6 @@
           request
           {:title "Privacy Notice | Mario Bašić"
            :meta-description "This notice obligates me to protect user privacy and personal data provided via this website."
+           :canonical-url (:path (:uri request))
            :white (white)
            :black (black)})})

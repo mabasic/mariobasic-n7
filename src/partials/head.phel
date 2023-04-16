@@ -1,7 +1,7 @@
 (ns app\partials\head
   (:require app\config\app))
 
-(defn render [& [title meta-description]]
+(defn render [& [title meta-description canonical-url]]
   [:head
    [:meta {:charset "utf-8"}]
    [:meta {:name "viewport" :content "width=device-width, initial-scale=1"}]
@@ -17,7 +17,8 @@
    [:link {:href "/apple-touch-icon-72x72.png" :rel "apple-touch-icon" :sizes "72x72"}]
    [:link {:href "/apple-touch-icon-114x114.png" :rel "apple-touch-icon" :sizes "114x114"}]
    [:link {:href "/apple-touch-icon-192x192.png" :rel "icon" :sizes "192x192"}]
-   [:link {:rel "canonical" :href "https://mariobasic.com"}]
+   (if-not (nil? canonical-url)
+     [:link {:rel "canonical" :href (str "https://mariobasic.com" canonical-url)}])
    (if (= (app/environment) "production")
      [:script {:async true :defer true :data-domain "mariobasic.com" :src "https://plausible.laravelista.com/js/plausible.js"}])
    [:title title]])

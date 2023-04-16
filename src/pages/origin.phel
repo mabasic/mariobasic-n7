@@ -50,5 +50,6 @@
           request
           {:title "The Origin Story | Mario Bašić"
            :meta-description "Read the origin story of Laravelista and how it all started."
+           :canonical-url (:path (:uri request))
            :white (white)
            :black (black)})})

@@ -1,0 +1,29 @@
+(ns app\routes
+  (:require app\pages\home)
+  (:require app\pages\code-of-conduct)
+  (:require app\pages\contributing)
+  (:require app\pages\backers)
+  (:require app\pages\privacy)
+  (:require app\pages\origin)
+  (:require app\pages\laravel-collection)
+  (:require app\pages\portfolio)
+  (:require app\pages\start)
+  (:require app\pages\posts\index :as posts-index)
+  (:require app\pages\posts\show :as posts-show))
+
+(defstruct route [method url page])
+
+(def routes
+  [(route "GET" "/" home/render)
+   (route "GET" "/code-of-conduct" code-of-conduct/render)
+   (route "GET" "/contributing" contributing/render)
+   (route "GET" "/backers" backers/render)
+   (route "GET" "/privacy" privacy/render)
+  #  (route "GET" "/origin" origin/render)
+   (route "GET" "/portfolio" portfolio/render)
+   (route "GET" "/a-collection-of-laravel-tutorials" laravel-collection/render)
+   (route "GET" "/start" start/render)
+   (route "POST" "/start" start/store)
+   (route "GET" "/blog" posts-index/render)
+   (route "GET" "/{year}/{month}/{day}/{slug}" posts-show/render)])
+

@@ -138,5 +138,6 @@
           request
           {:title "The Book | Mario Bašić"
            :meta-description "This book represents my two year effort to teach others how to build web sites and web applications using Laravel framework."
+           :canonical-url (:path (:uri request))
            :white (white)
            :black (black)})})
