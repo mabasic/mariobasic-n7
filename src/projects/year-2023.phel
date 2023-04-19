@@ -1,0 +1,40 @@
+(ns app\projects\year-2023
+  (:require app\projects\project :refer [project]))
+
+(def index
+  [(project
+    "OPG Paić"
+    "https://opg-paic.hr"
+    "Website made with vanilla PHP for OPG Paić. They make olive oil and are located near Šibenik."
+    ["html" "php" "css"]
+    "website")
+   (project
+    "Murterin"
+    "https://murterin.com"
+    "New website for Murterin brand. They provide accommodations on the island Murter and nearby places."
+    ["laravel" "booking-system"]
+    "website")
+   (project
+    "jsphpl/enpass-to-keepass"
+    "https://github.com/jsphpl/enpass-to-keepass/pull/8"
+    "Adds missing fields and a fix for updated_at #8"
+    ["pull-request" "open-source" "python" "enpass" "keepass" "password-managers"]
+    "pull-request")
+   (project
+    "penpot/penpot"
+    "https://github.com/penpot/penpot/pull/2905"
+    "fix(docker): adds mailcatch to penpot network #2905"
+    ["pull-request" "open-source" "docker" "penpot"]
+    "pull-request")
+   (project
+    "unisonweb/unison"
+    "https://github.com/unisonweb/unison/pull/3840"
+    "docs(lsp-helix): adds helix editor instructions for lsp #3840"
+    ["pull-request" "open-source" "docs" "unison-lang" "helix-editor"]
+    "pull-request")
+   (project
+    "unisonweb/unison"
+    "https://github.com/unisonweb/unison/pull/3841"
+    "feat(respect-ucm-host): makes codebase server use the correct host #3841"
+    ["pull-request" "open-source" "haskell" "unison-lang" "helix-editor"]
+    "pull-request")])

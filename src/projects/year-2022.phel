@@ -15,6 +15,24 @@
     ["laravel" "webshop" "localized" "tailwindcss" "laravel-livewire"]
     "online-store")
    (project
+    "IzradaWeba"
+    "https://izradaweba.eu"
+    "Built with Scala and TailwindCss. Website for offering my web development services on the Croatian market."
+    ["scala" "scala.js" "tailwind"]
+    "website")
+   (project
+    "Laravelista"
+    "https://laravelista.com"
+    "Built with Scala and TailwindCss. Website for offering my web development services on the World Wide market."
+    ["scala" "scala.js" "tailwind"]
+    "website")
+   (project
+    "Bonaventura"
+    "https://bonaventura.vip"
+    "Residence Bonaventura is a newly built stunningly beautiful modern house located on the enchanting island Murter."
+    ["laravel" "booking-system" "apartments"]
+    "website")
+   (project
     "phel-lang/phel-lang"
     "https://github.com/phel-lang/phel-lang/pull/489"
     "Adds json library to phel. #489"
@@ -31,4 +49,22 @@
     "https://github.com/plausible/docs/pull/271"
     "Adds note to make container port local only, after setting up a reverse proxy #271"
     ["pull-request" "open-source" "analytics"]
+    "pull-request")
+   (project
+    "http4s/http4s-scalatags"
+    "https://github.com/http4s/http4s-scalatags/pull/53"
+    "Add doctype encoder #53"
+    ["pull-request" "open-source" "scala" "scalatags" "http4s"]
+    "pull-request")
+   (project
+    "http4s/http4s"
+    "https://github.com/http4s/http4s/pull/6826"
+    "Fixes resourceServiceBuilder to work on Windows #6826"
+    ["pull-request" "open-source" "scala" "http4s"]
+    "pull-request")
+   (project
+    "jsphpl/enpass-to-keepass"
+    "https://github.com/jsphpl/enpass-to-keepass/pull/8"
+    "Adds missing fields and a fix for updated_at #8"
+    ["pull-request" "open-source" "python" "enpass" "keepass" "password-managers"]
     "pull-request")])
