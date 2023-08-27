@@ -10,13 +10,12 @@
   "minimum-stability": "dev",
   "require": {
     "php": "^8.1",
-    "aws/aws-sdk-php": "^3.231",
+    "aws/aws-sdk-php": "^3.279",
     "erusev/parsedown-extra": "^0.8.1",
-    "mabasic/phel-json": "^0.5",
-    "phel-lang/phel-lang": "v0.7.0",
-    "rakibtg/sleekdb": "^2.13",
+    "phel-lang/phel-lang": "v0.11.0",
+    "rakibtg/sleekdb": "^2.15",
     "spatie/yaml-front-matter": "^2.0",
-    "vlucas/phpdotenv": "^5.4"
+    "vlucas/phpdotenv": "^5.5"
   },
   "config": {
     "optimize-autoloader": true,
@@ -33,6 +32,6 @@
     "test": "vendor/bin/phel test",
     "compile": "vendor/bin/phel compile",
     "compile:no-cache": "vendor/bin/phel compile --no-cache",
-    "format": "vendor/bin/phel format src/ tests/"
+    "format": "vendor/bin/phel format"
   }
 }

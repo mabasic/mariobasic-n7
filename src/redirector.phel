@@ -1,6 +1,6 @@
 (ns app\redirector
   (:require app\config\app)
-  (:require mabasic\json\json))
+  (:require phel\json))
 
 (defn moved-permanently [to]
   {:status 301

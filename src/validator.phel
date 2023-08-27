@@ -1,5 +1,5 @@
 (ns app\validator
-  (:require mabasic\json\json)
+  (:require phel\json)
   (:require app\helpers))
 
 # It replaces underscore and dash with a blank space.
