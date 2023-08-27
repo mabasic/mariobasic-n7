@@ -20,7 +20,7 @@
      [:div {:class "col"} black-section]]]])
 
 (defn scripts [& [additional-scripts]]
-  (list [:script {:src "/js/bundle.js"}]
+  (list [:script {:src "/js/main.js"}]
         additional-scripts))
 
 (defn body [request white-section black-section & [additional-scripts]]

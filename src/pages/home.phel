@@ -76,15 +76,11 @@
     (unit
      {:title "F#"
       :subtitle "Strongly-typed, functional-first programming language"
-      :intro "This website javascript is written with F#/Fable."})
+      :intro "Used for a couple of internal projects."})
     (unit
-     {:title "Go"
-      :subtitle "Small, simple, easy, powerful"
-      :intro "I like this language a lot, but have not used it very much."})
-    (unit
-     {:title "Elixir"
-      :subtitle "Dynamic, functional language for building scalable and maintainable applications"
-      :intro "Still reading the documentation and learning."})
+     {:title "Scala"
+      :subtitle "Hybrid programming language"
+      :intro "Similar to F# but runs on the JVM instead of .NET."})
     (unit
      {:title "Next.js"
       :subtitle "The React Framework for Production"
@@ -147,18 +143,18 @@
     "Experience"
     (unit
      {:title "RTL Croatia Ltd."
-      :subtitle "2021 to present"
+      :subtitle "2021 to 2023"
       :intro "Full stack Developer"
-      :body "Currently working as a full stack developer for RTL media portals in a team."})
+      :body "Worked in a team as a full stack developer for RTL media portals."})
     (unit
      {:title "Go Visit Ltd."
       :subtitle "2017 to present"
-      :intro "Co-Owner"
+      :intro "Owner & Full Stack Developer"
       :body "Created a destination management software which runs a tourist portal for the island of Murter."})
     (unit
      {:title "Laravelista"
       :subtitle "2016 to present"
-      :intro "Owner & Lead developer"
+      :intro "Owner & Full Stack Developer"
       :body "Specialized in building web applications using the Laravel framework and mobile applications with React-native & React.js."})
     (unit
      {:title "Freelance"

@@ -38,11 +38,10 @@
      "."]
     [:p "I'm currently working:"]
     [:ul
-     [:li "at my full-time job as a full stack developer at a big media company RTL in Croatia using JS/TS and PHP."]
      [:li
-      "as a solo developer at my own company "
+      "as a full stack developer at my own software company "
       (custom-link "https://govisit.hr" "Go Visit")
-      " for promoting local businesses to tourists ("
+      " whose main product at the moment is ("
       (custom-link "https://visitmurter.com" "Visit Murter")
       ") using PHP/Laravel, React Native and F#."]
      [:li

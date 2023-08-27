@@ -1,6 +1,6 @@
 # mariobasic-n7
 
-**My personal website built with Phel and Fable/F#.**
+**My personal website built with Phel.**
 
 "n" in "n7" stands for the **number** of times that I have created a new personal website for myself. Meaning that this is the seventh time as I recall.
 
@@ -50,8 +50,8 @@ The code in `src/helpers.phel` should be somewhere else. Maybe in Phel (extract-
 
 ## Requirements
 
-- PHP 8
-- Node.js v16.16.0
+- PHP 8.1
+- Node.js v18.17.1
 
 ## Quickstart
 
@@ -99,3 +99,8 @@ composer compile
 ```
 
 verify that `index.php` has the right code uncommented (fast/slow).
+
+
+## Icons
+
+This project uses [bootstrap-icons](https://icons.getbootstrap.com/). The icons are copied (svg) one by one to `resources/svg/icons/*.svg`.
