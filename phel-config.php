@@ -11,7 +11,7 @@ return (new PhelConfig())
     ->setOut(
         (new PhelOutConfig())
             ->setDestDir('out')
-            ->setMainPhelNamespace('cli-skeleton\main')
+            ->setMainPhelNamespace('app\boot')
             ->setMainPhpFilename('index')
     )
     ->setFormatDirs(['src', 'tests'])
