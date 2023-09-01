@@ -55,12 +55,14 @@
       true ((get route :page) request (router/get-parameters (:url route) (:path (:uri request)))))))
 
 (defn run-global-middleware [request global-middleware]
-  (if (= (count global-middleware) 0)
+  (if (nil? request)
     request
-    (let [response ((first global-middleware) request)]
-      (if (= response request)
-        (recur request (rest global-middleware))
-        response))))
+    (if (= (count global-middleware) 0)
+      request
+      (let [response ((first global-middleware) request)]
+        (if (= response request)
+          (recur request (rest global-middleware))
+          response)))))
 
 (defn emit-response [response]
   (let [rsp (http/create-response-from-map response)]

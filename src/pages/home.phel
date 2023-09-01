@@ -5,14 +5,14 @@
 (defn white []
   [:div {:id "root"}
    [:h1 {:class "display-1 pt-5 mt-5"} "Mario Bašić."]
-   [:p {:class "lead pb-3"} "[ Full Stack Developer ] MSc, Information Technology Management"]
-   [:p "Full stack PHP/JavaScript developer from Croatia, specialized in building web & mobile applications. Author of the book: “A Collection of Laravel Tutorials”, creator of open-source projects, and a father."]
+   [:p {:class "lead pb-3"} "[ Full Stack Programmer ] MSc, Information Technology Management"]
+   [:p "Full stack PHP/JavaScript programmer from Croatia, specialized in building web & mobile applications. Author of the book: “A Collection of Laravel Tutorials”, creator of open-source projects, and a father."]
    [:p {:class "mb-5"}
     [:a {:class "btn btn-dark btn-lg mb-2 me-3" :href "/start"} "Let's work together 🚀"]]
    [:div {:class "row mt-5 pt-5"}
-    [:div {:class "col-lg-4"} [:b {:class "pe-3"} "Address"] "Murter, Croatia"]
-    [:div {:class "col-lg-4"} [:b {:class "pe-3"} "Email"] "mario@laravelista.hr"]
-    [:div {:class "col-lg-4"} [:b {:class "pe-3"} "Phone"] "00385 22 435450"]]])
+    [:div {:class "col-lg-4"} [:b {:class "pe-3"} "Address"] "Šibenik, Croatia"]
+    [:div {:class "col-lg-4"} [:b {:class "pe-3"} "Email"] "mario@laravelista.com"]
+    [:div {:class "col-lg-4"} [:b {:class "pe-3"} "Website"] "mariobasic.com"]]])
 
 (defn column [& body]
   [:div {:class "col-lg-4"} (apply list body)])
@@ -144,22 +144,22 @@
     (unit
      {:title "RTL Croatia Ltd."
       :subtitle "2021 to 2023"
-      :intro "Full stack Developer"
+      :intro "Full Stack Programmer"
       :body "Worked in a team as a full stack developer for RTL media portals."})
     (unit
      {:title "Go Visit Ltd."
       :subtitle "2017 to present"
-      :intro "Owner & Full Stack Developer"
+      :intro "Owner & Full Stack Programmer"
       :body "Created a destination management software which runs a tourist portal for the island of Murter."})
     (unit
      {:title "Laravelista"
       :subtitle "2016 to present"
-      :intro "Owner & Full Stack Developer"
+      :intro "Owner & Full Stack Programmer"
       :body "Specialized in building web applications using the Laravel framework and mobile applications with React-native & React.js."})
     (unit
      {:title "Freelance"
       :subtitle "2011 to 2016"
-      :intro "Full stack developer"
+      :intro "Full Stack Programmer"
       :body "Created content management systems for real estates agencies and apartment owners."}))
    (group
     "Education"
@@ -199,7 +199,7 @@
    :body (main/render
           request
           {:title "Mario Bašić | Full Stack Developer"
-           :meta-description "Full Stack Developer. Specialized in building Web &amp; Mobile Applications."
+           :meta-description "Full Stack Programmer. Specialized in building Web &amp; Mobile Applications."
            :canonical-url (:path (:uri request))
            :white (white)
            :black (black)})})

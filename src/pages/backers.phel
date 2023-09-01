@@ -9,7 +9,7 @@
 
 (defn custom-link [href text & [options]]
   (let [attributes {:href href :class "link-light"}
-        seo (if (nil? (:seo options)) true (:seo options))
+        seo (if (or (nil? options) (nil? (:seo options))) true (:seo options))
         seo-attributes {:rel "noopener nofollow" :target "_blank"}]
     (if (true? seo)
       [:a (merge attributes seo-attributes) text]
