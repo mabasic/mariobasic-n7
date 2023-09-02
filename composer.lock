@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ad16a395fb00dbe6d3fcac9dc32b13f5",
+    "content-hash": "933d2fa5447b85617c45b1f8ff595f7c",
     "packages": [
         {
             "name": "aws/aws-crt-php",
@@ -861,34 +861,35 @@
         },
         {
             "name": "phel-lang/phel-lang",
-            "version": "v0.8.0",
+            "version": "v0.11.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phel-lang/phel-lang.git",
-                "reference": "ba0a152f541f82a621de918ee59b61cee35510ca"
+                "reference": "f530dbb4c73352862490aa8f6865dd9cc9d352b7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phel-lang/phel-lang/zipball/ba0a152f541f82a621de918ee59b61cee35510ca",
-                "reference": "ba0a152f541f82a621de918ee59b61cee35510ca",
+                "url": "https://api.github.com/repos/phel-lang/phel-lang/zipball/f530dbb4c73352862490aa8f6865dd9cc9d352b7",
+                "reference": "f530dbb4c73352862490aa8f6865dd9cc9d352b7",
                 "shasum": ""
             },
             "require": {
-                "gacela-project/gacela": "^1.0",
+                "gacela-project/gacela": "^1.5",
                 "php": ">=8.0.2",
                 "phpunit/php-timer": "^5.0",
                 "symfony/console": "^6.0"
             },
             "require-dev": {
                 "ext-readline": "*",
-                "friendsofphp/php-cs-fixer": "^3.13",
+                "friendsofphp/php-cs-fixer": "^3.16",
+                "infection/infection": "^0.26",
                 "phpbench/phpbench": "^1.2",
                 "phpmetrics/phpmetrics": "^2.8",
-                "phpstan/phpstan": "^1.9",
-                "phpunit/phpunit": "^9.5",
+                "phpstan/phpstan": "^1.10",
+                "phpunit/phpunit": "^9.6",
                 "psalm/plugin-phpunit": "^0.18",
                 "symfony/var-dumper": "^6.0",
-                "vimeo/psalm": "^5.4"
+                "vimeo/psalm": "5.9"
             },
             "bin": [
                 "phel"
@@ -907,6 +908,11 @@
                 {
                     "name": "Jens Haase",
                     "email": "je.haase@gmail.com"
+                },
+                {
+                    "name": "Jose Maria Valera Reales",
+                    "email": "chemaclass@outlook.es",
+                    "homepage": "https://chemaclass.com"
                 }
             ],
             "description": "Phel is a functional programming language that compiles to PHP",
@@ -919,9 +925,9 @@
             ],
             "support": {
                 "issues": "https://github.com/phel-lang/phel-lang/issues",
-                "source": "https://github.com/phel-lang/phel-lang/tree/v0.8.0"
+                "source": "https://github.com/phel-lang/phel-lang/tree/v0.11.0"
             },
-            "time": "2023-01-16T20:26:52+00:00"
+            "time": "2023-08-26T19:58:23+00:00"
         },
         {
             "name": "phpoption/phpoption",

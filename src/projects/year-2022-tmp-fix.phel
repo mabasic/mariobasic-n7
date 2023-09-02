@@ -1,4 +1,4 @@
-(ns app\projects\year-2022
+(ns app\projects\year-2022-tmp-fix
   (:require app\projects\project :refer [project]))
 
 (def index

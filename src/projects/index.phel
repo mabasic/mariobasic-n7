@@ -1,29 +1,29 @@
 (ns app\projects\index
-  (:require app\projects\year-2023)
-  (:require app\projects\year-2022)
-  (:require app\projects\year-2021)
-  (:require app\projects\year-2020)
-  (:require app\projects\year-2019)
-  (:require app\projects\year-2018)
-  (:require app\projects\year-2017)
-  (:require app\projects\year-2016)
-  (:require app\projects\year-2015)
-  (:require app\projects\year-2014)
-  (:require app\projects\year-2013)
-  (:require app\projects\year-2012)
-  (:require app\projects\year-2011))
+  (:require app\projects\year-2023-tmp-fix)
+  (:require app\projects\year-2022-tmp-fix)
+  (:require app\projects\year-2021-tmp-fix)
+  (:require app\projects\year-2020-tmp-fix)
+  (:require app\projects\year-2019-tmp-fix)
+  (:require app\projects\year-2018-tmp-fix)
+  (:require app\projects\year-2017-tmp-fix)
+  (:require app\projects\year-2016-tmp-fix)
+  (:require app\projects\year-2015-tmp-fix)
+  (:require app\projects\year-2014-tmp-fix)
+  (:require app\projects\year-2013-tmp-fix)
+  (:require app\projects\year-2012-tmp-fix)
+  (:require app\projects\year-2011-tmp-fix))
 
 (def index
-  [{:year "2023" :projects year-2023/index}
-   {:year "2022" :projects year-2022/index}
-   {:year "2021" :projects year-2021/index}
-   {:year "2020" :projects year-2020/index}
-   {:year "2019" :projects year-2019/index}
-   {:year "2018" :projects year-2018/index}
-   {:year "2017" :projects year-2017/index}
-   {:year "2016" :projects year-2016/index}
-   {:year "2015" :projects year-2015/index}
-   {:year "2014" :projects year-2014/index}
-   {:year "2013" :projects year-2013/index}
-   {:year "2012" :projects year-2012/index}
-   {:year "2011" :projects year-2011/index}])
+  [{:year "2023" :projects year-2023-tmp-fix/index}
+   {:year "2022" :projects year-2022-tmp-fix/index}
+   {:year "2021" :projects year-2021-tmp-fix/index}
+   {:year "2020" :projects year-2020-tmp-fix/index}
+   {:year "2019" :projects year-2019-tmp-fix/index}
+   {:year "2018" :projects year-2018-tmp-fix/index}
+   {:year "2017" :projects year-2017-tmp-fix/index}
+   {:year "2016" :projects year-2016-tmp-fix/index}
+   {:year "2015" :projects year-2015-tmp-fix/index}
+   {:year "2014" :projects year-2014-tmp-fix/index}
+   {:year "2013" :projects year-2013-tmp-fix/index}
+   {:year "2012" :projects year-2012-tmp-fix/index}
+   {:year "2011" :projects year-2011-tmp-fix/index}])

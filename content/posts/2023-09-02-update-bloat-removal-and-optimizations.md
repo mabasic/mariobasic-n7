@@ -9,15 +9,11 @@ After being happy for a long time with this website, a few things started bother
 
 ## 1. 80kb JS for mobile menu hamburger and menu dropdowns
 
-I was loading Bootstrap JS file which was 80kb heavy, just so that the dropdown menu would appear and that you can see the menu on mobile devices. I wrote a few lines of vanilla JS to solve this. This lead to another thing. I no longed needed roolup for. I did not need it in the first place, but for sure I don't need it now. The JS code now is 4kb in size.
+I was loading Bootstrap JS file which was 80kb heavy, just so that the dropdown menu would appear and that you can see the menu on mobile devices. I wrote a few lines of vanilla JS to solve this. This lead to another thing. I no longed needed rollup for this. I did not need it in the first place, but for sure I don't need it now. The JS code now is 4kb in size.
 
 ## 2. 200kb for Bootstrap/CSS
 
-Again, I was loading the entire Boostrap scss. After some research I found that I can only include parts of bootstrap that I use. This cut down 50kb in size.
-
-I was considering rewrite the entire style in tailwind, but that would take me a long time, so I decided to work with what was already here.
-
-Because of the size of bootstrap I don't think that I will be using it again in my projects, but I find it to be very good in terms of having a base layer on which you can build upon. 
+Again, I was loading the entire Boostrap scss. After some research I found that I can only include parts of bootstrap that I use. This cut down 50kb in size. I was considering rewrite the entire style in tailwind, but that would take me a long time, so I decided to work with what was already here. Because of the size of bootstrap I don't think that I will be using it again in my projects, but I find it to be very good in terms of having a base layer on which you can build upon. 
 
 ### Linting
 
