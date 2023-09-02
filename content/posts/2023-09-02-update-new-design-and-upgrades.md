@@ -40,4 +40,4 @@ I've made a few tweaks to get the minimal almost monochromatic experience which 
 
 ## Phel 0.11.0
 
-I've successfuly upgrade to the latest version of Phel after a few days of struggle.
+I've successfuly upgraded to the latest version of Phel after a few days of struggle.

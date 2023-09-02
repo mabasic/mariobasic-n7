@@ -33,7 +33,7 @@
 (defn render [request sections & [additional-scripts]]
   (html
    (doctype :html5)
-   [:html {:lang "en" :data-bs-theme "light"}
+   [:html {:lang "en" :data-bs-theme "auto"}
     (head/render (get sections :title) (get sections :meta-description) (get sections :canonical-url))
     (body request
           (:white sections)

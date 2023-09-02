@@ -13,16 +13,19 @@
                          [:ul {:class "dropdown-menu dropdown-menu-end" :aria-labelledby "bd-theme-text"}
                           [:li
                            [:button {:type "button" :class "dropdown-item d-flex align-items-center" :data-bs-theme-value "light" :aria-pressed "false"}
-                            (svg/load-raw "icons/sun-fill.svg")
-                            "Light"]]
+                            [:span {:class "opacity-50"} (svg/load-raw "icons/sun-fill.svg")]
+                            [:span {:class "ms-2"} "Light"]
+                            [:span {:class "bi ms-auto d-none"} (svg/load-raw "icons/check2.svg")]]]
                           [:li
                            [:button {:type "button" :class "dropdown-item d-flex align-items-center" :data-bs-theme-value "dark" :aria-pressed "false"}
-                            (svg/load-raw "icons/moon-stars-fill.svg")
-                            "Dark"]]
+                            [:span {:class "opacity-50"} (svg/load-raw "icons/moon-stars-fill.svg")]
+                            [:span {:class "ms-2"} "Dark"]
+                            [:span {:class "bi ms-auto d-none"} (svg/load-raw "icons/check2.svg")]]]
                           [:li
                            [:button {:type "button" :class "dropdown-item d-flex align-items-center" :data-bs-theme-value "auto" :aria-pressed "true"}
-                            (svg/load-raw "icons/circle-half.svg")
-                            "Auto"]]]])
+                            [:span {:class "opacity-50"} (svg/load-raw "icons/circle-half.svg")]
+                            [:span {:class "ms-2"} "Auto"]
+                            [:span {:class "bi ms-auto d-none"} (svg/load-raw "icons/check2.svg")]]]]])
 
 (defn render [active-item]
   [:nav {:class "navbar navbar-expand-lg navbar-light"}
