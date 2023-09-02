@@ -8,7 +8,7 @@
 (defn white []
   [:div
    [:h1 {:class "display-1 pt-5 mt-5"} "Portfolio"]
-   [:p [:a {:href "/" :class "text-dark"} "home"] "/ portfolio"]])
+   [:p [:a {:href "/" :class "text-dark"} "home"] " / portfolio"]])
 
 (defn black []
   [:div

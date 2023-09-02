@@ -1,6 +1,53 @@
 $dropdown-link-active-bg: #2e2f2f;
 $form-select-indicator-color: #fff;
-@import "../../node_modules/bootstrap/scss/bootstrap";
+// @import "../../node_modules/bootstrap/scss/bootstrap";
+
+// Configuration
+@import "../../node_modules/bootstrap/scss/functions";
+@import "../../node_modules/bootstrap/scss/variables";
+@import "../../node_modules/bootstrap/scss/variables-dark";
+@import "../../node_modules/bootstrap/scss/maps";
+@import "../../node_modules/bootstrap/scss/mixins";
+@import "../../node_modules/bootstrap/scss/utilities";
+
+// Layout & components
+@import "../../node_modules/bootstrap/scss/root";
+@import "../../node_modules/bootstrap/scss/reboot";
+@import "../../node_modules/bootstrap/scss/type";
+@import "../../node_modules/bootstrap/scss/images";
+@import "../../node_modules/bootstrap/scss/containers";
+@import "../../node_modules/bootstrap/scss/grid";
+// @import "../../node_modules/bootstrap/scss/tables";
+@import "../../node_modules/bootstrap/scss/forms";
+@import "../../node_modules/bootstrap/scss/buttons";
+@import "../../node_modules/bootstrap/scss/transitions";
+@import "../../node_modules/bootstrap/scss/dropdown";
+// @import "../../node_modules/bootstrap/scss/button-group";
+@import "../../node_modules/bootstrap/scss/nav";
+@import "../../node_modules/bootstrap/scss/navbar";
+// @import "../../node_modules/bootstrap/scss/card";
+// @import "../../node_modules/bootstrap/scss/accordion";
+// @import "../../node_modules/bootstrap/scss/breadcrumb";
+@import "../../node_modules/bootstrap/scss/pagination";
+// @import "../../node_modules/bootstrap/scss/badge";
+// @import "../../node_modules/bootstrap/scss/alert";
+// @import "../../node_modules/bootstrap/scss/progress";
+// @import "../../node_modules/bootstrap/scss/list-group";
+// @import "../../node_modules/bootstrap/scss/close";
+// @import "../../node_modules/bootstrap/scss/toasts";
+// @import "../../node_modules/bootstrap/scss/modal";
+// @import "../../node_modules/bootstrap/scss/tooltip";
+// @import "../../node_modules/bootstrap/scss/popover";
+// @import "../../node_modules/bootstrap/scss/carousel";
+// @import "../../node_modules/bootstrap/scss/spinners";
+// @import "../../node_modules/bootstrap/scss/offcanvas";
+// @import "../../node_modules/bootstrap/scss/placeholders";
+
+// Helpers
+@import "../../node_modules/bootstrap/scss/helpers";
+
+// Utilities
+@import "../../node_modules/bootstrap/scss/utilities/api";
 
 $primary-color: #0d6efd;
 $secondary-color: #0b5ed8;
@@ -58,37 +105,28 @@ $secondary-color: #0b5ed8;
   }
 
   // This code bellow makes for look "good" on a dark background.
-  form .form-control,
-  form .form-floating > .form-control,
-  form .form-floating > .form-select,
-  form .form-select {
+  .form-control,
+  .form-select {
     color: inherit;
     background-color: #2e2f2f;
-    // border: none;
-    // border-bottom: 1px solid #ced4da;
-    // border-color: #616161;
-    // border-radius: 0px;
 
     &:focus {
-      // background-color: inherit;
-      // border-bottom: 1px dashed #ced4da;
       color: inherit;
-      // box-shadow: none;
     }
 
     // Only used in .form-select case.
-    & > option {
+    option {
       color: #fff;
     }
   }
 }
 
-footer.black .container {
+.footer.black .container {
   margin-bottom: 0;
 }
 
 @media (min-width: 576px) {
-  footer.black .container {
+  .footer.black .container {
     margin-bottom: 30px;
   }
 }
@@ -121,7 +159,7 @@ body {
   }
 
   .number-unit-body {
-    color: rgba(255, 255, 255, .7);
+    color: rgba(255, 255, 255, .75);
   }
 }
 
@@ -142,7 +180,7 @@ body {
   }
 
   .icon-unit-body {
-    color: rgba(255, 255, 255, .7);
+    color: rgba(255, 255, 255, .75);
   }
 }
 
@@ -157,7 +195,7 @@ body {
   }
 
   .centered-icon-unit-body {
-    color: rgba(255, 255, 255, .7);
+    color: rgba(255, 255, 255, .75);
   }
 }
 
@@ -202,28 +240,20 @@ body {
   .unit-title > .unit-subtitle {
     font-style: italic;
     font-weight: 400;
-    color: rgba(255, 255, 255, .7);
+    color: rgba(255, 255, 255, .75);
   }
 
   .unit-intro {
-    color: rgba(255, 255, 255, .5);
+    color: rgba(255, 255, 255, .75);
   }
 
   .unit-body {
-    color: rgba(255, 255, 255, .4);
+    color: rgba(255, 255, 255, .75);
   }
 }
 
 .post-content {
   margin-bottom: 4rem;
-  // p:first-child {
-  //   margin-bottom: 3rem;
-  // }
-
-  // p:not(:first-child) {
-  //   margin-top: 2rem;
-  //   margin-bottom: 3rem;
-  // }
 
   img {
     max-width: 100%;
@@ -285,12 +315,12 @@ body {
   }
 
   p > small {
-    color: rgba(255, 255, 255, .7);
+    color: rgba(255, 255, 255, .75);
   }
 }
 
 .page-item .page-link {
-  background-color: transparent !important;
-  border: none !important;
-  border-radius: 0 !important;
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
 }

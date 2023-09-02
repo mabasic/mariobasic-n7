@@ -2,12 +2,12 @@
   (:require app\svg))
 
 (defn render []
-  [:footer {:class "black"}
+  [:footer {:class "black footer"}
    [:div {:class "container"}
     [:div {:class "row justify-content-center px-0 px-sm-3 px-md-5"}
      [:div {:class "col"}
       [:hr]
-      [:p {:class "text-muted d-flex justify-content-between flex-md-row flex-column"}
+      [:p {:class "d-flex justify-content-between flex-md-row flex-column"}
        [:small
         "©️ Mario Bašić 2014-" (php/date "Y") ".  All rights reserved. Made with " [:a {:href "https://phel-lang.org/" :rel "noopener nofollow" :target "_blank" :class "link-light"} "Phel-lang"] "." [:br]
         [:a {:href "/privacy" :class "link-light"} "Privacy Notice"]

@@ -13,7 +13,7 @@
 (defn white []
   (list
    [:h1 {:class "display-1 pt-5 mt-5"} "Say Hello 👋"]
-   [:p [:a {:href "/" :class "text-dark"} "home"] "/ start"]))
+   [:p [:a {:href "/" :class "text-dark"} "home"] " / start"]))
 
 (defn black-success []
   [:div {:class "row mb-4"}
@@ -164,7 +164,7 @@
       (try
         (do
           # Send email
-          (mail/send {:to "mario@laravelista.hr"
+          (mail/send {:to "mario@laravelista.com"
                       :subject "Message Received"
                       :message (received/render data)
                       :reply-to (:email data)})

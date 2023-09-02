@@ -21,7 +21,7 @@
    [:h1 {:class "display-1 pt-5 mt-5"} (posts/get-title post)]
    [:p {:class "lead"} (posts/get-excerpt post)]
    (get-post-meta post {:heading false})
-   [:p [:a {:href "/" :class "text-dark"} "home"] "/ blog"]])
+   [:p [:a {:href "/" :class "text-dark"} "home"] " / " [:a {:href "/blog" :class "text-dark"} "blog"] " / " (posts/get-title post)]])
 
 (defn black [post]
   [:div {:class "row"}

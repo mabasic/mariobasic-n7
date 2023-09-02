@@ -4,7 +4,7 @@
 (defn white []
   [:div
    [:h1 {:class "display-1 pt-5 mt-5"} "Contributing"]
-   [:p [:a {:href "/" :class "text-dark"} "home"] "/ open-source"]])
+   [:p [:a {:href "/" :class "text-dark"} "home"] " / open-source"]])
 
 (defn black []
   [:div {:class "row"}
