@@ -7,7 +7,6 @@
 ## TODO
 
 - [ ] The code in `src/helpers.phel` should be somewhere else. Maybe in Phel (extract-data-from-request) or converted to a public function in mabasic/phel-json library (encode-value).
-- [ ] Upgrade to latest version of Phel. For some reason I am having problems with this atm.
 
 ## Requirements
 
@@ -25,13 +24,13 @@ composer install
 pn install
 
 # Use this to compile the phel application to php.
-composer compile
+composer build
 
 # dev mode
 PHEL_MODE=slow php -S localhost:8000 -t public/
 
 # prod mode
-composer compile && PHEL_MODE=fast php -S localhost:8000 -t public/
+composer build && PHEL_MODE=fast php -S localhost:8000 -t public/
 ```
 
 For managing SCSS:
@@ -56,8 +55,7 @@ composer test
 ## Code Formatting
 
 ```bash
-vendor/bin/phel format src/
-vendor/bin/phel format tests/
+vendor/bin/phel format 
 
 # or
 
@@ -69,12 +67,12 @@ composer format
 Compile PHEL to PHP.
 
 ```bash
-vendor/bin/phel compile --no-cache
+vendor/bin/phel build --no-cache
 
 # or
 
-composer compile
-composer compile:no-cache
+composer build
+composer build:no-cache
 ```
 
 verify that `index.php` has the right code uncommented (fast/slow).

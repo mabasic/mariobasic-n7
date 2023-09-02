@@ -25,13 +25,13 @@
   "prefer-stable": true,
   "scripts": {
     "dev:slow": "PHEL_MODE=slow php -S localhost:8000 -t public/",
-    "dev:fast": "composer compile && PHEL_MODE=fast php -S localhost:8000 -t public/",
+    "dev:fast": "composer build && PHEL_MODE=fast php -S localhost:8000 -t public/",
     "pre-install-cmd": [
       "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
     ],
     "test": "vendor/bin/phel test",
-    "compile": "vendor/bin/phel compile",
-    "compile:no-cache": "vendor/bin/phel compile --no-cache",
-    "format": "vendor/bin/phel format src/ tests/"
+    "build": "vendor/bin/phel build",
+    "build:no-cache": "vendor/bin/phel build --no-cache",
+    "format": "vendor/bin/phel format"
   }
 }

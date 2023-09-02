@@ -18,4 +18,4 @@ if ($phelMode === 'slow') {
 
 // Runs previously compiled PHP code (Fast).
 require_once $projectRootDir . "vendor/autoload.php";
-require_once $projectRootDir . "dist/app/boot.php";
+require_once $projectRootDir . "out/app/boot.php";
