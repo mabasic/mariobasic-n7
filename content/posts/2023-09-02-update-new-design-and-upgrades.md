@@ -1,5 +1,5 @@
 ---
-title: "Update: Bloat removal and optimizations"
+title: "Update: New design and upgrades"
 author: "Mario Bašić"
 date: "2023-09-02"
 excerpt: "After being happy for a long time with this website, a few things started bothering me."
@@ -33,3 +33,11 @@ I have updated the readme in three ways:
 - moved progress/update content to blog posts (as this one) in order to keep it minimal and relevant
 - updated instructions (quickstart) for working with this project
 - moved important chapters closer to the top of the document
+
+## New Design
+
+I've made a few tweaks to get the minimal almost monochromatic experience which I was wanting for a long time. I've also implemented dark mode with automatic and manual mode.
+
+## Phel 0.11.0
+
+I've successfuly upgrade to the latest version of Phel after a few days of struggle.

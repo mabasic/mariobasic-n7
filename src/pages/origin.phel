@@ -4,10 +4,10 @@
 (defn white []
   [:div
    [:h1 {:class "display-1 pt-5 mt-5"} "The Origin Story"]
-   [:p [:a {:href "/" :class "text-dark"} "home"] " / origin"]])
+   [:p [:a {:href "/"} "home"] " / origin"]])
 
 (def animation [:div {:class "animation-container"}
-                [:a {:href "/start" :class "animation-link link-light"}
+                [:a {:href "/start" :class "animation-link"}
                  [:div {:class "animation-cta display-5"} "Let's work" [:br] [:u "together"] " 🚀"]
                  [:div {:class "animation-block"}]]])
 

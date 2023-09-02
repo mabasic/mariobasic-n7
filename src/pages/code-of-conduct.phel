@@ -4,7 +4,7 @@
 (defn white []
   [:div
    [:h1 {:class "display-1 pt-5 mt-5"} "Code of Conduct"]
-   [:p [:a {:href "/" :class "text-dark"} "home"] " / open-source"]])
+   [:p [:a {:href "/"} "home"] " / open-source"]])
 
 (defn black []
   [:div {:class "row"}
@@ -12,11 +12,10 @@
     [:p {:class "lead"} "This document provides community guidelines for a safe, respectful, productive, and collaborative place for any person who is willing to contribute to any of my repositories."]
     [:p "This code of conduct is derived from the "
      [:a {:href "https://www.ruby-lang.org/en/conduct/"
-          :class "link-light"
           :rel "noopener nofollow"
           :target "_blank"} "Ruby code of conduct"]
      ". Any violations of the code of conduct may be reported to "
-     [:a {:href "mailto:mario@laravelista.com" :class "link-light"} "Mario Bašić"]
+     [:a {:href "mailto:mario@laravelista.com"} "Mario Bašić"]
      "."]
     [:ul
      [:li "Participants will be tolerant of opposing views."]

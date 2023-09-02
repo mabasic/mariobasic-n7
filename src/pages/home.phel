@@ -8,11 +8,7 @@
    [:p {:class "lead pb-3"} "[ Full Stack Programmer ] MSc, Information Technology Management"]
    [:p "Full stack PHP/JavaScript programmer from Croatia, specialized in building web & mobile applications. Author of the book: “A Collection of Laravel Tutorials”, creator of open-source projects, and a father."]
    [:p {:class "mb-5"}
-    [:a {:class "btn btn-dark btn-lg mb-2 me-3" :href "/start"} "Let's work together 🚀"]]
-   [:div {:class "row mt-5 pt-5"}
-    [:div {:class "col-lg-4"} [:b {:class "pe-3"} "Address"] "Šibenik, Croatia"]
-    [:div {:class "col-lg-4"} [:b {:class "pe-3"} "Email"] "mario@laravelista.com"]
-    [:div {:class "col-lg-4"} [:b {:class "pe-3"} "Website"] "mariobasic.com"]]])
+    [:a {:class "btn btn-primary btn-lg mb-2 me-3" :href "/start"} "Let's work together 🚀"]]])
 
 (defn column [& body]
   [:div {:class "col-lg-4"} (apply list body)])
@@ -123,11 +119,11 @@
       :intro "2008"
       :subtitle "University of Applied Sciences VERN’"})
     (unit
-     {:title [:a {:href "http://laraveldaily.com/mario-basic-laravelista-project-emerged-love-writing-helping-people" :class "link-light" :rel "noopener nofollow" :target "_blank"} "Interview for Laravel Daily"]
+     {:title [:a {:href "http://laraveldaily.com/mario-basic-laravelista-project-emerged-love-writing-helping-people" :rel "noopener nofollow" :target "_blank"} "Interview for Laravel Daily"]
       :intro "04/12/2016"
       :subtitle "Laravelista emerged from my love of writing and helping other people."})
     (unit
-     {:title [:a {:href "https://archiveprogram.github.com/" :class "link-light" :rel "noopener nofollow" :target "_blank"} "Arctic Code Vault Contributor"]
+     {:title [:a {:href "https://archiveprogram.github.com/" :rel "noopener nofollow" :target "_blank"} "Arctic Code Vault Contributor"]
       :intro "02/02/2020"
       :subtitle "Contributed code to several repositories in the 2020 GitHub Archive Program."}))
    (group
@@ -135,24 +131,24 @@
     (unit {:body
            [:span
             "To view all my projects go to: "
-            [:a {:href "https://mariobasic.com/portfolio" :class "link-light"} "https://mariobasic.com/portfolio"]]}))))
+            [:a {:href "https://mariobasic.com/portfolio"} "https://mariobasic.com/portfolio"]]}))))
 
 (def right-column
   (column
    (group
     "Experience"
     (unit
-     {:title "RTL Croatia Ltd."
+     {:title "RTL Croatia"
       :subtitle "2021 to 2023"
       :intro "Full Stack Programmer"
       :body "Worked in a team as a full stack developer for RTL media portals."})
     (unit
-     {:title "Go Visit Ltd."
+     {:title [:a {:target "_blank" :href "https://govisit.hr"} "Go Visit"]
       :subtitle "2017 to present"
       :intro "Owner & Full Stack Programmer"
       :body "Created a destination management software which runs a tourist portal for the island of Murter."})
     (unit
-     {:title "Laravelista"
+     {:title [:a {:target "_blank" :href "https://laravelista.com"} "Laravelista"]
       :subtitle "2016 to present"
       :intro "Owner & Full Stack Programmer"
       :body "Specialized in building web applications using the Laravel framework and mobile applications with React-native & React.js."})

@@ -5,10 +5,10 @@
 (defn white []
   [:div
    [:h1 {:class "display-1 pt-5 mt-5"} "Backers"]
-   [:p [:a {:href "/" :class "text-dark"} "home"] " / open-source"]])
+   [:p [:a {:href "/"} "home"] " / open-source"]])
 
 (defn custom-link [href text & [options]]
-  (let [attributes {:href href :class "link-light"}
+  (let [attributes {:href href}
         seo (if (or (nil? options) (nil? (:seo options))) true (:seo options))
         seo-attributes {:rel "noopener nofollow" :target "_blank"}]
     (if (true? seo)

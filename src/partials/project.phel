@@ -7,8 +7,7 @@
   (unit
    {:title
     [:a
-     {:class "text-white"
-      :href (get project :link)
+     {:href (get project :link)
       :target "_blank"
       :rel "nofollow noopener"}
      (case (get project :type)
@@ -25,4 +24,4 @@
      [:br]
      (apply list
             (for [badge :in (get project :badges)]
-              [:span {:class "badge"} "#" badge]))]}))
+              [:span {:class "badge text-body"} "#" badge]))]}))

@@ -10,6 +10,7 @@
      [:meta {:name "description" :content meta-description}])
    (if-not (nil? (php/aget php/$_SESSION "_token"))
      [:meta {:name "csrf-token" :content (php/aget php/$_SESSION "_token")}])
+   [:script {:src "/js/color-mode-toggler.js"}]
    [:link {:href "/css/index.css" :rel "stylesheet"}]
    [:link {:href "/favicon.ico" :rel "icon"}]
    [:link {:href "/favicon.png" :rel "shortcut icon"}]

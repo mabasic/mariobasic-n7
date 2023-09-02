@@ -8,7 +8,7 @@
 (defn white []
   [:div
    [:h1 {:class "display-1 pt-5 mt-5"} "All posts"]
-   [:p [:a {:href "/" :class "text-dark"} "home"] " / blog"]])
+   [:p [:a {:href "/"} "home"] " / blog"]])
 
 (defn pagination [posts-count page]
   (let [max-page (/ posts-count per-page)]
@@ -25,7 +25,7 @@
     (apply list (for [post :in posts]
                   [:article {:class "post-index"}
                    [:h2 {:class "h4"}
-                    [:a {:href (posts/generate-slug post) :class "link-light"} (posts/get-title post)]]
+                    [:a {:href (posts/generate-slug post)} (posts/get-title post)]]
                    [:p (posts/get-excerpt post)]
                    [:p [:small (posts/get-formatted-date post) " ‧ " (posts/get-author post)]]]))
     (if-not (= (count posts) 0) (pagination posts-count page)

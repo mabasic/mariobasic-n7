@@ -2,6 +2,28 @@
   (:require app\ekko)
   (:require app\svg))
 
+(def divider [:li {:class "nav-item py-2 py-lg-1 col-12 col-lg-auto"}
+              [:div {:class "vr d-none d-lg-flex h-100 mx-lg-2"} ""][:hr {:class "d-lg-none my-2"}]])
+
+(def color-theme-toggle [:li {:class "nav-item dropdown"}
+                         [:button {:class "nav-link dropdown-toggle" :id "bd-theme" :type "button" :aria-expanded "false" :data-bs-toggle "dropdown" :data-bs-display "static" :aria-label "Toggle theme (auto)"}
+                          (svg/load-raw "icons/circle-half.svg")
+# [:svg {:class "bi my-1 theme-icon-active"} [:use {:href "#circle-half"}]]
+                          [:span {:class "d-lg-none ms-2" :id "bd-theme-text"} "Toggle theme"]]
+                         [:ul {:class "dropdown-menu dropdown-menu-end" :aria-labelledby "bd-theme-text"}
+                          [:li
+                           [:button {:type "button" :class "dropdown-item d-flex align-items-center" :data-bs-theme-value "light" :aria-pressed "false"}
+                            (svg/load-raw "icons/sun-fill.svg")
+                            "Light"]]
+                          [:li
+                           [:button {:type "button" :class "dropdown-item d-flex align-items-center" :data-bs-theme-value "dark" :aria-pressed "false"}
+                            (svg/load-raw "icons/moon-stars-fill.svg")
+                            "Dark"]]
+                          [:li
+                           [:button {:type "button" :class "dropdown-item d-flex align-items-center" :data-bs-theme-value "auto" :aria-pressed "true"}
+                            (svg/load-raw "icons/circle-half.svg")
+                            "Auto"]]]])
+
 (defn render [active-item]
   [:nav {:class "navbar navbar-expand-lg navbar-light"}
    [:div {:class "container-fluid px-0"}
@@ -50,4 +72,6 @@
          [:li [:a {:class (str "dropdown-item" (ekko/is-active active-item "/contributing")) :href "/contributing"} "Contributing"]]
          [:li [:a {:class (str "dropdown-item" (ekko/is-active active-item "/backers")) :href "/backers"} "Backers"]]]]
        [:li {:class "nav-item"}
-        [:a {:class (str "nav-link" (ekko/is-active active-item "/start")) :href "/start"} "Say Hello 👋"]]]]]]])
+        [:a {:class (str "nav-link" (ekko/is-active active-item "/start")) :href "/start"} "Contact"]]
+       divider
+       color-theme-toggle]]]]])

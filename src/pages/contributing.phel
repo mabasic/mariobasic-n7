@@ -4,7 +4,7 @@
 (defn white []
   [:div
    [:h1 {:class "display-1 pt-5 mt-5"} "Contributing"]
-   [:p [:a {:href "/" :class "text-dark"} "home"] " / open-source"]])
+   [:p [:a {:href "/"} "home"] " / open-source"]])
 
 (defn black []
   [:div {:class "row"}
@@ -12,12 +12,10 @@
     [:p {:class "lead"} "There are no strict rules when contributing, but here are my suggestions."]
     [:p "I use a combination of "
      [:a {:href "https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow"
-          :class "link-light"
           :rel "noopener nofollow"
           :target "_blank"} "Gitflow Workflow"]
      " and "
      [:a {:href "https://www.atlassian.com/git/tutorials/comparing-workflows/forking-workflow"
-          :class "link-light"
           :rel "noopener nofollow"
           :target "_blank"} "Forking Workflow"]
      "."]

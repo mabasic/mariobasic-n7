@@ -13,7 +13,7 @@
 (defn white []
   (list
    [:h1 {:class "display-1 pt-5 mt-5"} "Say Hello 👋"]
-   [:p [:a {:href "/" :class "text-dark"} "home"] " / start"]))
+   [:p [:a {:href "/"} "home"] " / contact"]))
 
 (defn black-success []
   [:div {:class "row mb-4"}
@@ -29,7 +29,7 @@
 (defn black [& [data errors]]
   [:form {:method "POST" :action "/start"}
    [:div {:class "row"}
-    [:div {:class "col-md-6 offset-md-3"}
+    [:div {:class "col-md-12"}
      [:h2 {:class "mt-0 mb-3"} "Send me a message"]
      [:p "Fields marked with " [:b "*"] " are required."]
      [:input {:name "_token"
@@ -79,11 +79,11 @@
                 :value "on"}]
        [:label {:class "form-check-label":for "gdpr_consent"}
         "I have read the "
-        [:a {:class "link-light" :href "/privacy"} "Privacy Notice"]
+        [:a {:href "/privacy"} "Privacy Notice"]
         " and I give my permission to be contacted with regard to this form."]]]
-     [:div {:class "mb-2 d-grid gap-2"}
+     [:div {:class "mb-2"}
       [:button {:type "submit"
-                :class "btn btn-primary"} "Send 💌"]]]]])
+                :class "btn btn-lg btn-primary"} "Send 💌"]]]]])
 
 (def title "Say Hello 👋 | Mario Bašić")
 (def meta-description "I am always looking for new challenges and interesting projects.")

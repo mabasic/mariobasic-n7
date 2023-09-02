@@ -4,7 +4,7 @@
 (defn white []
   [:div
    [:h1 {:class "display-1 pt-5 mt-5"} "Privacy Notice"]
-   [:p [:a {:href "/" :class "text-dark"} "home"] " / gdpr"]])
+   [:p [:a {:href "/"} "home"] " / gdpr"]])
 
 (defn black []
   [:div {:class "row"}
@@ -12,23 +12,19 @@
     [:p {:class "lead"} "This notice obligates me to protect user privacy and personal data provided via this website."]
     [:p "This notice provides information about the types of information I may collect from you when you visit my website and explains how I use such data, as well as describes the steps I take in order to protect them. The notice also describes the options you have with regard to the collection and use of your data when you visit my website."]
     [:h2 {:class "mt-5"} "Forms"]
-    [:p "The data provided through my contact form (name, e-mail address, message, consent) will be stored in my inbox and my database for an indefinite period of time for the purposes of future analysis and/or contact if given permission. If you want me to delete your email from my inbox and database send me an email at " [:a {:class "link-light" :href "mailto:mario@laravelista.hr"} "mario@laravelista.com."]]
+    [:p "The data provided through my contact form (name, e-mail address, message, consent) will be stored in my inbox and my database for an indefinite period of time for the purposes of future analysis and/or contact if given permission. If you want me to delete your email from my inbox and database send me an email at " [:a {:href "mailto:mario@laravelista.hr"} "mario@laravelista.com."]]
     [:h2 {:class "mt-5"} "Analytics"]
     [:p
      "I use a self-hosted version of "
      [:a {:href "https://plausible.io/"
-          :class "link-light"
           :rel "noopener nofollow"
           :target "_blank"} "Plausible Analytics"]
      " for the purpose of collecting and analyzing website visit frequency. It is an open source web analytics software, built in the EU, with no cookies, no tracking and no personal data collection. "
      [:a {:href "https://plausible.laravelista.com/mariobasic.com"
-          :class "link-light"
           :rel "noopener nofollow"
           :target "_blank"} "Stats are open to the public."]]
     [:h2 {:class "mt-5"} "Cookies"]
-    [:p "This website places a cookie named " [:code "mariobasic_session"] " in the user's Internet browser which is essential for this website to work properly. This cookie contains only a reference to the encrypted session stored on the web server which is used for CSRF protection."]
-    [:h2 {:class "mt-5"} "Contact"]
-    [:p [:b "Mario Bašić"] ", Laravelista" [:br] "Markov Jose 1" [:br] "Murter, HR 22243" [:br] "P: 022-435-450"]]])
+    [:p "This website places a cookie named " [:code "mariobasic_session"] " in the user's Internet browser which is essential for this website to work properly. This cookie contains only a reference to the encrypted session stored on the web server which is used for CSRF protection."]]])
 
 (defn render [request]
   {:status 200

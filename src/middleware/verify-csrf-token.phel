@@ -28,7 +28,7 @@
 (defn white []
   (list
    [:h1 {:class "display-1 pt-5 mt-5"} "Session Expired"]
-   [:p [:a {:href "/" :class "text-dark"} "home"]]))
+   [:p [:a {:href "/"} "home"]]))
 
 (defn black []
   [:div {:class "row mb-4"}

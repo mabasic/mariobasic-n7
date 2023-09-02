@@ -18,7 +18,7 @@
      [:p {:class "lead"} "This book contains all tutorials that have been published on the Laravelista website in the period from >= 2016. to < 2018."]
      [:p {:class "mb-5"}
       [:a
-       {:class "btn btn-dark btn-lg mb-2 mt-3"
+       {:class "btn btn-primary btn-lg mb-2 mt-3"
         :href "https://leanpub.com/laravelista-collection"
         :rel "nofollow noopener"
         :target "_blank"} "Buy on Leanpub"]]]]])

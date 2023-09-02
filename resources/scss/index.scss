@@ -29,7 +29,7 @@ $form-select-indicator-color: #fff;
 // @import "../../node_modules/bootstrap/scss/accordion";
 // @import "../../node_modules/bootstrap/scss/breadcrumb";
 @import "../../node_modules/bootstrap/scss/pagination";
-// @import "../../node_modules/bootstrap/scss/badge";
+@import "../../node_modules/bootstrap/scss/badge";
 // @import "../../node_modules/bootstrap/scss/alert";
 // @import "../../node_modules/bootstrap/scss/progress";
 // @import "../../node_modules/bootstrap/scss/list-group";
@@ -58,22 +58,12 @@ $secondary-color: #0b5ed8;
 }
 
 .paper {
-  padding: 30px;
-  background: #fff;
-  box-shadow: 0 -1px 1px rgba(0, 0, 0, .15), 0 -10px 0 -5px #eee, 0 -10px 1px -4px rgba(0, 0, 0, .15), 0 -20px 0 -10px #eee, 0 -20px 1px -9px rgba(0, 0, 0, .15);
+  padding: 0 30px 30px 30px;
 }
 
 .white .container {
-  padding-top: 50px;
   padding-bottom: 60px;
   margin-top: 0;
-  background-color: #fff;
-}
-
-@media (min-width: 576px) {
-  .white .container {
-    margin-top: 30px;
-  }
 }
 
 .black .container {
@@ -81,8 +71,6 @@ $secondary-color: #0b5ed8;
   padding-right: 30px;
   padding-bottom: 60px;
   padding-left: 30px;
-  color: #fff;
-  background-color: #2e2f2f;
 
   .start-success-icon {
     font-size: 175px;
@@ -96,47 +84,13 @@ $secondary-color: #0b5ed8;
     }
   }
 
-  input {
-    color-scheme: dark;
-  }
-
   .full-name {
     display: none;
-  }
-
-  // This code bellow makes for look "good" on a dark background.
-  .form-control,
-  .form-select {
-    color: inherit;
-    background-color: #2e2f2f;
-
-    &:focus {
-      color: inherit;
-    }
-
-    // Only used in .form-select case.
-    option {
-      color: #fff;
-    }
-  }
-}
-
-.footer.black .container {
-  margin-bottom: 0;
-}
-
-@media (min-width: 576px) {
-  .footer.black .container {
-    margin-bottom: 30px;
   }
 }
 
 .indent {
   text-indent: 5rem;
-}
-
-body {
-  background-color: #e6e6e6;
 }
 
 .black-group {
@@ -153,14 +107,6 @@ body {
     min-width: 70px;
     max-width: 70px;
   }
-
-  .number-unit-title {
-    color: rgba(255, 255, 255, .85);
-  }
-
-  .number-unit-body {
-    color: rgba(255, 255, 255, .75);
-  }
 }
 
 .icon-unit {
@@ -174,28 +120,12 @@ body {
       height: 30px;
     }
   }
-
-  .icon-unit-title {
-    color: rgba(255, 255, 255, .85);
-  }
-
-  .icon-unit-body {
-    color: rgba(255, 255, 255, .75);
-  }
 }
 
 .centered-icon-unit {
   .bi {
     width: 40px;
     height: 40px;
-  }
-
-  .centered-icon-unit-title {
-    color: rgba(255, 255, 255, .85);
-  }
-
-  .centered-icon-unit-body {
-    color: rgba(255, 255, 255, .75);
   }
 }
 
@@ -234,21 +164,11 @@ body {
 .unit {
   .unit-title {
     font-weight: 700;
-    color: rgba(255, 255, 255, .85);
   }
 
   .unit-title > .unit-subtitle {
     font-style: italic;
     font-weight: 400;
-    color: rgba(255, 255, 255, .75);
-  }
-
-  .unit-intro {
-    color: rgba(255, 255, 255, .75);
-  }
-
-  .unit-body {
-    color: rgba(255, 255, 255, .75);
   }
 }
 
@@ -311,16 +231,22 @@ body {
 
   p {
     margin-bottom: 0;
-    color: rgba(255, 255, 255, .85);
-  }
-
-  p > small {
-    color: rgba(255, 255, 255, .75);
   }
 }
 
-.page-item .page-link {
-  background-color: transparent;
-  border: none;
-  border-radius: 0;
+.page-item {  
+  &.active {
+    font-weight: bold;
+  }
+  
+  .page-link {
+    background-color: transparent;
+    border: none;
+    border-radius: 0;
+    color: var(--bs-body-color);
+  }
+}
+
+.footer.black .container {
+  padding-bottom: 0;
 }
