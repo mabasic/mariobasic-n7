@@ -3,6 +3,18 @@
 
 (def index
   [(project
+    "helix-editor/helix"
+    "https://github.com/helix-editor/helix/pull/8583"
+    "Adds mojo language support #8583"
+    ["pull-request" "open-source" "helix-editor" "rust" "mojo" "lsp"]
+    "pull-request")
+   (project
+    "fable-compiler/fable-vscode-extension"
+    "https://github.com/fable-compiler/fable-vscode-extension/pull/1"
+    "Updates for NET 7 and Fable 4. #1"
+    ["pull-request" "open-source" "dotnet" "fsharp" "vscode" "fable"]
+    "pull-request")
+   (project
     "OPG Paić"
     "https://opg-paic.hr"
     "Website made with vanilla PHP for OPG Paić. They make olive oil and are located near Šibenik."
