@@ -60,9 +60,12 @@
     (for [file :in (get-posts-iterator) :when (not (php/-> file (isDot)))]
       (parse-front-matter (php/-> file (getPathname)))))))
 
-(defn paginate [posts page perPage]
-  (let [pages (partition perPage posts)
-        page-posts (get (partition perPage posts) (- page 1))]
+(defn get-latests [number-of-posts]
+  (take number-of-posts (get-all)))
+
+(defn paginate [posts page per-page]
+  (let [pages (partition per-page posts)
+        page-posts (get (partition per-page posts) (- page 1))]
     (if (nil? page-posts) [] page-posts)))
 
 (defn get-by-slug [year month day slug]

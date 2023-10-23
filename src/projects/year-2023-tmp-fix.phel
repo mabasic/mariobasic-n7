@@ -3,6 +3,12 @@
 
 (def index
   [(project
+    "phel-lang/phel-lang.org"
+    "https://github.com/phel-lang/phel-lang.org/pull/71"
+    "Adds documentation for library authors #71"
+    ["pull-request" "open-source" "phel" "docs"]
+    "pull-request")
+   (project
     "helix-editor/helix"
     "https://github.com/helix-editor/helix/pull/8583"
     "Adds mojo language support #8583"

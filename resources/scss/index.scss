@@ -60,12 +60,12 @@ $secondary-color: #0b5ed8;
 .paper {
   padding-top: 0;
   padding-right: 30px;
-  padding-bottom: 30px;
+  /*padding-bottom: 30px;*/
   padding-left: 30px;
 }
 
 .white .container {
-  padding-bottom: 60px;
+  /*padding-bottom: 60px;*/
   margin-top: 0;
 }
 
@@ -264,6 +264,10 @@ $secondary-color: #0b5ed8;
   }
 }
 
+.dropdown-item {
+  border-radius: 0.25rem;
+}
+
 .dropdown-item.active {
   font-weight: 600;
 
@@ -276,4 +280,8 @@ $secondary-color: #0b5ed8;
   .navbar-brand svg g:last-child {
     fill: var(--bs-body-color);
   }
+}
+
+.latest-post {
+  margin-bottom: 60px;
 }

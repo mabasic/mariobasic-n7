@@ -8,10 +8,11 @@
      [:div {:class "col"}
       [:p {:class "d-flex justify-content-between flex-md-row flex-column"}
        [:small
-        "©️ Mario Bašić 2014-" (php/date "Y") ".  All rights reserved. Made with " [:a {:href "https://phel-lang.org/" :rel "noopener nofollow" :target "_blank"} "Phel-lang"] "." [:br]
+        "©️ Mario Bašić 2014-" (php/date "Y") ".  All rights reserved. Made with " [:a {:href "https://phel-lang.org/" :rel "noopener nofollow" :target "_blank"} "Phel-lang"] " and " [:a {:href "https://getbootstrap.com/" :rel "noopener nofollow" :target "_blank"} "Bootstrap"] "." [:br]
         [:a {:href "/privacy"} "Privacy Notice"]
         [:a {:href "https://github.com/mabasic/mariobasic-n7" :rel "noopener nofollow" :target "_blank" :class "ms-2"} "Source Code"]
         [:a {:href "https://laravelista.com" :target "_blank" :class "ms-2"} "Laravelista"]
+        [:a {:href "https://izradaweba.eu" :target "_blank" :class "ms-2"} "IzradaWeba"]
         [:a {:href "https://govisit.hr" :target "_blank" :class "ms-2"} "Go Visit"]]
        [:span
         [:a
