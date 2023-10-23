@@ -17,7 +17,7 @@ I find it amusing that this has been something that I wanted to do for three yea
 
 I am sad to say that I am actively considering rewriting this website in Clojure. It's not that Phel is bad, my decision has more to do with the technology being more stable and maintanable, than Phel being good or bad. Phel is a new language and it served me well for three years now.
 
-Phel was a wonderful voyage into alpha level languages, function programming and lisp.
+Phel was a wonderful voyage into alpha level languages, functional programming and lisp.
 
 ## Future plans
 
