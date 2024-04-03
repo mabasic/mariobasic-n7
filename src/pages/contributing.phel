@@ -3,35 +3,21 @@
 
 (defn white []
   [:div
-   [:h1 {:class "display-1 pt-5 mt-5"} "Contributing"]
-   [:p [:a {:href "/"} "home"] " / open-source"]])
+   [:h1 {:class "display-2"} "Contributing"]
+   [:p [:a {:href "/"} "home"] " / open-source / contributing"]])
 
 (defn black []
   [:div {:class "row"}
    [:div {:class "col"}
-    [:p {:class "lead"} "There are no strict rules when contributing, but here are my suggestions."]
-    [:p "I use a combination of "
-     [:a {:href "https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow"
-          :rel "noopener nofollow"
-          :target "_blank"} "Gitflow Workflow"]
-     " and "
-     [:a {:href "https://www.atlassian.com/git/tutorials/comparing-workflows/forking-workflow"
-          :rel "noopener nofollow"
-          :target "_blank"} "Forking Workflow"]
-     "."]
-    [:h2 {:class "mt-5"} "Steps"]
-    [:ol
-     [:li "Fork the repository."]
-     [:li "Create a branch depending on the issue that you are working on. See branch reference list bellow."]
-     [:li "Do your work and commit."]
-     [:li "Create a Pull Request to the main branch."]]
-    [:h3 {:class "mt-4"} "Branch reference list"]
-    [:ul
-     [:li [:code "feature/{name}"] " - New functionality or refactoring."]
-     [:li [:code "bugfix/{name}"] " - Fixes existing code."]
-     [:li [:code "hotfix/{name}"] " - Urgent production fix. Use this if there is a huge bug."]
-     [:li [:code "support/{name}"] " - Documentation updates & stuff like that."]]
-    [:p "Replace " [:code "{name}"] " with the name that best describes what your PR is about."]]])
+    [:p {:class "lead"} "Over the years I have develop a few habits that have enabled me to move faster and break less things."]
+    [:h2 "Rebase"]
+    [:p [:b "No merge commits."] " Branches should be rebased before being merged. Squash or no squash is up to you, but I prefer not to squash commits. Using " [:code "rebase -i"] " to better organize the commits and write better commit messages is encouraged."]
+    [:h2 "Fork"]
+    [:p "When working with open source repositories, I have found that the best way is to fork the repository and then do your work in a new branch. Depending on the Git hosting service where your code lives, there are instructions to be found for all of them."]
+    [:h2 "Conventional Commits"]
+    [:p "A specification for adding human and machine readable meaning to commit messages. I recommend using this and I usually enforce this when working with multiple developers, but when working on a solo project it is optional." [:br] [:a {:rel "noopener nofollow" :target "_blank" :href "https://www.conventionalcommits.org"} "Learn about it here"] "."]
+    [:h2 "Changelog"]
+    [:p "To make it easier for users and contributors to see precisely what notable changes have been made between each release (or version) of the project. This is mostly optional, but I have found situations where keeping a manual/automatic changelog was useful." [:br] [:a {:rel "noopener nofollow" :target "_blank" :href "https://keepachangelog.com"} "Learn about it here"]]]])
 
 (defn render [request]
   {:status 200

@@ -2,63 +2,64 @@
   (:require app\svg))
 
 (defn render []
-  [:footer {:class "black footer"}
+  [:footer {:class "bg-body-tertiary py-4 py-md-5 mt-5 text-tertiary-color"}
    [:div {:class "container"}
-    [:div {:class "row justify-content-center px-0 px-sm-3 px-md-5"}
+    [:div {:class "row"}
      [:div {:class "col"}
-      [:p {:class "d-flex justify-content-between flex-md-row flex-column"}
-       [:small
-        "©️ Mario Bašić 2014-" (php/date "Y") ".  All rights reserved. Made with " [:a {:href "https://phel-lang.org/" :rel "noopener nofollow" :target "_blank"} "Phel-lang"] " and " [:a {:href "https://getbootstrap.com/" :rel "noopener nofollow" :target "_blank"} "Bootstrap"] "." [:br]
-        [:a {:href "/privacy"} "Privacy Notice"]
-        [:a {:href "https://github.com/mabasic/mariobasic-n7" :rel "noopener nofollow" :target "_blank" :class "ms-2"} "Source Code"]
-        [:a {:href "https://laravelista.com" :target "_blank" :class "ms-2"} "Laravelista"]
-        [:a {:href "https://izradaweba.eu" :target "_blank" :class "ms-2"} "IzradaWeba"]
-        [:a {:href "https://govisit.hr" :target "_blank" :class "ms-2"} "Go Visit"]]
-       [:span
+      [:div {:class "d-flex justify-content-between flex-lg-row flex-column gap-3"}
+       [:div
+        "©️ Mario Bašić 2014-" (php/date "Y") ".  All rights reserved. Made with " [:a {:class "link-body-emphasis link-offset-2 link-underline-opacity-25 link-underline-opacity-75-hover" :href "https://phel-lang.org/" :rel "noopener nofollow" :target "_blank"} "Phel-lang"] " and " [:a {:class "link-body-emphasis link-offset-2 link-underline-opacity-25 link-underline-opacity-75-hover" :href "https://getbootstrap.com/" :rel "noopener nofollow" :target "_blank"} "Bootstrap"] "."
+        [:div {:class "d-flex gap-2"}
+         [:a {:class "link-body-emphasis link-offset-2 link-underline-opacity-25 link-underline-opacity-75-hover" :href "/privacy"} "Privacy Notice"]
+         [:a {:class "link-body-emphasis link-offset-2 link-underline-opacity-25 link-underline-opacity-75-hover" :href "https://github.com/mabasic/mariobasic-n7" :rel "noopener nofollow" :target "_blank"} "Source Code"]
+         [:a {:class "link-body-emphasis link-offset-2 link-underline-opacity-25 link-underline-opacity-75-hover" :href "https://laravelista.com" :target "_blank"} "Laravelista"]
+         [:a {:class "link-body-emphasis link-offset-2 link-underline-opacity-25 link-underline-opacity-75-hover" :href "https://izradaweba.eu" :target "_blank"} "IzradaWeba"]
+         [:a {:class "link-body-emphasis link-offset-2 link-underline-opacity-25 link-underline-opacity-75-hover" :href "https://govisit.hr" :target "_blank"} "Go Visit"]]]
+       [:div {:class "d-flex gap-4"}
         [:a
-         {:class "btn btn-link"
+         {:class "btn btn-link p-0 link-body-emphasis link-offset-2 link-underline-opacity-25 link-underline-opacity-75-hover"
           :href "https://linkedin.com/in/mabasic"
           :title "LinkedIn"
           :rel "noopener nofollow"
           :target "_blank"}
          (svg/load-raw "icons/linkedin.svg")]
         [:a
-         {:class "btn btn-link"
+         {:class "btn btn-link p-0 link-body-emphasis link-offset-2 link-underline-opacity-25 link-underline-opacity-75-hover"
           :href "https://www.patreon.com/laravelista"
           :title "Patreon"
           :rel "noopener nofollow"
           :target "_blank"}
          (svg/load-raw "icons/patreon.svg")]
         [:a
-         {:class "btn btn-link"
+         {:class "btn btn-link p-0 link-body-emphasis link-offset-2 link-underline-opacity-25 link-underline-opacity-75-hover"
           :href "https://www.paypal.me/laravelista"
           :title "PayPal"
           :rel "noopener nofollow"
           :target "_blank"}
          (svg/load-raw "icons/paypal.svg")]
         [:a
-         {:class "btn btn-link"
+         {:class "btn btn-link p-0 link-body-emphasis link-offset-2 link-underline-opacity-25 link-underline-opacity-75-hover"
           :href "https://m.do.co/c/1bae3920f1e0"
           :title "DigitalOcean"
           :rel "noopener nofollow"
           :target "_blank"}
          (svg/load-raw "icons/digitalocean.svg")]
         [:a
-         {:class "btn btn-link"
+         {:class "btn btn-link p-0 link-body-emphasis link-offset-2 link-underline-opacity-25 link-underline-opacity-75-hover"
           :href "https://github.com/mabasic"
           :title "GitHub (mabasic)"
           :rel "noopener nofollow"
           :target "_blank"}
          (svg/load-raw "icons/github.svg")]
         [:a
-         {:class "btn btn-link"
+         {:class "btn btn-link p-0 link-body-emphasis link-offset-2 link-underline-opacity-25 link-underline-opacity-75-hover"
           :href "https://github.com/laravelista"
           :title "GitHub (laravelista)"
           :rel "noopener nofollow"
           :target "_blank"}
          (svg/load-raw "icons/github.svg")]
         [:a
-         {:class "btn btn-link"
+         {:class "btn btn-link p-0 link-body-emphasis link-offset-2 link-underline-opacity-25 link-underline-opacity-75-hover"
           :href "https://twitter.com/BasicMario"
           :title "Twitter"
           :rel "noopener nofollow"

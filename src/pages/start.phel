@@ -12,7 +12,7 @@
 
 (defn white []
   (list
-   [:h1 {:class "display-1 pt-5 mt-5"} "Say Hello 👋"]
+   [:h1 {:class "display-2"} "Contact"]
    [:p [:a {:href "/"} "home"] " / contact"]))
 
 (defn black-success []
@@ -83,7 +83,7 @@
         " and I give my permission to be contacted with regard to this form."]]]
      [:div {:class "mb-2"}
       [:button {:type "submit"
-                :class "btn btn-lg btn-primary"} "Send 💌"]]]]])
+                :class "btn btn-lg btn-outline-primary"} "Send"]]]]])
 
 (def title "Say Hello 👋 | Mario Bašić")
 (def meta-description "I am always looking for new challenges and interesting projects.")

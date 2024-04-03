@@ -4,8 +4,8 @@
 
 (defn white []
   [:div
-   [:h1 {:class "display-1 pt-5 mt-5"} "Backers"]
-   [:p [:a {:href "/"} "home"] " / open-source"]])
+   [:h1 {:class "display-2"} "Backers"]
+   [:p [:a {:href "/"} "home"] " / open-source / backers"]])
 
 (defn custom-link [href text & [options]]
   (let [attributes {:href href}

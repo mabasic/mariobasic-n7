@@ -29,7 +29,7 @@
   (query-front-matter post "date"))
 
 (defn get-formatted-date [post & [format]]
-  (let [format (or format "F jS, Y")]
+  (let [format (or format "d/m/Y")]
     (php/date_format (php/new \Datetime (get-date post)) format)))
 
 (defn get-author [post]

@@ -1,13 +1,13 @@
 (ns app\pages\portfolio
   (:require app\layouts\main)
-  (:require app\pages\home :refer [unit])
+  (:require app\pages\resume :refer [unit])
   (:require app\partials\project :as project-partial)
   (:require app\projects\index :as projects)
   (:require app\helpers))
 
 (defn white []
   [:div
-   [:h1 {:class "display-1 pt-5 mt-5"} "Portfolio"]
+   [:h1 {:class "display-2"} "Portfolio"]
    [:p [:a {:href "/"} "home"] " / portfolio"]])
 
 (defn black []

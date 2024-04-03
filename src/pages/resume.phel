@@ -1,0 +1,185 @@
+(ns app\pages\resume
+  (:require app\layouts\main)
+  (:require app\svg))
+
+(defn white []
+  [:div
+   [:h1 {:class "display-2"} "Resume"]
+   [:p [:a {:href "/"} "home"] " / resume"]])
+
+(defn column [& body]
+  [:div {:class "col-lg-4"} (apply list body)])
+
+(defn group [title & units]
+  [:div {:class "black-group"}
+   [:h2 {:class "black-group-title"} title]
+   (apply list units)])
+
+(defn unit
+  [&
+   [{:title title
+     :subtitle subtitle
+     :intro intro
+     :body body}]]
+  [:div {:class "unit pb-4"}
+   (if-not (nil? title)
+     [:div {:class "unit-title"}
+      title
+      (if-not (nil? subtitle) [:br])
+      (if-not (nil? subtitle) [:span {:class "unit-subtitle"} " " subtitle])])
+   (if-not (nil? intro) [:div {:class "unit-intro"} intro])
+   (if-not (nil? body) [:div {:class "unit-body"} body])])
+
+(def left-column
+  (column
+   (group
+    "Expertise"
+    (unit
+     {:title "Laravel"
+      :subtitle "The best batteries-included PHP framework"
+      :intro "Still running my first Laravel 3 application in production environment."})
+    (unit
+     {:title "PHP"
+      :subtitle "It gets the job done"
+      :intro "My main programming language."})
+    (unit
+     {:title "JavaScript"
+      :subtitle "It is like wine"
+      :intro "The language gets better with years."})
+    (unit
+     {:title "React.js"
+      :subtitle "Simple top-down logic to follow"
+      :intro "My preferred JavaScript UI library."})
+    (unit
+     {:title "React-native"
+      :subtitle "Native mobile app development"
+      :intro "Web developers building native mobile apps with web technologies."})
+    (unit
+     {:title "Vue.js"
+      :subtitle "Alternative to React.js"
+      :intro "If you know React.js you know Vue.js."})
+    (unit
+     {:title "TypeScript"
+      :subtitle "TypeScript is JavaScript with syntax for types"
+      :intro "Whenever possible I try to use typescript and not use the any type."})
+    (unit
+     {:title "Phel"
+      :subtitle "Lisp inspired functional programming language that compiles to PHP"
+      :intro "This website is built with Phel."})
+    (unit
+     {:title "F#"
+      :subtitle "Strongly-typed, functional-first programming language"
+      :intro "Used for a couple of internal projects."})
+    (unit
+     {:title "Scala"
+      :subtitle "Hybrid programming language"
+      :intro "Similar to F# but runs on the JVM instead of .NET."})
+    (unit
+     {:title "Next.js"
+      :subtitle "The React Framework for Production"
+      :intro "SSR, SSG, ... A React.js framework with batteries included."})
+    (unit
+     {:title "NestJS"
+      :subtitle "Progressive Node.js framework for building server-side applications"
+      :intro "Backend framework but for Node.js. It supports TypeScript and JavaScript."})
+    (unit
+     {:title "Nx"
+      :subtitle "Smart, Fast and Extensible Build System"
+      :intro "Used for building monorepos and other stuff."}))))
+
+(def middle-column
+  (column
+   (group
+    "Devops"
+    (unit {:title "Server administrator" :subtitle "Linux, Ubuntu, Fedora, Alpine, Debian, Arch..." :intro "Can install, configure and maintain software on servers running popular linux distributions."})
+    (unit {:title "Docker" :subtitle "For local development or production" :intro "Can use Docker to containerize applications for local development or production use."})
+    (unit {:title "Vagrant" :subtitle "Virtual machines everywhere" :intro "Can use Vagrant to recreate production servers for testing purposes or setup a local development environment."})
+    (unit {:title "Ansible" :subtitle "Server/desktop provisioning" :intro "Can use Ansible to provision single or multiple servers and deploy applications."}))
+   (group
+    "Graphics"
+    (unit
+     {:title "Image editing"
+      :subtitle "Adobe Photoshop, GIMP, Krita, Affinity Photo"
+      :body "Editing and retouching images, creating full-blown multi-layered compositions or making beautiful raster paintings."})
+    (unit
+     {:title "Vector design"
+      :subtitle "Adobe Illustrator, Inkscape, Affinity Designer"
+      :body "Creating concept art, print projects, logos, icons, UI designs, mock-ups and more."})
+    (unit
+     {:title "Publication software"
+      :subtitle "Adobe InDesign, Affinity Publisher"
+      :body "From books, magazines and marketing materials, to social media templates, website mock-ups and other projects."}))
+   (group
+    "Highlights"
+    (unit
+     {:title "Best student in class"
+      :intro "2008"
+      :subtitle "University of Applied Sciences VERN’"})
+    (unit
+     {:title [:a {:href "http://laraveldaily.com/mario-basic-laravelista-project-emerged-love-writing-helping-people" :rel "noopener nofollow" :target "_blank"} "Interview for Laravel Daily"]
+      :intro "04/12/2016"
+      :subtitle "Laravelista emerged from my love of writing and helping other people."})
+    (unit
+     {:title [:a {:href "https://archiveprogram.github.com/" :rel "noopener nofollow" :target "_blank"} "Arctic Code Vault Contributor"]
+      :intro "02/02/2020"
+      :subtitle "Contributed code to several repositories in the 2020 GitHub Archive Program."}))))
+
+(def right-column
+  (column
+   (group
+    "Experience"
+    (unit
+     {:title "RTL Croatia"
+      :subtitle "2021 to 2023"
+      :intro "Full Stack Programmer"
+      :body "Worked in a team as a full stack developer for RTL media portals."})
+    (unit
+     {:title [:a {:target "_blank" :href "https://govisit.hr"} "Go Visit"]
+      :subtitle "2017 to present"
+      :intro "Owner & Full Stack Programmer"
+      :body "Created a destination management software which runs a tourist portal for the island of Murter."})
+    (unit
+     {:title [:a {:target "_blank" :href "https://laravelista.com"} "Laravelista"]
+      :subtitle "2016 to present"
+      :intro "Owner & Full Stack Programmer"
+      :body "Specialized in building web applications using the Laravel framework and mobile applications with React-native & React.js."})
+    (unit
+     {:title "Freelance"
+      :subtitle "2011 to 2016"
+      :intro "Full Stack Programmer"
+      :body "Created content management systems for real estates agencies and apartment owners."}))
+   (group
+    "Education"
+    (unit
+     {:title "University of Applied Sciences VERN'"
+      :intro "2011 to 2017"
+      :subtitle "MSc in Information Technology Management"})
+    (unit
+     {:title "University of Applied Sciences VERN'"
+      :intro "2008 to 2011"
+      :subtitle "Bachelor of Business Informatics"})
+    (unit
+     {:title "Economics School Šibenik"
+      :intro "2004 to 2008"
+      :subtitle "Sales Specialist"}))
+   (group
+    "Languages"
+    (unit {:title "Croatian" :subtitle "Native"})
+    (unit {:title "English" :subtitle "Fluent"})
+    (unit {:title "Italian" :subtitle "Basic"}))))
+
+(defn black []
+  [:div {:class "row"}
+   left-column
+   middle-column
+   right-column])
+
+(defn render [request]
+  {:status 200
+   :body (main/render
+          request
+          {:title "Resume/CV | Mario Bašić"
+           :meta-description "Your can view my resume/cv on this page."
+           :canonical-url (:path (:uri request))
+           :white (white)
+           :black (black)})})

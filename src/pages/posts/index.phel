@@ -7,7 +7,7 @@
 
 (defn white []
   [:div
-   [:h1 {:class "display-1 pt-5 mt-5"} "All posts"]
+   [:h1 {:class "display-2"} "All posts"]
    [:p [:a {:href "/"} "home"] " / blog"]])
 
 (defn pagination [posts-count page]
@@ -23,11 +23,13 @@
   [:div {:class "row"}
    [:div {:class "col"}
     (apply list (for [post :in posts]
-                  [:article {:class "post-index"}
-                   [:h2 {:class "h4"}
-                    [:a {:href (posts/generate-slug post)} (posts/get-title post)]]
-                   [:p (posts/get-excerpt post)]
-                   [:p [:small (posts/get-formatted-date post) " ‧ " (posts/get-author post)]]]))
+                  [:article {:class "py-3"}
+                   [:div {:class "d-flex flex-column-reverse justify-content-between align-items-start flex-lg-row align-items-lg-start gap-0 gap-lg-5"}
+                    [:div {:class ""}
+                     [:h2 {:class ""}
+                      [:a {:class "text-decoration-none" :href (posts/generate-slug post)} (posts/get-title post)]]
+                     [:p {:class ""} (posts/get-excerpt post)]]
+                    [:div {:class "text-secondary"} [:span (posts/get-formatted-date post)]]]]))
     (if-not (= (count posts) 0) (pagination posts-count page)
             [:p {:class "lead"} "There are no posts on this page."])]])
 
