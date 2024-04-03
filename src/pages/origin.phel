@@ -3,7 +3,7 @@
 
 (defn white []
   [:div
-   [:h1 {:class "display-1 pt-5 mt-5"} "The Origin Story"]
+   [:h1 {:class "display-2"} "The Origin Story"]
    [:p [:a {:href "/"} "home"] " / origin"]])
 
 (def animation [:div {:class "animation-container"}
@@ -13,7 +13,7 @@
 
 (defn number-unit [number title body]
   [:div {:class "number-unit d-flex"}
-   [:div {:class "number-unit-left me-0 me-sm-3 me-md-4 me-lg-5"} [:span {:class "display-1"} number]]
+   [:div {:class "number-unit-left me-0 me-sm-3 me-md-4 me-lg-5"} [:span {:class "display-2"} number]]
    [:div {:class "number-unit-right"}
     [:h3 {:class "number-unit-title mt-3"} title]
     [:p {:class "number-unit-body"} body]]])

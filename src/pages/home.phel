@@ -4,206 +4,67 @@
   (:require app\svg))
 
 (defn white []
-  [:div {:id "root"}
-   [:h1 {:class "display-1 pt-5 mt-5"} "Mario Bašić."]
-   [:p {:class "lead pb-3"} "[ Full Stack Programmer ] MSc, Information Technology Management"]
-   [:p "Full stack PHP/JavaScript programmer from Croatia, specialized in building web & mobile applications. Author of the book: “A Collection of Laravel Tutorials”, creator of open-source projects, and a father."]
-   [:p {:class "mb-5"}
-    [:a {:class "btn btn-primary btn-lg mb-2 me-3" :href "/start"} "Let's work together 🚀"]]])
+  [:div {:class "text-center col-lg-6 mx-auto"}
+       (svg/load-raw "logo-home.svg")
+   [:h1 {:class "display-1 fw-bold lh-1"} "Software Programmer"]
+   [:p {:class "fs-4 fw-semibold"} "Specialized in full-stack web development"]
+   [:p {:class "mb-4 fs-5"} "My main programming languages are TypeScript and PHP. I enjoy experimenting with various programming languages, frameworks, and libraries, as can be seen in the " [:a {:href "https://github.com/mabasic/mariobasic-n7" :rel "noopener nofollow" :target "_blank"} "source code"] " of this website."]
+   [:p {:class ""}
+    [:a {:class "btn btn-primary tilt btn-lg mb-2 me-3" :href "/start"} "Contact me"]
+    [:a {:class "btn btn-outline-secondary btn-lg mb-2 me-3" :href "/resume"} "Resume/CV"]]])
 
-(defn column [& body]
-  [:div {:class "col-lg-4"} (apply list body)])
-
-(defn group [title & units]
-  [:div {:class "black-group"}
-   [:h2 {:class "black-group-title"} title]
-   (apply list units)])
-
-(defn unit
-  [&
-   [{:title title
-     :subtitle subtitle
-     :intro intro
-     :body body}]]
-  [:div {:class "unit pb-4"}
-   (if-not (nil? title)
-     [:div {:class "unit-title"}
-      title
-      (if-not (nil? subtitle) [:br])
-      (if-not (nil? subtitle) [:span {:class "unit-subtitle"} " " subtitle])])
-   (if-not (nil? intro) [:div {:class "unit-intro"} intro])
-   (if-not (nil? body) [:div {:class "unit-body"} body])])
-
-(def left-column
-  (column
-   (group
-    "Expertise"
-    (unit
-     {:title "Laravel"
-      :subtitle "The best batteries-included PHP framework"
-      :intro "Still running my first Laravel 3 application in production environment."})
-    (unit
-     {:title "PHP"
-      :subtitle "It gets the job done"
-      :intro "My main programming language."})
-    (unit
-     {:title "JavaScript"
-      :subtitle "It is like wine"
-      :intro "The language gets better with years."})
-    (unit
-     {:title "React.js"
-      :subtitle "Simple top-down logic to follow"
-      :intro "My preferred JavaScript UI library."})
-    (unit
-     {:title "React-native"
-      :subtitle "Native mobile app development"
-      :intro "Web developers building native mobile apps with web technologies."})
-    (unit
-     {:title "Vue.js"
-      :subtitle "Alternative to React.js"
-      :intro "If you know React.js you know Vue.js."})
-    (unit
-     {:title "TypeScript"
-      :subtitle "TypeScript is JavaScript with syntax for types"
-      :intro "Whenever possible I try to use typescript and not use the any type."})
-    (unit
-     {:title "Phel"
-      :subtitle "Lisp inspired functional programming language that compiles to PHP"
-      :intro "This website is built with Phel."})
-    (unit
-     {:title "F#"
-      :subtitle "Strongly-typed, functional-first programming language"
-      :intro "Used for a couple of internal projects."})
-    (unit
-     {:title "Scala"
-      :subtitle "Hybrid programming language"
-      :intro "Similar to F# but runs on the JVM instead of .NET."})
-    (unit
-     {:title "Next.js"
-      :subtitle "The React Framework for Production"
-      :intro "SSR, SSG, ... A React.js framework with batteries included."})
-    (unit
-     {:title "NestJS"
-      :subtitle "Progressive Node.js framework for building server-side applications"
-      :intro "Backend framework but for Node.js. It supports TypeScript and JavaScript."})
-    (unit
-     {:title "Nx"
-      :subtitle "Smart, Fast and Extensible Build System"
-      :intro "Used for building monorepos and other stuff."}))))
-
-(def middle-column
-  (column
-   (group
-    "Devops"
-    (unit {:title "Server administrator" :subtitle "Linux, Ubuntu, Fedora, Alpine, Debian, Arch..." :intro "Can install, configure and maintain software on servers running popular linux distributions."})
-    (unit {:title "Docker" :subtitle "For local development or production" :intro "Can use Docker to containerize applications for local development or production use."})
-    (unit {:title "Vagrant" :subtitle "Virtual machines everywhere" :intro "Can use Vagrant to recreate production servers for testing purposes or setup a local development environment."})
-    (unit {:title "Ansible" :subtitle "Server/desktop provisioning" :intro "Can use Ansible to provision single or multiple servers and deploy applications."}))
-   (group
-    "Graphics"
-    (unit
-     {:title "Image editing"
-      :subtitle "Adobe Photoshop, GIMP, Krita, Affinity Photo"
-      :body "Editing and retouching images, creating full-blown multi-layered compositions or making beautiful raster paintings."})
-    (unit
-     {:title "Vector design"
-      :subtitle "Adobe Illustrator, Inkscape, Affinity Designer"
-      :body "Creating concept art, print projects, logos, icons, UI designs, mock-ups and more."})
-    (unit
-     {:title "Publication software"
-      :subtitle "Adobe InDesign, Affinity Publisher"
-      :body "From books, magazines and marketing materials, to social media templates, website mock-ups and other projects."}))
-   (group
-    "Highlights"
-    (unit
-     {:title "Best student in class"
-      :intro "2008"
-      :subtitle "University of Applied Sciences VERN’"})
-    (unit
-     {:title [:a {:href "http://laraveldaily.com/mario-basic-laravelista-project-emerged-love-writing-helping-people" :rel "noopener nofollow" :target "_blank"} "Interview for Laravel Daily"]
-      :intro "04/12/2016"
-      :subtitle "Laravelista emerged from my love of writing and helping other people."})
-    (unit
-     {:title [:a {:href "https://archiveprogram.github.com/" :rel "noopener nofollow" :target "_blank"} "Arctic Code Vault Contributor"]
-      :intro "02/02/2020"
-      :subtitle "Contributed code to several repositories in the 2020 GitHub Archive Program."}))))
-
-(def right-column
-  (column
-   (group
-    "Experience"
-    (unit
-     {:title "RTL Croatia"
-      :subtitle "2021 to 2023"
-      :intro "Full Stack Programmer"
-      :body "Worked in a team as a full stack developer for RTL media portals."})
-    (unit
-     {:title [:a {:target "_blank" :href "https://govisit.hr"} "Go Visit"]
-      :subtitle "2017 to present"
-      :intro "Owner & Full Stack Programmer"
-      :body "Created a destination management software which runs a tourist portal for the island of Murter."})
-    (unit
-     {:title [:a {:target "_blank" :href "https://laravelista.com"} "Laravelista"]
-      :subtitle "2016 to present"
-      :intro "Owner & Full Stack Programmer"
-      :body "Specialized in building web applications using the Laravel framework and mobile applications with React-native & React.js."})
-    (unit
-     {:title "Freelance"
-      :subtitle "2011 to 2016"
-      :intro "Full Stack Programmer"
-      :body "Created content management systems for real estates agencies and apartment owners."}))
-   (group
-    "Education"
-    (unit
-     {:title "University of Applied Sciences VERN'"
-      :intro "2011 to 2017"
-      :subtitle "MSc in Information Technology Management"})
-    (unit
-     {:title "University of Applied Sciences VERN'"
-      :intro "2008 to 2011"
-      :subtitle "Bachelor of Business Informatics"})
-    (unit
-     {:title "Economics School Šibenik"
-      :intro "2004 to 2008"
-      :subtitle "Sales Specialist"}))
-   (group
-    "Languages"
-    (unit {:title "Croatian" :subtitle "Native"})
-    (unit {:title "English" :subtitle "Fluent"})
-    (unit {:title "Italian" :subtitle "Basic"}))
-   (group
-    "Download"
-    (unit
-     {:body
-      [:a {:class "btn btn-primary" :href "/resume.pdf" :target "_blank"}
-       [:span {:class "me-2"} "Curriculum Vitae"]
-       (svg/load-raw "icons/download.svg")]}))))
+(defn print-latest-posts [posts]
+  [:div {:class "row"}
+   [:div {:class "latest-posts"}
+    [:h2 "Latest posts"]
+    [:hr {:style "width: 130px;" :class "mb-4"}]
+    (apply list
+           (for [post :in posts]
+             [:div {:class "d-flex justify-content-between text-secondary py-2 align-items-center"}
+              [:a {:class "fs-5 text-decoration-none fw-semibold" :href (posts/generate-slug post)}
+               (posts/get-title post)]
+              [:span (posts/get-formatted-date post)]]))
+    [:a {:class "btn btn-outline-secondary mt-4" :href "/blog"} "View all posts"]]])
 
 (defn black [latest-posts]
   [:div
-   [:div {:class "row"}
-    [:div {:class "latest-post"}
-     [:h2 "Latest posts"]
-     (apply list
-            (for [latest-post :in latest-posts]
-              [:p
-               [:small (posts/get-formatted-date latest-post)]
-               " - "
-               [:a {:href (posts/generate-slug latest-post)}
-                (posts/get-title latest-post)]]))
-     [:a {:href "/blog"} "View all posts"]]]
-   [:div {:class "row"}
-    left-column
-    middle-column
-    right-column]])
+   [:div {:class "container py-5"}
+    [:div {:class "d-flex flex-column flex-lg-row justify-content-between gap-5 gap-lg-0"}
+     [:div {:class "d-flex justify-content-between gap-md-5 gap-0 flex-column flex-md-row" :id "home-govisit"}
+      [:div {:class "w-130"}
+       [:h2 {:class "display-4 fw-bold lh-1"} (svg/load-raw "govisit-logo.svg")]
+       [:p {:class "fs-4 mb-0 fw-semibold d-none d-md-block mt-3"} "Software development company"]]
+      [:div {:class ""}
+       [:h2 {:class "display-4 fw-bold lh-1"} "Go Visit"]
+       [:p {:class "fs-5"} "Its main product is " [:a {:target "_blank" :href "https://visitmurter.com"} "VisitMurter"] ", a tourist portal for the island of Murter and surrounding places. I am actively using many programming languages: TypeScript, JavaScript, PHP, Scala, F#, ReScript, and possibly Clojure soon to build the next big thing."]
+       [:a {:class "btn btn-outline-primary" :target "_blank" :href "https://govisit.hr"} "Visit official website"]]]
+       [:div {:class "column-divider mx-5"}]
+     [:div {:class "d-flex justify-content-between flex-column-reverse flex-md-row gap-md-5 gap-0" :id "home-laravelista"}
+      [:div {:class "text-start text-lg-end"}
+       [:h2 {:class "display-4 fw-bold lh-1 text-start text-lg-end"} "Laravelista"]
+       [:p {:class "fs-5 text-start text-lg-end"} "During college, I learned many programming languages: C, C++, C#, VBA, PHP, JavaScript, and Python. After I wrote my first Laravel 3 app, I started a blog writing Laravel tutorials, which then evolved into a subscription-based website for learning Laravel."]
+       [:a {:class "btn btn-outline-primary" :target "_blank" :href "https://laravelista.com"} "Continue reading"]]
+      [:div {:class "w-130"}
+       [:h2 {:class "display-4 fw-bold lh-1"} (svg/load-raw "laravelista-logo.svg")]
+       [:p {:class "fs-4 mb-0 fw-semibold d-none d-md-block mt-3"} "Laravel, PHP, and Open source"]]]]]
+   [:div {:class "container py-5"}
+    [:div {:class "row"}
+     [:div {:class "col-lg-6 mx-auto text-center"}
+       (svg/load-raw "izradaweba-logo.svg")
+      [:h2 {:class "display-4 fw-bold lh-1 text-center"} "IzradaWeba"]
+      [:p {:class "fs-4 fw-semibold text-center"} "Web solutions for Croatian market"]
+      [:p {:class "fs-5 text-center"} "I provide turn-key solutions that are tailored to meet your business needs and help you succeed in the Croatian market. Let's work together to make your business dreams a reality!"]
+      [:a {:class "btn btn-outline-primary" :target "_blank" :href "https://izradaweba.eu"} "Find out more"]]]]
+  # (print-latest-posts latest-posts)
+])
 
 (defn render [request]
   (let [latest-posts (posts/get-latests 2)]
     {:status 200
      :body (main/render
             request
-            {:title "Mario Bašić | Full Stack Developer"
-             :meta-description "Full Stack Programmer. Specialized in building Web &amp; Mobile Applications."
+            {:title "Mario Bašić | Software programmer | Specialized in full-stack web development"
+             :meta-description "My main programming languages are TypeScript and PHP. I enjoy experimenting with various programming languages, frameworks, and libraries, as can be seen in the source code of this website."
              :canonical-url (:path (:uri request))
              :white (white)
              :black (black latest-posts)})}))

@@ -18,9 +18,8 @@
 
 (defn white [post]
   [:div
-   [:h1 {:class "display-1 pt-5 mt-5"} (posts/get-title post)]
+   [:h1 {:class "display-2"} (posts/get-title post)]
    [:p {:class "lead"} (posts/get-excerpt post)]
-   (get-post-meta post {:heading false})
    [:p [:a {:href "/"} "home"] " / " [:a {:href "/blog"} "blog"] " / " (posts/get-title post)]])
 
 (defn black [post]

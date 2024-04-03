@@ -3,8 +3,8 @@
 
 (defn white []
   [:div
-   [:h1 {:class "display-1 pt-5 mt-5"} "Code of Conduct"]
-   [:p [:a {:href "/"} "home"] " / open-source"]])
+   [:h1 {:class "display-2"} "Code of Conduct"]
+   [:p [:a {:href "/"} "home"] " / open-source / code-of-conduct"]])
 
 (defn black []
   [:div {:class "row"}
@@ -14,8 +14,8 @@
      [:a {:href "https://www.ruby-lang.org/en/conduct/"
           :rel "noopener nofollow"
           :target "_blank"} "Ruby code of conduct"]
-     ". Any violations of the code of conduct may be reported to "
-     [:a {:href "mailto:mario@laravelista.com"} "Mario Bašić"]
+     ". Any violations of the code of conduct may be reported using this "
+     [:a {:href "/start"} "contact form"]
      "."]
     [:ul
      [:li "Participants will be tolerant of opposing views."]

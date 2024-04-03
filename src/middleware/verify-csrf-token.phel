@@ -27,7 +27,7 @@
 
 (defn white []
   (list
-   [:h1 {:class "display-1 pt-5 mt-5"} "Session Expired"]
+   [:h1 {:class "display-2"} "Session Expired"]
    [:p [:a {:href "/"} "home"]]))
 
 (defn black []

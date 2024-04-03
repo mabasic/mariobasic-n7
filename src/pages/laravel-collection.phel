@@ -3,7 +3,7 @@
   (:require app\svg))
 
 (defn white []
-  [:div {:class "mt-5 pt-5 mb-4"}
+  [:div {:class "mb-4"}
    [:div {:class "row"}
     [:div {:class "col-lg-5"}
      [:img
@@ -18,7 +18,7 @@
      [:p {:class "lead"} "This book contains all tutorials that have been published on the Laravelista website in the period from >= 2016. to < 2018."]
      [:p {:class "mb-5"}
       [:a
-       {:class "btn btn-primary btn-lg mb-2 mt-3"
+       {:class "btn btn-outline-primary btn-lg mb-2 mt-3"
         :href "https://leanpub.com/laravelista-collection"
         :rel "nofollow noopener"
         :target "_blank"} "Buy on Leanpub"]]]]])

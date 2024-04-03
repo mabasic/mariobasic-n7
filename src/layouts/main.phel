@@ -5,18 +5,16 @@
   (:require app\partials\footer))
 
 (defn white [request white-section]
-  [:section {:class "white"}
-   [:div {:class "container paper"}
-    [:div {:class "row justify-content-center px-0 px-sm-3 px-md-5"}
-     [:div {:class "col"}
-      (navbar/render (get (get request :uri) :path))]]
-    [:div {:class "row justify-content-center px-0 px-sm-3 px-md-5"}
+  [:div {:class "py-5"}
+   [:section {:class "container"}
+    [:div {:class "row"}
      [:div {:class "col"} white-section]]]])
 
 (defn black [black-section]
-  [:section {:class "black"}
-   [:div {:class "container"}
-    [:div {:class "row justify-content-center px-0 px-sm-3 px-md-5"}
+  [:div
+   [:section
+    {:class "container"}
+    [:div {:class "row"}
      [:div {:class "col"} black-section]]]])
 
 (defn scripts [& [additional-scripts]]
@@ -25,9 +23,11 @@
 
 (defn body [request white-section black-section & [additional-scripts]]
   [:body
-   (white request white-section)
-   (black black-section)
-   (footer/render)
+   [:div {:class "d-flex flex-column justify-content-between min-vh-100 gap-5"}
+    [:div (navbar/render (get (get request :uri) :path))
+     (white request white-section)
+     (black black-section)]
+    (footer/render)]
    (scripts additional-scripts)])
 
 (defn render [request sections & [additional-scripts]]

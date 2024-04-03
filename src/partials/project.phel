@@ -1,5 +1,5 @@
 (ns app\partials\project
-  (:require app\pages\home :refer [unit])
+  (:require app\pages\resume :refer [unit])
   (:require app\helpers)
   (:require app\svg))
 

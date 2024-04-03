@@ -8,7 +8,6 @@
 (def color-theme-toggle [:li {:class "nav-item dropdown"}
                          [:button {:class "nav-link dropdown-toggle" :id "bd-theme" :type "button" :aria-expanded "false" :data-bs-toggle "dropdown" :data-bs-display "static" :aria-label "Toggle theme (auto)"}
                           (svg/load-raw "icons/circle-half.svg")
-# [:svg {:class "bi my-1 theme-icon-active"} [:use {:href "#circle-half"}]]
                           [:span {:class "d-lg-none ms-2" :id "bd-theme-text"} "Toggle theme"]]
                          [:ul {:class "dropdown-menu dropdown-menu-end" :aria-labelledby "bd-theme-text"}
                           [:li
@@ -28,53 +27,58 @@
                             [:span {:class "bi ms-auto d-none"} (svg/load-raw "icons/check2.svg")]]]]])
 
 (defn render [active-item]
-  [:nav {:class "navbar navbar-expand-lg navbar-light"}
-   [:div {:class "container-fluid px-0"}
-    [:a {:class "navbar-brand" :href "/" :title "Mario Bašić logo"}
+  [:div
+   [:section {:class "container-fluid"}
+    [:div {:class "row"}
+     [:div {:class "col"}
+      [:nav {:class "navbar navbar-expand-lg"}
+       [:div {:class "container"}
+        [:a {:class "navbar-brand d-flex gap-3 align-items-center" :href "/" :title "Mario Bašić logo"}
      # [:img {:src "/logo.svg" :alt "Mario Bašić logo" :width "186" :height "42"}]
-     (svg/load-raw "logo.svg")]
-    [:button {:class "navbar-toggler"
-              :type "button"
-              :data-bs-toggle "collapse"
-              :data-bs-target "#navbarTogglerDemo03"
-              :aria-controls "navbarTogglerDemo03"
-              :aria-expanded "false"
-              :aria-label "Toggle navigation"}
-     [:span {:class "navbar-toggler-icon"}]]
-    [:div {:class "collapse navbar-collapse justify-content-end" :id "navbarTogglerDemo03"}
-     [:ul {:class "navbar-nav mb-2 mb-lg-0"}
-      [:li {:class "nav-item"}
-       [:a {:class (str "nav-link" (ekko/is-active active-item "/")) :href "/"} "Home"]
-     #   [:li {:class "nav-item"}
-     #    [:a {:class (str "nav-link" (ekko/is-active active-item "/origin")) :href "/origin"} "The Origin Story"]]
-       [:li {:class "nav-item"}
-        [:a {:class (str "nav-link" (ekko/is-active active-item ["/blog" "/*/*/*/*"])) :href "/blog"} "Blog"]]
-       [:li {:class "nav-item"}
-        [:a {:class (str "nav-link" (ekko/is-active active-item "/portfolio")) :href "/portfolio"} "Portfolio"]]
-       [:li {:class "nav-item dropdown"}
-        [:a {:class (str "nav-link dropdown-toggle" (ekko/is-active active-item ["/a-collection-of-laravel-tutorials"]))
-             :href "#"
-             :id "BooksMenuLink"
-             :role "button"
-             :data-bs-toggle "dropdown"
-             :aria-expanded "false"} "Books"]
-        [:ul {:class "dropdown-menu" :aria-labelledby "BooksMenuLink"}
-         [:li
-          [:a
-           {:class (str "dropdown-item" (ekko/is-active active-item "/a-collection-of-laravel-tutorials"))
-            :href "/a-collection-of-laravel-tutorials"} "A Collection of Laravel Tutorials"]]]]
-       [:li {:class "nav-item dropdown"}
-        [:a {:class (str "nav-link dropdown-toggle" (ekko/is-active active-item ["/code-of-conduct" "/contributing" "/backers"]))
-             :href "#"
-             :id "OpenSourceMenuLink"
-             :role "button"
-             :data-bs-toggle "dropdown"
-             :aria-expanded "false"} "Open Source"]
-        [:ul {:class "dropdown-menu" :aria-labelledby "OpenSourceMenuLink"}
-         [:li [:a {:class (str "dropdown-item" (ekko/is-active active-item "/code-of-conduct")) :href "/code-of-conduct"} "Code of Conduct"]]
-         [:li [:a {:class (str "dropdown-item" (ekko/is-active active-item "/contributing")) :href "/contributing"} "Contributing"]]
-         [:li [:a {:class (str "dropdown-item" (ekko/is-active active-item "/backers")) :href "/backers"} "Backers"]]]]
-       [:li {:class "nav-item"}
-        [:a {:class (str "nav-link" (ekko/is-active active-item "/start")) :href "/start"} "Contact"]]
-       divider
-       color-theme-toggle]]]]])
+         (svg/load-raw "logo.svg")
+         [:span "Mario " [:span {:class "fw-semibold"} "Bašić"]]]
+        [:button {:class "navbar-toggler"
+                  :type "button"
+                  :data-bs-toggle "collapse"
+                  :data-bs-target "#navbarTogglerDemo03"
+                  :aria-controls "navbarTogglerDemo03"
+                  :aria-expanded "false"
+                  :aria-label "Toggle navigation"}
+         [:span {:class "navbar-toggler-icon"}]]
+        [:div {:class "collapse navbar-collapse justify-content-end" :id "navbarTogglerDemo03"}
+         [:ul {:class "navbar-nav mb-2 mb-lg-0"}
+          [:li {:class "nav-item"}
+           [:a {:class (str "nav-link" (ekko/is-active active-item "/")) :href "/"} "Home"]
+           [:li {:class "nav-item"}
+            [:a {:class (str "nav-link" (ekko/is-active active-item "/resume")) :href "/resume"} "Resume/CV"]]
+           [:li {:class "nav-item"}
+            [:a {:class (str "nav-link" (ekko/is-active active-item ["/blog" "/*/*/*/*"])) :href "/blog"} "Blog"]]
+           [:li {:class "nav-item"}
+            [:a {:class (str "nav-link" (ekko/is-active active-item "/portfolio")) :href "/portfolio"} "Portfolio"]]
+           [:li {:class "nav-item dropdown"}
+            [:a {:class (str "nav-link dropdown-toggle" (ekko/is-active active-item ["/a-collection-of-laravel-tutorials"]))
+                 :href "#"
+                 :id "BooksMenuLink"
+                 :role "button"
+                 :data-bs-toggle "dropdown"
+                 :aria-expanded "false"} "Books"]
+            [:ul {:class "dropdown-menu" :aria-labelledby "BooksMenuLink"}
+             [:li
+              [:a
+               {:class (str "dropdown-item" (ekko/is-active active-item "/a-collection-of-laravel-tutorials"))
+                :href "/a-collection-of-laravel-tutorials"} "A Collection of Laravel Tutorials"]]]]
+           [:li {:class "nav-item dropdown"}
+            [:a {:class (str "nav-link dropdown-toggle" (ekko/is-active active-item ["/code-of-conduct" "/contributing" "/backers"]))
+                 :href "#"
+                 :id "OpenSourceMenuLink"
+                 :role "button"
+                 :data-bs-toggle "dropdown"
+                 :aria-expanded "false"} "Open Source"]
+            [:ul {:class "dropdown-menu" :aria-labelledby "OpenSourceMenuLink"}
+             [:li [:a {:class (str "dropdown-item" (ekko/is-active active-item "/code-of-conduct")) :href "/code-of-conduct"} "Code of Conduct"]]
+             [:li [:a {:class (str "dropdown-item" (ekko/is-active active-item "/contributing")) :href "/contributing"} "Contributing"]]
+             [:li [:a {:class (str "dropdown-item" (ekko/is-active active-item "/backers")) :href "/backers"} "Backers"]]]]
+           [:li {:class "nav-item"}
+            [:a {:class (str "nav-link" (ekko/is-active active-item "/start")) :href "/start"} "Contact"]]
+           divider
+           color-theme-toggle]]]]]]]]])

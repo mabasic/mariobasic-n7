@@ -3,14 +3,14 @@
 
 (defn white []
   [:div
-   [:h1 {:class "display-1 pt-5 mt-5"} "Page not found"]
+   [:h1 {:class "display-2"} "Page not found"]
    [:p [:a {:href "/"} "home"] " / 404"]])
 
 (defn black []
   [:div {:class "row"}
    [:div {:class "col"}
     [:p {:class "lead"} "The page you're looking for, couldn't be found."]
-    [:a {:href "/" :class "btn btn-primary"} "Back to home page"]]])
+    [:a {:href "/" :class "btn btn-outline-primary"} "Back to home page"]]])
 
 (defn render [request]
   {:status 404
