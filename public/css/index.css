@@ -9321,4 +9321,9 @@ button.btn-outline-primary:hover {
   transform: scale(1.1) rotate(-5deg);
 }
 
+.line {
+  background-color: #6c757d;
+  width: 4px;
+}
+
 /*# sourceMappingURL=index.css.map */

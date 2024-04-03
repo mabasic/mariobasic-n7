@@ -319,3 +319,8 @@ button {
 .navbar-brand>svg {
   @include logo-animate;
 }
+
+.line {
+  background-color: $secondary; 
+  width: 4px;
+}
