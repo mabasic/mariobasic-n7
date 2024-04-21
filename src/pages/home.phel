@@ -5,10 +5,12 @@
 
 (defn white []
   [:div {:class "text-center col-lg-6 mx-auto"}
+       (svg/load-raw "logo-home.svg")
    [:h1 {:class "display-1 fw-bold lh-1"} "Software Programmer"]
-   [:p {:class "mb-4 fs-4"} "Specialized in full stack web development using Typescript and PHP as my main programming languages. I love learning and experimenting with new programming languages, frameworks, libraries and technology in general, just look at the " [:a {:href "https://github.com/mabasic/mariobasic-n7" :rel "noopener nofollow" :target "_blank"} "source code"] " for this website."]
+   [:p {:class "fs-4 fw-semibold"} "Specialized in full-stack web development"]
+   [:p {:class "mb-4 fs-5"} "My main programming languages are TypeScript and PHP. I enjoy experimenting with various programming languages, frameworks, and libraries, as can be seen in the " [:a {:href "https://github.com/mabasic/mariobasic-n7" :rel "noopener nofollow" :target "_blank"} "source code"] " of this website."]
    [:p {:class ""}
-    [:a {:class "btn btn-outline-primary btn-lg mb-2 me-3" :href "/start"} "Contact me"]
+    [:a {:class "btn btn-primary tilt btn-lg mb-2 me-3" :href "/start"} "Contact me"]
     [:a {:class "btn btn-outline-secondary btn-lg mb-2 me-3" :href "/resume"} "Resume/CV"]]])
 
 (defn print-latest-posts [posts]
@@ -26,33 +28,43 @@
 
 (defn black [latest-posts]
   [:div
-    [:div {:class "container py-5"}
-      [:div {:class "d-flex justify-content-between gap-5"}
-        [:div {:class ""}
-          [:h2 {:class "display-3 fw-bold lh-1 mb-3"} "Go Visit"]
-          [:p {:class "fs-4"} "This is my software development company and its main product is VisitMurter, but there is a new application coming soon and it is written in Deno/TypeScript. I am actively working with multiple programming languages: TypeScript, JavaScript, PHP, Scala, F#, ReScript and possible Clojure in the near future. My current stack consists of Next.js/React or Deno Fresh/Preact."]]
-          [:div {:class "line"} ""]
-        [:div {:class ""}
-          [:h2 {:class "display-3 fw-bold lh-1 mb-3"} "Laravelista"]
-          [:p {:class "fs-4"} "During my college I got in contact with many programming languages: C, C++, C#, PHP, JavaScript, Python. At this time I really liked C# and Python, but somehow I built my first application using plain PHP. For my next application I found out about Laravel and for many years after that Laravel was the only thing I was doing. I started using it when it was version 3."]]]
-    ] 
-    [:div {:class "container py-5"}
-      [:div {:class "row"}
-        [:div {:class "col-lg-6 mx-auto"}
-          [:h2 {:class "display-3 fw-bold lh-1 text-center mb-3"} "IzradaWeba"]
-          [:p {:class "fs-4 text-center"} "This is a website that I have built for the Croatian market which offers my services and products to anyone interested. It is built entirely with Scala, Scala.js and TailwindCSS. Its design is inspired by a mockup I found on the Internet. It is setup to use your GPU, but if it ends up using your CPU, your PC will have a bad time."]]
-        ]
-    ]
+   [:div {:class "container py-5"}
+    [:div {:class "d-flex flex-column flex-lg-row justify-content-between gap-5 gap-lg-0"}
+     [:div {:class "d-flex justify-content-between gap-md-5 gap-0 flex-column flex-md-row" :id "home-govisit"}
+      [:div {:class "w-130"}
+       [:h2 {:class "display-4 fw-bold lh-1"} (svg/load-raw "govisit-logo.svg")]
+       [:p {:class "fs-4 mb-0 fw-semibold d-none d-md-block mt-3"} "Software development company"]]
+      [:div {:class ""}
+       [:h2 {:class "display-4 fw-bold lh-1"} "Go Visit"]
+       [:p {:class "fs-5"} "Its main product is " [:a {:target "_blank" :href "https://visitmurter.com"} "VisitMurter"] ", a tourist portal for the island of Murter and surrounding places. I am actively using many programming languages: TypeScript, JavaScript, PHP, Scala, F#, ReScript, and possibly Clojure soon to build the next big thing."]
+       [:a {:class "btn btn-outline-primary" :target "_blank" :href "https://govisit.hr"} "Visit official website"]]]
+       [:div {:class "column-divider mx-5"}]
+     [:div {:class "d-flex justify-content-between flex-column-reverse flex-md-row gap-md-5 gap-0" :id "home-laravelista"}
+      [:div {:class "text-start text-lg-end"}
+       [:h2 {:class "display-4 fw-bold lh-1 text-start text-lg-end"} "Laravelista"]
+       [:p {:class "fs-5 text-start text-lg-end"} "During college, I learned many programming languages: C, C++, C#, VBA, PHP, JavaScript, and Python. After I wrote my first Laravel 3 app, I started a blog writing Laravel tutorials, which then evolved into a subscription-based website for learning Laravel."]
+       [:a {:class "btn btn-outline-primary" :target "_blank" :href "https://laravelista.com"} "Continue reading"]]
+      [:div {:class "w-130"}
+       [:h2 {:class "display-4 fw-bold lh-1"} (svg/load-raw "laravelista-logo.svg")]
+       [:p {:class "fs-4 mb-0 fw-semibold d-none d-md-block mt-3"} "Laravel, PHP, and Open source"]]]]]
+   [:div {:class "container py-5"}
+    [:div {:class "row"}
+     [:div {:class "col-lg-6 mx-auto text-center"}
+       (svg/load-raw "izradaweba-logo.svg")
+      [:h2 {:class "display-4 fw-bold lh-1 text-center"} "IzradaWeba"]
+      [:p {:class "fs-4 fw-semibold text-center"} "Web solutions for Croatian market"]
+      [:p {:class "fs-5 text-center"} "I provide turn-key solutions that are tailored to meet your business needs and help you succeed in the Croatian market. Let's work together to make your business dreams a reality!"]
+      [:a {:class "btn btn-outline-primary" :target "_blank" :href "https://izradaweba.eu"} "Find out more"]]]]
   # (print-latest-posts latest-posts)
-  ])
+])
 
 (defn render [request]
   (let [latest-posts (posts/get-latests 2)]
     {:status 200
      :body (main/render
             request
-            {:title "Mario Bašić | Full Stack Developer"
-             :meta-description "Full Stack Programmer. Specialized in building Web &amp; Mobile Applications."
+            {:title "Mario Bašić | Software programmer | Specialized in full-stack web development"
+             :meta-description "My main programming languages are TypeScript and PHP. I enjoy experimenting with various programming languages, frameworks, and libraries, as can be seen in the source code of this website."
              :canonical-url (:path (:uri request))
              :white (white)
              :black (black latest-posts)})}))

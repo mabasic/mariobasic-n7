@@ -14,8 +14,8 @@
      [:a {:href "https://www.ruby-lang.org/en/conduct/"
           :rel "noopener nofollow"
           :target "_blank"} "Ruby code of conduct"]
-     ". Any violations of the code of conduct may be reported to "
-     [:a {:href "mailto:mario@laravelista.com"} "Mario Bašić"]
+     ". Any violations of the code of conduct may be reported using this "
+     [:a {:href "/start"} "contact form"]
      "."]
     [:ul
      [:li "Participants will be tolerant of opposing views."]

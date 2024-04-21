@@ -1,6 +1,5 @@
 (ns app\pages\resume
-  (:require app\layouts\main)
-  (:require app\svg))
+  (:require app\layouts\main))
 
 (defn white []
   [:div

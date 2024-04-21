@@ -4,11 +4,6 @@ $form-select-indicator-color: #fff;
 // $link-color-dark: #0dcaf0;
 // @import "../../node_modules/bootstrap/scss/bootstrap";
 
-// $primary: #1575b8;
-// $secondary: #68c0c5;
-// $secondary: #68c0c5;
-// $primary: #7d60b5;
-
 // $link-color: #1575b8;
 // $link-color-dark: #1575b8;
 
@@ -66,41 +61,6 @@ $form-select-indicator-color: #fff;
   color: #fff;
   background-color: #0d6efd;
 }
-
-// .paper {
-//   padding-top: 0;
-//   padding-right: 30px;
-//   /*padding-bottom: 30px;*/
-//   padding-left: 30px;
-// }
-
-// .white .container {
-//   /*padding-bottom: 60px;*/
-//   margin-top: 0;
-// }
-
-// .black .container {
-//   padding-top: 80px;
-//   padding-right: 30px;
-//   padding-bottom: 60px;
-//   padding-left: 30px;
-
-//   .start-success-icon {
-//     font-size: 175px;
-//   }
-
-//   .summary-item {
-//     border-bottom: 1px solid #616161;
-
-//     .summary-item-value {
-//       word-break: break-all;
-//     }
-//   }
-
-//   .full-name {
-//     display: none;
-//   }
-// }
 
 .full-name {
   display: none;
@@ -260,10 +220,6 @@ $form-select-indicator-color: #fff;
   }
 }
 
-// .footer.black .container {
-//   padding-bottom: 0;
-// }
-
 .dropdown-menu {
   --bs-dropdown-min-width: 8rem;
   --bs-dropdown-padding-x: .25rem;
@@ -309,18 +265,70 @@ $form-select-indicator-color: #fff;
   @include logo-animate;
 }
 
+@mixin tilt {
+    transform: scale(1.1) rotate(-5deg);
+
+    transition: transform 0.2s ease-in-out;
+
+    &:hover {
+      transition: transform 0.2s ease-in-out;
+      transform: scale(1.0) rotate(0deg);
+    }
+}
+
 a,
 button {
-  &.btn-outline-primary {
+  &.btn-outline-primary:not(.tilt) {
     @include button-animate;
   }
+}
+
+.tilt {
+  @include tilt;
 }
 
 .navbar-brand>svg {
   @include logo-animate;
 }
 
-.line {
-  background-color: $secondary; 
-  width: 4px;
+.w-130 {
+  width: 130px;
+  min-width: 130px;
 }
+
+.animate {
+  @include logo-animate;
+}
+
+$laravelista-brand-color: #FBF18E;
+
+@include color-mode(dark) {
+  #laravelista-logo {
+    fill: $laravelista-brand-color;
+  }
+}
+
+#home-govisit {
+  width: 100%;
+}
+
+#home-laravelista {
+  width: 100%;
+}
+
+@include media-breakpoint-up(lg) {
+  #home-govisit {
+    width: 50%;
+  }
+
+  #home-laravelista {
+    width: 50%;
+  }
+}
+
+.column-divider {
+  background-color: $secondary;
+  width: 1px;
+}
+
+
