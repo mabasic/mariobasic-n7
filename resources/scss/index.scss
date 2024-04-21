@@ -1,11 +1,7 @@
 $dropdown-link-active-bg: #2e2f2f;
 $form-select-indicator-color: #fff;
-// $link-color: #0dcaf0;
-// $link-color-dark: #0dcaf0;
-// @import "../../node_modules/bootstrap/scss/bootstrap";
 
-// $link-color: #1575b8;
-// $link-color-dark: #1575b8;
+// @import "../../node_modules/bootstrap/scss/bootstrap";
 
 // Configuration
 @import "../../node_modules/bootstrap/scss/functions";
@@ -53,9 +49,6 @@ $form-select-indicator-color: #fff;
 
 // Utilities
 @import "../../node_modules/bootstrap/scss/utilities/api";
-
-/* $primary-color: #0d6efd; */
-/* $secondary-color: #0b5ed8; */
 
 ::selection {
   color: #fff;
