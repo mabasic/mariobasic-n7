@@ -5,7 +5,7 @@
 
 (defn white []
   [:div {:class "text-center col-lg-6 mx-auto"}
-       (svg/load-raw "logo-home.svg")
+   (svg/load-raw "logo-home.svg")
    [:h1 {:class "display-1 fw-bold lh-1"} "Software Programmer"]
    [:p {:class "fs-4 fw-semibold"} "Specialized in full-stack web development"]
    [:p {:class "mb-4 fs-5"} "My main programming languages are TypeScript and PHP. I enjoy experimenting with various programming languages, frameworks, and libraries, as can be seen in the " [:a {:href "https://github.com/mabasic/mariobasic-n7" :rel "noopener nofollow" :target "_blank"} "source code"] " of this website."]
@@ -38,7 +38,7 @@
        [:h2 {:class "display-4 fw-bold lh-1"} "Go Visit"]
        [:p {:class "fs-5"} "Its main product is " [:a {:target "_blank" :href "https://visitmurter.com"} "VisitMurter"] ", a tourist portal for the island of Murter and surrounding places. I am actively using many programming languages: TypeScript, JavaScript, PHP, Scala, F#, ReScript, and possibly Clojure soon to build the next big thing."]
        [:a {:class "btn btn-outline-primary" :target "_blank" :href "https://govisit.hr"} "Visit official website"]]]
-       [:div {:class "column-divider mx-5"}]
+     [:div {:class "column-divider mx-5"}]
      [:div {:class "d-flex justify-content-between flex-column-reverse flex-md-row gap-md-5 gap-0" :id "home-laravelista"}
       [:div {:class "text-start text-lg-end"}
        [:h2 {:class "display-4 fw-bold lh-1 text-start text-lg-end"} "Laravelista"]
@@ -50,7 +50,7 @@
    [:div {:class "container py-5"}
     [:div {:class "row"}
      [:div {:class "col-lg-6 mx-auto text-center"}
-       (svg/load-raw "izradaweba-logo.svg")
+      (svg/load-raw "izradaweba-logo.svg")
       [:h2 {:class "display-4 fw-bold lh-1 text-center"} "IzradaWeba"]
       [:p {:class "fs-4 fw-semibold text-center"} "Web solutions for Croatian market"]
       [:p {:class "fs-5 text-center"} "I provide turn-key solutions that are tailored to meet your business needs and help you succeed in the Croatian market. Let's work together to make your business dreams a reality!"]
