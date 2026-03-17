@@ -10,8 +10,8 @@
 
 ## Requirements
 
-- PHP 8.1
-- Node.js v18.17.1
+- PHP 8.3
+- Node.js v22.14.0
 - pnpm
 
 ## Quickstart
@@ -21,7 +21,7 @@
 composer install
 
 # node
-pn install
+pnpm install
 
 # Use this to compile the phel application to php.
 composer build
@@ -37,13 +37,13 @@ For managing SCSS:
 
 ```bash
 # One time scss -> css.
-pn css-dev
+pnpm css-dev
 # Watch for changes.
-pn css-dev-watch
+pnpm css-dev-watch
 # Compile for production.
-pn css-prod
+pnpm css-prod
 # Lint scss code.
-pn css-lint
+pnpm css-lint
 ```
 
 Run tests with:
