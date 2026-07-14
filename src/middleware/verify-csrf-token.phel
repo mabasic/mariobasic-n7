@@ -1,14 +1,14 @@
-(ns app\middleware\verify-csrf-token
-  (:require phel\json)
-  (:require app\layouts\main)
-  (:require app\request))
+(ns app.middleware.verify-csrf-token
+  (:require phel.json)
+  (:require app.layouts.main)
+  (:require app.request))
 
 (defn is-reading [request]
   (let [request-method (get request :method)
-        result (find
-                (fn [method]
-                  (= request-method method))
-                ["HEAD" "GET" "OPTIONS"])]
+        result         (find
+                        (fn [method]
+                          (= request-method method))
+                        ["HEAD" "GET" "OPTIONS"])]
     (not (nil? result))))
 
 (defn get-token-from-request [request]

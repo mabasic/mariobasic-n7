@@ -11,7 +11,8 @@ $projectRootDir  = __DIR__ . '/../';
 if ($phelMode === 'slow') {
     // Compiles Phel code to PHP on each request and then runs it (Slow).
     require $projectRootDir . 'vendor/autoload.php';
-    Phel\Phel::run($projectRootDir, 'app\\boot');
+
+    \Phel::run($projectRootDir, 'app\\boot');
 
     return;
 }

@@ -1,5 +1,5 @@
-(ns app\pages\contributing
-  (:require app\layouts\main))
+(ns app.pages.contributing
+  (:require app.layouts.main))
 
 (defn white []
   [:div

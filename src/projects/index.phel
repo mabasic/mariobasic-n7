@@ -1,17 +1,17 @@
-(ns app\projects\index
-  (:require app\projects\year-2023-tmp-fix)
-  (:require app\projects\year-2022-tmp-fix)
-  (:require app\projects\year-2021-tmp-fix)
-  (:require app\projects\year-2020-tmp-fix)
-  (:require app\projects\year-2019-tmp-fix)
-  (:require app\projects\year-2018-tmp-fix)
-  (:require app\projects\year-2017-tmp-fix)
-  (:require app\projects\year-2016-tmp-fix)
-  (:require app\projects\year-2015-tmp-fix)
-  (:require app\projects\year-2014-tmp-fix)
-  (:require app\projects\year-2013-tmp-fix)
-  (:require app\projects\year-2012-tmp-fix)
-  (:require app\projects\year-2011-tmp-fix))
+(ns app.projects.index
+  (:require app.projects.year-2023-tmp-fix)
+  (:require app.projects.year-2022-tmp-fix)
+  (:require app.projects.year-2021-tmp-fix)
+  (:require app.projects.year-2020-tmp-fix)
+  (:require app.projects.year-2019-tmp-fix)
+  (:require app.projects.year-2018-tmp-fix)
+  (:require app.projects.year-2017-tmp-fix)
+  (:require app.projects.year-2016-tmp-fix)
+  (:require app.projects.year-2015-tmp-fix)
+  (:require app.projects.year-2014-tmp-fix)
+  (:require app.projects.year-2013-tmp-fix)
+  (:require app.projects.year-2012-tmp-fix)
+  (:require app.projects.year-2011-tmp-fix))
 
 (def index
   [{:year "2023" :projects year-2023-tmp-fix/index}

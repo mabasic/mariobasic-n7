@@ -1,6 +1,6 @@
-(ns app\validator
-  (:require phel\json)
-  (:require app\helpers))
+(ns app.validator
+  (:require phel.json)
+  (:require app.helpers))
 
 # It replaces underscore and dash with a blank space.
 # Example: (prettify-field "first_name") outputs "first name".
@@ -48,7 +48,7 @@
 
 (defn rule-string [data field  & [field-rule]]
   (let [field-value ((keyword field) data)
-        field-rule (or field-rule {:rule :string})]
+        field-rule  (or field-rule {:rule :string})]
     (if (string? field-value)
       (let [rule-validation-results
             (filter
@@ -83,9 +83,9 @@
   (let [errors (transient {})]
     (foreach [field field-rules rules]
       (let [# It returns a boolean depending if the field-rules contain :nullable value.
-            field-has-nullable-rule (not (nil? (find (fn [x] (= x :nullable)) field-rules)))
+            field-has-nullable-rule  (not (nil? (find (fn [x] (= x :nullable)) field-rules)))
             # It returns a boolean depending if the field-value is null
-            field-value-is-null (if field-has-nullable-rule (rule-nullable data field) false)
+            field-value-is-null      (if field-has-nullable-rule (rule-nullable data field) false)
             field-validation-results
             # If field-rules contain :nullable and field-value is null, it returns an empty array,
             # otherwise it returns an array with validation error messages if any.
@@ -96,9 +96,9 @@
                  (for [field-rule :in field-rules]
                    (cond
                      (= field-rule :required) (rule-required data field)
-                     (= field-rule :string) (rule-string data field)
+                     (= field-rule :string)   (rule-string data field)
                      (= field-rule :accepted) (rule-accepted data field)
-                     (= field-rule :present) (rule-present data field)
+                     (= field-rule :present)  (rule-present data field)
                      (= field-rule :honeypot) (rule-honeypot data field)
                      (hash-map? field-rule)
                      (case (:rule field-rule)

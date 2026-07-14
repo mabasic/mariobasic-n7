@@ -1,7 +1,7 @@
-(ns app\mail
-  (:require app\config\mail)
-  (:require app\mailers\ses)
-  (:require app\mailers\log))
+(ns app.mail
+  (:require app.config.mail)
+  (:require app.mailers.ses)
+  (:require app.mailers.log))
 
 (defn send [data]
   (case (mail/default)

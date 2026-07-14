@@ -1,8 +1,8 @@
-(ns app\layouts\main
-  (:require phel\html :refer [html doctype])
-  (:require app\partials\head)
-  (:require app\partials\navbar)
-  (:require app\partials\footer))
+(ns app.layouts.main
+  (:require phel.html :refer [html doctype])
+  (:require app.partials.head)
+  (:require app.partials.navbar)
+  (:require app.partials.footer))
 
 (defn white [request white-section]
   [:div {:class "py-5"}

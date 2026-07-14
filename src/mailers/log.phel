@@ -1,6 +1,6 @@
-(ns app\mailers\log
-  (:require app\config\mail)
-  (:require app\logger))
+(ns app.mailers.log
+  (:require app.config.mail)
+  (:require app.logger))
 
 (defn get-headers [subject from to reply-to]
   (str

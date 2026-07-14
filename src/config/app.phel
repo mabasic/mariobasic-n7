@@ -1,4 +1,4 @@
-(ns app\config\app)
+(ns app.config.app)
 
 # Application Environment
 (defn environment []

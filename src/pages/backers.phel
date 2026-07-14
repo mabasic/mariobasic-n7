@@ -1,6 +1,6 @@
-(ns app\pages\backers
-  (:require app\layouts\main)
-  (:require app\config\app))
+(ns app.pages.backers
+  (:require app.layouts.main)
+  (:require app.config.app))
 
 (defn white []
   [:div
@@ -8,8 +8,8 @@
    [:p [:a {:href "/"} "home"] " / open-source / backers"]])
 
 (defn custom-link [href text & [options]]
-  (let [attributes {:href href}
-        seo (if (or (nil? options) (nil? (:seo options))) true (:seo options))
+  (let [attributes     {:href href}
+        seo            (if (or (nil? options) (nil? (:seo options))) true (:seo options))
         seo-attributes {:rel "noopener nofollow" :target "_blank"}]
     (if (true? seo)
       [:a (merge attributes seo-attributes) text]

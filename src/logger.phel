@@ -1,5 +1,5 @@
-(ns app\logger
-  (:require app\config\app))
+(ns app.logger
+  (:require app.config.app))
 
 (def log-file (str __DIR__ "/../logs/phel.log"))
 

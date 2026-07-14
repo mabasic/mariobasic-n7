@@ -1,6 +1,6 @@
-(ns app\tests\ekko
-  (:require app\ekko)
-  (:require phel\test :refer [deftest is]))
+(ns app.tests.ekko
+  (:require app.ekko)
+  (:require phel.test :refer [deftest is]))
 
 (deftest test-is-active
   (is (= " active" (ekko/is-active "/" "/")))

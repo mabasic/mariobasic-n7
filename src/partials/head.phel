@@ -1,5 +1,5 @@
-(ns app\partials\head
-  (:require app\config\app))
+(ns app.partials.head
+  (:require app.config.app))
 
 (defn render [& [title meta-description canonical-url]]
   [:head

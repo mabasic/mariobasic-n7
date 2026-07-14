@@ -1,6 +1,6 @@
-(ns app\tests\pages\posts\index
-  (:require phel\test :refer [deftest is])
-  (:require app\pages\posts\index))
+(ns app.tests.pages.posts.index
+  (:require phel.test :refer [deftest is])
+  (:require app.pages.posts.index))
 
 (def rendered (index/render {:uri {:host "/blog"}}))
 

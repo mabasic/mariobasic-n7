@@ -1,6 +1,6 @@
-(ns app\tests\pages\start
-  (:require phel\test :refer [deftest is])
-  (:require app\pages\start))
+(ns app.tests.pages.start
+  (:require phel.test :refer [deftest is])
+  (:require app.pages.start))
 
 (def rendered (start/render {:uri {:host "/start"}}))
 

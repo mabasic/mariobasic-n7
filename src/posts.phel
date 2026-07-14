@@ -1,13 +1,13 @@
-(ns app\posts
-  (:use \DirectoryIterator)
-  (:use \ParsedownExtra)
-  (:use \Spatie\YamlFrontMatter\YamlFrontMatter)
-  (:require app\helpers))
+(ns app.posts
+  (:use DirectoryIterator)
+  (:use Parsedown)
+  (:use Spatie.YamlFrontMatter.YamlFrontMatter)
+  (:require app.helpers))
 
 (def- posts-path "/../content/posts")
 
 (defn markdown-to-html [markdown]
-  (let [parsedown (php/new ParsedownExtra)]
+  (let [parsedown (php/new Parsedown)]
     (php/-> parsedown (text markdown))))
 
 (defn- get-posts-iterator []
@@ -64,7 +64,7 @@
   (take number-of-posts (get-all)))
 
 (defn paginate [posts page per-page]
-  (let [pages (partition per-page posts)
+  (let [pages      (partition per-page posts)
         page-posts (get (partition per-page posts) (- page 1))]
     (if (nil? page-posts) [] page-posts)))
 

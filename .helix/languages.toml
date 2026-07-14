@@ -1,0 +1,14 @@
+[language-server.phel-language-server]
+command = "./vendor/bin/phel"
+args = ["lsp"]
+
+[[language]]
+name = "phel"
+scope = "source.phel"
+injection-regex = "(phel)"
+language-id = "phel"
+file-types = ["phel"]
+roots = [ "phel-config.php" ]
+comment-token = ";;"
+language-servers = [ "phel-language-server" ]
+indent = { tab-width = 2, unit = "  " }

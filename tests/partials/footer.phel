@@ -1,6 +1,6 @@
-(ns app\tests\partials\footer
-  (:require phel\test :refer [deftest is])
-  (:require app\partials\footer))
+(ns app.tests.partials.footer
+  (:require phel.test :refer [deftest is])
+  (:require app.partials.footer))
 
 (def rendered (footer/render))
 

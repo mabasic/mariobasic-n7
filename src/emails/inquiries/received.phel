@@ -1,6 +1,6 @@
-(ns app\emails\inquiries\received
-  (:require app\config\app)
-  (:require phel\html :refer [html]))
+(ns app.emails.inquiries.received
+  (:require app.config.app)
+  (:require phel.html :refer [html]))
 
 (defn render [{:name name
                :message message
@@ -12,4 +12,3 @@
     [:p [:b "Email: "] [:span email]]
     [:p [:b "Message: "] [:span message]]
     [:p "*Has given permission to be contacted in regard to this message."]]))
-

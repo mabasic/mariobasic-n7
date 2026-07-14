@@ -1,12 +1,12 @@
-(ns app\boot
-  (:require phel\http)
-  (:require app\pages\page-not-found)
-  (:require app\csrf)
-  (:require app\router)
-  (:require app\middleware\verify-csrf-token)
-  (:require app\routes :refer [routes route])
-  (:require app\redirects :refer [redirects redirect])
-  (:use Dotenv\Dotenv))
+(ns app.boot
+  (:require phel.http)
+  (:require app.pages.page-not-found)
+  (:require app.csrf)
+  (:require app.router)
+  (:require app.middleware.verify-csrf-token)
+  (:require app.routes :refer [routes route])
+  (:require app.redirects :refer [redirects redirect])
+  (:use Dotenv.Dotenv))
 
 (def dotenv (php/:: Dotenv (createImmutable (str __DIR__ "/../"))))
 
@@ -28,17 +28,17 @@
 
 (defn route-match [request routes redirects]
   (let
-    [route (find
-            (fn [route]
-              (and
-               (true?
-                (router/match-route
-                 (:url route)
-                 (:path (:uri request))))
-               (=
-                (get route :method)
-                (get request :method))))
-            routes)
+    [route    (find
+               (fn [route]
+                 (and
+                  (true?
+                   (router/match-route
+                    (:url route)
+                    (:path (:uri request))))
+                  (=
+                   (get route :method)
+                   (get request :method))))
+               routes)
      redirect (find
                (fn [redirect]
                  (and
@@ -51,8 +51,8 @@
                redirects)]
     (cond
       (and (nil? route) (nil? redirect)) (page-not-found/render request)
-      (not (nil? redirect)) ((:handler redirect) (:to redirect))
-      true ((get route :page) request (router/get-parameters (:url route) (:path (:uri request)))))))
+      (not (nil? redirect))              ((:handler redirect) (:to redirect))
+      true                               ((get route :page) request (router/get-parameters (:url route) (:path (:uri request)))))))
 
 (defn run-global-middleware [request global-middleware]
   (if (nil? request)
@@ -65,7 +65,7 @@
           response)))))
 
 (defn emit-response [response]
-  (let [rsp (http/create-response-from-map response)]
+  (let [rsp (http/response-from-map response)]
     (http/emit-response rsp)))
 
 (let [response (run-global-middleware request global-middleware)]

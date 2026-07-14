@@ -1,4 +1,4 @@
-(ns app\config\services)
+(ns app.config.services)
 
 (defn ses-key []
   (php/aget php/$_ENV "AWS_ACCESS_KEY_ID"))

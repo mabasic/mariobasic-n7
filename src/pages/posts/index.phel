@@ -1,7 +1,7 @@
-(ns app\pages\posts\index
-  (:require app\layouts\main)
-  (:require app\posts)
-  (:require app\helpers))
+(ns app.pages.posts.index
+  (:require app.layouts.main)
+  (:require app.posts)
+  (:require app.helpers))
 
 (def per-page 6)
 
@@ -11,11 +11,11 @@
    [:p [:a {:href "/"} "home"] " / blog"]])
 
 (defn pagination [posts-count page]
-  (let [max-page (/ posts-count per-page)]
+  (let [max-page (ceil (/ posts-count per-page))]
     (if (> max-page 1)
       [:nav {:aria-label "Page navigation"}
        [:ul {:class "pagination pagination-sm"}
-        (apply list (for [index :range [1 (+ max-page 1)]]
+        (apply list (for [index :range [1 max-page]]
                       [:li {:class (str "page-item" (if (= page index) " active"))}
                        [:a {:class "page-link" :href (str "/blog?page=" index)} index]]))]])))
 
@@ -34,20 +34,17 @@
             [:p {:class "lead"} "There are no posts on this page."])]])
 
 (defn extract-query-parameters-from-request [request]
-  (let [query (:query (:uri request))
-        pairs (php/explode "&" query)
-        parameters (transient {})]
-    (foreach [k v pairs]
-      (let [[key value] (php/explode "=" v)]
-        (put parameters (keyword key) value)))
-    (persistent parameters)))
+  (let [query (or (:query (:uri request)) "")
+        pairs (php/explode "&" query)]
+    (for [[k v] :pairs pairs :reduce [m {}] :let [[key value] (php/explode "=" v)]]
+      (assoc m (keyword key) value))))
 
 (defn render [request]
   (let [{:page page} (extract-query-parameters-from-request request)
-        page (or (php/intval page) 1)
-        page (if (= page 0) 1 page)
-        all-posts (posts/get-all)
-        posts-count (count all-posts)]
+        page         (or (php/intval page) 1)
+        page         (if (= page 0) 1 page)
+        all-posts    (posts/get-all)
+        posts-count  (count all-posts)]
     {:status 200
      :body (main/render
             request

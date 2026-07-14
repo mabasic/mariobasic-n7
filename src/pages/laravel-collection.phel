@@ -1,6 +1,6 @@
-(ns app\pages\laravel-collection
-  (:require app\layouts\main)
-  (:require app\svg))
+(ns app.pages.laravel-collection
+  (:require app.layouts.main)
+  (:require app.svg))
 
 (defn white []
   [:div {:class "mb-4"}

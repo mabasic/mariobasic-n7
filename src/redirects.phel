@@ -1,5 +1,5 @@
-(ns app\redirects
-  (:require app\redirector))
+(ns app.redirects
+  (:require app.redirector))
 
 (defstruct redirect [from to handler])
 
@@ -15,4 +15,3 @@
    (redirect "/deploy-your-app-to-digitialocean-from-codeship-using-envoy" "/a-collection-of-laravel-tutorials" redirector/moved-permanently)
    (redirect "/build-an-api-with-lumen-and-fractal" "/a-collection-of-laravel-tutorials" redirector/moved-permanently)
    (redirect "/origin" "/" redirector/moved-permanently)])
-

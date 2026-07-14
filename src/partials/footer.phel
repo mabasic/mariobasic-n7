@@ -1,5 +1,5 @@
-(ns app\partials\footer
-  (:require app\svg))
+(ns app.partials.footer
+  (:require app.svg))
 
 (defn render []
   [:footer {:class "bg-body-tertiary py-4 py-md-5 mt-5 text-tertiary-color"}

@@ -1,4 +1,4 @@
-(ns app\config\mail)
+(ns app.config.mail)
 
 # Default Mailer
 (defn default []

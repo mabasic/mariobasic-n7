@@ -1,7 +1,7 @@
-(ns app\mailers\ses
-  (:require app\config\services)
-  (:require app\config\mail)
-  (:use Aws\Ses\SesClient))
+(ns app.mailers.ses
+  (:require app.config.services)
+  (:require app.config.mail)
+  (:use Aws.Ses.SesClient))
 
 (defn client []
   (php/new SesClient

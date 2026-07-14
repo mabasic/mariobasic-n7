@@ -1,6 +1,6 @@
-(ns app\tests\pages\privacy
-  (:require phel\test :refer [deftest is])
-  (:require app\pages\privacy))
+(ns app.tests.pages.privacy
+  (:require phel.test :refer [deftest is])
+  (:require app.pages.privacy))
 
 (def rendered (privacy/render {:uri {:host "/privacy"}}))
 

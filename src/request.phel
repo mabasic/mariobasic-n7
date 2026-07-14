@@ -1,4 +1,4 @@
-(ns app\request)
+(ns app.request)
 
 (defn expects-json [request]
   (let [content-type (:content-type request)]

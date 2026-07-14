@@ -1,7 +1,7 @@
-(ns app\tests\partials\project
-  (:require phel\test :refer [deftest is])
-  (:require app\partials\project :as project-partial)
-  (:require app\projects\project :refer [project]))
+(ns app.tests.partials.project
+  (:require phel.test :refer [deftest is])
+  (:require app.partials.project :as project-partial)
+  (:require app.projects.project :refer [project]))
 
 (def vjeran-paic (project
                   "Attorney \"Vjeran Paić\""

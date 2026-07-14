@@ -9,13 +9,16 @@
   ],
   "minimum-stability": "dev",
   "require": {
-    "php": "^8.3",
+    "php": "^8.4",
     "aws/aws-sdk-php": "^3.279",
-    "erusev/parsedown-extra": "^0.8.1",
-    "phel-lang/phel-lang": "v0.11.0",
+    "erusev/parsedown": "^1.8.0",
+    "phel-lang/phel-lang": "v0.47.0",
     "rakibtg/sleekdb": "^2.15",
     "spatie/yaml-front-matter": "^2.0",
     "vlucas/phpdotenv": "^5.5"
+  },
+  "require-dev": {
+    "symfony/var-dumper": "^7.4"
   },
   "config": {
     "optimize-autoloader": true,

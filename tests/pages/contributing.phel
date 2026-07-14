@@ -1,6 +1,6 @@
-(ns app\tests\pages\contributing
-  (:require phel\test :refer [deftest is])
-  (:require app\pages\contributing))
+(ns app.tests.pages.contributing
+  (:require phel.test :refer [deftest is])
+  (:require app.pages.contributing))
 
 (def rendered (contributing/render {:uri {:host "/contributing"}}))
 

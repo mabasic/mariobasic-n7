@@ -1,4 +1,4 @@
-(ns app\ekko)
+(ns app.ekko)
 
 (defn- regex [path]
   (str

@@ -1,4 +1,4 @@
-(ns app\router)
+(ns app.router)
 
 (def- regex "[a-zA-Z-_0-9]+")
 
@@ -10,8 +10,8 @@
 (defn- escape-forwardslash [url]
   (php/str_replace "/" "\\/" url))
 
-# ^ match everything from the beginning of a string
-# & match everthing to the end of a string
+;; ^ match everything from the beginning of a string
+;; & match everthing to the end of a string
 (defn- prepare-pattern [escaped-url]
   (str "/^" escaped-url "$/i"))
 
@@ -23,8 +23,8 @@
    (escape-forwardslash
     (replace-pattern-with-regex (trim-last-slash url) pattern regex))))
 
-# route = /blog/{slug}
-# url = /blog/a-simple-post
+;; route = /blog/{slug}
+;; url = /blog/a-simple-post
 (defn match-route [route url]
   (if
     (=
@@ -38,13 +38,9 @@
 
 (defn get-parameters [route url]
   (let [route-parts (php/explode "/" route)
-        url-parts (php/explode "/" url)
-        parameters (transient {})]
-    (do
-      (foreach [index part route-parts]
-        (if (= (php/preg_match (str "/^{" regex "}$/i") part) 1)
-          # :slug 0
-          (put parameters (get-keyword-from-route-parameter part) index)))
-      (foreach [key value (persistent parameters)]
-        (put parameters key (get url-parts value)))
-      (persistent parameters))))
+        url-parts   (php/explode "/" url)]
+    (for [[k v] :pairs route-parts :reduce [m {}]]
+      (if
+        (= (php/preg_match (str "/^{" regex "}$/i") v) 1)
+        (assoc m (get-keyword-from-route-parameter v) (get url-parts k))
+        m))))

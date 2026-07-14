@@ -1,6 +1,6 @@
-(ns app\tests\pages\posts\show
-  (:require phel\test :refer [deftest is])
-  (:require app\pages\posts\show))
+(ns app.tests.pages.posts.show
+  (:require phel.test :refer [deftest is])
+  (:require app.pages.posts.show))
 
 (deftest test-render-found
   (let [rendered (show/render

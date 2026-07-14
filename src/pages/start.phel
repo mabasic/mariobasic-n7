@@ -1,13 +1,13 @@
-(ns app\pages\start
-  (:require app\layouts\main)
-  (:require phel\json)
-  (:require app\mail)
-  (:require app\database)
-  (:require app\emails\inquiries\received)
-  (:require app\validator)
-  (:require app\helpers)
-  (:require app\request)
-  (:require app\logger)
+(ns app.pages.start
+  (:require app.layouts.main)
+  (:require phel.json)
+  (:require app.mail)
+  (:require app.database)
+  (:require app.emails.inquiries.received)
+  (:require app.validator)
+  (:require app.helpers)
+  (:require app.request)
+  (:require app.logger)
   (:use Exception))
 
 (defn white []
@@ -150,7 +150,7 @@
     (render-success request)))
 
 (defn store [request]
-  (let [data (helpers/extract-data-from-request request)
+  (let [data                               (helpers/extract-data-from-request request)
         {:result validated :errors errors}
         (validator/validate data store-rules)]
     (if (= validated false)

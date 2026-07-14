@@ -1,5 +1,5 @@
-(ns app\pages\code-of-conduct
-  (:require app\layouts\main))
+(ns app.pages.code-of-conduct
+  (:require app.layouts.main))
 
 (defn white []
   [:div

@@ -7,19 +7,11 @@ excerpt: "This was unexpected, but my open-source software, including this blog,
 
 I have received an email from GitHub saying something about the "archive program" bla bla to push a commit to my repositories in order for them to be included in the program. I did not know anything about the program, what it is or what is its purpose, but eventually I opened the link and read this:
 
-<!-- > _"On February 2, 2020, GitHub will capture a snapshot of every active public repository, to be preserved in the GitHub Arctic Code Vault. This data will be stored on 3,500-foot film reels, provided and encoded by Piql, a Norwegian company that specializes in very-long-term data storage. The film technology relies on silver halides on polyester. This medium has a lifespan of 500 years as measured by the ISO; simulated aging tests indicate Piql’s film will last twice as long."_ -->
-
-<blockquote class="blockquote">
-  <p>"On February 2, 2020, GitHub will capture a snapshot of every active public repository, to be preserved in the GitHub Arctic Code Vault. This data will be stored on 3,500-foot film reels, provided and encoded by Piql, a Norwegian company that specializes in very-long-term data storage. The film technology relies on silver halides on polyester. This medium has a lifespan of 500 years as measured by the ISO; simulated aging tests indicate Piql’s film will last twice as long."</p>
-</blockquote>
+> _"On February 2, 2020, GitHub will capture a snapshot of every active public repository, to be preserved in the GitHub Arctic Code Vault. This data will be stored on 3,500-foot film reels, provided and encoded by Piql, a Norwegian company that specializes in very-long-term data storage. The film technology relies on silver halides on polyester. This medium has a lifespan of 500 years as measured by the ISO; simulated aging tests indicate Piql’s film will last twice as long."_ 
 
 And then on the next paragraph it said:
 
-<!-- > _"The GitHub Archive Program is partnering with Microsoft’s Project Silica to ultimately archive all active public repositories for over 10,000 years, by writing them into quartz glass platters using a femtosecond laser."_ -->
-
-<blockquote class="blockquote">
-  <p>"The GitHub Archive Program is partnering with Microsoft’s Project Silica to ultimately archive all active public repositories for over 10,000 years, by writing them into quartz glass platters using a femtosecond laser."</p>
-</blockquote>
+> _"The GitHub Archive Program is partnering with Microsoft’s Project Silica to ultimately archive all active public repositories for over 10,000 years, by writing them into quartz glass platters using a femtosecond laser."_
 
 This is a big deal! This means that the code I wrote (including this blog) will be preserved in the north pole for at least 500 years. Something like a timecapsule ... so I started thinking ... I could use this blog to write down something for my grand kids 500 years in the future. The purpose of the [GitHub archive program](https://archiveprogram.github.com/) is to preserve open source software for future generations, but I (like many others I suppose) have a far simpler idea:
 

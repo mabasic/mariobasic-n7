@@ -1,5 +1,5 @@
-(ns app\database
-  (:use SleekDB\Store))
+(ns app.database
+  (:use SleekDB.Store))
 
 (def database-directory (str __DIR__ "/../database"))
 

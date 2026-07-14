@@ -1,8 +1,8 @@
-(ns app\pages\posts\show
-  (:require app\layouts\main)
-  (:require app\posts)
-  (:require app\pages\page-not-found)
-  (:require phel\html :refer [raw-string]))
+(ns app.pages.posts.show
+  (:require app.layouts.main)
+  (:require app.posts)
+  (:require app.pages.page-not-found)
+  (:require phel.html :refer [raw-string]))
 
 (defn get-post-meta [post & [show-heading]]
   (let [show-heading (or show-heading true)]
@@ -23,12 +23,12 @@
    [:p [:a {:href "/"} "home"] " / " [:a {:href "/blog"} "blog"] " / " (posts/get-title post)]])
 
 (defn black [post]
-  [:div {:class "row"}
-   [:div {:class "col"}
-    [:article {:class "post-content"}
-     (raw-string (posts/markdown-to-html (posts/get-body post)))]
-    [:hr {:style "width: 130px;" :class "mb-4"}]
-    (get-post-meta post)]])
+  (let [body (raw-string (posts/markdown-to-html (posts/get-body post)))] [:div {:class "row"}
+                                                                           [:div {:class "col"}
+                                                                            [:article {:class "post-content"}
+                                                                             body]
+                                                                            [:hr {:style "width: 130px;" :class "mb-4"}]
+                                                                            (get-post-meta post)]]))
 
 (defn render [request & [{:year year :month month :day day :slug slug}]]
   (let [post (posts/get-by-slug year month day slug)]

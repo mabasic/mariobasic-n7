@@ -1,6 +1,6 @@
-(ns app\tests\pages\backers
-  (:require phel\test :refer [deftest is])
-  (:require app\pages\backers))
+(ns app.tests.pages.backers
+  (:require phel.test :refer [deftest is])
+  (:require app.pages.backers))
 
 (def rendered (backers/render {:uri {:host "/backers"}}))
 
