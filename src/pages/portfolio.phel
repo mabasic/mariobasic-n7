@@ -17,7 +17,7 @@
                   [:div {:class "col"}
                    [:h2 (get item :year)]
                    [:hr {:style "width: 130px;" :class "mb-4"}]
-                   (apply list (for [project-subset :in (partition 4 (get item :projects))]
+                   (apply list (for [project-subset :in (partition-all 4 (get item :projects))]
                                  [:div {:class "row"}
                                   (apply list (for [project :in project-subset]
                                                 [:div {:class "col-lg-3"}

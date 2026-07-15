@@ -1,6 +1,6 @@
 [language-server.phel-language-server]
-command = "./vendor/bin/phel"
-args = ["lsp"]
+command = "php8.5"
+args = ["./vendor/bin/phel", "lsp"]
 
 [[language]]
 name = "phel"

@@ -64,8 +64,8 @@
   (take number-of-posts (get-all)))
 
 (defn paginate [posts page per-page]
-  (let [pages      (partition per-page posts)
-        page-posts (get (partition per-page posts) (- page 1))]
+  (let [pages      (partition-all per-page posts)
+        page-posts (get (partition-all per-page posts) (- page 1))]
     (if (nil? page-posts) [] page-posts)))
 
 (defn get-by-slug [year month day slug]

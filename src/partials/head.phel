@@ -17,7 +17,6 @@
    [:link {:href "/apple-touch-icon.png" :rel "apple-touch-icon"}]
    [:link {:href "/apple-touch-icon-72x72.png" :rel "apple-touch-icon" :sizes "72x72"}]
    [:link {:href "/apple-touch-icon-114x114.png" :rel "apple-touch-icon" :sizes "114x114"}]
-   [:link {:href "/apple-touch-icon-192x192.png" :rel "icon" :sizes "192x192"}]
    (if-not (nil? canonical-url)
      [:link {:rel "canonical" :href (str "https://mariobasic.com" canonical-url)}])
    (if (= (app/environment) "production")
