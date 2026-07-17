@@ -11,7 +11,7 @@
    [:p {:class "mb-4 fs-5"} "My main programming languages are TypeScript and PHP. I enjoy experimenting with various programming languages, frameworks, and libraries, as can be seen in the " [:a {:href "https://github.com/mabasic/mariobasic-n7" :rel "noopener nofollow" :target "_blank"} "source code"] " of this website."]
    [:p {:class ""}
     [:a {:class "btn btn-primary tilt btn-lg mb-2 me-3" :href "/start"} "Contact me"]
-    [:a {:class "btn btn-outline-secondary btn-lg mb-2 me-3" :href "/resume"} "Resume/CV"]]])
+    [:a {:class "btn btn-outline-secondary btn-lg mb-2 me-3" :href "/resume"} "Resume"]]])
 
 (defn print-latest-posts [posts]
   [:div {:class "row"}

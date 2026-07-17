@@ -1,11 +1,8 @@
 (ns app.routes
   (:require app.pages.home)
-  (:require app.pages.code-of-conduct)
-  (:require app.pages.contributing)
-  (:require app.pages.backers)
   (:require app.pages.resume)
   (:require app.pages.privacy)
-  (:require app.pages.origin)
+  ;; (:require app.pages.origin)
   (:require app.pages.laravel-collection)
   (:require app.pages.portfolio)
   (:require app.pages.start)
@@ -16,9 +13,6 @@
 
 (def routes
   [(route "GET" "/" home/render)
-   (route "GET" "/code-of-conduct" code-of-conduct/render)
-   (route "GET" "/contributing" contributing/render)
-   (route "GET" "/backers" backers/render)
    (route "GET" "/resume" resume/render)
    (route "GET" "/privacy" privacy/render)
    ;; (route "GET" "/origin" origin/render)

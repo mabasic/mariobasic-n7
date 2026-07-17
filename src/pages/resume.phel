@@ -177,8 +177,8 @@
   {:status 200
    :body (main/render
           request
-          {:title "Resume/CV | Mario Bašić"
-           :meta-description "Your can view my resume/cv on this page."
+          {:title "Resume| Mario Bašić"
+           :meta-description "Your can view my resume on this page."
            :canonical-url (:path (:uri request))
            :white (white)
            :black (black)})})

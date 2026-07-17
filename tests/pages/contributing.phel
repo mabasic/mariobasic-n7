@@ -1,9 +1,0 @@
-(ns app.tests.pages.contributing
-  (:require phel.test :refer [deftest is])
-  (:require app.pages.contributing))
-
-(def rendered (contributing/render {:uri {:host "/contributing"}}))
-
-(deftest test-render
-  (is (= 200 (get rendered :status)))
-  (is (string? (get rendered :body))))

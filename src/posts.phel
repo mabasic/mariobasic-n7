@@ -47,8 +47,11 @@
 (defn- slugify-date [post]
   (php/str_replace "-" "/" (get-date post)))
 
-(defn- generate-slug [post]
-  (str (slugify-date post) "/" (slugify (get-title post))))
+(defn get-slug [post]
+  (or (query-front-matter post "slug") (slugify (get-title post))))
+
+(defn generate-slug [post]
+  (str (slugify-date post) "/" (get-slug post)))
 
 (defn- glue-slug-together [year month day slug]
   (str year "/" month "/" day "/" slug))

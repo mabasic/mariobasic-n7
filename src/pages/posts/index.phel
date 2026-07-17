@@ -7,8 +7,9 @@
 
 (defn white []
   [:div
-   [:h1 {:class "display-2"} "All posts"]
-   [:p [:a {:href "/"} "home"] " / blog"]])
+   [:h1 {:class "display-2"} "Blog"]
+   [:p "A collection of moments from my life that I’d like to share with the world."]
+   [:p [:a {:href "/"} "home"] " / moments"]])
 
 (defn pagination [posts-count page]
   (let [max-page (ceil (/ posts-count per-page))]
@@ -17,14 +18,14 @@
        [:ul {:class "pagination pagination-sm"}
         (apply list (for [index :range [1 (inc max-page)]]
                       [:li {:class (str "page-item" (if (= page index) " active"))}
-                       [:a {:class "page-link" :href (str "/blog?page=" index)} index]]))]])))
+                       [:a {:class "page-link" :href (str "/moments?page=" index)} index]]))]])))
 
 (defn black [posts posts-count page]
   [:div {:class "row"}
    [:div {:class "col"}
     (apply list (for [post :in posts]
                   [:article {:class "py-3"}
-                   [:div {:class "d-flex flex-column-reverse justify-content-between align-items-start flex-lg-row align-items-lg-start gap-0 gap-lg-5"}
+                   [:div {:class "d-flex flex-column-reverse justify-content-between align-items-start gap-0"}
                     [:div {:class ""}
                      [:h2 {:class ""}
                       [:a {:class "text-decoration-none" :href (posts/generate-slug post)} (posts/get-title post)]]
@@ -48,8 +49,8 @@
     {:status 200
      :body (main/render
             request
-            {:title "Blog | Mario Bašić"
-             :meta-description "Read all my blog posts."
+            {:title "Moments | Mario Bašić"
+             :meta-description "A collection of moments from my life that I’d like to share with the world."
              :canonical-url (:path (:uri request))
              :white (white)
              :black (black (posts/paginate all-posts page per-page) posts-count page)})}))

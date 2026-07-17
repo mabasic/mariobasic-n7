@@ -18,17 +18,16 @@
 
 (defn white [post]
   [:div
-   [:h1 {:class "display-2"} (posts/get-title post)]
-   [:p {:class "lead"} (posts/get-excerpt post)]
-   [:p [:a {:href "/"} "home"] " / " [:a {:href "/blog"} "blog"] " / " (posts/get-title post)]])
+   [:a {:href "/blog" :class "mb-2 d-inline-block text-decoration-none"} "<- Back to posts"]
+   [:h1 {:class "display-6"} (posts/get-title post)]
+   (get-post-meta post {:show-heading false})])
 
 (defn black [post]
   (let [body (raw-string (posts/markdown-to-html (posts/get-body post)))] [:div {:class "row"}
                                                                            [:div {:class "col"}
                                                                             [:article {:class "post-content"}
-                                                                             body]
-                                                                            [:hr {:style "width: 130px;" :class "mb-4"}]
-                                                                            (get-post-meta post)]]))
+                                                                             [:p {:class "lead"} (posts/get-excerpt post)]
+                                                                             body]]]))
 
 (defn render [request & [{:year year :month month :day day :slug slug}]]
   (let [post (posts/get-by-slug year month day slug)]

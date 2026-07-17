@@ -50,7 +50,7 @@
           [:li {:class "nav-item"}
            [:a {:class (str "nav-link" (ekko/is-active active-item "/")) :href "/"} "Home"]
            [:li {:class "nav-item"}
-            [:a {:class (str "nav-link" (ekko/is-active active-item "/resume")) :href "/resume"} "Resume/CV"]]
+            [:a {:class (str "nav-link" (ekko/is-active active-item "/resume")) :href "/resume"} "Resume"]]
            [:li {:class "nav-item"}
             [:a {:class (str "nav-link" (ekko/is-active active-item ["/blog" "/*/*/*/*"])) :href "/blog"} "Blog"]]
            [:li {:class "nav-item"}
@@ -67,17 +67,6 @@
               [:a
                {:class (str "dropdown-item" (ekko/is-active active-item "/a-collection-of-laravel-tutorials"))
                 :href "/a-collection-of-laravel-tutorials"} "A Collection of Laravel Tutorials"]]]]
-           [:li {:class "nav-item dropdown"}
-            [:a {:class (str "nav-link dropdown-toggle" (ekko/is-active active-item ["/code-of-conduct" "/contributing" "/backers"]))
-                 :href "#"
-                 :id "OpenSourceMenuLink"
-                 :role "button"
-                 :data-bs-toggle "dropdown"
-                 :aria-expanded "false"} "Open Source"]
-            [:ul {:class "dropdown-menu" :aria-labelledby "OpenSourceMenuLink"}
-             [:li [:a {:class (str "dropdown-item" (ekko/is-active active-item "/code-of-conduct")) :href "/code-of-conduct"} "Code of Conduct"]]
-             [:li [:a {:class (str "dropdown-item" (ekko/is-active active-item "/contributing")) :href "/contributing"} "Contributing"]]
-             [:li [:a {:class (str "dropdown-item" (ekko/is-active active-item "/backers")) :href "/backers"} "Backers"]]]]
            [:li {:class "nav-item"}
             [:a {:class (str "nav-link" (ekko/is-active active-item "/start")) :href "/start"} "Contact"]]
            divider
