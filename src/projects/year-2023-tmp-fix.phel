@@ -55,4 +55,10 @@
     "https://github.com/unisonweb/unison/pull/3841"
     "feat(respect-ucm-host): makes codebase server use the correct host #3841"
     ["pull-request" "open-source" "haskell" "unison-lang" "helix-editor"]
-    "pull-request")])
+    "pull-request")
+   (project
+    "Oglasi Murter"
+    "https://oglasi-murter.com/"
+    "Website for renting advertising space on an LED screen in Murter."
+    ["website" "php" "custom" "led-screen" "marketing"]
+    "website")])

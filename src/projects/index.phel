@@ -1,4 +1,7 @@
 (ns app.projects.index
+  (:require app.projects.year-2025)
+  (:require app.projects.year-2026)
+  (:require app.projects.year-2024)
   (:require app.projects.year-2023-tmp-fix)
   (:require app.projects.year-2022-tmp-fix)
   (:require app.projects.year-2021-tmp-fix)
@@ -14,7 +17,10 @@
   (:require app.projects.year-2011-tmp-fix))
 
 (def index
-  [{:year "2023" :projects year-2023-tmp-fix/index}
+  [{:year "2026" :projects year-2026/index}
+   {:year "2025" :projects year-2025/index}
+   {:year "2024" :projects year-2024/index}
+   {:year "2023" :projects year-2023-tmp-fix/index}
    {:year "2022" :projects year-2022-tmp-fix/index}
    {:year "2021" :projects year-2021-tmp-fix/index}
    {:year "2020" :projects year-2020-tmp-fix/index}

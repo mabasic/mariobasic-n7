@@ -1,0 +1,10 @@
+(ns app\projects\year-2024
+  (:require app\projects\project :refer [project]))
+
+(def index
+  [(project
+    "prisma/prisma"
+    "https://github.com/prisma/prisma/pull/24963"
+    "feat: adds TransactionClient generic paramenter for custom PrismaClients #24963"
+    ["pull-request" "open-source" "prisma" "database"]
+    "pull-request")])

@@ -1,0 +1,16 @@
+(ns app\projects\year-2025
+  (:require app\projects\project :refer [project]))
+
+(def index
+  [(project
+    "denoland/docs"
+    "https://github.com/denoland/docs/pull/1611"
+    "Updates Helix languages.toml #1611"
+    ["pull-request" "open-source" "deno" "documentation" "helix-editor"]
+    "pull-request")
+   (project
+    "rescript-lang/rescript-vscode"
+    "https://github.com/rescript-lang/rescript-vscode/pull/1157"
+    "feat: makes type checking more strict #1157"
+    ["pull-request" "open-source" "rescript" "typescript"]
+    "pull-request")])

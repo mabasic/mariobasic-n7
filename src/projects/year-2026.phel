@@ -1,0 +1,22 @@
+(ns app\projects\year-2026
+  (:require app\projects\project :refer [project]))
+
+(def index
+  [(project
+    "noctalia-dev/noctalia-docs"
+    "https://github.com/noctalia-dev/noctalia-docs/pull/73"
+    "Adds note on how to set wallpaper on all monitors #73"
+    ["pull-request" "open-source" "noctalia" "documentation"]
+    "pull-request")
+   (project
+    "void-linux/void-packages"
+    "https://github.com/void-linux/void-packages/pull/60060"
+    "New package: certiliamiddleware-3.9.8 #60060"
+    ["pull-request" "open-source" "certiliamiddleware" "void-linux"]
+    "pull-request")
+   (project
+    "void-linux/void-packages"
+    "https://github.com/void-linux/void-packages/pull/60060"
+    "Update: rio. Multiple PRs: #60569, #59868"
+    ["pull-request" "open-source" "rio-terminal" "void-linux"]
+    "pull-request")])
