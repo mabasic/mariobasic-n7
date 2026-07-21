@@ -12,7 +12,7 @@
     "php": "^8.4",
     "aws/aws-sdk-php": "^3.279",
     "erusev/parsedown": "^1.8.0",
-    "phel-lang/phel-lang": "v0.47.0",
+    "phel-lang/phel-lang": "v0.48.0",
     "rakibtg/sleekdb": "^2.15",
     "spatie/yaml-front-matter": "^2.0",
     "vlucas/phpdotenv": "^5.5"

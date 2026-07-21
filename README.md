@@ -27,10 +27,10 @@ pnpm install
 composer build
 
 # dev mode
-PHEL_MODE=slow php -S localhost:8000 -t public/
+composer dev:slow
 
 # prod mode
-composer build && PHEL_MODE=fast php -S localhost:8000 -t public/
+composer dev:fast
 ```
 
 For managing SCSS:

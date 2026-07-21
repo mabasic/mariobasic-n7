@@ -4,8 +4,8 @@
 
 (deftest test-render-found
   (let [rendered (show/render
-                  {:uri {:host "/2020/01/29/github-archive-program-02-02-2020"}}
-                  {:year "2020" :month "01" :day "29" :slug "github-archive-program-02-02-2020"})]
+                  {:uri {:host "/2020/01/29/github-archive-program"}}
+                  {:year "2020" :month "01" :day "29" :slug "github-archive-program"})]
     (is (= 200 (get rendered :status)))
     (is (string? (get rendered :body)))))
 
