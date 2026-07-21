@@ -8,7 +8,7 @@
 (defn white []
   [:div
    [:h1 {:class "display-2"} "Blog"]
-   [:p "A collection of moments from my life that I’d like to share with the world."]
+   [:p {:class "lead"} "A collection of moments from my life that I’d like to share with the world."]
    [:p [:a {:href "/"} "home"] " / moments"]])
 
 (defn pagination [posts-count page]

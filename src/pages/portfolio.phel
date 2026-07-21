@@ -8,6 +8,7 @@
 (defn white []
   [:div
    [:h1 {:class "display-2"} "Portfolio"]
+   [:p {:class "lead"} "This page includes only items I’m able to share publicly. Most of my client work is covered by a non-disclosure agreement (NDA). You’ll find a mix of websites, web applications, packages, and pull requests below."]
    [:p [:a {:href "/"} "home"] " / portfolio"]])
 
 (defn black []
@@ -28,7 +29,7 @@
    :body (main/render
           request
           {:title "Portfolio | Mario Bašić"
-           :meta-description "Websites, repositories, pull requests and more."
+           :meta-description "You’ll find a mix of websites, web applications, packages, and pull requests on this page."
            :canonical-url (:path (:uri request))
            :white (white)
            :black (black)})})

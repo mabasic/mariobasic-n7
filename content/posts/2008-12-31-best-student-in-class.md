@@ -6,7 +6,7 @@ excerpt: "I was awarded the title of best student in my class (Business Informat
 slug: best-student-in-class
 ---
 
-I’m writing this in retrospect, to the best of my memory.
+I’m writing this in retrospect, to the best of my memory (19.7.2026).
 
 This was the first time I was rewarded with the title of being the best at something.
 At the time, it didn’t mean much to me, because I was focused on other things.

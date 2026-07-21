@@ -6,7 +6,7 @@ excerpt: "Here is the origin story of Laravelista, and how I closed that chapter
 slug: laravelista-book
 ---
 
-This book represents my two year effort to teach others how to build web sites and web applications using the Laravel framework.
+This book documents my two-year journey teaching others to build websites and web applications with Laravel.
 
 **Laravelista** was the name of the blog on which I wrote tutorials related to the Laravel framework, web application development, testing and other things related to Laravel.
 
@@ -16,7 +16,7 @@ publish tutorials and courses, for a monthly or annual subscription. Each tutori
 and I would also offer support via comments on tutorials.
 
 I've made a web application for writing tutorials, posting tutorials, managing subscriptions and comments.
-In order to be able to charge people subscription over the web site I have opened a personal company.
+In order to be able to charge people subscription over the website I have opened a personal company.
 
 I called my company Laravelista as was the name of the blog. During the first year, I wrote a couple of hit tutorials.
 One of them was on the topic of JWT Authentication and the Lumen framework. Since I was one of the first, if not the
