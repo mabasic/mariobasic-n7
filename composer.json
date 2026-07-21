@@ -27,8 +27,14 @@
   },
   "prefer-stable": true,
   "scripts": {
-    "dev:slow": "PHEL_MODE=slow php -S localhost:8000 -t public/",
-    "dev:fast": "composer build && PHEL_MODE=fast php -S localhost:8000 -t public/",
+    "dev:slow": [
+      "Composer\\Config::disableProcessTimeout",
+      "PHEL_MODE=slow php -S localhost:8000 -t public/"
+    ],
+    "dev:fast": [
+      "Composer\\Config::disableProcessTimeout",
+      "composer build && PHEL_MODE=fast php -S localhost:8000 -t public/"
+    ],
     "pre-install-cmd": [
       "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
     ],
