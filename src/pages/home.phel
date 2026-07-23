@@ -5,13 +5,13 @@
 
 (defn white []
   [:div {:class "text-center col-lg-6 mx-auto"}
-   (svg/load-raw "logo-home.svg")
-   [:h1 {:class "display-1 fw-bold lh-1"} "Software Programmer"]
-   [:p {:class "fs-4 fw-semibold"} "Specialized in full-stack web development"]
-   [:p {:class "mb-4 fs-5"} "My main programming languages are TypeScript and PHP. I enjoy experimenting with various programming languages, frameworks, and libraries, as can be seen in the " [:a {:href "https://github.com/mabasic/mariobasic-n7" :rel "noopener nofollow" :target "_blank"} "source code"] " of this website."]
+   [:img {:src "/me.jpg" :alt "Image of Mario Bašić" :width "130" :height "130" :class "rounded-pill mb-4"}]
+   [:h1 {:class "display-1 fw-bold lh-1"} "Mario Bašić"]
+   [:p {:class "fs-4 fw-semibold"} "Master of Science (MSc) in IT Management"]
+   [:p {:class "mb-4 fs-5"} [:b "Senior full-stack software programmer"] " (18+), specialized in typeScript, react, and effect. Previously php and laravel. Clojure ❤️"]
    [:p {:class ""}
-    [:a {:class "btn btn-primary tilt btn-lg mb-2 me-3" :href "/start"} "Contact me"]
-    [:a {:class "btn btn-outline-secondary btn-lg mb-2 me-3" :href "/resume"} "Resume"]]])
+    [:a {:style "line-height: 16px;" :class "btn btn-primary tilt mb-2 me-3" :href "/start"} "Contact me" [:br] [:span {:style "font-size: 10px;"} "(Hover here to fix button)"]]
+    [:a {:class "btn btn-link mb-2 me-3" :href "/resume"} "View resume"]]])
 
 (defn print-latest-posts [posts]
   [:div {:class "row"}
@@ -30,31 +30,33 @@
   [:div
    [:div {:class "container py-5"}
     [:div {:class "d-flex flex-column flex-lg-row justify-content-between gap-5 gap-lg-0"}
-     [:div {:class "d-flex justify-content-between gap-md-5 gap-0 flex-column flex-md-row" :id "home-govisit"}
+     [:div {:class "d-flex justify-content-between justify-content-lg-start align-items-center align-items-md-start gap-md-5 gap-lg-3 gap-xl-5 gap-0 flex-column flex-md-row flex-lg-column flex-xl-row" :id "home-govisit"}
       [:div {:class "w-130"}
-       [:h2 {:class "display-4 fw-bold lh-1"} (svg/load-raw "govisit-logo.svg")]
-       [:p {:class "fs-4 mb-0 fw-semibold d-none d-md-block mt-3"} "Software development company"]]
-      [:div {:class ""}
-       [:h2 {:class "display-4 fw-bold lh-1"} "Go Visit"]
-       [:p {:class "fs-5"} "Its main product is " [:a {:target "_blank" :href "https://visitmurter.com"} "VisitMurter"] ", a tourist portal for the island of Murter and surrounding places. I am actively using many programming languages: TypeScript, JavaScript, PHP, Scala, F#, ReScript, and possibly Clojure soon to build the next big thing."]
-       [:a {:class "btn btn-outline-primary" :target "_blank" :href "https://govisit.hr"} "Visit official website"]]]
-     [:div {:class "column-divider mx-5"}]
-     [:div {:class "d-flex justify-content-between flex-column-reverse flex-md-row gap-md-5 gap-0" :id "home-laravelista"}
-      [:div {:class "text-start text-lg-end"}
+       [:h2 {:class "display-4 fw-bold lh-1 mb-4 mb-md-0"} (svg/load-raw "govisit-logo.svg")]
+       [:p {:class "fs-4 mb-0 fw-semibold d-none d-md-block d-lg-none d-xl-block mt-3"} "Digital Product Development"]]
+      [:div {:class "d-flex flex-column align-items-center align-items-md-start"}
+       [:h2 {:class "display-4 fw-bold lh-1"} "Go Visit" [:span {:class "display-6"} " Ltd."]]
+       [:p {:class "fs-4 mb-0 fw-semibold d-block d-md-none d-lg-block d-xl-none mb-3"} "Digital Product Development"]
+       [:p {:class "fs-5 text-center text-md-start"} "Built " [:a {:href "https://visitmurter.com" :target "_blank"} "VisitMurter"] " to promote tourism on Murter, using expertise in economics, marketing, and IT. Partnered with local businesses to showcase offerings. Now providing consulting and website/app maintenance."]
+       [:a {:class "btn btn-outline-primary" :target "_blank" :href "https://govisit.hr"} "Go to website"]]]
+     [:div {:class "column-divider mx-5 mx-lg-1 mx-xl-5"}]
+     [:div {:class "d-flex justify-content-between justify-content-lg-start align-items-center align-items-md-start flex-column-reverse flex-md-row flex-lg-column-reverse flex-xl-row gap-md-5 gap-lg-3 gap-xl-5 gap-0" :id "home-laravelista"}
+      [:div {:class "d-flex flex-column align-items-center align-items-md-end"}
        [:h2 {:class "display-4 fw-bold lh-1 text-start text-lg-end"} "Laravelista"]
-       [:p {:class "fs-5 text-start text-lg-end"} "During college, I learned many programming languages: C, C++, C#, VBA, PHP, JavaScript, and Python. After I wrote my first Laravel 3 app, I started a blog writing Laravel tutorials, which then evolved into a subscription-based website for learning Laravel."]
-       [:a {:class "btn btn-outline-primary" :target "_blank" :href "https://laravelista.com"} "Continue reading"]]
-      [:div {:class "w-130"}
-       [:h2 {:class "display-4 fw-bold lh-1"} (svg/load-raw "laravelista-logo.svg")]
-       [:p {:class "fs-4 mb-0 fw-semibold d-none d-md-block mt-3"} "Laravel, PHP, and Open source"]]]]]
+       [:p {:class "fs-4 mb-0 fw-semibold d-block d-md-none d-lg-block d-xl-none mb-3 text-lg-end text-xl-start"} "Laravel/PHP Full-stack Programmer"]
+       [:p {:class "fs-5 text-center text-md-end"} "Senior full-stack Laravel/PHP developer with years of experience. Built a tech blog, ran a Laravel SaaS platform, consulted for businesses, worked in corporations, and founded my own company, so I understand both code and business strategy."]
+       [:a {:class "btn btn-outline-primary" :target "_blank" :href "https://laravelista.com"} "Go to website"]]
+      [:div {:class "w-130 align-self-lg-end align-self-xl-start"}
+       [:h2 {:class "display-4 fw-bold lh-1 mb-4 mb-md-0"} (svg/load-raw "laravelista-logo.svg")]
+       [:p {:class "fs-4 mb-0 fw-semibold d-none d-md-block d-lg-none d-xl-block mt-3"} "Laravel/PHP Full-stack Programmer"]]]]]
    [:div {:class "container py-5"}
     [:div {:class "row"}
      [:div {:class "col-lg-6 mx-auto text-center"}
       (svg/load-raw "izradaweba-logo.svg")
       [:h2 {:class "display-4 fw-bold lh-1 text-center"} "IzradaWeba"]
       [:p {:class "fs-4 fw-semibold text-center"} "Web solutions for Croatian market"]
-      [:p {:class "fs-5 text-center"} "I provide turn-key solutions that are tailored to meet your business needs and help you succeed in the Croatian market. Let's work together to make your business dreams a reality!"]
-      [:a {:class "btn btn-outline-primary" :target "_blank" :href "https://izradaweba.eu"} "Find out more"]]]]
+      [:p {:class "fs-5 text-center"} "Digital products that are tailored to meet your business needs and help you succeed in the Croatian market. Let's work together to make your business dreams a reality!"]
+      [:a {:class "btn btn-outline-primary" :target "_blank" :href "https://izradaweba.eu"} "See products"]]]]
   # (print-latest-posts latest-posts)
 ])
 
