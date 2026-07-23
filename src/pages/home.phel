@@ -43,7 +43,7 @@
      [:div {:class "d-flex justify-content-between justify-content-lg-start align-items-center align-items-md-start flex-column-reverse flex-md-row flex-lg-column-reverse flex-xl-row gap-md-5 gap-lg-3 gap-xl-5 gap-0" :id "home-laravelista"}
       [:div {:class "d-flex flex-column align-items-center align-items-md-end"}
        [:h2 {:class "display-4 fw-bold lh-1 text-start text-lg-end"} "Laravelista"]
-       [:p {:class "fs-4 mb-0 fw-semibold d-block d-md-none d-lg-block d-xl-none mb-3 text-lg-end text-xl-start"} "Laravel/PHP Full-stack Programmer"]
+       [:p {:class "fs-4 mb-0 fw-semibold d-block d-md-none d-lg-block d-xl-none mb-3 text-center text-lg-end text-xl-start"} "Laravel/PHP Full-stack Programmer"]
        [:p {:class "fs-5 text-center text-md-end"} "Senior full-stack Laravel/PHP developer with years of experience. Built a tech blog, ran a Laravel SaaS platform, consulted for businesses, worked in corporations, and founded my own company, so I understand both code and business strategy."]
        [:a {:class "btn btn-outline-primary" :target "_blank" :href "https://laravelista.com"} "Go to website"]]
       [:div {:class "w-130 align-self-lg-end align-self-xl-start"}
