@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "15ffb0af9b45229a450c91ccdc00a709",
+    "content-hash": "912da5f7d5b03bf6bb2821d452bfaf15",
     "packages": [
         {
             "name": "amphp/amp",
@@ -143,16 +143,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.388.10",
+            "version": "3.388.12",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "25ea501f0540489bff6989cab9e7db1d12008aed"
+                "reference": "9eca8f6408501a47efe5dee2ce494b93eac983a6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/25ea501f0540489bff6989cab9e7db1d12008aed",
-                "reference": "25ea501f0540489bff6989cab9e7db1d12008aed",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/9eca8f6408501a47efe5dee2ce494b93eac983a6",
+                "reference": "9eca8f6408501a47efe5dee2ce494b93eac983a6",
                 "shasum": ""
             },
             "require": {
@@ -234,9 +234,9 @@
             "support": {
                 "forum": "https://github.com/aws/aws-sdk-php/discussions",
                 "issues": "https://github.com/aws/aws-sdk-php/issues",
-                "source": "https://github.com/aws/aws-sdk-php/tree/3.388.10"
+                "source": "https://github.com/aws/aws-sdk-php/tree/3.388.12"
             },
-            "time": "2026-07-20T18:06:03+00:00"
+            "time": "2026-07-22T18:05:00+00:00"
         },
         {
             "name": "erusev/parsedown",
@@ -364,16 +364,16 @@
         },
         {
             "name": "gacela-project/gacela",
-            "version": "1.18.0",
+            "version": "1.19.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/gacela-project/gacela.git",
-                "reference": "d4f91871da18de2cdcc651c571d3932489436411"
+                "reference": "611b04e178e72d8cf068a7102e29b0815320d33e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/gacela-project/gacela/zipball/d4f91871da18de2cdcc651c571d3932489436411",
-                "reference": "d4f91871da18de2cdcc651c571d3932489436411",
+                "url": "https://api.github.com/repos/gacela-project/gacela/zipball/611b04e178e72d8cf068a7102e29b0815320d33e",
+                "reference": "611b04e178e72d8cf068a7102e29b0815320d33e",
                 "shasum": ""
             },
             "require": {
@@ -438,7 +438,7 @@
             ],
             "support": {
                 "issues": "https://github.com/gacela-project/gacela/issues",
-                "source": "https://github.com/gacela-project/gacela/tree/1.18.0"
+                "source": "https://github.com/gacela-project/gacela/tree/1.19.0"
             },
             "funding": [
                 {
@@ -446,7 +446,7 @@
                     "type": "custom"
                 }
             ],
-            "time": "2026-07-20T05:33:57+00:00"
+            "time": "2026-07-23T07:07:01+00:00"
         },
         {
             "name": "graham-campbell/result-type",
@@ -909,21 +909,21 @@
         },
         {
             "name": "phel-lang/phel-lang",
-            "version": "v0.48.0",
+            "version": "v0.49.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phel-lang/phel-lang.git",
-                "reference": "be80623d39b37f237a41a9c8781c9ac7803ab77c"
+                "reference": "6364aa687ebdc64a40215575f199b8196476f1b5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phel-lang/phel-lang/zipball/be80623d39b37f237a41a9c8781c9ac7803ab77c",
-                "reference": "be80623d39b37f237a41a9c8781c9ac7803ab77c",
+                "url": "https://api.github.com/repos/phel-lang/phel-lang/zipball/6364aa687ebdc64a40215575f199b8196476f1b5",
+                "reference": "6364aa687ebdc64a40215575f199b8196476f1b5",
                 "shasum": ""
             },
             "require": {
                 "amphp/amp": "^3.1",
-                "gacela-project/gacela": "^1.16",
+                "gacela-project/gacela": "^1.18",
                 "php": ">=8.4",
                 "symfony/console": "^6.0|^7.0|^8.0",
                 "symfony/polyfill-mbstring": "^1.30",
@@ -981,7 +981,7 @@
             ],
             "support": {
                 "issues": "https://github.com/phel-lang/phel-lang/issues",
-                "source": "https://github.com/phel-lang/phel-lang/tree/v0.48.0"
+                "source": "https://github.com/phel-lang/phel-lang/tree/v0.49.0"
             },
             "funding": [
                 {
@@ -989,7 +989,7 @@
                     "type": "custom"
                 }
             ],
-            "time": "2026-07-15T10:16:17+00:00"
+            "time": "2026-07-22T20:38:45+00:00"
         },
         {
             "name": "phpoption/phpoption",
