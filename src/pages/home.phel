@@ -66,7 +66,7 @@
      :body (main/render
             request
             {:title "Mario Bašić | Software programmer | Specialized in full-stack web development"
-             :meta-description "My main programming languages are TypeScript and PHP. I enjoy experimenting with various programming languages, frameworks, and libraries, as can be seen in the source code of this website."
+             :meta-description "Senior full-stack software programmer (18+), specialized in typeScript, react, and effect. Previously php and laravel. Clojure ❤️"
              :canonical-url (:path (:uri request))
              :white (white)
              :black (black latest-posts)})}))
