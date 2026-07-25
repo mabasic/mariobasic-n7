@@ -27,14 +27,13 @@
                             [:span {:class "bi ms-auto d-none"} (svg/load-raw "icons/check2.svg")]]]]])
 
 (defn render [active-item]
-  [:div
+  [:div {:class "d-print-none"}
    [:section {:class "container-fluid"}
     [:div {:class "row"}
      [:div {:class "col"}
       [:nav {:class "navbar navbar-expand-lg"}
        [:div {:class "container"}
         [:a {:class "navbar-brand d-flex gap-3 align-items-center" :href "/" :title "Mario Bašić logo"}
-     # [:img {:src "/logo.svg" :alt "Mario Bašić logo" :width "186" :height "42"}]
          (svg/load-raw "logo.svg")
          [:span "Mario " [:span {:class "fw-semibold"} "Bašić"]]]
         [:button {:class "navbar-toggler"

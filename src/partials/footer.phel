@@ -2,7 +2,7 @@
   (:require app.svg))
 
 (defn render []
-  [:footer {:class "bg-body-tertiary py-4 py-md-5 mt-5 text-tertiary-color"}
+  [:footer {:class "bg-body-tertiary py-4 py-md-5 mt-5 text-tertiary-color d-print-none"}
    [:div {:class "container"}
     [:div {:class "row"}
      [:div {:class "col"}

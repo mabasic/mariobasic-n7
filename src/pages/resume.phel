@@ -3,8 +3,19 @@
 
 (defn white []
   [:div
-   [:h1 {:class "display-2"} "Resume"]
-   [:p [:a {:href "/"} "home"] " / resume"]])
+   [:h1 {:class "display-2 d-print-none"} "Resume"]
+   [:img {:src "/me.jpg" :alt "Image of Mario Bašić" :width "130" :height "130" :class "rounded-pill mb-4 d-none d-print-block"}]
+   [:h1 {:class "display-1 fw-bold lh-1 d-none d-print-block"} "Mario Bašić"]
+   [:p {:class "fs-4 fw-semibold d-none d-print-block"} "Master of Science (MSc) in IT Management"]
+
+   [:p {:class "d-print-none"} [:a {:href "/"} "home"] " / resume"]
+   [:p {:class "d-none d-print-block"}
+    [:b "Senior full-stack software programmer (18+)"]
+    ", specialized in typeScript, react, and effect. Previously php and laravel. Clojure <3"]
+   [:ul {:class "d-none d-print-block"}
+    [:li "Country: Croatia"]
+    [:li "Web: " [:a {:href "https://mariobasic.com"} "https://mariobasic.com"]]
+    [:li "Email: " [:a {:href "mailto:mario@govisit.pro"} "mario@govisit.pro"]]]])
 
 (defn column [& body]
   [:div {:class "col-lg-4"} (apply list body)])
