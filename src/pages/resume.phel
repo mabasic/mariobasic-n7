@@ -32,140 +32,132 @@
 (def left-column
   (column
    (group
-    "Expertise"
+    "Tech Stack"
+    (unit
+     {:title "TypeScript"
+      :subtitle "Types for JavaScript"
+      :intro "Can bring huge benefits over JavaScript if properly configured and used, otherwise straight up lies."})
+    (unit
+     {:title "Effect"
+      :subtitle "A powerful TypeScript library"
+      :intro "This tool enables TypeScript developers to easily create complex, synchronous, and asynchronous programs."})
+    (unit
+     {:title "JavaScript Frameworks"
+      :subtitle "Next.js, NestJS, Deno Fresh"
+      :intro "Full-stack React/Preact frameworks that I have a lot of experience with."})
+    (unit
+     {:title "JavaScript UI Libraries"
+      :subtitle "React, Vue, Preact"
+      :intro "I prefer Preact over React, React over Vue, but I think that Vue has some good things going for it."})
+    (unit
+     {:title "Mobile App Development"
+      :subtitle "React Native"
+      :intro "I have built and published a mobile application for iPhone and Android devices using React Native."})
+    (unit
+     {:title "CSS Tooling"
+      :subtitle "Tailwind, Bootstrap, SCSS/Saas, CSS"
+      :intro "The arrival of Tailwind on the scene changed things for me greatly. I can easily create a design which looks consistent and the colors match."})
+    (unit
+     {:title "JavaScript Tooling"
+      :subtitle "Nx, Turborepo, PNPM, Deno, Yarn, Prettier, Biome, Oxlint, NPM, Node, ESLint"
+      :intro "Tooling configuration can make or break a project. I know how to setup a project from the ground up."})
     (unit
      {:title "Laravel"
       :subtitle "The best batteries-included PHP framework"
-      :intro "Still running my first Laravel 3 application in production environment."})
+      :intro "Started using Laravel when it was v3, now still using it with v13. It has its ups and downs, but it works."})
     (unit
      {:title "PHP"
-      :subtitle "It gets the job done"
-      :intro "My main programming language."})
+      :subtitle "Love it or hate it, but it just works"
+      :intro "I have been using PHP for a long time now. Most of my career was built using it. I can only recommend it."})
     (unit
-     {:title "JavaScript"
-      :subtitle "It is like wine"
-      :intro "The language gets better with years."})
+     {:title "Lisp family of languages"
+      :subtitle "Clojure, ClojureScript, Phel"
+      :intro "After trying multiple languages I have found that I really like the simplicity of Lisp languages."})
     (unit
-     {:title "React.js"
-      :subtitle "Simple top-down logic to follow"
-      :intro "My preferred JavaScript UI library."})
-    (unit
-     {:title "React-native"
-      :subtitle "Native mobile app development"
-      :intro "Web developers building native mobile apps with web technologies."})
-    (unit
-     {:title "Vue.js"
-      :subtitle "Alternative to React.js"
-      :intro "If you know React.js you know Vue.js."})
-    (unit
-     {:title "TypeScript"
-      :subtitle "TypeScript is JavaScript with syntax for types"
-      :intro "Whenever possible I try to use typescript and not use the any type."})
-    (unit
-     {:title "Phel"
-      :subtitle "Lisp inspired functional programming language that compiles to PHP"
-      :intro "This website is built with Phel."})
-    (unit
-     {:title "F#"
-      :subtitle "Strongly-typed, functional-first programming language"
-      :intro "Used for a couple of internal projects."})
-    (unit
-     {:title "Scala"
-      :subtitle "Hybrid programming language"
-      :intro "Similar to F# but runs on the JVM instead of .NET."})
-    (unit
-     {:title "Next.js"
-      :subtitle "The React Framework for Production"
-      :intro "SSR, SSG, ... A React.js framework with batteries included."})
-    (unit
-     {:title "NestJS"
-      :subtitle "Progressive Node.js framework for building server-side applications"
-      :intro "Backend framework but for Node.js. It supports TypeScript and JavaScript."})
-    (unit
-     {:title "Nx"
-      :subtitle "Smart, Fast and Extensible Build System"
-      :intro "Used for building monorepos and other stuff."}))))
+     {:title "Statically typed functional languages"
+      :subtitle "Scala, Scala.js, F#"
+      :intro "I have built two websites using Scala/Scala.js, and one internal project with F#."}))))
 
 (def middle-column
   (column
    (group
     "Devops"
-    (unit {:title "Server administrator" :subtitle "Linux, Ubuntu, Fedora, Alpine, Debian, Arch..." :intro "Can install, configure and maintain software on servers running popular linux distributions."})
-    (unit {:title "Docker" :subtitle "For local development or production" :intro "Can use Docker to containerize applications for local development or production use."})
-    (unit {:title "Vagrant" :subtitle "Virtual machines everywhere" :intro "Can use Vagrant to recreate production servers for testing purposes or setup a local development environment."})
-    (unit {:title "Ansible" :subtitle "Server/desktop provisioning" :intro "Can use Ansible to provision single or multiple servers and deploy applications."}))
+    (unit {:title "Servers"
+           :subtitle "Linux, BSD"
+           :intro "Can install, configure, and maintain software for server environments running popular Linux distributions or BSD-based operating systems."})
+    (unit {:title "Containers"
+           :subtitle "Docker, Podman"
+           :intro "Can containerize applications for local development or production/staging deployment."})
+    (unit {:title "CI/CD"
+           :subtitle "GitHub, BitBucket, GitLab"
+           :intro "Can setup and maintain pipelines for testing and deploying applications."})
+    (unit {:title "Ansible"
+           :subtitle "Manage and maintain system configuration"
+           :intro "Can use Ansible to manage single or multiple servers, and deploy applications."}))
    (group
-    "Graphics"
+    "Graphic Design"
     (unit
-     {:title "Image editing"
-      :subtitle "Adobe Photoshop, GIMP, Krita, Affinity Photo"
-      :body "Editing and retouching images, creating full-blown multi-layered compositions or making beautiful raster paintings."})
+     {:title "Raster images"
+      :subtitle "GIMP, Krita, Affinity, PixiEditor"
+      :body "Can create and edit raster images using a variety of tools, including tablet hand-drawing."})
     (unit
-     {:title "Vector design"
-      :subtitle "Adobe Illustrator, Inkscape, Affinity Designer"
-      :body "Creating concept art, print projects, logos, icons, UI designs, mock-ups and more."})
+     {:title "Vector images"
+      :subtitle "Inkscape, Affinity"
+      :body "Can create and edit print designs, logos, and icons, from rough concepts to polished, usable files."})
     (unit
      {:title "Publication software"
-      :subtitle "Adobe InDesign, Affinity Publisher"
-      :body "From books, magazines and marketing materials, to social media templates, website mock-ups and other projects."}))
+      :subtitle "Affinity"
+      :body "Can create books, magazines, business cards, and marketing materials ready for print."}))
    (group
-    "Highlights"
+    "Awards"
     (unit
-     {:title "Best student in class"
+     {:title [:a {:href "/2008/12/31/best-student-in-class"} "Best student in class"]
       :intro "2008"
-      :subtitle "University of Applied Sciences VERN’"})
-    (unit
-     {:title [:a {:href "http://laraveldaily.com/mario-basic-laravelista-project-emerged-love-writing-helping-people" :rel "noopener nofollow" :target "_blank"} "Interview for Laravel Daily"]
-      :intro "04/12/2016"
-      :subtitle "Laravelista emerged from my love of writing and helping other people."})
-    (unit
-     {:title [:a {:href "https://archiveprogram.github.com/" :rel "noopener nofollow" :target "_blank"} "Arctic Code Vault Contributor"]
-      :intro "02/02/2020"
-      :subtitle "Contributed code to several repositories in the 2020 GitHub Archive Program."}))))
+      :subtitle "VERN' University"}))))
 
 (def right-column
   (column
    (group
-    "Experience"
+    "Work Experience"
+    (unit
+     {:title [:a {:target "_blank" :href "https://govisit.hr"} "Go Visit ltd."]
+      :subtitle "2017 to present"
+      :intro "Full Stack Programmer"
+      :body "Built a tourist portal for the island of Murter. Consulted for multiple international startups and partnered with local software agencies to deliver products used by millions of users."})
     (unit
      {:title "RTL Croatia"
       :subtitle "2021 to 2023"
       :intro "Full Stack Programmer"
-      :body "Worked in a team as a full stack developer for RTL media portals."})
-    (unit
-     {:title [:a {:target "_blank" :href "https://govisit.hr"} "Go Visit"]
-      :subtitle "2017 to present"
-      :intro "Owner & Full Stack Programmer"
-      :body "Created a destination management software which runs a tourist portal for the island of Murter."})
+      :body "Worked in a team as a full stack developer for RTL media portals building applications that scale."})
     (unit
      {:title [:a {:target "_blank" :href "https://laravelista.com"} "Laravelista"]
-      :subtitle "2016 to present"
-      :intro "Owner & Full Stack Programmer"
-      :body "Specialized in building web applications using the Laravel framework and mobile applications with React-native & React.js."})
+      :subtitle "2016 to 2023"
+      :intro "Full Stack Programmer"
+      :body "Specialized in building web applications using Laravel, and mobile applications with React Native & React."})
     (unit
      {:title "Freelance"
-      :subtitle "2011 to 2016"
+      :subtitle "2008 to 2016"
       :intro "Full Stack Programmer"
-      :body "Created content management systems for real estates agencies and apartment owners."}))
+      :body "Created content management systems for real estates agencies. Created websites for small businesses."}))
    (group
-    "Education"
+    "Formal Education"
     (unit
-     {:title "University of Applied Sciences VERN'"
+     {:title "Master of Science (MSc) in IT Management (MSc)"
       :intro "2011 to 2017"
-      :subtitle "MSc in Information Technology Management"})
+      :subtitle "VERN' University"})
     (unit
-     {:title "University of Applied Sciences VERN'"
+     {:title "Bachelor's degree (baccalaureus) in Business Informatics (bacc. inf.)"
       :intro "2008 to 2011"
-      :subtitle "Bachelor of Business Informatics"})
+      :subtitle "VERN' University"})
     (unit
-     {:title "Economics School Šibenik"
+     {:title "Sales Specialist"
       :intro "2004 to 2008"
-      :subtitle "Sales Specialist"}))
+      :subtitle "Economics School Šibenik"}))
    (group
     "Languages"
     (unit {:title "Croatian" :subtitle "Native"})
     (unit {:title "English" :subtitle "Fluent"})
-    (unit {:title "Italian" :subtitle "Basic"}))))
+    (unit {:title "Italian" :subtitle "Very basic"}))))
 
 (defn black []
   [:div {:class "row"}
