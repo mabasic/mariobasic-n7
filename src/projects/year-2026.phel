@@ -17,6 +17,6 @@
    (project
     "void-linux/void-packages"
     "https://github.com/void-linux/void-packages/pull/60060"
-    "Update: rio. Multiple PRs: #60569, #59868"
+    "Update: rio. Multiple PRs: #60569, #59868 #61615"
     ["pull-request" "open-source" "rio-terminal" "void-linux"]
     "pull-request")])
